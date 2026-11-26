@@ -1,3 +1,4 @@
+import { hydrateRuntimeKeys } from "@/lib/admin/apiKeys";
 import { makeSlideId, SLIDE_LIMITS, type SlideKind, type SocialPost, type SocialSlide, type TemplatePreset } from "./types";
 
 const SYSTEM_PROMPT = `Você é a assistente editorial da professora Renata, criadora do perfil @textoemciclo ("Texto em Ciclo"), focado em escrita, redação, clareza textual, leitura e repertório.
@@ -121,7 +122,10 @@ function extractJson(text: string): Record<string, unknown> {
 async function callOpenAI(prompt: string): Promise<string> {
   const key = process.env.OPENAI_API_KEY?.trim();
   if (!key) throw new Error("NO_KEY");
-  const model = process.env.SOCIAL_OPENAI_MODEL?.trim() || "gpt-4o-mini";
+  const model =
+    process.env.OPENAI_MODEL?.trim() ||
+    process.env.SOCIAL_OPENAI_MODEL?.trim() ||
+    "gpt-4o-mini";
   const res = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -147,10 +151,42 @@ async function callOpenAI(prompt: string): Promise<string> {
   return data.choices?.[0]?.message?.content ?? "";
 }
 
+async function callDeepSeek(prompt: string): Promise<string> {
+  const key = process.env.DEEPSEEK_API_KEY?.trim();
+  if (!key) throw new Error("NO_KEY");
+  const model = process.env.DEEPSEEK_MODEL?.trim() || "deepseek-chat";
+  const res = await fetch("https://api.deepseek.com/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${key}`,
+    },
+    body: JSON.stringify({
+      model,
+      response_format: { type: "json_object" },
+      temperature: 0.7,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: prompt },
+      ],
+    }),
+    signal: AbortSignal.timeout(35_000),
+  });
+  if (!res.ok) {
+    const err = await res.text().catch(() => "");
+    throw new Error(`DeepSeek (${res.status}): ${err.slice(0, 200)}`);
+  }
+  const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
+  return data.choices?.[0]?.message?.content ?? "";
+}
+
 async function callGemini(prompt: string): Promise<string> {
   const key = process.env.GEMINI_API_KEY?.trim();
   if (!key) throw new Error("NO_KEY");
-  const model = process.env.SOCIAL_GEMINI_MODEL?.trim() || "gemini-2.5-flash";
+  const model =
+    process.env.GEMINI_MODEL?.trim() ||
+    process.env.SOCIAL_GEMINI_MODEL?.trim() ||
+    "gemini-2.5-flash";
   const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(key)}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -175,7 +211,10 @@ async function callGemini(prompt: string): Promise<string> {
 async function callAnthropic(prompt: string): Promise<string> {
   const key = process.env.ANTHROPIC_API_KEY?.trim();
   if (!key) throw new Error("NO_KEY");
-  const model = process.env.SOCIAL_ANTHROPIC_MODEL?.trim() || "claude-3-5-sonnet-latest";
+  const model =
+    process.env.ANTHROPIC_MODEL?.trim() ||
+    process.env.SOCIAL_ANTHROPIC_MODEL?.trim() ||
+    "claude-3-5-sonnet-latest";
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: {
@@ -199,11 +238,27 @@ async function callAnthropic(prompt: string): Promise<string> {
   return data.content?.[0]?.text ?? "";
 }
 
-export function getConfiguredAiProvider(): "openai" | "gemini" | "anthropic" | null {
+export type AiTextProvider = "openai" | "gemini" | "anthropic" | "deepseek";
+
+export function getConfiguredAiProvider(): AiTextProvider | null {
   if (process.env.OPENAI_API_KEY?.trim()) return "openai";
   if (process.env.GEMINI_API_KEY?.trim()) return "gemini";
   if (process.env.ANTHROPIC_API_KEY?.trim()) return "anthropic";
+  if (process.env.DEEPSEEK_API_KEY?.trim()) return "deepseek";
   return null;
+}
+
+async function runTextProvider(provider: AiTextProvider, prompt: string): Promise<string> {
+  switch (provider) {
+    case "openai":
+      return callOpenAI(prompt);
+    case "gemini":
+      return callGemini(prompt);
+    case "anthropic":
+      return callAnthropic(prompt);
+    case "deepseek":
+      return callDeepSeek(prompt);
+  }
 }
 
 export async function generateSocialDraft(input: {
@@ -211,20 +266,16 @@ export async function generateSocialDraft(input: {
   preset: TemplatePreset;
   slideCount?: number;
 }): Promise<SocialPost> {
+  await hydrateRuntimeKeys();
   const slideCount = Math.min(10, Math.max(3, input.slideCount ?? 6));
   const userPrompt = `${presetInstruction(input.preset, slideCount)}\n\nIDEIA / ANOTAÇÃO DA RENATA:\n"""\n${input.idea.trim()}\n"""`;
 
   const provider = getConfiguredAiProvider();
   if (!provider) {
-    throw new Error("Nenhuma chave de IA configurada (OPENAI_API_KEY, GEMINI_API_KEY ou ANTHROPIC_API_KEY).");
+    throw new Error("Nenhuma chave de IA configurada em /admin/chaves (OpenAI, Gemini, Anthropic ou DeepSeek).");
   }
 
-  const rawText =
-    provider === "openai"
-      ? await callOpenAI(userPrompt)
-      : provider === "gemini"
-        ? await callGemini(userPrompt)
-        : await callAnthropic(userPrompt);
+  const rawText = await runTextProvider(provider, userPrompt);
 
   const parsed = extractJson(rawText);
   const slides = sanitizeSlides(parsed.slides);
@@ -253,9 +304,10 @@ export async function generateSocialReelDraft(input: {
   trackId: string;
   accent?: string;
 }): Promise<{ reel: NonNullable<SocialPost["reel"]>; tokens: number }> {
+  await hydrateRuntimeKeys();
   const provider = getConfiguredAiProvider();
   if (!provider) {
-    throw new Error("Nenhuma chave de IA configurada (OPENAI_API_KEY, GEMINI_API_KEY ou ANTHROPIC_API_KEY).");
+    throw new Error("Nenhuma chave de IA configurada em /admin/chaves (OpenAI, Gemini, Anthropic ou DeepSeek).");
   }
 
   const prompt = `Crie um roteiro curto de vídeo tipográfico animado para o perfil @textoemciclo (professora Renata, dicas de escrita e redação).
@@ -279,12 +331,7 @@ IDEIA / TEMA:
 ${input.idea.trim() || "Como deixar qualquer parágrafo mais claro cortando excessos"}
 """`;
 
-  const rawText =
-    provider === "openai"
-      ? await callOpenAI(prompt)
-      : provider === "gemini"
-        ? await callGemini(prompt)
-        : await callAnthropic(prompt);
+  const rawText = await runTextProvider(provider, prompt);
 
   const parsed = extractJson(rawText);
   const openingLines = Array.isArray(parsed.openingLines)

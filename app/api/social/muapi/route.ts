@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { put } from "@vercel/blob";
+import { hydrateRuntimeKeys } from "@/lib/admin/apiKeys";
 import { hasValidWebhookToken, isSocialAuthenticated } from "@/lib/social/auth";
 import {
   getMuapiBalance,
@@ -57,6 +58,7 @@ export async function GET(request: NextRequest) {
   if (!(await authorize(request))) {
     return NextResponse.json({ error: "Não autorizado." }, { status: 401 });
   }
+  await hydrateRuntimeKeys();
 
   const requestId = request.nextUrl.searchParams.get("id")?.trim();
   const inlineDataUrl = request.nextUrl.searchParams.get("inline") === "1";
@@ -90,6 +92,7 @@ export async function POST(request: NextRequest) {
   if (!(await authorize(request))) {
     return NextResponse.json({ error: "Não autorizado." }, { status: 401 });
   }
+  await hydrateRuntimeKeys();
 
   const body = (await request.json().catch(() => null)) as {
     model?: string;

@@ -155,6 +155,21 @@ test("proxy redirects unauthenticated /admin requests to /admin/login and allows
       const loginRes = proxy(loginReq);
       assert.equal(loginRes.status, 307);
       assert.equal(new URL(loginRes.headers.get("location")!).pathname, "/admin/reels");
+
+      // /admin/chaves and /api/admin/keys are unlocked in production behind session auth
+      const chavesUnauth = proxy(new NextRequest("https://textoemciclo.vercel.app/admin/chaves"));
+      assert.equal(chavesUnauth.status, 307);
+      assert.equal(new URL(chavesUnauth.headers.get("location")!).searchParams.get("next"), "/admin/chaves");
+
+      const chavesAuth = proxy(
+        new NextRequest("https://textoemciclo.vercel.app/admin/chaves", {
+          headers: { cookie: `${SOCIAL_COOKIE_NAME}=${sessionToken}` },
+        }),
+      );
+      assert.equal(chavesAuth.headers.get("x-middleware-next"), "1");
+
+      const keysApiRes = proxy(new NextRequest("https://textoemciclo.vercel.app/api/admin/keys"));
+      assert.equal(keysApiRes.headers.get("x-middleware-next"), "1");
     },
   );
 });

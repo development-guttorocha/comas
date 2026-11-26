@@ -24,7 +24,6 @@ export default function AdminShell({ crumbs, actions, children }: { crumbs: Crum
   const pathname = usePathname() ?? "";
   const current = currentArea(pathname);
   const [signingOut, setSigningOut] = useState(false);
-  const isLocalHost = typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/i.test(window.location.hostname);
   const email = getCachedEmail();
   return (
     <AdminAuthGate>
@@ -38,9 +37,7 @@ export default function AdminShell({ crumbs, actions, children }: { crumbs: Crum
             </Link>
           ))}
           <span className={styles.railSpacer} />
-          {isLocalHost ? (
-            <Link href="/admin/chaves" className={styles.railButton} title="Chaves locais" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Chaves</span></Link>
-          ) : null}
+          <Link href="/admin/chaves" className={styles.railButton} title="Chaves de API" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Chaves</span></Link>
           <LockButton />
           <button
             type="button"

@@ -4,11 +4,13 @@ import { adminNotFound, translationAdminRequestAvailable } from "@/lib/translati
 
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const isComasAdminApi = pathname === "/api/admin/keys" || pathname.startsWith("/api/admin/keys/");
   const legacyLocalOnly =
-    pathname.startsWith("/api/admin/") ||
-    pathname === "/api/admin" ||
-    pathname.startsWith("/api/translations/") ||
-    pathname === "/api/translations";
+    !isComasAdminApi &&
+    (pathname.startsWith("/api/admin/") ||
+      pathname === "/api/admin" ||
+      pathname.startsWith("/api/translations/") ||
+      pathname === "/api/translations");
 
   if (legacyLocalOnly && !translationAdminRequestAvailable(request)) {
     return adminNotFound();

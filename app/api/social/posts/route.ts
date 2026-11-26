@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { hydrateRuntimeKeys } from "@/lib/admin/apiKeys";
 import { getConfiguredAiProvider } from "@/lib/social/ai";
 import {
   clearSessionCookie,
@@ -36,6 +37,8 @@ export async function GET(request: NextRequest) {
       { status: 401, headers: NO_STORE },
     );
   }
+
+  await hydrateRuntimeKeys();
 
   if (request.nextUrl.searchParams.get("session") === "1") {
     return NextResponse.json(

@@ -56,7 +56,7 @@ export default function AdminKeys({ initial, initialOpen }: { initial: KeyRow[];
 
   const save = (id: string) => run(async () => {
     const data = await api<{ keys: KeyRow[] }>("/api/admin/keys", { method: "PUT", body: { id, ...draft } });
-    setKeys(data.keys); setOpen(null); show("Chave salva no .env.local.");
+    setKeys(data.keys); setOpen(null); show("Chave salva com segurança.", "good");
   });
   const test = (id: string) => run(async () => {
     const r = await api<{ ok: boolean; message: string; models?: string[] }>("/api/admin/keys", { method: "POST", body: { id } });
@@ -64,13 +64,13 @@ export default function AdminKeys({ initial, initialOpen }: { initial: KeyRow[];
     show(r.message, r.ok ? "good" : "bad");
   });
   const remove = (k: KeyRow) => run(async () => {
-    if (!confirm(k.preset ? `Apagar o valor de ${k.env} do .env.local?` : `Remover ${k.label} e apagar ${k.env} do .env.local?`)) return;
+    if (!confirm(k.preset ? `Apagar o valor salvo de ${k.env}?` : `Remover ${k.label} (${k.env})?`)) return;
     const data = await api<{ keys: KeyRow[] }>(`/api/admin/keys?id=${encodeURIComponent(k.id)}`, { method: "DELETE" });
     setKeys(data.keys); setOpen(null); show("Chave removida.");
   });
   const addCustom = () => run(async () => {
     const data = await api<{ keys: KeyRow[] }>("/api/admin/keys", { method: "PUT", body: custom });
-    setKeys(data.keys); setAdding(false); setCustom({ label: "", env: "", value: "" }); show("Chave adicionada.");
+    setKeys(data.keys); setAdding(false); setCustom({ label: "", env: "", value: "" }); show("Chave adicionada.", "good");
   });
 
   return (
@@ -83,7 +83,7 @@ export default function AdminKeys({ initial, initialOpen }: { initial: KeyRow[];
         <div className={styles.headerRow}>
           <div>
             <h1 className={styles.title}>Chaves de API</h1>
-            <p className={styles.subtitle}>Ficam no .env.local deste computador, nunca no git. Para o site publicado, cadastre a mesma variável na Vercel.</p>
+            <p className={styles.subtitle}>Salvas de forma criptografada no painel (Supabase / .env.local) e aplicadas imediatamente nos geradores de IA e mídia.</p>
           </div>
         </div>
 
