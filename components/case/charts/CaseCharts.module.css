@@ -1,0 +1,79 @@
+/* Gráficos dos cases: cards no padrão dos stat cells, marcas finas e eixos discretos. */
+
+.card {
+  min-width: 0;
+  padding: var(--card-padding);
+  border-radius: var(--radius-card);
+  background: var(--color-card);
+}
+
+.title {
+  max-width: 40ch;
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.note {
+  margin-top: 24px;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ─── Antes → depois ─── */
+.beforeAfter { display: grid; gap: 36px; margin-top: 32px; }
+.row { min-width: 0; }
+.rowHead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 24px; margin-bottom: 14px; }
+.rowLabel { color: var(--color-ink); font-size: 16px; font-weight: 600; }
+.rowLabel::first-letter { text-transform: uppercase; }
+.rowValues { color: var(--color-muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.rowValues strong { color: var(--color-ink); font-weight: 600; }
+.track { position: relative; height: 28px; }
+.trackLine { position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--color-line); }
+.growth { position: absolute; top: calc(50% - 2px); height: 4px; border-radius: 2px; transform-origin: left center; }
+.dot { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; box-shadow: 0 0 0 3px var(--color-card); }
+.dotFrom { background: var(--color-muted); }
+.multiple { position: absolute; top: 50%; transform: translate(14px, -50%); color: var(--color-ink); font-size: 20px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.axis { position: relative; height: 20px; margin-top: 8px; border-top: 1px solid var(--color-line); }
+.tick { position: absolute; top: 6px; transform: translateX(-50%); color: var(--color-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.grid { position: absolute; inset: 0; pointer-events: none; }
+.gridLine { position: absolute; top: 0; bottom: 0; width: 1px; background: color-mix(in srgb, var(--color-line) 45%, transparent); }
+
+/* ─── Barras horizontais ─── */
+.bars { display: grid; gap: 22px; margin-top: 32px; }
+.bar { display: grid; gap: 10px; }
+.barHead { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.barLabel { color: var(--color-subtle); font-size: 15px; line-height: 1.4; }
+.barLabel span { display: block; color: var(--color-muted); font-size: 13px; }
+.barValue { color: var(--color-ink); font-size: 20px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.barTrack { height: 12px; border-radius: 6px; background: color-mix(in srgb, var(--color-line) 40%, transparent); overflow: hidden; }
+.barFill { height: 100%; min-width: 6px; border-radius: 6px; transform-origin: left center; }
+
+/* ─── Pontos (parte de um todo) ─── */
+.dotsLayout { display: grid; gap: 32px; align-items: center; margin-top: 32px; }
+.dotsGrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: clamp(5px, .8vw, 8px); width: 100%; max-width: 300px; }
+.unit { aspect-ratio: 1; border-radius: 50%; background: var(--color-line); }
+.dotsFigure { color: var(--color-ink); font-size: clamp(48px, 5vw, 80px); white-space: nowrap; font-weight: 700; line-height: 1; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 20px; color: var(--color-muted); font-size: 14px; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; }
+
+@media (min-width: 768px) {
+  .dotsLayout { grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); }
+}
+
+/* ─── Secção de gráficos inserida entre blocos do Notion ─── */
+.section { padding-bottom: clamp(48px, 6vw, 96px); }
+.pair { display: grid; gap: 24px; align-items: stretch; }
+@media (min-width: 1024px) {
+  .pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

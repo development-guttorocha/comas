@@ -1,0 +1,136 @@
+{
+  "nav": [
+    {
+      "label": {
+        "pt": "Ir para o início",
+        "en": "Home",
+        "enFrom": "Ir para o início"
+      },
+      "short": {
+        "pt": "Início",
+        "en": "Home",
+        "enFrom": "Início"
+      },
+      "href": "/"
+    },
+    {
+      "label": {
+        "pt": "Descubra minha história",
+        "en": "Discover my story",
+        "enFrom": "Descubra minha história"
+      },
+      "short": {
+        "pt": "História",
+        "en": "Story",
+        "enFrom": "História"
+      },
+      "href": "/sobre"
+    },
+    {
+      "label": {
+        "pt": "Meus Cases",
+        "en": "My case studies",
+        "enFrom": "Meus Cases"
+      },
+      "short": {
+        "pt": "Cases",
+        "en": "Case studies",
+        "enFrom": "Cases"
+      },
+      "href": "/cases"
+    },
+    {
+      "label": {
+        "pt": "Fale comigo",
+        "en": "Let's talk",
+        "enFrom": "Fale comigo"
+      },
+      "short": {
+        "pt": "Fale",
+        "en": "Talk",
+        "enFrom": "Fale"
+      },
+      "href": "/contato"
+    }
+  ],
+  "notFoundKicker": {
+    "pt": "Erro 404 · modo caça-fantasmas",
+    "en": "Error 404 · Ghostbusters mode",
+    "enFrom": "Erro 404 · modo caça-fantasmas"
+  },
+  "notFoundTitle": {
+    "pt": "Esta página atravessou um portal e não voltou.",
+    "en": "This page went through a portal and never came back.",
+    "enFrom": "Esta página atravessou um portal e não voltou."
+  },
+  "notFoundBody": {
+    "pt": "Não precisa ligar para Nova York: aqui não tem fantasma, só uma URL que não existe.",
+    "en": "No need to call New York: there are no ghosts here, just a URL that doesn't exist.",
+    "enFrom": "Não precisa ligar para Nova York: aqui não tem fantasma, só uma URL que não existe."
+  },
+  "notFoundButton": {
+    "pt": "Voltar ao início",
+    "en": "Back to home",
+    "enFrom": "Voltar ao início"
+  },
+  "notFoundAlt": {
+    "pt": "Ilustração estilo Stay Puft — nada de fantasmas nesta rota",
+    "en": "Stay Puft-style illustration — no ghosts on this route",
+    "enFrom": "Ilustração estilo Stay Puft — nada de fantasmas nesta rota"
+  },
+  "homeTitle": {
+    "pt": "Gutto Rocha — Design para pessoas",
+    "en": "Gutto Rocha — Design for people",
+    "enFrom": "Gutto Rocha — Design para pessoas"
+  },
+  "homeDescription": {
+    "pt": "Designer com mais de 18 anos de experiência. Produtos que funcionam, impacto para negócios.",
+    "en": "Designer with over 18 years of experience. Products that work, impact for business.",
+    "enFrom": "Designer com mais de 18 anos de experiência. Produtos que funcionam, impacto para negócios."
+  },
+  "sobreTitle": {
+    "pt": "Sobre — O mundo muda. Eu continuo curioso.",
+    "en": "About — The world changes. I stay curious.",
+    "enFrom": "Sobre — O mundo muda. Eu continuo curioso."
+  },
+  "sobreDescription": {
+    "pt": "Designer brasileiro com mais de 18 anos de experiência. Liderança de design em produtos digitais.",
+    "en": "Brazilian designer with over 18 years of experience. Design leadership in digital products.",
+    "enFrom": "Designer brasileiro com mais de 18 anos de experiência. Liderança de design em produtos digitais."
+  },
+  "casesTitle": {
+    "pt": "Cases — trabalhos selecionados · Gutto Rocha",
+    "en": "Case studies — selected work · Gutto Rocha",
+    "enFrom": "Cases — trabalhos selecionados · Gutto Rocha"
+  },
+  "casesDescription": {
+    "pt": "Cases de design de produto e liderança de design em Creator Ads, PicPay, Loft, Banco PAN, Webmotors e Plenno: o problema, o processo e os resultados de cada projeto.",
+    "en": "Product design and design leadership case studies at Creator Ads, PicPay, Loft, Banco PAN, Webmotors and Plenno: the problem, the process and the results of each project.",
+    "enFrom": "Cases de design de produto e liderança de design em Creator Ads, PicPay, Loft, Banco PAN, Webmotors e Plenno: o problema, o processo e os resultados de cada projeto."
+  },
+  "curriculoTitle": {
+    "pt": "Currículo — Gutto Rocha",
+    "en": "Resume — Gutto Rocha",
+    "enFrom": "Currículo — Gutto Rocha"
+  },
+  "curriculoDescription": {
+    "pt": "Resumo profissional, experiência, formação e habilidades — Gutto Rocha.",
+    "en": "Professional summary, experience, education, and skills — Gutto Rocha.",
+    "enFrom": "Resumo profissional, experiência, formação e habilidades — Gutto Rocha."
+  },
+  "contatoTitle": {
+    "pt": "Contato — Gutto Rocha",
+    "en": "Contact — Gutto Rocha",
+    "enFrom": "Contato — Gutto Rocha"
+  },
+  "contatoDescription": {
+    "pt": "Entre em contato por e-mail, telefone ou redes sociais. Guarulhos, SP, Brasil.",
+    "en": "Get in touch by email, phone, or social media. Guarulhos, SP, Brazil.",
+    "enFrom": "Entre em contato por e-mail, telefone ou redes sociais. Guarulhos, SP, Brasil."
+  },
+  "personDescription": {
+    "pt": "Designer com mais de 18 anos de experiência. Resolvo problemas. Com design e com quem faz acontecer.",
+    "en": "18 years of experience in design. I solve problems. With design and people who make things happen.",
+    "enFrom": "Designer com mais de 18 anos de experiência. Resolvo problemas. Com design e com quem faz acontecer."
+  }
+}

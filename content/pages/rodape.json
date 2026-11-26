@@ -1,0 +1,81 @@
+{
+  "kicker": {
+    "pt": "O mundo muda. Eu continuo curioso.",
+    "en": "The world changes. I stay curious.",
+    "enFrom": "O mundo muda. Eu continuo curioso."
+  },
+  "title": {
+    "pt": "Vamos construir o próximo capítulo?",
+    "en": "Shall we build the next chapter?",
+    "enFrom": "Vamos construir o próximo capítulo?"
+  },
+  "links": [
+    {
+      "label": {
+        "pt": "Vamos conversar",
+        "en": "Let's talk",
+        "enFrom": "Vamos conversar"
+      },
+      "href": "/contato"
+    },
+    {
+      "label": {
+        "pt": "Serviços para empresas",
+        "en": "Services for companies",
+        "enFrom": "Serviços para empresas"
+      },
+      "href": "/servicos"
+    },
+    {
+      "label": {
+        "pt": "Ver currículo completo",
+        "en": "View full resume",
+        "enFrom": "Ver currículo completo"
+      },
+      "href": "/curriculo"
+    }
+  ],
+  "wordmark": "©guttorocha",
+  "pills": [
+    {
+      "label": {
+        "pt": "guttorsbueno@gmail.com",
+        "en": "guttorsbueno@gmail.com",
+        "enFrom": "guttorsbueno@gmail.com"
+      },
+      "href": "mailto:guttorsbueno@gmail.com"
+    },
+    {
+      "label": {
+        "pt": "+55 11 9 6325-1446",
+        "en": "+55 11 9 6325-1446",
+        "enFrom": "+55 11 9 6325-1446"
+      },
+      "href": "tel:+5511963251446"
+    },
+    {
+      "label": {
+        "pt": "LinkedIn",
+        "en": "LinkedIn",
+        "enFrom": "LinkedIn"
+      },
+      "href": "https://www.linkedin.com/in/guttorocha/"
+    },
+    {
+      "label": {
+        "pt": "Instagram",
+        "en": "Instagram",
+        "enFrom": "Instagram"
+      },
+      "href": "https://instagram.com/guttorocha.design"
+    },
+    {
+      "label": {
+        "pt": "Dribbble",
+        "en": "Dribbble",
+        "enFrom": "Dribbble"
+      },
+      "href": "https://dribbble.com/guttorocha"
+    }
+  ]
+}

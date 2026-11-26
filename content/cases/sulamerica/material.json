@@ -1,0 +1,143 @@
+{
+  "period": {
+    "text": "2025 e 2026",
+    "origins": [
+      {
+        "source": "gutto",
+        "file": "Você, na conversa",
+        "where": "11 de nov., 22:16",
+        "excerpt": "atuando como design manager em 2025 e 2026"
+      }
+    ],
+    "by": "ia"
+  },
+  "roleTitle": {
+    "text": "Líder de design de Marketing & Vendas, atuando como design manager",
+    "origins": [
+      {
+        "source": "gutto",
+        "file": "Você, na conversa",
+        "where": "11 de nov., 22:16",
+        "excerpt": "Eu redesenhei todo o Portal como Líder de design de Marketing & Vendas, dentro da estrutura da SulAmérica, atuando como design manager em 2025 e 2026"
+      }
+    ],
+    "by": "ia"
+  },
+  "changes": {
+    "text": "Redesenhou todo o Portal",
+    "origins": [
+      {
+        "source": "gutto",
+        "file": "Você, na conversa",
+        "where": "11 de nov., 22:16",
+        "excerpt": "Eu redesenhei todo o Portal"
+      }
+    ],
+    "by": "ia"
+  },
+  "decisions": [
+    {
+      "decision": "Os relatórios direcionaram o caminho que o fluxo deveria seguir e a pesquisa de motivos direcionou totalmente o desenho de experiência",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:17",
+          "excerpt": "Os relatórios direcionaram o caminho que o fluxo deveria seguir e ajudaram a entender o churn no funil, além disso a pesquisa de motivos direcionou totalmente o desenho de experiência"
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "Redesenhou o fluxo de chat, o fluxo total",
+      "why": "o fluxo era problemático e tinha vários gaps de interface; o foco foi melhoria de conversão e diminuição do churn, redesenhando a experiência focado em desenho de jornada de ecommerce rápido",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:19",
+          "excerpt": "O redesenho do fluxo chat, que era problemático, tinha vários gaps de interface"
+        },
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:20",
+          "excerpt": "O fluxo total e o foco foi seguir rumo a melhoria de conversão e diminuição do Churn redesenhando a experiência focado em desenho de jornada de ecommerce rápido"
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "A interface toda mudou",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:21",
+          "excerpt": "A interface toda mudou."
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "As decisões de design vieram do relatório de motivos de abandono do Portal Seguro Viagem",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:22",
+          "excerpt": "Usei tudo que tá no PPT dos motivos de abandono, as decisões vem dele"
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "Criar FAQ contextual respondendo dúvidas como sobre Schengen",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:23",
+          "excerpt": "Criar a Faq contextual que responde o usuário sobre as dúvidas relacionadas a perguntas como por exemplo Schengen"
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "Mostrar cupons na tela de pagamento",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:23",
+          "excerpt": "mostrar na tela de pagamentos os cupons"
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "Mostrar rapidamente o que o plano selecionado cobre",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:23",
+          "excerpt": "mostrar o que o plano selecionado cobre rapidamente"
+        }
+      ],
+      "by": "ia"
+    },
+    {
+      "decision": "Fluxo com Home exploratória e foco em converter",
+      "origins": [
+        {
+          "source": "gutto",
+          "file": "Você, na conversa",
+          "where": "11 de nov., 22:23",
+          "excerpt": "escolher direcionar o fluxo sendo a Home exploratória e o fluxo focado em converter"
+        }
+      ],
+      "by": "ia"
+    }
+  ]
+}

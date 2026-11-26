@@ -1,0 +1,197 @@
+{
+  "track": "limit-zambolino",
+  "end": 136,
+  "fadeOut": [
+    128,
+    136
+  ],
+  "cover": 2,
+  "accent": "#ff774a",
+  "title": "Design Manager · 4 reconhecimentos financeiros.",
+  "draft": true,
+  "cta": {
+    "label": "Ver currículo",
+    "href": "/curriculo"
+  },
+  "motion": "premium",
+  "scenes": [
+    {
+      "id": "title-1",
+      "at": 0,
+      "chapter": "Quem",
+      "kind": "title",
+      "lines": [
+        "Design Manager.",
+        "*4* reconhecimentos",
+        "financeiros."
+      ],
+      "eyebrow": "Loft · 2022–2023",
+      "image": "/cases/loft-design/loft-cover.png",
+      "imgEnter": "fade",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "cut"
+    },
+    {
+      "id": "role-1",
+      "at": 12,
+      "chapter": "Papel",
+      "kind": "role",
+      "heading": "Liderei o design em *2 tribos* de growth.",
+      "facts": [
+        {
+          "label": "Função",
+          "value": "Design Manager"
+        },
+        {
+          "label": "Time",
+          "value": "6 designers diretos"
+        },
+        {
+          "label": "Tempo",
+          "value": "2022–2023"
+        },
+        {
+          "label": "Escopo",
+          "value": "2 tribos de growth"
+        }
+      ],
+      "factsAt": 2,
+      "step": 1,
+      "backdrop": "/cases/loft-design/55.png",
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "title-2",
+      "at": 28,
+      "chapter": "Problema",
+      "kind": "title",
+      "lines": [
+        "O time precisava",
+        "evoluir e entregar",
+        "com consistência."
+      ],
+      "image": "/cases/loft-design/21.png",
+      "imgEnter": "crop",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "image-1",
+      "at": 36,
+      "chapter": "Decisão",
+      "kind": "image",
+      "src": "/cases/loft-design/03-1.png",
+      "fit": "split",
+      "imgEnter": "side",
+      "imgMotion": "panRight",
+      "imgFrame": "browser",
+      "imgFocus": "30% 20%",
+      "lines": [
+        "*Realoquei* o designer",
+        "para outro time."
+      ],
+      "body": "Ele não aproveitava suas habilidades no time.",
+      "textAt": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "list-1",
+      "at": 44,
+      "chapter": "Gestão",
+      "kind": "list",
+      "heading": "Organizei desenvolvimento e alinhamento para dar *clareza*.",
+      "items": [
+        "Conversas de carreira e",
+        "Revisões de entregas e alinhamento",
+        "Retrospectivas e planejamento"
+      ],
+      "itemsAt": 2,
+      "step": 2,
+      "backdrop": "/cases/loft-design/loft-cover-3.png",
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "number-1",
+      "at": 52,
+      "chapter": "Resultado",
+      "kind": "number",
+      "value": 4,
+      "label": "reconhecimentos financeiros",
+      "countBeats": 4,
+      "barsAt": 6,
+      "step": 1,
+      "source": "1 pessoa em desenvolvimento para gestão",
+      "enter": "curtain",
+      "enterBeats": 1
+    },
+    {
+      "id": "screens-1",
+      "at": 64,
+      "chapter": "Produto",
+      "kind": "screens",
+      "title": "O time também cuidava do app B2C.",
+      "titleOut": 3.75,
+      "boards": [
+        {
+          "src": "/cases/loft-design/56.png",
+          "focus": "center"
+        }
+      ],
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "quote-1",
+      "at": 76,
+      "chapter": "Prova",
+      "kind": "quote",
+      "quote": "Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers.",
+      "author": "Designer na Loft",
+      "role": "Loft",
+      "quoteAt": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "image-2",
+      "at": 92,
+      "chapter": "Aprendizado",
+      "kind": "image",
+      "src": "/cases/loft-design/loft-cover-2.png",
+      "fit": "split",
+      "imgEnter": "rise",
+      "imgMotion": "in",
+      "imgFrame": "card",
+      "lines": [
+        "Antes de avaliar",
+        "entrega, entendo",
+        "as *condições*."
+      ],
+      "body": "Desafio, expectativas, habilidades e apoio.",
+      "textAt": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "end-1",
+      "at": 104,
+      "kind": "end",
+      "lines": [
+        "Desenvolvo pessoas",
+        "para *destravar times*."
+      ],
+      "meta": "Loft · Design Manager · 2022–2023",
+      "signature": "Gutto Rocha",
+      "enter": "fade",
+      "enterBeats": 1
+    }
+  ]
+}

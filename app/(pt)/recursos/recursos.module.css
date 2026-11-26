@@ -1,0 +1,29 @@
+/* Design Resources: pieces shared by the designer pages, which otherwise use the service pages'
+   frame (service-shell.module.css) and each have their own module. The --paper-* names are the
+   tokens these pieces were drawn with; here they are the site's dark values. */
+.page {
+  --paper: #000000;
+  --paper-2: #10171a;
+  --paper-ink: var(--color-ink);
+  --paper-text: #c9c9c2;
+  --paper-muted: var(--color-dim);
+  --paper-line: #263238;
+  --raised: var(--color-card);
+  --violet-ink: color-mix(in srgb, var(--svc-accent) 75%, #fff);
+  --wrap: var(--content-width);
+}
+
+/* ─── Raise check (RaiseCheck) ─── */
+.guideChecklist { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; font-size: 18px; line-height: 1.5; }
+.guideChecklist label { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: var(--radius-note); background: var(--raised); box-shadow: inset 0 0 0 1px var(--paper-line); cursor: pointer; transition: box-shadow .2s, background-color .2s; }
+.guideChecklist input { flex: none; width: 20px; height: 20px; margin-top: 5px; accent-color: var(--violet-ink); cursor: pointer; }
+.guideChecklist label:has(input:checked) { background: color-mix(in srgb, var(--svc-accent) 16%, var(--raised)); box-shadow: 0 0 0 1.5px var(--violet-ink); }
+.raise { display: grid; gap: 16px; }
+.raiseResult { display: grid; gap: 6px; padding: var(--card-padding); border-radius: var(--radius-note); background: var(--paper-2); }
+.raiseResult span { color: var(--paper-muted); font-size: 14px; font-weight: 700; }
+.raiseResult strong { font-size: clamp(24px, 2.2vw, 32px); letter-spacing: var(--tracking-title); }
+.raiseResult p { margin: 0; color: var(--paper-text); font-size: 18px; line-height: var(--leading-text); }
+.raiseResult[data-level="2"] { background: var(--svc-accent); color: var(--svc-on-accent); }
+.raiseResult[data-level="2"] span { color: inherit; opacity: .7; }
+.raiseResult[data-level="2"] p { color: inherit; opacity: .85; }
+

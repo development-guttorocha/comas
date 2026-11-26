@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "targets": {
+    "case-detail-video": {
+      "route": "/cases/[slug]",
+      "projectId": "5987396a-4683-45ea-869a-3b162c4175f1",
+      "baselineDraftId": "c9da801d-8208-4b89-9418-c61664c0ac8b",
+      "activeDraftId": "c9da801d-8208-4b89-9418-c61664c0ac8b",
+      "branches": {
+        "A-hero": "5837cbd0-bf43-4ab9-8cb6-82f5e81536ba",
+        "B-card": "cc0bae0d-3b24-437f-be2c-c3fe148657bb",
+        "C-inline": "080ee215-19fd-498c-a38a-317180bbc8d4",
+        "D-button": "6528f87a-a264-41b7-84ba-6a1f746cf817"
+      },
+      "model": "gemini-3.1-pro",
+      "referenceIds": ["brand-logo-mark", "68e0b726-0adf-4caf-9829-2590615ba097"],
+      "contextFiles": [".superdesign/design-system.md", "app/design-tokens.css", "app/globals.css", "lib/caseDetailPage.tsx:120:249", "components/case/CaseShell.tsx", "components/case/CaseChrome.module.css", "components/case/blocks/CaseHeroFullBleed.tsx", "components/case/blocks/CaseHeroMetaStrip.tsx", "components/reel/CaseReel.tsx", "components/reel/caseReel.module.css", "components/PrimaryNav.tsx", "components/PrimaryNav.module.css"]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+/* Editor do painel: os textos do topo, depois cada card com o seu tipo. */
+.editor { display: grid; gap: 16px; }
+.cards { display: grid; gap: 12px; }
+.card { display: grid; gap: 14px; padding: 12px 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: rgb(255 255 255 / 2%); }
+.cardHead { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.cardName { color: var(--muted); font-size: 12px; }
+.kinds { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border: 1px solid var(--line); border-radius: 8px; }
+.kind { height: 26px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
+.kind:hover { color: var(--ink); }
+.kind[aria-checked="true"] { background: var(--raised); color: var(--ink); }
+.tools { display: inline-flex; gap: 2px; margin-left: auto; }
+.tool { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer; }
+.tool:hover:not(:disabled) { background: var(--raised); color: var(--ink); }
+.tool:disabled { opacity: .3; }
+.tool svg { width: 14px; height: 14px; }
+.chart { padding-top: 12px; border-top: 1px solid var(--line); }
+.add { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; }
+.addButton { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 10px; border: 1px solid var(--line); border-radius: 7px; background: transparent; color: var(--ink); font: inherit; font-size: 12px; cursor: pointer; }
+.addButton:hover { background: rgb(255 255 255 / 6%); }
+.addButton svg { width: 13px; height: 13px; }

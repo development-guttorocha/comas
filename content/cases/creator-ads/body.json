@@ -1,0 +1,960 @@
+[
+  {
+    "id": "910bd46c-1694-4a5e-a8d6-54620dbc8c95",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "none",
+      "case_space_bottom": "sm"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-807d-af19-cb16797aaeee",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 1] Contexto [/-nav 1+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 1] Contexto [/-nav 1+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "6a59521e-2714-42a3-895e-376c32680576",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseTitleBox] {\"title\":\"A promessa de valor\",\"continuation\":\"precisava fazer sentido\",\"body\":\"O Creator Ads já conectava marcas a pessoas que criavam conteúdo. Havia campanhas, recompensas e gente interessada em participar. Mas a experiência deixava uma pergunta importante em aberto: como eu posso ganhar dinheiro aqui?\\n\\nNesse contexto, meu papel como head de design, além de construir o time de design, era dar uma direção à experiência dos creators tornando a proposta de valor clara e facilitando o caminho entre descobrir uma campanha, participar e receber.\",\"spaceTop\":\"md\",\"spaceBottom\":\"none\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseTitleBox] {\"title\":\"A promessa de valor\",\"continuation\":\"precisava fazer sentido\",\"body\":\"O Creator Ads já conectava marcas a pessoas que criavam conteúdo. Havia campanhas, recompensas e gente interessada em participar. Mas a experiência deixava uma pergunta importante em aberto: como eu posso ganhar dinheiro aqui?\\n\\nNesse contexto, meu papel como head de design, além de construir o time de design, era dar uma direção à experiência dos creators tornando a proposta de valor clara e facilitando o caminho entre descobrir uma campanha, participar e receber.\",\"spaceTop\":\"md\",\"spaceBottom\":\"none\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "88c727d3-f044-49f6-a182-442e43465983",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseFlowDiagram] {\"layout\":\"circles\",\"nodes\":[{\"id\":\"n1\",\"title\":\"Criar\",\"body\":\"Conteúdo\"},{\"id\":\"n2\",\"title\":\"Publicar\",\"body\":\"nas redes\"},{\"id\":\"n3\",\"title\":\"Divulgar\",\"body\":\"para os seguidores\"},{\"id\":\"nmvv3chlidoq\",\"title\":\"Mostrar\",\"body\":\"Recebidos\"},{\"id\":\"nmvv3d2gq4ns\",\"title\":\"Ganhar\",\"tone\":\"brand\",\"body\":\"Dinheiro\"}],\"arrange\":\"horizontal\",\"sectionLabel\":\"\",\"spaceBottom\":\"lg\",\"spaceTop\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseFlowDiagram] {\"layout\":\"circles\",\"nodes\":[{\"id\":\"n1\",\"title\":\"Criar\",\"body\":\"Conteúdo\"},{\"id\":\"n2\",\"title\":\"Publicar\",\"body\":\"nas redes\"},{\"id\":\"n3\",\"title\":\"Divulgar\",\"body\":\"para os seguidores\"},{\"id\":\"nmvv3chlidoq\",\"title\":\"Mostrar\",\"body\":\"Recebidos\"},{\"id\":\"nmvv3d2gq4ns\",\"title\":\"Ganhar\",\"tone\":\"brand\",\"body\":\"Dinheiro\"}],\"arrange\":\"horizontal\",\"sectionLabel\":\"\",\"spaceBottom\":\"lg\",\"spaceTop\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "55a76858-c3bd-4d3c-8414-481e82569c94",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-8077-b1ac-e0d14a6a6114",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 2] Diagnóstico [/-nav 2+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 2] Diagnóstico [/-nav 2+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-8070-ba12-d792b2149063",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseTitleBox] {\"continuation\":\"precisava sair da promessa\",\"body\":\"Os dados que reunimos mostravam uma distância entre influenciar uma compra e conseguir viver da criação de conteúdo. Para o Creator Ads, aproximar essas duas coisas era parte central da proposta.\\n\\nComecei então com uma hipótese: mostrar melhor as recompensas e facilitar a participação poderia ajudar mais creators a aproveitar as campanhas. Antes de mexer nas telas, eu precisava entender o que estava dificultando esse caminho.\",\"title\":\"Ganhar dinheiro\",\"spaceBottom\":\"md\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseTitleBox] {\"continuation\":\"precisava sair da promessa\",\"body\":\"Os dados que reunimos mostravam uma distância entre influenciar uma compra e conseguir viver da criação de conteúdo. Para o Creator Ads, aproximar essas duas coisas era parte central da proposta.\\n\\nComecei então com uma hipótese: mostrar melhor as recompensas e facilitar a participação poderia ajudar mais creators a aproveitar as campanhas. Antes de mexer nas telas, eu precisava entender o que estava dificultando esse caminho.\",\"title\":\"Ganhar dinheiro\",\"spaceBottom\":\"md\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "a0728e1b-5e63-4f97-b80d-4d517f61ca30",
+    "type": "video",
+    "has_children": false,
+    "video": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/background-all-black-no-colors-ad289dbf.mp4"
+      },
+      "poster": "/cases/creator-ads/background-all-black-no-colors-ad289dbf-capa.webp",
+      "case_size": "w25",
+      "case_border": false
+    }
+  },
+  {
+    "id": "33a7bcc8-93e5-8064-80bd-dfe2f3fd50fa",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"spaceBottom\":\"sm\",\"body\":\"De onde partimos?\",\"caption\":\"Através da pesquisa da Statista de 2019 / 2022, conseguimos entender que o número de creators no Brasil hoje é bastante alto, mas poucos desses creators conseguiam ter realmente renda vinda da criação de conteúdo.\",\"spaceTop\":\"md\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"spaceBottom\":\"sm\",\"body\":\"De onde partimos?\",\"caption\":\"Através da pesquisa da Statista de 2019 / 2022, conseguimos entender que o número de creators no Brasil hoje é bastante alto, mas poucos desses creators conseguiam ter realmente renda vinda da criação de conteúdo.\",\"spaceTop\":\"md\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CasePanel] {\"cards\":[{\"kind\":\"stack\",\"title\":\"Dimensionamento\",\"items\":[{\"label\":\"PAM - América Latina\",\"figure\":\"668 milhões\",\"body\":\"Potential Available Market\"},{\"label\":\"TAM - Brasil\",\"figure\":\"216 milhões\",\"body\":\"Total Addressable Market\"},{\"label\":\"Número total de creators no Brasil\",\"figure\":\"110 milhões\",\"body\":\"Tamanho total da oportunidade\"}],\"source\":\"Statista - 2019 / 2022\",\"span\":3,\"look\":\"plain\",\"layout\":\"columns\"},{\"kind\":\"chart\",\"title\":\"Distribuição dos creators por idade e potencial\",\"chart\":{\"type\":\"bar\",\"highlight\":\"2,3,4\",\"suffix\":\" mi\",\"categories\":[\"10–18\",\"18–24\",\"25–34\",\"35–44\",\"45-59\",\"60+\"],\"series\":[{\"label\":\"Pessoas\",\"color\":\"brand\",\"values\":[27.9,19.6,26,15.6,12.6,8.7]}]},\"source\":\"Statista - 2019 / 2022\"},{\"kind\":\"chart\",\"title\":\"Monetização por creator\",\"chart\":{\"type\":\"progress\",\"tones\":true,\"suffix\":\"%\",\"categories\":[\"Sem renda\",\"US$ 1 - 100\",\"US$ 100 - 200\",\"US$ 200 - 500\",\"Acima de 500\"],\"series\":[{\"label\":\"Valor\",\"values\":[23,25,19,18,14]}]},\"source\":\"Statista - 2019 / 2022\"},{\"kind\":\"stack\",\"items\":[{\"figure\":\"75%\",\"body\":\"Sonham se tornar creators\",\"label\":\"Entre jovens até 24 anos\"},{\"label\":\"Globalmente\",\"figure\":\"1 bilhão de pessoas\",\"body\":\"se identificarão como creators nos próximos 5 anos\"}]}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CasePanel] {\"cards\":[{\"kind\":\"stack\",\"title\":\"Dimensionamento\",\"items\":[{\"label\":\"PAM - América Latina\",\"figure\":\"668 milhões\",\"body\":\"Potential Available Market\"},{\"label\":\"TAM - Brasil\",\"figure\":\"216 milhões\",\"body\":\"Total Addressable Market\"},{\"label\":\"Número total de creators no Brasil\",\"figure\":\"110 milhões\",\"body\":\"Tamanho total da oportunidade\"}],\"source\":\"Statista - 2019 / 2022\",\"span\":3,\"look\":\"plain\",\"layout\":\"columns\"},{\"kind\":\"chart\",\"title\":\"Distribuição dos creators por idade e potencial\",\"chart\":{\"type\":\"bar\",\"highlight\":\"2,3,4\",\"suffix\":\" mi\",\"categories\":[\"10–18\",\"18–24\",\"25–34\",\"35–44\",\"45-59\",\"60+\"],\"series\":[{\"label\":\"Pessoas\",\"color\":\"brand\",\"values\":[27.9,19.6,26,15.6,12.6,8.7]}]},\"source\":\"Statista - 2019 / 2022\"},{\"kind\":\"chart\",\"title\":\"Monetização por creator\",\"chart\":{\"type\":\"progress\",\"tones\":true,\"suffix\":\"%\",\"categories\":[\"Sem renda\",\"US$ 1 - 100\",\"US$ 100 - 200\",\"US$ 200 - 500\",\"Acima de 500\"],\"series\":[{\"label\":\"Valor\",\"values\":[23,25,19,18,14]}]},\"source\":\"Statista - 2019 / 2022\"},{\"kind\":\"stack\",\"items\":[{\"figure\":\"75%\",\"body\":\"Sonham se tornar creators\",\"label\":\"Entre jovens até 24 anos\"},{\"label\":\"Globalmente\",\"figure\":\"1 bilhão de pessoas\",\"body\":\"se identificarão como creators nos próximos 5 anos\"}]}]}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "6f074b7a-f7a0-4c48-81e8-91c189c0cc01",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Ouvindo os creators\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\",\"caption\":\"Conversei e fiz testes com 10 creators, coletei as gravações de navegação e analisei dados do suporte. Essas informações ajudaram a comparar o que as pessoas contavam com o que acontecia quando tentavam usar o produto.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Ouvindo os creators\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\",\"caption\":\"Conversei e fiz testes com 10 creators, coletei as gravações de navegação e analisei dados do suporte. Essas informações ajudaram a comparar o que as pessoas contavam com o que acontecia quando tentavam usar o produto.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "11d1c271-a4cf-457c-82b2-fbcbd39bc310",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/foto-pesquisa-creatorads-4.png"
+      }
+    }
+  },
+  {
+    "id": "e1ecc949-498c-46dd-9274-e238ee399e64",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseTimeline] {\"items\":[{\"date\":\"Creators\",\"title\":\"10\",\"highlight\":true},{\"title\":\"5\",\"date\":\"Ativos\"},{\"date\":\"Ex-Usuários\",\"title\":\"2\"},{\"date\":\"Potenciais\",\"title\":\"3\",\"highlight\":true}],\"spaceTop\":\"none\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseTimeline] {\"items\":[{\"date\":\"Creators\",\"title\":\"10\",\"highlight\":true},{\"title\":\"5\",\"date\":\"Ativos\"},{\"date\":\"Ex-Usuários\",\"title\":\"2\"},{\"date\":\"Potenciais\",\"title\":\"3\",\"highlight\":true}],\"spaceTop\":\"none\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "67cbaf87-3933-4cba-89c1-2e8425739392",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CasePanel] {\"cards\":[{\"kind\":\"quote\",\"title\":\"Gravação de sessão do usuário\",\"src\":\"/cases/creator-ads/smartlook-4.png\"},{\"kind\":\"quote\",\"title\":\"Dados coletados no suporte\",\"src\":\"/cases/creator-ads/suporte-3.png\"},{\"kind\":\"text\",\"body\":\"Até quem já usava o aplicativo tinha dificuldade para entender a mecânica de ganhos. Participar exigia passar por fluxos longos, enquanto as campanhas nem sempre traziam as informações necessárias para decidir se aquela oportunidade fazia sentido.\\n\\nAs dúvidas sobre saldo e as falhas nos cupons apareciam nas conversas com o suporte. Havia também problemas de instabilidade, que precisavam ser tratados com engenharia. Aos poucos, ficou mais claro onde concentrar o esforço do time: explicar a oportunidade, facilitar a participação e dar visibilidade ao dinheiro.\",\"bullets\":\"Cupons com falha\\nSaldos que não apareciam\\nRecompensas não recebidas\\nInstabilidade\"}],\"spaceTop\":\"none\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CasePanel] {\"cards\":[{\"kind\":\"quote\",\"title\":\"Gravação de sessão do usuário\",\"src\":\"/cases/creator-ads/smartlook-4.png\"},{\"kind\":\"quote\",\"title\":\"Dados coletados no suporte\",\"src\":\"/cases/creator-ads/suporte-3.png\"},{\"kind\":\"text\",\"body\":\"Até quem já usava o aplicativo tinha dificuldade para entender a mecânica de ganhos. Participar exigia passar por fluxos longos, enquanto as campanhas nem sempre traziam as informações necessárias para decidir se aquela oportunidade fazia sentido.\\n\\nAs dúvidas sobre saldo e as falhas nos cupons apareciam nas conversas com o suporte. Havia também problemas de instabilidade, que precisavam ser tratados com engenharia. Aos poucos, ficou mais claro onde concentrar o esforço do time: explicar a oportunidade, facilitar a participação e dar visibilidade ao dinheiro.\",\"bullets\":\"Cupons com falha\\nSaldos que não apareciam\\nRecompensas não recebidas\\nInstabilidade\"}],\"spaceTop\":\"none\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "43d7e389-5d7a-4869-b2df-f028b8766940",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"O que aprendi olhando para outros produtos\",\"caption\":\"No Airbnb, me chamou a atenção a possibilidade de entender o potencial de ganho antes de começar o cadastro. No TikTok, olhei para a organização das oportunidades e a conexão com marcas. A SocialSoul também trouxe referências de linguagem e orientação nos primeiros passos.\",\"spaceBottom\":\"md\",\"spaceTop\":\"md\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"O que aprendi olhando para outros produtos\",\"caption\":\"No Airbnb, me chamou a atenção a possibilidade de entender o potencial de ganho antes de começar o cadastro. No TikTok, olhei para a organização das oportunidades e a conexão com marcas. A SocialSoul também trouxe referências de linguagem e orientação nos primeiros passos.\",\"spaceBottom\":\"md\",\"spaceTop\":\"md\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "33a7bcc8-93e5-80ef-81c5-f84748a52c3c",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/benchairbnb.png"
+      },
+      "mobile_url": "/cases/creator-ads/ca-r3-07-benchmark-airbnb-mobile.webp"
+    }
+  },
+  {
+    "id": "33a7bcc8-93e5-804b-b279-ce2627903018",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/benchttk.png"
+      },
+      "mobile_url": "/cases/creator-ads/ca-r3-08-benchmark-tiktok-mobile.webp"
+    }
+  },
+  {
+    "id": "480338bc-7faf-4b81-8156-7b23c4b78282",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/benchssoul.png"
+      }
+    }
+  },
+  {
+    "id": "7c5dbbe8-5453-4a27-b74e-93c21c9b5814",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "none",
+      "case_space_top": "sm",
+      "case_space_bottom": "sm"
+    }
+  },
+  {
+    "id": "b4af6acd-c0e0-4fb4-af09-97c92c250c70",
+    "type": "video",
+    "has_children": false,
+    "video": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/metallic-coin-spinning-on-axis-626dc537.mp4"
+      },
+      "poster": "/cases/creator-ads/metallic-coin-spinning-on-axis-626dc537-capa.webp",
+      "case_size": "w25",
+      "case_crop": {
+        "x": 0.97,
+        "y": 0,
+        "w": 98.49,
+        "h": 100,
+        "r": 1.7509
+      },
+      "case_border": false
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-80ce-8e4c-d08e84038d11",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 3] Decisão [/-nav 3+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 3] Decisão [/-nav 3+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "23126e9b-842e-4c27-b6e8-d7343d4ac803",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Direcionando a experiência\",\"caption\":\"Com tudo que aprendi em mãos, organizei as prioridades, sempre com foco em construir a melhor experiência para os creators. Mostrar os ganhos e melhorar a descoberta de campanhas eram essenciais. \"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Direcionando a experiência\",\"caption\":\"Com tudo que aprendi em mãos, organizei as prioridades, sempre com foco em construir a melhor experiência para os creators. Mostrar os ganhos e melhorar a descoberta de campanhas eram essenciais. \"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "7fb65580-9e27-4e36-ac10-53373d9c767d",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/mockups-card-decision.png"
+      },
+      "case_size": "w50",
+      "case_background": false,
+      "case_border": false,
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseApproachCards] {\"sectionLabel\":\"Por onde comecei\",\"columns\":2,\"items\":[{\"title\":\"Mostrar ganhos\",\"body\":\"A pessoa precisava encontrar o saldo e as recompensas sem ter de procurar ou perguntar para alguém.\",\"tone\":\"neutral\"},{\"title\":\"Recomendar campanhas\",\"body\":\"Organizar marcas, campanhas e filtros para aproximar o creator das oportunidades certas.\",\"tone\":\"neutral\"},{\"title\":\"Educar para participar\",\"body\":\"Mostrar recompensa, condições e entregas esperadas para que a pessoa pudesse decidir.\",\"tone\":\"neutral\"},{\"title\":\"Continuidade na experiência\",\"body\":\"Evoluir a retirada dos ganhos e os avisos sobre novas campanhas e marcos de ganho.\",\"tone\":\"soft\"}],\"heading\":\"Os 4 pilares para o App de Creators\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseApproachCards] {\"sectionLabel\":\"Por onde comecei\",\"columns\":2,\"items\":[{\"title\":\"Mostrar ganhos\",\"body\":\"A pessoa precisava encontrar o saldo e as recompensas sem ter de procurar ou perguntar para alguém.\",\"tone\":\"neutral\"},{\"title\":\"Recomendar campanhas\",\"body\":\"Organizar marcas, campanhas e filtros para aproximar o creator das oportunidades certas.\",\"tone\":\"neutral\"},{\"title\":\"Educar para participar\",\"body\":\"Mostrar recompensa, condições e entregas esperadas para que a pessoa pudesse decidir.\",\"tone\":\"neutral\"},{\"title\":\"Continuidade na experiência\",\"body\":\"Evoluir a retirada dos ganhos e os avisos sobre novas campanhas e marcos de ganho.\",\"tone\":\"soft\"}],\"heading\":\"Os 4 pilares para o App de Creators\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "84d8d649-9517-463c-b41f-c42ae9a128eb",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"O novo App de Creators\",\"caption\":\"A visão que construímos aproximava os primeiros passos, a descoberta de marcas, as campanhas e a carteira. Quatro ideias guiavam esse desenho: ajudar os creators a gerar renda, aproximá-los de marcas, facilitar o uso e oferecer boas oportunidades.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"O novo App de Creators\",\"caption\":\"A visão que construímos aproximava os primeiros passos, a descoberta de marcas, as campanhas e a carteira. Quatro ideias guiavam esse desenho: ajudar os creators a gerar renda, aproximá-los de marcas, facilitar o uso e oferecer boas oportunidades.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "7ff4cf20-8547-4ed1-992e-c00a1ce2d220",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/home-2.png"
+      }
+    }
+  },
+  {
+    "id": "0cb0709b-cf09-4570-9c59-3d565640a40f",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/campanhas.png"
+      }
+    }
+  },
+  {
+    "id": "2842e768-b7c6-4796-a359-b49d618e8293",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/buscas.png"
+      }
+    }
+  },
+  {
+    "id": "67ae3ebc-12fa-41ce-a76f-854ce422ace9",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/financial.png"
+      },
+      "case_space_bottom": "xl"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-8084-bf55-fd5e56e91d18",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 4] Resultados [/-nav 4+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 4] Resultados [/-nav 4+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "238d6bf8-cf95-4e11-9df9-590b9e4b0b58",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed"
+    }
+  },
+  {
+    "id": "f5d97bee-bf02-4251-a755-e5bf4b6cbbf0",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Mais creators, monetizando\",\"caption\":\"Acompanhamos as mudanças com os dados de uso e as gravações de navegação e observamos crescimento expressivo dos números nesse processo.\\nSão resultados do trabalho conjunto de produto, design e engenharia. Minha contribuição esteve em conduzir o olhar para os problemas, organizar as escolhas e ajudar o time a construir uma experiência mais clara para quem estava do outro lado.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"none\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Mais creators, monetizando\",\"caption\":\"Acompanhamos as mudanças com os dados de uso e as gravações de navegação e observamos crescimento expressivo dos números nesse processo.\\nSão resultados do trabalho conjunto de produto, design e engenharia. Minha contribuição esteve em conduzir o olhar para os problemas, organizar as escolhas e ajudar o time a construir uma experiência mais clara para quem estava do outro lado.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"none\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "f0883ca6-1024-4131-a67d-23b5586c3432",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBigNumber] {\"value\":\"+99%\",\"label\":\"De creators ganhando dinheiro na plataforma\",\"spaceBottom\":\"sm\",\"spaceTop\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBigNumber] {\"value\":\"+99%\",\"label\":\"De creators ganhando dinheiro na plataforma\",\"spaceBottom\":\"sm\",\"spaceTop\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "e3e55d3b-174d-4871-b023-220463c3e4f2",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseChart] {\"type\":\"gauge\",\"categories\":[\"Aumento na conversão\",\"Aumento na ativação\"],\"series\":[{\"label\":\"Série 1\",\"values\":[46,75]}],\"suffix\":\"%\",\"prefix\":\"+\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseChart] {\"type\":\"gauge\",\"categories\":[\"Aumento na conversão\",\"Aumento na ativação\"],\"series\":[{\"label\":\"Série 1\",\"values\":[46,75]}],\"suffix\":\"%\",\"prefix\":\"+\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "11d4abfd-fb01-47f6-a6a2-f6bf71a00bc4",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Os creators por trás dos números\",\"spaceTop\":\"md\",\"spaceBottom\":\"sm\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Os creators por trás dos números\",\"spaceTop\":\"md\",\"spaceBottom\":\"sm\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "af6b3121-8e32-4989-8e19-2b241edcc947",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/creator-ads/ca-r3-15-creators.webp"
+      },
+      "case_size": "w50",
+      "case_crop": {
+        "x": 0,
+        "y": 12.26,
+        "w": 100,
+        "h": 62.57,
+        "r": 2.5684
+      }
+    }
+  },
+  {
+    "id": "9dc9036c-cc0c-4b59-95d8-39e0785c4e43",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "*Números relacionados à comparação de Q323 com Q424",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "code": false,
+            "underline": false,
+            "color": "default"
+          },
+          "plain_text": "*Números relacionados à comparação de Q323 com Q424",
+          "href": null
+        }
+      ],
+      "color": "default",
+      "case_size": "sm",
+      "case_align": "center",
+      "case_color": "#49575f"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-80a8-8a08-db5259ff2816",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 5] Legado [/-nav 5+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 5] Legado [/-nav 5+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "2076bbe4-103f-4c1b-834f-0c49c31946b5",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed"
+    }
+  },
+  {
+    "id": "03a8f87f-4780-4ab5-9af2-0bf5d4604dd1",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"O legado do meu trabalho\",\"caption\":\"Experiência focada em creators e em sua monetização. Essa base aproximava design do negócio e ajudava a manter o norte enquanto o aplicativo continuava evoluindo.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"O legado do meu trabalho\",\"caption\":\"Experiência focada em creators e em sua monetização. Essa base aproximava design do negócio e ajudava a manter o norte enquanto o aplicativo continuava evoluindo.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "599508e2-56da-4a6e-bf46-86d93fe3c2d2",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBento] {\"tiles\":[{\"kind\":\"image\",\"size\":\"2x2\",\"src\":\"/cases/creator-ads/brandlovrs-1.png\",\"tone\":\"soft\"},{\"size\":\"2x1\",\"kind\":\"stat\",\"title\":\"Deixei as bases prontas para\",\"value\":\"Nosso DS\",\"label\":\"O Lovrs 1.0 surgiu deste trabalho, com foco total na melhor experiência de monetização para os creators dentro da plataforma\",\"tone\":\"neutral\"},{\"size\":\"2x1\",\"kind\":\"video\",\"src\":\"/cases/creator-ads/content-creator-unboxing-brand-p-d0ac37ab-1080p.mp4\",\"poster\":\"/cases/creator-ads/content-creator-unboxing-brand-p-d0ac37ab-1080p-capa.webp\"}],\"spaceBottom\":\"none\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBento] {\"tiles\":[{\"kind\":\"image\",\"size\":\"2x2\",\"src\":\"/cases/creator-ads/brandlovrs-1.png\",\"tone\":\"soft\"},{\"size\":\"2x1\",\"kind\":\"stat\",\"title\":\"Deixei as bases prontas para\",\"value\":\"Nosso DS\",\"label\":\"O Lovrs 1.0 surgiu deste trabalho, com foco total na melhor experiência de monetização para os creators dentro da plataforma\",\"tone\":\"neutral\"},{\"size\":\"2x1\",\"kind\":\"video\",\"src\":\"/cases/creator-ads/content-creator-unboxing-brand-p-d0ac37ab-1080p.mp4\",\"poster\":\"/cases/creator-ads/content-creator-unboxing-brand-p-d0ac37ab-1080p-capa.webp\"}],\"spaceBottom\":\"none\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-8072-82be-e5155d001cdc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "aebfb581-3fbb-4349-92de-25b8883989fc",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseImageCompare] {\"before\":{\"src\":\"/cases/creator-ads/home-antes.png\",\"label\":\"Antes\"},\"after\":{\"src\":\"/cases/creator-ads/home-depois.png\",\"label\":\"Depois\"},\"background\":\"none\",\"border\":\"false\",\"spaceTop\":\"sm\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseImageCompare] {\"before\":{\"src\":\"/cases/creator-ads/home-antes.png\",\"label\":\"Antes\"},\"after\":{\"src\":\"/cases/creator-ads/home-depois.png\",\"label\":\"Depois\"},\"background\":\"none\",\"border\":\"false\",\"spaceTop\":\"sm\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-8028-a1ef-c80bf6a4f6bb",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-80b6-8dbc-c67d8a07e6e8",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseThanksCards] {\"sectionLabel\":\"\",\"items\":[{\"title\":\"Obrigado\",\"body\":\"Rapha, Marino, Bruno, Cabral, Carlos, Cauê, Rogério, Giovana\",\"tone\":\"brand\"}],\"columns\":1,\"spaceTop\":\"lg\",\"spaceBottom\":\"none\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseThanksCards] {\"sectionLabel\":\"\",\"items\":[{\"title\":\"Obrigado\",\"body\":\"Rapha, Marino, Bruno, Cabral, Carlos, Cauê, Rogério, Giovana\",\"tone\":\"brand\"}],\"columns\":1,\"spaceTop\":\"lg\",\"spaceBottom\":\"none\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3387bcc8-93e5-802c-ab7e-d141e32be87d",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  }
+]

@@ -1,0 +1,509 @@
+[
+  {
+    "id": "fad0119b-fbad-4e43-89f4-a1e12df65b0a",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 1] O problema [/-nav 1+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 1] O problema [/-nav 1+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "5e912850-8722-4785-b430-c2d1613d60c5",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Portal com gaps de interface\",\"body\":\"O Portal Seguro Viagem tinha um fluxo problemático. Vários gaps de interface. O churn aparecia no funil, entre as etapas Home, Selecionar Plano, Viajantes e Pagamento. Os painéis de funil GA4 mostravam a queda.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Portal com gaps de interface\",\"body\":\"O Portal Seguro Viagem tinha um fluxo problemático. Vários gaps de interface. O churn aparecia no funil, entre as etapas Home, Selecionar Plano, Viajantes e Pagamento. Os painéis de funil GA4 mostravam a queda.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "640b9000-5c3e-4bbe-992c-3c98fd01efae",
+    "type": "column_list",
+    "has_children": true,
+    "column_list": {},
+    "children": [
+      {
+        "id": "dca6f106-b6ec-4e69-9903-e181396382c4",
+        "type": "column",
+        "has_children": true,
+        "column": {},
+        "children": [
+          {
+            "id": "fd61846f-1983-4f12-8ace-e6ae668b38cb",
+            "type": "image",
+            "has_children": false,
+            "image": {
+              "caption": [],
+              "type": "file",
+              "file": {
+                "url": "/cases/sulamerica/captura-de-tela-2025-07-25-as-09-07-59.jpg"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "c29be8d2-94a7-4187-b328-578a545a03a6",
+        "type": "column",
+        "has_children": true,
+        "column": {},
+        "children": [
+          {
+            "id": "be700516-7d74-4651-9215-191b00850f71",
+            "type": "image",
+            "has_children": false,
+            "image": {
+              "caption": [],
+              "type": "file",
+              "file": {
+                "url": "/cases/sulamerica/captura-de-tela-2025-07-25-as-09-08-29.jpg"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d42db314-aedf-48ee-868d-b85b92ab2772",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 2] Pesquisa [/-nav 2+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 2] Pesquisa [/-nav 2+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "c4712aef-f58d-4bfc-b014-58bf6943f43b",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Pesquisa de motivos de abandono\",\"body\":\"Usei tudo que estava no PPT dos motivos de abandono. As decisões de design vieram dele. Os relatórios direcionaram o caminho que o fluxo deveria seguir e ajudaram a entender o churn no funil. A pesquisa de motivos direcionou totalmente o desenho de experiência.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Pesquisa de motivos de abandono\",\"body\":\"Usei tudo que estava no PPT dos motivos de abandono. As decisões de design vieram dele. Os relatórios direcionaram o caminho que o fluxo deveria seguir e ajudaram a entender o churn no funil. A pesquisa de motivos direcionou totalmente o desenho de experiência.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "52ece6db-d992-464a-98bf-8f30fdc2199b",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseScreens] {\"heading\":\"Benchmarks dos concorrentes\",\"intro\":\"Bradesco, Allianz, Chubb e Lanztravel mostram como o mercado organiza o fluxo de cotação.\",\"frame\":\"none\",\"screens\":[{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-41.jpg\",\"label\":\"Bradesco\",\"caption\":\"Formulário de simulação com destino e datas\",\"alt\":\"Tela de celular do site Bradesco Vida e Previdência com o formulário 'Simule e contrate agora' para seguro viagem, com campos de destino (Alemanha), período da viagem e datas de ida e volta, além do botão Continuar.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-42.jpg\",\"label\":\"Allianz\",\"caption\":\"Banner promocional e seleção de destinos\",\"alt\":\"Captura de tela do site móvel da Allianz Travel exibindo o formulário de cotação de seguro viagem, com banner promocional de 70% OFF, seleção de destinos (Itália, Portugal, Espanha, China) e contadores de passageiros por faixa etária.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-44.jpg\",\"label\":\"Chubb 1\",\"caption\":\"Campo de destino com lista suspensa\",\"alt\":\"Captura de tela do navegador em um celular mostrando a página de seguro viagem da Chubb, com formulário 'Conte-nos sobre sua viagem' e lista suspensa do campo de destino aberta com opções como América do Norte, Europa, Ásia, França e Portugal.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-46.jpg\",\"label\":\"Chubb 2\",\"caption\":\"Formulário com destino, datas e idade\",\"alt\":\"Captura de tela móvel do site da Chubb com o formulário 'Conte-nos sobre sua viagem', com campos de destino, datas, idade e botão 'Faça uma cotação'.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-49.jpg\",\"label\":\"Lanztravel\",\"caption\":\"Formulário com países, passageiros e datas\",\"alt\":\"Captura de tela do navegador no celular exibindo o formulário de cotação de seguro viagem do site lanztravel.com.br, com campos de países de destino, número de passageiros por faixa etária e datas da viagem, além do botão laranja 'Veja quanto ficou!'.\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseScreens] {\"heading\":\"Benchmarks dos concorrentes\",\"intro\":\"Bradesco, Allianz, Chubb e Lanztravel mostram como o mercado organiza o fluxo de cotação.\",\"frame\":\"none\",\"screens\":[{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-41.jpg\",\"label\":\"Bradesco\",\"caption\":\"Formulário de simulação com destino e datas\",\"alt\":\"Tela de celular do site Bradesco Vida e Previdência com o formulário 'Simule e contrate agora' para seguro viagem, com campos de destino (Alemanha), período da viagem e datas de ida e volta, além do botão Continuar.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-42.jpg\",\"label\":\"Allianz\",\"caption\":\"Banner promocional e seleção de destinos\",\"alt\":\"Captura de tela do site móvel da Allianz Travel exibindo o formulário de cotação de seguro viagem, com banner promocional de 70% OFF, seleção de destinos (Itália, Portugal, Espanha, China) e contadores de passageiros por faixa etária.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-44.jpg\",\"label\":\"Chubb 1\",\"caption\":\"Campo de destino com lista suspensa\",\"alt\":\"Captura de tela do navegador em um celular mostrando a página de seguro viagem da Chubb, com formulário 'Conte-nos sobre sua viagem' e lista suspensa do campo de destino aberta com opções como América do Norte, Europa, Ásia, França e Portugal.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-46.jpg\",\"label\":\"Chubb 2\",\"caption\":\"Formulário com destino, datas e idade\",\"alt\":\"Captura de tela móvel do site da Chubb com o formulário 'Conte-nos sobre sua viagem', com campos de destino, datas, idade e botão 'Faça uma cotação'.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-49.jpg\",\"label\":\"Lanztravel\",\"caption\":\"Formulário com países, passageiros e datas\",\"alt\":\"Captura de tela do navegador no celular exibindo o formulário de cotação de seguro viagem do site lanztravel.com.br, com campos de países de destino, número de passageiros por faixa etária e datas da viagem, além do botão laranja 'Veja quanto ficou!'.\"}]}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "35221188-89fa-4524-8e30-c0ffe5b29298",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 3] Decisões [/-nav 3+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 3] Decisões [/-nav 3+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "a300a31a-4e25-4fec-9d82-46ea585857fb",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Decisões vêm do relatório\",\"body\":\"Usei tudo que estava no relatório de motivos de abandono do Portal Seguro Viagem. As decisões vêm dele: cada escolha respondia a um motivo real de desistência. O que gerava dúvida virou FAQ, o que impedia o pagamento virou cupom na tela, o que escondia valor virou cobertura visível. Nada foi desenhado por achismo.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Decisões vêm do relatório\",\"body\":\"Usei tudo que estava no relatório de motivos de abandono do Portal Seguro Viagem. As decisões vêm dele: cada escolha respondia a um motivo real de desistência. O que gerava dúvida virou FAQ, o que impedia o pagamento virou cupom na tela, o que escondia valor virou cobertura visível. Nada foi desenhado por achismo.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3444533e-3c0f-4e43-bf15-060859917332",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Relatórios guiaram o fluxo. Pesquisa desenhou a experiência.\",\"caption\":\"Os relatórios de funil mostraram onde o churn acontecia. A pesquisa de motivos explicou o porquê e o que fazer em cada etapa. Essa ordem mudou o desenho.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Relatórios guiaram o fluxo. Pesquisa desenhou a experiência.\",\"caption\":\"Os relatórios de funil mostraram onde o churn acontecia. A pesquisa de motivos explicou o porquê e o que fazer em cada etapa. Essa ordem mudou o desenho.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "22f1de6e-f0f4-4adf-9946-b4d0140ed21b",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseApproachCards] {\"heading\":\"Quatro decisões principais\",\"columns\":2,\"items\":[{\"title\":\"FAQ contextual\",\"tone\":\"neutral\",\"body\":\"Responder dúvidas na hora, como Schengen. O usuário não precisa sair para entender a cobertura.\"},{\"title\":\"Cupons no pagamento\",\"tone\":\"neutral\",\"body\":\"Mostrar cupons na tela de pagamento. Desconto aparece onde a decisão de compra acontece.\"},{\"title\":\"Cobertura rápida do plano\",\"tone\":\"neutral\",\"body\":\"Mostrar rapidamente o que o plano selecionado cobre. A cobertura fica visível antes de selecionar.\"},{\"title\":\"Home exploratória\",\"tone\":\"soft\",\"body\":\"Fluxo com Home exploratória e foco em converter. O caminho leva à compra sem desvios.\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseApproachCards] {\"heading\":\"Quatro decisões principais\",\"columns\":2,\"items\":[{\"title\":\"FAQ contextual\",\"tone\":\"neutral\",\"body\":\"Responder dúvidas na hora, como Schengen. O usuário não precisa sair para entender a cobertura.\"},{\"title\":\"Cupons no pagamento\",\"tone\":\"neutral\",\"body\":\"Mostrar cupons na tela de pagamento. Desconto aparece onde a decisão de compra acontece.\"},{\"title\":\"Cobertura rápida do plano\",\"tone\":\"neutral\",\"body\":\"Mostrar rapidamente o que o plano selecionado cobre. A cobertura fica visível antes de selecionar.\"},{\"title\":\"Home exploratória\",\"tone\":\"soft\",\"body\":\"Fluxo com Home exploratória e foco em converter. O caminho leva à compra sem desvios.\"}]}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "21617179-9e46-4fda-86d5-c3a6a455df5c",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 4] Redesenho [/-nav 4+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 4] Redesenho [/-nav 4+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "a36c6e08-eada-43eb-bc6d-dcd909520cf7",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Jornada de ecommerce rápido\",\"body\":\"O fluxo era problemático, com vários gaps de interface. Redesenhei o fluxo total para melhorar conversão e diminuir churn. A experiência virou uma jornada de ecommerce rápido: home exploratória, focada em converter.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Jornada de ecommerce rápido\",\"body\":\"O fluxo era problemático, com vários gaps de interface. Redesenhei o fluxo total para melhorar conversão e diminuir churn. A experiência virou uma jornada de ecommerce rápido: home exploratória, focada em converter.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "72ecc3e2-ae5d-4e80-b4b8-c77e86d00720",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseScreens] {\"heading\":\"A experiência simplificada\",\"intro\":\"Seleção de plano, coberturas, cupom e resultados.\",\"frame\":\"none\",\"screens\":[{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-61.jpg\",\"label\":\"Seleção de plano\",\"caption\":\"O plano Europa Plus com coberturas e cupom de desconto.\",\"alt\":\"Tela de aplicativo SulAmérica mostrando oferta do plano Europa Plus com preço e coberturas, e botão para usar cupom.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-63.jpg\",\"label\":\"Planos disponíveis\",\"alt\":\"Tela de aplicativo exibindo quatro planos disponíveis, campo de cupom e card em destaque do plano Ciclic.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-65.jpg\",\"label\":\"Detalhe de cobertura\",\"alt\":\"Tela de aplicativo com painel de detalhe de cobertura aberto, listando coberturas do plano com valores em dólar.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-80.jpg\",\"label\":\"Home exploratória\",\"caption\":\"Banner 20% OFF e formulário de origem e destino.\",\"alt\":\"Tela mobile do site da SulAmérica com banner promocional de 20% OFF e formulário de cotação com origem e destino.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-83.jpg\",\"label\":\"Resultados\",\"alt\":\"Tela de aplicativo com resultados de seguro viagem, filtros e plano recomendado.\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseScreens] {\"heading\":\"A experiência simplificada\",\"intro\":\"Seleção de plano, coberturas, cupom e resultados.\",\"frame\":\"none\",\"screens\":[{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-61.jpg\",\"label\":\"Seleção de plano\",\"caption\":\"O plano Europa Plus com coberturas e cupom de desconto.\",\"alt\":\"Tela de aplicativo SulAmérica mostrando oferta do plano Europa Plus com preço e coberturas, e botão para usar cupom.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-63.jpg\",\"label\":\"Planos disponíveis\",\"alt\":\"Tela de aplicativo exibindo quatro planos disponíveis, campo de cupom e card em destaque do plano Ciclic.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-65.jpg\",\"label\":\"Detalhe de cobertura\",\"alt\":\"Tela de aplicativo com painel de detalhe de cobertura aberto, listando coberturas do plano com valores em dólar.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-80.jpg\",\"label\":\"Home exploratória\",\"caption\":\"Banner 20% OFF e formulário de origem e destino.\",\"alt\":\"Tela mobile do site da SulAmérica com banner promocional de 20% OFF e formulário de cotação com origem e destino.\"},{\"src\":\"/cases/sulamerica/202510-relatoriocompleto-pesquisa-motivo-slide-83.jpg\",\"label\":\"Resultados\",\"alt\":\"Tela de aplicativo com resultados de seguro viagem, filtros e plano recomendado.\"}]}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "11d2a19d-46f0-450d-97a0-94dbeb5a46fb",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 5] Impacto [/-nav 5+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 5] Impacto [/-nav 5+false]",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "4d111c88-2c7e-4c71-9978-34642f23defb",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"A interface toda mudou\",\"body\":\"O fluxo total foi redesenhado para uma jornada de ecommerce rápido. Cada tela empurra para converter: home exploratória, FAQ contextual, cupons no pagamento e cobertura visível sem sair da página. A interface mudou inteira para melhorar conversão e cortar churn.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"A interface toda mudou\",\"body\":\"O fluxo total foi redesenhado para uma jornada de ecommerce rápido. Cada tela empurra para converter: home exploratória, FAQ contextual, cupons no pagamento e cobertura visível sem sair da página. A interface mudou inteira para melhorar conversão e cortar churn.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "b325d7a5-825f-4426-8814-9afa887af388",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Antes problemático, agora focado em converter.\",\"caption\":\"O Portal Seguro Viagem tinha vários gaps de interface e churn no funil. O redesenho criou uma jornada de ecommerce rápido, com FAQ contextual, cupons no pagamento e cobertura visível direto no plano.\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Antes problemático, agora focado em converter.\",\"caption\":\"O Portal Seguro Viagem tinha vários gaps de interface e churn no funil. O redesenho criou uma jornada de ecommerce rápido, com FAQ contextual, cupons no pagamento e cobertura visível direto no plano.\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "677e4bd4-37d4-4177-b159-1874bfc319b9",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBeforeAfter] {\"heading\":\"Antes e depois do fluxo\",\"before\":{\"label\":\"Antes\",\"lead\":\"Como era\",\"body\":\"O fluxo tinha vários gaps de interface. O churn no funil precisava ser reduzido.\",\"foot\":\"Gaps e churn\",\"variant\":\"muted\"},\"after\":{\"label\":\"Depois\",\"lead\":\"Como ficou\",\"body\":\"Jornada de ecommerce rápido. FAQ contextual, cupons no pagamento, cobertura visível do plano. Home exploratória focada em converter.\",\"foot\":\"Foco em conversão\",\"variant\":\"emphasis\"}}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBeforeAfter] {\"heading\":\"Antes e depois do fluxo\",\"before\":{\"label\":\"Antes\",\"lead\":\"Como era\",\"body\":\"O fluxo tinha vários gaps de interface. O churn no funil precisava ser reduzido.\",\"foot\":\"Gaps e churn\",\"variant\":\"muted\"},\"after\":{\"label\":\"Depois\",\"lead\":\"Como ficou\",\"body\":\"Jornada de ecommerce rápido. FAQ contextual, cupons no pagamento, cobertura visível do plano. Home exploratória focada em converter.\",\"foot\":\"Foco em conversão\",\"variant\":\"emphasis\"}}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "e05ef195-ed16-4094-9590-9a8867e6dde2",
+    "type": "heading_2",
+    "has_children": false,
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "A interface toda mudou.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "code": false,
+            "underline": false,
+            "color": "default"
+          },
+          "plain_text": "A interface toda mudou.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  }
+]

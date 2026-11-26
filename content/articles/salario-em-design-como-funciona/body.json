@@ -1,0 +1,1427 @@
+[
+  {
+    "id": "d4e4c62f-4c73-521c-8864-1a9e62fcf1e2",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Por 8 anos eu estive do outro lado da mesa: nas cadeiras de lidernaça montando faixas, aprovando promoções e negociando propostas. Este texto é o que eu gostaria que todo designer soubesse antes da próxima conversa sobre dinheiro.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "code": false,
+            "underline": false,
+            "color": "default"
+          },
+          "plain_text": "Por 8 anos eu estive do outro lado da mesa: nas cadeiras de lidernaça montando faixas, aprovando promoções e negociando propostas. Este texto é o que eu gostaria que todo designer soubesse antes da próxima conversa sobre dinheiro.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "19ec6a2b-6355-5480-9cce-dac51184eccc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Se você quer ir direto ao número, ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Se você quer ir direto ao número, ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "use as ferramentas de salário",
+            "link": {
+              "url": "/recursos/salario-em-design"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "use as ferramentas de salário",
+          "href": "/recursos/salario-em-design"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ": a faixa do seu papel, a calculadora CLT x PJ e o teste para saber se é hora de pedir aumento.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ": a faixa do seu papel, a calculadora CLT x PJ e o teste para saber se é hora de pedir aumento.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "c42fee9a-aaf6-5d96-9284-497953ef0853",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Como as empresas definem o seu salário",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Como as empresas definem o seu salário",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3b421593-59a3-5168-b098-bd6dcd7055b7",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Quase nenhuma empresa decide o salário pensando em você. Ela decide pensando no cargo e no nível, e só depois encaixa a pessoa. Entender isso muda a forma de negociar.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Quase nenhuma empresa decide o salário pensando em você. Ela decide pensando no cargo e no nível, e só depois encaixa a pessoa. Entender isso muda a forma de negociar.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "43a4fed5-201d-5049-843d-c662ede331cf",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Faixa salarial.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Faixa salarial.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Cada nível tem um mínimo, um ponto médio e um máximo. Quem entra costuma ficar entre o mínimo e o meio; o topo é para quem já entrega acima do nível.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Cada nível tem um mínimo, um ponto médio e um máximo. Quem entra costuma ficar entre o mínimo e o meio; o topo é para quem já entrega acima do nível.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "a481f807-ce02-5190-8d1e-d401fd778d41",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Pesquisa de mercado.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Pesquisa de mercado.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " As faixas vêm de pesquisas salariais compradas de consultorias. A empresa escolhe onde quer estar: na mediana do mercado (P50) ou acima dela (P75), para atrair gente mais disputada.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " As faixas vêm de pesquisas salariais compradas de consultorias. A empresa escolhe onde quer estar: na mediana do mercado (P50) ou acima dela (P75), para atrair gente mais disputada.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "770b3a8d-151f-5094-95df-7aaafb2197b7",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Nível, não cargo.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Nível, não cargo.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Dois \"Product Designers\" podem estar em faixas bem diferentes. O que define a faixa é o nível (pleno, sênior, staff), não o título no LinkedIn.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Dois \"Product Designers\" podem estar em faixas bem diferentes. O que define a faixa é o nível (pleno, sênior, staff), não o título no LinkedIn.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "9f99aa90-ec20-548a-bdab-370c8e684cda",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Orçamento do ano.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Orçamento do ano.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Aumentos e promoções saem de um orçamento definido uma ou duas vezes por ano. Fora desse ciclo, o dinheiro existe, mas é bem mais difícil de liberar.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Aumentos e promoções saem de um orçamento definido uma ou duas vezes por ano. Fora desse ciclo, o dinheiro existe, mas é bem mais difícil de liberar.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "8663d0f4-eea2-5081-81c5-3253d7e6ef28",
+    "has_children": false,
+    "type": "quote",
+    "quote": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Pergunte qual é a faixa do seu nível e onde você está nela. Empresas mais maduras respondem. Se ninguém sabe responder, isso já diz muito sobre como as promoções acontecem aí.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Pergunte qual é a faixa do seu nível e onde você está nela. Empresas mais maduras respondem. Se ninguém sabe responder, isso já diz muito sobre como as promoções acontecem aí.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "e6d463e4-d251-5e14-ad02-d0e6417ec8f6",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "O que entra na conta (além do salário)",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "O que entra na conta (além do salário)",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "c67d6212-de10-5bbf-8e50-b94bc4b1ccf5",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Comparar propostas só pelo salário mensal é o erro mais comum. O que vale é o pacote do ano inteiro.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Comparar propostas só pelo salário mensal é o erro mais comum. O que vale é o pacote do ano inteiro.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "a95e0e5e-2ad1-50e0-8c44-cd241d68226d",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Na CLT:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Na CLT:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " 12 salários, o 13º, um terço a mais nas férias e 8% de FGTS sobre tudo isso. Na prática, o ano rende cerca de 13,3 salários, mais o FGTS.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " 12 salários, o 13º, um terço a mais nas férias e 8% de FGTS sobre tudo isso. Na prática, o ano rende cerca de 13,3 salários, mais o FGTS.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3a3c35b6-4447-5e97-a947-16b61ebcf1c3",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Bônus e PLR:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Bônus e PLR:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " podem valer de meio a vários salários por ano. Pergunte quanto foi pago de fato nos últimos dois anos, não só o alvo.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " podem valer de meio a vários salários por ano. Pergunte quanto foi pago de fato nos últimos dois anos, não só o alvo.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "5e0e9869-0565-59c0-8577-887234eafd5b",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Benefícios:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Benefícios:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " plano de saúde, vale-refeição e auxílio home office têm valor em dinheiro. Um bom plano de saúde familiar pode valer mais de mil reais por mês.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " plano de saúde, vale-refeição e auxílio home office têm valor em dinheiro. Um bom plano de saúde familiar pode valer mais de mil reais por mês.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "af1bdf6b-1342-5e0d-bb64-1c41c27831b3",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Ações ou stock options:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Ações ou stock options:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " só conte como dinheiro o que tem como virar dinheiro. Em startup, trate como bônus de loteria, não como salário.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " só conte como dinheiro o que tem como virar dinheiro. Em startup, trate como bônus de loteria, não como salário.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "1fc52936-19e8-5b2b-bd6b-ea9b48af74f3",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "CLT ou PJ: como comparar de verdade",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "CLT ou PJ: como comparar de verdade",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "0bfacfe8-a1e0-52ae-ac91-162baea99d5c",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Uma proposta PJ precisa pagar mais por mês só para empatar com a CLT: como PJ, você não recebe 13º, férias pagas nem FGTS, e paga impostos e contador. A regra de bolso do mercado é que o PJ precisa ser de 1,4 a 1,6 vez o salário CLT. A calculadora abaixo faz a conta com os seus números.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Uma proposta PJ precisa pagar mais por mês só para empatar com a CLT: como PJ, você não recebe 13º, férias pagas nem FGTS, e paga impostos e contador. A regra de bolso do mercado é que o PJ precisa ser de 1,4 a 1,6 vez o salário CLT. A calculadora abaixo faz a conta com os seus números.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3dd4a6df-c4b8-5a07-8555-9bac2d892e20",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Para fazer a conta com os seus números, ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Para fazer a conta com os seus números, ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "use a calculadora CLT x PJ",
+            "link": {
+              "url": "/recursos/salario-em-design#clt-pj"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "use a calculadora CLT x PJ",
+          "href": "/recursos/salario-em-design#clt-pj"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ".",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ".",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "37448ece-f010-56c9-a5f4-d5626a09e501",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "A conta compara o pacote bruto. Como o imposto de renda da CLT costuma ser maior que o do PJ no Simples, o PJ muitas vezes fica um pouco melhor no líquido. Em compensação, você perde estabilidade, seguro-desemprego e a multa do FGTS numa demissão. Antes de decidir, confira os números com um contador.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "A conta compara o pacote bruto. Como o imposto de renda da CLT costuma ser maior que o do PJ no Simples, o PJ muitas vezes fica um pouco melhor no líquido. Em compensação, você perde estabilidade, seguro-desemprego e a multa do FGTS numa demissão. Antes de decidir, confira os números com um contador.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "0aa115d8-c388-5f6c-826d-e0a17b4d3a60",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Como saber se é hora de pedir aumento",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Como saber se é hora de pedir aumento",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "25ddc0ca-428c-5638-bbef-44933cfecb1a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Pedir aumento não é sobre precisar de mais dinheiro. É sobre mostrar que você já entrega o que a empresa paga mais para ter. Estes são os sinais de que a conversa faz sentido:",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Pedir aumento não é sobre precisar de mais dinheiro. É sobre mostrar que você já entrega o que a empresa paga mais para ter. Estes são os sinais de que a conversa faz sentido:",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "5891b87a-7a9d-564f-b32d-e8234b3c718b",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Você já faz, de forma consistente, o que a trilha descreve para o nível seguinte, e não só uma vez.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Você já faz, de forma consistente, o que a trilha descreve para o nível seguinte, e não só uma vez.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3d44bce2-9ecd-5b92-b1b4-09e1ed0b859a",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Seu escopo cresceu desde o último ajuste: mais produto, mais gente, mais responsabilidade.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Seu escopo cresceu desde o último ajuste: mais produto, mais gente, mais responsabilidade.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "efc4e74e-f4eb-5c15-b65e-578bf82c8dd9",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Faz mais de 12 meses do seu último aumento ou promoção.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Faz mais de 12 meses do seu último aumento ou promoção.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "96c34726-8165-5c41-9f19-ce3302e83acb",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Vagas parecidas com a sua estão pagando visivelmente mais.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Vagas parecidas com a sua estão pagando visivelmente mais.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "120764a5-e507-507a-9c78-1a4320bc8f0b",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Você recebeu uma proposta de fora ou sabe que receberia.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Você recebeu uma proposta de fora ou sabe que receberia.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "d4552d9f-0bd9-5427-a556-21f448ed384c",
+    "has_children": false,
+    "type": "quote",
+    "quote": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Se você marcou três ou mais, a conversa já é justa. Se marcou só o último, cuidado: aumento pedido com proposta na mão pode até sair, mas a relação muda.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Se você marcou três ou mais, a conversa já é justa. Se marcou só o último, cuidado: aumento pedido com proposta na mão pode até sair, mas a relação muda.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "e1de4325-9d60-51ba-bce4-6bbcb2ce5a07",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Como pedir sem constrangimento",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Como pedir sem constrangimento",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "12ab9048-b23a-5ff2-97c0-88f982bec04b",
+    "has_children": false,
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Escolha o momento.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Escolha o momento.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Peça um 1:1 só para isso, de preferência um ou dois meses antes do ciclo de revisão, quando o orçamento ainda está sendo montado.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Peça um 1:1 só para isso, de preferência um ou dois meses antes do ciclo de revisão, quando o orçamento ainda está sendo montado.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "c03bb1be-51a9-5f47-927e-d2a50b28945c",
+    "has_children": false,
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Leve evidência, não sentimento.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Leve evidência, não sentimento.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Três exemplos concretos do que você entregou acima do nível, com impacto em produto, time ou negócio.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Três exemplos concretos do que você entregou acima do nível, com impacto em produto, time ou negócio.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "36dae665-fa52-587c-9ff5-be49e6917a29",
+    "has_children": false,
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Fale de nível antes de valor.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Fale de nível antes de valor.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " \"Acho que já estou atuando como sênior\" abre mais portas do que \"quero ganhar X\". O valor vem com o nível.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " \"Acho que já estou atuando como sênior\" abre mais portas do que \"quero ganhar X\". O valor vem com o nível.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "39f702b0-b6ee-5190-8997-5f6891dab948",
+    "has_children": false,
+    "type": "numbered_list_item",
+    "numbered_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Saia com um próximo passo.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Saia com um próximo passo.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Se a resposta for não agora, pergunte o que falta, quem decide e quando vocês revisitam. Anote e mande por escrito depois.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Se a resposta for não agora, pergunte o que falta, quem decide e quando vocês revisitam. Anote e mande por escrito depois.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "7832654c-aad1-51e6-b6ea-ffbce6d844ac",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Quando a proposta é de outra empresa",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Quando a proposta é de outra empresa",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "1747e92d-b07b-55e6-bc5a-91e47baa7ecb",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Não diga seu salário atual primeiro.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Não diga seu salário atual primeiro.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Pergunte qual é a faixa da vaga. Se insistirem, fale do valor que você busca, não do que ganha hoje.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Pergunte qual é a faixa da vaga. Se insistirem, fale do valor que você busca, não do que ganha hoje.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "39e937c9-a1b1-581a-a3ca-f632ab2f976b",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Negocie o pacote, não só o fixo.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Negocie o pacote, não só o fixo.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Quando o salário trava na faixa, dá para mexer em bônus de contratação, nível, data de revisão ou dias de home office.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Quando o salário trava na faixa, dá para mexer em bônus de contratação, nível, data de revisão ou dias de home office.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "84e908fa-2bd9-5ef1-a1f2-fadcc1ab35ee",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Peça por escrito.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Peça por escrito.",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " Proposta boa não some em 24 horas. Pressa demais para aceitar costuma ser sinal de alerta.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " Proposta boa não some em 24 horas. Pressa demais para aceitar costuma ser sinal de alerta.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3478dfaa-e4ec-52e3-93ce-0fe1334fc695",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "O número certo vem com o papel certo",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "O número certo vem com o papel certo",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "402d3e6f-f136-5c67-a314-35a25786b9d4",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Quase sempre, o salto de salário vem de mudar de papel, não de reajuste. Se você não sabe em que papel está, ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Quase sempre, o salto de salário vem de mudar de papel, não de reajuste. Se você não sabe em que papel está, ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "comece pela trilha de carreira",
+            "link": {
+              "url": "/recursos/trilha-de-carreira"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "comece pela trilha de carreira",
+          "href": "/recursos/trilha-de-carreira"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "; se quer saber quanto o seu papel paga, ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "; se quer saber quanto o seu papel paga, ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "use a ferramenta de salário",
+            "link": {
+              "url": "/recursos/salario-em-design"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "use a ferramenta de salário",
+          "href": "/recursos/salario-em-design"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ".",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ".",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  }
+]

@@ -1,0 +1,479 @@
+[
+  {
+    "id": "33b7bcc8-93e5-80a9-b38a-e40693a4fa38",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 1] Produto [/-nav 1+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 1] Produto [/-nav 1+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8075-832e-eadc1e61f931",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"o-produto\",\"label\":\"Produto\",\"body\":\"Plenno é uma plataforma de gestão médica com dois lados: o médico que precisa de controle da sua rotina e o hospital que precisa de visibilidade da operação.\\n\\nDois meses. Plataforma web e app mobile do zero ao ar.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"o-produto\",\"label\":\"Produto\",\"body\":\"Plenno é uma plataforma de gestão médica com dois lados: o médico que precisa de controle da sua rotina e o hospital que precisa de visibilidade da operação.\\n\\nDois meses. Plataforma web e app mobile do zero ao ar.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-8082-8f26-c791a834df47",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/plenno/capa-rotina-organizada-1.png"
+      }
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-806d-95bc-f36012dd192a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8048-b70d-d9e74cd6b046",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 2] Médico [/-nav 2+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 2] Médico [/-nav 2+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8015-8970-def3a98bf33a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Para o médico\",\"body\":\"Escala, ganhos e documentos em um app. O médico sabe o que tem essa semana, quanto já ganhou e quanto vai receber.\\n\\nPresença pendente com um toque. Carteira com saldo disponível e previsão dos próximos 60 dias. Agenda por dia, semana e mês. Sem planilha, sem WhatsApp.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Para o médico\",\"body\":\"Escala, ganhos e documentos em um app. O médico sabe o que tem essa semana, quanto já ganhou e quanto vai receber.\\n\\nPresença pendente com um toque. Carteira com saldo disponível e previsão dos próximos 60 dias. Agenda por dia, semana e mês. Sem planilha, sem WhatsApp.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8063-bbd3-fa31e5576593",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8082-ae0c-f0e00cc8e0a2",
+    "type": "embed",
+    "has_children": false,
+    "embed": {
+      "caption": [],
+      "url": "https://plennoapp.vercel.app/",
+      "poster": "/cases/plenno/pleno-app.png"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8065-ac2d-d15e8cd630ea",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 3] Hospital [/-nav 3+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 3] Hospital [/-nav 3+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8028-9764-e4faa29d1acc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Para o hospital\",\"body\":\"Painel em tempo real, check-in por geolocalização, cálculo automático de pagamento e logs para auditoria.\\n\\nO hospital sabe quem está no plantão agora, recebe alerta de ausência antes que vire problema e fecha o pagamento sem planilha.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Para o hospital\",\"body\":\"Painel em tempo real, check-in por geolocalização, cálculo automático de pagamento e logs para auditoria.\\n\\nO hospital sabe quem está no plantão agora, recebe alerta de ausência antes que vire problema e fecha o pagamento sem planilha.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8002-848c-c8e2c074b153",
+    "type": "embed",
+    "has_children": false,
+    "embed": {
+      "caption": [],
+      "url": "https://webplenno.vercel.app/",
+      "poster": "/cases/plenno/plenno-platform.png"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8029-85b7-c49551504cce",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 4] Sistema [/-nav 4+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 4] Sistema [/-nav 4+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-800b-b73d-e5d509c56898",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Sistema\",\"body\":\"Dois produtos com a mesma base. Componentes compartilhados, lógica de escala e pagamento consistente nos dois lados. O que muda é a perspectiva, não o sistema.\\n\\nO fluxo web foi desenhado com IA no V0 antes de qualquer linha de código em produção, permitindo validação real com médicos e UPAs antes do desenvolvimento.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Sistema\",\"body\":\"Dois produtos com a mesma base. Componentes compartilhados, lógica de escala e pagamento consistente nos dois lados. O que muda é a perspectiva, não o sistema.\\n\\nO fluxo web foi desenhado com IA no V0 antes de qualquer linha de código em produção, permitindo validação real com médicos e UPAs antes do desenvolvimento.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-8001-9353-df06f7d37193",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseApproachCards] {\"sectionLabel\":\"\",\"columns\":2,\"items\":[{\"title\":\"Escalas com compliance automático\",\"body\":\"Vagas com regras herdadas dos contratos, validação de conflitos, alertas de documentação irregular e trocas rastreáveis com justificativa e aceite.\",\"tone\":\"soft\"},{\"title\":\"Pagamentos sem retrabalho\",\"body\":\"Cálculo automático via check-in e checkout por geolocalização e regras contratuais. Fechamento pronto sem planilha e sem erro.\",\"tone\":\"soft\"},{\"title\":\"Auditoria total\",\"body\":\"Logs imutáveis com IP, data, autor e antes/depois. Histórico completo por CPF, pronto para auditoria a qualquer momento.\",\"tone\":\"soft\"},{\"title\":\"Controle em tempo real\",\"body\":\"Painel executivo com alertas visuais, notificação com prova de entrega e leitura, monitoramento de ausências e documentos vencidos.\",\"tone\":\"soft\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseApproachCards] {\"sectionLabel\":\"\",\"columns\":2,\"items\":[{\"title\":\"Escalas com compliance automático\",\"body\":\"Vagas com regras herdadas dos contratos, validação de conflitos, alertas de documentação irregular e trocas rastreáveis com justificativa e aceite.\",\"tone\":\"soft\"},{\"title\":\"Pagamentos sem retrabalho\",\"body\":\"Cálculo automático via check-in e checkout por geolocalização e regras contratuais. Fechamento pronto sem planilha e sem erro.\",\"tone\":\"soft\"},{\"title\":\"Auditoria total\",\"body\":\"Logs imutáveis com IP, data, autor e antes/depois. Histórico completo por CPF, pronto para auditoria a qualquer momento.\",\"tone\":\"soft\"},{\"title\":\"Controle em tempo real\",\"body\":\"Painel executivo com alertas visuais, notificação com prova de entrega e leitura, monitoramento de ausências e documentos vencidos.\",\"tone\":\"soft\"}]}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-80c7-852f-c228c3575eb2",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/plenno/ezgif-4b712a1fb438d0f4.webp"
+      }
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-801f-993f-df19820fe201",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8013-8a19-d19f82a341dd",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8075-9bea-e91756514a95",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80b3-a64b-c43fdcddfb58",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 5] Entrega [/-nav 5+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 5] Entrega [/-nav 5+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatBand] {\"sectionLabel\":\"\",\"stats\":[{\"value\":\"2 meses\",\"label\":\"do zero ao lançamento\"},{\"value\":\"2\",\"label\":\"produtos entregues: web e app\"},{\"value\":\"1000+\",\"label\":\"médicos na plataforma\"},{\"value\":\"10+\",\"label\":\"hospitais e UPAs em operação\"},{\"value\":\"2000+\",\"label\":\"plantões gerenciados por semana\"},{\"value\":\"0\",\"label\":\"planilhas e mensagens soltas\"}],\"emphasizeIndices\":[0,2]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatBand] {\"sectionLabel\":\"\",\"stats\":[{\"value\":\"2 meses\",\"label\":\"do zero ao lançamento\"},{\"value\":\"2\",\"label\":\"produtos entregues: web e app\"},{\"value\":\"1000+\",\"label\":\"médicos na plataforma\"},{\"value\":\"10+\",\"label\":\"hospitais e UPAs em operação\"},{\"value\":\"2000+\",\"label\":\"plantões gerenciados por semana\"},{\"value\":\"0\",\"label\":\"planilhas e mensagens soltas\"}],\"emphasizeIndices\":[0,2]}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBeforeAfter] {\"id\":\"case-comparativo\",\"sectionLabel\":\"\",\"before\":{\"label\":\"Antes\",\"body\":\"Plantões gerenciados por planilha e WhatsApp. Médico sem previsibilidade de ganho. Hospital sem visibilidade de escala nem controle de pagamento.\"},\"after\":{\"label\":\"Depois\",\"body\":\"Plataforma unificada para os dois lados. Médico com escala, ganhos e documentos em um app. Hospital com painel em tempo real e fechamento automático.\"}}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBeforeAfter] {\"id\":\"case-comparativo\",\"sectionLabel\":\"\",\"before\":{\"label\":\"Antes\",\"body\":\"Plantões gerenciados por planilha e WhatsApp. Médico sem previsibilidade de ganho. Hospital sem visibilidade de escala nem controle de pagamento.\"},\"after\":{\"label\":\"Depois\",\"body\":\"Plataforma unificada para os dois lados. Médico com escala, ganhos e documentos em um app. Hospital com painel em tempo real e fechamento automático.\"}}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-80bb-8464-c27dd2dfd19b",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Dois meses. Dois produtos. Um sistema que funciona para os dois lados. Muito craft, muita IA, muitos testes e muitas validações.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Dois meses. Dois produtos. Um sistema que funciona para os dois lados. Muito craft, muita IA, muitos testes e muitas validações.",
+          "href": null
+        }
+      ],
+      "is_toggleable": false,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80c9-8840-da012601aa58",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3407bcc8-93e5-8037-9d2c-f8190f4bf174",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  }
+]

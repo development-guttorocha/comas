@@ -1,0 +1,117 @@
+{
+  "track": "traps-or-steel",
+  "end": 48,
+  "fadeOut": [
+    40,
+    48
+  ],
+  "cover": 6,
+  "accent": "#CA0B69",
+  "title": "+99% de creators ganhando dinheiro",
+  "cta": {
+    "label": "Ver serviços",
+    "href": "/servicos"
+  },
+  "motion": "premium",
+  "display": "cartao",
+  "scenes": [
+    {
+      "id": "title-1",
+      "at": 0,
+      "chapter": "Resultado",
+      "kind": "title",
+      "lines": [
+        "*Mais* creators",
+        "ganhando",
+        "*mais* dinheiro"
+      ],
+      "image": "/cases/creator-ads/ca-r3-15-creators.webp",
+      "imgEnter": "fade",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "cut"
+    },
+    {
+      "id": "title-2",
+      "at": 8,
+      "chapter": "Problema",
+      "kind": "title",
+      "lines": [
+        "O Creator Ads",
+        "*não mostrava",
+        "como monetizar.*"
+      ],
+      "image": "/cases/creator-ads/foto-pesquisa-creatorads-4.png",
+      "imgEnter": "rise",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "wipe",
+      "enterDir": "up",
+      "enterBeats": 1
+    },
+    {
+      "id": "image-1",
+      "at": 20,
+      "chapter": "Decisão",
+      "kind": "image",
+      "src": "/cases/creator-ads/mockups-card-decision.png",
+      "fit": "split",
+      "imgEnter": "side",
+      "imgMotion": "still",
+      "imgFrame": "card",
+      "eyebrow": "a decisão que virou o jogo",
+      "lines": [
+        "Então eu escolhi",
+        "*mostrar os ganhos*",
+        "e recomendar campanhas."
+      ],
+      "body": "Foi a virada que o negócio precisava",
+      "textAt": 1,
+      "enter": "iris",
+      "enterBeats": 1
+    },
+    {
+      "id": "metrics-1",
+      "at": 32,
+      "chapter": "Impacto",
+      "kind": "metrics",
+      "value": "+99%",
+      "label": "de creators ganhando dinheiro",
+      "gaugesAt": 4,
+      "step": 2,
+      "note": "Q323 vs Q424",
+      "gauges": [
+        {
+          "value": 46,
+          "prefix": "+",
+          "suffix": "%",
+          "label": "conversão"
+        },
+        {
+          "value": 75,
+          "prefix": "+",
+          "suffix": "%",
+          "label": "ativação"
+        }
+      ],
+      "enter": "zoom",
+      "enterBeats": 1
+    },
+    {
+      "id": "end-1",
+      "at": 40,
+      "chapter": "Fechamento",
+      "kind": "end",
+      "lines": [
+        "Eu ajudo creators",
+        "a *ganhar dinheiro*."
+      ],
+      "meta": "Creator Ads · Head of Design · 2023–2024",
+      "signature": "Gutto Rocha",
+      "enter": "fade",
+      "enterBeats": 1
+    }
+  ]
+}

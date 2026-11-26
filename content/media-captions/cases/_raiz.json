@@ -1,0 +1,26 @@
+{
+  "modelo-hero-brandlovers-v2.png": {
+    "description": "Tela de aplicativo da Webmotors exibindo o anúncio de um Fiat Bravo vermelho, com preço sugerido de R$ 89.892, botão 'Ver as ofertas' e dados de consumo de combustível, sobre fundo escuro com brilho vermelho.",
+    "kind": "tela-app",
+    "shape": "larga",
+    "alt": "Tela do app Webmotors com anúncio de Fiat Bravo vermelho e preço",
+    "width": 1808,
+    "height": 732,
+    "hash": "18f35c805c864d533ed44d68daa162b1da27e65fb1d751118db22d7718ec32e1",
+    "model": "deepseek-flash",
+    "tokens": 949,
+    "at": "2026-11-11T13:28:29.505Z"
+  },
+  "old.png": {
+    "description": "Mockup de um celular exibindo a tela inicial do app BrandLovers, com saldo de R$ 1.500,00, cartão vermelho, atalhos de cupons, pulos e revolução, e uma lista de marcas como Magazine Luiza, Coca-Cola, Renner e Spoleto.",
+    "kind": "tela-app",
+    "shape": "larga",
+    "alt": "Tela inicial do app BrandLovers com saldo, cartão e lista de marcas parceiras",
+    "width": 1000,
+    "height": 750,
+    "hash": "68c9b40a3fe043ee999abab670ec38eef06bf1535c437d40e4ca2d631f00ffb9",
+    "model": "deepseek-flash",
+    "tokens": 983,
+    "at": "2026-11-11T13:28:31.796Z"
+  }
+}

@@ -1,0 +1,625 @@
+[
+  {
+    "id": "3377bcc8-93e5-801b-8196-d586e9966091",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 1] Contexto [/-nav 1+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 1] Contexto [/-nav 1+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80df-97a0-c0c92d2de859",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "\n[case:CaseSectionSplit] {\"id\":\"case-contexto\",\"label\":\"Contexto\",\"body\":\"Na Loft, liderei design em duas tribos de growth, com seis designers sob gestão direta: um Staff Designer e cinco Product Designers. Também atuava com Content Design, UX Research e Service Design por meio de liderança indireta.\\n\\nMeu desafio era criar condições para que esse time evoluísse e entregasse com consistência. Em alguns casos, a dificuldade de performance parecia estar ligada ao contexto em que a pessoa trabalhava e às expectativas sobre sua atuação.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "\n[case:CaseSectionSplit] {\"id\":\"case-contexto\",\"label\":\"Contexto\",\"body\":\"Na Loft, liderei design em duas tribos de growth, com seis designers sob gestão direta: um Staff Designer e cinco Product Designers. Também atuava com Content Design, UX Research e Service Design por meio de liderança indireta.\\n\\nMeu desafio era criar condições para que esse time evoluísse e entregasse com consistência. Em alguns casos, a dificuldade de performance parecia estar ligada ao contexto em que a pessoa trabalhava e às expectativas sobre sua atuação.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80a2-ae36-c90bc8955860",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/loft-design/21.png"
+      }
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80f3-a3d1-d6ab15fd6bfc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 2] Decisão [/-nav 2+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 2] Decisão [/-nav 2+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80d7-9c97-c4e23564c41f",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "\n[case:CaseSectionSplit] {\"id\":\"case-decisao\",\"label\":\"Mudar o contexto de trabalho\",\"body\":\"Percebi que um dos designers não estava conseguindo aproveitar suas habilidades no time em que estava. Minha leitura foi que uma mudança de contexto poderia ajudá-lo a contribuir melhor.\\n\\nRealoquei esse designer para outro time e trouxe uma pessoa com um perfil mais adequado à posição que ele deixava. A decisão gerou desconforto: havia uma expectativa de que aquela alocação fosse a correta.\\n\\nO designer reposicionado se encontrou no novo contexto, e a designer que assumiu a posição também evoluiu. Essa experiência reforçou a importância de olhar para a relação entre pessoa, desafio e ambiente antes de concluir que havia um problema de capacidade.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "\n[case:CaseSectionSplit] {\"id\":\"case-decisao\",\"label\":\"Mudar o contexto de trabalho\",\"body\":\"Percebi que um dos designers não estava conseguindo aproveitar suas habilidades no time em que estava. Minha leitura foi que uma mudança de contexto poderia ajudá-lo a contribuir melhor.\\n\\nRealoquei esse designer para outro time e trouxe uma pessoa com um perfil mais adequado à posição que ele deixava. A decisão gerou desconforto: havia uma expectativa de que aquela alocação fosse a correta.\\n\\nO designer reposicionado se encontrou no novo contexto, e a designer que assumiu a posição também evoluiu. Essa experiência reforçou a importância de olhar para a relação entre pessoa, desafio e ambiente antes de concluir que havia um problema de capacidade.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80e2-b3fc-cf1b689a72a2",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80dd-910c-e9898e0c8cb2",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/loft-design/03-1.png"
+      }
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-802d-a99a-e1567ee40af1",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8023-a418-d9f4fbc8645e",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 3] Construção [/-nav 3+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 3] Construção [/-nav 3+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80cb-a43e-c188a30d7dd4",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-construcao\",\"label\":\"Dar sustentação à evolução\",\"body\":\"A mudança de alocação era uma parte do trabalho. Também organizei as conversas de desenvolvimento e momentos de alinhamento para aproximar a rotina dos direcionamentos estratégicos, táticos e operacionais da companhia.\\n\\nO objetivo era dar mais clareza sobre o que se esperava das pessoas, como elas poderiam se desenvolver e quais espaços o time tinha para discutir suas entregas.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-construcao\",\"label\":\"Dar sustentação à evolução\",\"body\":\"A mudança de alocação era uma parte do trabalho. Também organizei as conversas de desenvolvimento e momentos de alinhamento para aproximar a rotina dos direcionamentos estratégicos, táticos e operacionais da companhia.\\n\\nO objetivo era dar mais clareza sobre o que se esperava das pessoas, como elas poderiam se desenvolver e quais espaços o time tinha para discutir suas entregas.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "\n[case:CaseApproachCards] {\"sectionLabel\":\"Duas frentes de sustentação\",\"columns\":2,\"items\":[{\"title\":\"Desenvolvimento individual\",\"body\":\"PDI e conversas de carreira para discutir evolução, expectativas e habilidades. Separar esse espaço do feedback de projeto ajudava a tratar o desenvolvimento com atenção própria.\"},{\"title\":\"Alinhamento e qualidade\",\"body\":\"Touchpoints, critiques, retrospectivas e planejamento entre times para compartilhar contexto, revisar entregas e ajustar a forma de trabalhar. Cada encontro precisava ter propósito e uma contribuição clara para a rotina.\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "\n[case:CaseApproachCards] {\"sectionLabel\":\"Duas frentes de sustentação\",\"columns\":2,\"items\":[{\"title\":\"Desenvolvimento individual\",\"body\":\"PDI e conversas de carreira para discutir evolução, expectativas e habilidades. Separar esse espaço do feedback de projeto ajudava a tratar o desenvolvimento com atenção própria.\"},{\"title\":\"Alinhamento e qualidade\",\"body\":\"Touchpoints, critiques, retrospectivas e planejamento entre times para compartilhar contexto, revisar entregas e ajustar a forma de trabalhar. Cada encontro precisava ter propósito e uma contribuição clara para a rotina.\"}]}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8067-945a-de0344664a3b",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/loft-design/56.png"
+      }
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "\n[case:CaseBeforeAfter] {\"sectionLabel\":\"A mudança na forma de liderar\",\"before\":{\"label\":\"Ponto de partida\",\"body\":\"Pessoas com dificuldades de atuação e necessidade de mais clareza sobre expectativas, desenvolvimento e alinhamento.\"},\"after\":{\"label\":\"Trabalho realizado\",\"body\":\"Revisão de alocações, acompanhamento individual e espaços definidos para discutir direção, qualidade e colaboração.\"}}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "\n[case:CaseBeforeAfter] {\"sectionLabel\":\"A mudança na forma de liderar\",\"before\":{\"label\":\"Ponto de partida\",\"body\":\"Pessoas com dificuldades de atuação e necessidade de mais clareza sobre expectativas, desenvolvimento e alinhamento.\"},\"after\":{\"label\":\"Trabalho realizado\",\"body\":\"Revisão de alocações, acompanhamento individual e espaços definidos para discutir direção, qualidade e colaboração.\"}}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-809f-96ae-d574f6c77807",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-805d-b886-c520c825055f",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 4] Evidências [/-nav 4+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 4] Evidências [/-nav 4+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-801f-bdcc-c04ad755ca00",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "\n[case:CaseSectionSplit] {\"id\":\"case-evidencias\",\"label\":\"Evidências de desenvolvimento\",\"body\":\"O material que registra esse trabalho reúne quatro reconhecimentos financeiros e uma pessoa em desenvolvimento para gestão. São evidências de reconhecimento e preparação de carreira naquele recorte, sem confundir esses marcos com posições que as pessoas vieram a ocupar depois.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "\n[case:CaseSectionSplit] {\"id\":\"case-evidencias\",\"label\":\"Evidências de desenvolvimento\",\"body\":\"O material que registra esse trabalho reúne quatro reconhecimentos financeiros e uma pessoa em desenvolvimento para gestão. São evidências de reconhecimento e preparação de carreira naquele recorte, sem confundir esses marcos com posições que as pessoas vieram a ocupar depois.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8078-9ee0-f1bc11550442",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatBand] {\"sectionLabel\":\"Resultados registrados para as pessoas\",\"stats\":[{\"value\":\"4\",\"label\":\"reconhecimentos financeiros\"},{\"value\":\"1\",\"label\":\"pessoa em desenvolvimento para gestão\"}],\"emphasizeIndices\":[0,1]}\n",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatBand] {\"sectionLabel\":\"Resultados registrados para as pessoas\",\"stats\":[{\"value\":\"4\",\"label\":\"reconhecimentos financeiros\"},{\"value\":\"1\",\"label\":\"pessoa em desenvolvimento para gestão\"}],\"emphasizeIndices\":[0,1]}\n",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80cb-a131-eca54d41fc40",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-produto\",\"label\":\"O produto como evidência complementar\",\"body\":\"O time também era responsável pelo app B2C da Loft. No recorte apresentado em outubro de 2022, o material registra crescimento em agendamentos, imóveis favoritados e anúncios visualizados.\\n\\nEsses são resultados do produto e do trabalho coletivo do time. Eles contextualizam o ambiente em que a liderança atuava; não demonstram, isoladamente, o efeito de uma realocação ou de um ritual específico.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-produto\",\"label\":\"O produto como evidência complementar\",\"body\":\"O time também era responsável pelo app B2C da Loft. No recorte apresentado em outubro de 2022, o material registra crescimento em agendamentos, imóveis favoritados e anúncios visualizados.\\n\\nEsses são resultados do produto e do trabalho coletivo do time. Eles contextualizam o ambiente em que a liderança atuava; não demonstram, isoladamente, o efeito de uma realocação ou de um ritual específico.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-803d-a9a2-c99cc00839dc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatBand] {\"sectionLabel\":\"App B2C · recorte apresentado em outubro de 2022\",\"stats\":[{\"value\":\"+14%\",\"label\":\"agendamentos\"},{\"value\":\"+12%\",\"label\":\"imóveis favoritados\"},{\"value\":\"+5%\",\"label\":\"anúncios visualizados\"}],\"attributionNote\":\"Outubro de 2022 é a referência da apresentação. O período de medição e a base de comparação não estão especificados no material.\"}\n",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatBand] {\"sectionLabel\":\"App B2C · recorte apresentado em outubro de 2022\",\"stats\":[{\"value\":\"+14%\",\"label\":\"agendamentos\"},{\"value\":\"+12%\",\"label\":\"imóveis favoritados\"},{\"value\":\"+5%\",\"label\":\"anúncios visualizados\"}],\"attributionNote\":\"Outubro de 2022 é a referência da apresentação. O período de medição e a base de comparação não estão especificados no material.\"}\n",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80c8-822c-fcb3c05eabe1",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 5] Aprendizado [/-nav 5+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 5] Aprendizado [/-nav 5+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-803f-bfee-f410fd98a3a3",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-aprendizado\",\"label\":\"O que mudou na minha forma de liderar\",\"body\":\"Antes de avaliar uma entrega, preciso entender as condições em que ela acontece: o desafio, as expectativas, as habilidades da pessoa e o apoio que ela recebe.\\n\\nNa Loft, a realocação trouxe esse aprendizado para uma decisão concreta. O acompanhamento de carreira e os rituais deram continuidade ao trabalho. Desenvolver o time exigia cuidar dessas duas escalas: a situação de cada pessoa e a forma como todos trabalhavam juntos.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-aprendizado\",\"label\":\"O que mudou na minha forma de liderar\",\"body\":\"Antes de avaliar uma entrega, preciso entender as condições em que ela acontece: o desafio, as expectativas, as habilidades da pessoa e o apoio que ela recebe.\\n\\nNa Loft, a realocação trouxe esse aprendizado para uma decisão concreta. O acompanhamento de carreira e os rituais deram continuidade ao trabalho. Desenvolver o time exigia cuidar dessas duas escalas: a situação de cada pessoa e a forma como todos trabalhavam juntos.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80a0-93f8-d9942f8ee20a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "\n[case:CaseResultsQuote] {\"attribution\":\"Designer na Loft · trecho do feedback registrado no material original\",\"body\":\"Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers.\"}\n",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "\n[case:CaseResultsQuote] {\"attribution\":\"Designer na Loft · trecho do feedback registrado no material original\",\"body\":\"Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers.\"}\n",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-808f-81ed-ea891f9e4f72",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8024-aa8b-d6fa277cf5f8",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/loft-design/55.png"
+      }
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8058-889a-d0bb89debce0",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseThanksCards] {\"sectionLabel\":\"\",\"columns\":1,\"items\":[{\"title\":\"Obrigado\",\"body\":\"Andressa, Lucas, Carol, Jairo, Dani, Teresa, Huxley, Jinmi Lee, Doug & Vila\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseThanksCards] {\"sectionLabel\":\"\",\"columns\":1,\"items\":[{\"title\":\"Obrigado\",\"body\":\"Andressa, Lucas, Carol, Jairo, Dani, Teresa, Huxley, Jinmi Lee, Doug & Vila\"}]}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80e8-9dce-f24f0fc02bff",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80db-b1e4-e4c9f4c072a4",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8069-b9f5-ddcc05fa2f0d",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-80b2-b598-df24a2f96e16",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-8095-a7aa-e30edbe2ed95",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3377bcc8-93e5-808b-985d-c791c44a2248",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  }
+]

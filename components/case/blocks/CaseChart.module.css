@@ -1,0 +1,64 @@
+/* Gráfico editável: um card no padrão dos gráficos do case, marcas finas, eixos discretos. */
+.card { min-width: 0; margin: 0; padding: var(--card-padding); border-radius: var(--radius-card); background: var(--color-card); }
+.title { max-width: 48ch; margin: 0 0 20px; color: var(--color-ink); font-size: clamp(16px, 1.3vw, 20px); font-weight: 600; line-height: 1.4; }
+.caption { margin: 24px 0 0; color: var(--color-muted); font-size: 13px; line-height: 1.6; }
+.plot { position: relative; min-width: 0; }
+.body { min-width: 0; }
+
+.svg { display: block; overflow: visible; }
+.grid line { stroke: color-mix(in srgb, var(--color-line) 55%, transparent); stroke-width: 1; }
+.grid text { fill: var(--color-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.baseline { stroke: var(--color-line); }
+.value { fill: var(--color-ink); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.xLabels { position: relative; height: 40px; margin-top: 4px; }
+.xLabels span { position: absolute; top: 0; overflow: hidden; color: var(--color-muted); font-size: 12px; line-height: 1.35; text-align: center; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 0 0 20px; padding: 0; list-style: none; color: var(--color-subtle, var(--color-muted)); font-size: 13px; }
+.legend li { display: inline-flex; align-items: center; gap: 8px; }
+.legend span { width: 10px; height: 10px; border-radius: 3px; }
+
+/* Horizontal bars, progress and before/after share the row rhythm. */
+.bars { display: grid; gap: 20px; }
+.barRow { display: grid; grid-template-columns: minmax(96px, 26%) minmax(0, 1fr); align-items: center; gap: 16px; }
+.barRowSingle { grid-template-columns: minmax(64px, 22%) minmax(0, 1fr) minmax(56px, auto); }
+.bars:has(.barRowSingle) { gap: clamp(20px, 2.4vw, 40px); }
+.barRowSingle .barLabel { font-size: clamp(15px, 1.3vw, 20px); }
+.barRowSingle .barSegment { height: clamp(14px, 1.4vw, 22px); border-radius: clamp(5px, .5vw, 8px); }
+.barEnd { color: var(--color-ink); font-size: clamp(14px, 1.2vw, 18px); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.barLabel { color: var(--color-subtle, var(--color-ink)); font-size: 14px; line-height: 1.4; }
+.barTracks { display: grid; gap: 6px; }
+.barTrack { display: flex; align-items: center; gap: 2px; min-width: 0; }
+.barSegment { display: block; height: 14px; min-width: 2px; border-radius: 4px; transform-origin: left center; }
+.barValue { margin-left: 10px; color: var(--color-ink); font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.progress, .ba { display: grid; gap: 10px; }
+.progressHead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; color: var(--color-subtle, var(--color-ink)); font-size: 15px; }
+.progressHead strong { color: var(--color-ink); font-size: 20px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.progress[data-size="s"] .progressTrack { height: 8px; }
+.progress[data-size="l"] .progressTrack { height: 28px; border-radius: 14px; }
+.progress[data-size="l"] .progressTrack span { border-radius: 14px; }
+.progress[data-size="l"] .progressHead strong { font-size: clamp(24px, 2.4vw, 36px); }
+.progressTrack { height: 12px; overflow: hidden; border-radius: 6px; background: color-mix(in srgb, var(--color-line) 40%, transparent); }
+.progressTrack span { display: block; height: 100%; border-radius: 6px; transform-origin: left center; }
+
+.baValues { color: var(--color-muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.baValues strong { color: var(--color-ink); font-weight: 600; }
+.baValues em { margin-left: 10px; color: var(--chart-accent, var(--color-ink)); font-style: normal; font-weight: 700; }
+.baTrack { position: relative; height: 24px; }
+.baTrack::before { content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--color-line); }
+.baLine { position: absolute; top: calc(50% - 2px); height: 4px; border-radius: 2px; transform-origin: left center; }
+.baDot { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; box-shadow: 0 0 0 3px var(--color-card); }
+
+.gauges { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; }
+.gauge { display: grid; justify-items: center; text-align: center; }
+.gaugeSvg { width: min(100%, 240px); height: auto; overflow: visible; }
+.gaugeTrack { fill: color-mix(in srgb, var(--color-line) 45%, transparent); }
+.gaugeValue { margin-top: -38px; color: var(--color-ink); font-size: clamp(26px, 2.6vw, 40px); font-weight: 700; letter-spacing: -.04em; font-variant-numeric: tabular-nums; }
+.gaugeLabel { margin-top: 8px; color: var(--color-muted); font-size: 14px; line-height: 1.4; }
+
+@media (max-width: 767px) {
+  .barRow { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .barRowSingle { grid-template-columns: minmax(0, 1fr) auto; }
+  .barRowSingle .barLabel { grid-column: 1 / -1; }
+}

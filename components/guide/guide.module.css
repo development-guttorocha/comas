@@ -1,0 +1,68 @@
+/* Building blocks drawn from the Sobre page; values come from app/design-tokens.css. */
+
+.section { width: var(--content-width); margin-inline: auto; }
+.section[data-pad="md"] { padding-block: var(--pad-section-md); }
+.section[data-pad="lg"] { padding-block: var(--pad-section-lg); }
+.full { width: 100%; }
+
+.kicker { margin: 0 0 24px; color: var(--color-muted); font-size: var(--type-label); font-weight: 600; line-height: 1.5; letter-spacing: var(--tracking-label); }
+
+.heading { margin: 0; font-weight: var(--weight-heading); text-wrap: balance; }
+.heading > span { color: var(--color-muted); }
+.display { font-size: var(--type-display); line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+.sectionTitle { font-size: var(--type-section); line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); }
+.subheading { font-size: var(--type-subheading); line-height: 1.15; letter-spacing: -.04em; }
+
+.note { padding: var(--card-padding); background: var(--color-card); border-radius: var(--radius-note); color: var(--color-subtle); font-size: clamp(14px, 1.15vw, 20px); line-height: var(--leading-body); }
+.note strong { color: var(--color-ink); font-weight: 700; }
+.note > * + * { margin-top: 24px; }
+
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: var(--control-height); max-width: 100%; padding: 12px 24px; border: 1px solid var(--color-control-line); border-radius: var(--radius-control); background: transparent; color: var(--color-ink); font: inherit; font-size: var(--type-button-sm); font-weight: 700; line-height: 1.5; text-align: center; text-decoration: none; cursor: pointer; transition: background-color .2s, border-color .2s; }
+.pill:hover { background: var(--color-card); border-color: var(--color-ink); }
+.pill:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+
+.workCard { position: relative; display: flex; flex-direction: column; min-width: 0; border-radius: var(--radius-card); background: #151a1d; color: #fff; text-decoration: none; overflow: hidden; }
+.workCard[data-tone="light"] { background: #deded6; color: #151a1d; }
+.workMedia { aspect-ratio: 1.6; background: var(--color-card-alt); overflow: hidden; }
+.workMedia img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2, .65, .3, 1); }
+.workMonogram { display: grid; place-items: center; height: 100%; padding: 24px; font-size: clamp(28px, 3.6vw, 60px); font-weight: 700; letter-spacing: -.04em; text-align: center; }
+.workBody { display: flex; flex: 1; flex-direction: column; padding: clamp(20px, 2.3vw, 48px); }
+.workCard header { padding-bottom: clamp(28px, 3vw, 64px); border-bottom: 1px solid #ffffff40; }
+.workCard[data-tone="light"] header { border-color: #151a1d40; }
+.workCompany { font-size: clamp(23px, 1.6vw, 40px); font-weight: 700; letter-spacing: -.035em; }
+.workCard header > p { margin-top: 6px; font-size: clamp(12px, .8vw, 20px); line-height: 1.5; }
+.workCard header > .workDate { margin-top: 14px; font-size: clamp(10px, .65vw, 14px); }
+.workResults { padding-top: clamp(28px, 2.8vw, 64px); }
+.workTitle { min-height: 3em; font-size: clamp(13px, .85vw, 20px); font-weight: 700; line-height: 1.5; }
+.workResults dl { display: flex; justify-content: space-between; gap: 16px; margin: clamp(16px, 1.5vw, 40px) 0 0; }
+.workResults dl > div { flex: 1; min-width: 0; }
+.workResults dt { font-size: clamp(20px, 1.6vw, 40px); font-weight: 700; line-height: 1.15; letter-spacing: -.035em; }
+.workResults dd { margin: 8px 0 0; color: inherit; font-size: clamp(11px, .7vw, 18px); line-height: 1.4; }
+.workTags { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: clamp(16px, 1.5vw, 32px) 0 0; padding: 0; list-style: none; color: var(--color-muted); font-size: clamp(11px, .75vw, 14px); line-height: 1.5; }
+.workArrow { position: absolute; right: 16px; top: 16px; z-index: 1; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: #fff; color: #151a1d; font-size: 27px; opacity: 0; transform: translate(-5px, 5px); transition: opacity .2s, transform .2s; }
+.workCard:is(:hover, :focus-visible) .workArrow { opacity: 1; transform: translate(0); }
+.workCard:focus-visible { outline: 2px solid var(--color-ink); outline-offset: 5px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .workCard:hover .workMedia img { transform: scale(1.015); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .workResults dl { flex-direction: column; gap: 24px; }
+}
+@media (max-width: 767px) {
+  .kicker { margin-bottom: 20px; }
+  .workBody { padding: 32px; }
+  .workCompany { font-size: 28px; }
+  .workCard header { padding-bottom: 28px; }
+  .workCard header > p { font-size: 14px; }
+  .workCard header > .workDate { font-size: 11px; }
+  .workResults { padding-top: 28px; }
+  .workTitle { font-size: 15px; }
+  .workResults dl { margin-top: 24px; }
+  .workResults dt { font-size: 28px; }
+  .workResults dd { font-size: 12px; }
+  .workTags { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pill, .workArrow, .workMedia img { transition: none; }
+}

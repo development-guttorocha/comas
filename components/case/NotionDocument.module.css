@@ -1,0 +1,72 @@
+/* Same frame as the Home and Sobre sections (`--content-width`). */
+.document {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 760px) minmax(0, 1fr);
+  width: var(--content-width);
+  margin-inline: auto;
+  /* No room above: the first block brings its own space (set in the admin). */
+  padding-block: 0 clamp(64px, 8vw, 120px);
+  color: var(--color-muted);
+}
+.document > * { grid-column: 2; min-width: 0; }
+.document > :where(h2, h3, h4) { text-wrap: pretty; }
+.document > h2 { margin-block: 88px 28px; }
+.document > h3 { margin-block: 56px 24px; }
+.document > :first-child { margin-top: 0; }
+.document :where(strong, b) { color: var(--color-ink); font-weight: 600; }
+.document :where(p, li) { overflow-wrap: break-word; }
+.document > p { color: var(--color-muted); }
+/* Parágrafo com tamanho, alinhamento ou cor próprios (lib/caseParagraph.ts). */
+.document > p[data-size="sm"] { font-size: clamp(14px, .95vw, 16px); }
+.document > p[data-size="lg"] { font-size: clamp(19px, 1.6vw, 28px); line-height: 1.6; }
+.document > p[data-size="xl"] { font-size: clamp(24px, 2.4vw, 40px); line-height: 1.35; letter-spacing: -.01em; }
+.document > p[data-size="xxl"] { font-size: clamp(30px, 3.4vw, 56px); line-height: 1.2; letter-spacing: -.02em; }
+.document > p[data-align="center"] { text-align: center; }
+.document > p[data-align="right"] { text-align: right; }
+.document > p[data-color="ink"] { color: var(--color-ink); }
+.document > p[data-color="brand"] { color: var(--case-brand, var(--color-ink)); }
+.document > p[data-color="custom"] { color: var(--p-color); }
+.document :where(img, video, iframe) { border-radius: 24px; border: 1.5px solid var(--color-card);}
+.document .noBorder :where(img, video) { border: 0; }
+.document > figure,
+.document > .media,
+.document > .feature,
+.document > .columns { grid-column: 1 / -1; width: 100%; }
+.document > figure,
+.document > .media { margin-block: clamp(32px, 5vw, 64px); }
+.feature { min-width: 0; }
+/* Rhythm: a new chapter (the side index entries) opens with more room, while a text and the
+   image right after it, which illustrates it, sit close together. */
+.document > .chapter:not(:first-child) + .feature > section { padding-top: var(--pad-section-lg); }
+.document > .feature:has(+ figure) > section { padding-bottom: clamp(48px, 5vw, 80px); }
+.document > .feature + figure { margin-top: 0; }
+.document .feature :global(.content-wrap) { width: 100%; max-width: none; padding-inline: 0; }
+/* Image widths chosen in the admin: a share of the screen, or held to the text column. */
+.document > figure.bleed { justify-self: center; width: 100vw; }
+.document > figure.w75 { justify-self: center; width: 75vw; }
+.document > figure.w50 { justify-self: center; width: 50vw; }
+.document > figure.w25 { justify-self: center; width: 25vw; }
+.document > figure.w15 { justify-self: center; width: 15vw; }
+.document > figure.w10 { justify-self: center; width: 10vw; }
+.document > figure.w5 { justify-self: center; width: 5vw; }
+/* A 24px corner would round a small image into a blob. */
+.document > figure:is(.w15, .w10, .w5) > :first-child, .document > figure:is(.w15, .w10, .w5) :where(img, video) { border-radius: 12px; }
+.document > .bleed > :first-child { border-radius: 0; }
+.document > .bleed :where(img, video) { border: 0; border-radius: 0; }
+.document > .bleed figcaption { width: var(--content-width); margin-inline: auto; }
+.document > figure.narrow { grid-column: 2; }
+/* On phones a share of the screen is too small: the large ones take the content width, the small ones double. */
+@media (max-width: 767px) {
+  .document > figure:is(.w75, .w50) { width: 100%; }
+  .document > figure.w25 { width: 50vw; }
+  .document > figure.w15 { width: 30vw; }
+  .document > figure.w10 { width: 20vw; }
+  .document > figure.w5 { width: 10vw; }
+}
+.document figcaption { margin-top: 16px; color: var(--color-muted); font-size: 15px; line-height: 1.6; }
+.columns { gap: clamp(32px, 4.5vw, 64px); margin-block: 48px; }
+.embedFrame { overflow: hidden; border-radius: 24px; background: var(--color-card); }
+@media (max-width: 767px) {
+  .document > h2 { margin-top: 56px; }
+  .document > h3 { margin-top: 40px; }
+}

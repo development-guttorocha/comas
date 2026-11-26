@@ -1,0 +1,126 @@
+{
+  "track": "trap-picasso",
+  "end": 68,
+  "fadeOut": [
+    60,
+    68
+  ],
+  "cover": 6,
+  "accent": "#025E5E",
+  "title": "2000+ plantões por semana. 0 planilhas.",
+  "cta": {
+    "label": "Ver serviços",
+    "href": "/servicos"
+  },
+  "motion": "premium",
+  "scenes": [
+    {
+      "id": "image-1",
+      "at": 0,
+      "enter": "fade",
+      "kind": "image",
+      "src": "/cases/plenno/capa-rotina-organizada-1.png",
+      "fit": "contain",
+      "imgEnter": "fade"
+    },
+    {
+      "id": "role-1",
+      "at": 12,
+      "enter": "fade",
+      "kind": "role",
+      "heading": "Nossa *entrega*",
+      "facts": [
+        {
+          "label": "Minha Função",
+          "value": "Head de Design"
+        },
+        {
+          "label": "Tempo de entrega",
+          "value": "2 meses"
+        },
+        {
+          "value": "APP e Web Completos",
+          "label": "O que fizemos"
+        }
+      ]
+    },
+    {
+      "id": "title-1",
+      "at": 24,
+      "chapter": "Gancho",
+      "kind": "title",
+      "lines": [
+        "Médicos e hospitais",
+        "com agenda",
+        "*organizada*"
+      ],
+      "image": "/cases/plenno/plenno-header.png",
+      "imgEnter": "crop",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "flash"
+    },
+    {
+      "id": "title-2",
+      "at": 32,
+      "chapter": "Decisões",
+      "kind": "title",
+      "lines": [
+        "Desenhei para escalar!"
+      ],
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "wipe",
+      "enterDir": "up",
+      "enterBeats": 1
+    },
+    {
+      "id": "screens-1",
+      "at": 40,
+      "chapter": "Prova",
+      "kind": "screens",
+      "title": "App e Web em *2 meses*",
+      "titleOut": 3.75,
+      "boards": [
+        {
+          "src": "/cases/plenno/pleno-app.png"
+        },
+        {
+          "src": "/cases/plenno/plenno-platform.png",
+          "focus": "left"
+        }
+      ],
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "metrics-1",
+      "at": 52,
+      "chapter": "Impacto",
+      "kind": "metrics",
+      "value": "2000+",
+      "label": "plantões gerenciados por semana",
+      "gaugesAt": 4,
+      "step": 2,
+      "note": "1000+ médicos · 10+ hospitais e UPAs",
+      "gauges": [],
+      "enter": "zoom",
+      "enterBeats": 1
+    },
+    {
+      "id": "end-1",
+      "at": 60,
+      "chapter": "Fechamento",
+      "kind": "end",
+      "lines": [
+        "Produto no ar em 2 meses?",
+        "*Deixa comigo*"
+      ],
+      "meta": "Plenno · Design Consultant · 2025",
+      "signature": "Gutto Rocha",
+      "enter": "fade",
+      "enterBeats": 1
+    }
+  ]
+}

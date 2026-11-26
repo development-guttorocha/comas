@@ -1,0 +1,348 @@
+.sectionPad {
+  padding-block: clamp(64px, 7vw, 112px);
+}
+
+.grid,
+.journeyGrid,
+.statGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(40px, 4.5vw, 64px);
+  align-items: start;
+}
+
+.stack > * + * {
+  margin-top: 48px;
+}
+
+/* Same as the Sobre kicker (`components/guide`). */
+.sectionLabel {
+  display: block;
+  margin-bottom: 32px;
+  font-size: var(--type-label);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: var(--tracking-label);
+  color: var(--color-muted);
+}
+
+.header {
+  margin-bottom: clamp(40px, 4.5vw, 64px);
+}
+
+.heading {
+  max-width: 24ch;
+  font-size: var(--type-section);
+  font-weight: var(--weight-heading);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+/* A heading straight above the cards (no header around it) keeps the same room as `.header`. */
+.heading + .grid {
+  margin-top: clamp(40px, 4.5vw, 64px);
+}
+
+.header > .body {
+  max-width: 65ch;
+  margin-top: 24px;
+}
+
+.column,
+.item,
+.step,
+.splitContent {
+  min-width: 0;
+}
+
+.columnTitle,
+.itemTitle {
+  max-width: 26ch;
+  margin: 0 0 24px;
+  font-size: clamp(26px, 2.8vw, 42px);
+  font-weight: 700;
+  line-height: 1.14;
+  letter-spacing: -.035em;
+  color: var(--color-ink);
+  text-wrap: pretty;
+}
+
+.mutedTitle {
+  color: var(--color-muted);
+}
+
+/* Antes e depois: cada lado é um card, o "depois" com contorno de destaque. */
+.compareGrid {
+  gap: 24px;
+  align-items: stretch;
+}
+
+.compareColumn {
+  padding: var(--card-padding);
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+}
+
+.compareColumn[data-variant="emphasis"] {
+  background: var(--color-card-alt);
+  box-shadow: inset 0 0 0 1px var(--color-line);
+}
+
+.compareColumn > :last-child {
+  margin-bottom: 0;
+}
+
+.body,
+.columnMedia {
+  min-width: 0;
+  color: var(--color-muted);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  overflow-wrap: break-word;
+}
+
+.body > * + * {
+  margin-top: 20px;
+}
+
+.body strong,
+.columnMedia strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.columnMedia {
+  width: 100%;
+  margin-top: 28px;
+}
+
+.columnMedia > div {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.columnMedia :where(img, video) {
+  border-radius: 24px;
+}
+
+.columnFoot {
+  margin-top: 28px;
+}
+
+.banner {
+  margin-bottom: 48px;
+}
+
+.journeyGrid {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.stepNumber {
+  display: block;
+  margin-bottom: 28px;
+  color: var(--color-muted);
+  font-size: clamp(40px, 4.5vw, 64px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.045em;
+}
+
+.statSection {
+  padding-bottom: clamp(56px, 6vw, 88px);
+}
+
+.statHeader {
+  padding-block: clamp(56px, 6vw, 88px) 40px;
+}
+
+.statHeader .sectionLabel:last-child {
+  margin-bottom: 0;
+}
+
+.statIntro {
+  max-width: 65ch;
+  margin-top: 24px;
+}
+
+.statGrid {
+  gap: 24px;
+  align-items: stretch;
+}
+
+.statCharts {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 1024px) {
+  .statCharts:has(> :nth-child(2)) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+.statCell {
+  min-width: 0;
+  padding: var(--card-padding);
+  background: var(--color-card);
+  border-radius: var(--radius-card);
+}
+
+.statEmphasis {
+  background: var(--color-card-alt);
+  box-shadow: inset 0 0 0 1px var(--color-line);
+}
+
+.statFrom { color: var(--color-muted); }
+.statArrow { margin-inline: .3em; color: color-mix(in srgb, var(--case-brand, #fff) 80%, transparent); }
+.statTo { color: var(--case-brand, var(--color-ink)); }
+
+.statValue {
+  margin-bottom: 20px;
+  font-size: clamp(40px, 3.6vw, 64px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+.statLabel {
+  color: var(--color-ink);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.statCaption,
+.notes {
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.statCaption {
+  margin-top: 12px;
+}
+
+.notes {
+  margin-top: 32px;
+}
+
+.notes > p {
+  max-width: 80ch;
+}
+
+.notes > p + p {
+  margin-top: 16px;
+}
+
+.quotePanel {
+  border-radius: 24px;
+}
+
+.quoteMeasure {
+  width: 100%;
+  max-width: 960px;
+}
+
+.quoteCentered {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.quote {
+  margin: 0;
+  padding: 0;
+  color: var(--color-ink);
+  font-size: clamp(26px, 3.4vw, 48px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -.035em;
+  text-wrap: pretty;
+}
+
+.quote > * + * {
+  margin-top: 24px;
+}
+
+/* Testimonial, as on the Home: no box, centred, in quotes, source in a pill. */
+.testimonial {
+  display: grid;
+  justify-items: center;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial > span {
+  margin: 0;
+}
+
+.testimonial blockquote {
+  margin: 0;
+  color: var(--color-ink);
+  font-size: clamp(26px, 2.75vw, 44px);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -.0386em;
+  text-wrap: balance;
+}
+
+.testimonialSource {
+  padding: 10px 18px;
+  border: 1px solid var(--color-control-line);
+  /* A pill on one line; a long source wrapping on a phone keeps soft corners instead of a capsule. */
+  border-radius: 24px;
+  color: var(--color-subtle);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.attribution {
+  margin-top: 32px;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* A card with a background (the Sobre's principle grid): the title sits over a hairline. */
+.itemTone { padding: clamp(24px, 2.9vw, 64px); border-radius: 24px; }
+.itemTone .itemTitle { padding-bottom: clamp(20px, 1.5vw, 32px); border-bottom: 1px solid color-mix(in srgb, currentColor 27%, transparent); color: inherit; }
+.itemTone .body { color: inherit; opacity: .82; }
+
+/* Side-title text: title on the right, or stacked above the text. */
+.splitReversed > :first-child { order: 2; }
+.splitStacked { grid-template-columns: minmax(0, 1fr) !important; gap: 24px; }
+
+.splitLabel {
+  max-width: var(--label-measure, 240px);
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .twoColumns,
+  .journeyGrid,
+  .statGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .singleColumn {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .threeColumns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+

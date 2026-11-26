@@ -1,0 +1,12 @@
+# Fora do upload do `vercel deploy` (o CLI não lê o .gitignore; ele soma isto à lista padrão).
+# O "Publicar" do admin sobe uma cópia do último commit (lib/admin/publish/deploy.ts), que já não tem
+# estas pastas; a lista vale também para um `vercel deploy` rodado à mão na pasta do projeto.
+# Dados locais do admin: chaves, material bruto dos cases (originais, texto e imagens extraídas).
+/.admin
+# A matéria-prima organizada de cada case: só o admin e o gerador leem.
+content/cases/*/material.json
+# Lixeira e cópias de segurança do admin (incluem material bruto de cases excluídos).
+/.content-history
+# Rascunhos locais de tradução e arquivos de trabalho do Imagem → layout.
+/.translations
+/.screen-design

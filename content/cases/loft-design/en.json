@@ -1,0 +1,701 @@
+{
+  "schemaVersion": 1,
+  "slug": "loft-design",
+  "revision": "5ddfb5fb-c355-4d1f-8fcb-9c240486795c",
+  "draft": {
+    "sourceHash": "6f0842854f4b960580e4f83afdf1d11cd951b7dfbe1462faf15002117d545bb4",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-31T12:18:05.769Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Desenvolver pessoas para destravar o time",
+        "target": "Developing people to unlock the team’s potential"
+      },
+      {
+        "key": "case.productTag",
+        "source": "People and Operations",
+        "target": "People and Operations"
+      },
+      {
+        "key": "case.role",
+        "source": "Design Manager",
+        "target": "Design Manager"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Liderança",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Desenvolvimento",
+        "target": "Development"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "People",
+        "target": "People"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Growth",
+        "target": "Growth"
+      },
+      {
+        "key": "case.summary",
+        "source": "Na Loft, liderei design em duas tribos de growth. Reorganizei alocações e estruturei o acompanhamento de carreira e os rituais do time para dar mais clareza ao desenvolvimento e ao trabalho coletivo.",
+        "target": "At Loft, I led design across two growth tribes. I reorganized team assignments and structured career development support and team rituals to bring more clarity to development and collaboration."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore case study"
+      },
+      {
+        "key": "3377bcc8-93e5-801b-8196-d586e9966091.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-97a0-c0c92d2de859.embed.label",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-97a0-c0c92d2de859.embed.body",
+        "source": "Na Loft, liderei design em duas tribos de growth, com seis designers sob gestão direta: um Staff Designer e cinco Product Designers. Também atuava com Content Design, UX Research e Service Design por meio de liderança indireta.\n\nMeu desafio era criar condições para que esse time evoluísse e entregasse com consistência. Em alguns casos, a dificuldade de performance parecia estar ligada ao contexto em que a pessoa trabalhava e às expectativas sobre sua atuação.",
+        "target": "At Loft, I led design across two growth tribes, directly managing six designers: one Staff Designer and five Product Designers. I also provided indirect leadership across Content Design, UX Research, and Service Design.\n\nMy challenge was to create the conditions for this team to grow and deliver consistently. In some cases, performance difficulties seemed tied to the context people worked in and the expectations for their roles."
+      },
+      {
+        "key": "3377bcc8-93e5-80f3-a3d1-d6ab15fd6bfc.rich_text.0",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "3377bcc8-93e5-80d7-9c97-c4e23564c41f.embed.label",
+        "source": "Mudar o contexto de trabalho",
+        "target": "Changing the work context"
+      },
+      {
+        "key": "3377bcc8-93e5-80d7-9c97-c4e23564c41f.embed.body",
+        "source": "Percebi que um dos designers não estava conseguindo aproveitar suas habilidades no time em que estava. Minha leitura foi que uma mudança de contexto poderia ajudá-lo a contribuir melhor.\n\nRealoquei esse designer para outro time e trouxe uma pessoa com um perfil mais adequado à posição que ele deixava. A decisão gerou desconforto: havia uma expectativa de que aquela alocação fosse a correta.\n\nO designer reposicionado se encontrou no novo contexto, e a designer que assumiu a posição também evoluiu. Essa experiência reforçou a importância de olhar para a relação entre pessoa, desafio e ambiente antes de concluir que havia um problema de capacidade.",
+        "target": "I noticed that one designer wasn’t able to make the most of his skills on his current team. My assessment was that a change in context could help him contribute more effectively.\n\nI reassigned him to another team and brought in someone whose profile was better suited to the position he was leaving. The decision caused discomfort: there was an expectation that the existing assignment was the right one.\n\nThe reassigned designer found his footing in the new context, and the designer who took over his position grew as well. This experience reinforced the importance of looking at the relationship between the person, the challenge, and the environment before concluding that there was a capability problem."
+      },
+      {
+        "key": "3377bcc8-93e5-8023-a418-d9f4fbc8645e.rich_text.0",
+        "source": "Construção",
+        "target": "Building"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a43e-c188a30d7dd4.embed.label",
+        "source": "Dar sustentação à evolução",
+        "target": "Sustaining growth"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a43e-c188a30d7dd4.embed.body",
+        "source": "A mudança de alocação era uma parte do trabalho. Também organizei as conversas de desenvolvimento e momentos de alinhamento para aproximar a rotina dos direcionamentos estratégicos, táticos e operacionais da companhia.\n\nO objetivo era dar mais clareza sobre o que se esperava das pessoas, como elas poderiam se desenvolver e quais espaços o time tinha para discutir suas entregas.",
+        "target": "Reassigning people was one part of the work. I also structured development conversations and alignment sessions to bring day-to-day work closer to the company’s strategic, tactical, and operational priorities.\n\nThe goal was to make it clearer what was expected of people, how they could grow, and what forums the team had to discuss their work."
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.sectionLabel",
+        "source": "Duas frentes de sustentação",
+        "target": "Two areas of support"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.0.title",
+        "source": "Desenvolvimento individual",
+        "target": "Individual development"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.0.body",
+        "source": "PDI e conversas de carreira para discutir evolução, expectativas e habilidades. Separar esse espaço do feedback de projeto ajudava a tratar o desenvolvimento com atenção própria.",
+        "target": "Individual development plans and career conversations to discuss growth, expectations, and skills. Keeping this space separate from project feedback helped give development its own dedicated attention."
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.1.title",
+        "source": "Alinhamento e qualidade",
+        "target": "Alignment and quality"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.1.body",
+        "source": "Touchpoints, critiques, retrospectivas e planejamento entre times para compartilhar contexto, revisar entregas e ajustar a forma de trabalhar. Cada encontro precisava ter propósito e uma contribuição clara para a rotina.",
+        "target": "Touchpoints, critiques, retrospectives, and cross-team planning to share context, review work, and adjust how we worked. Each meeting needed a purpose and a clear contribution to day-to-day work."
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.sectionLabel",
+        "source": "A mudança na forma de liderar",
+        "target": "The shift in my leadership approach"
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.before.label",
+        "source": "Ponto de partida",
+        "target": "Starting point"
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.before.body",
+        "source": "Pessoas com dificuldades de atuação e necessidade de mais clareza sobre expectativas, desenvolvimento e alinhamento.",
+        "target": "People struggling in their roles and needing more clarity on expectations, development, and alignment."
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.after.label",
+        "source": "Trabalho realizado",
+        "target": "Work done"
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.after.body",
+        "source": "Revisão de alocações, acompanhamento individual e espaços definidos para discutir direção, qualidade e colaboração.",
+        "target": "A review of team assignments, individual support, and dedicated spaces to discuss direction, quality, and collaboration."
+      },
+      {
+        "key": "3377bcc8-93e5-805d-b886-c520c825055f.rich_text.0",
+        "source": "Evidências",
+        "target": "Evidence"
+      },
+      {
+        "key": "3377bcc8-93e5-801f-bdcc-c04ad755ca00.embed.label",
+        "source": "Evidências de desenvolvimento",
+        "target": "Evidence of development"
+      },
+      {
+        "key": "3377bcc8-93e5-801f-bdcc-c04ad755ca00.embed.body",
+        "source": "O material que registra esse trabalho reúne quatro reconhecimentos financeiros e uma pessoa em desenvolvimento para gestão. São evidências de reconhecimento e preparação de carreira naquele recorte, sem confundir esses marcos com posições que as pessoas vieram a ocupar depois.",
+        "target": "The material documenting this work records four financial rewards and one person preparing for management. These are evidence of recognition and career preparation at that point in time, without conflating those milestones with positions people went on to hold later."
+      },
+      {
+        "key": "3377bcc8-93e5-8078-9ee0-f1bc11550442.embed.sectionLabel",
+        "source": "Resultados registrados para as pessoas",
+        "target": "Documented outcomes for people"
+      },
+      {
+        "key": "3377bcc8-93e5-8078-9ee0-f1bc11550442.embed.stats.0.label",
+        "source": "reconhecimentos financeiros",
+        "target": "financial rewards"
+      },
+      {
+        "key": "3377bcc8-93e5-8078-9ee0-f1bc11550442.embed.stats.1.label",
+        "source": "pessoa em desenvolvimento para gestão",
+        "target": "person preparing for management"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a131-eca54d41fc40.embed.label",
+        "source": "O produto como evidência complementar",
+        "target": "The product as supporting evidence"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a131-eca54d41fc40.embed.body",
+        "source": "O time também era responsável pelo app B2C da Loft. No recorte apresentado em outubro de 2022, o material registra crescimento em agendamentos, imóveis favoritados e anúncios visualizados.\n\nEsses são resultados do produto e do trabalho coletivo do time. Eles contextualizam o ambiente em que a liderança atuava; não demonstram, isoladamente, o efeito de uma realocação ou de um ritual específico.",
+        "target": "The team was also responsible for Loft’s B2C app. The snapshot presented in October 2022 documents growth in scheduled viewings, properties saved as favorites, and listing views.\n\nThese results reflect the product and the team’s collective work. They provide context for the environment I was leading in; on their own, they do not demonstrate the impact of a reassignment or a specific team ritual."
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.sectionLabel",
+        "source": "App B2C · recorte apresentado em outubro de 2022",
+        "target": "B2C app · snapshot presented in October 2022"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.stats.0.label",
+        "source": "agendamentos",
+        "target": "scheduled viewings"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.stats.1.label",
+        "source": "imóveis favoritados",
+        "target": "properties saved as favorites"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.stats.2.label",
+        "source": "anúncios visualizados",
+        "target": "listing views"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.attributionNote",
+        "source": "Outubro de 2022 é a referência da apresentação. O período de medição e a base de comparação não estão especificados no material.",
+        "target": "October 2022 is the presentation date. The measurement period and comparison baseline are not specified in the material."
+      },
+      {
+        "key": "3377bcc8-93e5-80c8-822c-fcb3c05eabe1.rich_text.0",
+        "source": "Aprendizado",
+        "target": "What I learned"
+      },
+      {
+        "key": "3377bcc8-93e5-803f-bfee-f410fd98a3a3.embed.label",
+        "source": "O que mudou na minha forma de liderar",
+        "target": "What changed in the way I lead"
+      },
+      {
+        "key": "3377bcc8-93e5-803f-bfee-f410fd98a3a3.embed.body",
+        "source": "Antes de avaliar uma entrega, preciso entender as condições em que ela acontece: o desafio, as expectativas, as habilidades da pessoa e o apoio que ela recebe.\n\nNa Loft, a realocação trouxe esse aprendizado para uma decisão concreta. O acompanhamento de carreira e os rituais deram continuidade ao trabalho. Desenvolver o time exigia cuidar dessas duas escalas: a situação de cada pessoa e a forma como todos trabalhavam juntos.",
+        "target": "Before evaluating someone’s work, I need to understand the conditions behind it: the challenge, the expectations, the person’s skills, and the support they receive.\n\nAt Loft, the reassignment put that lesson into practice through a concrete decision. Career development support and team rituals kept the work going. Developing the team meant paying attention at both levels: each person’s situation and how everyone worked together."
+      },
+      {
+        "key": "3377bcc8-93e5-80a0-93f8-d9942f8ee20a.embed.attribution",
+        "source": "Designer na Loft · trecho do feedback registrado no material original",
+        "target": "Designer at Loft · excerpt from feedback documented in the original material"
+      },
+      {
+        "key": "3377bcc8-93e5-80a0-93f8-d9942f8ee20a.embed.body",
+        "source": "Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers.",
+        "target": "One thing I want to highlight about your leadership is your willingness to listen to different opinions, fostering a safe environment for collaboration among designers."
+      },
+      {
+        "key": "3377bcc8-93e5-8058-889a-d0bb89debce0.embed.items.0.title",
+        "source": "Obrigado",
+        "target": "Thank you"
+      },
+      {
+        "key": "3377bcc8-93e5-8058-889a-d0bb89debce0.embed.items.0.body",
+        "source": "Andressa, Lucas, Carol, Jairo, Dani, Teresa, Huxley, Jinmi Lee, Doug & Vila",
+        "target": "Andressa, Lucas, Carol, Jairo, Dani, Teresa, Huxley, Jinmi Lee, Doug & Vila"
+      }
+    ]
+  },
+  "published": {
+    "sourceHash": "6f0842854f4b960580e4f83afdf1d11cd951b7dfbe1462faf15002117d545bb4",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-31T12:18:05.769Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Desenvolver pessoas para destravar o time",
+        "target": "Developing people to unlock the team’s potential"
+      },
+      {
+        "key": "case.productTag",
+        "source": "People and Operations",
+        "target": "People and Operations"
+      },
+      {
+        "key": "case.role",
+        "source": "Design Manager",
+        "target": "Design Manager"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Liderança",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Desenvolvimento",
+        "target": "Development"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "People",
+        "target": "People"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Growth",
+        "target": "Growth"
+      },
+      {
+        "key": "case.summary",
+        "source": "Na Loft, liderei design em duas tribos de growth. Reorganizei alocações e estruturei o acompanhamento de carreira e os rituais do time para dar mais clareza ao desenvolvimento e ao trabalho coletivo.",
+        "target": "At Loft, I led design across two growth tribes. I reorganized team assignments and structured career development support and team rituals to bring more clarity to development and collaboration."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore case study"
+      },
+      {
+        "key": "3377bcc8-93e5-801b-8196-d586e9966091.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-97a0-c0c92d2de859.embed.label",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-97a0-c0c92d2de859.embed.body",
+        "source": "Na Loft, liderei design em duas tribos de growth, com seis designers sob gestão direta: um Staff Designer e cinco Product Designers. Também atuava com Content Design, UX Research e Service Design por meio de liderança indireta.\n\nMeu desafio era criar condições para que esse time evoluísse e entregasse com consistência. Em alguns casos, a dificuldade de performance parecia estar ligada ao contexto em que a pessoa trabalhava e às expectativas sobre sua atuação.",
+        "target": "At Loft, I led design across two growth tribes, directly managing six designers: one Staff Designer and five Product Designers. I also provided indirect leadership across Content Design, UX Research, and Service Design.\n\nMy challenge was to create the conditions for this team to grow and deliver consistently. In some cases, performance difficulties seemed tied to the context people worked in and the expectations for their roles."
+      },
+      {
+        "key": "3377bcc8-93e5-80f3-a3d1-d6ab15fd6bfc.rich_text.0",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "3377bcc8-93e5-80d7-9c97-c4e23564c41f.embed.label",
+        "source": "Mudar o contexto de trabalho",
+        "target": "Changing the work context"
+      },
+      {
+        "key": "3377bcc8-93e5-80d7-9c97-c4e23564c41f.embed.body",
+        "source": "Percebi que um dos designers não estava conseguindo aproveitar suas habilidades no time em que estava. Minha leitura foi que uma mudança de contexto poderia ajudá-lo a contribuir melhor.\n\nRealoquei esse designer para outro time e trouxe uma pessoa com um perfil mais adequado à posição que ele deixava. A decisão gerou desconforto: havia uma expectativa de que aquela alocação fosse a correta.\n\nO designer reposicionado se encontrou no novo contexto, e a designer que assumiu a posição também evoluiu. Essa experiência reforçou a importância de olhar para a relação entre pessoa, desafio e ambiente antes de concluir que havia um problema de capacidade.",
+        "target": "I noticed that one designer wasn’t able to make the most of his skills on his current team. My assessment was that a change in context could help him contribute more effectively.\n\nI reassigned him to another team and brought in someone whose profile was better suited to the position he was leaving. The decision caused discomfort: there was an expectation that the existing assignment was the right one.\n\nThe reassigned designer found his footing in the new context, and the designer who took over his position grew as well. This experience reinforced the importance of looking at the relationship between the person, the challenge, and the environment before concluding that there was a capability problem."
+      },
+      {
+        "key": "3377bcc8-93e5-8023-a418-d9f4fbc8645e.rich_text.0",
+        "source": "Construção",
+        "target": "Building"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a43e-c188a30d7dd4.embed.label",
+        "source": "Dar sustentação à evolução",
+        "target": "Sustaining growth"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a43e-c188a30d7dd4.embed.body",
+        "source": "A mudança de alocação era uma parte do trabalho. Também organizei as conversas de desenvolvimento e momentos de alinhamento para aproximar a rotina dos direcionamentos estratégicos, táticos e operacionais da companhia.\n\nO objetivo era dar mais clareza sobre o que se esperava das pessoas, como elas poderiam se desenvolver e quais espaços o time tinha para discutir suas entregas.",
+        "target": "Reassigning people was one part of the work. I also structured development conversations and alignment sessions to bring day-to-day work closer to the company’s strategic, tactical, and operational priorities.\n\nThe goal was to make it clearer what was expected of people, how they could grow, and what forums the team had to discuss their work."
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.sectionLabel",
+        "source": "Duas frentes de sustentação",
+        "target": "Two areas of support"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.0.title",
+        "source": "Desenvolvimento individual",
+        "target": "Individual development"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.0.body",
+        "source": "PDI e conversas de carreira para discutir evolução, expectativas e habilidades. Separar esse espaço do feedback de projeto ajudava a tratar o desenvolvimento com atenção própria.",
+        "target": "Individual development plans and career conversations to discuss growth, expectations, and skills. Keeping this space separate from project feedback helped give development its own dedicated attention."
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.1.title",
+        "source": "Alinhamento e qualidade",
+        "target": "Alignment and quality"
+      },
+      {
+        "key": "3377bcc8-93e5-80df-8dd8-cca9633a5e7a.embed.items.1.body",
+        "source": "Touchpoints, critiques, retrospectivas e planejamento entre times para compartilhar contexto, revisar entregas e ajustar a forma de trabalhar. Cada encontro precisava ter propósito e uma contribuição clara para a rotina.",
+        "target": "Touchpoints, critiques, retrospectives, and cross-team planning to share context, review work, and adjust how we worked. Each meeting needed a purpose and a clear contribution to day-to-day work."
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.sectionLabel",
+        "source": "A mudança na forma de liderar",
+        "target": "The shift in my leadership approach"
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.before.label",
+        "source": "Ponto de partida",
+        "target": "Starting point"
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.before.body",
+        "source": "Pessoas com dificuldades de atuação e necessidade de mais clareza sobre expectativas, desenvolvimento e alinhamento.",
+        "target": "People struggling in their roles and needing more clarity on expectations, development, and alignment."
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.after.label",
+        "source": "Trabalho realizado",
+        "target": "Work done"
+      },
+      {
+        "key": "3377bcc8-93e5-806d-9f18-ebe8f0484f6f.embed.after.body",
+        "source": "Revisão de alocações, acompanhamento individual e espaços definidos para discutir direção, qualidade e colaboração.",
+        "target": "A review of team assignments, individual support, and dedicated spaces to discuss direction, quality, and collaboration."
+      },
+      {
+        "key": "3377bcc8-93e5-805d-b886-c520c825055f.rich_text.0",
+        "source": "Evidências",
+        "target": "Evidence"
+      },
+      {
+        "key": "3377bcc8-93e5-801f-bdcc-c04ad755ca00.embed.label",
+        "source": "Evidências de desenvolvimento",
+        "target": "Evidence of development"
+      },
+      {
+        "key": "3377bcc8-93e5-801f-bdcc-c04ad755ca00.embed.body",
+        "source": "O material que registra esse trabalho reúne quatro reconhecimentos financeiros e uma pessoa em desenvolvimento para gestão. São evidências de reconhecimento e preparação de carreira naquele recorte, sem confundir esses marcos com posições que as pessoas vieram a ocupar depois.",
+        "target": "The material documenting this work records four financial rewards and one person preparing for management. These are evidence of recognition and career preparation at that point in time, without conflating those milestones with positions people went on to hold later."
+      },
+      {
+        "key": "3377bcc8-93e5-8078-9ee0-f1bc11550442.embed.sectionLabel",
+        "source": "Resultados registrados para as pessoas",
+        "target": "Documented outcomes for people"
+      },
+      {
+        "key": "3377bcc8-93e5-8078-9ee0-f1bc11550442.embed.stats.0.label",
+        "source": "reconhecimentos financeiros",
+        "target": "financial rewards"
+      },
+      {
+        "key": "3377bcc8-93e5-8078-9ee0-f1bc11550442.embed.stats.1.label",
+        "source": "pessoa em desenvolvimento para gestão",
+        "target": "person preparing for management"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a131-eca54d41fc40.embed.label",
+        "source": "O produto como evidência complementar",
+        "target": "The product as supporting evidence"
+      },
+      {
+        "key": "3377bcc8-93e5-80cb-a131-eca54d41fc40.embed.body",
+        "source": "O time também era responsável pelo app B2C da Loft. No recorte apresentado em outubro de 2022, o material registra crescimento em agendamentos, imóveis favoritados e anúncios visualizados.\n\nEsses são resultados do produto e do trabalho coletivo do time. Eles contextualizam o ambiente em que a liderança atuava; não demonstram, isoladamente, o efeito de uma realocação ou de um ritual específico.",
+        "target": "The team was also responsible for Loft’s B2C app. The snapshot presented in October 2022 documents growth in scheduled viewings, properties saved as favorites, and listing views.\n\nThese results reflect the product and the team’s collective work. They provide context for the environment I was leading in; on their own, they do not demonstrate the impact of a reassignment or a specific team ritual."
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.sectionLabel",
+        "source": "App B2C · recorte apresentado em outubro de 2022",
+        "target": "B2C app · snapshot presented in October 2022"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.stats.0.label",
+        "source": "agendamentos",
+        "target": "scheduled viewings"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.stats.1.label",
+        "source": "imóveis favoritados",
+        "target": "properties saved as favorites"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.stats.2.label",
+        "source": "anúncios visualizados",
+        "target": "listing views"
+      },
+      {
+        "key": "3377bcc8-93e5-803d-a9a2-c99cc00839dc.embed.attributionNote",
+        "source": "Outubro de 2022 é a referência da apresentação. O período de medição e a base de comparação não estão especificados no material.",
+        "target": "October 2022 is the presentation date. The measurement period and comparison baseline are not specified in the material."
+      },
+      {
+        "key": "3377bcc8-93e5-80c8-822c-fcb3c05eabe1.rich_text.0",
+        "source": "Aprendizado",
+        "target": "What I learned"
+      },
+      {
+        "key": "3377bcc8-93e5-803f-bfee-f410fd98a3a3.embed.label",
+        "source": "O que mudou na minha forma de liderar",
+        "target": "What changed in the way I lead"
+      },
+      {
+        "key": "3377bcc8-93e5-803f-bfee-f410fd98a3a3.embed.body",
+        "source": "Antes de avaliar uma entrega, preciso entender as condições em que ela acontece: o desafio, as expectativas, as habilidades da pessoa e o apoio que ela recebe.\n\nNa Loft, a realocação trouxe esse aprendizado para uma decisão concreta. O acompanhamento de carreira e os rituais deram continuidade ao trabalho. Desenvolver o time exigia cuidar dessas duas escalas: a situação de cada pessoa e a forma como todos trabalhavam juntos.",
+        "target": "Before evaluating someone’s work, I need to understand the conditions behind it: the challenge, the expectations, the person’s skills, and the support they receive.\n\nAt Loft, the reassignment put that lesson into practice through a concrete decision. Career development support and team rituals kept the work going. Developing the team meant paying attention at both levels: each person’s situation and how everyone worked together."
+      },
+      {
+        "key": "3377bcc8-93e5-80a0-93f8-d9942f8ee20a.embed.attribution",
+        "source": "Designer na Loft · trecho do feedback registrado no material original",
+        "target": "Designer at Loft · excerpt from feedback documented in the original material"
+      },
+      {
+        "key": "3377bcc8-93e5-80a0-93f8-d9942f8ee20a.embed.body",
+        "source": "Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers.",
+        "target": "One thing I want to highlight about your leadership is your willingness to listen to different opinions, fostering a safe environment for collaboration among designers."
+      },
+      {
+        "key": "3377bcc8-93e5-8058-889a-d0bb89debce0.embed.items.0.title",
+        "source": "Obrigado",
+        "target": "Thank you"
+      },
+      {
+        "key": "3377bcc8-93e5-8058-889a-d0bb89debce0.embed.items.0.body",
+        "source": "Andressa, Lucas, Carol, Jairo, Dani, Teresa, Huxley, Jinmi Lee, Doug & Vila",
+        "target": "Andressa, Lucas, Carol, Jairo, Dani, Teresa, Huxley, Jinmi Lee, Doug & Vila"
+      }
+    ]
+  },
+  "reel": {
+    "sourceHash": "c11c02a1a0263cdcb0e10f2fcadbc7993d0bedcb4a8ec0c28e76efbb4397552b",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T12:19:06.647Z",
+    "units": [
+      {
+        "key": "reel.title",
+        "source": "6 designers, 1 realocação, 4 reconhecimentos",
+        "target": "6 designers, 1 team move, 4 honors"
+      },
+      {
+        "key": "reel.cta",
+        "source": "Ver currículo",
+        "target": "View resume"
+      },
+      {
+        "key": "reel.title-1.chapter",
+        "source": "Abertura",
+        "target": "Intro"
+      },
+      {
+        "key": "reel.title-1.lines.0",
+        "source": "1 realocação.",
+        "target": "1 team move."
+      },
+      {
+        "key": "reel.title-1.lines.1",
+        "source": "*4* reconhecimentos.",
+        "target": "*4* honors."
+      },
+      {
+        "key": "reel.title-1.eyebrow",
+        "source": "Loft · Design Manager",
+        "target": "Loft · Design Manager"
+      },
+      {
+        "key": "reel.image-1.chapter",
+        "source": "Problema",
+        "target": "Problem"
+      },
+      {
+        "key": "reel.image-1.lines.0",
+        "source": "Um designer",
+        "target": "A designer"
+      },
+      {
+        "key": "reel.image-1.lines.1",
+        "source": "*não aproveitava*",
+        "target": "*wasn't using*"
+      },
+      {
+        "key": "reel.image-1.lines.2",
+        "source": "suas habilidades.",
+        "target": "their skills."
+      },
+      {
+        "key": "reel.image-1.body",
+        "source": "Expectativas não batiam com o contexto.",
+        "target": "Expectations didn't fit the context."
+      },
+      {
+        "key": "reel.image-2.chapter",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "reel.image-2.lines.0",
+        "source": "Decidi *realocar*",
+        "target": "I chose to *move*"
+      },
+      {
+        "key": "reel.image-2.lines.1",
+        "source": "o designer para",
+        "target": "the designer to"
+      },
+      {
+        "key": "reel.image-2.lines.2",
+        "source": "outro time.",
+        "target": "a new team."
+      },
+      {
+        "key": "reel.image-2.body",
+        "source": "Mudei o contexto para destravar seu talento.",
+        "target": "I shifted context to unlock their talent."
+      },
+      {
+        "key": "reel.image-3.chapter",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "reel.image-3.lines.0",
+        "source": "Estruturei *PDIs*",
+        "target": "I set up *IDPs*"
+      },
+      {
+        "key": "reel.image-3.lines.1",
+        "source": "e rituais de time.",
+        "target": "and team rituals."
+      },
+      {
+        "key": "reel.image-3.body",
+        "source": "PDI para desenvolvimento, rituais para alinhamento.",
+        "target": "IDPs for growth, rituals for alignment."
+      },
+      {
+        "key": "reel.image-4.chapter",
+        "source": "Prova",
+        "target": "Proof"
+      },
+      {
+        "key": "reel.image-4.lines.0",
+        "source": "Feedback:",
+        "target": "Feedback:"
+      },
+      {
+        "key": "reel.image-4.lines.1",
+        "source": "*ambiente seguro*",
+        "target": "*a safe space*"
+      },
+      {
+        "key": "reel.image-4.lines.2",
+        "source": "de colaboração.",
+        "target": "to collaborate."
+      },
+      {
+        "key": "reel.image-4.body",
+        "source": "Designer na Loft · material original",
+        "target": "Loft designer · original material"
+      },
+      {
+        "key": "reel.metrics-1.chapter",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "reel.metrics-1.value",
+        "source": "+14%",
+        "target": "+14%"
+      },
+      {
+        "key": "reel.metrics-1.label",
+        "source": "agendamentos no app B2C",
+        "target": "B2C app bookings"
+      },
+      {
+        "key": "reel.metrics-1.note",
+        "source": "Out/2022 · resultado coletivo do time",
+        "target": "Oct/2022 · team result"
+      },
+      {
+        "key": "reel.metrics-1.gauges.0.prefix",
+        "source": "+",
+        "target": "+"
+      },
+      {
+        "key": "reel.metrics-1.gauges.0.suffix",
+        "source": "%",
+        "target": "%"
+      },
+      {
+        "key": "reel.metrics-1.gauges.0.label",
+        "source": "Favoritados",
+        "target": "Favorites"
+      },
+      {
+        "key": "reel.metrics-1.gauges.1.prefix",
+        "source": "+",
+        "target": "+"
+      },
+      {
+        "key": "reel.metrics-1.gauges.1.suffix",
+        "source": "%",
+        "target": "%"
+      },
+      {
+        "key": "reel.metrics-1.gauges.1.label",
+        "source": "Anúncios",
+        "target": "Listings"
+      },
+      {
+        "key": "reel.end-1.lines.0",
+        "source": "Design Manager que",
+        "target": "Design Manager who"
+      },
+      {
+        "key": "reel.end-1.lines.1",
+        "source": "desenvolve times.",
+        "target": "develops teams."
+      },
+      {
+        "key": "reel.end-1.meta",
+        "source": "Loft · Design Manager · 2022–2023",
+        "target": "Loft · Design Manager · 2022–2023"
+      },
+      {
+        "key": "reel.end-1.signature",
+        "source": "Gutto Rocha",
+        "target": "Gutto Rocha"
+      }
+    ]
+  }
+}

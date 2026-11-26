@@ -1,0 +1,139 @@
+{
+  "track": "gut-check",
+  "end": 72,
+  "fadeOut": [
+    64,
+    72
+  ],
+  "cover": 6,
+  "accent": "#e11138",
+  "title": "Um catálogo que o Google entende",
+  "cta": {
+    "label": "Ler o case completo",
+    "href": "#case-doc"
+  },
+  "motion": "playful",
+  "scenes": [
+    {
+      "id": "title-1",
+      "at": 0,
+      "chapter": "Contexto",
+      "kind": "title",
+      "lines": [
+        "Um catálogo",
+        "que o Google",
+        "entende."
+      ],
+      "eyebrow": "Webmotors · Catálogo 0km",
+      "image": "/cases/webmotors/webmotors-case-hero.png",
+      "imgEnter": "fade",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "cut"
+    },
+    {
+      "id": "image-3",
+      "at": 8,
+      "enter": "curtain",
+      "kind": "image",
+      "src": "/cases/webmotors/webmotors-case-hero.png",
+      "fit": "contain",
+      "imgEnter": "far"
+    },
+    {
+      "id": "list-1",
+      "at": 16,
+      "chapter": "Restrições",
+      "kind": "list",
+      "heading": "3 pessoas e 3 meses pra provar.",
+      "items": [
+        "Backend legado da companhia",
+        "Sem produto para SEO de 0km",
+        "Prazo de 3 meses",
+        "Time de 3 pessoas"
+      ],
+      "itemsAt": 2,
+      "step": 2,
+      "backdrop": "/cases/webmotors/image.png",
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "image-1",
+      "at": 28,
+      "chapter": "Decisão",
+      "kind": "image",
+      "src": "/cases/webmotors/portfolio-step-1.png",
+      "imgEnter": "far",
+      "imgMotion": "in",
+      "imgFrame": "card",
+      "imgFocus": "50% 50%",
+      "eyebrow": "Backend reescrito",
+      "lines": [
+        "Convenci o time",
+        "a *reescrever o backend*"
+      ],
+      "body": "Em vez de manter o backend como estava, convenci o time a reescrevê-lo. Sem essa mudança, a experiência nunca funcionaria.",
+      "textAt": 1,
+      "enter": "fade",
+      "enterBeats": 1,
+      "fit": "split"
+    },
+    {
+      "id": "image-2",
+      "at": 44,
+      "chapter": "Estrutura",
+      "kind": "image",
+      "src": "/cases/webmotors/whatsapp-image-2026-11-10-at-15-52-37.jpeg",
+      "fit": "split",
+      "imgEnter": "rise",
+      "imgMotion": "focus",
+      "imgFrame": "card",
+      "imgFocus": "30% 50%",
+      "eyebrow": "Espinha dorsal",
+      "lines": [
+        "Árvore de montadora",
+        "como *espinha dorsal*"
+      ],
+      "body": "Em vez de adicionar SEO depois, entrei com ele no kickoff. Árvore de montadora, modelo e versão como base, com avaliação desde o lançamento.",
+      "textAt": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "delta-1",
+      "at": 56,
+      "chapter": "Impacto",
+      "kind": "delta",
+      "label": "Sessões orgânicas",
+      "before": {
+        "value": 5.2,
+        "caption": "jan/2016"
+      },
+      "after": {
+        "value": 17.8,
+        "caption": "jan/2025"
+      },
+      "suffix": "M",
+      "changeAt": 2,
+      "note": "jan/2016 → jan/2025",
+      "backdrop": "/cases/webmotors/image-2.png",
+      "enter": "curtain",
+      "enterBeats": 1
+    },
+    {
+      "id": "end-1",
+      "at": 64,
+      "chapter": "Aprendizado",
+      "kind": "end",
+      "lines": [
+        "Estrutura antes",
+        "de tela."
+      ],
+      "meta": "Webmotors · Product Designer · 2015–2018",
+      "signature": "Gutto Rocha",
+      "enter": "cut"
+    }
+  ]
+}

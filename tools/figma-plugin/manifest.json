@@ -1,0 +1,20 @@
+{
+  "name": "Gutto · Enviar para o admin",
+  "id": "gutto-screen-layout-importer",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html",
+  "editorType": [
+    "figma"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ],
+    "devAllowedDomains": [
+      "http://localhost:3000"
+    ],
+    "reasoning": "Envia as telas exportadas para o admin do portfólio, que roda só neste Mac."
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "slug": "prototipagem-com-ia",
+  "seoTitle": "Prototipagem com IA para times de produto: workshop e consultoria de design | Gutto Rocha",
+  "seoDescription": "Workshop e consultoria de design com IA para PMs, founders e times sem designer. Protótipos com Figma Make, Lovable, v0 e Claude, com critério de design e design system.",
+  "serviceName": "Prototipagem com IA para times de produto",
+  "serviceType": "Consultoria de design com IA",
+  "accent": {
+    "color": "#ff6a1f",
+    "on": "#0b0b0b"
+  },
+  "navName": "Prototipagem com IA",
+  "nav": [
+    {
+      "label": "A diferença",
+      "href": "#demo"
+    },
+    {
+      "label": "Pra quem é",
+      "href": "#pra-quem"
+    },
+    {
+      "label": "Método",
+      "href": "#metodo"
+    },
+    {
+      "label": "Formatos",
+      "href": "#formatos"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "card": {
+    "summary": "Workshop e acompanhamento para times que geram telas com Figma Make, Lovable, v0 ou Claude e querem critério de design.",
+    "points": [
+      "Workshop de meio dia ou um dia",
+      "Acompanhamento de 4 a 6 semanas",
+      "Design system pronto para IA"
+    ]
+  },
+  "hero": {
+    "kicker": "Prototipagem com IA para times de produto",
+    "title": "Seu time já prototipa com IA.",
+    "continuation": "Falta o critério de design.",
+    "intro": "Workshop e acompanhamento para PMs, founders e times sem designer que geram telas com Figma Make, Lovable, v0 ou Claude. Vocês continuam rápidos, e o resultado passa a parecer produto, não rascunho.",
+    "prompt": "crie a tela de checkout do nosso app",
+    "promptButton": "Gerar",
+    "primaryCta": "Agendar um workshop",
+    "secondaryCta": "Ver a diferença",
+    "fragments": [
+      "✦ gerado por IA",
+      "3 botões principais?",
+      "lorem ipsum"
+    ]
+  },
+  "demo": {
+    "kicker": "Veja a diferença",
+    "title": "Mesmo pedido, mesma ferramenta.",
+    "continuation": "Resultado bem diferente.",
+    "toggle": [
+      "Só o prompt",
+      "Prompt com critério"
+    ],
+    "rawPrompt": "Crie uma tela de checkout bonita e moderna.",
+    "guidedPrompt": "Crie o checkout usando os componentes do nosso design system. Uma ação principal. Resumo do pedido antes do pagamento, Pix como opção padrão, textos reais em português e contraste AA.",
+    "rawNotes": [
+      "Três botões disputando atenção",
+      "Gradiente e sombra em tudo",
+      "Nenhum componente reaproveitável",
+      "Lorem ipsum no lugar do conteúdo"
+    ],
+    "guidedNotes": [
+      "Uma ação principal, clara",
+      "Componentes do design system",
+      "Total visível antes de pagar",
+      "Texto real e contraste acessível"
+    ]
+  },
+  "audience": {
+    "kicker": "Pra quem é",
+    "title": "Para quem já gera telas com IA",
+    "continuation": "e quer que elas pareçam produto.",
+    "items": [
+      {
+        "title": "PMs",
+        "description": "Que prototipam para validar ideias antes de ocupar o time."
+      },
+      {
+        "title": "Founders",
+        "description": "Que ainda não têm designer e precisam mostrar o produto."
+      },
+      {
+        "title": "Engenharia",
+        "description": "Que gera telas direto no código e quer consistência."
+      },
+      {
+        "title": "Designers",
+        "description": "Que querem acelerar sem perder o padrão de qualidade."
+      }
+    ]
+  },
+  "tools": {
+    "label": "Com as ferramentas que vocês já usam",
+    "items": [
+      "Figma Make",
+      "Lovable",
+      "v0",
+      "Claude",
+      "Cursor",
+      "Bolt"
+    ]
+  },
+  "method": {
+    "kicker": "O método",
+    "title": "As regras que eu ensino",
+    "continuation": "cabem em um prompt.",
+    "file": "regras-do-time.md",
+    "rules": [
+      {
+        "title": "Contexto antes do prompt",
+        "detail": "quem usa, qual problema, qual métrica."
+      },
+      {
+        "title": "O design system é a fonte",
+        "detail": "tokens e componentes como referência."
+      },
+      {
+        "title": "Uma tela, uma ação principal",
+        "detail": "o resto é secundário."
+      },
+      {
+        "title": "Conteúdo real",
+        "detail": "desde o primeiro protótipo."
+      },
+      {
+        "title": "Revisão com critério",
+        "detail": "hierarquia, acessibilidade e consistência."
+      },
+      {
+        "title": "Protótipo valida",
+        "detail": "produto se constrói com o time."
+      }
+    ]
+  },
+  "formats": {
+    "kicker": "Formatos",
+    "title": "Comece pelo workshop.",
+    "continuation": "Cresça se fizer sentido.",
+    "items": [
+      {
+        "tag": "Porta de entrada",
+        "title": "Workshop",
+        "duration": "Meio dia ou um dia · remoto ou presencial",
+        "description": "O time aprende a prototipar com IA usando contexto, referências e o design system. Sai com prompts, um checklist de revisão e um protótipo feito na prática.",
+        "fit": "Para times de produto, design e engenharia.",
+        "cta": "Agendar um workshop"
+      },
+      {
+        "tag": "Mais completo",
+        "title": "Acompanhamento",
+        "duration": "4 a 6 semanas",
+        "description": "Reviso o que o time gera, ajusto o processo e monto a biblioteca de prompts e referências da empresa.",
+        "fit": "Para quem já prototipa com IA toda semana.",
+        "cta": "Quero acompanhamento"
+      },
+      {
+        "tag": "Base",
+        "title": "Design system pronto para IA",
+        "duration": "Por projeto",
+        "description": "Tokens, componentes e documentação organizados para servirem de contexto às ferramentas de IA.",
+        "fit": "Para quem quer telas consistentes em escala.",
+        "cta": "Preparar meu sistema"
+      }
+    ]
+  },
+  "guide": {
+    "kicker": "Quem conduz",
+    "name": "Gutto Rocha",
+    "body": "18 anos em design, 8 liderando times em empresas como PicPay, Loft e Creator Ads. Hoje experimento com IA no meu processo de design e de produto, e ensino o que funciona de verdade.",
+    "cta": "Conheça minha história",
+    "href": "/sobre"
+  },
+  "next": {
+    "kicker": "Quando o protótipo vira produto",
+    "items": [
+      {
+        "title": "Design System no Figma",
+        "description": "A base que faz a IA gerar telas consistentes.",
+        "href": "/servicos/design-system-figma"
+      },
+      {
+        "title": "Head de Design as a service",
+        "description": "Liderança de design para o time inteiro.",
+        "href": "/servicos/head-de-design"
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "Perguntas frequentes",
+    "title": "Antes do primeiro prompt.",
+    "items": [
+      {
+        "question": "Precisamos saber Figma?",
+        "answer": "Não. O workshop funciona com a ferramenta que o time já usa, seja Figma Make, Lovable, v0 ou Claude."
+      },
+      {
+        "question": "Qual ferramenta é a melhor?",
+        "answer": "Depende do objetivo. Para validar uma ideia, uma; para chegar perto do código, outra. Ajudo a escolher no começo do trabalho, sem amarrar o time a nenhuma."
+      },
+      {
+        "question": "Isso substitui um designer?",
+        "answer": "Não. A IA acelera a exploração e a validação. Critério, pesquisa e qualidade continuam sendo trabalho de design, e é isso que eu ensino o time a enxergar."
+      },
+      {
+        "question": "O workshop é remoto ou presencial?",
+        "answer": "Os dois. Remoto para qualquer lugar; presencial em São Paulo e região."
+      },
+      {
+        "question": "Os protótipos viram código?",
+        "answer": "Alguns sim, outros servem só para validar. Ensino o time a saber quando descartar um protótipo e quando vale levar adiante."
+      },
+      {
+        "question": "Quanto custa?",
+        "answer": "O workshop tem valor fechado. O acompanhamento e o design system dependem do tamanho do time e do produto. Falo de valores na primeira conversa."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Vamos colocar critério na IA do seu time?",
+    "body": "Uma conversa de 30 minutos para entender como vocês prototipam hoje e o que dá para melhorar já.",
+    "emailCta": "Mandar um e-mail",
+    "whatsappCta": "Chamar no WhatsApp",
+    "emailSubject": "Prototipagem com IA",
+    "whatsappMessage": "Oi, Gutto! Vi a página de Prototipagem com IA e queria conversar."
+  }
+}

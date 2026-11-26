@@ -1,0 +1,299 @@
+{
+  "slug": "salario-em-design",
+  "seoTitle": "Quanto deveria ganhar um designer? Faixa salarial, CLT x PJ e aumento | Gutto Rocha",
+  "seoDescription": "Ferramentas gratuitas para designers: veja onde o seu salário está na faixa do seu papel, compare CLT e PJ e descubra se é hora de pedir aumento.",
+  "serviceName": "Ferramentas de salário",
+  "navName": "Salário",
+  "navCta": "Responder a pesquisa",
+  "card": {
+    "summary": "Três ferramentas: a faixa salarial do seu papel, a calculadora CLT x PJ e o teste para saber se é hora de pedir aumento.",
+    "points": [
+      "Quanto você deveria ganhar",
+      "Calculadora CLT x PJ",
+      "Hora de pedir aumento?"
+    ]
+  },
+  "nav": [
+    {
+      "label": "Seu próximo passo",
+      "href": "#proximo-passo"
+    },
+    {
+      "label": "CLT x PJ",
+      "href": "#clt-pj"
+    },
+    {
+      "label": "Todas as faixas",
+      "href": "#faixas"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "hero": {
+    "kicker": "Salário em design · faixas de novembro de 2026",
+    "title": "Quanto você deveria",
+    "continuation": "estar ganhando?",
+    "boardTab": "◇ Régua / Salário em design",
+    "fallbackTitle": "Ferramentas de salário para designers.",
+    "fallbackIntro": "Compare CLT e PJ com os seus números e descubra se é hora de pedir aumento.",
+    "doubts": [
+      "Será que eu ganho menos do que deveria?",
+      "Tô na média… ou só parado no meio?",
+      "Já ganho bem. E agora, cresço como?"
+    ],
+    "you": "Você",
+    "next": "O que fazer agora"
+  },
+  "zones": [
+    {
+      "label": "Abaixo da faixa",
+      "title": "Prepare a conversa de aumento.",
+      "body": "Ganhar abaixo da faixa não é sentença, é argumento. Antes de pedir, veja se a sua situação sustenta o pedido.",
+      "tool": "Marque o que vale para você hoje.",
+      "cta": "Fazer o teste: é hora de pedir aumento?"
+    },
+    {
+      "label": "Na faixa",
+      "title": "O próximo salto é de papel.",
+      "body": "Dentro da faixa, reajuste anda devagar. O salário dá o salto quando o papel muda: veja o que o próximo pede e o que falta para chegar lá.",
+      "links": [
+        {
+          "label": "Ver a trilha de carreira",
+          "to": "track"
+        },
+        {
+          "label": "Montar um plano com consultoria",
+          "to": "consulting"
+        }
+      ],
+      "cta": "Ver o que o próximo papel pede"
+    },
+    {
+      "label": "Acima da faixa",
+      "title": "Proteja a posição, cresça em escopo.",
+      "body": "Acima da faixa, pedir mais para o mesmo papel tem pouco espaço. O que paga daqui para frente é escopo: mais produto, mais gente, decisões maiores.",
+      "links": [
+        {
+          "label": "Ver os papéis seguintes",
+          "to": "track"
+        },
+        {
+          "label": "Montar um plano com consultoria",
+          "to": "consulting"
+        }
+      ],
+      "cta": "Ver como crescer em escopo"
+    }
+  ],
+  "factors": {
+    "kicker": "Antes de comparar",
+    "title": "Três coisas mudam o número",
+    "continuation": "antes do seu desempenho.",
+    "lead": "Dois designers igualmente bons podem ganhar valores bem diferentes. Na maioria das vezes, a diferença vem de uma destas três coisas, e não do talento.",
+    "items": [
+      {
+        "title": "O papel, não o título",
+        "body": "Compare pelo que você faz, não pelo crachá. Quem já trabalha como o papel seguinte e é pago pelo atual tem a maior diferença para corrigir.",
+        "demo": "A mediana de cada papel"
+      },
+      {
+        "title": "O porte da empresa",
+        "body": "Empresas maiores costumam pagar mais pelo mesmo papel: têm mais orçamento, mais níveis e mais disputa por gente.",
+        "demo": "A mediana de {role} por porte"
+      },
+      {
+        "title": "O regime",
+        "body": "PJ não tem 13º, férias pagas nem FGTS. Por isso, para dar o mesmo no ano, a nota precisa ficar entre 1,4 e 1,7 vez o salário CLT, conforme benefícios e impostos. A calculadora CLT x PJ faz a sua conta.",
+        "demo": "A mediana de {role} em cada regime"
+      }
+    ],
+    "note": "Cidade, setor, equity e bônus também pesam, mas ficam de fora para manter a conta simples."
+  },
+  "check": {
+    "iAm": "Sou",
+    "inCompany": "numa empresa",
+    "people": ",",
+    "sizes": [
+      "pequena",
+      "média",
+      "grande",
+      "muito grande"
+    ],
+    "andEarn": "e ganho",
+    "perMonth": "por mês.",
+    "placeholder": "0",
+    "size": "Empresa",
+    "regime": "Regime",
+    "regimes": [
+      "CLT",
+      "PJ"
+    ],
+    "typeHint": "Preencha com o seu salário bruto: o valor antes dos descontos, sem benefícios. A régua mostra onde você fica entre os designers do mesmo papel.",
+    "pjNote": "No PJ, a faixa considera o que é preciso faturar para empatar com a CLT (cerca de 1,5 vez).",
+    "draft": "Rascunho: faixas aguardando sua revisão. A régua não aparece em produção até reviewed ser true.",
+    "verdicts": {
+      "below": "Abaixo da faixa",
+      "low": "No começo da faixa",
+      "mid": "Bem posicionado",
+      "above": "Acima da faixa"
+    },
+    "sizesNote": "*Empresa pequena: até 50 pessoas · Empresa média: 51 a 500 · Empresa grande: 501 a 5.000 · Empresa muito grande: mais de 5.000.",
+    "explain": {
+      "below": "Para {role}, a faixa começa em {p25}: faltam {gap} para você entrar nela. Hoje, pelo menos 3 em cada 4 designers nesse papel ganham mais que você.",
+      "low": "Você está dentro da faixa, entre o começo ({p25}) e a mediana ({p50}). Mais da metade dos designers nesse papel ganha mais que você: faltam {gap} para chegar ao meio.",
+      "mid": "Você está dentro da faixa e acima da mediana ({p50}): ganha mais que a metade dos designers nesse papel. O topo da faixa é {p75}.",
+      "above": "Você ganha {gap} acima do topo da faixa ({p75}). Só 1 em cada 4 designers nesse papel chega a esse valor."
+    },
+    "zoneReads": [
+      "1 em 4 ganha até {p25}",
+      "metade ganha de {p25} a {p75}",
+      "1 em 4 ganha mais de {p75}"
+    ],
+    "medianRead": "Mediana {p50}: metade ganha menos, metade ganha mais"
+  },
+  "next": {
+    "kicker": "Seu próximo passo",
+    "title": "Cada lugar da régua",
+    "continuation": "pede uma conversa diferente.",
+    "pick": "Esse sou eu",
+    "yours": "Você está aqui",
+    "lead": "A régua não diz só quanto você ganha. Diz qual conversa ter. Abaixo da faixa, o seu argumento é o mercado. Na faixa, é o próximo papel. Acima dela, é o escopo do que você faz."
+  },
+  "raise": {
+    "items": [
+      "Já faço, de forma consistente, o que se espera do papel seguinte.",
+      "Meu escopo cresceu desde o último ajuste: mais produto, mais gente ou mais responsabilidade.",
+      "Faz mais de 12 meses do meu último aumento ou promoção.",
+      "Vagas parecidas com a minha estão pagando visivelmente mais.",
+      "Recebi, ou sei que receberia, uma proposta de fora."
+    ],
+    "results": [
+      {
+        "min": 0,
+        "title": "Ainda não",
+        "body": "Hoje o pedido teria pouca base. Combine com a sua liderança o que falta para o próximo papel e volte aqui em alguns meses."
+      },
+      {
+        "min": 2,
+        "title": "Quase lá",
+        "body": "Já existe argumento. Junte três exemplos concretos do que você entrega acima do papel e marque a conversa para o próximo ciclo de revisão."
+      },
+      {
+        "min": 3,
+        "title": "Sim, a conversa é justa",
+        "body": "Peça um 1:1 só para isso, leve evidências e fale de papel antes de valor. Saia com um próximo passo por escrito."
+      }
+    ],
+    "offerOnly": "Se a única marcada é a proposta de fora, cuidado: aumento pedido com proposta na mão pode até sair, mas a relação muda.",
+    "count": "de 5",
+    "lead": "Quanto mais sinais valem para você, mais forte o pedido. Com 3 ou mais, a conversa é justa."
+  },
+  "compare": {
+    "kicker": "CLT x PJ",
+    "title": "O mesmo salário",
+    "continuation": "em duas moedas.",
+    "intro": "Um PJ de R$ 12 mil não é um CLT de R$ 12 mil. Coloque o salário CLT e veja quanto o PJ precisa faturar para dar o mesmo no ano.",
+    "clt": "Salário CLT bruto",
+    "cltTitle": "Na CLT, o ano tem",
+    "pjTitle": "No PJ, para empatar, fature",
+    "perMonth": "por mês",
+    "rows": {
+      "salaries": "12 salários",
+      "thirteenth": "13º salário",
+      "vacation": "1/3 de férias",
+      "fgts": "FGTS (8%)",
+      "benefits": "Benefícios",
+      "bonus": "Bônus ou PLR",
+      "invoices": "12 notas",
+      "tax": "Impostos",
+      "accountant": "Contador"
+    },
+    "total": "No ano, nos dois casos",
+    "ratio": "vezes o salário CLT",
+    "adjust": "Ajustar a conta",
+    "benefits": "Benefícios por mês",
+    "bonus": "Bônus por ano",
+    "tax": "Impostos do PJ",
+    "accountant": "Contador por mês",
+    "taxHint": "Simples Nacional com fator R fica perto de 6%, mais o INSS do pró-labore. Ajuste com o seu contador.",
+    "note": "Estimativa para comparar propostas. Não substitui um contador.",
+    "hints": {
+      "thirteenth": "um salário a mais no fim do ano",
+      "vacation": "as férias são pagas com um terço a mais",
+      "fgts": "8% do salário que a empresa deposita para você",
+      "benefits": "VR, plano de saúde e o que mais vier",
+      "tax": "o PJ paga sobre o que fatura",
+      "accountant": "obrigatório para manter a empresa"
+    },
+    "rule": "Regra de bolso: para empatar com esse CLT, o PJ precisa faturar {ratio} vezes o salário. Se a proposta PJ pagar menos que isso, ela paga menos, mesmo parecendo maior."
+  },
+  "table": {
+    "kicker": "Todas as faixas",
+    "title": "Os números, sem ferramenta.",
+    "note": "Salário bruto mensal. Começo e topo da faixa são o P25 e o P75 do que o mercado paga. Clique num papel para levá-lo à régua.",
+    "colRole": "Papel",
+    "colLow": "Começo",
+    "colMedian": "Mediana",
+    "colHigh": "Topo",
+    "colLowHint": "1 em 4 ganha menos",
+    "colMedianHint": "o meio",
+    "colHighHint": "1 em 4 ganha mais",
+    "for": "Valores para empresa {size}, {regime}. Mude na frase do topo."
+  },
+  "source": {
+    "kicker": "De onde vêm os números",
+    "title": "Faixas de referência, não verdade absoluta.",
+    "items": [
+      {
+        "title": "A base",
+        "body": "Faixas que uso em consultoria e em processos seletivos, cruzadas em novembro de 2026 com dados públicos (Levels.fyi e levantamentos de mercado). Base: empresas de 501 a 5.000 pessoas no eixo Sul-Sudeste."
+      },
+      {
+        "title": "Os ajustes",
+        "body": "Porte da empresa e regime mudam o número. Cidade, setor e equity também, mas ficam de fora para manter a conta simples."
+      },
+      {
+        "title": "O que vem",
+        "body": "A pesquisa salarial aberta vai substituir estas faixas por dados de designers de verdade."
+      }
+    ],
+    "cta": "Responder a pesquisa em 2 minutos",
+    "ctaBody": "Quanto mais gente responder, mais precisa fica a régua."
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Antes de levar o número para o 1:1.",
+    "items": [
+      {
+        "question": "O valor é bruto ou líquido?",
+        "answer": "Bruto mensal, sem benefícios. Se você é PJ, use o valor da nota e mude o regime para PJ."
+      },
+      {
+        "question": "Meu cargo tem outro nome. Qual escolho?",
+        "answer": "Escolha pelo que você faz, não pelo título. Se você já resolve problemas ambíguos sozinho, é Sênior, mesmo que o crachá diga Pleno. A trilha de carreira ajuda a descobrir."
+      },
+      {
+        "question": "Posso mostrar esta régua para a minha liderança?",
+        "answer": "Pode, como referência. Mas o argumento mais forte não é a faixa, é o que você entrega acima do papel. Leve os dois."
+      },
+      {
+        "question": "Os números valem para todo o Brasil?",
+        "answer": "São de empresas de 501 a 5.000 pessoas no eixo Sul-Sudeste. Fora disso, use o ajuste de porte e trate o resultado como ponto de partida."
+      },
+      {
+        "question": "Vocês guardam o salário que eu digito?",
+        "answer": "Não. A conta acontece no seu navegador. Se quiser contribuir com os números, responda a pesquisa salarial, que é anônima."
+      }
+    ]
+  },
+  "article": {
+    "kicker": "Para entender o número",
+    "cta": "Ler o artigo"
+  },
+  "accent": {
+    "color": "#3ee6a8",
+    "on": "#0b0b0b"
+  }
+}

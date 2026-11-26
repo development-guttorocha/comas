@@ -1,0 +1,299 @@
+{
+  "slug": "design-system-figma",
+  "seoTitle": "Design System no Figma para empresas: criação e consultoria | Gutto Rocha",
+  "seoDescription": "Criação e organização de design system no Figma: tokens, componentes, documentação e governança que o time de produto usa de verdade. Consultoria com 18 anos de experiência.",
+  "serviceName": "Design System no Figma",
+  "serviceType": "Design system",
+  "accent": {
+    "color": "#d7ff3d",
+    "on": "#0b0b0b"
+  },
+  "navName": "Design System",
+  "nav": [
+    {
+      "label": "Antes e depois",
+      "href": "#antes-depois"
+    },
+    {
+      "label": "Playground",
+      "href": "#playground"
+    },
+    {
+      "label": "Entregáveis",
+      "href": "#entregaveis"
+    },
+    {
+      "label": "Processo",
+      "href": "#processo"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "card": {
+    "summary": "Tokens, componentes, documentação e governança no Figma, para o time de design e de engenharia usar de verdade.",
+    "points": [
+      "Auditoria do Figma atual",
+      "Primeira versão em 6 a 10 semanas",
+      "Designers parceiros para escalar"
+    ]
+  },
+  "hero": {
+    "frameLabel": "Design System / v1.0",
+    "kicker": "Design System no Figma para empresas",
+    "titleStart": "Pare de redesenhar",
+    "titleMiddle": "o mesmo",
+    "titleComponent": "botão.",
+    "componentLabel": "Button / Primary",
+    "intro": "Crio e organizo o design system da sua empresa no Figma: tokens, componentes e regras que o time de design e de engenharia usa de verdade.",
+    "primaryCta": "Organizar meu Figma",
+    "secondaryCta": "Brincar com os tokens",
+    "sticky": "TODO: decidir qual desses 12 botões é o certo",
+    "cursors": [
+      "Gutto",
+      "Dev",
+      "PM"
+    ]
+  },
+  "marquee": [
+    "47 tons de cinza",
+    "12 botões primários",
+    "Componente detached",
+    "Frame final FINAL v3",
+    "Handoff por print",
+    "Cada tela de um jeito",
+    "Qual é a versão certa?"
+  ],
+  "beforeAfter": {
+    "kicker": "Antes e depois",
+    "title": "Do arquivo que ninguém entende",
+    "continuation": "à biblioteca que todo mundo usa.",
+    "before": {
+      "label": "Antes",
+      "layers": [
+        {
+          "name": "Frame 2 final FINAL",
+          "type": "frame"
+        },
+        {
+          "name": "Group 18 copy",
+          "type": "group"
+        },
+        {
+          "name": "Rectangle 245",
+          "type": "rect"
+        },
+        {
+          "name": "Botão azul (novo)",
+          "type": "rect",
+          "flag": "detached"
+        },
+        {
+          "name": "Botão azul (usar esse)",
+          "type": "rect",
+          "flag": "detached"
+        },
+        {
+          "name": "Text",
+          "type": "text"
+        },
+        {
+          "name": "Untitled",
+          "type": "frame"
+        }
+      ],
+      "caption": "Cada designer cria do zero. O dev adivinha."
+    },
+    "after": {
+      "label": "Depois",
+      "layers": [
+        {
+          "name": "Button / Primary / Large",
+          "type": "component"
+        },
+        {
+          "name": "Button / Secondary / Medium",
+          "type": "component"
+        },
+        {
+          "name": "Input / Default",
+          "type": "component"
+        },
+        {
+          "name": "Card / Campaign",
+          "type": "component"
+        },
+        {
+          "name": "Badge / Success",
+          "type": "component"
+        },
+        {
+          "name": "Toggle / On",
+          "type": "component"
+        },
+        {
+          "name": "color / brand / 500",
+          "type": "token"
+        }
+      ],
+      "caption": "Um componente, uma fonte de verdade. O dev consome."
+    }
+  },
+  "playground": {
+    "kicker": "Playground",
+    "title": "Mude um token.",
+    "continuation": "O produto inteiro muda junto.",
+    "hint": "É isso que um design system faz: guarda as decisões em um lugar só. Mexa nos controles.",
+    "controls": {
+      "color": "Cor da marca",
+      "radius": "Arredondamento",
+      "density": "Densidade",
+      "theme": "Tema"
+    },
+    "preview": {
+      "title": "Nova campanha",
+      "badge": "Ativa",
+      "inputLabel": "Nome da campanha",
+      "inputValue": "Black Friday 2026",
+      "toggle": "Avisar o time",
+      "progressLabel": "Orçamento usado",
+      "primary": "Publicar",
+      "secondary": "Cancelar"
+    }
+  },
+  "deliverables": {
+    "kicker": "O que você recebe",
+    "title": "Um sistema completo,",
+    "continuation": "não um arquivo bonito.",
+    "items": [
+      {
+        "title": "Auditoria",
+        "description": "Inventário do que existe: cores, fontes, componentes repetidos e inconsistências, com prioridade."
+      },
+      {
+        "title": "Tokens",
+        "description": "Cor, tipografia, espaçamento, raio e sombra como variables do Figma, prontos para virar código."
+      },
+      {
+        "title": "Componentes",
+        "description": "Variants, propriedades e auto layout. Responsivos, acessíveis e fáceis de usar."
+      },
+      {
+        "title": "Documentação",
+        "description": "Quando usar, quando não usar e exemplos reais, dentro do próprio Figma."
+      },
+      {
+        "title": "Handoff",
+        "description": "Dev Mode organizado e nomes alinhados com o código, para ninguém adivinhar."
+      },
+      {
+        "title": "Governança",
+        "description": "Como contribuir, versionar e evoluir o sistema sem virar bagunça de novo."
+      }
+    ]
+  },
+  "process": {
+    "kicker": "Como funciona",
+    "title": "Em semanas,",
+    "continuation": "não em trimestres.",
+    "items": [
+      {
+        "when": "Semanas 1–2",
+        "title": "Auditoria",
+        "description": "Mapeio o que existe e o que mais dói no time."
+      },
+      {
+        "when": "Semanas 3–6",
+        "title": "Fundações e componentes",
+        "description": "Tokens primeiro, depois os componentes que mais aparecem no produto."
+      },
+      {
+        "when": "Semanas 7–8",
+        "title": "Documentação e handoff",
+        "description": "Guias de uso e alinhamento com engenharia."
+      },
+      {
+        "when": "Depois",
+        "title": "Adoção",
+        "description": "Treino o time e acompanho as primeiras entregas."
+      }
+    ],
+    "note": "O prazo depende do tamanho do produto. A auditoria mostra o tamanho real."
+  },
+  "partners": {
+    "label": "Precisa ir mais rápido?",
+    "title": "Tenho designers parceiros para escalar junto.",
+    "body": "Quando o prazo ou o tamanho do produto pedem, trago designers parceiros para o projeto. O time cresce, a direção e o padrão de qualidade continuam os mesmos.",
+    "cta": "Conversar sobre prazo"
+  },
+  "offers": [
+    {
+      "title": "Auditoria de design system",
+      "description": "Inventário e diagnóstico do Figma atual, com plano priorizado."
+    },
+    {
+      "title": "Criação de design system no Figma",
+      "description": "Tokens, componentes, documentação e handoff para engenharia."
+    },
+    {
+      "title": "Adoção e governança",
+      "description": "Treinamento do time e regras para evoluir o sistema."
+    }
+  ],
+  "proof": {
+    "kicker": "Já fiz antes",
+    "title": "Sistemas para produtos",
+    "continuation": "que estão no ar.",
+    "cases": [
+      "plenno",
+      "creator-ads"
+    ],
+    "casesCta": "Ver todos os cases"
+  },
+  "faq": {
+    "kicker": "Perguntas frequentes",
+    "title": "Antes de abrir o arquivo.",
+    "items": [
+      {
+        "question": "Já temos um design system. Faz sentido?",
+        "answer": "Faz. Muitas vezes o trabalho é auditar, limpar e reorganizar o que existe, em vez de começar do zero."
+      },
+      {
+        "question": "Funciona com a tecnologia que usamos?",
+        "answer": "O sistema nasce no Figma, com tokens e nomes pensados para virar código em web, iOS, Android ou Flutter. Trabalho junto com engenharia nessa tradução."
+      },
+      {
+        "question": "Precisamos ter designers no time?",
+        "answer": "Não. Se não houver, entrego o sistema pronto para engenharia usar e treino quem for cuidar dele."
+      },
+      {
+        "question": "Quanto tempo leva?",
+        "answer": "Em geral de 6 a 10 semanas para a primeira versão. A auditoria das primeiras semanas define o prazo real."
+      },
+      {
+        "question": "Você trabalha sozinho?",
+        "answer": "Conduzo o projeto pessoalmente e, conforme a necessidade, trago designers parceiros para acelerar a construção dos componentes e da documentação, sempre com a mesma direção."
+      },
+      {
+        "question": "Quanto custa?",
+        "answer": "Depende do tamanho do produto e do que já existe. Depois da auditoria, escopo e valor ficam fechados."
+      },
+      {
+        "question": "E depois da entrega?",
+        "answer": "Posso acompanhar a adoção por alguns meses, ou passar a governança para o time com um guia claro de como evoluir o sistema."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Bora organizar esse Figma?",
+    "body": "Me mostra o arquivo. Em 30 minutos eu digo o que dá para melhorar primeiro.",
+    "emailCta": "Mandar um e-mail",
+    "whatsappCta": "Chamar no WhatsApp",
+    "emailSubject": "Design System no Figma",
+    "whatsappMessage": "Oi, Gutto! Vi a página de Design System no Figma e queria conversar.",
+    "related": "Precisa de liderança, não só de sistema?",
+    "relatedCta": "Head de Design as a service",
+    "relatedHref": "/servicos/head-de-design"
+  }
+}

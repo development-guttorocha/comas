@@ -1,0 +1,14 @@
+{
+  "/cases/plenno/pleno-app.png": {
+    "aura": "/reel/prep/plenno/pleno-app-aura.webp",
+    "w": 2048,
+    "h": 968
+  },
+  "/cases/plenno/plenno-platform.png": {
+    "board": "/reel/prep/plenno/plenno-platform-browser.webp",
+    "aura": "/reel/prep/plenno/plenno-platform-aura.webp",
+    "w": 2400,
+    "h": 1210,
+    "mockup": "browser"
+  }
+}

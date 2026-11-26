@@ -1,0 +1,153 @@
+/* Prototipagem com IA: black, the orange accent for the "generate" energy and a violet spark
+   for anything the AI made. The frame, light band, buttons, formats, FAQ and closing come
+   from service-shell.module.css. */
+.page {
+  --ai-orange: var(--svc-accent);
+  --ai-violet: #b69cff;
+  --ai-cream: #f3eee4;
+  --ai-ink: #0b0b0b;
+  --ai-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* ─── Hero ─── */
+.hero { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; width: var(--content-width); min-height: calc(100svh - 84px); margin-inline: auto; padding-block: clamp(32px, 6vh, 72px) 64px; text-align: center; }
+.orb { position: absolute; left: 50%; top: 52%; z-index: -1; width: min(1100px, 120vw); aspect-ratio: 1.6; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(closest-side, rgb(255 106 31 / 34%), rgb(182 156 255 / 14%) 55%, transparent); filter: blur(30px); pointer-events: none; }
+.heroTitle { max-width: 16ch; }
+
+.promptBar { position: relative; display: flex; align-items: center; gap: 16px; width: min(100%, 760px); margin-top: clamp(40px, 6vh, 64px); padding: 12px 12px 12px 24px; border-radius: 999px; background: rgb(255 255 255 / 6%); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 14%), 0 30px 80px rgb(255 106 31 / 18%); backdrop-filter: blur(16px); text-align: left; transition: box-shadow .25s; }
+.promptBar:hover { box-shadow: inset 0 0 0 1px var(--ai-orange), 0 30px 80px rgb(255 106 31 / 30%); }
+.promptSpark { color: var(--ai-violet); font-size: 20px; }
+.typed { min-width: 0; overflow: hidden; font-family: var(--ai-mono); font-size: clamp(14px, 1.3vw, 19px); white-space: nowrap; }
+.promptGo { flex: none; margin-left: auto; padding: 12px 20px; border-radius: 999px; background: var(--ai-orange); color: var(--ai-ink); font-size: 14px; font-weight: 700; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .typed { width: 0; max-width: calc(var(--chars) * 1ch + 2px); border-right: 2px solid var(--ai-orange); animation: type 2.4s steps(var(--chars)) .6s forwards, caret .8s step-end infinite; }
+  .fragment { opacity: 0; animation: pop .6s cubic-bezier(.16, 1, .3, 1) forwards; }
+  .fragment[data-i="0"] { animation-delay: 3.2s; }
+  .fragment[data-i="1"] { animation-delay: 3.5s; }
+  .fragment[data-i="2"] { animation-delay: 3.8s; }
+}
+@keyframes type { to { width: calc(var(--chars) * 1ch + 2px); } }
+@keyframes caret { 50% { border-color: transparent; } }
+@keyframes pop { from { opacity: 0; transform: translateY(12px) rotate(var(--r, 0deg)) scale(.9); } to { opacity: 1; transform: rotate(var(--r, 0deg)); } }
+
+.fragment { position: absolute; padding: 10px 16px; border-radius: var(--radius-note); background: #161616; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 10%), 0 20px 40px rgb(0 0 0 / 50%); font-family: var(--ai-mono); font-size: 14px; transform: rotate(var(--r, 0deg)); }
+.fragment[data-i="0"] { --r: -6deg; left: 2%; top: 30%; color: var(--ai-violet); }
+.fragment[data-i="1"] { --r: 5deg; right: 2%; top: 60%; background: #2a1408; color: var(--ai-orange); box-shadow: inset 0 0 0 1px rgb(255 106 31 / 40%), 0 20px 40px rgb(0 0 0 / 50%); }
+.fragment[data-i="2"] { --r: -3deg; left: 8%; bottom: 22%; color: #8b8b85; text-decoration: line-through; }
+
+.heroCtas { justify-content: center; }
+.heroIntro { max-width: 56ch; margin: 40px 0 32px; color: var(--color-muted); font-size: var(--type-body); line-height: var(--leading-body); text-wrap: pretty; }
+
+/* ─── Demo ─── */
+.demo { display: grid; grid-template-columns: 1fr minmax(280px, 340px); gap: clamp(32px, 6vw, 112px); align-items: center; }
+.toggle { display: inline-flex; padding: 5px; border-radius: 999px; background: var(--ai-ink); }
+.toggle button { min-height: 44px; padding: 8px 20px; border-radius: 999px; color: #b8b8b1; font-size: 14px; font-weight: 700; cursor: pointer; transition: background-color .2s, color .2s; }
+.toggle button[aria-pressed="true"] { background: var(--ai-cream); color: var(--ai-ink); }
+.demo[data-guided] .toggle button[aria-pressed="true"] { background: var(--ai-orange); }
+.toggle button:focus-visible { outline: 2px solid var(--ai-orange); outline-offset: 2px; }
+.promptCard { margin-top: 24px; padding: 24px; border-radius: var(--radius-card); background: #fff; box-shadow: inset 0 0 0 1px rgb(11 11 11 / 10%); }
+.promptTag { display: inline-block; margin-bottom: 12px; padding: 2px 10px; border-radius: 999px; background: rgb(182 156 255 / 30%); color: #4b2fa6; font-family: var(--ai-mono); font-size: var(--type-label); font-weight: 700; }
+.promptCard p { margin: 0; min-height: 4.8em; font-family: var(--ai-mono); font-size: clamp(14px, 1.15vw, 17px); line-height: var(--leading-text); }
+.notes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 24px 0 0; padding: 0; list-style: none; }
+.notes li { display: flex; gap: 10px; padding: 14px 16px; border-radius: var(--radius-note); background: rgb(11 11 11 / 5%); font-size: 15px; font-weight: 600; line-height: 1.4; }
+.notes li::before { content: "✕"; color: #d33a2c; font-weight: 700; }
+.demo[data-guided] .notes li::before { content: "✓"; color: #1f8a3c; }
+
+.phone { position: relative; aspect-ratio: 9 / 17; max-height: calc(100svh - 140px); padding: 12px; border-radius: 48px; background: var(--ai-ink); box-shadow: 0 40px 80px rgb(11 11 11 / 28%); }
+.screen { position: absolute; inset: 12px; display: flex; flex-direction: column; gap: 12px; padding: 40px 20px 24px; border-radius: 38px; overflow: hidden; transition: opacity .45s, transform .45s cubic-bezier(.16, 1, .3, 1); }
+.screen[aria-hidden="true"] { opacity: 0; transform: scale(.96); pointer-events: none; }
+
+.screen[data-version="raw"] { align-items: center; background: linear-gradient(160deg, #ff4fd8, #7b2ff7 55%, #00d4ff); color: #fff; text-align: center; }
+.rawTitle { margin: 0; font-size: 30px; font-weight: 800; letter-spacing: .08em; text-shadow: 0 4px 0 rgb(0 0 0 / 25%); }
+.rawLorem { margin: 0; font-size: 12px; opacity: .85; }
+.rawCard { display: flex; justify-content: space-between; width: 100%; padding: 14px; border-radius: 20px; background: rgb(255 255 255 / 25%); box-shadow: 0 10px 20px rgb(0 0 0 / 25%); font-size: 13px; font-style: italic; }
+.rawBtn { width: 100%; padding: 12px; border-radius: 6px; font-size: 13px; font-weight: 800; box-shadow: 0 6px 0 rgb(0 0 0 / 25%); }
+.rawBtn[data-c="1"] { margin-top: auto; background: #39ff14; color: #0b0b0b; border-radius: 30px; }
+.rawBtn[data-c="2"] { background: #ffb800; color: #0b0b0b; }
+.rawBtn[data-c="3"] { background: #ff2d2d; }
+
+.screen[data-version="guided"] { background: #fff; color: var(--ai-ink); }
+.gTitle { margin: 0 0 4px; font-size: 22px; font-weight: 700; letter-spacing: -.03em; }
+.gSummary { display: grid; gap: 10px; padding: 16px; border-radius: 16px; background: #f5f3ee; font-size: 14px; }
+.gSummary div { display: flex; justify-content: space-between; }
+.gFree { color: #1f8a3c; font-weight: 700; }
+.gTotal { padding-top: 10px; border-top: 1px solid #e3ded3; font-size: 16px; font-weight: 700; }
+.gLabel { margin: 8px 0 0; color: #6b665c; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+.gOption { display: flex; align-items: center; gap: 10px; padding: 14px; border-radius: 14px; box-shadow: inset 0 0 0 1.5px #e3ded3; font-size: 14px; font-weight: 600; }
+.gOption i { width: 18px; height: 18px; border-radius: 50%; box-shadow: inset 0 0 0 2px #c9c3b6; }
+.gOption small { margin-left: auto; color: #1f8a3c; font-size: 11px; font-weight: 700; }
+.gOption[data-selected] { box-shadow: inset 0 0 0 2px var(--ai-ink); }
+.gOption[data-selected] i { box-shadow: inset 0 0 0 5px var(--ai-ink); }
+.gBtn { margin-top: auto; padding: 16px; border-radius: 14px; background: var(--ai-ink); color: #fff; font-size: 15px; font-weight: 700; text-align: center; }
+
+/* ─── Pra quem é ─── */
+.audience { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.audience li > div { height: 100%; padding: var(--card-padding); border-radius: var(--radius-card); background: var(--color-card); }
+.audience li span { color: var(--ai-orange); font-size: 22px; }
+.audience h3 { margin: clamp(32px, 4vw, 72px) 0 0; font-size: var(--type-card-title); font-weight: 700; letter-spacing: var(--tracking-heading); }
+.audience p { margin: 10px 0 0; color: var(--color-muted); font-size: 16px; line-height: var(--leading-text); }
+
+/* ─── Método: rules file ─── */
+.editor { border-radius: var(--radius-card); background: #111; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 8%); overflow: hidden; }
+.editorBar { display: flex; align-items: center; gap: 8px; padding: 16px 20px; border-bottom: 1px solid rgb(255 255 255 / 8%); }
+.editorBar i { width: 12px; height: 12px; border-radius: 50%; background: #3a3a3a; }
+.editorBar i:first-child { background: var(--ai-orange); }
+.editorBar span { margin-left: 12px; color: #8b8b85; font-family: var(--ai-mono); font-size: 14px; }
+.rules { margin: 0; padding: clamp(20px, 3vw, 48px) clamp(16px, 3vw, 48px); list-style: none; counter-reset: line; font-family: var(--ai-mono); }
+.rules li { position: relative; padding: 10px 0 10px 56px; counter-increment: line; font-size: clamp(16px, 1.9vw, 30px); line-height: 1.35; letter-spacing: var(--tracking-title); }
+.rules li::before { content: counter(line); position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 32px; color: #4a4a46; font-size: 14px; text-align: right; }
+.rules strong { color: var(--color-ink); font-weight: 700; }
+.rules li:not(.ruleComment) strong::before { content: "- "; color: var(--ai-orange); }
+.rules span { color: #8b8b85; }
+.ruleComment { color: var(--ai-violet); }
+
+/* ─── Quem conduz ─── */
+.guide { display: grid; grid-template-columns: minmax(200px, 340px) 1fr; gap: var(--layout-gap); align-items: center; }
+.guidePhoto { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius-card); filter: grayscale(1) contrast(1.05); }
+.guideName { margin: 0; font-size: var(--type-section); font-weight: 700; line-height: 1; letter-spacing: var(--tracking-heading); }
+.guideBody { max-width: 52ch; margin: 20px 0 32px; color: var(--color-muted); font-size: var(--type-body); line-height: var(--leading-body); }
+
+/* ─── Próximos serviços ─── */
+.next { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.nextCard { position: relative; display: block; padding: clamp(28px, 3vw, 48px); border-radius: var(--radius-card); border: 1px solid var(--color-line); transition: border-color .2s, background-color .2s; }
+.nextCard:hover { border-color: var(--ai-orange); background: rgb(255 106 31 / 6%); }
+.nextCard h3 { margin: 0; padding-right: 56px; font-size: var(--type-subheading); font-weight: 700; line-height: 1.1; letter-spacing: var(--tracking-heading); }
+.nextCard p { margin: 12px 0 0; color: var(--color-muted); font-size: 16px; }
+.nextCard span { position: absolute; right: 28px; top: 28px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--ai-orange); color: var(--ai-ink); font-size: 20px; transition: transform .2s; }
+.nextCard:hover span { transform: translate(2px, -2px); }
+
+/* ─── Tablet ─── */
+@media (max-width: 1023px) {
+  .fragment { display: none; }
+  .demo { grid-template-columns: 1fr; }
+  .phone { width: min(100%, 360px); justify-self: center; }
+  /* Phone right after the prompt, so a tap on the toggle shows the screen change at once. */
+  .demoSide { display: contents; }
+  .toggle { order: 1; justify-self: start; }
+  .promptCard { order: 2; margin-top: 0; }
+  .phone { order: 3; }
+  .notes { order: 4; margin-top: 0; }
+  .demo { gap: 20px; }
+  .audience { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── Mobile ─── */
+@media (max-width: 767px) {
+  .hero { min-height: 0; }
+  /* The whole bar is the link; on a phone the prompt gets all of its width. */
+  .promptBar { padding: 16px 18px; }
+  .promptGo { display: none; }
+  .typed { font-size: var(--type-label); }
+  .notes, .audience, .next { grid-template-columns: 1fr; }
+  .toggle { display: flex; }
+  .toggle button { flex: 1; padding-inline: 10px; }
+  .guide { grid-template-columns: 1fr; }
+  .guidePhoto { max-width: 220px; }
+  .rules li { padding-left: 40px; }
+  .rules li::before { width: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promptBar, .toggle button, .screen, .nextCard, .nextCard span { transition: none; }
+}

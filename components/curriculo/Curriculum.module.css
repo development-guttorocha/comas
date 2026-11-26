@@ -1,0 +1,125 @@
+/* Currículo: a profile column that stays in view and the experience in cards beside it.
+   Printing hides this screen and shows CurriculumPrint, an A4 document of its own. */
+.page { padding-top: clamp(96px, 9vw, 136px); padding-bottom: var(--pad-section-md); }
+
+.layout { display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+
+/* ---------- Profile ---------- */
+.profile { display: flex; flex-direction: column; overflow: hidden; border-radius: var(--radius-card); background: var(--color-card); }
+/* The photo and the name share one card, with no gap between them. */
+.photo { overflow: hidden; aspect-ratio: 4 / 3; background: var(--color-card-alt); }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.identity { display: flex; flex: 1; flex-direction: column; padding: var(--card-padding); }
+
+.status { display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin: 0 0 16px; color: var(--color-subtle); font-size: 13px; }
+.status span { width: 8px; height: 8px; border-radius: 50%; background: #5fd27d; box-shadow: 0 0 0 4px rgb(95 210 125 / 16%); }
+
+.name { margin: 0; color: var(--color-ink); font-size: clamp(28px, 2.4vw, 36px); font-weight: 700; line-height: 1.08; letter-spacing: -.045em; }
+.name span { color: var(--color-muted); }
+.headline { margin: 10px 0 0; color: var(--color-subtle); font-size: 16px; line-height: 1.45; }
+.location { margin: 6px 0 0; color: var(--color-dim); font-size: 14px; }
+
+.rows { display: grid; margin: 28px 0 0; border-top: 1px solid var(--color-line); }
+.rows > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--color-line); }
+.rows dt { color: var(--color-ink); font-size: 14px; font-weight: 600; }
+.rows dd { min-width: 0; margin: 0; overflow-wrap: anywhere; text-align: right; }
+.rows a { color: var(--color-muted); font-size: 14px; transition: color .2s; }
+.rows a:hover { color: var(--color-ink); }
+
+.socials { display: flex; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
+.socials a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--color-line); border-radius: 12px; color: var(--color-subtle); transition: color .2s, border-color .2s; }
+.socials a:hover { border-color: var(--color-muted); color: var(--color-ink); }
+
+.actions { display: grid; gap: 10px; margin-top: auto; padding-top: 28px; }
+.actions > * { justify-content: center; width: 100%; gap: 8px; }
+.actions .primaryAction { border-color: var(--color-accent); background: var(--color-accent); color: var(--color-on-accent); }
+.actions .primaryAction:hover { border-color: #fff; background: #fff; }
+
+/* ---------- Cards ---------- */
+.content { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+/* The experience card takes what the profile leaves, and its roles scroll inside it. */
+.experience { display: flex; flex: 1 1 0; flex-direction: column; min-height: 520px; height: 0; }
+.scroller { flex: 1; min-height: 0; margin: 12px calc(var(--card-padding) * -1) calc(var(--card-padding) * -1); padding: 0 var(--card-padding) var(--card-padding); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--color-line) transparent; mask-image: linear-gradient(transparent, #000 16px, #000 calc(100% - 40px), transparent); }
+.scroller:focus-visible { outline: 2px solid var(--color-muted); outline-offset: -2px; }
+.card { min-width: 0; padding: var(--card-padding); border-radius: var(--radius-card); background: var(--color-card); }
+
+.chip { display: inline-block; margin: 0; padding: 5px 12px; border-radius: 8px; background: var(--color-card-alt); color: var(--color-subtle); font-size: 13px; font-weight: 500; line-height: 1.3; letter-spacing: 0; }
+.cardTitle { margin: 0; color: var(--color-ink); font-size: clamp(22px, 1.8vw, 28px); font-weight: 700; line-height: 1.2; letter-spacing: -.035em; }
+
+.summary { margin: 20px 0 0; color: var(--color-subtle); font-size: var(--type-body); line-height: 1.75; text-wrap: pretty; }
+
+/* ---------- Experience ---------- */
+.jobs { display: grid; margin: 0; padding: 0; list-style: none; }
+.job { padding: 24px 0; border-bottom: 1px solid var(--color-line); }
+.job:last-child { border-bottom: 0; padding-bottom: 12px; }
+.jobHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-bottom: 14px; }
+.company { margin: 0 0 4px; color: var(--color-muted); font-size: 15px; }
+.role { margin: 0; color: var(--color-ink); font-size: 18px; font-weight: 700; line-height: 1.3; letter-spacing: -.02em; }
+.period { flex-shrink: 0; margin: 0; color: var(--color-dim); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.jobText { margin: 10px 0 0; color: var(--color-muted); font-size: 15px; line-height: 1.75; text-wrap: pretty; }
+
+.results { margin-top: 20px; }
+.resultsTitle { margin: 0 0 10px; color: var(--color-dim); font-size: 12px; font-weight: 600; letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.results ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.results li { padding: 8px 12px; border: 1px solid var(--color-line); border-radius: 10px; color: var(--color-ink); font-size: 13px; line-height: 1.4; }
+
+/* A phase of the career, as an accordion: its name and period, then its roles. */
+.phase { border-bottom: 1px solid var(--color-line); }
+.phase:last-child { border-bottom: 0; }
+.phaseHead { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; }
+.phaseHead::-webkit-details-marker { display: none; }
+.phaseHead:focus-visible { outline: 2px solid var(--color-muted); outline-offset: 4px; border-radius: 8px; }
+.phaseTitle { margin: 0; color: var(--color-ink); font-size: 17px; font-weight: 600; letter-spacing: -.01em; }
+.phaseMeta { display: inline-flex; align-items: center; gap: 12px; color: var(--color-dim); }
+.phaseChevron { flex-shrink: 0; transition: transform .25s var(--ease, ease); }
+.phase[open] .phaseChevron { transform: rotate(180deg); }
+.phase:hover .phaseTitle { color: #fff; }
+.phase[open] > .phaseHead { padding-bottom: 6px; }
+.phase[open] > :last-child { padding-bottom: 12px; }
+.brief { display: grid; margin: 12px 0 0; padding: 0; list-style: none; }
+.brief li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px dashed rgb(255 255 255 / 8%); }
+.brief li:last-child { border-bottom: 0; }
+.brief strong { color: var(--color-ink); font-size: 14px; font-weight: 600; }
+.briefCompany { margin-left: 8px; color: var(--color-muted); font-size: 14px; }
+
+/* ---------- Education, skills, tools ---------- */
+.strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.education { display: grid; margin: 16px 0 0; padding: 0; list-style: none; }
+.education li { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--color-line); }
+.education li:last-child { border-bottom: 0; }
+.course { margin: 0; color: var(--color-ink); font-size: 15px; font-weight: 600; line-height: 1.4; }
+.institution { margin: 3px 0 0; color: var(--color-muted); font-size: 14px; }
+.year { flex-shrink: 0; padding: 3px 9px; border: 1px solid var(--color-line); border-radius: 999px; color: var(--color-dim); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+.tags li { padding: 7px 12px; border: 1px solid var(--color-line); border-radius: 999px; color: var(--color-subtle); font-size: 13px; }
+
+.tools { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 16px 0 0; padding: 0; list-style: none; }
+.tools li { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 12px; background: var(--color-card-alt); color: var(--color-ink); font-size: 14px; }
+.tools li { min-width: 0; }
+.tools li span { flex-shrink: 0; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 9px; background: var(--color-surface); color: var(--color-ink); font-size: 14px; font-weight: 700; }
+/* AI tools get a lighter tile, to read as their own group. */
+.ai li span { background: rgb(255 255 255 / 10%); }
+
+/* Narrower screens: one column, and the experience grows with its text instead of scrolling. */
+@media (max-width: 1023px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .profile { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photo { position: relative; aspect-ratio: auto; min-height: 320px; }
+  .photo img { position: absolute; inset: 0; }
+  .experience { flex: none; height: auto; min-height: 0; }
+  .scroller { overflow: visible; margin: 12px 0 0; padding: 0; mask-image: none; }
+}
+@media (max-width: 767px) {
+  .profile { grid-template-columns: minmax(0, 1fr); }
+  .photo { aspect-ratio: 1; min-height: 0; }
+  .strip { grid-template-columns: minmax(0, 1fr); }
+  .jobHead { flex-direction: column; gap: 6px; }
+  .brief li { flex-direction: column; gap: 2px; }
+}
+
+/* Printing: only the A4 document. */
+@media print {
+  .page { padding: 0; }
+  .screen { display: none !important; }
+}

@@ -1,0 +1,29 @@
+.dialog { width: min(1000px, 94vw); }
+.ratios { display: flex; flex-wrap: wrap; gap: 2px; }
+.ratio { height: 28px; padding: 0 10px; border-radius: 7px; color: var(--muted); font-size: 12px; }
+.ratio:hover { color: var(--ink); }
+.ratio[aria-checked="true"] { background: var(--raised); color: var(--ink); }
+
+.body { display: grid; place-items: center; padding: 20px; background: var(--field); }
+/* Sized by the media: the box is placed in % of it. */
+.stage { position: relative; overflow: hidden; touch-action: none; user-select: none; }
+.media { display: block; max-width: 100%; max-height: 62vh; pointer-events: none; }
+
+/* What falls outside the area is dimmed by the box's own shadow. */
+.box { position: absolute; z-index: 1; box-shadow: 0 0 0 9999px rgb(0 0 0 / 62%); outline: 1px solid rgb(255 255 255 / 85%); cursor: move; }
+.thirds { position: absolute; inset: 0; background:
+  linear-gradient(to right, transparent calc(33.33% - .5px), rgb(255 255 255 / 30%) calc(33.33% - .5px) calc(33.33% + .5px), transparent calc(33.33% + .5px) calc(66.66% - .5px), rgb(255 255 255 / 30%) calc(66.66% - .5px) calc(66.66% + .5px), transparent calc(66.66% + .5px)),
+  linear-gradient(to bottom, transparent calc(33.33% - .5px), rgb(255 255 255 / 30%) calc(33.33% - .5px) calc(33.33% + .5px), transparent calc(33.33% + .5px) calc(66.66% - .5px), rgb(255 255 255 / 30%) calc(66.66% - .5px) calc(66.66% + .5px), transparent calc(66.66% + .5px));
+  pointer-events: none; }
+.handle { position: absolute; width: 14px; height: 14px; border: 2px solid #fff; border-radius: 3px; background: rgb(0 0 0 / 50%); transform: translate(-50%, -50%); }
+.handle[data-handle="nw"] { top: 0; left: 0; cursor: nwse-resize; }
+.handle[data-handle="n"] { top: 0; left: 50%; cursor: ns-resize; }
+.handle[data-handle="ne"] { top: 0; left: 100%; cursor: nesw-resize; }
+.handle[data-handle="e"] { top: 50%; left: 100%; cursor: ew-resize; }
+.handle[data-handle="se"] { top: 100%; left: 100%; cursor: nwse-resize; }
+.handle[data-handle="s"] { top: 100%; left: 50%; cursor: ns-resize; }
+.handle[data-handle="sw"] { top: 100%; left: 0; cursor: nesw-resize; }
+.handle[data-handle="w"] { top: 50%; left: 0; cursor: ew-resize; }
+
+.foot { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-top: 1px solid var(--line); }
+.size { margin-right: auto; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }

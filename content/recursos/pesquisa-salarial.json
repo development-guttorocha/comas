@@ -1,0 +1,263 @@
+{
+  "slug": "pesquisa-salarial",
+  "edition": "2027",
+  "seoTitle": "Pesquisa salarial de design 2027: quanto ganha um designer no Brasil | Gutto Rocha",
+  "seoDescription": "Pesquisa anônima sobre salários de designers de produto no Brasil, por nível, regime, região e tamanho de empresa. Responda em 2 minutos e receba os resultados primeiro.",
+  "serviceName": "Pesquisa salarial de design 2027",
+  "navName": "Pesquisa salarial",
+  "card": {
+    "summary": "Uma pesquisa anônima para mostrar quanto designers ganham no Brasil, por nível, regime e região.",
+    "points": [
+      "Anônima, 2 minutos",
+      "Resultados para quem responde",
+      "Resultados parciais ao vivo"
+    ]
+  },
+  "hero": {
+    "kicker": "Pesquisa anônima · edição 2027",
+    "title": "Quanto ganha",
+    "continuation": "um designer no Brasil?",
+    "boardTab": "◇ Ficha / Pesquisa salarial",
+    "intro": "Salário é o único número do trabalho que ninguém compartilha. Por isso todo mundo negocia no escuro. Responda em 2 minutos: a sua resposta transforma uma estimativa em dado de verdade.",
+    "facts": "12 perguntas · 2 minutos · você vê onde está ao terminar",
+    "cardLead": "Isto é tudo o que chega até mim."
+  },
+  "form": {
+    "role": "Seu papel hoje",
+    "rolePlaceholder": "Escolha o mais próximo",
+    "roles": [
+      "Júnior",
+      "Pleno",
+      "Sênior",
+      "Staff / Principal",
+      "Design Lead",
+      "Design Manager",
+      "Head de Design ou acima",
+      "Freelancer ou consultor",
+      "Outro"
+    ],
+    "specialty": "Área principal",
+    "specialties": [
+      "Product design",
+      "UX/UI",
+      "Pesquisa",
+      "Design system",
+      "Conteúdo / UX writing",
+      "DesignOps",
+      "Gestão",
+      "Outra"
+    ],
+    "experience": "Anos de experiência em design",
+    "experiences": [
+      "Menos de 2",
+      "2 a 4",
+      "5 a 7",
+      "8 a 11",
+      "12 ou mais"
+    ],
+    "regime": "Regime de contratação",
+    "regimes": [
+      "CLT",
+      "PJ",
+      "Cooperado ou outro",
+      "Contratado por empresa de fora do Brasil"
+    ],
+    "salary": "Salário bruto mensal (R$)",
+    "salaryHint": "Antes de impostos, sem benefícios. Se for PJ, o valor da nota.",
+    "bonus": "Bônus ou PLR no último ano",
+    "bonuses": [
+      "Não recebi",
+      "Até 1 salário",
+      "1 a 3 salários",
+      "Mais de 3 salários"
+    ],
+    "companySize": "Tamanho da empresa",
+    "companySizes": [
+      "Até 50 pessoas",
+      "51 a 500",
+      "501 a 5.000",
+      "Mais de 5.000"
+    ],
+    "sector": "Setor",
+    "sectors": [
+      "Tecnologia / SaaS",
+      "Banco ou fintech",
+      "Varejo e e-commerce",
+      "Saúde",
+      "Educação",
+      "Agência ou consultoria",
+      "Governo",
+      "Outro"
+    ],
+    "state": "Onde você mora",
+    "workModel": "Modelo de trabalho",
+    "workModels": [
+      "Remoto",
+      "Híbrido",
+      "Presencial"
+    ],
+    "gender": "Gênero",
+    "genders": [
+      "Mulher",
+      "Homem",
+      "Não binário",
+      "Prefiro não dizer"
+    ],
+    "optional": "Opcional",
+    "email": "E-mail para receber os resultados",
+    "emailHint": "Opcional. Guardado separado das respostas.",
+    "submit": "Enviar respostas",
+    "sending": "Enviando…",
+    "privacy": "Respostas anônimas. Uso os dados só de forma agregada, e grupos com menos de 5 respostas não são publicados.",
+    "sentTitle": "Obrigado! Respostas recebidas.",
+    "sentBody": "Agora, o que mais ajuda: mande para 3 designers. Quanto mais respostas, mais precisa fica a régua para todo mundo.",
+    "share": "Copiar link da pesquisa",
+    "copied": "Link copiado",
+    "guide": "Enquanto isso, veja quanto você deveria ganhar"
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Perguntas frequentes.",
+    "items": [
+      {
+        "question": "Como garanto que é anônima?",
+        "answer": "A pesquisa não pede nome, empresa nem cargo exato. O e-mail, se você deixar, fica num arquivo separado e não é ligado às respostas. Nos resultados, só aparecem grupos com 5 respostas ou mais."
+      },
+      {
+        "question": "Por que vocês perguntam o estado e o setor?",
+        "answer": "Porque mudam bastante o salário. Mas um estado com poucas respostas não aparece sozinho nos resultados: ele entra junto da região."
+      },
+      {
+        "question": "Quando saem os resultados?",
+        "answer": "Os resultados parciais já aparecem aqui na página assim que cada grupo atinge 5 respostas aprovadas. O relatório completo fecha em março de 2027, e quem deixou o e-mail recebe antes."
+      },
+      {
+        "question": "Posso responder se trabalho para fora do Brasil?",
+        "answer": "Pode. Escolha esse regime e informe o valor em reais, pela cotação do mês."
+      },
+      {
+        "question": "E se eu for freelancer?",
+        "answer": "Também vale. Informe a média que você fatura por mês nos últimos 12 meses."
+      }
+    ]
+  },
+  "flow": {
+    "close": "Fechar a pesquisa",
+    "back": "Voltar",
+    "next": "Continuar",
+    "skip": "Pular",
+    "of": "de",
+    "questions": {
+      "role": "Qual é o seu papel hoje?",
+      "specialty": "Em que área você mais trabalha?",
+      "experience": "Há quantos anos você trabalha com design?",
+      "regime": "Como você é contratado?",
+      "salary": "Quanto você ganha por mês, bruto?",
+      "bonus": "Recebeu bônus ou PLR no último ano?",
+      "companySize": "Quantas pessoas tem a empresa?",
+      "sector": "Em que setor ela está?",
+      "state": "Onde você mora?",
+      "workModel": "Como você trabalha?",
+      "gender": "Como você se identifica?",
+      "email": "Quer receber os resultados primeiro?"
+    },
+    "hints": {
+      "role": "Pense no que você faz, não no título do cargo.",
+      "salary": "Antes de impostos, sem benefícios. Se for PJ, o valor da nota.",
+      "gender": "Opcional. Serve só para medir diferenças entre grupos.",
+      "email": "Opcional. Guardado separado das suas respostas."
+    },
+    "keyboard": "Dica: use as teclas de número para escolher e Enter para continuar.",
+    "reward": {
+      "title": "Onde você está",
+      "lead": "Pela faixa de referência de hoje. Em março, com as respostas, ela fica mais precisa.",
+      "cta": "Ver as ferramentas de salário",
+      "you": "Você"
+    }
+  },
+  "accent": {
+    "color": "#4cc9f0",
+    "on": "#0b0b0b"
+  },
+  "sheet": {
+    "title": "Resposta anônima",
+    "edition": "Pesquisa salarial 2027",
+    "labels": {
+      "role": "Papel",
+      "specialty": "Área",
+      "experience": "Experiência",
+      "regime": "Regime",
+      "salary": "Salário bruto",
+      "bonus": "Bônus ou PLR",
+      "companySize": "Porte da empresa",
+      "sector": "Setor",
+      "state": "Estado",
+      "workModel": "Modelo",
+      "gender": "Gênero"
+    },
+    "absent": [
+      {
+        "label": "Nome",
+        "note": "não existe nesta ficha"
+      },
+      {
+        "label": "Empresa",
+        "note": "não existe nesta ficha"
+      }
+    ],
+    "date": "Data: {date}, sem hora",
+    "email": "E-mail, se deixar: vai para outro arquivo",
+    "experienceSuffix": "anos",
+    "pending": "—"
+  },
+  "journey": {
+    "kicker": "O que acontece com a sua resposta",
+    "title": "Três passos,",
+    "continuation": "nenhum com o seu nome.",
+    "steps": [
+      {
+        "title": "A ficha chega assim",
+        "body": "Exatamente os campos ao lado, sem nome e sem empresa. A data fica sem hora, para ninguém cruzar o momento do envio com uma pessoa."
+      },
+      {
+        "title": "O e-mail vai para outro lugar",
+        "body": "Se você quiser os resultados antes, o e-mail é guardado num arquivo separado, sem nada que o ligue à sua resposta."
+      },
+      {
+        "title": "Só grupos aparecem",
+        "body": "Nos resultados, cada número junta pelo menos {min} respostas. Um grupo menor que isso não é publicado, para ninguém ser reconhecido."
+      }
+    ]
+  },
+  "results": {
+    "kicker": "O que vai ser publicado",
+    "title": "Resultados abertos,",
+    "continuation": "em março de 2027.",
+    "lead": "Tudo aqui, de graça, para qualquer designer usar numa negociação. E a régua da página de salário passa a usar estes dados no lugar das estimativas.",
+    "minGroup": 5,
+    "cuts": [
+      {
+        "title": "Por nível",
+        "body": "Júnior a Head, com começo, mediana e topo de cada faixa."
+      },
+      {
+        "title": "Por regime",
+        "body": "CLT, PJ e contratados de fora: quanto o PJ recebe a mais, de fato."
+      },
+      {
+        "title": "Por região",
+        "body": "Estados e regiões com respostas suficientes."
+      },
+      {
+        "title": "Por porte e setor",
+        "body": "Startup, empresa grande, banco, varejo, agência."
+      },
+      {
+        "title": "Por gênero",
+        "body": "A diferença entre grupos no mesmo nível. É para isso que serve a pergunta opcional."
+      }
+    ],
+    "waiting": "Aguardando respostas",
+    "cta": "Responder agora"
+  }
+}

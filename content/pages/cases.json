@@ -1,0 +1,177 @@
+{
+  "word": {
+    "pt": "cases",
+    "en": "cases",
+    "enFrom": "cases"
+  },
+  "intro": {
+    "pt": "Nesses 18 anos, tive a chance de conhecer de perto negócios de todos os tamanhos. Nas agências digitais, aprendi a olhar para cada cliente de um jeito. Depois, levei essa experiência para produtos, passando por empresas em transformação, startups e negócios mais maduros. Em cada lugar, aprendi algo que faz parte do meu jeito de trabalhar hoje.",
+    "en": "Over these 18 years, I've had the chance to get to know businesses of all sizes up close. At digital agencies, I learned to approach each client differently. Then I brought that experience to products, working at companies in transition, startups, and more mature businesses. Everywhere I went, I learned something that's part of how I work today.",
+    "enFrom": "Nesses 18 anos, tive a chance de conhecer de perto negócios de todos os tamanhos. Nas agências digitais, aprendi a olhar para cada cliente de um jeito. Depois, levei essa experiência para produtos, passando por empresas em transformação, startups e negócios mais maduros. Em cada lugar, aprendi algo que faz parte do meu jeito de trabalhar hoje."
+  },
+  "introLink": {
+    "pt": "Ver os cases",
+    "en": "See the case studies",
+    "enFrom": "Ver os cases"
+  },
+  "clientsTitle": {
+    "pt": "Quem já confiou no meu trabalho",
+    "en": "Trusted by",
+    "enFrom": "Empresas que conheceram meu trabalho"
+  },
+  "clients": [
+    {
+      "name": "Microsoft",
+      "sector": {
+        "pt": "Tecnologia",
+        "en": "Technology",
+        "enFrom": "Tecnologia"
+      }
+    },
+    {
+      "name": "Samsung",
+      "sector": {
+        "pt": "Tecnologia",
+        "en": "Technology",
+        "enFrom": "Tecnologia"
+      }
+    },
+    {
+      "name": "Panasonic",
+      "sector": {
+        "pt": "Tecnologia",
+        "en": "Technology",
+        "enFrom": "Tecnologia"
+      }
+    },
+    {
+      "name": "Philco",
+      "sector": {
+        "pt": "Tecnologia",
+        "en": "Technology",
+        "enFrom": "Tecnologia"
+      }
+    },
+    {
+      "name": "Sonda",
+      "sector": {
+        "pt": "Tecnologia",
+        "en": "Technology",
+        "enFrom": "Tecnologia"
+      }
+    },
+    {
+      "name": "General Motors",
+      "sector": {
+        "pt": "Automotivo",
+        "en": "Automotive",
+        "enFrom": "Automotivo"
+      }
+    },
+    {
+      "name": "Webmotors",
+      "sector": {
+        "pt": "Automotivo",
+        "en": "Automotive",
+        "enFrom": "Automotivo"
+      }
+    },
+    {
+      "name": "Oficina Brasil",
+      "sector": {
+        "pt": "Automotivo",
+        "en": "Automotive",
+        "enFrom": "Automotivo"
+      }
+    },
+    {
+      "name": "PicPay",
+      "sector": {
+        "pt": "Finanças",
+        "en": "Finance",
+        "enFrom": "Finanças"
+      }
+    },
+    {
+      "name": "Conta Azul",
+      "sector": {
+        "pt": "Finanças",
+        "en": "Finance",
+        "enFrom": "Finanças"
+      }
+    },
+    {
+      "name": "SulAmérica",
+      "sector": {
+        "pt": "Seguros",
+        "en": "Insurance",
+        "enFrom": "Seguros"
+      }
+    },
+    {
+      "name": "Dasa",
+      "sector": {
+        "pt": "Saúde",
+        "en": "Healthcare",
+        "enFrom": "Saúde"
+      }
+    },
+    {
+      "name": "Ajinomoto",
+      "sector": {
+        "pt": "Consumo",
+        "en": "Consumer goods",
+        "enFrom": "Consumo"
+      }
+    },
+    {
+      "name": "Melhoramentos",
+      "sector": {
+        "pt": "Consumo",
+        "en": "Consumer goods",
+        "enFrom": "Consumo"
+      }
+    },
+    {
+      "name": "Loft",
+      "sector": {
+        "pt": "Imobiliário",
+        "en": "Real estate",
+        "enFrom": "Imobiliário"
+      }
+    },
+    {
+      "name": "Creator Ads",
+      "sector": {
+        "pt": "Creators",
+        "en": "Creators",
+        "enFrom": "Creators"
+      }
+    }
+  ],
+  "coffeeKicker": {
+    "pt": "Disponível para conversas",
+    "en": "Open to conversations",
+    "enFrom": "Disponível para conversas"
+  },
+  "coffeeTitle": {
+    "pt": "Vamos tomar",
+    "en": "Shall we grab",
+    "enFrom": "Vamos tomar"
+  },
+  "coffeeContinuation": {
+    "pt": "um café?",
+    "en": "a coffee?",
+    "enFrom": "um café?"
+  },
+  "coffeeBody": {
+    "pt": "Estou disponível para novas conversas. Se você está montando um time, repensando um produto ou só quer trocar uma ideia sobre design e liderança, me chama.",
+    "en": "I'm open to new conversations. If you're building a team, rethinking a product, or just want to chat about design and leadership, reach out.",
+    "enFrom": "Estou disponível para novas conversas. Se você está montando um time, repensando um produto ou só quer trocar uma ideia sobre design e liderança, me chama."
+  },
+  "coffeeCta": {
+    "pt": "Marcar um café",
+    "en": "Let's grab coffee",
+    "enFrom": "Marcar um café"
+  }
+}

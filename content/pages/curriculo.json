@@ -1,0 +1,950 @@
+{
+  "kicker": {
+    "pt": "Currículo",
+    "en": "Resume",
+    "enFrom": "Currículo"
+  },
+  "name": "Gustavo Rocha",
+  "surname": "Souza Bueno",
+  "headline": {
+    "pt": "Design Manager @ SulAmérica",
+    "en": "Design Manager @ SulAmérica",
+    "enFrom": "Design Manager @ SulAmérica"
+  },
+  "location": {
+    "pt": "Guarulhos, SP — Brasil",
+    "en": "Guarulhos, SP — Brazil",
+    "enFrom": "Guarulhos, SP — Brasil"
+  },
+  "status": {
+    "pt": "",
+    "en": "",
+    "enFrom": ""
+  },
+  "photo": "/curriculo/gutto.webp",
+  "contacts": [
+    {
+      "label": {
+        "pt": "Telefone",
+        "en": "Phone",
+        "enFrom": "Telefone"
+      },
+      "value": "+55 11 9 6325-1446",
+      "href": "tel:+5511963251446"
+    },
+    {
+      "label": {
+        "pt": "Site",
+        "en": "Website",
+        "enFrom": "Site"
+      },
+      "value": "guttorocha.com.br",
+      "href": "https://www.guttorocha.com.br"
+    },
+    {
+      "label": {
+        "pt": "E-mail",
+        "en": "Email",
+        "enFrom": "E-mail"
+      },
+      "value": "guttorsbueno@gmail.com",
+      "href": "mailto:guttorsbueno@gmail.com"
+    }
+  ],
+  "printLabel": {
+    "pt": "Baixar PDF",
+    "en": "Download PDF",
+    "enFrom": "Baixar PDF"
+  },
+  "contactCta": {
+    "pt": "Fale comigo",
+    "en": "Get in touch",
+    "enFrom": "Fale comigo"
+  },
+  "summaryTitle": {
+    "pt": "Resumo profissional",
+    "en": "Professional summary",
+    "enFrom": "Resumo profissional"
+  },
+  "summary": {
+    "pt": "Sou Design Manager na SulAmérica e tenho 18 anos de experiência em design, dos quais 8 liderando equipes multidisciplinares. Formo times e defino a direção de Product Design para produtos B2B, B2C e B2B2C em seguros, pagamentos e marketplaces. Na BrandLovrs, o time registrou +46% na conversão do app e +75% na ativação mensal de criadores. No PicPay, liderei até 15 profissionais e estruturei as primeiras posições de Staff Designer e Service Designer.",
+    "en": "I'm a Design Manager at SulAmérica with 18 years in design and eight years leading multidisciplinary teams. I build teams and set product design direction for B2B, B2C and B2B2C products in insurance, payments and marketplaces. At BrandLovrs, the team recorded a 46% increase in app conversion and a 75% increase in monthly creator activation. At PicPay, I led up to 15 people and established the first Staff Designer and Service Designer roles.",
+    "enFrom": "Sou Design Manager na SulAmérica e tenho 18 anos de experiência em design, dos quais 8 liderando equipes multidisciplinares. Formo times e defino a direção de Product Design para produtos B2B, B2C e B2B2C em seguros, pagamentos e marketplaces. Na BrandLovrs, o time registrou +46% na conversão do app e +75% na ativação mensal de criadores. No PicPay, liderei até 15 profissionais e estruturei as primeiras posições de Staff Designer e Service Designer."
+  },
+  "experienceTitle": {
+    "pt": "Experiência profissional",
+    "en": "Professional experience",
+    "enFrom": "Experiência profissional"
+  },
+  "resultsTitle": {
+    "pt": "Principais resultados",
+    "en": "Key results",
+    "enFrom": "Principais resultados"
+  },
+  "phases": [
+    {
+      "title": {
+        "pt": "Liderança e Gestão",
+        "en": "Leadership and management",
+        "enFrom": "Liderança e Gestão"
+      },
+      "period": {
+        "pt": "A partir de 2020",
+        "en": "Since 2020",
+        "enFrom": "A partir de 2020"
+      },
+      "jobs": [
+        {
+          "title": {
+            "pt": "Design Manager @ SulAmérica",
+            "en": "Design Manager @ SulAmérica",
+            "enFrom": "Design Manager @ SulAmérica"
+          },
+          "period": {
+            "pt": "Setembro de 2025 — Atual",
+            "en": "September 2025 — Present",
+            "enFrom": "Setembro de 2025 — Atual"
+          },
+          "bullets": [
+            {
+              "text": {
+                "pt": "Lidero o design de Marketing & Vendas, responsável por aquisição, distribuição e relacionamento digital. Defino a direção de experiência para o canal de corretores (B2B2C), e-commerce, portais e concierge.",
+                "en": "I lead design for Marketing & Sales across acquisition, distribution and digital customer relationships. I set the design direction for the broker channel (B2B2C), e-commerce, portals and concierge.",
+                "enFrom": "Lidero o design de Marketing & Vendas, responsável por aquisição, distribuição e relacionamento digital. Defino a direção de experiência para o canal de corretores (B2B2C), e-commerce, portais e concierge."
+              }
+            },
+            {
+              "text": {
+                "pt": "Lidero direta e indiretamente mais de 15 pessoas, com responsabilidade por contratação, alocação, orçamento e desenvolvimento de novas lideranças.",
+                "en": "I lead more than 15 people directly and indirectly, with responsibility for hiring, staffing, budgeting and developing new leaders.",
+                "enFrom": "Lidero direta e indiretamente mais de 15 pessoas, com responsabilidade por contratação, alocação, orçamento e desenvolvimento de novas lideranças."
+              }
+            },
+            {
+              "text": {
+                "pt": "Trabalho com Produto, Tecnologia e Negócios em jornadas reguladas de seguros, previdência, investimentos e Open Insurance. Entrei na companhia para liderar a direção de design do aplicativo.",
+                "en": "I partner with Product, Technology and business teams on regulated journeys in insurance, pensions, investments and Open Insurance. I joined the company to lead design for its app.",
+                "enFrom": "Trabalho com Produto, Tecnologia e Negócios em jornadas reguladas de seguros, previdência, investimentos e Open Insurance. Entrei na companhia para liderar a direção de design do aplicativo."
+              }
+            }
+          ],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Design Manager & Product Lead @ Oficina Brasil",
+            "en": "Design Manager & Product Lead @ Oficina Brasil",
+            "enFrom": "Design Manager & Product Lead @ Oficina Brasil"
+          },
+          "period": {
+            "pt": "Julho de 2024 — Fevereiro de 2025",
+            "en": "July 2024 — February 2025",
+            "enFrom": "Julho de 2024 — Fevereiro de 2025"
+          },
+          "bullets": [
+            {
+              "text": {
+                "pt": "Liderei a modernização de produtos digitais do mercado de reposição automotiva para conectar reparadores, indústrias e distribuidores.",
+                "en": "I led digital product modernization in the automotive aftermarket, connecting repair professionals, manufacturers and distributors.",
+                "enFrom": "Liderei a modernização de produtos digitais do mercado de reposição automotiva para conectar reparadores, indústrias e distribuidores."
+              }
+            },
+            {
+              "text": {
+                "pt": "Alinhei Design, Tecnologia e Negócios na evolução de plataformas educacionais, marketplaces e soluções de análise de dados.",
+                "en": "I aligned Design, Technology and business teams on the development of learning platforms, marketplaces and analytics tools.",
+                "enFrom": "Alinhei Design, Tecnologia e Negócios na evolução de plataformas educacionais, marketplaces e soluções de análise de dados."
+              }
+            }
+          ],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Head of Design @ Creator Ads (BrandLovrs)",
+            "en": "Head of Design @ Creator Ads (BrandLovrs)",
+            "enFrom": "Head of Design @ Creator Ads (BrandLovrs)"
+          },
+          "period": {
+            "pt": "Maio de 2023 — Julho de 2024",
+            "en": "May 2023 — July 2024",
+            "enFrom": "Maio de 2023 — Julho de 2024"
+          },
+          "bullets": [
+            {
+              "text": {
+                "pt": "Liderei o chapter de Product Design e a evolução de UX Research, Content Design e Design System, com reporte ao CPO e ao CEO.",
+                "en": "I led the Product Design chapter and developed the UX Research, Content Design and Design Systems practices, reporting to the CPO and CEO.",
+                "enFrom": "Liderei o chapter de Product Design e a evolução de UX Research, Content Design e Design System, com reporte ao CPO e ao CEO."
+              }
+            },
+            {
+              "text": {
+                "pt": "Contribuí para a rodada de captação de R$ 35 milhões liderada pela Kaszek.",
+                "en": "I contributed to the BRL 35 million funding round led by Kaszek.",
+                "enFrom": "Contribuí para a rodada de captação de R$ 35 milhões liderada pela Kaszek."
+              }
+            }
+          ],
+          "results": [
+            {
+              "text": {
+                "pt": "+20% na taxa de downloads do app",
+                "en": "+20% in the app download rate",
+                "enFrom": "+20% na taxa de downloads do app"
+              }
+            },
+            {
+              "text": {
+                "pt": "−75% na quantidade de chamados do app",
+                "en": "−75% in app support tickets",
+                "enFrom": "−75% na quantidade de chamados do app"
+              }
+            },
+            {
+              "text": {
+                "pt": "+46% na conversão do app",
+                "en": "+46% in app conversion",
+                "enFrom": "+46% na conversão do app"
+              }
+            },
+            {
+              "text": {
+                "pt": "+75% na ativação mensal de criadores de conteúdo no app",
+                "en": "+75% in monthly content creator activation in the app",
+                "enFrom": "+75% na ativação mensal de criadores de conteúdo no app"
+              }
+            },
+            {
+              "text": {
+                "pt": "+78% nas avaliações do app nas lojas de aplicativos",
+                "en": "+78% in app store ratings",
+                "enFrom": "+78% nas avaliações do app nas lojas de aplicativos"
+              }
+            }
+          ]
+        },
+        {
+          "title": {
+            "pt": "Design Manager @ Loft",
+            "en": "Design Manager @ Loft",
+            "enFrom": "Design Manager @ Loft"
+          },
+          "period": {
+            "pt": "Março de 2022 — Março de 2023",
+            "en": "March 2022 — March 2023",
+            "enFrom": "Março de 2022 — Março de 2023"
+          },
+          "bullets": [
+            {
+              "text": {
+                "pt": "Liderei seis designers em duas tribos e coordenei o trabalho com Content Design, UX Research e Service Design.",
+                "en": "I led six designers across two tribes and coordinated work with Content Design, UX Research and Service Design.",
+                "enFrom": "Liderei seis designers em duas tribos e coordenei o trabalho com Content Design, UX Research e Service Design."
+              }
+            },
+            {
+              "text": {
+                "pt": "Conduzi 1:1s e mentorias para desenvolver competências e apoiar a evolução de carreira.",
+                "en": "I ran one-on-ones and mentored designers to develop skills and support career progression.",
+                "enFrom": "Conduzi 1:1s e mentorias para desenvolver competências e apoiar a evolução de carreira."
+              }
+            }
+          ],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Design Manager @ PicPay",
+            "en": "Design Manager @ PicPay",
+            "enFrom": "Design Manager @ PicPay"
+          },
+          "period": {
+            "pt": "Maio de 2020 — Fevereiro de 2022",
+            "en": "May 2020 — February 2022",
+            "enFrom": "Maio de 2020 — Fevereiro de 2022"
+          },
+          "bullets": [
+            {
+              "text": {
+                "pt": "Liderei até 15 profissionais de Product Design, UX Research e UX Writing nas frentes de pagamentos, ferramentas para lojistas, mobilidade e serviços financeiros.",
+                "en": "I led up to 15 people across Product Design, UX Research and UX Writing, working on payments, merchant tools, mobility and financial services.",
+                "enFrom": "Liderei até 15 profissionais de Product Design, UX Research e UX Writing nas frentes de pagamentos, ferramentas para lojistas, mobilidade e serviços financeiros."
+              }
+            },
+            {
+              "text": {
+                "pt": "Estruturei as primeiras posições de Staff Designer e Service Designer da empresa e contribuí para a expansão da organização de Design de 15 para 170 profissionais.",
+                "en": "I established the company's first Staff Designer and Service Designer roles and helped grow the design organization from 15 to 170 people.",
+                "enFrom": "Estruturei as primeiras posições de Staff Designer e Service Designer da empresa e contribuí para a expansão da organização de Design de 15 para 170 profissionais."
+              }
+            }
+          ],
+          "results": []
+        }
+      ]
+    },
+    {
+      "title": {
+        "pt": "Design de Produto",
+        "en": "Product Design",
+        "enFrom": "Design de Produto"
+      },
+      "period": {
+        "pt": "2016 — 2020",
+        "en": "2016 — 2020",
+        "enFrom": "2016 — 2020"
+      },
+      "jobs": [
+        {
+          "title": {
+            "pt": "Product Designer & UX Lead @ Banco Pan",
+            "en": "Product Designer & UX Lead @ Banco Pan",
+            "enFrom": "Product Designer & UX Lead @ Banco Pan"
+          },
+          "period": {
+            "pt": "Maio de 2018 — Novembro de 2019",
+            "en": "May 2018 — November 2019",
+            "enFrom": "Maio de 2018 — Novembro de 2019"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Product Designer @ Conta Azul",
+            "en": "Product Designer @ Conta Azul",
+            "enFrom": "Product Designer @ Conta Azul"
+          },
+          "period": {
+            "pt": "Janeiro de 2018 — Abril de 2019",
+            "en": "January 2018 — April 2019",
+            "enFrom": "Janeiro de 2018 — Abril de 2019"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Product Designer @ WebMotors",
+            "en": "Product Designer @ WebMotors",
+            "enFrom": "Product Designer @ WebMotors"
+          },
+          "period": {
+            "pt": "Agosto de 2015 — Janeiro de 2018",
+            "en": "August 2015 — January 2018",
+            "enFrom": "Agosto de 2015 — Janeiro de 2018"
+          },
+          "bullets": [],
+          "results": []
+        }
+      ]
+    },
+    {
+      "title": {
+        "pt": "UI Design",
+        "en": "UI Design",
+        "enFrom": "UI Design"
+      },
+      "period": {
+        "pt": "2009 — 2015",
+        "en": "2009 — 2015",
+        "enFrom": "2009 — 2015"
+      },
+      "jobs": [
+        {
+          "title": {
+            "pt": "Lead UI Designer @ RRP Digital",
+            "en": "Lead UI Designer @ RRP Digital",
+            "enFrom": "Lead UI Designer @ RRP Digital"
+          },
+          "period": {
+            "pt": "Novembro de 2014 — Julho de 2015",
+            "en": "November 2014 — July 2015",
+            "enFrom": "Novembro de 2014 — Julho de 2015"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Lead UI Designer @ FCB Brasil",
+            "en": "Lead UI Designer @ FCB Brasil",
+            "enFrom": "Lead UI Designer @ FCB Brasil"
+          },
+          "period": {
+            "pt": "Setembro de 2014 — Novembro de 2014",
+            "en": "September 2014 — November 2014",
+            "enFrom": "Setembro de 2014 — Novembro de 2014"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Lead UI Designer @ Agência VM2",
+            "en": "Lead UI Designer @ Agência VM2",
+            "enFrom": "Lead UI Designer @ Agência VM2"
+          },
+          "period": {
+            "pt": "Janeiro de 2014 — Setembro de 2014",
+            "en": "January 2014 — September 2014",
+            "enFrom": "Janeiro de 2014 — Setembro de 2014"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "UI Designer @ Mint Digitall",
+            "en": "UI Designer @ Mint Digitall",
+            "enFrom": "UI Designer @ Mint Digitall"
+          },
+          "period": {
+            "pt": "Maio de 2013 — Janeiro de 2014",
+            "en": "May 2013 — January 2014",
+            "enFrom": "Maio de 2013 — Janeiro de 2014"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "UI Designer @ CondoTV",
+            "en": "UI Designer @ CondoTV",
+            "enFrom": "UI Designer @ CondoTV"
+          },
+          "period": {
+            "pt": "Outubro de 2012 — Maio de 2013",
+            "en": "October 2012 — May 2013",
+            "enFrom": "Outubro de 2012 — Maio de 2013"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "UI Designer @ Agência VM2",
+            "en": "UI Designer @ Agência VM2",
+            "enFrom": "UI Designer @ Agência VM2"
+          },
+          "period": {
+            "pt": "Junho de 2011 — Outubro de 2012",
+            "en": "June 2011 — October 2012",
+            "enFrom": "Junho de 2011 — Outubro de 2012"
+          },
+          "bullets": [],
+          "results": []
+        },
+        {
+          "title": {
+            "pt": "Junior UI Designer @ Agência VM2",
+            "en": "Junior UI Designer @ Agência VM2",
+            "enFrom": "Junior UI Designer @ Agência VM2"
+          },
+          "period": {
+            "pt": "Fevereiro de 2009 — Junho de 2011",
+            "en": "February 2009 — June 2011",
+            "enFrom": "Fevereiro de 2009 — Junho de 2011"
+          },
+          "bullets": [],
+          "results": []
+        }
+      ]
+    }
+  ],
+  "educationTitle": {
+    "pt": "Educação",
+    "en": "Education",
+    "enFrom": "Educação"
+  },
+  "education": [
+    {
+      "course": {
+        "pt": "Evoluindo design nas organizações",
+        "en": "Advancing design in organizations",
+        "enFrom": "Evoluindo design nas organizações"
+      },
+      "institution": "Aprender Design",
+      "year": "2023"
+    },
+    {
+      "course": {
+        "pt": "Design digital",
+        "en": "Digital design",
+        "enFrom": "Design digital"
+      },
+      "institution": "Unibero",
+      "year": "2016"
+    },
+    {
+      "course": {
+        "pt": "Arquitetura da Informação",
+        "en": "Information Architecture",
+        "enFrom": "Arquitetura da Informação"
+      },
+      "institution": "Jump Education",
+      "year": "2012"
+    }
+  ],
+  "skillsTitle": {
+    "pt": "Habilidades",
+    "en": "Skills",
+    "enFrom": "Habilidades"
+  },
+  "skills": [
+    {
+      "text": {
+        "pt": "Product Design",
+        "en": "Product Design",
+        "enFrom": "Product Design"
+      }
+    },
+    {
+      "text": {
+        "pt": "Gestão de design",
+        "en": "Design Management",
+        "enFrom": "Gestão de design"
+      }
+    },
+    {
+      "text": {
+        "pt": "Gestão de pessoas",
+        "en": "People Management",
+        "enFrom": "Gestão de pessoas"
+      }
+    },
+    {
+      "text": {
+        "pt": "Formação de times",
+        "en": "Team Building",
+        "enFrom": "Formação de times"
+      }
+    },
+    {
+      "text": {
+        "pt": "Estratégia de produto",
+        "en": "Product Strategy",
+        "enFrom": "Estratégia de produto"
+      }
+    },
+    {
+      "text": {
+        "pt": "Product Discovery",
+        "en": "Product Discovery",
+        "enFrom": "Product Discovery"
+      }
+    },
+    {
+      "text": {
+        "pt": "UX Research",
+        "en": "UX Research",
+        "enFrom": "UX Research"
+      }
+    },
+    {
+      "text": {
+        "pt": "Design Systems",
+        "en": "Design Systems",
+        "enFrom": "Design Systems"
+      }
+    },
+    {
+      "text": {
+        "pt": "Service Design",
+        "en": "Service Design",
+        "enFrom": "Service Design"
+      }
+    },
+    {
+      "text": {
+        "pt": "Design Ops",
+        "en": "Design Operations",
+        "enFrom": "Design Ops"
+      }
+    }
+  ],
+  "toolsTitle": {
+    "pt": "Ferramentas",
+    "en": "Tools",
+    "enFrom": "Ferramentas"
+  },
+  "tools": [
+    {
+      "name": {
+        "pt": "Figma",
+        "en": "Figma",
+        "enFrom": "Figma"
+      }
+    },
+    {
+      "name": {
+        "pt": "Sketch",
+        "en": "Sketch",
+        "enFrom": "Sketch"
+      }
+    },
+    {
+      "name": {
+        "pt": "Framer",
+        "en": "Framer",
+        "enFrom": "Framer"
+      }
+    }
+  ],
+  "aiTitle": {
+    "pt": "Fluente em IA",
+    "en": "Fluent in AI",
+    "enFrom": "Fluente em IA"
+  },
+  "ai": [
+    {
+      "name": {
+        "pt": "ChatGPT",
+        "en": "ChatGPT",
+        "enFrom": "ChatGPT"
+      }
+    },
+    {
+      "name": {
+        "pt": "Claude",
+        "en": "Claude",
+        "enFrom": "Claude"
+      }
+    },
+    {
+      "name": {
+        "pt": "Gemini",
+        "en": "Gemini",
+        "enFrom": "Gemini"
+      }
+    },
+    {
+      "name": {
+        "pt": "Figma Make",
+        "en": "Figma Make",
+        "enFrom": "Figma Make"
+      }
+    },
+    {
+      "name": {
+        "pt": "Higgsfield AI",
+        "en": "Higgsfield AI",
+        "enFrom": "Higgsfield AI"
+      }
+    },
+    {
+      "name": {
+        "pt": "Magnific AI",
+        "en": "Magnific AI",
+        "enFrom": "Magnific AI"
+      }
+    }
+  ],
+  "socialTitle": {
+    "pt": "Redes sociais",
+    "en": "Social media",
+    "enFrom": "Redes sociais"
+  },
+  "social": [
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/guttorocha/"
+    },
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/guttorocha"
+    },
+    {
+      "label": "Dribbble",
+      "href": "https://dribbble.com/guttorocha"
+    }
+  ],
+  "testimonialsKicker": {
+    "pt": "Depoimentos",
+    "en": "Testimonials",
+    "enFrom": "Depoimentos"
+  },
+  "testimonialsTitle": {
+    "pt": "O que diz quem",
+    "en": "What people say",
+    "enFrom": "O que diz quem"
+  },
+  "testimonialsContinuation": {
+    "pt": "trabalhou comigo.",
+    "en": "about working with me.",
+    "enFrom": "trabalhou comigo."
+  },
+  "testimonials": [
+    {
+      "quote": {
+        "pt": "Gutto é um amigo de trabalho incrível! Além de ser um líder excepcional, ele tem um conhecimento técnico impressionante e está sempre disposto a ensinar os outros. Sua escuta ativa e sua empatia são realmente admiráveis. Aprendo algo novo todos os dias sob a liderança do Gutto e é sempre um prazer trocar ideias e discutir soluções com ele. Eu sei que o céu é o limite, mas para o Gutto, parece que nem mesmo o céu é o bastante!",
+        "en": "Gutto is an amazing friend and colleague! Beyond being an exceptional leader, he has impressive technical knowledge and is always willing to teach others. His active listening and empathy are truly admirable. I learn something new every day under Gutto's leadership, and it's always a pleasure to exchange ideas and discuss solutions with him. I know the sky's the limit, but for Gutto, it seems even the sky isn't enough!",
+        "enFrom": "Gutto é um amigo de trabalho incrível! Além de ser um líder excepcional, ele tem um conhecimento técnico impressionante e está sempre disposto a ensinar os outros. Sua escuta ativa e sua empatia são realmente admiráveis. Aprendo algo novo todos os dias sob a liderança do Gutto e é sempre um prazer trocar ideias e discutir soluções com ele. Eu sei que o céu é o limite, mas para o Gutto, parece que nem mesmo o céu é o bastante!"
+      },
+      "position": {
+        "pt": "Senior Product Designer",
+        "en": "Senior Product Designer",
+        "enFrom": "Senior Product Designer"
+      },
+      "role": {
+        "pt": "Liderado por mim na BrandLovrs",
+        "en": "On my team at BrandLovrs",
+        "enFrom": "Liderado por mim na BrandLovrs"
+      },
+      "date": "2024"
+    },
+    {
+      "quote": {
+        "pt": "Trabalhei sob a liderança do Gutto em dois momentos da minha carreira, e em ambos os momentos, tive excelentes experiências com ele. Nossas trocas sempre muito ricas, com boas provocações, conselhos e sugestões de melhorias sempre com tom respeitoso e leve. Isso auxilia muito o meu desenvolvimento como profissional. Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers. Relevante também ressaltar a boa habilidade de comunicação que ele tem, o vejo trazendo questionamentos e feedbacks sempre muito bem estruturados.",
+        "en": "I worked under Gutto's leadership at two points in my career, and both experiences were excellent. Our conversations were always enriching, with thought-provoking questions, advice, and suggestions for improvement, always delivered in a respectful, easygoing tone. This really supports my professional development. One thing I want to highlight about his leadership is his willingness to listen to different opinions, fostering a safe environment for collaboration among designers. His strong communication skills also deserve recognition: his questions and feedback are always very well structured.",
+        "enFrom": "Trabalhei sob a liderança do Gutto em dois momentos da minha carreira, e em ambos os momentos, tive excelentes experiências com ele. Nossas trocas sempre muito ricas, com boas provocações, conselhos e sugestões de melhorias sempre com tom respeitoso e leve. Isso auxilia muito o meu desenvolvimento como profissional. Um ponto que quero destacar em sua atuação como líder é sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers. Relevante também ressaltar a boa habilidade de comunicação que ele tem, o vejo trazendo questionamentos e feedbacks sempre muito bem estruturados."
+      },
+      "position": {
+        "pt": "Product Designer",
+        "en": "Product Designer",
+        "enFrom": "Product Designer"
+      },
+      "role": {
+        "pt": "Liderada por mim no PicPay e na Loft",
+        "en": "On my team at PicPay and Loft",
+        "enFrom": "Liderada por mim no PicPay e na Loft"
+      },
+      "date": "2022"
+    },
+    {
+      "quote": {
+        "pt": "Comprometido com o olhar do usuário, possui visão holística para poder desenvolver projetos de design de serviços. Sua personalidade motiva todos ao seu redor a buscar as melhores práticas e entrega de valor em tudo que faz.",
+        "en": "Committed to the user's perspective, he has the holistic view needed to develop service design projects. His personality motivates everyone around him to pursue best practices and deliver value in everything he does.",
+        "enFrom": "Comprometido com o olhar do usuário, possui visão holística para poder desenvolver projetos de design de serviços. Sua personalidade motiva todos ao seu redor a buscar as melhores práticas e entrega de valor em tudo que faz."
+      },
+      "position": {
+        "pt": "Especialista em produtos digitais",
+        "en": "Digital product specialist",
+        "enFrom": "Especialista em produtos digitais"
+      },
+      "role": {
+        "pt": "Trabalhamos juntos, em times diferentes",
+        "en": "We worked together, on different teams",
+        "enFrom": "Trabalhamos juntos, em times diferentes"
+      },
+      "date": "2019"
+    },
+    {
+      "quote": {
+        "pt": "Gutto é um profissional que traz segurança para a gestão! É rápido, faz acontecer e tem muita proatividade! Se adapta fácil às estruturas e tem muito carisma!",
+        "en": "Gutto is a professional who gives management peace of mind! He's fast, makes things happen and is highly proactive! He adapts easily to any structure and has plenty of charisma!",
+        "enFrom": "Gutto é um profissional que traz segurança para a gestão! É rápido, faz acontecer e tem muita proatividade! Se adapta fácil às estruturas e tem muito carisma!"
+      },
+      "position": {
+        "pt": "Senior Group Product Manager",
+        "en": "Senior Group Product Manager",
+        "enFrom": "Senior Group Product Manager"
+      },
+      "role": {
+        "pt": "Minha gestora direta",
+        "en": "My direct manager",
+        "enFrom": "Minha gestora direta"
+      },
+      "date": "2017"
+    },
+    {
+      "quote": {
+        "pt": "Quando iniciei minha jornada na Agência VM2, trabalhamos na mesma equipe e logo pude notar o excelente profissional que é o Gutto. Muito criativo, focado, prestativo, competente e responsável. Depois de algum tempo, tive o prazer de trabalhar novamente com ele, dessa vez como líder da equipe da qual eu fazia parte. Sem dúvida, foi um período no qual aprendi muito sobre direção de arte, UI e UX.",
+        "en": "When I started my journey at Agência VM2, we were on the same team and I soon noticed what an excellent professional Gutto is. Very creative, focused, helpful, competent and responsible. Some time later, I had the pleasure of working with him again, this time as the leader of the team I was part of. Without a doubt, it was a period in which I learned a lot about art direction, UI and UX.",
+        "enFrom": "Quando iniciei minha jornada na Agência VM2, trabalhamos na mesma equipe e logo pude notar o excelente profissional que é o Gutto. Muito criativo, focado, prestativo, competente e responsável. Depois de algum tempo, tive o prazer de trabalhar novamente com ele, dessa vez como líder da equipe da qual eu fazia parte. Sem dúvida, foi um período no qual aprendi muito sobre direção de arte, UI e UX."
+      },
+      "position": {
+        "pt": "UX Design Specialist",
+        "en": "UX Design Specialist",
+        "enFrom": "UX Design Specialist"
+      },
+      "role": {
+        "pt": "Colega na Agência VM2 e, depois, liderado por mim",
+        "en": "A colleague at Agência VM2, later on my team",
+        "enFrom": "Colega na Agência VM2 e, depois, liderado por mim"
+      },
+      "date": "2017"
+    },
+    {
+      "quote": {
+        "pt": "Gutto é um excelente profissional com ótima visão de UX e um grande potencial na carreira. Seus projetos na Webmotors são desenvolvidos com uma qualidade diferenciada para poucos profissionais.",
+        "en": "Gutto is an excellent professional with a great UX vision and strong career potential. His projects at Webmotors are built with a level of quality few professionals reach.",
+        "enFrom": "Gutto é um excelente profissional com ótima visão de UX e um grande potencial na carreira. Seus projetos na Webmotors são desenvolvidos com uma qualidade diferenciada para poucos profissionais."
+      },
+      "position": {
+        "pt": "Chief Product Officer",
+        "en": "Chief Product Officer",
+        "enFrom": "Chief Product Officer"
+      },
+      "role": {
+        "pt": "Meu gestor direto na Webmotors",
+        "en": "My direct manager at Webmotors",
+        "enFrom": "Meu gestor direto na Webmotors"
+      },
+      "date": "2017"
+    },
+    {
+      "quote": {
+        "pt": "Participei da contratação do Gutto para o time da Webmotors. Ele trabalhou praticamente 1 ano na equipe de MKT e em seguida foi para um novo desafio na área de UX. Além de bom de se trabalhar em equipe, tem alto potencial criativo, é eclético, com excelentes entregas tanto na direção de arte como no design de interfaces. Está sempre dando ideias, incomodado com as dores dos clientes e participa ativamente não só dos seus projetos, mas também de outras iniciativas em que consegue apoiar ou ajudar, seja atuando bem próximo ou pelo menos com boas ideias.",
+        "en": "I helped hire Gutto for the Webmotors team. He spent nearly 1 year on the MKT team before taking on a new challenge in UX. In addition to being a great team player, he's highly creative and versatile, delivering excellent work in both art direction and interface design. He's always sharing ideas, driven to address customers' pain points, and actively contributes not only to his own projects but also to other initiatives where he can offer support or help, whether by working closely with the team or simply sharing good ideas.",
+        "enFrom": "Participei da contratação do Gutto para o time da Webmotors. Ele trabalhou praticamente 1 ano na equipe de MKT e em seguida foi para um novo desafio na área de UX. Além de bom de se trabalhar em equipe, tem alto potencial criativo, é eclético, com excelentes entregas tanto na direção de arte como no design de interfaces. Está sempre dando ideias, incomodado com as dores dos clientes e participa ativamente não só dos seus projetos, mas também de outras iniciativas em que consegue apoiar ou ajudar, seja atuando bem próximo ou pelo menos com boas ideias."
+      },
+      "position": {
+        "pt": "Executive General Manager",
+        "en": "Executive General Manager",
+        "enFrom": "Executive General Manager"
+      },
+      "role": {
+        "pt": "Participou da minha contratação na Webmotors",
+        "en": "Helped hire me at Webmotors",
+        "enFrom": "Participou da minha contratação na Webmotors"
+      },
+      "date": "2017"
+    },
+    {
+      "quote": {
+        "pt": "Eu e o Gutto trabalhamos em alguns projetos juntos. Nesses projetos o que mais marcou foi sua preocupação, detalhismo e empenho ao pensar e propor soluções, mais do que somente interface. Busca sempre balancear experiência e orientação ao negócio. Gutto é um ótimo designer, sempre atualizado e uma pessoa muito boa de se trabalhar ao lado.",
+        "en": "Gutto and I worked on several projects together. What stood out most was his care, attention to detail and commitment when thinking through and proposing solutions, going beyond the interface alone. He always balances experience with business goals. Gutto is a great designer, always up to date, and a very good person to work alongside.",
+        "enFrom": "Eu e o Gutto trabalhamos em alguns projetos juntos. Nesses projetos o que mais marcou foi sua preocupação, detalhismo e empenho ao pensar e propor soluções, mais do que somente interface. Busca sempre balancear experiência e orientação ao negócio. Gutto é um ótimo designer, sempre atualizado e uma pessoa muito boa de se trabalhar ao lado."
+      },
+      "position": {
+        "pt": "Desenvolvimento de negócios sustentáveis",
+        "en": "Sustainable business development",
+        "enFrom": "Desenvolvimento de negócios sustentáveis"
+      },
+      "role": {
+        "pt": "Trabalhamos no mesmo time",
+        "en": "We worked on the same team",
+        "enFrom": "Trabalhamos no mesmo time"
+      },
+      "date": "2017"
+    },
+    {
+      "quote": {
+        "pt": "Gustavo, um profissional incrível, possui uma mente criativa brilhante, um profissional comprometido com as entregas e seus prazos, sempre ajudando a equipe com suas opiniões de design e melhores práticas para desenvolvimento de um layout, seja ele para campanhas ou um portal.",
+        "en": "Gustavo, an incredible professional, has a brilliant creative mind and is committed to his deliverables and deadlines, always helping the team with his design opinions and best practices for building a layout, whether for campaigns or a portal.",
+        "enFrom": "Gustavo, um profissional incrível, possui uma mente criativa brilhante, um profissional comprometido com as entregas e seus prazos, sempre ajudando a equipe com suas opiniões de design e melhores práticas para desenvolvimento de um layout, seja ele para campanhas ou um portal."
+      },
+      "position": {
+        "pt": "Gerente de projetos sênior",
+        "en": "Senior project manager",
+        "enFrom": "Gerente de projetos sênior"
+      },
+      "role": {
+        "pt": "Trabalhamos no mesmo time na Agência VM2",
+        "en": "We worked on the same team at Agência VM2",
+        "enFrom": "Trabalhamos no mesmo time na Agência VM2"
+      },
+      "date": "2014"
+    },
+    {
+      "quote": {
+        "pt": "Tenho o prazer de trabalhar na mesma equipe do Gustavo, um excelente diretor de arte, que além de muito criativo ajuda muito no trabalho em equipe.",
+        "en": "I have the pleasure of working on the same team as Gustavo, an excellent art director who, besides being very creative, is a great help in teamwork.",
+        "enFrom": "Tenho o prazer de trabalhar na mesma equipe do Gustavo, um excelente diretor de arte, que além de muito criativo ajuda muito no trabalho em equipe."
+      },
+      "position": {
+        "pt": "Product Owner",
+        "en": "Product Owner",
+        "enFrom": "Product Owner"
+      },
+      "role": {
+        "pt": "Trabalhamos no mesmo time na Agência VM2",
+        "en": "We worked on the same team at Agência VM2",
+        "enFrom": "Trabalhamos no mesmo time na Agência VM2"
+      },
+      "date": "2014"
+    },
+    {
+      "quote": {
+        "pt": "Eu tive o prazer de estudar com o Gustavo no Centro Universitário Ibero Americano. Participamos juntos em vários projetos e era impressionante a habilidade que ele já tinha naquela época com criação. Como líder ou membro de qualquer equipe, o Gustavo recebe minhas recomendações.",
+        "en": "I had the pleasure of studying with Gustavo at Centro Universitário Ibero Americano. We worked on several projects together, and the creative skill he already had back then was impressive. As a leader or a member of any team, Gustavo has my recommendation.",
+        "enFrom": "Eu tive o prazer de estudar com o Gustavo no Centro Universitário Ibero Americano. Participamos juntos em vários projetos e era impressionante a habilidade que ele já tinha naquela época com criação. Como líder ou membro de qualquer equipe, o Gustavo recebe minhas recomendações."
+      },
+      "position": {
+        "pt": "Fotógrafo",
+        "en": "Photographer",
+        "enFrom": "Fotógrafo"
+      },
+      "role": {
+        "pt": "Estudamos juntos na Unibero",
+        "en": "We studied together at Unibero",
+        "enFrom": "Estudamos juntos na Unibero"
+      },
+      "date": "2014"
+    },
+    {
+      "quote": {
+        "pt": "Profissional criativo e dinâmico. Desenvolve seu trabalho com excelência, sempre prezando pela boa integração com as demais equipes.",
+        "en": "A creative and dynamic professional. He does his work with excellence, always valuing good integration with the other teams.",
+        "enFrom": "Profissional criativo e dinâmico. Desenvolve seu trabalho com excelência, sempre prezando pela boa integração com as demais equipes."
+      },
+      "position": {
+        "pt": "Senior Engineering Manager",
+        "en": "Senior Engineering Manager",
+        "enFrom": "Senior Engineering Manager"
+      },
+      "role": {
+        "pt": "Trabalhamos no mesmo time",
+        "en": "We worked on the same team",
+        "enFrom": "Trabalhamos no mesmo time"
+      },
+      "date": "2013"
+    },
+    {
+      "quote": {
+        "pt": "Estudei com o Gustavo na Unibero, e ele sempre foi um garoto esperto, atento e muito talentoso. Se atualizou e saiu da faculdade como um ótimo criativo, sempre em busca de novos desafios.",
+        "en": "I studied with Gustavo at Unibero, and he was always a sharp, attentive and very talented guy. He kept up to date and left college as a great creative, always looking for new challenges.",
+        "enFrom": "Estudei com o Gustavo na Unibero, e ele sempre foi um garoto esperto, atento e muito talentoso. Se atualizou e saiu da faculdade como um ótimo criativo, sempre em busca de novos desafios."
+      },
+      "position": {
+        "pt": "AI Product Owner",
+        "en": "AI Product Owner",
+        "enFrom": "AI Product Owner"
+      },
+      "role": {
+        "pt": "Estudamos juntos na Unibero",
+        "en": "We studied together at Unibero",
+        "enFrom": "Estudamos juntos na Unibero"
+      },
+      "date": "2013"
+    },
+    {
+      "quote": {
+        "pt": "Gustavo é um excelente profissional, completamente dedicado.",
+        "en": "Gustavo is an excellent professional, completely dedicated.",
+        "enFrom": "Gustavo é um excelente profissional, completamente dedicado."
+      },
+      "position": {
+        "pt": "Diretor de arte",
+        "en": "Art director",
+        "enFrom": "Diretor de arte"
+      },
+      "role": {
+        "pt": "Trabalhamos juntos, em times diferentes",
+        "en": "We worked together, on different teams",
+        "enFrom": "Trabalhamos juntos, em times diferentes"
+      },
+      "date": "2013"
+    },
+    {
+      "quote": {
+        "pt": "Focado, dedicado e com excelente gosto visual. Um ótimo profissional e agrega muito em qualquer equipe. Ótimas ideias e trabalha muito bem em grupo!",
+        "en": "Focused, dedicated and with excellent visual taste. A great professional who adds a lot to any team. Great ideas, and works very well in a group!",
+        "enFrom": "Focado, dedicado e com excelente gosto visual. Um ótimo profissional e agrega muito em qualquer equipe. Ótimas ideias e trabalha muito bem em grupo!"
+      },
+      "position": {
+        "pt": "Líder de Product Design",
+        "en": "Product Design leader",
+        "enFrom": "Líder de Product Design"
+      },
+      "role": {
+        "pt": "Trabalhamos no mesmo time",
+        "en": "We worked on the same team",
+        "enFrom": "Trabalhamos no mesmo time"
+      },
+      "date": "2013"
+    }
+  ]
+}

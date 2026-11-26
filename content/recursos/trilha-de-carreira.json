@@ -1,0 +1,410 @@
+{
+  "slug": "trilha-de-carreira",
+  "seoTitle": "Trilha de carreira em design de produto: template gratuito | Gutto Rocha",
+  "seoDescription": "Template de trilha de carreira para designers de produto: papéis de júnior a Head de Design, competências e os caminhos entre eles. Gratuito, para usar com você ou com o seu time.",
+  "serviceName": "Trilha de carreira em design",
+  "navName": "Trilha de carreira",
+  "nav": [
+    {
+      "label": "Onde você está",
+      "href": "#onde-voce-esta"
+    },
+    {
+      "label": "Por que não escada",
+      "href": "#escada"
+    },
+    {
+      "label": "O que você recebe",
+      "href": "#o-que-recebe"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "card": {
+    "summary": "Os níveis de júnior a Head de Design, as competências de cada um e o que muda de um passo para o outro.",
+    "points": [
+      "7 papéis em rede, sem Y",
+      "Autoavaliação, plano e entregas",
+      "Salva na sua conta + PDF"
+    ]
+  },
+  "hero": {
+    "kicker": "Trilha de carreira · grátis",
+    "title": "Você desenha a jornada do usuário.",
+    "continuation": "Quem desenha a sua?",
+    "intro": "A trilha que uso com os times que lidero: 7 papéis, os caminhos entre eles e o que cada um pede.",
+    "primaryCta": "Receber a trilha",
+    "you": "Você está aqui"
+  },
+  "gate": {
+    "title": "Acesse a trilha completa",
+    "body": "Grátis. Enviamos um código de 6 dígitos no seu e-mail para liberar e salvar suas respostas.",
+    "name": "Nome",
+    "email": "E-mail",
+    "stage": "Seu momento",
+    "stagePlaceholder": "Escolha uma opção",
+    "submit": "Enviar código de acesso",
+    "sending": "Enviando código…",
+    "privacy": "Sem spam. O código serve só para liberar e salvar seu preenchimento.",
+    "sentTitle": "Acesso liberado.",
+    "sentBody": "Abrindo sua trilha de carreira.",
+    "open": "Abrir minha trilha",
+    "consulting": "Quer um plano para usar com a sua carreira?",
+    "consultingCta": "Conhecer a consultoria de carreira",
+    "optIn": "Quero receber os próximos materiais por e-mail."
+  },
+  "closing": {
+    "emailSubject": "Trilha de carreira",
+    "whatsappMessage": "Oi, Gutto! Baixei a trilha de carreira e queria conversar."
+  },
+  "material": {
+    "title": "Trilha de carreira em design de produto",
+    "intro": "Cada papel descreve o que a pessoa faz de forma consistente, não o que fez uma vez. Ninguém está inteiro num papel só: o normal é estar em dois ou três, conforme a competência.",
+    "levels": [
+      {
+        "id": "junior",
+        "name": "Júnior",
+        "scope": "Uma tarefa"
+      },
+      {
+        "id": "pleno",
+        "name": "Pleno",
+        "scope": "Uma funcionalidade"
+      },
+      {
+        "id": "senior",
+        "name": "Sênior",
+        "scope": "Uma área do produto"
+      },
+      {
+        "id": "staff",
+        "name": "Staff / Principal",
+        "scope": "Vários times"
+      },
+      {
+        "id": "lead",
+        "name": "Design Lead",
+        "scope": "Um time de designers"
+      },
+      {
+        "id": "manager",
+        "name": "Design Manager",
+        "scope": "Vários times"
+      },
+      {
+        "id": "head",
+        "name": "Head de Design",
+        "scope": "A empresa"
+      }
+    ],
+    "competencies": [
+      {
+        "name": "Ofício",
+        "levels": {
+          "junior": "Executa telas e fluxos a partir de um problema já definido, seguindo o design system.",
+          "pleno": "Resolve uma funcionalidade inteira com autonomia, do fluxo aos estados de erro.",
+          "senior": "Define a solução para problemas ambíguos e eleva a qualidade do que o time entrega.",
+          "staff": "Cria padrões que outros times usam, como componentes, princípios e métodos, e é referência técnica da área.",
+          "lead": "Garante a qualidade do time com revisão, critério e exemplo, e ainda desenha quando precisa.",
+          "manager": "Define o padrão de qualidade de vários times e cria os rituais que o sustentam.",
+          "head": "Define o que é design bom na empresa e dá a ele lugar na estratégia."
+        }
+      },
+      {
+        "name": "Produto e negócio",
+        "levels": {
+          "junior": "Entende o objetivo da tarefa e o usuário para quem ela existe.",
+          "pleno": "Conecta a funcionalidade a uma métrica e questiona o pedido quando ele não resolve o problema.",
+          "senior": "Participa da definição do problema com produto e propõe o que fazer, não só como.",
+          "staff": "Identifica oportunidades que atravessam produtos e muda o roadmap com evidência.",
+          "lead": "Negocia prioridades do time com produto e engenharia.",
+          "manager": "Alinha o trabalho de design aos objetivos da área e mostra o resultado em números.",
+          "head": "Participa das decisões de negócio e responde pelo impacto do design na empresa."
+        }
+      },
+      {
+        "name": "Colaboração",
+        "levels": {
+          "junior": "Pede ajuda cedo, recebe feedback e documenta o que faz.",
+          "pleno": "Trabalha de igual para igual com PM e engenharia e apresenta o próprio trabalho com clareza.",
+          "senior": "Facilita decisões entre áreas e resolve conflitos de escopo sem escalar.",
+          "staff": "Alinha vários times em torno de uma direção sem ter autoridade formal.",
+          "lead": "Cria o espaço para o time colaborar e protege o time de ruído.",
+          "manager": "Constrói parcerias com as lideranças de produto e engenharia.",
+          "head": "Representa design na liderança da empresa."
+        }
+      },
+      {
+        "name": "Liderança",
+        "levels": {
+          "junior": "Cuida do próprio aprendizado.",
+          "pleno": "Ajuda quem chega no time e compartilha o que aprende.",
+          "senior": "Desenvolve designers menos experientes e lidera projetos sem ser gestor.",
+          "staff": "Mentora seniores e forma opinião na comunidade de design da empresa.",
+          "lead": "Faz 1:1, dá feedback, define objetivos e cuida da carreira de cada pessoa do time.",
+          "manager": "Desenvolve líderes, contrata e desenha a estrutura dos times.",
+          "head": "Define a cultura, a trilha de carreira e o plano de crescimento da área."
+        }
+      },
+      {
+        "name": "Impacto",
+        "levels": {
+          "junior": "O próprio trabalho, com orientação.",
+          "pleno": "Uma funcionalidade, de ponta a ponta.",
+          "senior": "Uma área do produto e as pessoas próximas.",
+          "staff": "A forma como vários times trabalham.",
+          "lead": "O resultado de um time inteiro.",
+          "manager": "Vários times e as pessoas que os lideram.",
+          "head": "A empresa e a percepção de design fora dela."
+        }
+      }
+    ],
+    "howTo": {
+      "title": "Como usar",
+      "steps": [
+        "Marque, em cada competência, a descrição que mais parece com o que você faz hoje, sem pensar no cargo.",
+        "Escolha o papel que você quer exercer a seguir, que pode ser ao lado e não acima, e escreva um exemplo real do que faria diferente.",
+        "Leve as duas marcações para o 1:1 com sua liderança e combinem um prazo e uma evidência para cada uma.",
+        "Revise a cada trimestre. Se for usar no seu time, adapte os nomes dos níveis aos da empresa."
+      ]
+    },
+    "footer": "Gutto Rocha · guttorocha.com.br/recursos · Pode usar e adaptar à vontade, citando a fonte.",
+    "network": {
+      "title": "Carreira é rede, não escada.",
+      "body": "Dá para ir de Sênior para Lead e voltar para Staff, passar por pesquisa, produto ou design system e voltar mais forte. O que viaja de um papel para outro são as competências. Por isso a trilha mostra o que cada papel pede, e não uma ordem obrigatória."
+    }
+  },
+  "accent": {
+    "color": "#8f7bff",
+    "on": "#0b0b0b"
+  },
+  "explorer": {
+    "kicker": "Onde você está",
+    "title": "Clique no seu papel.",
+    "continuation": "Veja para onde ele leva.",
+    "hint": "Comece pelo papel que você exerce hoje. Júnior, Pleno e Sênior estão abertos aqui.",
+    "scope": "Escopo",
+    "paths": "Caminhos a partir daqui",
+    "noPaths": "Topo da área. Daqui, o caminho é ampliar o impacto da empresa.",
+    "locked": "Esse papel está na trilha completa.",
+    "unlock": "Receber a trilha",
+    "areaHint": "Área vizinha: não é um cargo, é um lugar por onde a carreira passa.",
+    "steps": [
+      "Clique no seu papel",
+      "Veja os caminhos que acendem",
+      "Leia o que o papel pede"
+    ]
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Antes do próximo 1:1.",
+    "items": [
+      {
+        "question": "Serve para júnior?",
+        "answer": "Serve. Ver o que os papéis seguintes pedem ajuda a escolher o que aprender agora, sem pressa de pular etapas."
+      },
+      {
+        "question": "Posso usar como a trilha oficial do meu time?",
+        "answer": "Pode, e é um bom começo. Adapte os nomes dos papéis aos da empresa e combine com RH como cada um se liga às faixas salariais."
+      },
+      {
+        "question": "Por que não tem especialista e gestão separados?",
+        "answer": "Porque carreira não é um Y. As pessoas vão e voltam entre papéis, e o que viaja entre eles são as competências. A trilha mostra o que cada papel pede, não uma ordem obrigatória."
+      },
+      {
+        "question": "O que acontece com o meu e-mail?",
+        "answer": "Enviamos um código de 6 dígitos para liberar o kit e salvar seu progresso entre sessões. Só mando novos materiais se você marcar a opção no formulário."
+      }
+    ]
+  },
+  "closingGate": {
+    "title": "Desenhe a sua próxima etapa.",
+    "body": "Grátis. Entre com um código no seu e-mail para preencher, salvar e imprimir quando precisar."
+  },
+  "doubts": [
+    "Entrego bem e a promoção não vem.",
+    "Me ofereceram liderar. Eu quero?",
+    "Meu gestor não é designer.",
+    "Sênior é o teto?",
+    "Ninguém me diz o que falta.",
+    "Todo mundo virou Lead menos eu.",
+    "Especialista ou gestão? Tenho que escolher agora?",
+    "Faço o trabalho de sênior e ganho como pleno."
+  ],
+  "doubtsLabel": "O que a gente se pergunta e quase nunca fala no 1:1",
+  "flow": {
+    "nodes": [
+      {
+        "id": "junior",
+        "label": "Júnior",
+        "kind": "role",
+        "x": 110,
+        "y": 345
+      },
+      {
+        "id": "pleno",
+        "label": "Pleno",
+        "kind": "role",
+        "x": 380,
+        "y": 345
+      },
+      {
+        "id": "pesquisa",
+        "label": "Pesquisa",
+        "kind": "area",
+        "x": 660,
+        "y": 140
+      },
+      {
+        "id": "senior",
+        "label": "Sênior",
+        "kind": "role",
+        "x": 660,
+        "y": 345
+      },
+      {
+        "id": "ds",
+        "label": "Design System",
+        "kind": "area",
+        "x": 660,
+        "y": 550
+      },
+      {
+        "id": "produto",
+        "label": "Produto",
+        "kind": "area",
+        "x": 960,
+        "y": 550
+      },
+      {
+        "id": "lead",
+        "label": "Design Lead",
+        "kind": "role",
+        "x": 960,
+        "y": 345
+      },
+      {
+        "id": "staff",
+        "label": "Staff / Principal",
+        "kind": "role",
+        "x": 960,
+        "y": 140
+      },
+      {
+        "id": "manager",
+        "label": "Design Manager",
+        "kind": "role",
+        "x": 1230,
+        "y": 245
+      },
+      {
+        "id": "head",
+        "label": "Head de Design",
+        "kind": "role",
+        "x": 1230,
+        "y": 445
+      }
+    ],
+    "edges": [
+      {
+        "from": "junior",
+        "to": "pleno",
+        "label": "autonomia"
+      },
+      {
+        "from": "pleno",
+        "to": "senior",
+        "label": "resolver o ambíguo"
+      },
+      {
+        "from": "pleno",
+        "to": "pesquisa",
+        "label": "curiosidade pelo usuário"
+      },
+      {
+        "from": "pesquisa",
+        "to": "senior",
+        "label": "decidir com evidência"
+      },
+      {
+        "from": "senior",
+        "to": "ds",
+        "label": "criar padrões"
+      },
+      {
+        "from": "senior",
+        "to": "staff",
+        "label": "aprofundar o ofício"
+      },
+      {
+        "from": "senior",
+        "to": "lead",
+        "label": "desenvolver pessoas"
+      },
+      {
+        "from": "senior",
+        "to": "produto",
+        "label": "decidir o quê, não só o como"
+      },
+      {
+        "from": "lead",
+        "to": "staff",
+        "label": "voltar ao ofício"
+      },
+      {
+        "from": "lead",
+        "to": "manager",
+        "label": "liderar líderes"
+      },
+      {
+        "from": "produto",
+        "to": "head",
+        "label": "falar a língua do negócio"
+      },
+      {
+        "from": "manager",
+        "to": "head",
+        "label": "responder pela área"
+      }
+    ],
+    "walk": [
+      "junior",
+      "pleno",
+      "pesquisa",
+      "senior",
+      "lead",
+      "staff"
+    ],
+    "areaNote": "Áreas vizinhas: dá para passar por elas e voltar."
+  },
+  "manifesto": {
+    "kicker": "Por que não uma escada",
+    "items": [
+      {
+        "title": "Sênior não é o teto.",
+        "body": "É o ponto em que os caminhos se abrem. Dali dá para aprofundar o ofício, desenvolver pessoas ou mudar de área, e voltar."
+      },
+      {
+        "title": "Gestão não é promoção obrigatória.",
+        "body": "Liderar pessoas é outro trabalho, não o próximo degrau. Uma trilha saudável paga Staff e Manager no mesmo patamar."
+      },
+      {
+        "title": "O que te leva adiante vai com você.",
+        "body": "Cargos mudam de nome em cada empresa. As cinco competências da trilha valem em qualquer papel, em qualquer lugar."
+      }
+    ]
+  },
+  "receive": {
+    "kicker": "O que você recebe",
+    "title": "Quatro ferramentas para se enxergar.",
+    "continuation": "E sair pronto para o próximo 1:1.",
+    "steps": [
+      "Identifique em qual dos 4 momentos da cadeira você está hoje e como agir nele.",
+      "Marque suas competências em 3 eixos e compare sua autoavaliação com a visão da liderança.",
+      "Feche o plano do trimestre, registre suas entregas e monte seu pedido de reconhecimento."
+    ],
+    "note": "Acesso com código no e-mail · salvo automaticamente · pronto para imprimir em PDF"
+  }
+}

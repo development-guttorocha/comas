@@ -1,0 +1,1256 @@
+{
+  "schemaVersion": 1,
+  "slug": "picpay",
+  "revision": "16ad6b0a-17e5-4aa5-8152-69f13c71ac5c",
+  "draft": {
+    "sourceHash": "ed5c835b9f468bda1d60c66c41d2e9e73d3238424c2d403089ecf85b3e0b1c5d",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-31T12:10:15.855Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Construindo o time de design B2B no PicPay",
+        "target": "Building the B2B design team at PicPay"
+      },
+      {
+        "key": "case.productTag",
+        "source": "Liderança, Org Building & People",
+        "target": "Leadership, Org Building & People"
+      },
+      {
+        "key": "case.role",
+        "source": "Design Manager",
+        "target": "Design Manager"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Liderança",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Org",
+        "target": "Org"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "People",
+        "target": "People"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Leadership",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.summary",
+        "source": "Entrei no PicPay com mais um designer. Antes de contratar, desenhamos a solução completa para o lojista e organizamos o time a partir dela, em três tribos: Seller Tools, Audiência e Ops. Saí liderando 15 pessoas e uma visão de Audiência que abriu um mercado novo para a empresa.",
+        "target": "I joined PicPay alongside one other designer. Before hiring, we designed the complete solution for merchants and built the team around it, in three tribes: Seller Tools, Audiência and Ops. By the time I left, I was leading 15 people and an Audiência vision that opened up a new market for the company."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore case study"
+      },
+      {
+        "key": "case.homeStats.0.label",
+        "source": "Pessoas",
+        "target": "People"
+      },
+      {
+        "key": "case.homeStats.1.label",
+        "source": "Tribos",
+        "target": "Tribes"
+      },
+      {
+        "key": "3cd7bcc8-93e5-802a-bd0b-ca5584e12237.rich_text.0",
+        "source": "O começo",
+        "target": "The beginning"
+      },
+      {
+        "key": "83668c18-8e96-402b-8874-8227c4780bed.embed.title",
+        "source": "Dois designers",
+        "target": "Two designers"
+      },
+      {
+        "key": "83668c18-8e96-402b-8874-8227c4780bed.embed.continuation",
+        "source": "para uma unidade de negócios inteira.",
+        "target": "for an entire business unit."
+      },
+      {
+        "key": "83668c18-8e96-402b-8874-8227c4780bed.embed.body",
+        "source": "O PicPay já era o app de pagamento de milhões de pessoas e começava a olhar para o outro lado do balcão: os lojistas. Entrei para criar o design dos produtos para empresas, a unidade de negócios B2B. No começo, éramos eu e mais um designer.\n\nComo Design Manager, minha missão era construir o time que a unidade precisava: contratar, organizar, desenvolver as pessoas e colocar o design na mesa onde o negócio era decidido.",
+        "target": "PicPay was already the payment app for millions of people and was starting to look at the other side of the counter: merchants. I joined to design products for businesses in the B2B business unit. At first, it was just me and one other designer.\n\nAs Design Manager, my mission was to build the team the unit needed: hire, organize, develop people and give design a seat at the table where business decisions were made."
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.0.label",
+        "source": "pessoas no time de design",
+        "target": "people on the design team"
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.0.body",
+        "source": "Contratado, organizado e desenvolvido sob minha liderança.",
+        "target": "Hired, organized and developed under my leadership."
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.1.label",
+        "source": "tribos",
+        "target": "tribes"
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.1.body",
+        "source": "Grupos de squads, cada um com uma missão para o lojista.",
+        "target": "Groups of squads, each with a mission for merchants."
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.2.label",
+        "source": "mercado novo",
+        "target": "new market"
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.2.body",
+        "source": "Levar os milhões de clientes do app até os lojistas.",
+        "target": "Bringing the app's millions of customers to merchants."
+      },
+      {
+        "key": "c80db956-aed7-4c44-b804-cab05f9fb6c9.rich_text.0",
+        "source": "O lojista primeiro",
+        "target": "Merchants first"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80bc-81df-f30fade3fa9f.embed.label",
+        "source": "squads de produto e tecnologia previstas para a unidade em um trimestre",
+        "target": "product and technology squads planned for the unit in one quarter"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80bc-81df-f30fade3fa9f.embed.body",
+        "source": "A unidade ia mais que dobrar em três meses. Se o design crescesse só no ritmo das contratações, cada designer viraria atendente da própria squad, sem visão do todo.",
+        "target": "The unit was set to more than double in three months. If design grew only at the pace of hiring, each designer would end up taking requests from their own squad, without seeing the bigger picture."
+      },
+      {
+        "key": "31d96536-9ca8-451f-b72c-122e49d0f542.embed.heading",
+        "source": "Em vez de começar pelas contratações, começamos pelo lojista.",
+        "target": "Instead of starting with hiring, we started with merchants."
+      },
+      {
+        "key": "31d96536-9ca8-451f-b72c-122e49d0f542.embed.body",
+        "source": "Estudamos o mercado e a rotina de quem vende. Para tocar o negócio, um lojista chegava a depender de até dez fornecedores: maquininha, conta, crédito, conciliação, fidelidade, sistema de gestão.\n\nO livro Plataforma: a revolução da estratégia ajudou a enxergar a saída: tratar o PicPay como uma plataforma de dois lados, com lojistas de um e milhões de consumidores do outro. Mapeamos tudo de que um lojista precisava para que o PicPay resolvesse em um lugar só:",
+        "target": "We studied the market and merchants' daily routines. To run their business, a merchant could depend on as many as ten providers: card terminals, banking, credit, reconciliation, loyalty and business management software.\n\nThe book Plataforma: a revolução da estratégia helped us see a way forward: treating PicPay as a two-sided platform, with merchants on one side and millions of consumers on the other. We mapped everything a merchant needed so PicPay could address it all in one place:"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.0.label",
+        "source": "Cadastro e onboarding sem atrito",
+        "target": "Frictionless sign-up and onboarding"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.1.label",
+        "source": "Vendas e gestão do negócio",
+        "target": "Sales and business management"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.2.label",
+        "source": "Taxas, parcelamento e estornos",
+        "target": "Fees, installment payments and refunds"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.3.label",
+        "source": "Finanças e conciliação",
+        "target": "Finances and reconciliation"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.4.label",
+        "source": "Capital de giro com os próprios recebíveis",
+        "target": "Working capital backed by their own receivables"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.5.label",
+        "source": "Presença no app de milhões de pessoas",
+        "target": "A presence in an app used by millions"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.6.label",
+        "source": "Campanhas, cashback e geração de demanda",
+        "target": "Campaigns, cashback, and demand generation"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.7.label",
+        "source": "Promoções por nota fiscal e produto",
+        "target": "Receipt- and product-based promotions"
+      },
+      {
+        "key": "b1b53025-bed0-44fc-833b-568ce388ac9b.embed.label",
+        "source": "Cada parte da vida do lojista virou o escopo de uma tribo.",
+        "target": "Each part of the merchant’s day-to-day became a tribe’s scope."
+      },
+      {
+        "key": "b1b53025-bed0-44fc-833b-568ce388ac9b.embed.body",
+        "source": "Agrupamos essas oito necessidades em três tribos, grupos de squads de produto com uma missão em comum. O time de design nasceu no mesmo desenho: cada designer dentro de uma squad, sabendo qual parte da vida do lojista estava resolvendo.",
+        "target": "We grouped these eight needs into three tribes, groups of product squads with a shared mission. The design team took shape around the same structure: each designer worked within a squad, knowing which part of the merchant’s day-to-day they were solving for."
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.0.title",
+        "source": "Design da unidade de negócios",
+        "target": "Business unit design"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.0.subtitle",
+        "source": "Design Manager · minha liderança",
+        "target": "Design Manager · under my leadership"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.1.title",
+        "source": "Seller Tools",
+        "target": "Seller Tools"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.1.subtitle",
+        "source": "Gerir o negócio",
+        "target": "Run the business"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.2.title",
+        "source": "Audiência",
+        "target": "Audience"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.2.subtitle",
+        "source": "Trazer clientes",
+        "target": "Bring in customers"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.3.title",
+        "source": "Ops",
+        "target": "Ops"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.3.subtitle",
+        "source": "Fazer tudo funcionar",
+        "target": "Make everything work"
+      },
+      {
+        "key": "202eb146-b8e7-456a-b3d0-b9f56af32790.rich_text.0",
+        "source": "As pessoas",
+        "target": "The people"
+      },
+      {
+        "key": "e4a75652-62ac-4d2c-8288-b6553c7be30b.embed.body",
+        "source": "Mas estrutura sem pessoas preparadas é só organograma.",
+        "target": "But structure without people equipped to deliver is just an org chart."
+      },
+      {
+        "key": "e4a75652-62ac-4d2c-8288-b6553c7be30b.embed.caption",
+        "source": "Por isso montei a gestão de pessoas do zero, com mais contexto e menos controle, inspirado na cultura da Netflix descrita em A regra é não ter regras. Quem crescia passava a ajudar a formar quem chegava.",
+        "target": "So I built people management from scratch, with more context and less control, inspired by the Netflix culture described in A regra é não ter regras. As people grew, they began helping develop new team members."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.0.body",
+        "source": "Nas conversas 1:1, sempre traz seu ponto de vista sobre os temas de forma clara mas me dá espaço para discutir se é um bom caminho ou não. A sua liderança tem sido fundamental para a minha performance no PicPay e com certeza ele é um exemplo para mim.",
+        "target": "In our 1:1 conversations, he always shares his perspective clearly but gives me room to discuss whether it’s a good direction or not. His leadership has been essential to my performance at PicPay, and he is definitely a role model for me."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.0.caption",
+        "source": "Designer do time, em feedback sobre minha liderança",
+        "target": "A designer on the team, sharing feedback on my leadership"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.1.title",
+        "source": "Contratar",
+        "target": "Hire"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.1.body",
+        "source": "Perfis, entrevistas e decisões para formar o time.",
+        "target": "Profiles, interviews, and decisions to build the team."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.2.title",
+        "source": "Acompanhar",
+        "target": "Support"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.2.body",
+        "source": "1:1 recorrentes e design review.",
+        "target": "Regular 1:1s and design reviews."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.3.title",
+        "source": "Avaliar",
+        "target": "Evaluate"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.3.body",
+        "source": "Ciclos de avaliação com critérios claros.",
+        "target": "Performance review cycles with clear criteria."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.4.title",
+        "source": "Desenvolver",
+        "target": "Develop"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.4.body",
+        "source": "Caminhos de gestão e de especialista, como Staff e Service Designer.",
+        "target": "Management and individual contributor paths, including Staff and Service Designer roles."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80ec-bde6-d40ff9a2bbb2.rich_text.0",
+        "source": "O mercado novo",
+        "target": "The new market"
+      },
+      {
+        "key": "d19742c2-6081-4ca0-b443-44eac316f3a0.embed.title",
+        "source": "O mercado novo",
+        "target": "The new market"
+      },
+      {
+        "key": "d19742c2-6081-4ca0-b443-44eac316f3a0.embed.body",
+        "source": "Audiência: levar clientes até o lojista.",
+        "target": "Audience: bringing customers to merchants."
+      },
+      {
+        "key": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d.embed.title",
+        "source": "Milhões de pessoas pagavam com o PicPay.",
+        "target": "Millions of people paid with PicPay."
+      },
+      {
+        "key": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d.embed.continuation",
+        "source": "Mas não sabiam onde usar.",
+        "target": "But they didn't know where to use it."
+      },
+      {
+        "key": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d.embed.body",
+        "source": "A pesquisa com lojistas e compradores mostrava os dois lados do mesmo problema. O principal motivo para um lojista deixar o PicPay era a falta de clientes. Quem comprava não sabia onde o PicPay era aceito, e a experiência gerava atrito do app ao balcão.\n\nSem compradores, os lojistas desistiam. Sem lojistas, os compradores não tinham onde usar.",
+        "target": "Research with merchants and shoppers revealed two sides of the same problem. The main reason merchants left PicPay was a lack of customers. Shoppers didn't know where PicPay was accepted, and the experience created friction from the app to the checkout counter.\n\nWithout shoppers, merchants gave up. Without merchants, shoppers had nowhere to use it."
+      },
+      {
+        "key": "fadc3616-ca2f-41e3-8322-770e85ba7331.embed.body",
+        "source": "Vender mais, sempre vender mais. A gente não tem budget pra fazer um comercial de 3 minutos no Fantástico.",
+        "target": "Sell more, always sell more. We don't have the budget for a 3-minute commercial on Fantástico."
+      },
+      {
+        "key": "fadc3616-ca2f-41e3-8322-770e85ba7331.embed.attribution",
+        "source": "Lojista entrevistado em pesquisa, 2020",
+        "target": "Merchant interviewed during research, 2020"
+      },
+      {
+        "key": "fadc8ec4-29a8-4666-be25-b277c5bedd59.embed.body",
+        "source": "A resposta: um ciclo entre quem compra e quem vende.",
+        "target": "The answer: a cycle connecting shoppers and merchants."
+      },
+      {
+        "key": "fadc8ec4-29a8-4666-be25-b277c5bedd59.embed.caption",
+        "source": "Quem compra mais faz quem vende vender mais, e os dados de cada compra tornam o próximo encontro mais certeiro.",
+        "target": "When shoppers buy more, merchants sell more, and the data from each purchase makes the next match more relevant."
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.0.title",
+        "source": "Encontrar",
+        "target": "Find"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.0.body",
+        "source": "O comprador descobre onde usar o PicPay",
+        "target": "Shoppers discover where to use PicPay"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.1.title",
+        "source": "Comprar",
+        "target": "Buy"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.1.body",
+        "source": "Cashback e cupons fazem a visita virar compra",
+        "target": "Cashback and coupons turn visits into purchases"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.2.title",
+        "source": "Voltar",
+        "target": "Return"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.2.body",
+        "source": "O lojista conhece seus clientes e chama de volta quem já comprou",
+        "target": "Merchants get to know their customers and invite past shoppers back"
+      },
+      {
+        "key": "573a48ea-2339-4195-b644-6431a87d1e07.rich_text.0",
+        "source": "A visão",
+        "target": "The vision"
+      },
+      {
+        "key": "527b17d3-6b6f-4f99-ba24-2e91ab34f1c2.embed.label",
+        "source": "O design levou essa visão para a empresa.",
+        "target": "Design brought this vision to the company."
+      },
+      {
+        "key": "527b17d3-6b6f-4f99-ba24-2e91ab34f1c2.embed.body",
+        "source": "Audiência não cabia em uma squad: mexia no app de quem compra, no painel de quem vende e em várias áreas do PicPay. Com produto, montei um fórum de estratégia que reunia essas áreas. Não era reunião de prioridades nem de prazos: era o lugar para alinhar a visão e expor os trade-offs de cada caminho.\n\nPara tornar a visão concreta, o time de design desenhou conceitos de produto para os dois lados: dois para quem compra e dois para quem vende.",
+        "target": "Audience couldn't fit within a single squad: it touched the shopper app, the merchant dashboard, and several areas of PicPay. Together with Product, I set up a strategy forum that brought these areas together. It wasn't a meeting about priorities or deadlines: it was a place to align on the vision and lay out the trade-offs of each direction.\n\nTo make the vision tangible, the design team created product concepts for both sides: two for shoppers and two for merchants."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.0.title",
+        "source": "Para quem compra: onde usar o PicPay",
+        "target": "For shoppers: where to use PicPay"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.0.alt",
+        "source": "App com busca, categorias e redes que aceitam PicPay.",
+        "target": "App with search, categories, and chains that accept PicPay."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.1.title",
+        "source": "Para quem compra: o perfil de cada loja",
+        "target": "For shoppers: each store's profile"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.1.alt",
+        "source": "Perfil de um restaurante no PicPay, com avaliações, horários e formas de pagamento.",
+        "target": "A restaurant profile on PicPay, with reviews, hours, and payment methods."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.2.title",
+        "source": "Para quem vende: criar promoções",
+        "target": "For sellers: creating promotions"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.2.alt",
+        "source": "Painel de promoções do lojista, com cupons e cartão fidelidade.",
+        "target": "The merchant's promotions dashboard, with coupons and a loyalty card."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.3.title",
+        "source": "Para quem vende: conhecer os clientes",
+        "target": "For sellers: getting to know their customers"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.3.alt",
+        "source": "Painel com clientes que favoritaram o negócio, dias e horários de preferência.",
+        "target": "A dashboard showing customers who favorited the business and their preferred days and times."
+      },
+      {
+        "key": "aebdc788-82b1-43a0-8708-ad48c994158d.embed.body",
+        "source": "A visão ia além do app.",
+        "target": "The vision went beyond the app."
+      },
+      {
+        "key": "aebdc788-82b1-43a0-8708-ad48c994158d.embed.caption",
+        "source": "Com o ciclo funcionando, o PicPay podia conectar compradores e lojistas em outros lugares: lojistas comprando direto da indústria, anúncios no feed de acordo com o interesse de cada pessoa e ofertas pela localização. Eram conceitos, não produtos lançados, mas mostravam aonde a estratégia podia chegar.",
+        "target": "With the cycle working, PicPay could connect buyers and merchants in other places: merchants buying directly from manufacturers, feed ads based on each person's interests, and location-based offers. These were concepts, not launched products, but they showed how far the strategy could go."
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.0.title",
+        "source": "Negócios comprando direto da indústria",
+        "target": "Businesses buying directly from manufacturers"
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.0.alt",
+        "source": "Marketplace para lojistas comprarem produtos de fornecedores com condições exclusivas.",
+        "target": "A marketplace where merchants could buy products from suppliers on exclusive terms."
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.1.title",
+        "source": "Anúncios no feed do app",
+        "target": "Ads in the app's feed"
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.1.alt",
+        "source": "Anúncio patrocinado de uma loja no feed do app.",
+        "target": "A sponsored ad for a store in the app's feed."
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.2.title",
+        "source": "Ofertas pela localização",
+        "target": "Location-based offers"
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.2.alt",
+        "source": "Oferta para o consumidor com base na localização.",
+        "target": "An offer for a consumer based on their location."
+      },
+      {
+        "key": "c84e226d-f513-4af7-9cdf-e589edbafa3e.embed.title",
+        "source": "Todo mundo usa, todo lugar aceita.",
+        "target": "Everyone uses it, everywhere accepts it."
+      },
+      {
+        "key": "c84e226d-f513-4af7-9cdf-e589edbafa3e.embed.body",
+        "source": "Mais gente usando o PicPay, mais negócios aceitando, e uma receita nova com a audiência que a empresa já tinha.",
+        "target": "More people using PicPay, more businesses accepting it, and a new revenue stream from the audience the company already had."
+      },
+      {
+        "key": "3cd7bcc8-93e5-8045-a60a-f3de6cb7a8ea.rich_text.0",
+        "source": "O que ficou",
+        "target": "What stayed with me"
+      },
+      {
+        "key": "3cd7bcc8-93e5-8097-a900-eb6856705684.embed.title",
+        "source": "Primeiro o cliente,",
+        "target": "The customer first,"
+      },
+      {
+        "key": "3cd7bcc8-93e5-8097-a900-eb6856705684.embed.continuation",
+        "source": "depois o organograma.",
+        "target": "then the org chart."
+      },
+      {
+        "key": "3cd7bcc8-93e5-8097-a900-eb6856705684.embed.body",
+        "source": "Partir da solução completa para o lojista deu a cada designer um escopo com sentido, e não uma fila de pedidos. E cada critério claro de contratação, avaliação e qualidade era uma decisão que eu não precisava mais tomar sozinho.\n\nFoi assim que o time saiu de 2 para 15 pessoas sem perder o padrão, e seguiu sem depender de mim quando saí.",
+        "target": "Starting with the complete solution for merchants gave each designer a meaningful scope, not a queue of requests. And every clear criterion for hiring, evaluation, and quality was a decision I no longer had to make alone.\n\nThat's how the team grew from 2 to 15 people without lowering the bar, and kept going without depending on me after I left."
+      }
+    ]
+  },
+  "published": {
+    "sourceHash": "ed5c835b9f468bda1d60c66c41d2e9e73d3238424c2d403089ecf85b3e0b1c5d",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-31T12:10:15.855Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Construindo o time de design B2B no PicPay",
+        "target": "Building the B2B design team at PicPay"
+      },
+      {
+        "key": "case.productTag",
+        "source": "Liderança, Org Building & People",
+        "target": "Leadership, Org Building & People"
+      },
+      {
+        "key": "case.role",
+        "source": "Design Manager",
+        "target": "Design Manager"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Liderança",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Org",
+        "target": "Org"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "People",
+        "target": "People"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Leadership",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.summary",
+        "source": "Entrei no PicPay com mais um designer. Antes de contratar, desenhamos a solução completa para o lojista e organizamos o time a partir dela, em três tribos: Seller Tools, Audiência e Ops. Saí liderando 15 pessoas e uma visão de Audiência que abriu um mercado novo para a empresa.",
+        "target": "I joined PicPay alongside one other designer. Before hiring, we designed the complete solution for merchants and built the team around it, in three tribes: Seller Tools, Audiência and Ops. By the time I left, I was leading 15 people and an Audiência vision that opened up a new market for the company."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore case study"
+      },
+      {
+        "key": "case.homeStats.0.label",
+        "source": "Pessoas",
+        "target": "People"
+      },
+      {
+        "key": "case.homeStats.1.label",
+        "source": "Tribos",
+        "target": "Tribes"
+      },
+      {
+        "key": "3cd7bcc8-93e5-802a-bd0b-ca5584e12237.rich_text.0",
+        "source": "O começo",
+        "target": "The beginning"
+      },
+      {
+        "key": "83668c18-8e96-402b-8874-8227c4780bed.embed.title",
+        "source": "Dois designers",
+        "target": "Two designers"
+      },
+      {
+        "key": "83668c18-8e96-402b-8874-8227c4780bed.embed.continuation",
+        "source": "para uma unidade de negócios inteira.",
+        "target": "for an entire business unit."
+      },
+      {
+        "key": "83668c18-8e96-402b-8874-8227c4780bed.embed.body",
+        "source": "O PicPay já era o app de pagamento de milhões de pessoas e começava a olhar para o outro lado do balcão: os lojistas. Entrei para criar o design dos produtos para empresas, a unidade de negócios B2B. No começo, éramos eu e mais um designer.\n\nComo Design Manager, minha missão era construir o time que a unidade precisava: contratar, organizar, desenvolver as pessoas e colocar o design na mesa onde o negócio era decidido.",
+        "target": "PicPay was already the payment app for millions of people and was starting to look at the other side of the counter: merchants. I joined to design products for businesses in the B2B business unit. At first, it was just me and one other designer.\n\nAs Design Manager, my mission was to build the team the unit needed: hire, organize, develop people and give design a seat at the table where business decisions were made."
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.0.label",
+        "source": "pessoas no time de design",
+        "target": "people on the design team"
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.0.body",
+        "source": "Contratado, organizado e desenvolvido sob minha liderança.",
+        "target": "Hired, organized and developed under my leadership."
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.1.label",
+        "source": "tribos",
+        "target": "tribes"
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.1.body",
+        "source": "Grupos de squads, cada um com uma missão para o lojista.",
+        "target": "Groups of squads, each with a mission for merchants."
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.2.label",
+        "source": "mercado novo",
+        "target": "new market"
+      },
+      {
+        "key": "aa0d7cc8-ad53-4f28-9468-6708ed09835b.embed.items.2.body",
+        "source": "Levar os milhões de clientes do app até os lojistas.",
+        "target": "Bringing the app's millions of customers to merchants."
+      },
+      {
+        "key": "c80db956-aed7-4c44-b804-cab05f9fb6c9.rich_text.0",
+        "source": "O lojista primeiro",
+        "target": "Merchants first"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80bc-81df-f30fade3fa9f.embed.label",
+        "source": "squads de produto e tecnologia previstas para a unidade em um trimestre",
+        "target": "product and technology squads planned for the unit in one quarter"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80bc-81df-f30fade3fa9f.embed.body",
+        "source": "A unidade ia mais que dobrar em três meses. Se o design crescesse só no ritmo das contratações, cada designer viraria atendente da própria squad, sem visão do todo.",
+        "target": "The unit was set to more than double in three months. If design grew only at the pace of hiring, each designer would end up taking requests from their own squad, without seeing the bigger picture."
+      },
+      {
+        "key": "31d96536-9ca8-451f-b72c-122e49d0f542.embed.heading",
+        "source": "Em vez de começar pelas contratações, começamos pelo lojista.",
+        "target": "Instead of starting with hiring, we started with merchants."
+      },
+      {
+        "key": "31d96536-9ca8-451f-b72c-122e49d0f542.embed.body",
+        "source": "Estudamos o mercado e a rotina de quem vende. Para tocar o negócio, um lojista chegava a depender de até dez fornecedores: maquininha, conta, crédito, conciliação, fidelidade, sistema de gestão.\n\nO livro Plataforma: a revolução da estratégia ajudou a enxergar a saída: tratar o PicPay como uma plataforma de dois lados, com lojistas de um e milhões de consumidores do outro. Mapeamos tudo de que um lojista precisava para que o PicPay resolvesse em um lugar só:",
+        "target": "We studied the market and merchants' daily routines. To run their business, a merchant could depend on as many as ten providers: card terminals, banking, credit, reconciliation, loyalty and business management software.\n\nThe book Plataforma: a revolução da estratégia helped us see a way forward: treating PicPay as a two-sided platform, with merchants on one side and millions of consumers on the other. We mapped everything a merchant needed so PicPay could address it all in one place:"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.0.label",
+        "source": "Cadastro e onboarding sem atrito",
+        "target": "Frictionless sign-up and onboarding"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.1.label",
+        "source": "Vendas e gestão do negócio",
+        "target": "Sales and business management"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.2.label",
+        "source": "Taxas, parcelamento e estornos",
+        "target": "Fees, installment payments and refunds"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.3.label",
+        "source": "Finanças e conciliação",
+        "target": "Finances and reconciliation"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.4.label",
+        "source": "Capital de giro com os próprios recebíveis",
+        "target": "Working capital backed by their own receivables"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.5.label",
+        "source": "Presença no app de milhões de pessoas",
+        "target": "A presence in an app used by millions"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.6.label",
+        "source": "Campanhas, cashback e geração de demanda",
+        "target": "Campaigns, cashback, and demand generation"
+      },
+      {
+        "key": "9087baea-0b94-48f6-90ba-0946b15f4d5c.embed.items.7.label",
+        "source": "Promoções por nota fiscal e produto",
+        "target": "Receipt- and product-based promotions"
+      },
+      {
+        "key": "b1b53025-bed0-44fc-833b-568ce388ac9b.embed.label",
+        "source": "Cada parte da vida do lojista virou o escopo de uma tribo.",
+        "target": "Each part of the merchant’s day-to-day became a tribe’s scope."
+      },
+      {
+        "key": "b1b53025-bed0-44fc-833b-568ce388ac9b.embed.body",
+        "source": "Agrupamos essas oito necessidades em três tribos, grupos de squads de produto com uma missão em comum. O time de design nasceu no mesmo desenho: cada designer dentro de uma squad, sabendo qual parte da vida do lojista estava resolvendo.",
+        "target": "We grouped these eight needs into three tribes, groups of product squads with a shared mission. The design team took shape around the same structure: each designer worked within a squad, knowing which part of the merchant’s day-to-day they were solving for."
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.0.title",
+        "source": "Design da unidade de negócios",
+        "target": "Business unit design"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.0.subtitle",
+        "source": "Design Manager · minha liderança",
+        "target": "Design Manager · under my leadership"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.1.title",
+        "source": "Seller Tools",
+        "target": "Seller Tools"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.1.subtitle",
+        "source": "Gerir o negócio",
+        "target": "Run the business"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.2.title",
+        "source": "Audiência",
+        "target": "Audience"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.2.subtitle",
+        "source": "Trazer clientes",
+        "target": "Bring in customers"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.3.title",
+        "source": "Ops",
+        "target": "Ops"
+      },
+      {
+        "key": "f2abaff3-9713-459d-9382-5de4d28f0a13.embed.nodes.3.subtitle",
+        "source": "Fazer tudo funcionar",
+        "target": "Make everything work"
+      },
+      {
+        "key": "202eb146-b8e7-456a-b3d0-b9f56af32790.rich_text.0",
+        "source": "As pessoas",
+        "target": "The people"
+      },
+      {
+        "key": "e4a75652-62ac-4d2c-8288-b6553c7be30b.embed.body",
+        "source": "Mas estrutura sem pessoas preparadas é só organograma.",
+        "target": "But structure without people equipped to deliver is just an org chart."
+      },
+      {
+        "key": "e4a75652-62ac-4d2c-8288-b6553c7be30b.embed.caption",
+        "source": "Por isso montei a gestão de pessoas do zero, com mais contexto e menos controle, inspirado na cultura da Netflix descrita em A regra é não ter regras. Quem crescia passava a ajudar a formar quem chegava.",
+        "target": "So I built people management from scratch, with more context and less control, inspired by the Netflix culture described in A regra é não ter regras. As people grew, they began helping develop new team members."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.0.body",
+        "source": "Nas conversas 1:1, sempre traz seu ponto de vista sobre os temas de forma clara mas me dá espaço para discutir se é um bom caminho ou não. A sua liderança tem sido fundamental para a minha performance no PicPay e com certeza ele é um exemplo para mim.",
+        "target": "In our 1:1 conversations, he always shares his perspective clearly but gives me room to discuss whether it’s a good direction or not. His leadership has been essential to my performance at PicPay, and he is definitely a role model for me."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.0.caption",
+        "source": "Designer do time, em feedback sobre minha liderança",
+        "target": "A designer on the team, sharing feedback on my leadership"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.1.title",
+        "source": "Contratar",
+        "target": "Hire"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.1.body",
+        "source": "Perfis, entrevistas e decisões para formar o time.",
+        "target": "Profiles, interviews, and decisions to build the team."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.2.title",
+        "source": "Acompanhar",
+        "target": "Support"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.2.body",
+        "source": "1:1 recorrentes e design review.",
+        "target": "Regular 1:1s and design reviews."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.3.title",
+        "source": "Avaliar",
+        "target": "Evaluate"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.3.body",
+        "source": "Ciclos de avaliação com critérios claros.",
+        "target": "Performance review cycles with clear criteria."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.4.title",
+        "source": "Desenvolver",
+        "target": "Develop"
+      },
+      {
+        "key": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24.embed.tiles.4.body",
+        "source": "Caminhos de gestão e de especialista, como Staff e Service Designer.",
+        "target": "Management and individual contributor paths, including Staff and Service Designer roles."
+      },
+      {
+        "key": "3cd7bcc8-93e5-80ec-bde6-d40ff9a2bbb2.rich_text.0",
+        "source": "O mercado novo",
+        "target": "The new market"
+      },
+      {
+        "key": "d19742c2-6081-4ca0-b443-44eac316f3a0.embed.title",
+        "source": "O mercado novo",
+        "target": "The new market"
+      },
+      {
+        "key": "d19742c2-6081-4ca0-b443-44eac316f3a0.embed.body",
+        "source": "Audiência: levar clientes até o lojista.",
+        "target": "Audience: bringing customers to merchants."
+      },
+      {
+        "key": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d.embed.title",
+        "source": "Milhões de pessoas pagavam com o PicPay.",
+        "target": "Millions of people paid with PicPay."
+      },
+      {
+        "key": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d.embed.continuation",
+        "source": "Mas não sabiam onde usar.",
+        "target": "But they didn't know where to use it."
+      },
+      {
+        "key": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d.embed.body",
+        "source": "A pesquisa com lojistas e compradores mostrava os dois lados do mesmo problema. O principal motivo para um lojista deixar o PicPay era a falta de clientes. Quem comprava não sabia onde o PicPay era aceito, e a experiência gerava atrito do app ao balcão.\n\nSem compradores, os lojistas desistiam. Sem lojistas, os compradores não tinham onde usar.",
+        "target": "Research with merchants and shoppers revealed two sides of the same problem. The main reason merchants left PicPay was a lack of customers. Shoppers didn't know where PicPay was accepted, and the experience created friction from the app to the checkout counter.\n\nWithout shoppers, merchants gave up. Without merchants, shoppers had nowhere to use it."
+      },
+      {
+        "key": "fadc3616-ca2f-41e3-8322-770e85ba7331.embed.body",
+        "source": "Vender mais, sempre vender mais. A gente não tem budget pra fazer um comercial de 3 minutos no Fantástico.",
+        "target": "Sell more, always sell more. We don't have the budget for a 3-minute commercial on Fantástico."
+      },
+      {
+        "key": "fadc3616-ca2f-41e3-8322-770e85ba7331.embed.attribution",
+        "source": "Lojista entrevistado em pesquisa, 2020",
+        "target": "Merchant interviewed during research, 2020"
+      },
+      {
+        "key": "fadc8ec4-29a8-4666-be25-b277c5bedd59.embed.body",
+        "source": "A resposta: um ciclo entre quem compra e quem vende.",
+        "target": "The answer: a cycle connecting shoppers and merchants."
+      },
+      {
+        "key": "fadc8ec4-29a8-4666-be25-b277c5bedd59.embed.caption",
+        "source": "Quem compra mais faz quem vende vender mais, e os dados de cada compra tornam o próximo encontro mais certeiro.",
+        "target": "When shoppers buy more, merchants sell more, and the data from each purchase makes the next match more relevant."
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.0.title",
+        "source": "Encontrar",
+        "target": "Find"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.0.body",
+        "source": "O comprador descobre onde usar o PicPay",
+        "target": "Shoppers discover where to use PicPay"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.1.title",
+        "source": "Comprar",
+        "target": "Buy"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.1.body",
+        "source": "Cashback e cupons fazem a visita virar compra",
+        "target": "Cashback and coupons turn visits into purchases"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.2.title",
+        "source": "Voltar",
+        "target": "Return"
+      },
+      {
+        "key": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7.embed.nodes.2.body",
+        "source": "O lojista conhece seus clientes e chama de volta quem já comprou",
+        "target": "Merchants get to know their customers and invite past shoppers back"
+      },
+      {
+        "key": "573a48ea-2339-4195-b644-6431a87d1e07.rich_text.0",
+        "source": "A visão",
+        "target": "The vision"
+      },
+      {
+        "key": "527b17d3-6b6f-4f99-ba24-2e91ab34f1c2.embed.label",
+        "source": "O design levou essa visão para a empresa.",
+        "target": "Design brought this vision to the company."
+      },
+      {
+        "key": "527b17d3-6b6f-4f99-ba24-2e91ab34f1c2.embed.body",
+        "source": "Audiência não cabia em uma squad: mexia no app de quem compra, no painel de quem vende e em várias áreas do PicPay. Com produto, montei um fórum de estratégia que reunia essas áreas. Não era reunião de prioridades nem de prazos: era o lugar para alinhar a visão e expor os trade-offs de cada caminho.\n\nPara tornar a visão concreta, o time de design desenhou conceitos de produto para os dois lados: dois para quem compra e dois para quem vende.",
+        "target": "Audience couldn't fit within a single squad: it touched the shopper app, the merchant dashboard, and several areas of PicPay. Together with Product, I set up a strategy forum that brought these areas together. It wasn't a meeting about priorities or deadlines: it was a place to align on the vision and lay out the trade-offs of each direction.\n\nTo make the vision tangible, the design team created product concepts for both sides: two for shoppers and two for merchants."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.0.title",
+        "source": "Para quem compra: onde usar o PicPay",
+        "target": "For shoppers: where to use PicPay"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.0.alt",
+        "source": "App com busca, categorias e redes que aceitam PicPay.",
+        "target": "App with search, categories, and chains that accept PicPay."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.1.title",
+        "source": "Para quem compra: o perfil de cada loja",
+        "target": "For shoppers: each store's profile"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.1.alt",
+        "source": "Perfil de um restaurante no PicPay, com avaliações, horários e formas de pagamento.",
+        "target": "A restaurant profile on PicPay, with reviews, hours, and payment methods."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.2.title",
+        "source": "Para quem vende: criar promoções",
+        "target": "For sellers: creating promotions"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.2.alt",
+        "source": "Painel de promoções do lojista, com cupons e cartão fidelidade.",
+        "target": "The merchant's promotions dashboard, with coupons and a loyalty card."
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.3.title",
+        "source": "Para quem vende: conhecer os clientes",
+        "target": "For sellers: getting to know their customers"
+      },
+      {
+        "key": "187c1620-7d8a-41e2-9cd5-da35907f604d.embed.tiles.3.alt",
+        "source": "Painel com clientes que favoritaram o negócio, dias e horários de preferência.",
+        "target": "A dashboard showing customers who favorited the business and their preferred days and times."
+      },
+      {
+        "key": "aebdc788-82b1-43a0-8708-ad48c994158d.embed.body",
+        "source": "A visão ia além do app.",
+        "target": "The vision went beyond the app."
+      },
+      {
+        "key": "aebdc788-82b1-43a0-8708-ad48c994158d.embed.caption",
+        "source": "Com o ciclo funcionando, o PicPay podia conectar compradores e lojistas em outros lugares: lojistas comprando direto da indústria, anúncios no feed de acordo com o interesse de cada pessoa e ofertas pela localização. Eram conceitos, não produtos lançados, mas mostravam aonde a estratégia podia chegar.",
+        "target": "With the cycle working, PicPay could connect buyers and merchants in other places: merchants buying directly from manufacturers, feed ads based on each person's interests, and location-based offers. These were concepts, not launched products, but they showed how far the strategy could go."
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.0.title",
+        "source": "Negócios comprando direto da indústria",
+        "target": "Businesses buying directly from manufacturers"
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.0.alt",
+        "source": "Marketplace para lojistas comprarem produtos de fornecedores com condições exclusivas.",
+        "target": "A marketplace where merchants could buy products from suppliers on exclusive terms."
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.1.title",
+        "source": "Anúncios no feed do app",
+        "target": "Ads in the app's feed"
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.1.alt",
+        "source": "Anúncio patrocinado de uma loja no feed do app.",
+        "target": "A sponsored ad for a store in the app's feed."
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.2.title",
+        "source": "Ofertas pela localização",
+        "target": "Location-based offers"
+      },
+      {
+        "key": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e.embed.tiles.2.alt",
+        "source": "Oferta para o consumidor com base na localização.",
+        "target": "An offer for a consumer based on their location."
+      },
+      {
+        "key": "c84e226d-f513-4af7-9cdf-e589edbafa3e.embed.title",
+        "source": "Todo mundo usa, todo lugar aceita.",
+        "target": "Everyone uses it, everywhere accepts it."
+      },
+      {
+        "key": "c84e226d-f513-4af7-9cdf-e589edbafa3e.embed.body",
+        "source": "Mais gente usando o PicPay, mais negócios aceitando, e uma receita nova com a audiência que a empresa já tinha.",
+        "target": "More people using PicPay, more businesses accepting it, and a new revenue stream from the audience the company already had."
+      },
+      {
+        "key": "3cd7bcc8-93e5-8045-a60a-f3de6cb7a8ea.rich_text.0",
+        "source": "O que ficou",
+        "target": "What stayed with me"
+      },
+      {
+        "key": "3cd7bcc8-93e5-8097-a900-eb6856705684.embed.title",
+        "source": "Primeiro o cliente,",
+        "target": "The customer first,"
+      },
+      {
+        "key": "3cd7bcc8-93e5-8097-a900-eb6856705684.embed.continuation",
+        "source": "depois o organograma.",
+        "target": "then the org chart."
+      },
+      {
+        "key": "3cd7bcc8-93e5-8097-a900-eb6856705684.embed.body",
+        "source": "Partir da solução completa para o lojista deu a cada designer um escopo com sentido, e não uma fila de pedidos. E cada critério claro de contratação, avaliação e qualidade era uma decisão que eu não precisava mais tomar sozinho.\n\nFoi assim que o time saiu de 2 para 15 pessoas sem perder o padrão, e seguiu sem depender de mim quando saí.",
+        "target": "Starting with the complete solution for merchants gave each designer a meaningful scope, not a queue of requests. And every clear criterion for hiring, evaluation, and quality was a decision I no longer had to make alone.\n\nThat's how the team grew from 2 to 15 people without lowering the bar, and kept going without depending on me after I left."
+      }
+    ]
+  },
+  "reel": {
+    "sourceHash": "b5f064222ebad48de56adcdec6ecc9b17192c082ddebbec44fbfc5e3ac282876",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T15:14:34.759Z",
+    "units": [
+      {
+        "key": "reel.title",
+        "source": "Design B2B no PicPay: de 2 a 15",
+        "target": "B2B design at PicPay: 2 to 15"
+      },
+      {
+        "key": "reel.cta",
+        "source": "Ver currículo",
+        "target": "View resume"
+      },
+      {
+        "key": "reel.title-1.lines.0",
+        "source": "Escalando design",
+        "target": "Scaling design"
+      },
+      {
+        "key": "reel.title-1.lines.1",
+        "source": "no PicPay B2B",
+        "target": "at PicPay B2B"
+      },
+      {
+        "key": "reel.title-1.lines.2",
+        "source": "*de 2 pra 15 designers*",
+        "target": "*2 to 15 designers*"
+      },
+      {
+        "key": "reel.title-1.eyebrow",
+        "source": "PicPay · 2020–2022",
+        "target": "PicPay · 2020–2022"
+      },
+      {
+        "key": "reel.title-1.chapter",
+        "source": "Abertura",
+        "target": "Opening"
+      },
+      {
+        "key": "reel.role-1.heading",
+        "source": "Montei o design B2B do *zero*.",
+        "target": "I built B2B design from *scratch*."
+      },
+      {
+        "key": "reel.role-1.facts.0.label",
+        "source": "Função",
+        "target": "Role"
+      },
+      {
+        "key": "reel.role-1.facts.0.value",
+        "source": "Design Manager",
+        "target": "Design Manager"
+      },
+      {
+        "key": "reel.role-1.facts.1.label",
+        "source": "Time",
+        "target": "Team"
+      },
+      {
+        "key": "reel.role-1.facts.1.value",
+        "source": "2 → 15 designers",
+        "target": "2 → 15 designers"
+      },
+      {
+        "key": "reel.role-1.facts.2.label",
+        "source": "Tempo",
+        "target": "When"
+      },
+      {
+        "key": "reel.role-1.facts.2.value",
+        "source": "2020–2022",
+        "target": "2020–2022"
+      },
+      {
+        "key": "reel.role-1.facts.3.label",
+        "source": "Com quem",
+        "target": "With"
+      },
+      {
+        "key": "reel.role-1.facts.3.value",
+        "source": "Produto e squads",
+        "target": "Product & squads"
+      },
+      {
+        "key": "reel.title-2.lines.0",
+        "source": "Milhões pagavam,",
+        "target": "Millions paid,"
+      },
+      {
+        "key": "reel.title-2.lines.1",
+        "source": "não sabiam onde usar.",
+        "target": "unsure where to pay."
+      },
+      {
+        "key": "reel.title-2.lines.2",
+        "source": "Lojistas sem clientes.",
+        "target": "Merchants, no buyers."
+      },
+      {
+        "key": "reel.list-1.chapter",
+        "source": "A decisão",
+        "target": "The decision"
+      },
+      {
+        "key": "reel.list-1.heading",
+        "source": "Comecei pelo lojista não pelas vagas.",
+        "target": "I started with merchants, not roles."
+      },
+      {
+        "key": "reel.list-1.items.0",
+        "source": "Seller Tools — gerir o negócio",
+        "target": "Seller Tools — run a business"
+      },
+      {
+        "key": "reel.list-1.items.1",
+        "source": "Audiência — trazer clientes",
+        "target": "Audience — win customers"
+      },
+      {
+        "key": "reel.list-1.items.2",
+        "source": "Ops — fazer tudo funcionar",
+        "target": "Ops — keep things running"
+      },
+      {
+        "key": "reel.flow-1.heading",
+        "source": "Pensando em:",
+        "target": "Thinking of:"
+      },
+      {
+        "key": "reel.flow-1.nodes.0.title",
+        "source": "Quem busca",
+        "target": "Searchers"
+      },
+      {
+        "key": "reel.flow-1.nodes.1.title",
+        "source": "Quem compra",
+        "target": "Buyers"
+      },
+      {
+        "key": "reel.flow-1.nodes.2.title",
+        "source": "Quem vende",
+        "target": "Sellers"
+      },
+      {
+        "key": "reel.screens-1.title",
+        "source": "Desenhamos para o B2B",
+        "target": "We designed for B2B"
+      },
+      {
+        "key": "reel.cards-1.heading",
+        "source": "Montei times com mais contexto e alinhamento e *menos controle.",
+        "target": "I built teams with more context and alignment and *less control."
+      },
+      {
+        "key": "reel.cards-1.cards.0.title",
+        "source": "Contratar",
+        "target": "Hire"
+      },
+      {
+        "key": "reel.cards-1.cards.0.body",
+        "source": "Perfis, entrevistas e decisões para formar o time.",
+        "target": "Profiles, interviews and choices to build the team."
+      },
+      {
+        "key": "reel.cards-1.cards.1.title",
+        "source": "Acompanhar",
+        "target": "Support"
+      },
+      {
+        "key": "reel.cards-1.cards.1.body",
+        "source": "1:1 recorrentes e design review.",
+        "target": "Regular 1:1s and design reviews."
+      },
+      {
+        "key": "reel.cards-1.cards.2.title",
+        "source": "Avaliar",
+        "target": "Evaluate"
+      },
+      {
+        "key": "reel.cards-1.cards.2.body",
+        "source": "Ciclos de avaliação com critérios claros.",
+        "target": "Review cycles with clear criteria."
+      },
+      {
+        "key": "reel.cards-1.cards.3.title",
+        "source": "Desenvolver",
+        "target": "Develop"
+      },
+      {
+        "key": "reel.cards-1.cards.3.body",
+        "source": "Caminhos de gestão e de especialista.",
+        "target": "Management and specialist paths."
+      },
+      {
+        "key": "reel.metrics-1.chapter",
+        "source": "Resultado",
+        "target": "Results"
+      },
+      {
+        "key": "reel.metrics-1.label",
+        "source": "Alinhados as necessidades dos nossos clientes",
+        "target": "Aligned with our customers' needs"
+      },
+      {
+        "key": "reel.metrics-1.note",
+        "source": "Visão levada à empresa com fórum de estratégia.",
+        "target": "Vision shared company-wide in a strategy forum."
+      },
+      {
+        "key": "reel.metrics-1.value",
+        "source": "Visão e time",
+        "target": "Vision and team"
+      },
+      {
+        "key": "reel.quote-1.chapter",
+        "source": "Feedback do time",
+        "target": "Team feedback"
+      },
+      {
+        "key": "reel.quote-1.quote",
+        "source": "Nas conversas 1:1, sempre traz seu ponto de vista sobre os temas de forma clara mas me dá espaço para discutir se é um bom caminho ou não.",
+        "target": "In 1:1s, you always share your perspective clearly but give me room to discuss whether it's the right way to go."
+      },
+      {
+        "key": "reel.quote-1.role",
+        "source": "Feedback sobre minha liderança",
+        "target": "Feedback on my leadership"
+      },
+      {
+        "key": "reel.end-1.lines.0",
+        "source": "Design que *conecta*",
+        "target": "Design that *links*"
+      },
+      {
+        "key": "reel.end-1.lines.1",
+        "source": "produto as necessidades",
+        "target": "products to"
+      },
+      {
+        "key": "reel.end-1.lines.2",
+        "source": "do *negócio*",
+        "target": "*business* needs"
+      },
+      {
+        "key": "reel.end-1.meta",
+        "source": "PicPay · Design Manager · 2020–2022",
+        "target": "PicPay · Design Manager · 2020–2022"
+      },
+      {
+        "key": "reel.end-1.signature",
+        "source": "Gutto Rocha",
+        "target": "Gutto Rocha"
+      }
+    ]
+  }
+}

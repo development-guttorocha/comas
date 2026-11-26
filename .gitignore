@@ -1,0 +1,57 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Local private translation drafts
+/.translations/
+
+# Cópias de segurança dos cases a cada salvamento no admin.
+/.content-history/
+
+# Estado pessoal do editor de código (JetBrains).
+/.idea/
+
+# Dados das chaves de API do admin (validade, notas).
+/.admin/
+
+# Imagem → layout do admin: arquivos de trabalho locais.
+/.screen-design/

@@ -1,0 +1,4 @@
+/* Espaço escolhido no admin: substitui o espaçamento próprio do componente, acima e/ou abaixo. */
+.space { display: contents; }
+.space[data-top] > * { margin-top: 0 !important; padding-top: var(--space-top) !important; }
+.space[data-bottom] > * { margin-bottom: 0 !important; padding-bottom: var(--space-bottom) !important; }

@@ -1,0 +1,795 @@
+[
+  {
+    "id": "f834492b-2cce-48a1-90f2-252d323c896a",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-802a-bd0b-ca5584e12237",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 1] O começo [/-nav 1+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 1] O começo [/-nav 1+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "83668c18-8e96-402b-8874-8227c4780bed",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseTitleBox] {\"id\":\"case-contexto\",\"title\":\"Dois designers\",\"continuation\":\"para uma unidade de negócios inteira.\",\"body\":\"O PicPay já era o app de pagamento de milhões de pessoas e começava a olhar para o outro lado do balcão: os lojistas. Entrei para criar o design dos produtos para empresas, a unidade de negócios B2B. No começo, éramos eu e mais um designer.\\n\\nComo Design Manager, minha missão era construir o time que a unidade precisava: contratar, organizar, desenvolver as pessoas e colocar o design na mesa onde o negócio era decidido.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseTitleBox] {\"id\":\"case-contexto\",\"title\":\"Dois designers\",\"continuation\":\"para uma unidade de negócios inteira.\",\"body\":\"O PicPay já era o app de pagamento de milhões de pessoas e começava a olhar para o outro lado do balcão: os lojistas. Entrei para criar o design dos produtos para empresas, a unidade de negócios B2B. No começo, éramos eu e mais um designer.\\n\\nComo Design Manager, minha missão era construir o time que a unidade precisava: contratar, organizar, desenvolver as pessoas e colocar o design na mesa onde o negócio era decidido.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "aa0d7cc8-ad53-4f28-9468-6708ed09835b",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseIconStats] {\"columns\":3,\"items\":[{\"icon\":\"users\",\"value\":\"2 → 15\",\"label\":\"pessoas no time de design\",\"body\":\"Contratado, organizado e desenvolvido sob minha liderança.\"},{\"icon\":\"target\",\"value\":\"3\",\"label\":\"tribos\",\"body\":\"Grupos de squads, cada um com uma missão para o lojista.\"},{\"icon\":\"globe\",\"value\":\"1\",\"label\":\"mercado novo\",\"body\":\"Levar os milhões de clientes do app até os lojistas.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseIconStats] {\"columns\":3,\"items\":[{\"icon\":\"users\",\"value\":\"2 → 15\",\"label\":\"pessoas no time de design\",\"body\":\"Contratado, organizado e desenvolvido sob minha liderança.\"},{\"icon\":\"target\",\"value\":\"3\",\"label\":\"tribos\",\"body\":\"Grupos de squads, cada um com uma missão para o lojista.\"},{\"icon\":\"globe\",\"value\":\"1\",\"label\":\"mercado novo\",\"body\":\"Levar os milhões de clientes do app até os lojistas.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "c333220b-2e09-4dde-9573-f5f03602cac3",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "c80db956-aed7-4c44-b804-cab05f9fb6c9",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 2] O lojista primeiro [/-nav 2+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 2] O lojista primeiro [/-nav 2+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-80bc-81df-f30fade3fa9f",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBigNumber] {\"id\":\"case-pessoas\",\"value\":\"12 → 29\",\"label\":\"squads de produto e tecnologia previstas para a unidade em um trimestre\",\"body\":\"A unidade ia mais que dobrar em três meses. Se o design crescesse só no ritmo das contratações, cada designer viraria atendente da própria squad, sem visão do todo.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBigNumber] {\"id\":\"case-pessoas\",\"value\":\"12 → 29\",\"label\":\"squads de produto e tecnologia previstas para a unidade em um trimestre\",\"body\":\"A unidade ia mais que dobrar em três meses. Se o design crescesse só no ritmo das contratações, cada designer viraria atendente da própria squad, sem visão do todo.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "31d96536-9ca8-451f-b72c-122e49d0f542",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseLightPanel] {\"heading\":\"Em vez de começar pelas contratações, começamos pelo lojista.\",\"body\":\"Estudamos o mercado e a rotina de quem vende. Para tocar o negócio, um lojista chegava a depender de até dez fornecedores: maquininha, conta, crédito, conciliação, fidelidade, sistema de gestão.\\n\\nO livro Plataforma: a revolução da estratégia ajudou a enxergar a saída: tratar o PicPay como uma plataforma de dois lados, com lojistas de um e milhões de consumidores do outro. Mapeamos tudo de que um lojista precisava para que o PicPay resolvesse em um lugar só:\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseLightPanel] {\"heading\":\"Em vez de começar pelas contratações, começamos pelo lojista.\",\"body\":\"Estudamos o mercado e a rotina de quem vende. Para tocar o negócio, um lojista chegava a depender de até dez fornecedores: maquininha, conta, crédito, conciliação, fidelidade, sistema de gestão.\\n\\nO livro Plataforma: a revolução da estratégia ajudou a enxergar a saída: tratar o PicPay como uma plataforma de dois lados, com lojistas de um e milhões de consumidores do outro. Mapeamos tudo de que um lojista precisava para que o PicPay resolvesse em um lugar só:\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "9087baea-0b94-48f6-90ba-0946b15f4d5c",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseIconStats] {\"columns\":4,\"items\":[{\"icon\":\"rocket\",\"value\":\"Começar\",\"label\":\"Cadastro e onboarding sem atrito\"},{\"icon\":\"cart\",\"value\":\"Vender\",\"label\":\"Vendas e gestão do negócio\"},{\"icon\":\"money\",\"value\":\"Receber\",\"label\":\"Taxas, parcelamento e estornos\"},{\"icon\":\"wallet\",\"value\":\"Organizar\",\"label\":\"Finanças e conciliação\"},{\"icon\":\"growth\",\"value\":\"Antecipar\",\"label\":\"Capital de giro com os próprios recebíveis\"},{\"icon\":\"search\",\"value\":\"Ser encontrado\",\"label\":\"Presença no app de milhões de pessoas\"},{\"icon\":\"target\",\"value\":\"Atrair\",\"label\":\"Campanhas, cashback e geração de demanda\"},{\"icon\":\"heart\",\"value\":\"Fidelizar\",\"label\":\"Promoções por nota fiscal e produto\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseIconStats] {\"columns\":4,\"items\":[{\"icon\":\"rocket\",\"value\":\"Começar\",\"label\":\"Cadastro e onboarding sem atrito\"},{\"icon\":\"cart\",\"value\":\"Vender\",\"label\":\"Vendas e gestão do negócio\"},{\"icon\":\"money\",\"value\":\"Receber\",\"label\":\"Taxas, parcelamento e estornos\"},{\"icon\":\"wallet\",\"value\":\"Organizar\",\"label\":\"Finanças e conciliação\"},{\"icon\":\"growth\",\"value\":\"Antecipar\",\"label\":\"Capital de giro com os próprios recebíveis\"},{\"icon\":\"search\",\"value\":\"Ser encontrado\",\"label\":\"Presença no app de milhões de pessoas\"},{\"icon\":\"target\",\"value\":\"Atrair\",\"label\":\"Campanhas, cashback e geração de demanda\"},{\"icon\":\"heart\",\"value\":\"Fidelizar\",\"label\":\"Promoções por nota fiscal e produto\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "b1b53025-bed0-44fc-833b-568ce388ac9b",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"Cada parte da vida do lojista virou o escopo de uma tribo.\",\"body\":\"Agrupamos essas oito necessidades em três tribos, grupos de squads de produto com uma missão em comum. O time de design nasceu no mesmo desenho: cada designer dentro de uma squad, sabendo qual parte da vida do lojista estava resolvendo.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"Cada parte da vida do lojista virou o escopo de uma tribo.\",\"body\":\"Agrupamos essas oito necessidades em três tribos, grupos de squads de produto com uma missão em comum. O time de design nasceu no mesmo desenho: cada designer dentro de uma squad, sabendo qual parte da vida do lojista estava resolvendo.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "f2abaff3-9713-459d-9382-5de4d28f0a13",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseFlowDiagram] {\"layout\":\"org\",\"nodes\":[{\"id\":\"design\",\"value\":\"15 pessoas\",\"title\":\"Design da unidade de negócios\",\"subtitle\":\"Design Manager · minha liderança\",\"tone\":\"brand\"},{\"id\":\"seller\",\"title\":\"Seller Tools\",\"subtitle\":\"Gerir o negócio\",\"parent\":\"design\"},{\"id\":\"audiencia\",\"title\":\"Audiência\",\"subtitle\":\"Trazer clientes\",\"parent\":\"design\",\"tone\":\"soft\"},{\"id\":\"ops\",\"title\":\"Ops\",\"subtitle\":\"Fazer tudo funcionar\",\"parent\":\"design\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseFlowDiagram] {\"layout\":\"org\",\"nodes\":[{\"id\":\"design\",\"value\":\"15 pessoas\",\"title\":\"Design da unidade de negócios\",\"subtitle\":\"Design Manager · minha liderança\",\"tone\":\"brand\"},{\"id\":\"seller\",\"title\":\"Seller Tools\",\"subtitle\":\"Gerir o negócio\",\"parent\":\"design\"},{\"id\":\"audiencia\",\"title\":\"Audiência\",\"subtitle\":\"Trazer clientes\",\"parent\":\"design\",\"tone\":\"soft\"},{\"id\":\"ops\",\"title\":\"Ops\",\"subtitle\":\"Fazer tudo funcionar\",\"parent\":\"design\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "f1937d65-25dd-4884-badb-0e66c0fcbfdd",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "202eb146-b8e7-456a-b3d0-b9f56af32790",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 3] As pessoas [/-nav 3+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 3] As pessoas [/-nav 3+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "e4a75652-62ac-4d2c-8288-b6553c7be30b",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"Mas estrutura sem pessoas preparadas é só organograma.\",\"caption\":\"Por isso montei a gestão de pessoas do zero, com mais contexto e menos controle, inspirado na cultura da Netflix descrita em A regra é não ter regras. Quem crescia passava a ajudar a formar quem chegava.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"md\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"Mas estrutura sem pessoas preparadas é só organograma.\",\"caption\":\"Por isso montei a gestão de pessoas do zero, com mais contexto e menos controle, inspirado na cultura da Netflix descrita em A regra é não ter regras. Quem crescia passava a ajudar a formar quem chegava.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"md\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-80f3-98c3-c0b63bf6af24",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBento] {\"tiles\":[{\"kind\":\"quote\",\"size\":\"2x2\",\"tone\":\"soft\",\"body\":\"Nas conversas 1:1, sempre traz seu ponto de vista sobre os temas de forma clara mas me dá espaço para discutir se é um bom caminho ou não. A sua liderança tem sido fundamental para a minha performance no PicPay e com certeza ele é um exemplo para mim.\",\"caption\":\"Designer do time, em feedback sobre minha liderança\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Contratar\",\"body\":\"Perfis, entrevistas e decisões para formar o time.\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Acompanhar\",\"body\":\"1:1 recorrentes e design review.\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Avaliar\",\"body\":\"Ciclos de avaliação com critérios claros.\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Desenvolver\",\"body\":\"Caminhos de gestão e de especialista, como Staff e Service Designer.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBento] {\"tiles\":[{\"kind\":\"quote\",\"size\":\"2x2\",\"tone\":\"soft\",\"body\":\"Nas conversas 1:1, sempre traz seu ponto de vista sobre os temas de forma clara mas me dá espaço para discutir se é um bom caminho ou não. A sua liderança tem sido fundamental para a minha performance no PicPay e com certeza ele é um exemplo para mim.\",\"caption\":\"Designer do time, em feedback sobre minha liderança\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Contratar\",\"body\":\"Perfis, entrevistas e decisões para formar o time.\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Acompanhar\",\"body\":\"1:1 recorrentes e design review.\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Avaliar\",\"body\":\"Ciclos de avaliação com critérios claros.\"},{\"kind\":\"text\",\"size\":\"1x1\",\"title\":\"Desenvolver\",\"body\":\"Caminhos de gestão e de especialista, como Staff e Service Designer.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "769d99d6-e143-4272-bfba-a30986edd33e",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-80ec-bde6-d40ff9a2bbb2",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 4] O mercado novo [/-nav 4+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 4] O mercado novo [/-nav 4+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "d19742c2-6081-4ca0-b443-44eac316f3a0",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseChapter] {\"title\":\"O mercado novo\",\"body\":\"Audiência: levar clientes até o lojista.\",\"src\":\"/cases/picpay/picpay-audiencia-painel.webp\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseChapter] {\"title\":\"O mercado novo\",\"body\":\"Audiência: levar clientes até o lojista.\",\"src\":\"/cases/picpay/picpay-audiencia-painel.webp\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-800e-8fd5-e1c17bc0947d",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseTitleBox] {\"id\":\"case-futuro\",\"title\":\"Milhões de pessoas pagavam com o PicPay.\",\"continuation\":\"Mas não sabiam onde usar.\",\"body\":\"A pesquisa com lojistas e compradores mostrava os dois lados do mesmo problema. O principal motivo para um lojista deixar o PicPay era a falta de clientes. Quem comprava não sabia onde o PicPay era aceito, e a experiência gerava atrito do app ao balcão.\\n\\nSem compradores, os lojistas desistiam. Sem lojistas, os compradores não tinham onde usar.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseTitleBox] {\"id\":\"case-futuro\",\"title\":\"Milhões de pessoas pagavam com o PicPay.\",\"continuation\":\"Mas não sabiam onde usar.\",\"body\":\"A pesquisa com lojistas e compradores mostrava os dois lados do mesmo problema. O principal motivo para um lojista deixar o PicPay era a falta de clientes. Quem comprava não sabia onde o PicPay era aceito, e a experiência gerava atrito do app ao balcão.\\n\\nSem compradores, os lojistas desistiam. Sem lojistas, os compradores não tinham onde usar.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "fadc3616-ca2f-41e3-8322-770e85ba7331",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseResultsQuote] {\"body\":\"Vender mais, sempre vender mais. A gente não tem budget pra fazer um comercial de 3 minutos no Fantástico.\",\"attribution\":\"Lojista entrevistado em pesquisa, 2020\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseResultsQuote] {\"body\":\"Vender mais, sempre vender mais. A gente não tem budget pra fazer um comercial de 3 minutos no Fantástico.\",\"attribution\":\"Lojista entrevistado em pesquisa, 2020\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "fadc8ec4-29a8-4666-be25-b277c5bedd59",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"A resposta: um ciclo entre quem compra e quem vende.\",\"caption\":\"Quem compra mais faz quem vende vender mais, e os dados de cada compra tornam o próximo encontro mais certeiro.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"md\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"A resposta: um ciclo entre quem compra e quem vende.\",\"caption\":\"Quem compra mais faz quem vende vender mais, e os dados de cada compra tornam o próximo encontro mais certeiro.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"md\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "541d22b1-7fa5-4864-81ff-da6e5d4c1ab7",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseFlowDiagram] {\"layout\":\"circles\",\"arrange\":\"horizontal\",\"nodes\":[{\"id\":\"encontrar\",\"title\":\"Encontrar\",\"body\":\"O comprador descobre onde usar o PicPay\"},{\"id\":\"transacionar\",\"title\":\"Comprar\",\"body\":\"Cashback e cupons fazem a visita virar compra\",\"tone\":\"soft\"},{\"id\":\"engajar\",\"title\":\"Voltar\",\"body\":\"O lojista conhece seus clientes e chama de volta quem já comprou\",\"tone\":\"brand\"}],\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseFlowDiagram] {\"layout\":\"circles\",\"arrange\":\"horizontal\",\"nodes\":[{\"id\":\"encontrar\",\"title\":\"Encontrar\",\"body\":\"O comprador descobre onde usar o PicPay\"},{\"id\":\"transacionar\",\"title\":\"Comprar\",\"body\":\"Cashback e cupons fazem a visita virar compra\",\"tone\":\"soft\"},{\"id\":\"engajar\",\"title\":\"Voltar\",\"body\":\"O lojista conhece seus clientes e chama de volta quem já comprou\",\"tone\":\"brand\"}],\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "bdb08855-1c8b-41d5-8348-0f6fd2418ec5",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "573a48ea-2339-4195-b644-6431a87d1e07",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 5] A visão [/-nav 5+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 5] A visão [/-nav 5+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "527b17d3-6b6f-4f99-ba24-2e91ab34f1c2",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"label\":\"O design levou essa visão para a empresa.\",\"body\":\"Audiência não cabia em uma squad: mexia no app de quem compra, no painel de quem vende e em várias áreas do PicPay. Com produto, montei um fórum de estratégia que reunia essas áreas. Não era reunião de prioridades nem de prazos: era o lugar para alinhar a visão e expor os trade-offs de cada caminho.\\n\\nPara tornar a visão concreta, o time de design desenhou conceitos de produto para os dois lados: dois para quem compra e dois para quem vende.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"label\":\"O design levou essa visão para a empresa.\",\"body\":\"Audiência não cabia em uma squad: mexia no app de quem compra, no painel de quem vende e em várias áreas do PicPay. Com produto, montei um fórum de estratégia que reunia essas áreas. Não era reunião de prioridades nem de prazos: era o lugar para alinhar a visão e expor os trade-offs de cada caminho.\\n\\nPara tornar a visão concreta, o time de design desenhou conceitos de produto para os dois lados: dois para quem compra e dois para quem vende.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "187c1620-7d8a-41e2-9cd5-da35907f604d",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBento] {\"tiles\":[{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Para quem compra: onde usar o PicPay\",\"src\":\"/cases/picpay/picpay-audiencia-locais.webp\",\"alt\":\"App com busca, categorias e redes que aceitam PicPay.\"},{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Para quem compra: o perfil de cada loja\",\"src\":\"/cases/picpay/picpay-audiencia-perfil.webp\",\"alt\":\"Perfil de um restaurante no PicPay, com avaliações, horários e formas de pagamento.\"},{\"kind\":\"image\",\"size\":\"2x1\",\"title\":\"Para quem vende: criar promoções\",\"src\":\"/cases/picpay/picpay-audiencia-promocoes.webp\",\"alt\":\"Painel de promoções do lojista, com cupons e cartão fidelidade.\"},{\"kind\":\"image\",\"size\":\"2x1\",\"title\":\"Para quem vende: conhecer os clientes\",\"src\":\"/cases/picpay/picpay-audiencia-clientes.webp\",\"alt\":\"Painel com clientes que favoritaram o negócio, dias e horários de preferência.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBento] {\"tiles\":[{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Para quem compra: onde usar o PicPay\",\"src\":\"/cases/picpay/picpay-audiencia-locais.webp\",\"alt\":\"App com busca, categorias e redes que aceitam PicPay.\"},{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Para quem compra: o perfil de cada loja\",\"src\":\"/cases/picpay/picpay-audiencia-perfil.webp\",\"alt\":\"Perfil de um restaurante no PicPay, com avaliações, horários e formas de pagamento.\"},{\"kind\":\"image\",\"size\":\"2x1\",\"title\":\"Para quem vende: criar promoções\",\"src\":\"/cases/picpay/picpay-audiencia-promocoes.webp\",\"alt\":\"Painel de promoções do lojista, com cupons e cartão fidelidade.\"},{\"kind\":\"image\",\"size\":\"2x1\",\"title\":\"Para quem vende: conhecer os clientes\",\"src\":\"/cases/picpay/picpay-audiencia-clientes.webp\",\"alt\":\"Painel com clientes que favoritaram o negócio, dias e horários de preferência.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "aebdc788-82b1-43a0-8708-ad48c994158d",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatement] {\"body\":\"A visão ia além do app.\",\"caption\":\"Com o ciclo funcionando, o PicPay podia conectar compradores e lojistas em outros lugares: lojistas comprando direto da indústria, anúncios no feed de acordo com o interesse de cada pessoa e ofertas pela localização. Eram conceitos, não produtos lançados, mas mostravam aonde a estratégia podia chegar.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"md\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatement] {\"body\":\"A visão ia além do app.\",\"caption\":\"Com o ciclo funcionando, o PicPay podia conectar compradores e lojistas em outros lugares: lojistas comprando direto da indústria, anúncios no feed de acordo com o interesse de cada pessoa e ofertas pela localização. Eram conceitos, não produtos lançados, mas mostravam aonde a estratégia podia chegar.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"md\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "7612d555-3210-4f6e-b7ca-8dcb918e0a5e",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBento] {\"tiles\":[{\"kind\":\"image\",\"size\":\"2x2\",\"title\":\"Negócios comprando direto da indústria\",\"src\":\"/cases/picpay/picpay-compras-tela-completa.png\",\"alt\":\"Marketplace para lojistas comprarem produtos de fornecedores com condições exclusivas.\"},{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Anúncios no feed do app\",\"src\":\"/cases/picpay/picpay-audiencia-anuncios.webp\",\"alt\":\"Anúncio patrocinado de uma loja no feed do app.\"},{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Ofertas pela localização\",\"src\":\"/cases/picpay/picpay-audiencia-ofertas.webp\",\"alt\":\"Oferta para o consumidor com base na localização.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBento] {\"tiles\":[{\"kind\":\"image\",\"size\":\"2x2\",\"title\":\"Negócios comprando direto da indústria\",\"src\":\"/cases/picpay/picpay-compras-tela-completa.png\",\"alt\":\"Marketplace para lojistas comprarem produtos de fornecedores com condições exclusivas.\"},{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Anúncios no feed do app\",\"src\":\"/cases/picpay/picpay-audiencia-anuncios.webp\",\"alt\":\"Anúncio patrocinado de uma loja no feed do app.\"},{\"kind\":\"image\",\"size\":\"1x2\",\"title\":\"Ofertas pela localização\",\"src\":\"/cases/picpay/picpay-audiencia-ofertas.webp\",\"alt\":\"Oferta para o consumidor com base na localização.\"}],\"spaceTop\":\"md\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "c84e226d-f513-4af7-9cdf-e589edbafa3e",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseChapter] {\"title\":\"Todo mundo usa, todo lugar aceita.\",\"body\":\"Mais gente usando o PicPay, mais negócios aceitando, e uma receita nova com a audiência que a empresa já tinha.\",\"src\":\"/cases/picpay/picpay-audiencia-omnichannel.webp\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseChapter] {\"title\":\"Todo mundo usa, todo lugar aceita.\",\"body\":\"Mais gente usando o PicPay, mais negócios aceitando, e uma receita nova com a audiência que a empresa já tinha.\",\"src\":\"/cases/picpay/picpay-audiencia-omnichannel.webp\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "2777450d-db6b-428e-af91-b89026b97be9",
+    "type": "divider",
+    "has_children": false,
+    "divider": {
+      "case_color": "#161c20",
+      "case_size": "bleed",
+      "case_space_top": "lg",
+      "case_space_bottom": "lg"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-8045-a60a-f3de6cb7a8ea",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 6] O que ficou [/-nav 6+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 6] O que ficou [/-nav 6+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "3cd7bcc8-93e5-8097-a900-eb6856705684",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseTitleBox] {\"title\":\"Primeiro o cliente,\",\"continuation\":\"depois o organograma.\",\"body\":\"Partir da solução completa para o lojista deu a cada designer um escopo com sentido, e não uma fila de pedidos. E cada critério claro de contratação, avaliação e qualidade era uma decisão que eu não precisava mais tomar sozinho.\\n\\nFoi assim que o time saiu de 2 para 15 pessoas sem perder o padrão, e seguiu sem depender de mim quando saí.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseTitleBox] {\"title\":\"Primeiro o cliente,\",\"continuation\":\"depois o organograma.\",\"body\":\"Partir da solução completa para o lojista deu a cada designer um escopo com sentido, e não uma fila de pedidos. E cada critério claro de contratação, avaliação e qualidade era uma decisão que eu não precisava mais tomar sozinho.\\n\\nFoi assim que o time saiu de 2 para 15 pessoas sem perder o padrão, e seguiu sem depender de mim quando saí.\",\"spaceTop\":\"lg\",\"spaceBottom\":\"lg\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  }
+]

@@ -1,0 +1,351 @@
+{
+  "slug": "consultoria-de-carreira",
+  "seoTitle": "Consultoria de carreira para designers: um plano escrito para o seu próximo passo | Gutto Rocha",
+  "seoDescription": "Consultoria de carreira para designers de produto: uma conversa de mapeamento, quatro conversas por vídeo e um plano escrito para resolver um problema concreto, como promoção, primeira liderança ou troca de emprego. Com quem já liderou mais de 100 designers.",
+  "serviceName": "Consultoria de carreira",
+  "serviceType": "Consultoria de carreira em design",
+  "navName": "Consultoria de carreira",
+  "nav": [
+    {
+      "label": "Como funciona",
+      "href": "#inicio"
+    },
+    {
+      "label": "O seu caso",
+      "href": "#seu-caso"
+    },
+    {
+      "label": "O que você recebe",
+      "href": "#o-que-leva"
+    },
+    {
+      "label": "Quem conduz",
+      "href": "#quem-conduz"
+    },
+    {
+      "label": "Investimento",
+      "href": "#agendar"
+    }
+  ],
+  "card": {
+    "summary": "Um problema de carreira, quatro conversas por vídeo e um plano escrito para resolvê-lo, com quem já liderou mais de 100 designers.",
+    "points": [
+      "Conversa de mapeamento gratuita",
+      "4 conversas por vídeo",
+      "Plano escrito no fim"
+    ]
+  },
+  "hero": {
+    "kicker": "Consultoria de carreira para designers",
+    "title": "Você não precisa de mais conselho.",
+    "continuation": "Precisa de uma decisão e de um plano.",
+    "intro": "Consultoria de carreira para designers de produto. Em 5 semanas, você resolve um problema de carreira e sai com o plano por escrito.",
+    "cta": "Marcar a conversa grátis de 30 min",
+    "proof": [
+      {
+        "value": "+100",
+        "label": "designers liderados"
+      },
+      {
+        "value": "8 anos",
+        "label": "liderando times"
+      },
+      {
+        "value": "4",
+        "label": "empresas, de startup a banco"
+      }
+    ],
+    "boardTab": "◇ Roteiro / Consultoria de carreira",
+    "ctaNote": "Grátis · 30 min por vídeo · sem compromisso",
+    "steps": [
+      {
+        "when": "Antes",
+        "title": "Conversa grátis",
+        "length": "30 min",
+        "body": "Você conta o caso. Eu digo se a consultoria resolve e quanto fica."
+      },
+      {
+        "when": "Semanas 1 a 4",
+        "title": "4 conversas por vídeo",
+        "length": "1 hora cada · a partir de R$ 2.500 o projeto",
+        "body": "Entender onde você está, ver os caminhos, decidir e ensaiar a conversa difícil."
+      },
+      {
+        "when": "Semana 5",
+        "title": "O plano por escrito",
+        "length": "Fim do projeto",
+        "body": "O que fazer, em que ordem e até quando. Para seguir sem mim."
+      }
+    ]
+  },
+  "problems": [
+    {
+      "id": "promocao",
+      "label": "A promoção não vem",
+      "title": "Chegar a Sênior na próxima revisão",
+      "roadmap": [
+        "Transformar “a promoção não vem” em uma frase: o que falta, para quem e até quando.",
+        "O que você já faz do papel de Sênior, e o que a empresa diz que falta.",
+        "Disputar a promoção aqui, com prazo, ou levar o nível de Sênior para outra empresa.",
+        "O caminho escolhido e os movimentos das próximas semanas.",
+        "O 1:1 com a sua liderança, para sair dele com um combinado por escrito.",
+        "Você sai com o caso da sua promoção montado, e com prazo."
+      ]
+    },
+    {
+      "id": "liderar",
+      "label": "Me ofereceram liderar",
+      "title": "Decidir se aceito liderar o time",
+      "roadmap": [
+        "Separar a vontade de liderar do medo de parar de desenhar.",
+        "O que você ganha e o que perde liderando, nesta empresa, agora.",
+        "Aceitar, negociar um período de teste ou recusar sem queimar ponte.",
+        "A escolha, com critério, e o que precisa estar combinado antes do sim.",
+        "A sua resposta para a liderança, dita em voz alta antes da hora.",
+        "Você sai sabendo o que responder, e como."
+      ]
+    },
+    {
+      "id": "incendio",
+      "label": "Virei Lead e só apago incêndio",
+      "title": "Sair do modo incêndio como Lead",
+      "roadmap": [
+        "Descobrir o que, no incêndio, é seu e o que é do time.",
+        "Uma semana da sua agenda, aberta: para onde vai o seu tempo.",
+        "Delegar temas, criar rituais ou mudar o combinado com a sua liderança.",
+        "O que sai da sua agenda, o que entra e em que ordem.",
+        "A conversa com o time sobre o novo jeito de decidir.",
+        "Você sai com uma agenda que tem tempo para direção e pessoas."
+      ]
+    },
+    {
+      "id": "vaga",
+      "label": "Vou buscar vaga",
+      "title": "Mudar de empresa para o papel certo",
+      "roadmap": [
+        "Definir a vaga certa antes de mexer no portfólio.",
+        "O que o seu portfólio mostra hoje, lido como um Head leria numa seleção.",
+        "Que papel, que tipo de empresa e quais cases contam essa história.",
+        "Os cases escolhidos e o roteiro de cada um.",
+        "A apresentação de um case, cronometrada, com as perguntas difíceis.",
+        "Você sai com o roteiro de cada case e a apresentação ensaiada."
+      ]
+    },
+    {
+      "id": "gestao",
+      "label": "Não sei se quero gestão",
+      "title": "Escolher entre gestão e ofício",
+      "roadmap": [
+        "Tirar a pergunta “gestão ou ofício?” do abstrato.",
+        "O que você mais gosta de fazer hoje, e o que cada caminho pede.",
+        "Gestão, especialista ou mudar de área, com um teste pequeno para cada um.",
+        "O caminho dos próximos dois anos, com o salário de cada opção na mesa.",
+        "A conversa com a sua liderança sobre o caminho escolhido.",
+        "Você sai com o caminho escolhido e o primeiro passo marcado."
+      ]
+    },
+    {
+      "id": "outro",
+      "label": "Outro problema",
+      "title": "O seu problema, resolvido no papel",
+      "roadmap": [
+        "Você conta o problema e saímos com ele escrito em uma frase.",
+        "Onde você está de verdade: o papel que exerce, o salário e o que a empresa espera.",
+        "Os caminhos possíveis, inclusive os que você ainda não tinha considerado.",
+        "O caminho escolhido, com critério, e os movimentos das próximas semanas.",
+        "A conversa difícil que o plano pede, ensaiada antes da hora.",
+        "Você sai com o problema resolvido no papel, e com prazo."
+      ]
+    }
+  ],
+  "voices": {
+    "kicker": "Com quem",
+    "title": "Quem trabalhou comigo",
+    "continuation": "conta como foi.",
+    "cta": "Marcar a conversa grátis de 30 min"
+  },
+  "price": {
+    "kicker": "Investimento",
+    "from": "A partir de",
+    "value": "R$ 2.500",
+    "note": "Pelo projeto inteiro, sem mensalidade. O valor fecha na conversa de mapeamento, antes de começar.",
+    "includes": [
+      "Conversa de mapeamento de 30 minutos, gratuita",
+      "4 conversas de 1 hora por vídeo",
+      "O plano de carreira por escrito",
+      "Emito nota fiscal, se a empresa for pagar"
+    ]
+  },
+  "book": {
+    "kicker": "Investimento e agenda",
+    "title": "Comece pelo mapeamento.",
+    "body": "30 minutos por vídeo, gratuitos. Você conta o caso; eu digo se a consultoria faz sentido e quanto fica o projeto.",
+    "topic": "Caso: “{problem}”. Eu chego sabendo.",
+    "fallback": "Prefere escrever? Chame no WhatsApp ou mande um e-mail."
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Antes do mapeamento.",
+    "items": [
+      {
+        "question": "Qual é a diferença para uma mentoria?",
+        "answer": "A mentoria acompanha você por tempo indeterminado. A consultoria resolve um problema definido, em quatro conversas, e entrega um plano escrito. Quando o plano chega, o projeto acaba."
+      },
+      {
+        "question": "E se eu quiser continuar depois?",
+        "answer": "Outro problema, outro projeto. Não existe mensalidade nem pacote de horas."
+      },
+      {
+        "question": "Preciso já ser sênior?",
+        "answer": "Não. Funciona melhor para quem já trabalha com design de produto, de pleno em diante, mas o ponto de partida é o problema, não o cargo."
+      },
+      {
+        "question": "A empresa pode pagar?",
+        "answer": "Pode. Emito nota fiscal, e muitas empresas pagam como orçamento de desenvolvimento. Se for para um time inteiro, veja Head de Design as a service."
+      },
+      {
+        "question": "As conversas são confidenciais?",
+        "answer": "Sim. O que você conta fica entre nós, inclusive sobre a empresa onde trabalha. O plano é só seu."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Vamos conversar 30 minutos?",
+    "body": "Me conta o problema. Eu digo se a consultoria faz sentido agora. A conversa de mapeamento é gratuita.",
+    "emailCta": "Mandar um e-mail",
+    "whatsappCta": "Chamar no WhatsApp",
+    "emailSubject": "Consultoria de carreira",
+    "whatsappMessage": "Oi, Gutto! Vi a consultoria de carreira e queria conversar."
+  },
+  "accent": {
+    "color": "#ff7ab6",
+    "on": "#0b0b0b"
+  },
+  "roadmap": {
+    "steps": [
+      {
+        "when": "Antes",
+        "title": "Conversa grátis",
+        "length": "30 min"
+      },
+      {
+        "when": "Semana 1",
+        "title": "Onde você está",
+        "length": "1 hora"
+      },
+      {
+        "when": "Semana 2",
+        "title": "Os caminhos",
+        "length": "1 hora"
+      },
+      {
+        "when": "Semana 3",
+        "title": "A decisão",
+        "length": "1 hora"
+      },
+      {
+        "when": "Semana 4",
+        "title": "O ensaio",
+        "length": "1 hora"
+      },
+      {
+        "when": "Semana 5",
+        "title": "O plano por escrito",
+        "length": "Fim do projeto"
+      }
+    ],
+    "arrive": "Você sai com"
+  },
+  "takeaway": {
+    "kicker": "O que você recebe",
+    "title": "No fim, um plano escrito",
+    "continuation": "para seguir sem mim.",
+    "items": [
+      {
+        "title": "O problema, em uma frase",
+        "body": "Definido no mapeamento. Tudo o que vem depois responde a ele."
+      },
+      {
+        "title": "Onde você está de verdade",
+        "body": "O papel que você exerce, o salário na régua e o que a empresa espera."
+      },
+      {
+        "title": "Os caminhos, com o custo de cada um",
+        "body": "Inclusive os que você ainda não tinha considerado."
+      },
+      {
+        "title": "A decisão, e o porquê",
+        "body": "Escrita, para você lembrar dela quando a dúvida voltar."
+      },
+      {
+        "title": "Os movimentos, com prazo",
+        "body": "O que fazer nas próximas semanas, e como saber se está funcionando."
+      },
+      {
+        "title": "O roteiro da conversa difícil",
+        "body": "O 1:1, a negociação ou a entrevista, do jeito que ensaiamos."
+      }
+    ],
+    "doc": "Plano de carreira",
+    "docNote": "Sumário do documento que você recebe na semana 5"
+  },
+  "how": {
+    "kicker": "O seu caso",
+    "title": "Qual é o seu caso?",
+    "continuation": "Veja como ele sai do lugar.",
+    "cta": "Marcar a conversa grátis sobre este caso"
+  },
+  "logosLabel": "Onde eu liderei designers",
+  "logos": [
+    "PicPay",
+    "Loft",
+    "SulAmérica",
+    "BrandLovrs",
+    "Oficina Brasil"
+  ],
+  "about": {
+    "kicker": "Quem conduz",
+    "title": "Já subi cada degrau",
+    "continuation": "e já decidi quem sobe.",
+    "body": "Sou Gutto Rocha. Comecei como designer júnior em 2009 e virei Design Manager em 2020. Desde então, contratei, promovi e desenvolvi designers no PicPay, na Loft, na BrandLovrs e na SulAmérica. Na consultoria, você conversa com quem já esteve dos dois lados da mesa.",
+    "sideLabel": "Do outro lado da mesa",
+    "side": [
+      "No PicPay, estruturei as primeiras posições de Staff Designer e Service Designer, num time de design que foi de 15 para 170 pessoas.",
+      "Na Loft, conduzi os 1:1s e o crescimento de carreira de seis designers. Quatro foram reconhecidos financeiramente.",
+      "Na BrandLovrs, montei o time de design que fez parte da rodada de R$ 35 milhões liderada pela Kaszek."
+    ],
+    "ladderLabel": "A minha trilha",
+    "ladder": [
+      {
+        "year": "2020",
+        "role": "Design Manager",
+        "where": "PicPay, Loft, BrandLovrs, Oficina Brasil e SulAmérica"
+      },
+      {
+        "year": "2018",
+        "role": "UX Lead",
+        "where": "Banco Pan"
+      },
+      {
+        "year": "2015",
+        "role": "Product Designer",
+        "where": "WebMotors e Conta Azul"
+      },
+      {
+        "year": "2014",
+        "role": "Lead UI Designer",
+        "where": "Agência VM2, FCB Brasil e RRP Digital"
+      },
+      {
+        "year": "2011",
+        "role": "UI Designer",
+        "where": "Agência VM2, CondoTV e Mint Digital"
+      },
+      {
+        "year": "2009",
+        "role": "Designer júnior",
+        "where": "Agência VM2"
+      }
+    ]
+  }
+}

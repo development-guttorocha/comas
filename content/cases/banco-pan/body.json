@@ -1,0 +1,550 @@
+[
+  {
+    "id": "33b7bcc8-93e5-80eb-877e-f859e5c9f0b9",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 1] Contexto [/-nav 1+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 1] Contexto [/-nav 1+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80bf-9a22-e88cd8582399",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"contexto\",\"label\":\"Contexto\",\"body\":\"O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos usados, o maior do Brasil nessa categoria.\\n\\nO produto digital existente tratava o financiamento como um processo linear e burocrático. Na realidade, o que acontecia no pátio da loja era completamente diferente do que o sistema presumia.\\n\\nEntrei como designer responsável pelo projeto e passei a liderar 2 designers da consultoria (Fjord/Accenture). Liderava o produto junto com 2 PMs, 1 GPM e a diretoria comercial. A pesquisa e a estruturação estratégica vieram do trabalho que conduzi internamente e alimentaram diretamente a jornada To-Be que foi implementada.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"contexto\",\"label\":\"Contexto\",\"body\":\"O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos usados, o maior do Brasil nessa categoria.\\n\\nO produto digital existente tratava o financiamento como um processo linear e burocrático. Na realidade, o que acontecia no pátio da loja era completamente diferente do que o sistema presumia.\\n\\nEntrei como designer responsável pelo projeto e passei a liderar 2 designers da consultoria (Fjord/Accenture). Liderava o produto junto com 2 PMs, 1 GPM e a diretoria comercial. A pesquisa e a estruturação estratégica vieram do trabalho que conduzi internamente e alimentaram diretamente a jornada To-Be que foi implementada.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8067-918c-e1c541a77761",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 2] Pesquisa [/-nav 2+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 2] Pesquisa [/-nav 2+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8066-80d9-e0a9474d3aa7",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-pesquisa\",\"label\":\"Pesquisa\",\"body\":\"Comecei com uma Matriz CSD para externalizar tudo que já sabíamos e mapear o que precisávamos validar. A partir daí, estruturei a pesquisa em duas frentes.\\n\\nQualitativa: 29 entrevistas presenciais com vendedores de lojas, operadores e gerentes PAN em São Paulo, Baixada Santista e Nordeste.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-pesquisa\",\"label\":\"Pesquisa\",\"body\":\"Comecei com uma Matriz CSD para externalizar tudo que já sabíamos e mapear o que precisávamos validar. A partir daí, estruturei a pesquisa em duas frentes.\\n\\nQualitativa: 29 entrevistas presenciais com vendedores de lojas, operadores e gerentes PAN em São Paulo, Baixada Santista e Nordeste.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "4d2e2919-ad37-4d7a-a540-7fc56a6e6962",
+    "type": "paragraph",
+    "has_children": false,
+    "paragraph": {
+      "rich_text": [],
+      "color": "default"
+    }
+  },
+  {
+    "id": "33f7bcc8-93e5-80a5-a44a-dbbccb01d300",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/banco-pan/image-2.png"
+      }
+    }
+  },
+  {
+    "id": "33f7bcc8-93e5-8071-85a6-d74e36c9af1c",
+    "has_children": false,
+    "type": "image",
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/banco-pan/image-3.png"
+      }
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseApproachCards] {\"sectionLabel\":\"Principais achados\",\"columns\":2,\"items\":[{\"title\":\"Empoderamento na ponta\",\"body\":\"A descoberta mais importante: o operador que conseguia negociar fichas ruins garantia o espaço do PAN na loja. O produto digital precisava amplificar essa capacidade, não substituí-la. Um lojista resumiu a alternativa: 'O operador do Santander hoje é um boneco.'\"},{\"title\":\"Percepção de crédito matava conversão\",\"body\":\"Lojistas estimavam que o PAN aprovava 30 a 40% das propostas. O Santander? 80 a 90%. O problema não era a taxa real, era a assertividade do simulador. Adicionar campos como renda e natureza da ocupação não seria uma dor desde que melhorasse o índice percebido.\"},{\"title\":\"50% do dia perdido em formalização\",\"body\":\"Operadores atribuíam metade do tempo de trabalho a tarefas operacionais. Havia casos de operadores pagando courier do próprio bolso para enviar malotes. Formalização digital era vista como transformadora.\"},{\"title\":\"CPF é o centro de tudo\",\"body\":\"Na priorização de campos, CPF/CNPJ ficou consistentemente no topo para lojistas e operadores. É o primeiro dado coletado, destranca a simulação e conecta toda a jornada. Isso definiu como o fluxo foi reorganizado.\"}]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseApproachCards] {\"sectionLabel\":\"Principais achados\",\"columns\":2,\"items\":[{\"title\":\"Empoderamento na ponta\",\"body\":\"A descoberta mais importante: o operador que conseguia negociar fichas ruins garantia o espaço do PAN na loja. O produto digital precisava amplificar essa capacidade, não substituí-la. Um lojista resumiu a alternativa: 'O operador do Santander hoje é um boneco.'\"},{\"title\":\"Percepção de crédito matava conversão\",\"body\":\"Lojistas estimavam que o PAN aprovava 30 a 40% das propostas. O Santander? 80 a 90%. O problema não era a taxa real, era a assertividade do simulador. Adicionar campos como renda e natureza da ocupação não seria uma dor desde que melhorasse o índice percebido.\"},{\"title\":\"50% do dia perdido em formalização\",\"body\":\"Operadores atribuíam metade do tempo de trabalho a tarefas operacionais. Havia casos de operadores pagando courier do próprio bolso para enviar malotes. Formalização digital era vista como transformadora.\"},{\"title\":\"CPF é o centro de tudo\",\"body\":\"Na priorização de campos, CPF/CNPJ ficou consistentemente no topo para lojistas e operadores. É o primeiro dado coletado, destranca a simulação e conecta toda a jornada. Isso definiu como o fluxo foi reorganizado.\"}]}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33f7bcc8-93e5-80ba-b36f-d4afd7107790",
+    "type": "image",
+    "has_children": false,
+    "image": {
+      "caption": [],
+      "type": "file",
+      "file": {
+        "url": "/cases/banco-pan/infografico-de-volumes-e-contextos-gerais.png"
+      },
+      "mobile_url": "/cases/banco-pan/infografico-de-volumes-e-contextos-gerais-mob.png"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8068-8dec-f9ade6976522",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 3] Decisão [/-nav 3+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 3] Decisão [/-nav 3+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-805a-9231-f5d4feb279cb",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-decisao\",\"label\":\"Decisão\",\"body\":\"Com mais de 180 participantes e 9 hipóteses priorizadas com escala Likert, a direção ficou clara: dados e inteligência de mercado primeiro, gestão de estoque em seguida, features marginais por último.\\n\\nA jornada To-Be foi organizada em 5 fases: Descobre, Pesquisa e Escolhe, Conhece e Decide, Negocia e Compra e Evolui. Com 9 conceitos de serviço cobrindo todo o ecossistema: lojista, operador, equipe comercial e banco.\\n\\nO redesign foi dividido em duas frentes. New Beetle focada em simplificar o operacional: isenção de seguro, laudo eletrônico, formalização digital, checkout. Mad Max focada em valor novo: estoque inteligente, simulação fria, integração de gravação no NPV.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-decisao\",\"label\":\"Decisão\",\"body\":\"Com mais de 180 participantes e 9 hipóteses priorizadas com escala Likert, a direção ficou clara: dados e inteligência de mercado primeiro, gestão de estoque em seguida, features marginais por último.\\n\\nA jornada To-Be foi organizada em 5 fases: Descobre, Pesquisa e Escolhe, Conhece e Decide, Negocia e Compra e Evolui. Com 9 conceitos de serviço cobrindo todo o ecossistema: lojista, operador, equipe comercial e banco.\\n\\nO redesign foi dividido em duas frentes. New Beetle focada em simplificar o operacional: isenção de seguro, laudo eletrônico, formalização digital, checkout. Mad Max focada em valor novo: estoque inteligente, simulação fria, integração de gravação no NPV.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseBeforeAfter] {\"id\":\"case-comparativo\",\"sectionLabel\":\"\",\"before\":{\"label\":\"Antes\",\"body\":\"Fluxo linear e burocrático desenhado para o banco. O lojista operava em WhatsApp, OLX e fornecedores. O sistema do banco era só mais um, e não o mais importante.\"},\"after\":{\"label\":\"Depois\",\"body\":\"Produto construído para amplificar o operador na ponta. Painel consolidado com volume financiado, taxa de aprovação e pipeline. Simulação adaptada por perfil de usuário. Formalização digital integrada.\"}}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseBeforeAfter] {\"id\":\"case-comparativo\",\"sectionLabel\":\"\",\"before\":{\"label\":\"Antes\",\"body\":\"Fluxo linear e burocrático desenhado para o banco. O lojista operava em WhatsApp, OLX e fornecedores. O sistema do banco era só mais um, e não o mais importante.\"},\"after\":{\"label\":\"Depois\",\"body\":\"Produto construído para amplificar o operador na ponta. Painel consolidado com volume financiado, taxa de aprovação e pipeline. Simulação adaptada por perfil de usuário. Formalização digital integrada.\"}}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8022-b297-c292cdd69132",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "O protótipo abaixo é o fluxo de simulação desenhado na época. O produto que está no ar hoje em veiculos.bancopan.com.br vem desse trabalho.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "O protótipo abaixo é o fluxo de simulação desenhado na época. O produto que está no ar hoje em veiculos.bancopan.com.br vem desse trabalho.",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8092-8113-ed327f57403e",
+    "has_children": false,
+    "type": "link_preview",
+    "link_preview": {
+      "url": "https://www.figma.com/proto/ER5jbbeBQwLSm6eS7jctrF/02---Simula%C3%A7%C3%A3o?node-id=0-1690&p=f&t=JEsHQxF0vxNFY59k-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A99&starting-point-node-id=0%3A1690"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-807b-a0ea-f42a1a2a2c85",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Seis anos depois, reimaginei a experiência com o olhar que tenho hoje.",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Seis anos depois, reimaginei a experiência com o olhar que tenho hoje.",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8054-a40a-fcd0acd0c7fd",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-8031-b26e-e5e2670ce090",
+    "has_children": false,
+    "type": "embed",
+    "embed": {
+      "caption": [],
+      "url": "https://pan-veiculos.vercel.app/"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80a1-b77f-d1951f29976e",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80b5-8e81-cd677d395c95",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 4] Impacto [/-nav 4+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 4] Impacto [/-nav 4+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-804c-88f0-cb7fc2879221",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-impacto\",\"label\":\"Impacto\",\"body\":\"O produto que está no ar hoje em ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-impacto\",\"label\":\"Impacto\",\"body\":\"O produto que está no ar hoje em ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "veiculos.bancopan.com.br",
+            "link": {
+              "url": "http://veiculos.bancopan.com.br/"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "veiculos.bancopan.com.br",
+          "href": "http://veiculos.bancopan.com.br/"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " vem desse trabalho. Uma discovery com mais de 180 participantes, campo presencial em múltiplas regiões e hipóteses priorizadas com dados que virou produto real.\\n\\nEsse foi o trabalho de discovery mais robusto que conduzi até hoje. O mapa de serviço com 9 conceitos cumpriu uma função essencial: alinhar banco, equipe comercial e lojistas em uma visão única do que digital significava para o PAN.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " vem desse trabalho. Uma discovery com mais de 180 participantes, campo presencial em múltiplas regiões e hipóteses priorizadas com dados que virou produto real.\\n\\nEsse foi o trabalho de discovery mais robusto que conduzi até hoje. O mapa de serviço com 9 conceitos cumpriu uma função essencial: alinhar banco, equipe comercial e lojistas em uma visão única do que digital significava para o PAN.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80da-86cb-d934c3d78b20",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseStatBand] {\"sectionLabel\":\"Escala da pesquisa\",\"stats\":[{\"value\":\"180+\",\"label\":\"participantes entre quali e quanti\"},{\"value\":\"29\",\"label\":\"entrevistas qualitativas presenciais\"},{\"value\":\"7K\",\"label\":\"lojistas alcançados no survey\"},{\"value\":\"9\",\"label\":\"conceitos de serviço mapeados\"},{\"value\":\"5\",\"label\":\"fases da jornada To-Be\"},{\"value\":\"4\",\"label\":\"atores do ecossistema mapeados\"}],\"emphasizeIndices\":[0,2]}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseStatBand] {\"sectionLabel\":\"Escala da pesquisa\",\"stats\":[{\"value\":\"180+\",\"label\":\"participantes entre quali e quanti\"},{\"value\":\"29\",\"label\":\"entrevistas qualitativas presenciais\"},{\"value\":\"7K\",\"label\":\"lojistas alcançados no survey\"},{\"value\":\"9\",\"label\":\"conceitos de serviço mapeados\"},{\"value\":\"5\",\"label\":\"fases da jornada To-Be\"},{\"value\":\"4\",\"label\":\"atores do ecossistema mapeados\"}],\"emphasizeIndices\":[0,2]}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80c9-8719-c1e5eec4e50b",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[-nav 5] Aprendizados [/-nav 5+false]",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[-nav 5] Aprendizados [/-nav 5+false]",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-804a-8f42-d0fc4ddb0e14",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "[case:CaseSectionSplit] {\"id\":\"case-aprendizados\",\"label\":\"Aprendizados\",\"body\":\"Em produtos B2B2C, o usuário que você vê não é o único que importa e às vezes nem é o principal. O sistema era desenhado pensando no fluxo do banco. Mas no pátio da loja, descobrimos que o lojista operava em um mundo de WhatsApp, OLX e fornecedores de confiança.\\n\\nA descoberta sobre empoderamento na ponta foi a que mais impactou o produto. O operador PAN que negociava e brigava por fichas era o diferencial competitivo real. O produto digital precisava amplificar essa dinâmica, não automatizá-la ao ponto de eliminá-la.\",\"borderClass\":\"no-border\"}",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "[case:CaseSectionSplit] {\"id\":\"case-aprendizados\",\"label\":\"Aprendizados\",\"body\":\"Em produtos B2B2C, o usuário que você vê não é o único que importa e às vezes nem é o principal. O sistema era desenhado pensando no fluxo do banco. Mas no pátio da loja, descobrimos que o lojista operava em um mundo de WhatsApp, OLX e fornecedores de confiança.\\n\\nA descoberta sobre empoderamento na ponta foi a que mais impactou o produto. O operador PAN que negociava e brigava por fichas era o diferencial competitivo real. O produto digital precisava amplificar essa dinâmica, não automatizá-la ao ponto de eliminá-la.\",\"borderClass\":\"no-border\"}",
+          "href": null
+        }
+      ],
+      "icon": null,
+      "color": "default"
+    }
+  },
+  {
+    "id": "33b7bcc8-93e5-80c0-85d6-e6a6c4fe266e",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [],
+      "icon": null,
+      "color": "default"
+    }
+  }
+]

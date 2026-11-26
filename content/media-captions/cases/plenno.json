@@ -1,0 +1,62 @@
+{
+  "capa-rotina-organizada-1.png": {
+    "description": "Peça de capa com fotografia de uma médica de jaleco e estetoscópio sob luz turquesa, com as frases 'Presente organizado.' à esquerda e 'Futuro brilhante.' à direita e o logo no canto superior esquerdo.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Médica sob luz turquesa com as frases Presente organizado e Futuro brilhante",
+    "width": 1920,
+    "height": 932,
+    "hash": "d58616e30da6ca523c166b6f25659f724dda9b83f74246abde13d7066fbaace1",
+    "model": "deepseek-flash",
+    "tokens": 1020,
+    "at": "2026-11-11T13:29:17.991Z"
+  },
+  "ezgif-4b712a1fb438d0f4.webp": {
+    "description": "Composição com o logo do aplicativo Plenno ao centro, etiquetas de problemas à esquerda (como documentos avulsos e processos manuais) e telas do app à direita, mostrando agenda, faturamento e cadastro de empresas.",
+    "kind": "varias-telas",
+    "shape": "larga",
+    "alt": "Logo do Plenno com etiquetas de problemas e telas do app de agenda e faturamento",
+    "width": 1280,
+    "height": 293,
+    "hash": "a87f4d2409cfa27b7db3db2bfa541c70b5e613cb68f3de23ea9d3e68d24768b3",
+    "model": "deepseek-flash",
+    "tokens": 773,
+    "at": "2026-11-11T13:29:19.768Z"
+  },
+  "plenno-header.png": {
+    "description": "Mulher olhando para o lado em close, com um ícone de play translúcido sobreposto à direita da imagem, formando a capa do case Plenno.",
+    "kind": "ilustracao",
+    "shape": "larga",
+    "alt": "Capa do case Plenno com retrato de mulher e ícone de play translúcido sobreposto",
+    "width": 1920,
+    "height": 932,
+    "hash": "24cc46bed1fbda7d2b6d2defdb1773c54ca870fb5c79da33e7928cb1de54214d",
+    "model": "deepseek-flash",
+    "tokens": 997,
+    "at": "2026-11-11T13:29:22.623Z"
+  },
+  "plenno-platform.png": {
+    "description": "Tela web do sistema Plenno, aba Gestão de vagas > Listagem, com filtros de busca e uma tabela de vagas médicas exibindo tipo, status, data, horário, unidade, profissionais e valor de cada vaga.",
+    "kind": "tela-web",
+    "shape": "larga",
+    "alt": "Painel Plenno de gestão de vagas médicas com filtros e tabela de vagas",
+    "width": 2048,
+    "height": 968,
+    "hash": "cc0a53f9da75e9aeba194876f18964f1cefc7819147180e612d74cf9455b6afd",
+    "model": "deepseek-flash",
+    "tokens": 1017,
+    "at": "2026-11-11T13:29:24.976Z"
+  },
+  "pleno-app.png": {
+    "description": "Um celular exibindo a tela inicial de um aplicativo para médicos, com saudação à Dra. Natallie, um card de plantão no Hospital Santa Catarina com valor de R$ 1.200 e botão de confirmação, além da lista de próximos plantões e uma barra de navegação inferior.",
+    "kind": "tela-app",
+    "shape": "larga",
+    "alt": "Tela inicial do app para médicos com card de plantão e lista de próximos plantões",
+    "width": 2048,
+    "height": 968,
+    "hash": "c2b0ce20d800d67dba2c77f7b8b32a7344c0c24932176bc0894a4890b159d056",
+    "model": "deepseek-flash",
+    "tokens": 1021,
+    "at": "2026-11-11T13:27:41.510Z"
+  }
+}

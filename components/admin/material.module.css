@@ -1,0 +1,118 @@
+/* Aba Material (docs/admin/conceito, depois-3): uma conversa em coluna de leitura dentro do cartão do
+   editor, os passos no alto, o próximo passo logo acima da caixa de texto. O que a IA já sabe é uma
+   coluna de consulta ao lado (a partir de 1200px) ou uma dobra sob a conversa. Nada aqui é branco:
+   a ação branca da tela é "Publicar". */
+.layout { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-height: 0; }
+
+.chat { position: relative; display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; min-height: 0; overflow: hidden; }
+
+/* Os quatro passos. O atual em tinta; os feitos com ✓; os seguintes apagados. */
+.bar { display: flex; align-items: center; min-height: 46px; padding: 0 16px; }
+.steps { display: flex; align-items: center; gap: 6px; min-width: 0; margin: 0; padding: 0; overflow: hidden; list-style: none; }
+.steps li { display: inline-flex; align-items: center; gap: 6px; color: var(--faint); font-size: 12px; white-space: nowrap; }
+.steps li + li::before { content: ""; width: 18px; height: 1px; margin-right: 0; background: var(--line); }
+.steps li[data-state="done"] { color: var(--muted); }
+.steps li[data-state="now"] { color: var(--ink); }
+.stepMark { display: inline-grid; place-items: center; width: 18px; height: 18px; border: 1px solid var(--control); border-radius: 50%; font-size: 11px; font-variant-numeric: tabular-nums; }
+.stepMark svg { width: 11px; height: 11px; }
+.steps li[data-state="done"] .stepMark { border-color: transparent; background: var(--raised); color: var(--muted); }
+.steps li[data-state="now"] .stepMark { border-color: transparent; background: var(--ink); color: var(--bg); }
+
+/* A conversa: coluna de leitura de até 720px. */
+.messages { min-height: 0; overflow-y: auto; padding: 8px 16px 12px; scrollbar-gutter: stable; }
+.thread { display: flex; flex-direction: column; gap: 14px; width: 100%; max-width: 720px; }
+
+.msg { display: grid; gap: 4px; max-width: 85%; animation: arrive var(--base) var(--ease) both; }
+.msg[data-role="gutto"] { align-self: flex-end; justify-items: end; max-width: 75%; }
+.bubble { color: var(--soft); font-size: 14px; line-height: 1.55; white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg[data-role="gutto"] .bubble { padding: 8px 12px; border-radius: 12px; background: var(--raised); color: var(--ink); }
+.meta { color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+
+.questions { display: grid; gap: 6px; margin: 2px 0 0; padding: 0 0 0 20px; color: var(--soft); font-size: 14px; line-height: 1.55; }
+.questions li::marker { color: var(--faint); font-variant-numeric: tabular-nums; }
+
+.attachments { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+.attachment { display: grid; gap: 1px; max-width: 280px; padding: 6px 10px; border-radius: 8px; background: var(--field); font-size: 12px; }
+.attachment b { overflow: hidden; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.attachment span { color: var(--faint); }
+.attachment[data-bad="true"] span { color: var(--bad); }
+.typing { color: var(--muted); font-size: 13px; }
+
+.plan { display: grid; gap: 10px; padding: 12px 14px; border-radius: 10px; background: var(--field); }
+.planTitle { color: var(--muted); font-size: 12px; }
+.plan ol { display: grid; gap: 8px; margin: 0; padding-left: 18px; color: var(--soft); font-size: 13px; }
+.plan ul { display: grid; gap: 2px; margin: 4px 0 0; padding-left: 0; list-style: none; color: var(--muted); font-size: 13px; }
+.plan li b { color: var(--ink); font-weight: 500; }
+
+/* Primeira vez: uma frase do que fazer e o botão que faz. */
+.start { display: grid; justify-items: center; gap: 10px; margin: 8vh auto 0; max-width: 440px; padding: 32px 24px; border-radius: 12px; background: var(--field); text-align: center; }
+.start h2 { margin: 4px 0 0; font-size: 15px; font-weight: 500; }
+.start p { margin: 0 0 6px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+.startIcon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: var(--raised); color: var(--muted); }
+.startIcon svg { width: 18px; height: 18px; }
+.startHint { color: var(--faint); font-size: 12px; }
+
+/* O próximo passo, sempre no mesmo lugar. */
+.next { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; max-width: 720px; margin: 8px 16px 0; padding: 8px 8px 8px 12px; border-radius: 10px; background: var(--field); color: var(--soft); font-size: 13px; animation: arrive var(--base) var(--ease) both; }
+.next > span { flex: 1; min-width: 200px; }
+/* The touch (docs/admin/estilo): the arrow of the next step moves 2px toward where it goes. */
+.go svg { transition: translate var(--fast) var(--ease); }
+.go:hover svg, .go:focus-visible svg { translate: 2px 0; }
+
+/* A caixa de texto: anexar, escrever e enviar num bloco só. */
+.composer { display: grid; gap: 8px; padding: 10px 16px 16px; }
+.composer > * { width: 100%; max-width: 720px; }
+.pending { display: flex; flex-wrap: wrap; gap: 6px; }
+.pendingFile { display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 4px 0 10px; border-radius: 999px; background: var(--raised); font-size: 12px; }
+.box { display: grid; gap: 4px; padding: 10px 10px 8px 12px; border: 1px solid var(--control); border-radius: 12px; background: var(--field); transition: border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease); }
+/* Focus as the DNA's fields: ink edge and a 3px ring (ink on --panel is 17:1, over the 3:1 a focus mark needs; audit A11Y-3). */
+.box:focus-within { border-color: var(--ink); box-shadow: 0 0 0 3px rgb(250 250 250 / 10%); }
+.input { width: 100%; min-height: 1lh; max-height: 12lh; padding: 2px 0; border: 0; outline: 0; background: transparent; color: var(--ink); font: inherit; font-size: 14px; line-height: 1.55; field-sizing: content; resize: none; }
+.input::placeholder { color: var(--faint); }
+.box .input:focus-visible { outline: 0; } /* the box shows the focus (:focus-within above) */
+.boxRow { display: flex; align-items: center; gap: 8px; min-height: 28px; margin-left: -8px; }
+.spacer { flex: 1; }
+
+.drop { position: absolute; inset: 8px; z-index: 2; display: grid; place-content: center; justify-items: center; gap: 10px; border: 1px dashed var(--control); border-radius: 10px; background: rgb(14 14 14 / 86%); color: var(--ink); font-size: 14px; pointer-events: none; animation: fade var(--fast) var(--ease) both; }
+.drop svg { width: 22px; height: 22px; }
+
+/* O que a IA já sabe: a coluna de consulta (cartão próprio) ou a dobra sob a conversa. */
+.side { display: grid; align-content: start; gap: 14px; min-height: 0; padding: 14px 16px 16px; overflow-y: auto; border-radius: 12px; background: var(--panel); animation: fade var(--base) var(--ease) both; }
+.sideTitle { margin: 0; color: var(--muted); font-size: 13px; font-weight: 500; }
+.sideHint { margin: -8px 0 0; color: var(--faint); font-size: 12px; line-height: 1.5; }
+.fold { max-height: 45vh; overflow-y: auto; border-top: 1px solid var(--line); }
+.fold summary { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px; color: var(--muted); font-size: 13px; cursor: pointer; }
+.fold summary:hover { color: var(--ink); }
+.foldBody { display: grid; gap: 14px; padding: 0 16px 16px; }
+.foldBody .sideHint { margin: 0; }
+.count { min-width: 20px; padding: 1px 6px; border-radius: 999px; background: var(--raised); color: var(--ink); font-size: 12px; font-variant-numeric: tabular-nums; text-align: center; }
+.flagged { color: var(--warn); }
+
+.group { display: grid; gap: 10px; }
+.group + .group { padding-top: 8px; } /* groups apart by space, not boxes */
+.groupTitle { color: var(--muted); font-size: 13px; font-weight: 500; }
+.fact { display: grid; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid var(--line); font-size: 13px; line-height: 1.45; }
+.fact:last-child { border-bottom: 0; padding-bottom: 0; }
+.factHead { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+.factText { min-width: 0; color: var(--soft); overflow-wrap: anywhere; }
+.factText small { display: block; color: var(--faint); font-size: 12px; }
+.origin { color: var(--faint); font-size: 12px; cursor: help; }
+.problem { color: var(--warn); font-size: 12px; }
+/* Confirm and remove show on hover and focus, so the column reads as a list of facts. */
+.factActions { display: flex; flex-shrink: 0; gap: 0; opacity: 0; transition: opacity var(--fast) var(--ease); }
+.fact:hover .factActions, .fact:focus-within .factActions { opacity: 1; }
+@media (hover: none) { .factActions { opacity: 1; } }
+.missing { display: grid; gap: 4px; margin: 0; padding-left: 16px; color: var(--muted); font-size: 13px; }
+.cost { color: var(--faint); font-size: 12px; }
+
+@keyframes arrive { from { opacity: 0; transform: translateY(4px); } }
+@keyframes fade { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .msg, .next, .drop, .side { animation: none; }
+  .go svg, .box, .factActions { transition: none; }
+}
+@media (max-width: 760px) {
+  .steps li:not([data-state="now"]) { font-size: 0; gap: 0; }
+  .steps li + li::before { width: 10px; }
+}

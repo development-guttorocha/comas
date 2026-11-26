@@ -1,0 +1,98 @@
+{
+  "03-1.png": {
+    "description": "Ilustração com dois conectores se encaixando sobre um círculo cinza e um raio laranja ao centro, ligados por uma linha com os rótulos 'Time de design' e 'Oportunidades'.",
+    "kind": "ilustracao",
+    "shape": "larga",
+    "alt": "Ilustração de dois conectores se unindo com raio ao centro, entre os textos Time de design e Oportunidades",
+    "width": 1600,
+    "height": 462,
+    "hash": "f45ffc504c3683ec287cc093a2e88ae6129ace78ec87a2d7dbd73272eb1f1ca5",
+    "model": "deepseek-flash",
+    "tokens": 822,
+    "at": "2026-11-11T13:28:10.686Z"
+  },
+  "21.png": {
+    "description": "Peça gráfica com o título 'Espaço para crescer' e a marca Loft Design Team no canto superior direito. Formas triangulares marrons formam montanhas, com círculos coloridos dispersos sobre elas.",
+    "kind": "ilustracao",
+    "shape": "larga",
+    "alt": "Capa com o título Espaço para crescer e montanhas geométricas marrons com círculos coloridos",
+    "width": 3200,
+    "height": 1800,
+    "hash": "039cace95be78505085b82b9c1ebe40e3068301b817858b5a969b2e8af0dfdd6",
+    "model": "deepseek-flash",
+    "tokens": 1105,
+    "at": "2026-11-11T13:28:13.004Z"
+  },
+  "52-1.png": {
+    "description": "Ícone de app com fundo laranja arredondado e símbolo branco de chave, sobre uma malha de construção com linhas-guia de grade e círculos concêntricos. A peça mostra o estudo de geometria e proporção do ícone.",
+    "kind": "logo",
+    "shape": "larga",
+    "alt": "Ícone de chave branco em fundo laranja com malha de construção de grade",
+    "width": 5540,
+    "height": 2160,
+    "hash": "228f8e541a3c422efad113d9f8e827e62e1057d333cab2bf3a5b06a43c8fd7c1",
+    "model": "deepseek-flash",
+    "tokens": 913,
+    "at": "2026-11-11T13:28:15.144Z"
+  },
+  "55.png": {
+    "description": "Capa de apresentação com o texto 'Design team Growth Organic & Growth Activation' e a data Outubro 2022 à esquerda, e uma foto de quatro pessoas sorrindo em um círculo recortado à direita.",
+    "kind": "ilustracao",
+    "shape": "larga",
+    "alt": "Capa de apresentação do time de design Growth Organic & Growth Activation da Loft, com foto da equipe",
+    "width": 1920,
+    "height": 1080,
+    "hash": "dcf899de9d7fe17ce8ddadefad2929afde315486756099fa09ba080a52d75c83",
+    "model": "deepseek-flash",
+    "tokens": 1104,
+    "at": "2026-11-11T13:28:17.943Z"
+  },
+  "56.png": {
+    "description": "Slide sobre práticas de time de design, com dois círculos destacando 'Design Growth' e 'Individual meetings' sobre uma ilustração de montanhas.",
+    "kind": "diagrama",
+    "shape": "larga",
+    "alt": "Slide com círculos 'Design Growth' e 'Individual meetings' sobre montanhas",
+    "width": 1920,
+    "height": 1080,
+    "hash": "b782bb3cdf643c0dbcde6a79de1e3da037ef886b2a5f01d69ddff7cafd382918",
+    "model": "deepseek-flash",
+    "tokens": 1080,
+    "at": "2026-11-11T13:28:19.999Z"
+  },
+  "loft-cover-2.png": {
+    "description": "Sala de estar com escada metálica em espiral, poltrona, sofá e janela com sacada; ao centro, o logotipo branco da Loft sobreposto à foto.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Sala com escada em espiral e logotipo da Loft ao centro",
+    "width": 2880,
+    "height": 1620,
+    "hash": "2c68762e5e3625252c7c90cc69588dc152cc321f6925b7c16012162e7fcb68ef",
+    "model": "deepseek-flash",
+    "tokens": 1089,
+    "at": "2026-11-11T13:28:22.475Z"
+  },
+  "loft-cover-3.png": {
+    "description": "Capa do case da Loft: foto de um interior com escada de metal, poltrona e sofá, com o logotipo da Loft centralizado sobre a imagem. O fundo tem um tom quente alaranjado.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Capa do case Loft com logotipo sobre foto de sala com escada de metal e sofá",
+    "width": 2880,
+    "height": 1620,
+    "hash": "a3dd01876e214d2f6583811202ca133aee57d25292c389d464b2b53858a19b0a",
+    "model": "deepseek-flash",
+    "tokens": 1101,
+    "at": "2026-11-11T13:28:25.030Z"
+  },
+  "loft-cover.png": {
+    "description": "Sala de estar com escada em espiral, poltrona, sofá e janela ampla ao fundo, com o logotipo \"loft\" centralizado em branco sobre a foto. Serve como capa do case.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Sala de estar com escada em espiral e o logotipo Loft centralizado",
+    "width": 1920,
+    "height": 1080,
+    "hash": "5288e84048a61b19d3cd939cfda949fa3539cc080bae6fc897a32868bc32c28e",
+    "model": "deepseek-flash",
+    "tokens": 1095,
+    "at": "2026-11-11T13:28:27.538Z"
+  }
+}

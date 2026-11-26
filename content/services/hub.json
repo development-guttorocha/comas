@@ -1,0 +1,45 @@
+{
+  "slug": "",
+  "seoTitle": "Serviços de design para empresas: liderança, design system e IA | Gutto Rocha",
+  "seoDescription": "Head de Design as a service, design system no Figma e prototipagem com IA para times de produto. Consultoria de design com 18 anos de experiência.",
+  "navName": "Design Services",
+  "hero": {
+    "kicker": "Serviços para empresas",
+    "title": "Design que destrava produto e time.",
+    "continuation": "Escolha por onde começar.",
+    "intro": "Três formas de trabalhar juntos, do workshop de um dia à liderança de design no dia a dia. Todas com escopo claro e com a mesma pessoa conduzindo."
+  },
+  "cardCta": "Ver serviço",
+  "closing": {
+    "title": "Não sabe por onde começar?",
+    "body": "Me conta o momento da empresa em uma conversa de 30 minutos. Eu digo qual formato faz sentido, ou se nenhum faz.",
+    "emailCta": "Mandar um e-mail",
+    "whatsappCta": "Chamar no WhatsApp",
+    "emailSubject": "Serviços de design",
+    "whatsappMessage": "Oi, Gutto! Vi seus serviços de design e queria conversar."
+  },
+  "calendlyUrl": "https://calendly.com/guttorocha/papo30",
+  "form": {
+    "tabsLabel": "Como prefere falar comigo",
+    "tabForm": "Mandar mensagem",
+    "tabCalendar": "Agendar direto",
+    "name": "Nome",
+    "email": "E-mail de trabalho",
+    "company": "Empresa",
+    "teamSize": "Tamanho do time de design",
+    "teamSizePlaceholder": "Escolha uma opção",
+    "formatLabel": "Formato que te interessa",
+    "serviceLabel": "Serviço que te interessa",
+    "optionUnsure": "Ainda não sei",
+    "message": "O que está acontecendo aí?",
+    "messageHint": "Opcional. Duas ou três linhas já ajudam.",
+    "submit": "Enviar",
+    "sending": "Enviando…",
+    "privacy": "Uso seus dados só para responder a este contato.",
+    "sentTitle": "Recebi. Obrigado!",
+    "sentBody": "Leio com calma e respondo por e-mail. Se quiser adiantar, escolha um horário aqui embaixo.",
+    "sentBodyNoCalendar": "Leio com calma e respondo por e-mail em breve.",
+    "alternatives": "Prefere outro caminho?",
+    "emailLink": "Mandar um e-mail"
+  }
+}

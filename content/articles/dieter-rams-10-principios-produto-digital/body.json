@@ -1,0 +1,1624 @@
+[
+  {
+    "id": "cf99da8b-bf7a-5a96-9e17-fbf1c37e0b39",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Dieter Rams passou mais de trinta anos desenhando produtos para a Braun: rádios, toca-discos, calculadoras, barbeadores. Nenhum deles tinha tela. Mesmo assim, é difícil encontrar um texto mais útil para quem desenha produto digital do que os dez princípios que ele escreveu no fim dos anos 1970.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Dieter Rams passou mais de trinta anos desenhando produtos para a Braun: rádios, toca-discos, calculadoras, barbeadores. Nenhum deles tinha tela. Mesmo assim, é difícil encontrar um texto mais útil para quem desenha produto digital do que os dez princípios que ele escreveu no fim dos anos 1970.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "b64bfea1-6e7d-5ea5-afa7-d7368917ab0c",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "O motivo é simples. Rams não escreveu regras de estilo, escreveu ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "O motivo é simples. Rams não escreveu regras de estilo, escreveu ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "critérios de julgamento",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "critérios de julgamento",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ". Eles não dizem como uma coisa deve parecer; dizem como saber se ela está boa. E julgar é exatamente o que um time de produto faz o dia inteiro, em cada revisão de tela, em cada discussão sobre a próxima funcionalidade.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ". Eles não dizem como uma coisa deve parecer; dizem como saber se ela está boa. E julgar é exatamente o que um time de produto faz o dia inteiro, em cada revisão de tela, em cada discussão sobre a próxima funcionalidade.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "aa37126c-1b53-520f-97a5-dc51b0fa98be",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Abaixo, os dez princípios, um por um, traduzidos para o que acontece num app, num sistema interno ou num design system.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Abaixo, os dez princípios, um por um, traduzidos para o que acontece num app, num sistema interno ou num design system.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "cc9b6919-7f0a-57b2-8857-fd0b2e3dac3e",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Por que um designer industrial ainda importa",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Por que um designer industrial ainda importa",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "782b4141-7d66-5e2c-ba1d-d68c32a4d9a0",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Rams escreveu os princípios porque se fazia uma pergunta incômoda: o meu design é bom design? Num mundo cheio de objetos, ele achava que o designer tinha responsabilidade sobre o que colocava nele. Trocando objeto por tela, a pergunta continua valendo, talvez mais. Um app ruim não ocupa espaço numa prateleira, mas ocupa a atenção de milhões de pessoas todos os dias.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Rams escreveu os princípios porque se fazia uma pergunta incômoda: o meu design é bom design? Num mundo cheio de objetos, ele achava que o designer tinha responsabilidade sobre o que colocava nele. Trocando objeto por tela, a pergunta continua valendo, talvez mais. Um app ruim não ocupa espaço numa prateleira, mas ocupa a atenção de milhões de pessoas todos os dias.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "2051d082-105a-55f5-86bf-47e2ec179757",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Há outro motivo, mais prático. Times de produto discutem gosto o tempo todo, e gosto não tem como ser resolvido. Critério tem. Os princípios de Rams funcionam como uma linguagem comum para a revisão: em vez de “não gostei”, alguém pode dizer “isso não é honesto” ou “isso não é compreensível”, e a conversa anda.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Há outro motivo, mais prático. Times de produto discutem gosto o tempo todo, e gosto não tem como ser resolvido. Critério tem. Os princípios de Rams funcionam como uma linguagem comum para a revisão: em vez de “não gostei”, alguém pode dizer “isso não é honesto” ou “isso não é compreensível”, e a conversa anda.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "fce1d21d-3335-526a-9163-30d1d05678c8",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Os dez princípios, um por um",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Os dez princípios, um por um",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "26ac0a02-8a7b-5c17-9525-eda5f1abb026",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "1. Bom design é inovador",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "1. Bom design é inovador",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "fe089b94-d721-5e28-a2f7-12282381a9bc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Para Rams, a inovação vinha junto com a tecnologia: um material novo ou um motor menor abria espaço para um produto melhor. No digital, é igual. A pergunta não é “como fazer diferente?”, e sim “o que ficou possível agora que não era antes?”. Hoje, boa parte dessa resposta passa por IA. O cuidado é o mesmo de sempre: inovar onde existe ganho para quem usa, e não inventar um padrão novo onde o conhecido já funciona.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Para Rams, a inovação vinha junto com a tecnologia: um material novo ou um motor menor abria espaço para um produto melhor. No digital, é igual. A pergunta não é “como fazer diferente?”, e sim “o que ficou possível agora que não era antes?”. Hoje, boa parte dessa resposta passa por IA. O cuidado é o mesmo de sempre: inovar onde existe ganho para quem usa, e não inventar um padrão novo onde o conhecido já funciona.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "07bc2fbf-dc63-51bd-bbef-1722d39c221b",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "2. Bom design torna o produto útil",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "2. Bom design torna o produto útil",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "c2e13d06-708a-52a9-8852-f1057a64a83e",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Um produto é comprado para ser usado. No digital, útil quer dizer que a pessoa termina a tarefa que veio fazer. Esse princípio é um bom filtro para o roadmap: toda tela, todo passo e todo campo precisam ajudar alguém a chegar no fim. O que não ajuda atrapalha.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Um produto é comprado para ser usado. No digital, útil quer dizer que a pessoa termina a tarefa que veio fazer. Esse princípio é um bom filtro para o roadmap: toda tela, todo passo e todo campo precisam ajudar alguém a chegar no fim. O que não ajuda atrapalha.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "57f74775-a1fd-5bd7-ac7b-c9f8ca90bea9",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "3. Bom design é estético",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "3. Bom design é estético",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "44f4d7e0-f974-5128-acd8-293405061fcb",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Rams não tratava estética como enfeite. Ela afeta o bem-estar de quem usa, e no digital afeta também a confiança: ninguém coloca o cartão num checkout que parece improvisado. Estética em produto digital é, em grande parte, ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Rams não tratava estética como enfeite. Ela afeta o bem-estar de quem usa, e no digital afeta também a confiança: ninguém coloca o cartão num checkout que parece improvisado. Estética em produto digital é, em grande parte, ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "consistência",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "consistência",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ": o mesmo espaçamento, a mesma hierarquia e o mesmo comportamento em todas as telas.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ": o mesmo espaçamento, a mesma hierarquia e o mesmo comportamento em todas as telas.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "87579310-0657-5f7d-b12d-743417f90492",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "4. Bom design torna o produto compreensível",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "4. Bom design torna o produto compreensível",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "4e906d1c-71e1-526b-8dff-768155612ebc",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "O melhor produto se explica sozinho. Na tela, isso aparece em rótulos claros, ícones que não precisam de legenda, estados vazios que ensinam o próximo passo e mensagens de erro que dizem como resolver. Se o produto precisa de um tour de dez passos na primeira vez, algo não ficou compreensível.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "O melhor produto se explica sozinho. Na tela, isso aparece em rótulos claros, ícones que não precisam de legenda, estados vazios que ensinam o próximo passo e mensagens de erro que dizem como resolver. Se o produto precisa de um tour de dez passos na primeira vez, algo não ficou compreensível.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "3cfd2e83-5776-5a5d-9953-378299fa1cdc",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "5. Bom design é discreto",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "5. Bom design é discreto",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "72a4609e-4939-5d2f-845e-b76b77a17334",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Os produtos de Rams eram ferramentas, não obras de arte. Deixavam espaço para a pessoa. Uma interface discreta sai do caminho: não disputa atenção com o conteúdo, não anima o que não precisa de animação, não grita com banners e selos. O foco fica no que a pessoa está tentando fazer.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Os produtos de Rams eram ferramentas, não obras de arte. Deixavam espaço para a pessoa. Uma interface discreta sai do caminho: não disputa atenção com o conteúdo, não anima o que não precisa de animação, não grita com banners e selos. O foco fica no que a pessoa está tentando fazer.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "d3382ad5-f54c-57f0-8118-5e9919a2af5a",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "6. Bom design é honesto",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "6. Bom design é honesto",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "f04da5b2-ec97-5620-96a4-526cd129217a",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Um produto honesto não promete o que não entrega e não manipula quem usa. No digital, o contrário disso tem nome: dark patterns. Cancelar uma assinatura deveria ser tão fácil quanto assinar. Um preço não deveria crescer na última etapa. Um botão de recusar não deveria ser escondido. Honestidade é um princípio de design, e também de negócio, porque confiança perdida volta devagar.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Um produto honesto não promete o que não entrega e não manipula quem usa. No digital, o contrário disso tem nome: dark patterns. Cancelar uma assinatura deveria ser tão fácil quanto assinar. Um preço não deveria crescer na última etapa. Um botão de recusar não deveria ser escondido. Honestidade é um princípio de design, e também de negócio, porque confiança perdida volta devagar.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "088023b0-737c-5757-9c04-9fd6746afc40",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "7. Bom design é duradouro",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "7. Bom design é duradouro",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "d129de39-4cfa-5630-96be-214900a277b6",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Rams fugia da moda porque a moda envelhece rápido. Em produto digital, o equivalente são as interfaces que seguem a tendência do ano e precisam de redesign completo dois anos depois. Componentes bem resolvidos, com uma base sóbria, envelhecem melhor e custam menos para manter. É aqui que um design system começa a pagar a conta.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Rams fugia da moda porque a moda envelhece rápido. Em produto digital, o equivalente são as interfaces que seguem a tendência do ano e precisam de redesign completo dois anos depois. Componentes bem resolvidos, com uma base sóbria, envelhecem melhor e custam menos para manter. É aqui que um design system começa a pagar a conta.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "8f00d15c-dad7-51a5-bcc5-695cd9fdedd8",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "8. Bom design é minucioso até o último detalhe",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "8. Bom design é minucioso até o último detalhe",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "cf542006-509c-5c20-a384-647a82819ee4",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Nada pode ficar ao acaso. Na tela, os detalhes que ninguém vê no protótipo são os que mais aparecem no uso real: o estado de carregamento, o erro de conexão, o texto longo demais, a tela pequena, o leitor de tela. Cuidado com o detalhe é respeito por quem usa, e quase sempre é aí que um produto mediano e um bom produto se separam.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Nada pode ficar ao acaso. Na tela, os detalhes que ninguém vê no protótipo são os que mais aparecem no uso real: o estado de carregamento, o erro de conexão, o texto longo demais, a tela pequena, o leitor de tela. Cuidado com o detalhe é respeito por quem usa, e quase sempre é aí que um produto mediano e um bom produto se separam.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "55a70f2f-ae68-51be-a983-8ba213faf180",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "9. Bom design é ecológico",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "9. Bom design é ecológico",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "bdd88dc8-95bc-5715-9d48-c1793ca6dff5",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Rams pensava em material e energia. No digital, o peso também existe: páginas pesadas, vídeos que tocam sozinhos, servidores processando o que ninguém pediu. E existe um lixo menos visível, o de funcionalidades que quase ninguém usa e que todo mundo precisa manter. Um produto mais leve é melhor para quem usa, para o time e para a conta de infraestrutura.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Rams pensava em material e energia. No digital, o peso também existe: páginas pesadas, vídeos que tocam sozinhos, servidores processando o que ninguém pediu. E existe um lixo menos visível, o de funcionalidades que quase ninguém usa e que todo mundo precisa manter. Um produto mais leve é melhor para quem usa, para o time e para a conta de infraestrutura.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "8a02a73d-99f0-5896-bcc0-7a7daef4bd20",
+    "has_children": false,
+    "type": "heading_2",
+    "heading_2": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "10. Bom design é o mínimo de design possível",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "10. Bom design é o mínimo de design possível",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "41307e6e-68b3-5ef1-94ee-2b74af703d59",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "O último princípio resume os outros. Fazer menos, mas fazer melhor. Concentrar no essencial e tirar o resto. Em produto, isso quer dizer ter coragem de remover: o campo que ninguém preenche, a opção que só existe porque alguém pediu uma vez, a tela que poderia ser uma linha de texto.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "O último princípio resume os outros. Fazer menos, mas fazer melhor. Concentrar no essencial e tirar o resto. Em produto, isso quer dizer ter coragem de remover: o campo que ninguém preenche, a opção que só existe porque alguém pediu uma vez, a tela que poderia ser uma linha de texto.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "eaed0209-e08a-529d-a2be-e8dcff0ea3d3",
+    "has_children": false,
+    "type": "quote",
+    "quote": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Weniger, aber besser. Menos, mas melhor. — Dieter Rams",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Weniger, aber besser. Menos, mas melhor. — Dieter Rams",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "cde715ff-9089-5129-a8d9-d5cc387fdee6",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Onde o design system entra",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Onde o design system entra",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "8140ad75-afed-544c-87cd-34a028c05747",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Repare em três princípios: estético, duradouro e minucioso. Eles são, quase palavra por palavra, o que um design system bem feito entrega. A consistência vem dos tokens e dos componentes. A durabilidade vem de uma base sóbria, que muda por versão e não por moda. E o cuidado com o detalhe fica guardado no próprio componente: o estado de erro, o foco do teclado e o contraste são resolvidos uma vez e herdados por todas as telas.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Repare em três princípios: estético, duradouro e minucioso. Eles são, quase palavra por palavra, o que um design system bem feito entrega. A consistência vem dos tokens e dos componentes. A durabilidade vem de uma base sóbria, que muda por versão e não por moda. E o cuidado com o detalhe fica guardado no próprio componente: o estado de erro, o foco do teclado e o contraste são resolvidos uma vez e herdados por todas as telas.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "78d035f2-2b93-58a7-b84b-92dc88d31400",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "É por isso que eu vejo design system menos como biblioteca de peças e mais como ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "É por isso que eu vejo design system menos como biblioteca de peças e mais como ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "critério que escala",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "critério que escala",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ". Uma pessoa sozinha consegue ser minuciosa numa tela. Um time de vinte só consegue ser minucioso em quinhentas se esse cuidado estiver no sistema. Foi o que aconteceu nos cases da ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ". Uma pessoa sozinha consegue ser minuciosa numa tela. Um time de vinte só consegue ser minucioso em quinhentas se esse cuidado estiver no sistema. Foi o que aconteceu nos cases da ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Creator Ads",
+            "link": {
+              "url": "/cases/creator-ads"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Creator Ads",
+          "href": "/cases/creator-ads"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " e da ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " e da ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Plenno",
+            "link": {
+              "url": "/cases/plenno"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Plenno",
+          "href": "/cases/plenno"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ".",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ".",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "32794afa-c6cf-5d88-b6db-4d2a9e9550f4",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Se o seu Figma hoje tem doze botões primários e quarenta e sete tons de cinza, o problema não é falta de talento no time. Falta o sistema que transforma critério em padrão. É exatamente o trabalho do ",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Se o seu Figma hoje tem doze botões primários e quarenta e sete tons de cinza, o problema não é falta de talento no time. Falta o sistema que transforma critério em padrão. É exatamente o trabalho do ",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": "Design System no Figma",
+            "link": {
+              "url": "/servicos/design-system-figma"
+            }
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Design System no Figma",
+          "href": "/servicos/design-system-figma"
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": ".",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": ".",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "a0de1a78-2ac7-580c-9191-d5b05160e6f4",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Um checklist para a próxima revisão",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Um checklist para a próxima revisão",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "f863cef8-6fd7-5d46-b105-79624ca6857d",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Os princípios rendem mais quando viram perguntas. Antes de aprovar a próxima tela, vale passar por estas:",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Os princípios rendem mais quando viram perguntas. Antes de aprovar a próxima tela, vale passar por estas:",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "daf37918-5482-5628-b1fd-d3a4d0043cfa",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Inovador:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Inovador:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " estamos usando algo que ficou possível agora, ou só fazendo diferente?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " estamos usando algo que ficou possível agora, ou só fazendo diferente?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "d9864f38-f543-5c75-b2f6-a710b3828e9f",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Útil:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Útil:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " cada passo ajuda a pessoa a terminar a tarefa?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " cada passo ajuda a pessoa a terminar a tarefa?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "b5cf73f2-fb82-59ad-97f8-bb9b0fd9d0ee",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Estético:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Estético:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " esta tela segue os mesmos padrões das outras?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " esta tela segue os mesmos padrões das outras?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "7283c73b-ee9e-584d-8231-a3d929f68dda",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Compreensível:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Compreensível:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " alguém entende o que fazer sem explicação?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " alguém entende o que fazer sem explicação?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "835901ee-1b39-54e5-a29f-0709f9134f5e",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Discreto:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Discreto:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " a interface está disputando atenção com o conteúdo?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " a interface está disputando atenção com o conteúdo?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "e2aa59e7-2b29-5637-a805-72ca38b501aa",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Honesto:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Honesto:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " existe algum atrito colocado de propósito contra quem usa?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " existe algum atrito colocado de propósito contra quem usa?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "7087f786-d982-59e6-9dd2-20cab347c555",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Duradouro:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Duradouro:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " isso ainda vai fazer sentido daqui a três anos?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " isso ainda vai fazer sentido daqui a três anos?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "097f4ea2-f395-5142-9e76-35a759f9f339",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Minucioso:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Minucioso:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " carregamento, erro, vazio e acessibilidade estão resolvidos?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " carregamento, erro, vazio e acessibilidade estão resolvidos?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "275e6a2c-8ddc-5c96-ae1c-f59bf4d8bf55",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Ecológico:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Ecológico:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " dá para entregar o mesmo com menos peso?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " dá para entregar o mesmo com menos peso?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "42cac08b-aa66-5084-b952-55df61ae6d0b",
+    "has_children": false,
+    "type": "bulleted_list_item",
+    "bulleted_list_item": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Mínimo:",
+            "link": null
+          },
+          "annotations": {
+            "bold": true,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Mínimo:",
+          "href": null
+        },
+        {
+          "type": "text",
+          "text": {
+            "content": " o que dá para tirar sem perder nada?",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": " o que dá para tirar sem perder nada?",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "b6dbafd4-5e01-5165-b583-44823092bda6",
+    "has_children": false,
+    "type": "heading_1",
+    "heading_1": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Para fechar",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Para fechar",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  },
+  {
+    "id": "5e72e44a-65a2-535d-8cb0-7ee9a2f1cbe1",
+    "has_children": false,
+    "type": "paragraph",
+    "paragraph": {
+      "rich_text": [
+        {
+          "type": "text",
+          "text": {
+            "content": "Rams nunca desenhou um app, mas desenhou um jeito de pensar que serve para qualquer coisa que alguém vai usar. O mais útil dos dez princípios não é nenhum deles em particular. É o hábito de perguntar, antes de entregar, se o que fizemos é bom design. E de ter uma resposta melhor do que “eu gostei”.",
+            "link": null
+          },
+          "annotations": {
+            "bold": false,
+            "italic": false,
+            "strikethrough": false,
+            "underline": false,
+            "code": false,
+            "color": "default"
+          },
+          "plain_text": "Rams nunca desenhou um app, mas desenhou um jeito de pensar que serve para qualquer coisa que alguém vai usar. O mais útil dos dez princípios não é nenhum deles em particular. É o hábito de perguntar, antes de entregar, se o que fizemos é bom design. E de ter uma resposta melhor do que “eu gostei”.",
+          "href": null
+        }
+      ],
+      "color": "default"
+    }
+  }
+]

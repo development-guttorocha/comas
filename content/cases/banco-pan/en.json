@@ -1,0 +1,469 @@
+{
+  "schemaVersion": 1,
+  "slug": "banco-pan",
+  "revision": "908ffcc3-11a4-4754-9e90-c43515275c24",
+  "draft": {
+    "sourceHash": "e27a4043766289e7167846c0176320a41d94da8abb45a41ca7593aa34b2dc484",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T23:44:50.773Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "O PAN não via, mas a loja sabia.",
+        "target": "PAN didn't see it, but the dealership knew."
+      },
+      {
+        "key": "case.productTag",
+        "source": "Research & Product Strategy",
+        "target": "Research & Product Strategy"
+      },
+      {
+        "key": "case.role",
+        "source": "Product Designer",
+        "target": "Product Designer"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Service",
+        "target": "Service"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Research",
+        "target": "Research"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "UI",
+        "target": "UI"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Strategy",
+        "target": "Strategy"
+      },
+      {
+        "key": "case.summary",
+        "source": "O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos, e isso significava muito mais do que colocar um formulário na internet.",
+        "target": "Banco PAN wanted to become a digital leader in vehicle financing, and that meant much more than putting a form online."
+      },
+      {
+        "key": "33b7bcc8-93e5-80eb-877e-f859e5c9f0b9.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "33b7bcc8-93e5-80bf-9a22-e88cd8582399.embed.label",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "33b7bcc8-93e5-80bf-9a22-e88cd8582399.embed.body",
+        "source": "O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos usados, o maior do Brasil nessa categoria.\n\nO produto digital existente tratava o financiamento como um processo linear e burocrático. Na realidade, o que acontecia no pátio da loja era completamente diferente do que o sistema presumia.\n\nEntrei como designer responsável pelo projeto e passei a liderar 2 designers da consultoria (Fjord/Accenture). Liderava o produto junto com 2 PMs, 1 GPM e a diretoria comercial. A pesquisa e a estruturação estratégica vieram do trabalho que conduzi internamente e alimentaram diretamente a jornada To-Be que foi implementada.",
+        "target": "Banco PAN wanted to become a digital leader in used vehicle financing, Brazil's largest market in this category.\n\nThe existing digital product treated financing as a linear, bureaucratic process. In reality, what happened on the dealership lot was completely different from what the system assumed.\n\nI joined as the designer responsible for the project and went on to lead 2 designers from the consultancy (Fjord/Accenture). I led the product alongside 2 PMs, 1 GPM and commercial leadership. The research and strategic framework came from the work I led internally and directly informed the To-Be journey that was implemented."
+      },
+      {
+        "key": "33b7bcc8-93e5-8067-918c-e1c541a77761.rich_text.0",
+        "source": "Pesquisa",
+        "target": "Research"
+      },
+      {
+        "key": "33b7bcc8-93e5-8066-80d9-e0a9474d3aa7.embed.label",
+        "source": "Pesquisa",
+        "target": "Research"
+      },
+      {
+        "key": "33b7bcc8-93e5-8066-80d9-e0a9474d3aa7.embed.body",
+        "source": "Comecei com uma Matriz CSD para externalizar tudo que já sabíamos e mapear o que precisávamos validar. A partir daí, estruturei a pesquisa em duas frentes.\n\nQualitativa: 29 entrevistas presenciais com vendedores de lojas, operadores e gerentes PAN em São Paulo, Baixada Santista e Nordeste.",
+        "target": "I started with a CSD matrix to lay out everything we already knew and map out what we needed to validate. From there, I structured the research on two fronts.\n\nQualitative: 29 in-person interviews with dealership salespeople, PAN operators and managers in São Paulo, Baixada Santista, and Nordeste."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.sectionLabel",
+        "source": "Principais achados",
+        "target": "Key findings"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.0.title",
+        "source": "Empoderamento na ponta",
+        "target": "Empowering the front line"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.0.body",
+        "source": "A descoberta mais importante: o operador que conseguia negociar fichas ruins garantia o espaço do PAN na loja. O produto digital precisava amplificar essa capacidade, não substituí-la. Um lojista resumiu a alternativa: 'O operador do Santander hoje é um boneco.'",
+        "target": "The most important finding: financing representatives who could negotiate weak applications secured PAN's place at the dealership. The digital product needed to amplify that ability, not replace it. One dealer summed up the alternative: 'The Santander representative today is a puppet.'"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.1.title",
+        "source": "Percepção de crédito matava conversão",
+        "target": "Credit approval perceptions were killing conversion"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.1.body",
+        "source": "Lojistas estimavam que o PAN aprovava 30 a 40% das propostas. O Santander? 80 a 90%. O problema não era a taxa real, era a assertividade do simulador. Adicionar campos como renda e natureza da ocupação não seria uma dor desde que melhorasse o índice percebido.",
+        "target": "Dealers estimated that PAN approved 30 to 40% of applications. Santander? 80 to 90%. The problem wasn't the actual rate, but the accuracy of the financing calculator. Adding fields like income and occupation type wouldn't be a pain point as long as it improved the perceived approval rate."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.2.title",
+        "source": "50% do dia perdido em formalização",
+        "target": "50% of the day lost to loan finalization"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.2.body",
+        "source": "Operadores atribuíam metade do tempo de trabalho a tarefas operacionais. Havia casos de operadores pagando courier do próprio bolso para enviar malotes. Formalização digital era vista como transformadora.",
+        "target": "Financing representatives said operational tasks took up half their workday. Some even paid couriers out of pocket to send document packages. Digital loan finalization was seen as transformative."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.3.title",
+        "source": "CPF é o centro de tudo",
+        "target": "CPF is at the center of everything"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.3.body",
+        "source": "Na priorização de campos, CPF/CNPJ ficou consistentemente no topo para lojistas e operadores. É o primeiro dado coletado, destranca a simulação e conecta toda a jornada. Isso definiu como o fluxo foi reorganizado.",
+        "target": "When prioritizing fields, CPF/CNPJ consistently ranked at the top for dealers and financing representatives. It's the first piece of information collected, unlocks the financing calculation and connects the entire journey. That determined how the flow was reorganized."
+      },
+      {
+        "key": "33b7bcc8-93e5-8068-8dec-f9ade6976522.rich_text.0",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "33b7bcc8-93e5-805a-9231-f5d4feb279cb.embed.label",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "33b7bcc8-93e5-805a-9231-f5d4feb279cb.embed.body",
+        "source": "Com mais de 180 participantes e 9 hipóteses priorizadas com escala Likert, a direção ficou clara: dados e inteligência de mercado primeiro, gestão de estoque em seguida, features marginais por último.\n\nA jornada To-Be foi organizada em 5 fases: Descobre, Pesquisa e Escolhe, Conhece e Decide, Negocia e Compra e Evolui. Com 9 conceitos de serviço cobrindo todo o ecossistema: lojista, operador, equipe comercial e banco.\n\nO redesign foi dividido em duas frentes. New Beetle focada em simplificar o operacional: isenção de seguro, laudo eletrônico, formalização digital, checkout. Mad Max focada em valor novo: estoque inteligente, simulação fria, integração de gravação no NPV.",
+        "target": "With more than 180 participants and 9 hypotheses prioritized using a Likert scale, the direction was clear: data and market intelligence first, inventory management next, peripheral features last.\n\nThe To-Be journey was organized into 5 phases: Discover, Research and Choose, Learn and Decide, Negotiate and Buy, and Evolve. With 9 service concepts covering the entire ecosystem: dealer, financing representative, sales team, and bank.\n\nThe redesign was split into two tracks. New Beetle focused on simplifying operations: insurance waiver, electronic inspection report, digital loan finalization, checkout. Mad Max focused on new value: smart inventory, preliminary loan quotes, recording integration in NPV."
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.before.label",
+        "source": "Antes",
+        "target": "Before"
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.before.body",
+        "source": "Fluxo linear e burocrático desenhado para o banco. O lojista operava em WhatsApp, OLX e fornecedores. O sistema do banco era só mais um, e não o mais importante.",
+        "target": "A linear, bureaucratic flow designed for the bank. Dealers worked through WhatsApp, OLX, and suppliers. The bank's system was just one more tool, and not the most important one."
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.after.label",
+        "source": "Depois",
+        "target": "After"
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.after.body",
+        "source": "Produto construído para amplificar o operador na ponta. Painel consolidado com volume financiado, taxa de aprovação e pipeline. Simulação adaptada por perfil de usuário. Formalização digital integrada.",
+        "target": "A product built to empower frontline financing representatives. A consolidated dashboard with financed volume, approval rate, and pipeline. Loan quotes tailored to each user profile. Integrated digital loan finalization."
+      },
+      {
+        "key": "33b7bcc8-93e5-8022-b297-c292cdd69132.rich_text.0",
+        "source": "O protótipo abaixo é o fluxo de simulação desenhado na época. O produto que está no ar hoje em veiculos.bancopan.com.br vem desse trabalho.",
+        "target": "The prototype below shows the loan quote flow designed at the time. The product live today at veiculos.bancopan.com.br grew out of this work."
+      },
+      {
+        "key": "33b7bcc8-93e5-807b-a0ea-f42a1a2a2c85.rich_text.0",
+        "source": "Seis anos depois, reimaginei a experiência com o olhar que tenho hoje.",
+        "target": "Six years later, I reimagined the experience through the lens I have today."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b5-8e81-cd677d395c95.rich_text.0",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "33b7bcc8-93e5-804c-88f0-cb7fc2879221.embed.label",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "33b7bcc8-93e5-804c-88f0-cb7fc2879221.embed.body",
+        "source": "O produto que está no ar hoje em veiculos.bancopan.com.br vem desse trabalho. Uma discovery com mais de 180 participantes, campo presencial em múltiplas regiões e hipóteses priorizadas com dados que virou produto real.\n\nEsse foi o trabalho de discovery mais robusto que conduzi até hoje. O mapa de serviço com 9 conceitos cumpriu uma função essencial: alinhar banco, equipe comercial e lojistas em uma visão única do que digital significava para o PAN.",
+        "target": "The product live today at veiculos.bancopan.com.br grew out of this work. A discovery effort with more than 180 participants, in-person fieldwork across multiple regions, and data-driven hypothesis prioritization that became a real product.\n\nThis was the most rigorous discovery work I've led to date. The service map with 9 concepts served an essential purpose: aligning the bank, sales team, and dealers around a shared vision of what digital meant for PAN."
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.sectionLabel",
+        "source": "Escala da pesquisa",
+        "target": "Research scale"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.0.label",
+        "source": "participantes entre quali e quanti",
+        "target": "participants across qualitative and quantitative research"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.1.label",
+        "source": "entrevistas qualitativas presenciais",
+        "target": "in-person qualitative interviews"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.2.label",
+        "source": "lojistas alcançados no survey",
+        "target": "dealers reached through the survey"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.3.label",
+        "source": "conceitos de serviço mapeados",
+        "target": "service concepts mapped"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.4.label",
+        "source": "fases da jornada To-Be",
+        "target": "To-Be journey phases"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.5.label",
+        "source": "atores do ecossistema mapeados",
+        "target": "ecosystem actors mapped"
+      },
+      {
+        "key": "33b7bcc8-93e5-80c9-8719-c1e5eec4e50b.rich_text.0",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "33b7bcc8-93e5-804a-8f42-d0fc4ddb0e14.embed.label",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "33b7bcc8-93e5-804a-8f42-d0fc4ddb0e14.embed.body",
+        "source": "Em produtos B2B2C, o usuário que você vê não é o único que importa e às vezes nem é o principal. O sistema era desenhado pensando no fluxo do banco. Mas no pátio da loja, descobrimos que o lojista operava em um mundo de WhatsApp, OLX e fornecedores de confiança.\n\nA descoberta sobre empoderamento na ponta foi a que mais impactou o produto. O operador PAN que negociava e brigava por fichas era o diferencial competitivo real. O produto digital precisava amplificar essa dinâmica, não automatizá-la ao ponto de eliminá-la.",
+        "target": "In B2B2C products, the user you see isn't the only one who matters, and sometimes isn't even the main one. The system was designed around the bank's workflow. But on the dealership lot, we discovered that dealers operated in a world of WhatsApp, OLX, and trusted suppliers.\n\nThe finding about frontline empowerment had the greatest impact on the product. The PAN financing representative who negotiated and fought for applications was the real competitive advantage. The digital product needed to amplify that dynamic, not automate it to the point of eliminating it."
+      }
+    ]
+  },
+  "published": {
+    "sourceHash": "e27a4043766289e7167846c0176320a41d94da8abb45a41ca7593aa34b2dc484",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T23:44:50.773Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "O PAN não via, mas a loja sabia.",
+        "target": "PAN didn't see it, but the dealership knew."
+      },
+      {
+        "key": "case.productTag",
+        "source": "Research & Product Strategy",
+        "target": "Research & Product Strategy"
+      },
+      {
+        "key": "case.role",
+        "source": "Product Designer",
+        "target": "Product Designer"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Service",
+        "target": "Service"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Research",
+        "target": "Research"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "UI",
+        "target": "UI"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Strategy",
+        "target": "Strategy"
+      },
+      {
+        "key": "case.summary",
+        "source": "O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos, e isso significava muito mais do que colocar um formulário na internet.",
+        "target": "Banco PAN wanted to become a digital leader in vehicle financing, and that meant much more than putting a form online."
+      },
+      {
+        "key": "33b7bcc8-93e5-80eb-877e-f859e5c9f0b9.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "33b7bcc8-93e5-80bf-9a22-e88cd8582399.embed.label",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "33b7bcc8-93e5-80bf-9a22-e88cd8582399.embed.body",
+        "source": "O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos usados, o maior do Brasil nessa categoria.\n\nO produto digital existente tratava o financiamento como um processo linear e burocrático. Na realidade, o que acontecia no pátio da loja era completamente diferente do que o sistema presumia.\n\nEntrei como designer responsável pelo projeto e passei a liderar 2 designers da consultoria (Fjord/Accenture). Liderava o produto junto com 2 PMs, 1 GPM e a diretoria comercial. A pesquisa e a estruturação estratégica vieram do trabalho que conduzi internamente e alimentaram diretamente a jornada To-Be que foi implementada.",
+        "target": "Banco PAN wanted to become a digital leader in used vehicle financing, Brazil's largest market in this category.\n\nThe existing digital product treated financing as a linear, bureaucratic process. In reality, what happened on the dealership lot was completely different from what the system assumed.\n\nI joined as the designer responsible for the project and went on to lead 2 designers from the consultancy (Fjord/Accenture). I led the product alongside 2 PMs, 1 GPM and commercial leadership. The research and strategic framework came from the work I led internally and directly informed the To-Be journey that was implemented."
+      },
+      {
+        "key": "33b7bcc8-93e5-8067-918c-e1c541a77761.rich_text.0",
+        "source": "Pesquisa",
+        "target": "Research"
+      },
+      {
+        "key": "33b7bcc8-93e5-8066-80d9-e0a9474d3aa7.embed.label",
+        "source": "Pesquisa",
+        "target": "Research"
+      },
+      {
+        "key": "33b7bcc8-93e5-8066-80d9-e0a9474d3aa7.embed.body",
+        "source": "Comecei com uma Matriz CSD para externalizar tudo que já sabíamos e mapear o que precisávamos validar. A partir daí, estruturei a pesquisa em duas frentes.\n\nQualitativa: 29 entrevistas presenciais com vendedores de lojas, operadores e gerentes PAN em São Paulo, Baixada Santista e Nordeste.",
+        "target": "I started with a CSD matrix to lay out everything we already knew and map out what we needed to validate. From there, I structured the research on two fronts.\n\nQualitative: 29 in-person interviews with dealership salespeople, PAN operators and managers in São Paulo, Baixada Santista, and Nordeste."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.sectionLabel",
+        "source": "Principais achados",
+        "target": "Key findings"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.0.title",
+        "source": "Empoderamento na ponta",
+        "target": "Empowering the front line"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.0.body",
+        "source": "A descoberta mais importante: o operador que conseguia negociar fichas ruins garantia o espaço do PAN na loja. O produto digital precisava amplificar essa capacidade, não substituí-la. Um lojista resumiu a alternativa: 'O operador do Santander hoje é um boneco.'",
+        "target": "The most important finding: financing representatives who could negotiate weak applications secured PAN's place at the dealership. The digital product needed to amplify that ability, not replace it. One dealer summed up the alternative: 'The Santander representative today is a puppet.'"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.1.title",
+        "source": "Percepção de crédito matava conversão",
+        "target": "Credit approval perceptions were killing conversion"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.1.body",
+        "source": "Lojistas estimavam que o PAN aprovava 30 a 40% das propostas. O Santander? 80 a 90%. O problema não era a taxa real, era a assertividade do simulador. Adicionar campos como renda e natureza da ocupação não seria uma dor desde que melhorasse o índice percebido.",
+        "target": "Dealers estimated that PAN approved 30 to 40% of applications. Santander? 80 to 90%. The problem wasn't the actual rate, but the accuracy of the financing calculator. Adding fields like income and occupation type wouldn't be a pain point as long as it improved the perceived approval rate."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.2.title",
+        "source": "50% do dia perdido em formalização",
+        "target": "50% of the day lost to loan finalization"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.2.body",
+        "source": "Operadores atribuíam metade do tempo de trabalho a tarefas operacionais. Havia casos de operadores pagando courier do próprio bolso para enviar malotes. Formalização digital era vista como transformadora.",
+        "target": "Financing representatives said operational tasks took up half their workday. Some even paid couriers out of pocket to send document packages. Digital loan finalization was seen as transformative."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.3.title",
+        "source": "CPF é o centro de tudo",
+        "target": "CPF is at the center of everything"
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-bc40-d52e21a66b2a.embed.items.3.body",
+        "source": "Na priorização de campos, CPF/CNPJ ficou consistentemente no topo para lojistas e operadores. É o primeiro dado coletado, destranca a simulação e conecta toda a jornada. Isso definiu como o fluxo foi reorganizado.",
+        "target": "When prioritizing fields, CPF/CNPJ consistently ranked at the top for dealers and financing representatives. It's the first piece of information collected, unlocks the financing calculation and connects the entire journey. That determined how the flow was reorganized."
+      },
+      {
+        "key": "33b7bcc8-93e5-8068-8dec-f9ade6976522.rich_text.0",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "33b7bcc8-93e5-805a-9231-f5d4feb279cb.embed.label",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "33b7bcc8-93e5-805a-9231-f5d4feb279cb.embed.body",
+        "source": "Com mais de 180 participantes e 9 hipóteses priorizadas com escala Likert, a direção ficou clara: dados e inteligência de mercado primeiro, gestão de estoque em seguida, features marginais por último.\n\nA jornada To-Be foi organizada em 5 fases: Descobre, Pesquisa e Escolhe, Conhece e Decide, Negocia e Compra e Evolui. Com 9 conceitos de serviço cobrindo todo o ecossistema: lojista, operador, equipe comercial e banco.\n\nO redesign foi dividido em duas frentes. New Beetle focada em simplificar o operacional: isenção de seguro, laudo eletrônico, formalização digital, checkout. Mad Max focada em valor novo: estoque inteligente, simulação fria, integração de gravação no NPV.",
+        "target": "With more than 180 participants and 9 hypotheses prioritized using a Likert scale, the direction was clear: data and market intelligence first, inventory management next, peripheral features last.\n\nThe To-Be journey was organized into 5 phases: Discover, Research and Choose, Learn and Decide, Negotiate and Buy, and Evolve. With 9 service concepts covering the entire ecosystem: dealer, financing representative, sales team, and bank.\n\nThe redesign was split into two tracks. New Beetle focused on simplifying operations: insurance waiver, electronic inspection report, digital loan finalization, checkout. Mad Max focused on new value: smart inventory, preliminary loan quotes, recording integration in NPV."
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.before.label",
+        "source": "Antes",
+        "target": "Before"
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.before.body",
+        "source": "Fluxo linear e burocrático desenhado para o banco. O lojista operava em WhatsApp, OLX e fornecedores. O sistema do banco era só mais um, e não o mais importante.",
+        "target": "A linear, bureaucratic flow designed for the bank. Dealers worked through WhatsApp, OLX, and suppliers. The bank's system was just one more tool, and not the most important one."
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.after.label",
+        "source": "Depois",
+        "target": "After"
+      },
+      {
+        "key": "33b7bcc8-93e5-8055-a6ea-c21b132d5d12.embed.after.body",
+        "source": "Produto construído para amplificar o operador na ponta. Painel consolidado com volume financiado, taxa de aprovação e pipeline. Simulação adaptada por perfil de usuário. Formalização digital integrada.",
+        "target": "A product built to empower frontline financing representatives. A consolidated dashboard with financed volume, approval rate, and pipeline. Loan quotes tailored to each user profile. Integrated digital loan finalization."
+      },
+      {
+        "key": "33b7bcc8-93e5-8022-b297-c292cdd69132.rich_text.0",
+        "source": "O protótipo abaixo é o fluxo de simulação desenhado na época. O produto que está no ar hoje em veiculos.bancopan.com.br vem desse trabalho.",
+        "target": "The prototype below shows the loan quote flow designed at the time. The product live today at veiculos.bancopan.com.br grew out of this work."
+      },
+      {
+        "key": "33b7bcc8-93e5-807b-a0ea-f42a1a2a2c85.rich_text.0",
+        "source": "Seis anos depois, reimaginei a experiência com o olhar que tenho hoje.",
+        "target": "Six years later, I reimagined the experience through the lens I have today."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b5-8e81-cd677d395c95.rich_text.0",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "33b7bcc8-93e5-804c-88f0-cb7fc2879221.embed.label",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "33b7bcc8-93e5-804c-88f0-cb7fc2879221.embed.body",
+        "source": "O produto que está no ar hoje em veiculos.bancopan.com.br vem desse trabalho. Uma discovery com mais de 180 participantes, campo presencial em múltiplas regiões e hipóteses priorizadas com dados que virou produto real.\n\nEsse foi o trabalho de discovery mais robusto que conduzi até hoje. O mapa de serviço com 9 conceitos cumpriu uma função essencial: alinhar banco, equipe comercial e lojistas em uma visão única do que digital significava para o PAN.",
+        "target": "The product live today at veiculos.bancopan.com.br grew out of this work. A discovery effort with more than 180 participants, in-person fieldwork across multiple regions, and data-driven hypothesis prioritization that became a real product.\n\nThis was the most rigorous discovery work I've led to date. The service map with 9 concepts served an essential purpose: aligning the bank, sales team, and dealers around a shared vision of what digital meant for PAN."
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.sectionLabel",
+        "source": "Escala da pesquisa",
+        "target": "Research scale"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.0.label",
+        "source": "participantes entre quali e quanti",
+        "target": "participants across qualitative and quantitative research"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.1.label",
+        "source": "entrevistas qualitativas presenciais",
+        "target": "in-person qualitative interviews"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.2.label",
+        "source": "lojistas alcançados no survey",
+        "target": "dealers reached through the survey"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.3.label",
+        "source": "conceitos de serviço mapeados",
+        "target": "service concepts mapped"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.4.label",
+        "source": "fases da jornada To-Be",
+        "target": "To-Be journey phases"
+      },
+      {
+        "key": "33b7bcc8-93e5-80da-86cb-d934c3d78b20.embed.stats.5.label",
+        "source": "atores do ecossistema mapeados",
+        "target": "ecosystem actors mapped"
+      },
+      {
+        "key": "33b7bcc8-93e5-80c9-8719-c1e5eec4e50b.rich_text.0",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "33b7bcc8-93e5-804a-8f42-d0fc4ddb0e14.embed.label",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "33b7bcc8-93e5-804a-8f42-d0fc4ddb0e14.embed.body",
+        "source": "Em produtos B2B2C, o usuário que você vê não é o único que importa e às vezes nem é o principal. O sistema era desenhado pensando no fluxo do banco. Mas no pátio da loja, descobrimos que o lojista operava em um mundo de WhatsApp, OLX e fornecedores de confiança.\n\nA descoberta sobre empoderamento na ponta foi a que mais impactou o produto. O operador PAN que negociava e brigava por fichas era o diferencial competitivo real. O produto digital precisava amplificar essa dinâmica, não automatizá-la ao ponto de eliminá-la.",
+        "target": "In B2B2C products, the user you see isn't the only one who matters, and sometimes isn't even the main one. The system was designed around the bank's workflow. But on the dealership lot, we discovered that dealers operated in a world of WhatsApp, OLX, and trusted suppliers.\n\nThe finding about frontline empowerment had the greatest impact on the product. The PAN financing representative who negotiated and fought for applications was the real competitive advantage. The digital product needed to amplify that dynamic, not automate it to the point of eliminating it."
+      }
+    ]
+  }
+}

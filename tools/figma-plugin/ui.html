@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin: 0; font: 12px/1.5 Inter, system-ui, sans-serif; color: var(--figma-color-text, #222); background: var(--figma-color-bg, #fff); }
+  main { padding: 14px 16px; display: grid; gap: 12px; }
+  h1 { font-size: 13px; margin: 0; }
+  p { margin: 0; color: var(--figma-color-text-secondary, #666); }
+  label { display: grid; gap: 4px; font-weight: 500; }
+  input, select { font: inherit; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--figma-color-border, #ddd); background: var(--figma-color-bg, #fff); color: inherit; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  button { font: inherit; font-weight: 600; padding: 8px 12px; border: 0; border-radius: 6px; cursor: pointer; background: var(--figma-color-bg-brand, #0d99ff); color: var(--figma-color-text-onbrand, #fff); }
+  button:disabled { opacity: .5; cursor: default; }
+  button.link { background: none; color: var(--figma-color-text-brand, #0d99ff); padding: 0; font-weight: 500; justify-self: start; }
+  #selection { padding: 8px; border-radius: 6px; background: var(--figma-color-bg-secondary, #f5f5f5); }
+  #status { min-height: 18px; }
+  #status.error { color: var(--figma-color-text-danger, #c00); }
+  details summary { cursor: pointer; color: var(--figma-color-text-secondary, #666); }
+  details[open] { display: grid; gap: 8px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Enviar para o admin</h1>
+  <div id="selection">Selecione uma ou mais telas.</div>
+  <label>Case
+    <input id="find" placeholder="Buscar case…" autocomplete="off">
+    <select id="case" size="5"><option value="">Conecte ao admin…</option></select>
+  </label>
+  <div class="row">
+    <label>Formato
+      <select id="format"><option>PNG</option><option>JPG</option><option>SVG</option></select>
+    </label>
+    <label>Escala
+      <select id="scale"><option value="2">2×</option><option value="3">3×</option><option value="1">1×</option></select>
+    </label>
+  </div>
+  <button id="send" disabled>Enviar</button>
+  <p id="status" role="status"></p>
+  <details id="conn">
+    <summary>Conexão com o admin</summary>
+    <label>Endereço <input id="url" value="http://localhost:3000"></label>
+    <label>Chave do plugin <input id="key" type="password" placeholder="gfp_…"></label>
+    <p>A chave está no admin, em Ferramentas → Figma. O admin precisa estar rodando neste Mac.</p>
+    <button id="connect">Conectar</button>
+  </details>
+  <details>
+    <summary>Importar um layout (.json)</summary>
+    <input id="layout" type="file" accept="application/json,.json">
+  </details>
+</main>
+<script>
+  const $ = (id) => document.getElementById(id);
+  const say = (text, error) => { $("status").textContent = text; $("status").className = error ? "error" : ""; };
+  let settings = {}, selection = [], cases = [];
+  const plain = (t) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  function renderCases() {
+    // the last one used first, then the rest in the site's order; the search narrows them
+    const words = plain($("find").value).split(/\s+/).filter(Boolean);
+    const list = cases.filter((c) => words.every((w) => plain(`${c.title} ${c.slug}`).includes(w)))
+      .sort((a, b) => (b.slug === settings.slug) - (a.slug === settings.slug));
+    $("case").innerHTML = list.map((c) => `<option value="${c.slug}" ${c.slug === settings.slug ? "selected" : ""}>${c.archived ? "(arquivado) " : ""}${c.title.replace(/</g, "&lt;")}</option>`).join("") || '<option value="">Nenhum case com esse nome</option>';
+    if (list.length === 1) $("case").value = list[0].slug;
+    ready();
+  }
+  const post = (m) => parent.postMessage({ pluginMessage: m }, "*");
+  const ready = () => { $("send").disabled = !(selection.length && $("case").value && settings.key); };
+  function showSelection() {
+    $("selection").textContent = selection.length
+      ? selection.map((s) => `${s.name} (${s.w}×${s.h})`).join(" · ")
+      : "Selecione uma ou mais telas.";
+    ready();
+  }
+  async function connect() {
+    settings = { ...settings, url: $("url").value.replace(/\/$/, ""), key: $("key").value.trim() };
+    post({ type: "save-settings", settings });
+    if (!settings.key) { $("conn").open = true; return say("Cole a chave do plugin para conectar.", true); }
+    say("Conectando…");
+    try {
+      const res = await fetch(`${settings.url}/api/admin/figma-import`, { headers: { Authorization: `Bearer ${settings.key}` } });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+      cases = data.cases;
+      renderCases();
+      $("conn").open = false;
+      say("Conectado.");
+    } catch (e) {
+      $("conn").open = true;
+      say(`Não conectou: ${e.message}. O admin está rodando?`, true);
+    }
+    ready();
+  }
+  async function upload(files) {
+    say(`Enviando ${files.length} ${files.length === 1 ? "imagem" : "imagens"}…`);
+    const form = new FormData();
+    form.append("slug", $("case").value);
+    for (const f of files) form.append("files", new Blob([f.bytes], { type: f.type }), f.name);
+    try {
+      const res = await fetch(`${settings.url}/api/admin/figma-import`, { method: "POST", headers: { Authorization: `Bearer ${settings.key}` }, body: form });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+      say(`Pronto: ${data.files.map((f) => f.name).join(", ")} em ${$("case").selectedOptions[0].text.split(" — ")[0]}.`);
+    } catch (e) { say(`Não enviou: ${e.message}`, true); }
+    $("send").disabled = false;
+  }
+  $("connect").onclick = connect;
+  $("find").oninput = renderCases;
+  $("case").onchange = () => { settings.slug = $("case").value; post({ type: "save-settings", settings }); ready(); };
+  $("send").onclick = () => { $("send").disabled = true; say("Exportando…"); post({ type: "export", format: $("format").value, scale: Number($("scale").value) }); };
+  $("layout").onchange = async (e) => {
+    try {
+      const pkg = JSON.parse(await e.target.files[0].text());
+      if (pkg.format !== "gutto-screen-layout") throw new Error("Este arquivo não veio do admin (Imagem para layout).");
+      say("Montando as camadas…"); post({ type: "build", pkg });
+    } catch (err) { say(err.message, true); }
+  };
+  onmessage = (e) => {
+    const m = e.data.pluginMessage; if (!m) return;
+    if (m.type === "settings") {
+      settings = m.settings || {}; selection = m.selection || [];
+      if (settings.url) $("url").value = settings.url;
+      if (settings.key) $("key").value = settings.key;
+      showSelection();
+      if (settings.key) connect(); else $("conn").open = true;
+    } else if (m.type === "selection") { selection = m.selection; showSelection(); }
+    else if (m.type === "exported") upload(m.files);
+    else if (m.type === "status") { say(m.text, m.error); $("send").disabled = false; }
+  };
+</script>
+</body>
+</html>

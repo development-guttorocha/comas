@@ -1,0 +1,86 @@
+{
+  "kicker": {
+    "pt": "Contato",
+    "en": "Contact",
+    "enFrom": "Contato"
+  },
+  "title": {
+    "pt": "Oi, quer tc?",
+    "en": "Hey, want to chat?",
+    "enFrom": "Oi, quer tc?"
+  },
+  "continuation": {
+    "pt": "Bora conversar.",
+    "en": "Let’s talk.",
+    "enFrom": "Bora conversar."
+  },
+  "intro": {
+    "pt": "Chama no bate-papo, vamos criar algo que faça sentido juntos.",
+    "en": "Drop me a message. Let's create something meaningful together.",
+    "enFrom": "Chama no bate-papo, vamos criar algo que faça sentido juntos."
+  },
+  "emailButton": {
+    "pt": "Mandar um e-mail",
+    "en": "Send an email",
+    "enFrom": "Mandar um e-mail"
+  },
+  "email": "guttorsbueno@gmail.com",
+  "cardName": "Gutto Rocha",
+  "channels": [
+    {
+      "label": {
+        "pt": "E-mail",
+        "en": "Email",
+        "enFrom": "E-mail"
+      },
+      "value": "guttorsbueno@gmail.com",
+      "href": "mailto:guttorsbueno@gmail.com"
+    },
+    {
+      "label": {
+        "pt": "Telefone",
+        "en": "Phone",
+        "enFrom": "Telefone"
+      },
+      "value": "+55 11 9 6325-1446",
+      "href": "tel:+5511963251446"
+    },
+    {
+      "label": {
+        "pt": "LinkedIn",
+        "en": "LinkedIn",
+        "enFrom": "LinkedIn"
+      },
+      "value": "in/guttorocha",
+      "href": "https://www.linkedin.com/in/guttorocha/"
+    },
+    {
+      "label": {
+        "pt": "Instagram",
+        "en": "Instagram",
+        "enFrom": "Instagram"
+      },
+      "value": "@guttorocha",
+      "href": "https://www.instagram.com/guttorocha.design"
+    },
+    {
+      "label": {
+        "pt": "Dribbble",
+        "en": "Dribbble",
+        "enFrom": "Dribbble"
+      },
+      "value": "dribbble.com/guttorocha",
+      "href": "https://dribbble.com/guttorocha"
+    }
+  ],
+  "locationLabel": {
+    "pt": "Onde estou",
+    "en": "Based in",
+    "enFrom": "Onde estou"
+  },
+  "location": {
+    "pt": "Guarulhos, SP — Brasil",
+    "en": "Guarulhos, SP — Brazil",
+    "enFrom": "Guarulhos, SP — Brasil"
+  }
+}

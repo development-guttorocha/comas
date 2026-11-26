@@ -1,0 +1,556 @@
+{
+  "schemaVersion": 1,
+  "slug": "plenno",
+  "revision": "bdaa1b8d-e0a4-40b4-bac1-08a7f7363dec",
+  "draft": {
+    "sourceHash": "8305653039eb27f430681d27f380228bb9c38dfb05a8e4cf1c90a3a6dda2db5d",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-09T20:47:26.143Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Projetando para médicos e hospitais",
+        "target": "Designing for doctors and hospitals"
+      },
+      {
+        "key": "case.productTag",
+        "source": "Interface & Strategy",
+        "target": "INTERFACE & STRATEGY"
+      },
+      {
+        "key": "case.role",
+        "source": "Design Consultant",
+        "target": "Design Consultant"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "UI",
+        "target": "UI"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "VISUAL",
+        "target": "VISUAL"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "CRAFT",
+        "target": "CRAFT"
+      },
+      {
+        "key": "case.summary",
+        "source": "A Plenno é uma startup de saúde focada em médicos e hospitais, nesse projeto fui contratado como consultor, para dar o pontapé inicial e desenvolver as bases de design do produto, com liberdade para construir o craft que resolvesse as dores do segmento.",
+        "target": "Plenno is a healthcare startup focused on doctors and hospitals. For this project, I was hired as a consultant to get things started and build the product's design foundations, with the freedom to shape the craft around the segment's pain points."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore the Project"
+      },
+      {
+        "key": "33b7bcc8-93e5-80a9-b38a-e40693a4fa38.rich_text.0",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "33b7bcc8-93e5-8075-832e-eadc1e61f931.embed.label",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "33b7bcc8-93e5-8075-832e-eadc1e61f931.embed.body",
+        "source": "Plenno é uma plataforma de gestão médica com dois lados: o médico que precisa de controle da sua rotina e o hospital que precisa de visibilidade da operação.\n\nDois meses. Plataforma web e app mobile do zero ao ar.",
+        "target": "Plenno is a medical management platform with two sides: doctors who need control over their daily schedules and hospitals that need visibility into their operations.\n\nTwo months. A web platform and mobile app from zero to launch."
+      },
+      {
+        "key": "33b7bcc8-93e5-8048-b70d-d9e74cd6b046.rich_text.0",
+        "source": "Médico",
+        "target": "Doctor"
+      },
+      {
+        "key": "33b7bcc8-93e5-8015-8970-def3a98bf33a.embed.label",
+        "source": "Para o médico",
+        "target": "For doctors"
+      },
+      {
+        "key": "33b7bcc8-93e5-8015-8970-def3a98bf33a.embed.body",
+        "source": "Escala, ganhos e documentos em um app. O médico sabe o que tem essa semana, quanto já ganhou e quanto vai receber.\n\nPresença pendente com um toque. Carteira com saldo disponível e previsão dos próximos 60 dias. Agenda por dia, semana e mês. Sem planilha, sem WhatsApp.",
+        "target": "Shifts, earnings, and documents in one app. Doctors know what's on their schedule this week, how much they've earned, and how much they'll receive.\n\nConfirm pending attendance with one tap. A wallet with an available balance and a forecast for the next 60 days. A calendar by day, week, and month. No spreadsheets, no WhatsApp."
+      },
+      {
+        "key": "33b7bcc8-93e5-8065-ac2d-d15e8cd630ea.rich_text.0",
+        "source": "Hospital",
+        "target": "Hospital"
+      },
+      {
+        "key": "33b7bcc8-93e5-8028-9764-e4faa29d1acc.embed.label",
+        "source": "Para o hospital",
+        "target": "For hospitals"
+      },
+      {
+        "key": "33b7bcc8-93e5-8028-9764-e4faa29d1acc.embed.body",
+        "source": "Painel em tempo real, check-in por geolocalização, cálculo automático de pagamento e logs para auditoria.\n\nO hospital sabe quem está no plantão agora, recebe alerta de ausência antes que vire problema e fecha o pagamento sem planilha.",
+        "target": "A real-time dashboard, geolocation-based check-in, automatic payment calculations, and audit logs.\n\nHospitals know who's on duty right now, get absence alerts before they become a problem, and finalize payments without spreadsheets."
+      },
+      {
+        "key": "33b7bcc8-93e5-8029-85b7-c49551504cce.rich_text.0",
+        "source": "Sistema",
+        "target": "System"
+      },
+      {
+        "key": "33b7bcc8-93e5-800b-b73d-e5d509c56898.embed.label",
+        "source": "Sistema",
+        "target": "System"
+      },
+      {
+        "key": "33b7bcc8-93e5-800b-b73d-e5d509c56898.embed.body",
+        "source": "Dois produtos com a mesma base. Componentes compartilhados, lógica de escala e pagamento consistente nos dois lados. O que muda é a perspectiva, não o sistema.\n\nO fluxo web foi desenhado com IA no V0 antes de qualquer linha de código em produção, permitindo validação real com médicos e UPAs antes do desenvolvimento.",
+        "target": "Two products built on the same foundation. Shared components, consistent scheduling and payment logic on both sides. What changes is the perspective, not the system.\n\nThe web flow was designed with AI in V0 before a single line of production code, enabling real validation with doctors and UPAs before development."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.0.title",
+        "source": "Escalas com compliance automático",
+        "target": "Shift scheduling with automatic compliance"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.0.body",
+        "source": "Vagas com regras herdadas dos contratos, validação de conflitos, alertas de documentação irregular e trocas rastreáveis com justificativa e aceite.",
+        "target": "Open shifts with rules inherited from contracts, conflict checks, alerts for noncompliant documentation, and traceable shift swaps with justification and acceptance."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.1.title",
+        "source": "Pagamentos sem retrabalho",
+        "target": "Payments without rework"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.1.body",
+        "source": "Cálculo automático via check-in e checkout por geolocalização e regras contratuais. Fechamento pronto sem planilha e sem erro.",
+        "target": "Automatic calculations based on geolocation check-in and check-out and contract rules. Ready to finalize payments without spreadsheets or errors."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.2.title",
+        "source": "Auditoria total",
+        "target": "Full auditability"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.2.body",
+        "source": "Logs imutáveis com IP, data, autor e antes/depois. Histórico completo por CPF, pronto para auditoria a qualquer momento.",
+        "target": "Immutable logs with IP, date, author, and before/after records. Complete history by CPF, ready for an audit at any time."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.3.title",
+        "source": "Controle em tempo real",
+        "target": "Real-time control"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.3.body",
+        "source": "Painel executivo com alertas visuais, notificação com prova de entrega e leitura, monitoramento de ausências e documentos vencidos.",
+        "target": "Executive dashboard with visual alerts, notifications with delivery and read receipts, and monitoring of absences and expired documents."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-a64b-c43fdcddfb58.rich_text.0",
+        "source": "Entrega",
+        "target": "Delivery"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.0.label",
+        "source": "do zero ao lançamento",
+        "target": "from zero to launch"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.1.label",
+        "source": "produtos entregues: web e app",
+        "target": "products delivered: web and app"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.2.label",
+        "source": "médicos na plataforma",
+        "target": "doctors on the platform"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.3.label",
+        "source": "hospitais e UPAs em operação",
+        "target": "hospitals and UPAs in operation"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.4.label",
+        "source": "plantões gerenciados por semana",
+        "target": "shifts managed per week"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.5.label",
+        "source": "planilhas e mensagens soltas",
+        "target": "spreadsheets and scattered messages"
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.before.label",
+        "source": "Antes",
+        "target": "Before"
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.before.body",
+        "source": "Plantões gerenciados por planilha e WhatsApp. Médico sem previsibilidade de ganho. Hospital sem visibilidade de escala nem controle de pagamento.",
+        "target": "Shifts managed through spreadsheets and WhatsApp. Doctors with no predictable earnings. Hospitals with no visibility into schedules or control over payments."
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.after.label",
+        "source": "Depois",
+        "target": "After"
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.after.body",
+        "source": "Plataforma unificada para os dois lados. Médico com escala, ganhos e documentos em um app. Hospital com painel em tempo real e fechamento automático.",
+        "target": "A unified platform for both sides. Doctors with schedules, earnings, and documents in one app. Hospitals with a real-time dashboard and automatic payment reconciliation."
+      },
+      {
+        "key": "3407bcc8-93e5-80bb-8464-c27dd2dfd19b.rich_text.0",
+        "source": "Dois meses. Dois produtos. Um sistema que funciona para os dois lados. Muito craft, muita IA, muitos testes e muitas validações.",
+        "target": "Two months. Two products. One system that works for both sides. Lots of craft, lots of AI, lots of testing, and lots of validation."
+      }
+    ]
+  },
+  "published": {
+    "sourceHash": "8305653039eb27f430681d27f380228bb9c38dfb05a8e4cf1c90a3a6dda2db5d",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-09T20:47:26.143Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Projetando para médicos e hospitais",
+        "target": "Designing for doctors and hospitals"
+      },
+      {
+        "key": "case.productTag",
+        "source": "Interface & Strategy",
+        "target": "INTERFACE & STRATEGY"
+      },
+      {
+        "key": "case.role",
+        "source": "Design Consultant",
+        "target": "Design Consultant"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "UI",
+        "target": "UI"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "VISUAL",
+        "target": "VISUAL"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "CRAFT",
+        "target": "CRAFT"
+      },
+      {
+        "key": "case.summary",
+        "source": "A Plenno é uma startup de saúde focada em médicos e hospitais, nesse projeto fui contratado como consultor, para dar o pontapé inicial e desenvolver as bases de design do produto, com liberdade para construir o craft que resolvesse as dores do segmento.",
+        "target": "Plenno is a healthcare startup focused on doctors and hospitals. For this project, I was hired as a consultant to get things started and build the product's design foundations, with the freedom to shape the craft around the segment's pain points."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore the Project"
+      },
+      {
+        "key": "33b7bcc8-93e5-80a9-b38a-e40693a4fa38.rich_text.0",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "33b7bcc8-93e5-8075-832e-eadc1e61f931.embed.label",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "33b7bcc8-93e5-8075-832e-eadc1e61f931.embed.body",
+        "source": "Plenno é uma plataforma de gestão médica com dois lados: o médico que precisa de controle da sua rotina e o hospital que precisa de visibilidade da operação.\n\nDois meses. Plataforma web e app mobile do zero ao ar.",
+        "target": "Plenno is a medical management platform with two sides: doctors who need control over their daily schedules and hospitals that need visibility into their operations.\n\nTwo months. A web platform and mobile app from zero to launch."
+      },
+      {
+        "key": "33b7bcc8-93e5-8048-b70d-d9e74cd6b046.rich_text.0",
+        "source": "Médico",
+        "target": "Doctor"
+      },
+      {
+        "key": "33b7bcc8-93e5-8015-8970-def3a98bf33a.embed.label",
+        "source": "Para o médico",
+        "target": "For doctors"
+      },
+      {
+        "key": "33b7bcc8-93e5-8015-8970-def3a98bf33a.embed.body",
+        "source": "Escala, ganhos e documentos em um app. O médico sabe o que tem essa semana, quanto já ganhou e quanto vai receber.\n\nPresença pendente com um toque. Carteira com saldo disponível e previsão dos próximos 60 dias. Agenda por dia, semana e mês. Sem planilha, sem WhatsApp.",
+        "target": "Shifts, earnings, and documents in one app. Doctors know what's on their schedule this week, how much they've earned, and how much they'll receive.\n\nConfirm pending attendance with one tap. A wallet with an available balance and a forecast for the next 60 days. A calendar by day, week, and month. No spreadsheets, no WhatsApp."
+      },
+      {
+        "key": "33b7bcc8-93e5-8065-ac2d-d15e8cd630ea.rich_text.0",
+        "source": "Hospital",
+        "target": "Hospital"
+      },
+      {
+        "key": "33b7bcc8-93e5-8028-9764-e4faa29d1acc.embed.label",
+        "source": "Para o hospital",
+        "target": "For hospitals"
+      },
+      {
+        "key": "33b7bcc8-93e5-8028-9764-e4faa29d1acc.embed.body",
+        "source": "Painel em tempo real, check-in por geolocalização, cálculo automático de pagamento e logs para auditoria.\n\nO hospital sabe quem está no plantão agora, recebe alerta de ausência antes que vire problema e fecha o pagamento sem planilha.",
+        "target": "A real-time dashboard, geolocation-based check-in, automatic payment calculations, and audit logs.\n\nHospitals know who's on duty right now, get absence alerts before they become a problem, and finalize payments without spreadsheets."
+      },
+      {
+        "key": "33b7bcc8-93e5-8029-85b7-c49551504cce.rich_text.0",
+        "source": "Sistema",
+        "target": "System"
+      },
+      {
+        "key": "33b7bcc8-93e5-800b-b73d-e5d509c56898.embed.label",
+        "source": "Sistema",
+        "target": "System"
+      },
+      {
+        "key": "33b7bcc8-93e5-800b-b73d-e5d509c56898.embed.body",
+        "source": "Dois produtos com a mesma base. Componentes compartilhados, lógica de escala e pagamento consistente nos dois lados. O que muda é a perspectiva, não o sistema.\n\nO fluxo web foi desenhado com IA no V0 antes de qualquer linha de código em produção, permitindo validação real com médicos e UPAs antes do desenvolvimento.",
+        "target": "Two products built on the same foundation. Shared components, consistent scheduling and payment logic on both sides. What changes is the perspective, not the system.\n\nThe web flow was designed with AI in V0 before a single line of production code, enabling real validation with doctors and UPAs before development."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.0.title",
+        "source": "Escalas com compliance automático",
+        "target": "Shift scheduling with automatic compliance"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.0.body",
+        "source": "Vagas com regras herdadas dos contratos, validação de conflitos, alertas de documentação irregular e trocas rastreáveis com justificativa e aceite.",
+        "target": "Open shifts with rules inherited from contracts, conflict checks, alerts for noncompliant documentation, and traceable shift swaps with justification and acceptance."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.1.title",
+        "source": "Pagamentos sem retrabalho",
+        "target": "Payments without rework"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.1.body",
+        "source": "Cálculo automático via check-in e checkout por geolocalização e regras contratuais. Fechamento pronto sem planilha e sem erro.",
+        "target": "Automatic calculations based on geolocation check-in and check-out and contract rules. Ready to finalize payments without spreadsheets or errors."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.2.title",
+        "source": "Auditoria total",
+        "target": "Full auditability"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.2.body",
+        "source": "Logs imutáveis com IP, data, autor e antes/depois. Histórico completo por CPF, pronto para auditoria a qualquer momento.",
+        "target": "Immutable logs with IP, date, author, and before/after records. Complete history by CPF, ready for an audit at any time."
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.3.title",
+        "source": "Controle em tempo real",
+        "target": "Real-time control"
+      },
+      {
+        "key": "3407bcc8-93e5-8001-9353-df06f7d37193.embed.items.3.body",
+        "source": "Painel executivo com alertas visuais, notificação com prova de entrega e leitura, monitoramento de ausências e documentos vencidos.",
+        "target": "Executive dashboard with visual alerts, notifications with delivery and read receipts, and monitoring of absences and expired documents."
+      },
+      {
+        "key": "33b7bcc8-93e5-80b3-a64b-c43fdcddfb58.rich_text.0",
+        "source": "Entrega",
+        "target": "Delivery"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.0.label",
+        "source": "do zero ao lançamento",
+        "target": "from zero to launch"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.1.label",
+        "source": "produtos entregues: web e app",
+        "target": "products delivered: web and app"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.2.label",
+        "source": "médicos na plataforma",
+        "target": "doctors on the platform"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.3.label",
+        "source": "hospitais e UPAs em operação",
+        "target": "hospitals and UPAs in operation"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.4.label",
+        "source": "plantões gerenciados por semana",
+        "target": "shifts managed per week"
+      },
+      {
+        "key": "33b7bcc8-93e5-808d-aedd-ca4cb0526cb5.embed.stats.5.label",
+        "source": "planilhas e mensagens soltas",
+        "target": "spreadsheets and scattered messages"
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.before.label",
+        "source": "Antes",
+        "target": "Before"
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.before.body",
+        "source": "Plantões gerenciados por planilha e WhatsApp. Médico sem previsibilidade de ganho. Hospital sem visibilidade de escala nem controle de pagamento.",
+        "target": "Shifts managed through spreadsheets and WhatsApp. Doctors with no predictable earnings. Hospitals with no visibility into schedules or control over payments."
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.after.label",
+        "source": "Depois",
+        "target": "After"
+      },
+      {
+        "key": "3407bcc8-93e5-80ea-aa7a-f1ddd6db20c5.embed.after.body",
+        "source": "Plataforma unificada para os dois lados. Médico com escala, ganhos e documentos em um app. Hospital com painel em tempo real e fechamento automático.",
+        "target": "A unified platform for both sides. Doctors with schedules, earnings, and documents in one app. Hospitals with a real-time dashboard and automatic payment reconciliation."
+      },
+      {
+        "key": "3407bcc8-93e5-80bb-8464-c27dd2dfd19b.rich_text.0",
+        "source": "Dois meses. Dois produtos. Um sistema que funciona para os dois lados. Muito craft, muita IA, muitos testes e muitas validações.",
+        "target": "Two months. Two products. One system that works for both sides. Lots of craft, lots of AI, lots of testing, and lots of validation."
+      }
+    ]
+  },
+  "reel": {
+    "sourceHash": "68c59f5cb3591ff631ed3bef0addbd5d52aa9811dda9607ae71e3e90103d05fa",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T12:18:07.891Z",
+    "units": [
+      {
+        "key": "reel.title",
+        "source": "2000+ plantões por semana. 0 planilhas.",
+        "target": "2000+ shifts a week. 0 spreadsheets."
+      },
+      {
+        "key": "reel.cta",
+        "source": "Ver serviços",
+        "target": "View services"
+      },
+      {
+        "key": "reel.role-1.heading",
+        "source": "Nossa *entrega*",
+        "target": "Our *work*"
+      },
+      {
+        "key": "reel.role-1.facts.0.label",
+        "source": "Minha Função",
+        "target": "My role"
+      },
+      {
+        "key": "reel.role-1.facts.0.value",
+        "source": "Head de Design",
+        "target": "Head of Design"
+      },
+      {
+        "key": "reel.role-1.facts.1.label",
+        "source": "Tempo de entrega",
+        "target": "Delivery time"
+      },
+      {
+        "key": "reel.role-1.facts.1.value",
+        "source": "2 meses",
+        "target": "2 months"
+      },
+      {
+        "key": "reel.role-1.facts.2.value",
+        "source": "APP e Web Completos",
+        "target": "Full app & web"
+      },
+      {
+        "key": "reel.role-1.facts.2.label",
+        "source": "O que fizemos",
+        "target": "What we did"
+      },
+      {
+        "key": "reel.title-1.chapter",
+        "source": "Gancho",
+        "target": "Hook"
+      },
+      {
+        "key": "reel.title-1.lines.0",
+        "source": "Médicos e hospitais",
+        "target": "Doctors & hospitals"
+      },
+      {
+        "key": "reel.title-1.lines.1",
+        "source": "com agenda",
+        "target": "with schedules"
+      },
+      {
+        "key": "reel.title-1.lines.2",
+        "source": "*organizada*",
+        "target": "*in order*"
+      },
+      {
+        "key": "reel.title-2.chapter",
+        "source": "Decisões",
+        "target": "Decisions"
+      },
+      {
+        "key": "reel.title-2.lines.0",
+        "source": "Desenhei para escalar!",
+        "target": "I designed for scale!"
+      },
+      {
+        "key": "reel.screens-1.chapter",
+        "source": "Prova",
+        "target": "Proof"
+      },
+      {
+        "key": "reel.screens-1.title",
+        "source": "App e Web em *2 meses*",
+        "target": "App & web in *2 months*"
+      },
+      {
+        "key": "reel.metrics-1.chapter",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "reel.metrics-1.value",
+        "source": "2000+",
+        "target": "2000+"
+      },
+      {
+        "key": "reel.metrics-1.label",
+        "source": "plantões gerenciados por semana",
+        "target": "shifts managed per week"
+      },
+      {
+        "key": "reel.metrics-1.note",
+        "source": "1000+ médicos · 10+ hospitais e UPAs",
+        "target": "1000+ doctors · 10+ hospitals & UPAs"
+      },
+      {
+        "key": "reel.end-1.chapter",
+        "source": "Fechamento",
+        "target": "Wrap-up"
+      },
+      {
+        "key": "reel.end-1.lines.0",
+        "source": "Produto no ar em 2 meses?",
+        "target": "Product live in 2 months?"
+      },
+      {
+        "key": "reel.end-1.lines.1",
+        "source": "*Deixa comigo*",
+        "target": "*I've got this*"
+      },
+      {
+        "key": "reel.end-1.meta",
+        "source": "Plenno · Design Consultant · 2025",
+        "target": "Plenno · Design Consultant · 2025"
+      },
+      {
+        "key": "reel.end-1.signature",
+        "source": "Gutto Rocha",
+        "target": "Gutto Rocha"
+      }
+    ]
+  }
+}

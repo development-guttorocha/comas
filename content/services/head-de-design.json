@@ -1,0 +1,269 @@
+{
+  "slug": "head-de-design",
+  "seoTitle": "Head de Design as a service: liderança de design para empresas | Gutto Rocha",
+  "seoDescription": "Liderança de design sênior para startups e empresas, sem contratar um Head full-time. Diagnóstico, Head de Design fracionado e montagem de time, com 18 anos de experiência.",
+  "serviceName": "Head de Design as a service",
+  "serviceType": "Liderança de design",
+  "accent": {
+    "color": "#ef352c",
+    "on": "#080808"
+  },
+  "navName": "Head de Design",
+  "nav": [
+    {
+      "label": "Pra quem é",
+      "href": "#pra-quem"
+    },
+    {
+      "label": "O que faço",
+      "href": "#o-que-faco"
+    },
+    {
+      "label": "Formatos",
+      "href": "#formatos"
+    },
+    {
+      "label": "Resultados",
+      "href": "#resultados"
+    },
+    {
+      "label": "FAQ",
+      "href": "#faq"
+    }
+  ],
+  "card": {
+    "summary": "Liderança de design sênior por uma parte da semana, para times que têm produto e às vezes designers, mas ninguém conduzindo.",
+    "points": [
+      "Diagnóstico de 2 a 3 semanas",
+      "Head fracionado, mensal",
+      "Montagem do time do zero"
+    ]
+  },
+  "hero": {
+    "kicker": "Head de Design as a service",
+    "title": "Liderança de design sênior,",
+    "continuation": "sem contratar um Head full‑time.",
+    "intro": "Para empresas que já têm produto, e às vezes até designers, mas ninguém conduzindo o design. Entro como Head de Design por uma parte da semana e organizo o time, o processo e a qualidade do que chega a quem usa.",
+    "primaryCta": "Agendar conversa de 30 min",
+    "secondaryCta": "Ver formatos",
+    "proof": [
+      "18 anos em design",
+      "8 liderando times",
+      "Até 15 designers por time"
+    ]
+  },
+  "logosLabel": "Quem já confiou no meu trabalho de gestão",
+  "logos": [
+    "PicPay",
+    "Loft",
+    "SulAmérica",
+    "Creator Ads"
+  ],
+  "signs": {
+    "kicker": "Pra quem é",
+    "title": "Você não precisa de mais telas.",
+    "continuation": "Precisa de alguém conduzindo o design.",
+    "items": [
+      "Os designers são bons, mas cada um rema para um lado.",
+      "O produto cresceu e a interface virou uma colcha de retalhos.",
+      "O founder ou o PM ainda decide pixel por pixel.",
+      "Você vai contratar o primeiro designer e não sabe que perfil buscar.",
+      "Design entra no fim, quando a decisão já foi tomada.",
+      "Tem gente júnior no time e ninguém para desenvolver."
+    ]
+  },
+  "pillars": {
+    "kicker": "O que eu faço",
+    "title": "Pessoas, processos e produto.",
+    "continuation": "Os três, ao mesmo tempo.",
+    "items": [
+      {
+        "title": "Pessoas",
+        "summary": "As pessoas certas, nos lugares certos, crescendo sempre.",
+        "points": [
+          "Trilha de carreira e critérios de avaliação",
+          "1:1s, feedback e desenvolvimento",
+          "Contratação: perfil, entrevistas e onboarding"
+        ]
+      },
+      {
+        "title": "Processos",
+        "summary": "Alinhamento que reduz risco sem travar o time.",
+        "points": [
+          "Rituais de crítica e design review",
+          "Design junto de produto e engenharia, desde o começo",
+          "Priorização e métricas de experiência"
+        ]
+      },
+      {
+        "title": "Produto",
+        "summary": "A proposta de valor chegando de fato a quem usa.",
+        "points": [
+          "Visão e princípios de experiência",
+          "Design system e consistência de interface",
+          "Mão na massa nos fluxos críticos"
+        ]
+      }
+    ]
+  },
+  "formats": {
+    "kicker": "Formatos",
+    "title": "Três formas de começar.",
+    "continuation": "Todas com escopo claro.",
+    "items": [
+      {
+        "tag": "Ponto de partida",
+        "title": "Diagnóstico",
+        "duration": "2 a 3 semanas",
+        "description": "Um raio-x do design da empresa: time, processo e produto. Você sai com um plano de 90 dias, priorizado e com responsáveis.",
+        "fit": "Para entender antes de investir.",
+        "cta": "Começar pelo diagnóstico"
+      },
+      {
+        "tag": "Mais completo",
+        "title": "Head fracionado",
+        "duration": "Mensal · dedicação parcial",
+        "description": "Assumo a liderança de design no dia a dia: rituais, 1:1s, decisões e qualidade. Junto com o time, não por cima dele.",
+        "fit": "Para times com designers e sem liderança.",
+        "cta": "Quero um Head de Design"
+      },
+      {
+        "tag": "Do zero",
+        "title": "Montar o time",
+        "duration": "Por projeto · 2 a 4 meses",
+        "description": "Do perfil à primeira entrega: processo seletivo, onboarding e as bases de processo e design system para quem chegar.",
+        "fit": "Para empresas sem designer, ou com o primeiro.",
+        "cta": "Montar meu time"
+      }
+    ]
+  },
+  "steps": {
+    "kicker": "Como funciona",
+    "title": "Da primeira conversa",
+    "continuation": "ao time andando sozinho.",
+    "items": [
+      {
+        "title": "Conversa",
+        "description": "30 minutos para entender o momento da empresa. Sem compromisso."
+      },
+      {
+        "title": "Diagnóstico",
+        "description": "Converso com o time, olho o produto e a forma de trabalhar."
+      },
+      {
+        "title": "Plano de 90 dias",
+        "description": "Prioridades, responsáveis e o que muda em cada mês."
+      },
+      {
+        "title": "Execução",
+        "description": "Rituais semanais, acompanhamento e ajuste de rota."
+      }
+    ]
+  },
+  "proof": {
+    "kicker": "Resultados",
+    "title": "Já fiz isso antes,",
+    "continuation": "dentro de empresas de verdade.",
+    "cases": [
+      "picpay",
+      "loft-design",
+      "creator-ads",
+      "plenno"
+    ],
+    "casesCta": "Ver todos os cases"
+  },
+  "voices": {
+    "kicker": "Quem trabalhou comigo",
+    "title": "O que dizem quem eu liderei e quem me liderou."
+  },
+  "comparison": {
+    "kicker": "Comparando",
+    "title": "Por que não contratar",
+    "continuation": "um Head ou uma agência?",
+    "columns": [
+      "Head full-time",
+      "Agência",
+      "Head as a service"
+    ],
+    "rows": [
+      {
+        "label": "Tempo para começar",
+        "values": [
+          "Meses de processo seletivo",
+          "Algumas semanas",
+          "Dias"
+        ]
+      },
+      {
+        "label": "Custo",
+        "values": [
+          "Salário sênior e encargos",
+          "Alto, por projeto",
+          "Uma fração de um Head"
+        ]
+      },
+      {
+        "label": "Desenvolve o seu time",
+        "values": [
+          "Sim",
+          "Não",
+          "Sim"
+        ]
+      },
+      {
+        "label": "Conhece o seu negócio",
+        "values": [
+          "Com o tempo",
+          "Por cima",
+          "Desde o diagnóstico"
+        ]
+      },
+      {
+        "label": "Deixa o time autônomo",
+        "values": [
+          "Depende",
+          "Entrega e sai",
+          "É o objetivo"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "Perguntas frequentes",
+    "title": "Antes de conversar.",
+    "items": [
+      {
+        "question": "Quanto tempo por semana você dedica?",
+        "answer": "Depende do formato. No Head fracionado, combinamos uma dedicação fixa por semana, com os rituais na agenda e disponibilidade assíncrona entre eles."
+      },
+      {
+        "question": "Você coloca a mão na massa?",
+        "answer": "Sim, nos fluxos críticos e no design system, quando faz sentido. Mas o foco é fazer o time render mais, não virar mais um designer na fila."
+      },
+      {
+        "question": "Funciona para empresa sem nenhum designer?",
+        "answer": "Funciona. Nesse caso começamos por Montar o time: definimos o perfil, conduzo o processo seletivo e deixo a base pronta para quem chegar."
+      },
+      {
+        "question": "O trabalho é remoto?",
+        "answer": "Sim. Moro em Guarulhos (SP) e consigo estar presencialmente em São Paulo quando for importante."
+      },
+      {
+        "question": "Quanto custa?",
+        "answer": "Depende do formato e da dedicação. O diagnóstico tem escopo e valor fechados; o Head fracionado é mensal. Falo de valores na primeira conversa, depois de entender o momento da empresa."
+      },
+      {
+        "question": "E quando quisermos contratar um Head full-time?",
+        "answer": "É um ótimo sinal. Ajudo a definir o perfil, participo das entrevistas e faço a passagem. Sair bem também é parte do trabalho."
+      }
+    ]
+  },
+  "closing": {
+    "title": "Vamos conversar sobre o design da sua empresa?",
+    "body": "Uma conversa de 30 minutos, sem compromisso. Você conta o momento da empresa e eu digo com honestidade se faz sentido.",
+    "emailCta": "Mandar um e-mail",
+    "whatsappCta": "Chamar no WhatsApp",
+    "emailSubject": "Head de Design as a service",
+    "whatsappMessage": "Oi, Gutto! Vi a página de Head de Design as a service e queria conversar."
+  }
+}

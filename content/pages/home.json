@@ -1,0 +1,322 @@
+{
+  "wordmark": "Gutto",
+  "reflection": "Rocha",
+  "statement": {
+    "pt": "18 anos em design, 8 anos liderando.",
+    "en": "18 years in design, 8 years leading.",
+    "enFrom": "18 anos em design, 8 anos liderando."
+  },
+  "statementSub": {
+    "pt": "Pessoas, Produtos e Negócios crescendo juntos",
+    "en": "People, Products, and Businesses growing together",
+    "enFrom": "Pessoas, Produtos e Negócios crescendo juntos"
+  },
+  "primaryCta": {
+    "pt": "Conheça minha forma de Liderar",
+    "en": "Discover how I lead",
+    "enFrom": "Conheça minha forma de Liderar"
+  },
+  "secondaryCta": {
+    "pt": "Descubra minha história",
+    "en": "Discover my story",
+    "enFrom": "Descubra minha história"
+  },
+  "video": "/home/hero.mp4",
+  "poster": "/home/redesign/hero-reference.png",
+  "modelBefore": {
+    "pt": "Os meus",
+    "en": "My",
+    "enFrom": "Os meus"
+  },
+  "modelHighlight": "3P’s",
+  "modelAfter": {
+    "pt": "para negócios",
+    "en": "for business",
+    "enFrom": "para negócios"
+  },
+  "pillars": [
+    {
+      "title": {
+        "pt": "Pessoas",
+        "en": "People",
+        "enFrom": "Pessoas"
+      },
+      "summary": {
+        "pt": "Pessoas certas, nos lugares certos, crescendo sempre",
+        "en": "The right people, in the right places, always growing",
+        "enFrom": "Pessoas certas, nos lugares certos, crescendo sempre"
+      },
+      "tags": [
+        {
+          "text": {
+            "pt": "Contratar",
+            "en": "Hire",
+            "enFrom": "Contratar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Desenvolver",
+            "en": "Develop",
+            "enFrom": "Desenvolver"
+          }
+        },
+        {
+          "text": {
+            "pt": "Diversificar",
+            "en": "Diversify",
+            "enFrom": "Diversificar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Reter",
+            "en": "Retain",
+            "enFrom": "Reter"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "pt": "Processos",
+        "en": "Processes",
+        "enFrom": "Processos"
+      },
+      "summary": {
+        "pt": "Processos que trazem alinhamento, reduzem riscos e não travam",
+        "en": "Processes that create alignment, reduce risk and keep things moving",
+        "enFrom": "Processos que trazem alinhamento, reduzem riscos e não travam"
+      },
+      "tags": [
+        {
+          "text": {
+            "pt": "Documentar",
+            "en": "Document",
+            "enFrom": "Documentar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Alinhar",
+            "en": "Align",
+            "enFrom": "Alinhar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Acompanhar",
+            "en": "Check in",
+            "enFrom": "Acompanhar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Preparar",
+            "en": "Prepare",
+            "enFrom": "Preparar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Automatizar",
+            "en": "Automate",
+            "enFrom": "Automatizar"
+          }
+        }
+      ]
+    },
+    {
+      "title": {
+        "pt": "Produtos",
+        "en": "Products",
+        "enFrom": "Produtos"
+      },
+      "summary": {
+        "pt": "Produtos que entregam proposta de valor pra quem usa",
+        "en": "Products that deliver on their value proposition for the people who use them",
+        "enFrom": "Produtos que entregam proposta de valor pra quem usa"
+      },
+      "tags": [
+        {
+          "text": {
+            "pt": "Construir",
+            "en": "Build",
+            "enFrom": "Construir"
+          }
+        },
+        {
+          "text": {
+            "pt": "Experimentar",
+            "en": "Experiment",
+            "enFrom": "Experimentar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Inovar",
+            "en": "Innovate",
+            "enFrom": "Inovar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Materializar",
+            "en": "Bring to life",
+            "enFrom": "Materializar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Entregar",
+            "en": "Deliver",
+            "enFrom": "Entregar"
+          }
+        },
+        {
+          "text": {
+            "pt": "Medir",
+            "en": "Measure",
+            "enFrom": "Medir"
+          }
+        }
+      ]
+    }
+  ],
+  "manifesto": {
+    "pt": "Liderança é ferramenta para desenvolver pessoas em carreiras de design, alavancar produtos e gerar impacto em negócio!",
+    "en": "Leadership is a tool for helping people grow in their design careers, taking products further, and driving business impact!",
+    "enFrom": "Liderança é ferramenta para desenvolver pessoas em carreiras de design, alavancar produtos e gerar impacto em negócio!"
+  },
+  "impactTitle": {
+    "pt": "Negócio, produto e pessoas",
+    "en": "Business, products and people",
+    "enFrom": "Negócio, produto e pessoas"
+  },
+  "impactSubtitle": {
+    "pt": "Crescendo ao mesmo tempo",
+    "en": "Growing at the same time",
+    "enFrom": "Crescendo ao mesmo tempo"
+  },
+  "proofs": [
+    {
+      "company": "SulAmérica",
+      "role": {
+        "pt": "Design manager",
+        "en": "Design Manager",
+        "enFrom": "Design manager"
+      },
+      "label": {
+        "pt": "Primeira promoção de design em",
+        "en": "First design promotion in",
+        "enFrom": "Primeira promoção de design em"
+      },
+      "value": {
+        "pt": "5 anos",
+        "en": "5 years",
+        "enFrom": "5 anos"
+      }
+    },
+    {
+      "company": "Creator Ads",
+      "role": {
+        "pt": "Head of design",
+        "en": "Head of Design",
+        "enFrom": "Head of design"
+      },
+      "label": {
+        "pt": "Ajudei a alcançar a:",
+        "en": "I helped reach:",
+        "enFrom": "Ajudei a alcançar a:"
+      },
+      "value": {
+        "pt": "Série A",
+        "en": "Series A",
+        "enFrom": "Série A"
+      }
+    },
+    {
+      "company": "PicPay B2B",
+      "role": {
+        "pt": "Head of design",
+        "en": "Head of Design",
+        "enFrom": "Head of design"
+      },
+      "label": {
+        "pt": "Mais lojistas usando",
+        "en": "More merchants using it",
+        "enFrom": "Mais lojistas usando"
+      },
+      "value": {
+        "pt": "+ 500%",
+        "en": "+ 500%",
+        "enFrom": "+ 500%"
+      }
+    }
+  ],
+  "countValue": "+30",
+  "countLabel": {
+    "pt": "Pessoas lideradas nessa jornada",
+    "en": "People I've led along the way",
+    "enFrom": "Pessoas lideradas nessa jornada"
+  },
+  "resumeBefore": {
+    "pt": "Veja mais em meu",
+    "en": "See more in my",
+    "enFrom": "Veja mais em meu"
+  },
+  "resumeLink": {
+    "pt": "currículo",
+    "en": "resume",
+    "enFrom": "currículo"
+  },
+  "voicesTitle": {
+    "pt": "A voz das pessoas que liderei",
+    "en": "The voices of the people I led",
+    "enFrom": "A voz das pessoas que liderei"
+  },
+  "voices": [
+    {
+      "quote": {
+        "pt": "…sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers.",
+        "en": "…his willingness to listen to different opinions, encouraging a safe environment for collaboration among designers.",
+        "enFrom": "…sua disponibilidade em ouvir as diferentes opiniões, estimulando assim um ambiente seguro de colaboração entre os designers."
+      },
+      "preposition": {
+        "pt": "Designer no",
+        "en": "Designer at",
+        "enFrom": "Designer no"
+      },
+      "company": "Picpay",
+      "portrait": "/home/redesign/portrait.png"
+    },
+    {
+      "quote": {
+        "pt": "Nossas trocas sempre muito ricas, com boas provocações, conselhos e sugestões de melhorias sempre com tom respeitoso e leve.",
+        "en": "Our exchanges have always been rich, with thoughtful questions, advice and suggestions for improvement, always delivered with respect and warmth.",
+        "enFrom": "Nossas trocas sempre muito ricas, com boas provocações, conselhos e sugestões de melhorias sempre com tom respeitoso e leve."
+      },
+      "preposition": {
+        "pt": "Designer na",
+        "en": "Designer at",
+        "enFrom": "Designer na"
+      },
+      "company": "Loft",
+      "portrait": "/home/redesign/portrait-loft.png"
+    },
+    {
+      "quote": {
+        "pt": "Além de ser um líder excepcional, ele tem um conhecimento técnico impressionante e está sempre disposto a ensinar os outros.",
+        "en": "Besides being an exceptional leader, he has impressive technical knowledge and is always willing to teach others.",
+        "enFrom": "Além de ser um líder excepcional, ele tem um conhecimento técnico impressionante e está sempre disposto a ensinar os outros."
+      },
+      "preposition": {
+        "pt": "Designer na",
+        "en": "Designer at",
+        "enFrom": "Designer na"
+      },
+      "company": "Creator Ads",
+      "portrait": "/home/redesign/portrait-creator-ads.png"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "order": [
+    "creator-ads",
+    "picpay",
+    "banco-pan",
+    "plenno",
+    "loft-design",
+    "webmotors"
+  ],
+  "belt": {
+    "turns": 0.75,
+    "speed": 1
+  }
+}

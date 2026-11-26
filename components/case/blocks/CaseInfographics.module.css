@@ -1,0 +1,68 @@
+/* Infográficos do case: ícones de traço, a cor do case nos destaques. */
+.caption { max-width: 60ch; margin: clamp(20px, 2vw, 32px) 0 0; color: var(--color-muted); font-size: 14px; line-height: 1.6; }
+
+/* Proportion with icons */
+.ratio { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: clamp(32px, 5vw, 96px); padding: var(--card-padding); border-radius: var(--radius-card); background: var(--color-card); }
+.ratioValue { display: block; color: var(--case-brand, var(--color-ink)); font-size: clamp(44px, 5.4vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -.05em; }
+.ratioLabel { max-width: 30ch; margin: 16px 0 0; color: var(--color-subtle, var(--color-ink)); font-size: clamp(16px, 1.4vw, 22px); line-height: 1.45; }
+.ratioGrid { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); gap: clamp(6px, .8vw, 14px); }
+.ratioIcon { position: relative; display: block; aspect-ratio: 1; }
+.ratioIcon svg { width: 100%; height: 100%; }
+.ratioBase { color: color-mix(in srgb, var(--color-muted) 55%, transparent); }
+.ratioFill { position: absolute; inset: 0; display: block; color: var(--case-brand, var(--color-ink)); }
+
+/* Numbers with an icon */
+.stats { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); gap: clamp(16px, 1.4vw, 24px); }
+.stat { display: grid; align-content: start; gap: 8px; padding: clamp(24px, 2.2vw, 40px); border-radius: var(--radius-card); background: var(--color-card); }
+.statIcon { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 12px; border-radius: 14px; background: color-mix(in srgb, var(--case-brand, #8d8d93) 18%, transparent); color: var(--case-brand, var(--color-ink)); }
+.statIcon svg { width: 26px; height: 26px; }
+.statValue { color: var(--color-ink); font-size: clamp(32px, 3.2vw, 56px); font-weight: 700; line-height: 1; letter-spacing: -.05em; }
+.statLabel { color: var(--color-subtle, var(--color-ink)); font-size: clamp(15px, 1.2vw, 18px); font-weight: 600; line-height: 1.35; }
+.statBody { margin: 4px 0 0; color: var(--color-muted); font-size: 14px; line-height: 1.6; }
+
+/* Timeline: a line with a dot per milestone; across on desktop, down on phones (or when asked). */
+.timeline { position: relative; display: grid; grid-template-columns: repeat(var(--items), minmax(0, 1fr)); gap: clamp(20px, 2.4vw, 40px); margin: 0; padding: 0; list-style: none; }
+.timeline::before { content: ""; position: absolute; top: 7px; left: 0; right: 0; height: 1px; background: var(--color-line); }
+.milestone { position: relative; display: grid; align-content: start; gap: 8px; padding-top: 36px; }
+.milestoneDot { position: absolute; top: 0; left: 0; width: 15px; height: 15px; border: 1px solid var(--color-muted); border-radius: 50%; background: var(--color-surface, #000); }
+.milestone[data-highlight] .milestoneDot { border-color: var(--case-brand, var(--color-ink)); background: var(--case-brand, var(--color-ink)); box-shadow: 0 0 0 6px color-mix(in srgb, var(--case-brand, #fff) 20%, transparent); }
+.milestoneDate { color: var(--case-brand, var(--color-muted)); font-size: 13px; font-weight: 600; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.milestoneTitle { margin: 0; color: var(--color-ink); font-size: clamp(18px, 1.5vw, 26px); font-weight: 700; line-height: 1.2; letter-spacing: -.03em; }
+.milestoneBody { margin: 0; color: var(--color-muted); font-size: clamp(14px, 1.05vw, 16px); line-height: 1.6; }
+.timelineVertical { grid-template-columns: minmax(0, 1fr); max-width: 720px; gap: clamp(28px, 3vw, 48px); }
+.timelineVertical::before { top: 0; bottom: 0; left: 7px; right: auto; width: 1px; height: auto; }
+.timelineVertical .milestone { padding: 0 0 0 44px; }
+
+/* Side-by-side comparison: a quiet table, the highlighted column lit in the case colour. */
+.compareWrap { overflow-x: auto; }
+.compare { width: 100%; border-collapse: separate; border-spacing: 0; font-size: clamp(14px, 1.1vw, 17px); }
+.compare th, .compare td { padding: clamp(14px, 1.4vw, 22px) clamp(12px, 1.6vw, 28px); border-bottom: 1px solid var(--color-line); text-align: center; vertical-align: middle; }
+.compare tbody tr:last-child > * { border-bottom: 0; }
+.compare thead th { color: var(--color-subtle, var(--color-ink)); font-size: clamp(14px, 1.1vw, 17px); font-weight: 600; }
+.compare tbody th { color: var(--color-subtle, var(--color-ink)); font-weight: 500; text-align: left; }
+.compare [data-highlight] { background: color-mix(in srgb, var(--case-brand, #8d8d93) 14%, var(--color-card)); }
+.compare thead [data-highlight] { border-radius: 16px 16px 0 0; color: var(--color-ink); }
+.compare tbody tr:last-child [data-highlight] { border-radius: 0 0 16px 16px; }
+.mark { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; }
+.mark svg { width: 18px; height: 18px; }
+.mark[data-mark="yes"] { background: color-mix(in srgb, var(--case-brand, #8d8d93) 22%, transparent); color: var(--case-brand, var(--color-ink)); }
+.mark[data-mark="no"] { color: var(--color-muted); }
+.mark[data-mark="partial"] { color: var(--color-subtle, var(--color-ink)); }
+.markText { color: var(--color-ink); }
+.markEmpty { color: var(--color-muted); }
+
+@media (max-width: 1023px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .ratio { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: minmax(0, 1fr); }
+  .timeline { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .timeline::before { top: 0; bottom: 0; left: 7px; right: auto; width: 1px; height: auto; }
+  .milestone { padding: 0 0 0 40px; }
+  .compare { font-size: 13px; }
+  .compare th, .compare td { padding: 12px 6px; }
+  .compare thead th { font-size: 13px; }
+  .compare tbody th { min-width: 96px; padding-left: 0; }
+  .mark { width: 26px; height: 26px; }
+}

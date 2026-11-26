@@ -1,0 +1,73 @@
+/* Layers, back to front: gradient (backdrop) → "cases" → belt (stage) → case column. */
+/* The scope (cases + testimonials) holds the stacking context, so the fixed word can sit
+   between the section's backdrop and its belt and cases. */
+.wordScope { position: relative; isolation: isolate; background: #000; }
+.section { position: relative; background: #000; color: #f8f6f5; scroll-margin-top: 0; }
+
+/* Pinned transition. While entering, the ribbon rises a little over the bottom of "+30" (Figma "image 46"), clear of the résumé button. */
+.track { --lift: 6vw; position: relative; height: calc(100svh * 4.8); }
+.backdrop, .stage { position: sticky; top: 0; height: 100svh; }
+.backdrop { z-index: 0; background: linear-gradient(#f8f6f5, #000); }
+.stage { z-index: 2; margin-top: -100svh; }
+.conveyor { position: absolute; top: calc(var(--lift) * var(--enter, 1) * -1); left: 0; display: block; width: 100%; height: 100%; pointer-events: none; filter: drop-shadow(20px 32px 28px rgb(0 0 0 / .56)); }
+/* While the belt's images load: a quiet spinner where the belt will turn. */
+.loader { position: absolute; top: 50%; left: 50%; width: 40px; height: 40px; margin: -20px 0 0 -20px; border: 2px solid rgb(11 14 16 / 16%); border-top-color: #0b0e10; border-radius: 50%; animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(1turn); } }
+@media (prefers-reduced-motion: reduce) { .loader { animation: pulse 1.6s ease-in-out infinite alternate; } }
+@keyframes pulse { from { opacity: .35; } }
+.stage[data-status="fallback"] .conveyor { display: none; }
+.noise { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: .22; mix-blend-mode: soft-light; background-size: 128px 128px; }
+
+/* The word sits between cases and testimonials, pinned at the foot: while its slot is
+   below the screen (the cases) it holds there; when the slot arrives it follows the scroll
+   up, heading the testimonials, and leaves together with them. */
+.word { position: sticky; z-index: 1; bottom: -1.5vw; height: 27.5vw; color: #f8f6f5; font-size: 27.5vw; font-weight: 700; line-height: 1; letter-spacing: -.0286em; text-align: center; white-space: nowrap; pointer-events: none; }
+/* Horizontal bands; on the swap each slides its own way while the next word slides in. */
+.slice { position: absolute; inset: 0; clip-path: inset(calc(var(--i) / var(--n) * 100% - 1px) 0 calc((var(--n) - var(--i) - 1) / var(--n) * 100% - 1px) 0); }
+.from, .to { position: absolute; inset: 0; transition: transform .75s cubic-bezier(.7, 0, .2, 1), opacity .75s cubic-bezier(.7, 0, .2, 1); transition-delay: calc(var(--i) * 28ms); }
+.to { opacity: 0; transform: translateX(calc(var(--off) * -1)) scaleX(1.5); }
+.word[data-swapped="true"] .from { opacity: 0; transform: translateX(var(--off)) scaleX(1.5); }
+.word[data-swapped="true"] .to { opacity: 1; transform: none; }
+.casesTitle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .from, .to { transition-duration: .01s; transition-delay: 0s; } }
+
+/* Case column: as wide as a flat tile, pulled up so panel 01 lands on the belt's front tile. */
+.column { position: relative; z-index: 3; width: var(--panel-w, 74vw); margin: calc(var(--pull, 87svh) * -1) auto 0; opacity: var(--reveal, 0); }
+.panel { position: relative; container-type: inline-size; overflow: hidden; background: var(--panel-color); }
+/* The column ends on rounded corners. */
+.panel:last-child { border-radius: 0 0 var(--radius-card) var(--radius-card); }
+.media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+.media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgb(0 0 0 / .18), transparent 65%); pointer-events: none; }
+.panelImage { position: absolute; top: -4.03%; left: -4.01%; width: 108.02%; height: 107.99%; max-width: none; object-fit: cover; filter: saturate(.3); transition: filter .4s ease; }
+.panel:hover .panelImage { filter: none; }
+.card { position: absolute; z-index: 1; left: 5cqw; bottom: 4cqw; width: min(500px, 62cqw); padding: clamp(20px, 4cqw, 40px); border: 1px solid #ffffff29; border-radius: 24px; background: rgb(12 12 12 / .84); color: #f8f6f5; backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); }
+.meta { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; font-size: 14px; line-height: 1.5; font-weight: 700; }
+.year { color: #b6b6b0; white-space: nowrap; font-weight: 400; }
+.card h3 { font-size: clamp(24px, 4.4cqw, 44px); line-height: 1.08; letter-spacing: -.045em; font-weight: 600; margin: clamp(14px, 2.4cqw, 24px) 0 0; text-wrap: pretty; }
+.highlight { margin-top: clamp(18px, 3.2cqw, 32px); border-top: 1px solid #ffffff2e; padding-top: clamp(14px, 2.2cqw, 22px); }
+.label { color: #b6b6b0; font-size: 12px; font-weight: 600; letter-spacing: .06em; margin: 0 0 clamp(10px, 1.6cqw, 16px); }
+.summary { font-size: 15px; line-height: 1.6; margin: 0 0 20px; text-wrap: pretty; }
+.stats { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; margin: 0; }
+.stats > div { display: flex; flex-direction: column; }
+.stats dt { order: 1; font-size: 13px; line-height: 1.5; color: #d1d1cc; margin-top: 7px; }
+.stats dd { margin: 0; font-size: clamp(26px, 4.2cqw, 42px); font-weight: 600; line-height: 1.1; letter-spacing: -.045em; overflow-wrap: anywhere; }
+.stats p,.note { order: 2; margin: 10px 0 0; color: #b6b6b0; font-size: 11px; line-height: 1.5; }
+.note { margin-top: 16px; }
+.cta { display: flex; justify-content: space-between; align-items: center; min-height: 44px; gap: 24px; margin-top: clamp(12px, 2.8cqw, 28px); color: #fff; font-size: 14px; font-weight: 600; }
+.cta > span { font-size: 28px; transition: transform .25s ease; }
+.panelLink { position: absolute; z-index: 2; inset: 0; }
+.panel:hover .cta > span { transform: translate(3px, -3px); }
+.cta:focus-visible { outline: 2px solid currentColor; outline-offset: 8px; border-radius: 4px; }
+
+/* Narrow tiles can't hold the card over the image: it follows the image instead. */
+@container (max-width: 560px) {
+  .card { position: relative; left: auto; bottom: auto; width: auto; border-width: 0; border-radius: 0; }
+}
+/* Mobile: cases only — no belt. "cases" heads the section and the panels stack full width. */
+@media (max-width: 767px) {
+  .section { display: flex; flex-direction: column; background: linear-gradient(#f8f6f5, #000 calc(27.5vw + 160px)) no-repeat, #000; }
+  .track { display: none; }
+  .word { display: none; }
+  .casesTitle { order: -1; position: static; width: auto; height: auto; overflow: visible; clip-path: none; margin: 0; padding: 120px 0 24px; color: #f8f6f5; font-size: 27.5vw; font-weight: 700; line-height: 1; letter-spacing: -.0286em; text-align: center; }
+  .column { width: 100%; margin: 0; opacity: 1; }
+}

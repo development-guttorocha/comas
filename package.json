@@ -1,0 +1,50 @@
+{
+  "name": "portfolio-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "notion:cases-plain": "tsx scripts/generate-notion-cases-plain-text.ts",
+    "notion:loft-plain": "tsx scripts/generate-notion-loft-plain-text.ts",
+    "site:translate": "tsx scripts/translate-site.ts",
+    "site:translations-check": "tsx scripts/translate-site.ts --check",
+    "test": "node --import tsx --test \"lib/**/*.test.ts\"",
+    "check:types": "tsc --noEmit -p .",
+    "check:admin": "node scripts/check-admin.mjs",
+    "check": "npm run check:types && npm test && npm run check:admin"
+  },
+  "dependencies": {
+    "@blocknote/ariakit": "0.56.0",
+    "@blocknote/core": "0.56.0",
+    "@blocknote/react": "0.56.0",
+    "@fontsource/dm-sans": "^5.3.0",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/blob": "^2.8.1",
+    "d3": "7.9.0",
+    "framer-motion": "^12.38.0",
+    "gsap": "3.15.0",
+    "next": "16.3.8",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@next/env": "16.3.8",
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.8",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vercel": "^62.4.0"
+  }
+}

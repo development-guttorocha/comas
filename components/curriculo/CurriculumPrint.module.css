@@ -1,0 +1,58 @@
+/* The A4 résumé: hidden on screen, the only thing printed. Sizes in points and millimetres, for paper. */
+.print { display: none; }
+
+@media print {
+  .print {
+    display: block;
+    color: #161616;
+    font-family: var(--font-sans);
+    font-size: 8.6pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print h1, .print h2, .print h3, .print h4, .print h5, .print p, .print ul { margin: 0; padding: 0; }
+  .print ul { list-style: none; }
+
+  .header { padding-bottom: 4mm; border-bottom: 1.2pt solid #161616; }
+  .name { font-size: 22pt; font-weight: 700; line-height: 1.05; letter-spacing: -.03em; }
+  .headline { margin-top: 1.5mm !important; color: #444; font-size: 10.5pt; }
+  .contacts { display: flex; flex-wrap: wrap; gap: 1mm 6mm; margin-top: 3mm !important; font-size: 8.3pt; }
+  .contacts span { margin-right: 1.5mm; color: #777; }
+
+  .print h2 { margin-bottom: 2.5mm; color: #161616; font-size: 8pt; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  .summary { padding: 4mm 0; border-bottom: .6pt solid #cfcfcf; }
+  .summary p { color: #333; font-size: 9pt; line-height: 1.5; }
+
+  .body { display: grid; grid-template-columns: minmax(0, 1fr) 48mm; gap: 7mm; padding-top: 4mm; }
+
+  /* A role may continue on the next page, but never leaves its title behind or splits a line pair. */
+  .job { padding-bottom: 3mm; margin-bottom: 3mm; border-bottom: .6pt solid #e2e2e2; }
+  .jobHead { display: flex; justify-content: space-between; align-items: baseline; gap: 4mm; margin-bottom: 1mm; break-after: avoid; break-inside: avoid; }
+  .jobHead h4 { font-size: 10pt; font-weight: 700; }
+  .jobHead h4 span { color: #555; font-weight: 500; }
+  .jobHead p { flex-shrink: 0; color: #666; font-size: 8.5pt; white-space: nowrap; }
+  .text { margin-top: 1mm !important; color: #333; orphans: 3; widows: 3; }
+  .results { margin-top: 2mm; break-inside: avoid; }
+  .results h5 { margin-bottom: 1mm; color: #666; font-size: 7.5pt; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+  .results ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8mm 4mm; }
+  .results li { position: relative; padding-left: 3mm; font-size: 8.3pt; }
+  .results li::before { content: ""; position: absolute; top: 1.9mm; left: 0; width: 1.2mm; height: 1.2mm; border-radius: 50%; background: #161616; }
+
+  .phase + .phase { margin-top: 1mm; }
+  .phaseTitle { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2mm !important; padding: 1.2mm 2mm; border-radius: 1.5mm; background: #f1f1ef; font-size: 8.5pt; font-weight: 700; letter-spacing: .02em; break-after: avoid; }
+  .phaseTitle span { color: #666; font-weight: 500; }
+  .brief { margin-bottom: 3mm !important; break-inside: avoid; }
+  .brief li { display: flex; justify-content: space-between; gap: 4mm; padding: .7mm 0; border-bottom: .4pt dotted #cfcfcf; font-size: 8.3pt; }
+  .brief li span:last-child { flex-shrink: 0; color: #666; }
+
+  .side { display: grid; align-content: start; gap: 6mm; }
+  .side section { break-inside: avoid; }
+  .course { margin-bottom: 2.2mm; }
+  .course strong { display: block; font-size: 9pt; font-weight: 600; line-height: 1.35; }
+  .course span { color: #666; font-size: 8.5pt; }
+  .list { display: grid; gap: 1mm; font-size: 8.5pt; }
+  .list li strong { display: block; font-weight: 600; }
+  .list li span { color: #666; overflow-wrap: anywhere; }
+  .inline { font-size: 8.5pt; }
+}

@@ -1,0 +1,1040 @@
+{
+  "heroTitle": {
+    "pt": "O mundo muda.",
+    "en": "The world changes.",
+    "enFrom": "O mundo muda."
+  },
+  "heroContinuation": {
+    "pt": "Eu continuo curioso.",
+    "en": "I stay curious.",
+    "enFrom": "Eu continuo curioso."
+  },
+  "heroLine": {
+    "pt": "Designer brasileiro com mais de 18 anos de experiência.",
+    "en": "Brazilian designer with over 18 years of experience.",
+    "enFrom": "Designer brasileiro com mais de 18 anos de experiência."
+  },
+  "heroLink": {
+    "pt": "Conheça minha história",
+    "en": "Discover my story",
+    "enFrom": "Conheça minha história"
+  },
+  "summaryKicker": {
+    "pt": "TL;DR",
+    "en": "TL;DR",
+    "enFrom": "TL;DR"
+  },
+  "summaryTitle": {
+    "pt": "Um pouco de mim,",
+    "en": "A little about me,",
+    "enFrom": "Um pouco de mim,"
+  },
+  "summaryContinuation": {
+    "pt": "em poucas linhas.",
+    "en": "in a few lines.",
+    "enFrom": "em poucas linhas."
+  },
+  "summaryExplanation": {
+    "pt": "Um resumo pra você saber rápido quem eu sou. Se tiver um tempinho, escrevi minha história inteira logo abaixo.",
+    "en": "A quick summary to help you get to know me. If you have a little time, I’ve written my whole story below.",
+    "enFrom": "Um resumo pra você saber rápido quem eu sou. Se tiver um tempinho, escrevi minha história inteira logo abaixo."
+  },
+  "summaryCta": {
+    "pt": "Ver conteúdo inteiro",
+    "en": "Read the full story",
+    "enFrom": "Ver conteúdo inteiro"
+  },
+  "bio": [
+    {
+      "text": {
+        "pt": "",
+        "en": ""
+      }
+    },
+    {
+      "text": {
+        "pt": "Filho do seu Joel e da dona Elian, pai de 3 gatas, **amante do mar e maratonista de séries.** Moro em Guarulhos, São Paulo. O TDAH me garante hiperfocos aleatórios; o da vez é **marcenaria**, minha namorada diz que sou o Bob Construtor.",
+        "en": "Son of Joel and Elian, dad to 3 cats, **ocean lover and TV binge-watcher.** I live in Guarulhos, São Paulo. My ADHD keeps me supplied with random hyperfixations; right now it's **woodworking**, and my girlfriend says I'm Bob the Builder.",
+        "enFrom": "Filho do seu Joel e da dona Elian, pai de 3 gatas, **amante do mar e maratonista de séries.** Moro em Guarulhos, São Paulo. O TDAH me garante hiperfocos aleatórios; o da vez é **marcenaria**, minha namorada diz que sou o Bob Construtor."
+      }
+    },
+    {
+      "text": {
+        "pt": "**Mais de 18 anos em design. Experiência liderando times de até 15 pessoas.** Conecto desenvolvimento de pessoas, qualidade de design e resultado. Passei por fintechs, produtos imobiliários e plataformas para creators. Hoje, sigo aprendendo e experimentando com IA.",
+        "en": "**Over 18 years in design. Experience leading teams of up to 15 people.** I connect people development, design quality and outcomes. My experience spans fintech, real estate products and creator platforms. Today, I’m still learning and experimenting with AI.",
+        "enFrom": "**Mais de 18 anos em design. Experiência liderando times de até 15 pessoas.** Conecto desenvolvimento de pessoas, qualidade de design e resultado. Passei por fintechs, produtos imobiliários e plataformas para creators. Hoje, sigo aprendendo e experimentando com IA."
+      }
+    }
+  ],
+  "navLabel": {
+    "pt": "Navegar pelas décadas",
+    "en": "Navigate the decades",
+    "enFrom": "Navegar pelas décadas"
+  },
+  "dialogueQuestion": {
+    "pt": "- Cadê o Gutto?",
+    "en": "- Where’s Gutto?",
+    "enFrom": "- Cadê o Gutto?"
+  },
+  "eras": [
+    {
+      "year": "1990",
+      "caption": {
+        "pt": "olhar, memória, repertório",
+        "en": "observation, memory, influences",
+        "enFrom": "olhar, memória, repertório"
+      },
+      "title": {
+        "pt": "Eu sou cria dos anos 90,",
+        "en": "I'm a child of the '90s,",
+        "enFrom": "Eu sou cria dos anos 90,"
+      },
+      "continuation": {
+        "pt": "daquelas crianças que foram criadas pela TV.",
+        "en": "one of those kids who were raised by TV.",
+        "enFrom": "daquelas crianças que foram criadas pela TV."
+      },
+      "body": {
+        "pt": "Meus pais, seu Joel e dona Elian, sempre trabalharam muito e, como bons pais dos anos 90, deixaram minha irmã e eu assistir muita TV. No meio do monte de coisa maluca que passava naquela época, aprendi a observar desde cedo e me apaixonei principalmente pelos comerciais, pelos desenhos e pela mágica da TV.",
+        "en": "My parents, Joel and Elian, always worked hard and, like any good parents in the 90s, let my sister and me watch a lot of TV. Amid all the crazy stuff on TV back then, I learned to pay attention from an early age and fell in love with the commercials, the cartoons, and especially the magic of TV.",
+        "enFrom": "Meus pais, seu Joel e dona Elian, sempre trabalharam muito e, como bons pais dos anos 90, deixaram minha irmã e eu assistir muita TV. No meio do monte de coisa maluca que passava naquela época, aprendi a observar desde cedo e me apaixonei principalmente pelos comerciais, pelos desenhos e pela mágica da TV."
+      },
+      "device": {
+        "pt": "PLAY ▷ 1990",
+        "en": "PLAY ▷ 1990",
+        "enFrom": "PLAY ▷ 1990"
+      },
+      "answer": {
+        "pt": "- tá malinando",
+        "en": "- Getting up to mischief",
+        "enFrom": "- tá malinando"
+      }
+    },
+    {
+      "year": "2000",
+      "caption": {
+        "pt": "www, um mundo novo se abriu",
+        "en": "www, a new world opened up",
+        "enFrom": "www, um mundo novo se abriu"
+      },
+      "title": {
+        "pt": "Ah! os anos 2000",
+        "en": "Ah! The 2000s",
+        "enFrom": "Ah! os anos 2000"
+      },
+      "continuation": {
+        "pt": "tudo era demorado, mas tudo era novidade",
+        "en": "everything took forever, but everything felt new",
+        "enFrom": "tudo era demorado, mas tudo era novidade"
+      },
+      "body": {
+        "pt": "Internet discada depois da meia-noite, WordArt, downloads intermináveis de músicas de 3mb, sites que assustavam, flogões, tumblrs e os vídeos do Guilherme Zaiden. Assim era a internet para mim nos anos 2000: apesar de tudo, era divertido.",
+        "en": "Dial-up after midnight, WordArt, endless downloads of 3mb songs, scary websites, Flogão pages, tumblrs, and Guilherme Zaiden videos. That was the internet for me in the 2000s: despite it all, it was fun.",
+        "enFrom": "Internet discada depois da meia-noite, WordArt, downloads intermináveis de músicas de 3mb, sites que assustavam, flogões, tumblrs e os vídeos do Guilherme Zaiden. Assim era a internet para mim nos anos 2000: apesar de tudo, era divertido."
+      },
+      "device": {
+        "pt": "Conectado ツ 2000",
+        "en": "Connected ツ 2000",
+        "enFrom": "Conectado ツ 2000"
+      },
+      "answer": {
+        "pt": "- tá nos computer",
+        "en": "- On the computer",
+        "enFrom": "- tá nos computer"
+      }
+    },
+    {
+      "year": "2010",
+      "caption": {
+        "pt": "Como diria a Britney, essa foi a minha era Work B**ch!",
+        "en": "As Britney would say, this was my Work B**ch! era.",
+        "enFrom": "Como diria a Britney, essa foi a minha era Work B**ch!"
+      },
+      "title": {
+        "pt": "Por volta de 2009, comecei",
+        "en": "Around 2009, I got started",
+        "enFrom": "Por volta de 2009, comecei"
+      },
+      "continuation": {
+        "pt": "com o tal do Web Design",
+        "en": "with this thing called Web Design",
+        "enFrom": "com o tal do Web Design"
+      },
+      "body": {
+        "pt": "Tudo bem que nesse momento tive um puxão de orelha da minha mãe. Aos 45 do segundo tempo, no finzinho do meu terceiro ano na escola, ela me colocou na parede e perguntou: e aí, o que você vai ser quando crescer? Entre Publicidade & Propaganda e Design Digital, escolhi design e o resto é história.",
+        "en": "I’ll admit, my mom gave me a bit of a reality check. Right at the tail end of my senior year of high school, she put me on the spot and asked, “So, what do you want to be when you grow up?” I was torn between Advertising and Digital Design. I went with design, and the rest is history.",
+        "enFrom": "Tudo bem que nesse momento tive um puxão de orelha da minha mãe. Aos 45 do segundo tempo, no finzinho do meu terceiro ano na escola, ela me colocou na parede e perguntou: e aí, o que você vai ser quando crescer? Entre Publicidade & Propaganda e Design Digital, escolhi design e o resto é história."
+      },
+      "device": {
+        "pt": "Criando ↗ 2010",
+        "en": "Creating ↗ 2010",
+        "enFrom": "Criando ↗ 2010"
+      },
+      "answer": {
+        "pt": "- vish, só trabalha",
+        "en": "- Oh, he’s always working",
+        "enFrom": "- vish, só trabalha"
+      }
+    },
+    {
+      "year": "2020",
+      "caption": {
+        "pt": "Uma pandemia global quase dizimou a humanidade, mas segui pedalando",
+        "en": "A global pandemic nearly wiped out humanity, but I kept pedaling",
+        "enFrom": "Uma pandemia global quase dizimou a humanidade, mas segui pedalando"
+      },
+      "title": {
+        "pt": "Um período difícil, mas",
+        "en": "A difficult time, but",
+        "enFrom": "Um período difícil, mas"
+      },
+      "continuation": {
+        "pt": "eu tô fazendo muita coisa legal",
+        "en": "I’m doing a lot of cool things",
+        "enFrom": "eu tô fazendo muita coisa legal"
+      },
+      "body": {
+        "pt": "A marcenaria virou mais um jeito de aprender fazendo. Madeira, computadores e eletrônica: abrir máquinas antigas deu asas pra minha imaginação. No meio disso tudo ainda sobrou tempo pra aprender a liderar gente. Tá sendo uma era maluca.",
+        "en": "Woodworking became another way to learn by doing. Wood, computers, and electronics: opening up old machines let my imagination run wild. In the middle of it all, I still found time to learn how to lead people. It's been a wild era.",
+        "enFrom": "A marcenaria virou mais um jeito de aprender fazendo. Madeira, computadores e eletrônica: abrir máquinas antigas deu asas pra minha imaginação. No meio disso tudo ainda sobrou tempo pra aprender a liderar gente. Tá sendo uma era maluca."
+      },
+      "device": {
+        "pt": "DELETE ✕ 2020",
+        "en": "DELETE ✕ 2020",
+        "enFrom": "DELETE ✕ 2020"
+      },
+      "answer": {
+        "pt": "- tá vivendo",
+        "en": "- Living life",
+        "enFrom": "- tá vivendo"
+      }
+    },
+    {
+      "year": "2030",
+      "caption": {
+        "pt": "Será que a IA vai dominar o mundo e levar nossos empregos?",
+        "en": "Will AI take over the world and take our jobs?",
+        "enFrom": "Será que a IA vai dominar o mundo e levar nossos empregos?"
+      },
+      "title": {
+        "pt": "Já tive medo do futuro,",
+        "en": "I used to fear the future,",
+        "enFrom": "Já tive medo do futuro,"
+      },
+      "continuation": {
+        "pt": "agora quero mesmo é construir",
+        "en": "now what I really want is to build",
+        "enFrom": "agora quero mesmo é construir"
+      },
+      "body": {
+        "pt": "Aquela criança sonhadora dos anos 90 continua aqui. Aprendendo a usar a IA e descobrindo novas maneiras de dar vida às minhas ideias. Quero levá-la para o meu dia a dia e experimentar o que antes parecia distante. O futuro me anima: tem tanta coisa que eu ainda posso descobrir e colocar em prática.",
+        "en": "That kid with big dreams from the 90s is still here. Learning to use AI and discovering new ways to bring my ideas to life. I want to make it part of my everyday life and try things that once felt out of reach. The future excites me: there's so much I can still discover and put into practice.",
+        "enFrom": "Aquela criança sonhadora dos anos 90 continua aqui. Aprendendo a usar a IA e descobrindo novas maneiras de dar vida às minhas ideias. Quero levá-la para o meu dia a dia e experimentar o que antes parecia distante. O futuro me anima: tem tanta coisa que eu ainda posso descobrir e colocar em prática."
+      },
+      "device": {
+        "pt": "",
+        "en": ""
+      },
+      "answer": {
+        "pt": "- Tá indo de volta pro futuro",
+        "en": "- Heading back to the future",
+        "enFrom": "- Tá indo de volta pro futuro"
+      }
+    }
+  ],
+  "magazinesTitle": {
+    "pt": "Eu lia muitas revistas, achava divertido descobrir tanta coisa nova",
+    "en": "I read lots of magazines. Discovering so many new things was fun",
+    "enFrom": "Eu lia muitas revistas, achava divertido descobrir tanta coisa nova"
+  },
+  "magazinesBody": {
+    "pt": "Carro, tecnologia e empreendedorismo estavam presentes desde a infância. Eu prestava atenção nas formas, nos detalhes e nas possibilidades. Encontrava coisas que me faziam pensar muito naquela pergunta: o que você quer ser quando crescer?",
+    "en": "Cars, technology, and entrepreneurship were part of my life from childhood. I paid attention to shapes, details, and possibilities. I'd come across things that made me think a lot about that question: what do you want to be when you grow up?",
+    "enFrom": "Carro, tecnologia e empreendedorismo estavam presentes desde a infância. Eu prestava atenção nas formas, nos detalhes e nas possibilidades. Encontrava coisas que me faziam pensar muito naquela pergunta: o que você quer ser quando crescer?"
+  },
+  "magazinesSpoiler": {
+    "pt": "Spoiler: eu não cresci, mas usei muito do que aprendi pra minha carreira :)",
+    "en": "Spoiler: I never grew up, but I brought a lot of what I learned into my career :)",
+    "enFrom": "Spoiler: eu não cresci, mas usei muito do que aprendi pra minha carreira :)"
+  },
+  "magazinesLabel": {
+    "pt": "Revistas brasileiras que fizeram parte da minha infância",
+    "en": "Brazilian magazines that were part of my childhood",
+    "enFrom": "Revistas brasileiras que fizeram parte da minha infância"
+  },
+  "carTitle": {
+    "pt": "Sempre quis saber o que tinha dentro das coisas...",
+    "en": "I always wanted to know what was inside things...",
+    "enFrom": "Sempre quis saber o que tinha dentro das coisas..."
+  },
+  "carBody": {
+    "pt": "Meus carrinhos sofreram nas minhas mãos. A ponto de um dia ganhar um de aniversário e jogar no chão, na frente da convidada, só para descobrir por que aquele carrinho tinha tanta luz piscando.",
+    "en": "My toy cars had a hard time with me. Once, I got one for my birthday and threw it on the floor in front of the guest, just to find out why it had so many flashing lights.",
+    "enFrom": "Meus carrinhos sofreram nas minhas mãos. A ponto de um dia ganhar um de aniversário e jogar no chão, na frente da convidada, só para descobrir por que aquele carrinho tinha tanta luz piscando."
+  },
+  "carCaption": {
+    "pt": "O carrinho e suas peças, uma memória recriada.",
+    "en": "The toy car and its parts, a memory recreated.",
+    "enFrom": "O carrinho e suas peças, uma memória recriada."
+  },
+  "carHint": {
+    "pt": "Role para explorar ↕",
+    "en": "Scroll to explore ↕",
+    "enFrom": "Role para explorar ↕"
+  },
+  "carAlt": {
+    "pt": "BMW vermelho visto de lado",
+    "en": "Red BMW viewed from the side",
+    "enFrom": "BMW vermelho visto de lado"
+  },
+  "carLabel": {
+    "pt": "BMW e suas peças, animação controlada pela rolagem",
+    "en": "BMW and its parts, scroll-controlled animation",
+    "enFrom": "BMW e suas peças, animação controlada pela rolagem"
+  },
+  "memoriesTitle": {
+    "pt": "Em 2000 minhas ideias queriam\nganhar o mundo",
+    "en": "In 2000, my ideas wanted\nto reach the world",
+    "enFrom": "Em 2000 minhas ideias queriam\nganhar o mundo"
+  },
+  "memoriesLabel": {
+    "pt": "Memórias dos anos 2000 — role para explorar",
+    "en": "Memories of the 2000s — scroll to explore",
+    "enFrom": "Memórias dos anos 2000 — role para explorar"
+  },
+  "memories": [
+    {
+      "image": "nickname",
+      "title": {
+        "pt": "E coloquei a arte no corpo com as tatuagens",
+        "en": "And I put art on my body with tattoos",
+        "enFrom": "E coloquei a arte no corpo com as tatuagens"
+      },
+      "alt": {
+        "pt": "Marca Gutto com ilustração",
+        "en": "Gutto logo with illustration",
+        "enFrom": "Marca Gutto com ilustração"
+      }
+    },
+    {
+      "image": "blog",
+      "title": {
+        "pt": "Botei meu blog na rua com HTML mal feito e música de fundo",
+        "en": "I launched my blog with messy HTML and background music",
+        "enFrom": "Botei meu blog na rua com HTML mal feito e música de fundo"
+      },
+      "alt": {
+        "pt": "Página de um blog dos primeiros anos da internet",
+        "en": "A blog page from the early internet",
+        "enFrom": "Página de um blog dos primeiros anos da internet"
+      }
+    },
+    {
+      "image": "tuning",
+      "title": {
+        "pt": "Fiz tuning virtual em vários carros no Photoshop 7",
+        "en": "I digitally customized a bunch of cars in Photoshop 7",
+        "enFrom": "Fiz tuning virtual em vários carros no Photoshop 7"
+      },
+      "alt": {
+        "pt": "Carro prata com modificações visuais",
+        "en": "Silver car with visual modifications",
+        "enFrom": "Carro prata com modificações visuais"
+      }
+    },
+    {
+      "image": "projector",
+      "title": {
+        "pt": "Na igreja eu era o garoto do projetor e dos “computers”",
+        "en": "At church, I was the kid in charge of the projector and “computers”",
+        "enFrom": "Na igreja eu era o garoto do projetor e dos “computers”"
+      },
+      "alt": {
+        "pt": "Projetor",
+        "en": "Projector",
+        "enFrom": "Projetor"
+      }
+    },
+    {
+      "image": "imac",
+      "title": {
+        "pt": "Me apaixonei pelo design colorido da Apple 00's",
+        "en": "I fell in love with Apple's colorful 00's design",
+        "enFrom": "Me apaixonei pelo design colorido da Apple 00's"
+      },
+      "alt": {
+        "pt": "iMac azul translúcido com teclado e mouse",
+        "en": "Translucent blue iMac with keyboard and mouse",
+        "enFrom": "iMac azul translúcido com teclado e mouse"
+      }
+    }
+  ],
+  "orbitLabel": {
+    "pt": "As ferramentas também mudaram",
+    "en": "The tools changed too",
+    "enFrom": "As ferramentas também mudaram"
+  },
+  "orbit": [
+    {
+      "key": "flipphone",
+      "label": {
+        "pt": "Celular flip",
+        "en": "Flip phone",
+        "enFrom": "Celular flip"
+      },
+      "caption": {
+        "pt": "Usei celular de flip...",
+        "en": "I used a flip phone...",
+        "enFrom": "Usei celular de flip..."
+      }
+    },
+    {
+      "key": "smartphone",
+      "label": {
+        "pt": "iPhone · 2007",
+        "en": "iPhone · 2007",
+        "enFrom": "iPhone · 2007"
+      },
+      "caption": {
+        "pt": "...e vi o celular virar smartphone.",
+        "en": "...and watched phones turn into smartphones.",
+        "enFrom": "...e vi o celular virar smartphone."
+      }
+    },
+    {
+      "key": "monitor",
+      "label": {
+        "pt": "Computador bege",
+        "en": "Beige computer",
+        "enFrom": "Computador bege"
+      },
+      "caption": {
+        "pt": "Meu computador era bege...",
+        "en": "My computer used to be beige...",
+        "enFrom": "Meu computador era bege..."
+      }
+    },
+    {
+      "key": "imac",
+      "label": {
+        "pt": "iMac G3",
+        "en": "iMac G3",
+        "enFrom": "iMac G3"
+      },
+      "caption": {
+        "pt": "...ficou colorido...",
+        "en": "...got colorful...",
+        "enFrom": "...ficou colorido..."
+      }
+    },
+    {
+      "key": "notebook",
+      "label": {
+        "pt": "MacBook Pro · 2008",
+        "en": "MacBook Pro · 2008",
+        "enFrom": "MacBook Pro · 2008"
+      },
+      "caption": {
+        "pt": "...e depois virou de alumínio.",
+        "en": "...and then it became aluminum.",
+        "enFrom": "...e depois virou de alumínio."
+      }
+    },
+    {
+      "key": "tv",
+      "label": {
+        "pt": "TV de tubo",
+        "en": "CRT TV",
+        "enFrom": "TV de tubo"
+      },
+      "caption": {
+        "pt": "Assisti muita TV de tubo...",
+        "en": "I watched a lot of TV on a tube set...",
+        "enFrom": "Assisti muita TV de tubo..."
+      }
+    },
+    {
+      "key": "television",
+      "label": {
+        "pt": "TV de tela plana",
+        "en": "Flat-screen TV",
+        "enFrom": "TV de tela plana"
+      },
+      "caption": {
+        "pt": "...e vi a tela ficar cada vez mais fina.",
+        "en": "...and watched the screen get thinner and thinner.",
+        "enFrom": "...e vi a tela ficar cada vez mais fina."
+      }
+    }
+  ],
+  "galleryTitle": {
+    "pt": "E o trabalho foi ganhando espaço na minha vida",
+    "en": "And work gradually became a bigger part of my life",
+    "enFrom": "E o trabalho foi ganhando espaço na minha vida"
+  },
+  "galleryLabel": {
+    "pt": "Seleção de trabalhos dos primeiros anos de carreira",
+    "en": "Selected work from the early years of my career",
+    "enFrom": "Seleção de trabalhos dos primeiros anos de carreira"
+  },
+  "gallery": [
+    {
+      "image": "regatta",
+      "alt": {
+        "pt": "Projeto de site e interfaces móveis para Regatta",
+        "en": "Website and mobile interface design for Regatta",
+        "enFrom": "Projeto de site e interfaces móveis para Regatta"
+      }
+    },
+    {
+      "image": "project11",
+      "alt": {
+        "pt": "Projeto de Tabela Fipe para Webmotors",
+        "en": "Tabela Fipe project for Webmotors",
+        "enFrom": "Projeto de Tabela Fipe para Webmotors"
+      }
+    },
+    {
+      "image": "chevrolet",
+      "alt": {
+        "pt": "Projeto digital Chevrolet — GM",
+        "en": "Chevrolet — GM digital project",
+        "enFrom": "Projeto digital Chevrolet — GM"
+      }
+    },
+    {
+      "image": "webmotors",
+      "alt": {
+        "pt": "Projeto de comunicação para Webmotors",
+        "en": "Communication design for Webmotors",
+        "enFrom": "Projeto de comunicação para Webmotors"
+      }
+    },
+    {
+      "image": "carclick",
+      "alt": {
+        "pt": "Projeto de site CarClick",
+        "en": "CarClick website design",
+        "enFrom": "Projeto de site CarClick"
+      }
+    },
+    {
+      "image": "philco",
+      "alt": {
+        "pt": "Hotsite do Philco Slimbook",
+        "en": "Philco Slimbook microsite",
+        "enFrom": "Hotsite do Philco Slimbook"
+      }
+    },
+    {
+      "image": "webProject6",
+      "alt": {
+        "pt": "Projeto de site em tablet e celular",
+        "en": "Website design on a tablet and phone",
+        "enFrom": "Projeto de site em tablet e celular"
+      }
+    },
+    {
+      "image": "project7",
+      "alt": {
+        "pt": "Interface de produto digital",
+        "en": "Digital product interface",
+        "enFrom": "Interface de produto digital"
+      }
+    },
+    {
+      "image": "project8",
+      "alt": {
+        "pt": "Projeto de site em um notebook",
+        "en": "Website design on a laptop",
+        "enFrom": "Projeto de site em um notebook"
+      }
+    },
+    {
+      "image": "project10",
+      "alt": {
+        "pt": "Projeto de interface em azul e verde",
+        "en": "Interface design in blue and green",
+        "enFrom": "Projeto de interface em azul e verde"
+      }
+    },
+    {
+      "image": "project9",
+      "alt": {
+        "pt": "Projeto de um construtor de sites",
+        "en": "Website builder design",
+        "enFrom": "Projeto de um construtor de sites"
+      }
+    }
+  ],
+  "pizzaTitle": {
+    "pt": "Eu comi muita pizza virando a noite nas agências digitais!",
+    "en": "I ate a lot of pizza pulling all-nighters at digital agencies!",
+    "enFrom": "Eu comi muita pizza virando a noite nas agências digitais!"
+  },
+  "pizzaAlt": {
+    "pt": "Uma pizza para acompanhar as noites nas agências",
+    "en": "A pizza to get us through nights at the agencies",
+    "enFrom": "Uma pizza para acompanhar as noites nas agências"
+  },
+  "museumTitle": {
+    "pt": "Na faculdade modernizamos um dos museus mais importantes de São Paulo",
+    "en": "At college, we modernized one of São Paulo’s most important museums",
+    "enFrom": "Na faculdade modernizamos um dos museus mais importantes de São Paulo"
+  },
+  "museumBody": {
+    "pt": "Foram várias idas e vindas, mudanças de grupo e noites mal dormidas. Mas consegui encontrar um grupo de TCC e nós conseguimos criar um projeto referência de modernização para o Museu do Ipiranga.",
+    "en": "There was a lot of back and forth, switching groups, and sleepless nights. But I found a group for my capstone project, and together we created a model modernization project for the Museu do Ipiranga.",
+    "enFrom": "Foram várias idas e vindas, mudanças de grupo e noites mal dormidas. Mas consegui encontrar um grupo de TCC e nós conseguimos criar um projeto referência de modernização para o Museu do Ipiranga."
+  },
+  "museumAlt": {
+    "pt": "Fachada do Museu do Ipiranga",
+    "en": "Facade of the Museu do Ipiranga",
+    "enFrom": "Fachada do Museu do Ipiranga"
+  },
+  "hobbiesTitle": {
+    "pt": "Ficar trancado em casa me fez aprender várias coisas novas",
+    "en": "Being stuck at home got me learning all sorts of new things",
+    "enFrom": "Ficar trancado em casa me fez aprender várias coisas novas"
+  },
+  "hobbiesLabel": {
+    "pt": "Memórias de 2020 — role para explorar",
+    "en": "Memories of 2020 — scroll to explore",
+    "enFrom": "Memórias de 2020 — role para explorar"
+  },
+  "hobbies": [
+    {
+      "image": "key",
+      "title": {
+        "pt": "Segurei meus pais",
+        "en": "I held my parents",
+        "enFrom": "Segurei meus pais"
+      },
+      "alt": {
+        "pt": "Uma chave antiga",
+        "en": "An old key",
+        "enFrom": "Uma chave antiga"
+      }
+    },
+    {
+      "image": "apartment",
+      "title": {
+        "pt": "Fui morar sozinho",
+        "en": "Moved into my own place",
+        "enFrom": "Fui morar sozinho"
+      },
+      "alt": {
+        "pt": "O prédio do meu apartamento",
+        "en": "My apartment building",
+        "enFrom": "O prédio do meu apartamento"
+      }
+    },
+    {
+      "image": "alexa",
+      "title": {
+        "pt": "Automatizei a casa",
+        "en": "Automated my home",
+        "enFrom": "Automatizei a casa"
+      },
+      "alt": {
+        "pt": "Uma assistente Alexa",
+        "en": "An Alexa assistant",
+        "enFrom": "Uma assistente Alexa"
+      }
+    },
+    {
+      "image": "bread",
+      "title": {
+        "pt": "Aprendi a fazer pão",
+        "en": "Learned to bake bread",
+        "enFrom": "Aprendi a fazer pão"
+      },
+      "alt": {
+        "pt": "Pão caseiro fatiado",
+        "en": "Sliced homemade bread",
+        "enFrom": "Pão caseiro fatiado"
+      }
+    },
+    {
+      "image": "weights",
+      "title": {
+        "pt": "Treinei em casa",
+        "en": "Worked out at home",
+        "enFrom": "Treinei em casa"
+      },
+      "alt": {
+        "pt": "Halteres para treinar em casa",
+        "en": "Dumbbells for home workouts",
+        "enFrom": "Halteres para treinar em casa"
+      }
+    },
+    {
+      "image": "woodwork",
+      "title": {
+        "pt": "Descobri marcenaria",
+        "en": "Discovered woodworking",
+        "enFrom": "Descobri marcenaria"
+      },
+      "alt": {
+        "pt": "Ferramentas de marcenaria",
+        "en": "Woodworking tools",
+        "enFrom": "Ferramentas de marcenaria"
+      }
+    },
+    {
+      "image": "dance",
+      "title": {
+        "pt": "Aprendi a dançar",
+        "en": "I learned to dance",
+        "enFrom": "Aprendi a dançar"
+      },
+      "alt": {
+        "pt": "Uma aula de dança",
+        "en": "A dance class",
+        "enFrom": "Uma aula de dança"
+      }
+    },
+    {
+      "image": "meet",
+      "title": {
+        "pt": "Fiz muitas calls...",
+        "en": "Had lots of calls...",
+        "enFrom": "Fiz muitas calls..."
+      },
+      "alt": {
+        "pt": "Ilustração de uma chamada no Google Meet",
+        "en": "An illustration of a Google Meet call",
+        "enFrom": "Ilustração de uma chamada no Google Meet"
+      }
+    }
+  ],
+  "leadershipTitle": {
+    "pt": "Foi nessa era, no meio das várias reuniões online, que a liderança de design apareceu na minha carreira",
+    "en": "It was during this era, amid all those online meetings, that design leadership became part of my career",
+    "enFrom": "Foi nessa era, no meio das várias reuniões online, que a liderança de design apareceu na minha carreira"
+  },
+  "chatLabel": {
+    "pt": "Uma conversa no PicPay",
+    "en": "A conversation at PicPay",
+    "enFrom": "Uma conversa no PicPay"
+  },
+  "chat": [
+    {
+      "speaker": {
+        "pt": "Meu gestor:",
+        "en": "My manager:",
+        "enFrom": "Meu gestor:"
+      },
+      "text": {
+        "pt": "O que você quer aqui na empresa?",
+        "en": "What do you want to do here at the company?",
+        "enFrom": "O que você quer aqui na empresa?"
+      }
+    },
+    {
+      "speaker": {
+        "pt": "",
+        "en": ""
+      },
+      "text": {
+        "pt": "Pô, eu quero me testar na liderança de design",
+        "en": "Honestly, I want to give design leadership a try",
+        "enFrom": "Pô, eu quero me testar na liderança de design"
+      }
+    },
+    {
+      "speaker": {
+        "pt": "Meu gestor:",
+        "en": "My manager:",
+        "enFrom": "Meu gestor:"
+      },
+      "text": {
+        "pt": "Isso é bacana, vamos trabalhar isso como se você estivesse aprendendo a andar de bike. Aos pouquinhos...",
+        "en": "That’s great. Let’s work on it like you’re learning to ride a bike. A little at a time...",
+        "enFrom": "Isso é bacana, vamos trabalhar isso como se você estivesse aprendendo a andar de bike. Aos pouquinhos..."
+      }
+    },
+    {
+      "speaker": {
+        "pt": "",
+        "en": ""
+      },
+      "text": {
+        "pt": "Andar de bike, como assim?",
+        "en": "Riding a bike? What do you mean?",
+        "enFrom": "Andar de bike, como assim?"
+      }
+    },
+    {
+      "speaker": {
+        "pt": "Meu gestor:",
+        "en": "My manager:",
+        "enFrom": "Meu gestor:"
+      },
+      "text": {
+        "pt": "Pode deixar que no caminho eu te explico, só continua pedalando",
+        "en": "Don’t worry, I’ll explain along the way. Just keep pedaling",
+        "enFrom": "Pode deixar que no caminho eu te explico, só continua pedalando"
+      }
+    }
+  ],
+  "principlesTitle": {
+    "pt": "E nas pedaladas fui construindo meu jeito de liderar",
+    "en": "As I kept pedaling, I found my own way to lead",
+    "enFrom": "E nas pedaladas fui construindo meu jeito de liderar"
+  },
+  "principlesBody": {
+    "pt": "Pedalando nessa bike, percebi rápido que com gente eu ouço e construo junto, porque, se eu tento controlar, dá ruim. Foi errando, ouvindo e ajustando a rota a cada pedalada que cheguei nesses combinados que guiam meu jeito de liderar até hoje.",
+    "en": "Riding this bike, I quickly realized that when it comes to people, I listen and build things with them, because if I try to control everything, things go wrong. By making mistakes, listening, and adjusting course with every pedal stroke, I arrived at these ground rules that still guide how I lead today.",
+    "enFrom": "Pedalando nessa bike, percebi rápido que com gente eu ouço e construo junto, porque, se eu tento controlar, dá ruim. Foi errando, ouvindo e ajustando a rota a cada pedalada que cheguei nesses combinados que guiam meu jeito de liderar até hoje."
+  },
+  "principles": [
+    {
+      "title": {
+        "pt": "Trato adultos como adultos",
+        "en": "I treat adults like adults",
+        "enFrom": "Trato adultos como adultos"
+      },
+      "body": {
+        "pt": "Cada designer é responsável pelo próprio tempo, por suas entregas e pelas conversas que precisa ter. Não preciso gerenciar pelo time.",
+        "en": "Every designer is responsible for their own time, their work and the conversations they need to have. I don’t need to manage that for the team.",
+        "enFrom": "Cada designer é responsável pelo próprio tempo, por suas entregas e pelas conversas que precisa ter. Não preciso gerenciar pelo time."
+      }
+    },
+    {
+      "title": {
+        "pt": "Designer é par na construção",
+        "en": "Designers are equal partners",
+        "enFrom": "Designer é par na construção"
+      },
+      "body": {
+        "pt": "Produto, negócio e tecnologia são pares dos designers. Procuro fortalecer isso nos meus times. Designers precisam de olhar holístico.",
+        "en": "Product, business and technology are designers’ peers. I work to strengthen that relationship within my teams. Designers need to see the whole picture.",
+        "enFrom": "Produto, negócio e tecnologia são pares dos designers. Procuro fortalecer isso nos meus times. Designers precisam de olhar holístico."
+      }
+    },
+    {
+      "title": {
+        "pt": "Autonomia com responsabilidade",
+        "en": "Autonomy with responsibility",
+        "enFrom": "Autonomia com responsabilidade"
+      },
+      "body": {
+        "pt": "Tenho confiança no que o time é capaz. Com isso vem a expectativa de que o time saiba quando pedir ajuda. E que conte comigo quando precisar.",
+        "en": "I trust what the team can do. With that comes the expectation that they know when to ask for help. And that they can count on me when they need it.",
+        "enFrom": "Tenho confiança no que o time é capaz. Com isso vem a expectativa de que o time saiba quando pedir ajuda. E que conte comigo quando precisar."
+      }
+    },
+    {
+      "title": {
+        "pt": "O líder não é o centro do time",
+        "en": "The leader isn’t the center of the team",
+        "enFrom": "O líder não é o centro do time"
+      },
+      "body": {
+        "pt": "Meu time não é minha extensão. Cada pessoa tem voz, perspectiva e talento próprio. Meu papel é abrir espaço pra isso aparecer.",
+        "en": "My team isn’t an extension of me. Everyone has their own voice, perspective and talent. My role is to make room for that to come through.",
+        "enFrom": "Meu time não é minha extensão. Cada pessoa tem voz, perspectiva e talento próprio. Meu papel é abrir espaço pra isso aparecer."
+      }
+    },
+    {
+      "title": {
+        "pt": "Eu sirvo para desbloquear",
+        "en": "I’m here to clear the way",
+        "enFrom": "Eu sirvo para desbloquear"
+      },
+      "body": {
+        "pt": "Trabalho para que o time não precise de mim o tempo todo. Mas quando precisar, estarei disponível pra somar e fazer junto.",
+        "en": "I work so the team doesn’t need me all the time. But when they do, I’m available to contribute and work alongside them.",
+        "enFrom": "Trabalho para que o time não precise de mim o tempo todo. Mas quando precisar, estarei disponível pra somar e fazer junto."
+      }
+    },
+    {
+      "title": {
+        "pt": "Transparência pra que o time apareça",
+        "en": "Transparency that puts the team in the spotlight",
+        "enFrom": "Transparência pra que o time apareça"
+      },
+      "body": {
+        "pt": "Quero que cada pessoa do time se destaque. Meu sucesso acontece quando o time aparece.",
+        "en": "I want everyone on the team to stand out. I succeed when the team gets the spotlight.",
+        "enFrom": "Quero que cada pessoa do time se destaque. Meu sucesso acontece quando o time aparece."
+      }
+    }
+  ],
+  "lifeTitle": {
+    "pt": "Não está sendo uma era fácil, mas o caminho tá sendo interessante",
+    "en": "These aren't easy times, but the journey's been interesting",
+    "enFrom": "Não está sendo uma era fácil, mas o caminho tá sendo interessante"
+  },
+  "lifeBody": {
+    "pt": "Tem sido um período de muito aprendizado. Descobrindo como usar o repertório, as vivências, memórias e aprendizados como parte de quem eu sou, para construir o Gutto 30+. Isso vale para o design e para todas as outras áreas da vida. Essa era me fez aprender que não dá para separar o meu pessoal do profissional. A jornada é longa, mas dá para parar e aproveitar o que a vida reserva pelo caminho, enquanto o futuro bate à porta.",
+    "en": "It's been a time of learning a lot. I'm discovering how to draw on my knowledge, experiences, memories, and lessons learned as part of who I am to shape Gutto 30+. That goes for design and every other area of life. This chapter has taught me that I can't separate my personal and professional lives. It's a long journey, but there's room to stop and enjoy what life has in store along the way, while the future comes knocking.",
+    "enFrom": "Tem sido um período de muito aprendizado. Descobrindo como usar o repertório, as vivências, memórias e aprendizados como parte de quem eu sou, para construir o Gutto 30+. Isso vale para o design e para todas as outras áreas da vida. Essa era me fez aprender que não dá para separar o meu pessoal do profissional. A jornada é longa, mas dá para parar e aproveitar o que a vida reserva pelo caminho, enquanto o futuro bate à porta."
+  },
+  "bikeLabel": {
+    "pt": "Bicicleta em movimento, um passo de cada vez",
+    "en": "A bicycle in motion, one step at a time",
+    "enFrom": "Bicicleta em movimento, um passo de cada vez"
+  },
+  "mountainAlt": {
+    "pt": "Uma montanha nevada: a vista compensa o esforço",
+    "en": "A snowy mountain: the view is worth the effort",
+    "enFrom": "Uma montanha nevada: a vista compensa o esforço"
+  },
+  "works": [
+    {
+      "company": "SulAmérica",
+      "role": "Design Manager",
+      "date": {
+        "pt": "Setembro de 2025 — Atual",
+        "en": "September 2025 — Present",
+        "enFrom": "Setembro de 2025 — Atual"
+      },
+      "href": "/curriculo",
+      "title": {
+        "pt": "Design em uma empresa de 130 anos",
+        "en": "Design at a 130-year-old company",
+        "enFrom": "Design em uma empresa de 130 anos"
+      },
+      "metrics": [
+        {
+          "value": {
+            "pt": "400%",
+            "en": "400%",
+            "enFrom": "400%"
+          },
+          "label": {
+            "pt": "De aumento no time das minhas frentes",
+            "en": "Growth across the teams I led",
+            "enFrom": "De aumento no time das minhas frentes"
+          }
+        },
+        {
+          "value": {
+            "pt": "Primeiro",
+            "en": "First",
+            "enFrom": "Primeiro"
+          },
+          "label": {
+            "pt": "Designer promovido nos últimos anos",
+            "en": "Designer promoted in recent years",
+            "enFrom": "Designer promovido nos últimos anos"
+          }
+        }
+      ]
+    },
+    {
+      "company": "Creator Ads",
+      "role": "Head of Design",
+      "date": {
+        "pt": "Maio de 2023 — Julho de 2024",
+        "en": "May 2023 — July 2024",
+        "enFrom": "Maio de 2023 — Julho de 2024"
+      },
+      "href": "/cases/brandlovers",
+      "title": {
+        "pt": "Creators ganhando mais dinheiro",
+        "en": "Creators earning more money",
+        "enFrom": "Creators ganhando mais dinheiro"
+      },
+      "metrics": [
+        {
+          "value": {
+            "pt": "+99%",
+            "en": "+99%",
+            "enFrom": "+99%"
+          },
+          "label": {
+            "pt": "Creators ganhando na plataforma",
+            "en": "Creators earning on the platform",
+            "enFrom": "Creators ganhando na plataforma"
+          }
+        },
+        {
+          "value": {
+            "pt": "+48%",
+            "en": "+48%",
+            "enFrom": "+48%"
+          },
+          "label": {
+            "pt": "Participação em novas campanhas",
+            "en": "Participation in new campaigns",
+            "enFrom": "Participação em novas campanhas"
+          }
+        }
+      ]
+    },
+    {
+      "company": "Loft",
+      "role": "Design Manager",
+      "date": {
+        "pt": "Março de 2022 — Março de 2023",
+        "en": "March 2022 — March 2023",
+        "enFrom": "Março de 2022 — Março de 2023"
+      },
+      "href": "/cases/loft-design",
+      "title": {
+        "pt": "Liderança que aparece nos números",
+        "en": "Leadership you can see in the numbers",
+        "enFrom": "Liderança que aparece nos números"
+      },
+      "metrics": [
+        {
+          "value": {
+            "pt": "4 designers",
+            "en": "4 designers",
+            "enFrom": "4 designers"
+          },
+          "label": {
+            "pt": "Reconhecidos e promovidos",
+            "en": "Recognized and promoted",
+            "enFrom": "Reconhecidos e promovidos"
+          }
+        },
+        {
+          "value": {
+            "pt": "+452%",
+            "en": "+452%",
+            "enFrom": "+452%"
+          },
+          "label": {
+            "pt": "Crescimento em buscas no app",
+            "en": "Growth in in-app searches",
+            "enFrom": "Crescimento em buscas no app"
+          }
+        }
+      ]
+    }
+  ],
+  "resumeNote": {
+    "pt": "Ah! Além dos trabalhos de liderança, estou no design desde 2009.",
+    "en": "Oh! Beyond my leadership roles, I’ve been working in design since 2009.",
+    "enFrom": "Ah! Além dos trabalhos de liderança, estou no design desde 2009."
+  },
+  "resumeLink": {
+    "pt": "Veja todas as experiências no meu currículo.",
+    "en": "See all my experience on my resume.",
+    "enFrom": "Veja todas as experiências no meu currículo."
+  },
+  "visionLabel": {
+    "pt": "Uma viagem para o futuro — role para explorar",
+    "en": "A journey to the future — scroll to explore",
+    "enFrom": "Uma viagem para o futuro — role para explorar"
+  },
+  "visionQuestion": {
+    "pt": "O que você quer fazer hoje?",
+    "en": "What do you want to do today?",
+    "enFrom": "O que você quer fazer hoje?"
+  },
+  "visionResponse": {
+    "pt": "Vamos para o futuro",
+    "en": "Let’s go to the future",
+    "enFrom": "Vamos para o futuro"
+  },
+  "visionRestart": {
+    "pt": "Reiniciar",
+    "en": "Restart",
+    "enFrom": "Reiniciar"
+  }
+}

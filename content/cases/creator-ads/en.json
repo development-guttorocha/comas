@@ -1,0 +1,1301 @@
+{
+  "schemaVersion": 1,
+  "slug": "creator-ads",
+  "revision": "88d0afb0-9f5e-4c8e-a320-da28dfafbae6",
+  "draft": {
+    "sourceHash": "5f678f2cf11010fc2e32ca808679aa9a7d6e1d486190167240afc2b4440dbb8c",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-31T12:11:09.744Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Mais creators ganhando na plataforma",
+        "target": "More creators earning on the platform"
+      },
+      {
+        "key": "case.productTag",
+        "source": "Liderança, Estratégia & Produto",
+        "target": "Leadership, Strategy & Product"
+      },
+      {
+        "key": "case.role",
+        "source": "Head of Design",
+        "target": "Head of Design"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Liderança",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Estratégia",
+        "target": "Strategy"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Growth",
+        "target": "Growth"
+      },
+      {
+        "key": "case.summary",
+        "source": "Como Head of Design, conduzi com o time a evolução da experiência do Creator Ads: entender as oportunidades, participar de campanhas e acompanhar os ganhos.",
+        "target": "As Head of Design, I led the team in evolving the Creator Ads experience: understanding opportunities, participating in campaigns, and tracking earnings."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore case study"
+      },
+      {
+        "key": "3387bcc8-93e5-807d-af19-cb16797aaeee.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "6a59521e-2714-42a3-895e-376c32680576.embed.title",
+        "source": "A promessa de valor",
+        "target": "The value proposition"
+      },
+      {
+        "key": "6a59521e-2714-42a3-895e-376c32680576.embed.continuation",
+        "source": "precisava fazer sentido",
+        "target": "needed to make sense"
+      },
+      {
+        "key": "6a59521e-2714-42a3-895e-376c32680576.embed.body",
+        "source": "O Creator Ads já conectava marcas a pessoas que criavam conteúdo. Havia campanhas, recompensas e gente interessada em participar. Mas a experiência deixava uma pergunta importante em aberto: como eu posso ganhar dinheiro aqui?\n\nNesse contexto, meu papel como head de design, além de construir o time de design, era dar uma direção à experiência dos creators tornando a proposta de valor clara e facilitando o caminho entre descobrir uma campanha, participar e receber.",
+        "target": "Creator Ads already connected brands with people who created content. There were campaigns, rewards, and people interested in participating. But the experience left an important question unanswered: how can I make money here?\n\nIn this context, my role as Head of Design, beyond building the design team, was to set a direction for the creator experience by making the value proposition clear and simplifying the path from discovering a campaign to participating and getting paid."
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.0.title",
+        "source": "Criar",
+        "target": "Create"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.0.body",
+        "source": "Conteúdo",
+        "target": "Content"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.1.title",
+        "source": "Publicar",
+        "target": "Post"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.1.body",
+        "source": "nas redes",
+        "target": "on social media"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.2.title",
+        "source": "Divulgar",
+        "target": "Promote"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.2.body",
+        "source": "para os seguidores",
+        "target": "to followers"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.3.title",
+        "source": "Mostrar",
+        "target": "Showcase"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.3.body",
+        "source": "Recebidos",
+        "target": "Gifted products"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.4.title",
+        "source": "Ganhar",
+        "target": "Earn"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.4.body",
+        "source": "Dinheiro",
+        "target": "Money"
+      },
+      {
+        "key": "3387bcc8-93e5-8077-b1ac-e0d14a6a6114.rich_text.0",
+        "source": "Diagnóstico",
+        "target": "Diagnosis"
+      },
+      {
+        "key": "3387bcc8-93e5-8070-ba12-d792b2149063.embed.continuation",
+        "source": "precisava sair da promessa",
+        "target": "needed to be more than a promise"
+      },
+      {
+        "key": "3387bcc8-93e5-8070-ba12-d792b2149063.embed.body",
+        "source": "Os dados que reunimos mostravam uma distância entre influenciar uma compra e conseguir viver da criação de conteúdo. Para o Creator Ads, aproximar essas duas coisas era parte central da proposta.\n\nComecei então com uma hipótese: mostrar melhor as recompensas e facilitar a participação poderia ajudar mais creators a aproveitar as campanhas. Antes de mexer nas telas, eu precisava entender o que estava dificultando esse caminho.",
+        "target": "The data we gathered showed a gap between influencing a purchase and making a living from content creation. For Creator Ads, closing that gap was central to its value proposition.\n\nI started with a hypothesis: making rewards clearer and participation easier could help more creators take advantage of campaigns. Before changing the screens, I needed to understand what was getting in the way."
+      },
+      {
+        "key": "3387bcc8-93e5-8070-ba12-d792b2149063.embed.title",
+        "source": "Ganhar dinheiro",
+        "target": "Earning money"
+      },
+      {
+        "key": "33a7bcc8-93e5-8064-80bd-dfe2f3fd50fa.embed.body",
+        "source": "De onde partimos?",
+        "target": "Where did we start?"
+      },
+      {
+        "key": "33a7bcc8-93e5-8064-80bd-dfe2f3fd50fa.embed.caption",
+        "source": "Através da pesquisa da Statista de 2019 / 2022, conseguimos entender que o número de creators no Brasil hoje é bastante alto, mas poucos desses creators conseguiam ter realmente renda vinda da criação de conteúdo.",
+        "target": "Through Statista's 2019 / 2022 research, we learned that while the number of creators in Brazil today is quite high, few of them were actually earning income from content creation."
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.title",
+        "source": "Dimensionamento",
+        "target": "Market sizing"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.0.label",
+        "source": "PAM - América Latina",
+        "target": "PAM - Latin America"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.0.figure",
+        "source": "668 milhões",
+        "target": "668 million"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.0.body",
+        "source": "Potential Available Market",
+        "target": "Potential Available Market"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.1.label",
+        "source": "TAM - Brasil",
+        "target": "TAM - Brazil"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.1.figure",
+        "source": "216 milhões",
+        "target": "216 million"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.1.body",
+        "source": "Total Addressable Market",
+        "target": "Total Addressable Market"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.2.label",
+        "source": "Número total de creators no Brasil",
+        "target": "Total number of creators in Brazil"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.2.figure",
+        "source": "110 milhões",
+        "target": "110 million"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.2.body",
+        "source": "Tamanho total da oportunidade",
+        "target": "Total opportunity size"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.source",
+        "source": "Statista - 2019 / 2022",
+        "target": "Statista - 2019 / 2022"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.title",
+        "source": "Distribuição dos creators por idade e potencial",
+        "target": "Distribution of creators by age and potential"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.0",
+        "source": "10–18",
+        "target": "10–18"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.1",
+        "source": "18–24",
+        "target": "18–24"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.2",
+        "source": "25–34",
+        "target": "25–34"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.3",
+        "source": "35–44",
+        "target": "35–44"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.4",
+        "source": "45-59",
+        "target": "45-59"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.5",
+        "source": "60+",
+        "target": "60+"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.series.0.label",
+        "source": "Pessoas",
+        "target": "People"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.source",
+        "source": "Statista - 2019 / 2022",
+        "target": "Statista - 2019 / 2022"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.title",
+        "source": "Monetização por creator",
+        "target": "Monetization per creator"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.0",
+        "source": "Sem renda",
+        "target": "No income"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.1",
+        "source": "US$ 1 - 100",
+        "target": "US$ 1 - 100"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.2",
+        "source": "US$ 100 - 200",
+        "target": "US$ 100 - 200"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.3",
+        "source": "US$ 200 - 500",
+        "target": "US$ 200 - 500"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.4",
+        "source": "Acima de 500",
+        "target": "Over 500"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.series.0.label",
+        "source": "Valor",
+        "target": "Amount"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.source",
+        "source": "Statista - 2019 / 2022",
+        "target": "Statista - 2019 / 2022"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.0.figure",
+        "source": "75%",
+        "target": "75%"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.0.body",
+        "source": "Sonham se tornar creators",
+        "target": "Dream of becoming creators"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.0.label",
+        "source": "Entre jovens até 24 anos",
+        "target": "Among young people up to age 24"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.1.label",
+        "source": "Globalmente",
+        "target": "Globally"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.1.figure",
+        "source": "1 bilhão de pessoas",
+        "target": "1 billion people"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.1.body",
+        "source": "se identificarão como creators nos próximos 5 anos",
+        "target": "will identify as creators in the next 5 years"
+      },
+      {
+        "key": "6f074b7a-f7a0-4c48-81e8-91c189c0cc01.embed.body",
+        "source": "Ouvindo os creators",
+        "target": "Listening to creators"
+      },
+      {
+        "key": "6f074b7a-f7a0-4c48-81e8-91c189c0cc01.embed.caption",
+        "source": "Conversei e fiz testes com 10 creators, coletei as gravações de navegação e analisei dados do suporte. Essas informações ajudaram a comparar o que as pessoas contavam com o que acontecia quando tentavam usar o produto.",
+        "target": "I interviewed and ran tests with 10 creators, collected session recordings, and analyzed support data. This information helped compare what people said with what happened when they tried to use the product."
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.0.date",
+        "source": "Creators",
+        "target": "Creators"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.0.title",
+        "source": "10",
+        "target": "10"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.1.title",
+        "source": "5",
+        "target": "5"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.1.date",
+        "source": "Ativos",
+        "target": "Active"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.2.date",
+        "source": "Ex-Usuários",
+        "target": "Former users"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.2.title",
+        "source": "2",
+        "target": "2"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.3.date",
+        "source": "Potenciais",
+        "target": "Potential"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.3.title",
+        "source": "3",
+        "target": "3"
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.0.title",
+        "source": "Gravação de sessão do usuário",
+        "target": "User session recording"
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.1.title",
+        "source": "Dados coletados no suporte",
+        "target": "Data collected from support"
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.2.body",
+        "source": "Até quem já usava o aplicativo tinha dificuldade para entender a mecânica de ganhos. Participar exigia passar por fluxos longos, enquanto as campanhas nem sempre traziam as informações necessárias para decidir se aquela oportunidade fazia sentido.\n\nAs dúvidas sobre saldo e as falhas nos cupons apareciam nas conversas com o suporte. Havia também problemas de instabilidade, que precisavam ser tratados com engenharia. Aos poucos, ficou mais claro onde concentrar o esforço do time: explicar a oportunidade, facilitar a participação e dar visibilidade ao dinheiro.",
+        "target": "Even people who already used the app struggled to understand how earnings worked. Participating meant going through long flows, while campaigns didn't always provide the information needed to decide whether an opportunity made sense.\n\nQuestions about balances and coupon failures came up in support conversations. There were also stability issues that needed to be addressed with engineering. Gradually, it became clearer where to focus the team's efforts: explaining the opportunity, making it easier to participate, and making earnings visible."
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.2.bullets",
+        "source": "Cupons com falha\nSaldos que não apareciam\nRecompensas não recebidas\nInstabilidade",
+        "target": "Coupon failures\nBalances not showing up\nRewards not received\nStability issues"
+      },
+      {
+        "key": "43d7e389-5d7a-4869-b2df-f028b8766940.embed.body",
+        "source": "O que aprendi olhando para outros produtos",
+        "target": "What I learned from other products"
+      },
+      {
+        "key": "43d7e389-5d7a-4869-b2df-f028b8766940.embed.caption",
+        "source": "No Airbnb, me chamou a atenção a possibilidade de entender o potencial de ganho antes de começar o cadastro. No TikTok, olhei para a organização das oportunidades e a conexão com marcas. A SocialSoul também trouxe referências de linguagem e orientação nos primeiros passos.",
+        "target": "On Airbnb, the ability to understand potential earnings before starting sign-up caught my attention. On TikTok, I looked at how opportunities were organized and how creators connected with brands. SocialSoul also offered references for language and guidance through the first steps."
+      },
+      {
+        "key": "3387bcc8-93e5-80ce-8e4c-d08e84038d11.rich_text.0",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "23126e9b-842e-4c27-b6e8-d7343d4ac803.embed.body",
+        "source": "Direcionando a experiência",
+        "target": "Shaping the experience"
+      },
+      {
+        "key": "23126e9b-842e-4c27-b6e8-d7343d4ac803.embed.caption",
+        "source": "Com tudo que aprendi em mãos, organizei as prioridades, sempre com foco em construir a melhor experiência para os creators. Mostrar os ganhos e melhorar a descoberta de campanhas eram essenciais. ",
+        "target": "With everything I had learned, I organized the priorities, always focused on building the best experience for creators. Showing earnings and improving campaign discovery were essential. "
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.sectionLabel",
+        "source": "Por onde comecei",
+        "target": "Where I started"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.0.title",
+        "source": "Mostrar ganhos",
+        "target": "Show earnings"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.0.body",
+        "source": "A pessoa precisava encontrar o saldo e as recompensas sem ter de procurar ou perguntar para alguém.",
+        "target": "People needed to see their balance and rewards without having to search or ask someone."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.1.title",
+        "source": "Recomendar campanhas",
+        "target": "Recommend campaigns"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.1.body",
+        "source": "Organizar marcas, campanhas e filtros para aproximar o creator das oportunidades certas.",
+        "target": "Organize brands, campaigns, and filters to connect creators with the right opportunities."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.2.title",
+        "source": "Educar para participar",
+        "target": "Help creators understand how to participate"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.2.body",
+        "source": "Mostrar recompensa, condições e entregas esperadas para que a pessoa pudesse decidir.",
+        "target": "Show rewards, terms, and expected deliverables so people could decide."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.3.title",
+        "source": "Continuidade na experiência",
+        "target": "Continuity across the experience"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.3.body",
+        "source": "Evoluir a retirada dos ganhos e os avisos sobre novas campanhas e marcos de ganho.",
+        "target": "Improve earnings withdrawals and notifications about new campaigns and earnings milestones."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.heading",
+        "source": "Os 4 pilares para o App de Creators",
+        "target": "The 4 pillars of the Creator App"
+      },
+      {
+        "key": "84d8d649-9517-463c-b41f-c42ae9a128eb.embed.body",
+        "source": "O novo App de Creators",
+        "target": "The new Creator App"
+      },
+      {
+        "key": "84d8d649-9517-463c-b41f-c42ae9a128eb.embed.caption",
+        "source": "A visão que construímos aproximava os primeiros passos, a descoberta de marcas, as campanhas e a carteira. Quatro ideias guiavam esse desenho: ajudar os creators a gerar renda, aproximá-los de marcas, facilitar o uso e oferecer boas oportunidades.",
+        "target": "The vision we built brought together onboarding, brand discovery, campaigns, and the wallet. Four ideas guided this design: helping creators earn income, connecting them with brands, making the app easy to use, and offering good opportunities."
+      },
+      {
+        "key": "3387bcc8-93e5-8084-bf55-fd5e56e91d18.rich_text.0",
+        "source": "Resultados",
+        "target": "Results"
+      },
+      {
+        "key": "f5d97bee-bf02-4251-a755-e5bf4b6cbbf0.embed.body",
+        "source": "Mais creators, monetizando",
+        "target": "More creators earning money"
+      },
+      {
+        "key": "f5d97bee-bf02-4251-a755-e5bf4b6cbbf0.embed.caption",
+        "source": "Acompanhamos as mudanças com os dados de uso e as gravações de navegação e observamos crescimento expressivo dos números nesse processo.\nSão resultados do trabalho conjunto de produto, design e engenharia. Minha contribuição esteve em conduzir o olhar para os problemas, organizar as escolhas e ajudar o time a construir uma experiência mais clara para quem estava do outro lado.",
+        "target": "We tracked the changes through usage data and session recordings and saw significant growth in the numbers along the way.\nThese results came from the combined work of product, design, and engineering. My contribution was to focus attention on the problems, structure the decisions, and help the team build a clearer experience for the people using the product."
+      },
+      {
+        "key": "f0883ca6-1024-4131-a67d-23b5586c3432.embed.label",
+        "source": "De creators ganhando dinheiro na plataforma",
+        "target": "More creators earning money on the platform"
+      },
+      {
+        "key": "e3e55d3b-174d-4871-b023-220463c3e4f2.embed.categories.0",
+        "source": "Aumento na conversão",
+        "target": "Increase in conversion"
+      },
+      {
+        "key": "e3e55d3b-174d-4871-b023-220463c3e4f2.embed.categories.1",
+        "source": "Aumento na ativação",
+        "target": "Increase in activation"
+      },
+      {
+        "key": "e3e55d3b-174d-4871-b023-220463c3e4f2.embed.series.0.label",
+        "source": "Série 1",
+        "target": "Series 1"
+      },
+      {
+        "key": "11d4abfd-fb01-47f6-a6a2-f6bf71a00bc4.embed.body",
+        "source": "Os creators por trás dos números",
+        "target": "The creators behind the numbers"
+      },
+      {
+        "key": "9dc9036c-cc0c-4b59-95d8-39e0785c4e43.rich_text.0",
+        "source": "*Números relacionados à comparação de Q323 com Q424",
+        "target": "*Numbers reflect a comparison of Q323 with Q424"
+      },
+      {
+        "key": "3387bcc8-93e5-80a8-8a08-db5259ff2816.rich_text.0",
+        "source": "Legado",
+        "target": "Legacy"
+      },
+      {
+        "key": "03a8f87f-4780-4ab5-9af2-0bf5d4604dd1.embed.body",
+        "source": "O legado do meu trabalho",
+        "target": "The legacy of my work"
+      },
+      {
+        "key": "03a8f87f-4780-4ab5-9af2-0bf5d4604dd1.embed.caption",
+        "source": "Experiência focada em creators e em sua monetização. Essa base aproximava design do negócio e ajudava a manter o norte enquanto o aplicativo continuava evoluindo.",
+        "target": "An experience focused on creators and their monetization. This foundation brought design closer to the business and helped maintain a clear direction as the app continued to evolve."
+      },
+      {
+        "key": "599508e2-56da-4a6e-bf46-86d93fe3c2d2.embed.tiles.1.title",
+        "source": "Deixei as bases prontas para",
+        "target": "I laid the groundwork for"
+      },
+      {
+        "key": "599508e2-56da-4a6e-bf46-86d93fe3c2d2.embed.tiles.1.label",
+        "source": "O Lovrs 1.0 surgiu deste trabalho, com foco total na melhor experiência de monetização para os creators dentro da plataforma",
+        "target": "Lovrs 1.0 grew out of this work, fully focused on the best monetization experience for creators on the platform"
+      },
+      {
+        "key": "aebfb581-3fbb-4349-92de-25b8883989fc.embed.before.label",
+        "source": "Antes",
+        "target": "Before"
+      },
+      {
+        "key": "aebfb581-3fbb-4349-92de-25b8883989fc.embed.after.label",
+        "source": "Depois",
+        "target": "After"
+      },
+      {
+        "key": "3387bcc8-93e5-80b6-8dbc-c67d8a07e6e8.embed.items.0.title",
+        "source": "Obrigado",
+        "target": "Thank you"
+      },
+      {
+        "key": "3387bcc8-93e5-80b6-8dbc-c67d8a07e6e8.embed.items.0.body",
+        "source": "Rapha, Marino, Bruno, Cabral, Carlos, Cauê, Rogério, Giovana",
+        "target": "Rapha, Marino, Bruno, Cabral, Carlos, Cauê, Rogério, Giovana"
+      }
+    ]
+  },
+  "published": {
+    "sourceHash": "5f678f2cf11010fc2e32ca808679aa9a7d6e1d486190167240afc2b4440dbb8c",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-31T12:11:09.744Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Mais creators ganhando na plataforma",
+        "target": "More creators earning on the platform"
+      },
+      {
+        "key": "case.productTag",
+        "source": "Liderança, Estratégia & Produto",
+        "target": "Leadership, Strategy & Product"
+      },
+      {
+        "key": "case.role",
+        "source": "Head of Design",
+        "target": "Head of Design"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Liderança",
+        "target": "Leadership"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "Estratégia",
+        "target": "Strategy"
+      },
+      {
+        "key": "case.tags.2",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Growth",
+        "target": "Growth"
+      },
+      {
+        "key": "case.summary",
+        "source": "Como Head of Design, conduzi com o time a evolução da experiência do Creator Ads: entender as oportunidades, participar de campanhas e acompanhar os ganhos.",
+        "target": "As Head of Design, I led the team in evolving the Creator Ads experience: understanding opportunities, participating in campaigns, and tracking earnings."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Explore case study"
+      },
+      {
+        "key": "3387bcc8-93e5-807d-af19-cb16797aaeee.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "6a59521e-2714-42a3-895e-376c32680576.embed.title",
+        "source": "A promessa de valor",
+        "target": "The value proposition"
+      },
+      {
+        "key": "6a59521e-2714-42a3-895e-376c32680576.embed.continuation",
+        "source": "precisava fazer sentido",
+        "target": "needed to make sense"
+      },
+      {
+        "key": "6a59521e-2714-42a3-895e-376c32680576.embed.body",
+        "source": "O Creator Ads já conectava marcas a pessoas que criavam conteúdo. Havia campanhas, recompensas e gente interessada em participar. Mas a experiência deixava uma pergunta importante em aberto: como eu posso ganhar dinheiro aqui?\n\nNesse contexto, meu papel como head de design, além de construir o time de design, era dar uma direção à experiência dos creators tornando a proposta de valor clara e facilitando o caminho entre descobrir uma campanha, participar e receber.",
+        "target": "Creator Ads already connected brands with people who created content. There were campaigns, rewards, and people interested in participating. But the experience left an important question unanswered: how can I make money here?\n\nIn this context, my role as Head of Design, beyond building the design team, was to set a direction for the creator experience by making the value proposition clear and simplifying the path from discovering a campaign to participating and getting paid."
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.0.title",
+        "source": "Criar",
+        "target": "Create"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.0.body",
+        "source": "Conteúdo",
+        "target": "Content"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.1.title",
+        "source": "Publicar",
+        "target": "Post"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.1.body",
+        "source": "nas redes",
+        "target": "on social media"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.2.title",
+        "source": "Divulgar",
+        "target": "Promote"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.2.body",
+        "source": "para os seguidores",
+        "target": "to followers"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.3.title",
+        "source": "Mostrar",
+        "target": "Showcase"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.3.body",
+        "source": "Recebidos",
+        "target": "Gifted products"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.4.title",
+        "source": "Ganhar",
+        "target": "Earn"
+      },
+      {
+        "key": "88c727d3-f044-49f6-a182-442e43465983.embed.nodes.4.body",
+        "source": "Dinheiro",
+        "target": "Money"
+      },
+      {
+        "key": "3387bcc8-93e5-8077-b1ac-e0d14a6a6114.rich_text.0",
+        "source": "Diagnóstico",
+        "target": "Diagnosis"
+      },
+      {
+        "key": "3387bcc8-93e5-8070-ba12-d792b2149063.embed.continuation",
+        "source": "precisava sair da promessa",
+        "target": "needed to be more than a promise"
+      },
+      {
+        "key": "3387bcc8-93e5-8070-ba12-d792b2149063.embed.body",
+        "source": "Os dados que reunimos mostravam uma distância entre influenciar uma compra e conseguir viver da criação de conteúdo. Para o Creator Ads, aproximar essas duas coisas era parte central da proposta.\n\nComecei então com uma hipótese: mostrar melhor as recompensas e facilitar a participação poderia ajudar mais creators a aproveitar as campanhas. Antes de mexer nas telas, eu precisava entender o que estava dificultando esse caminho.",
+        "target": "The data we gathered showed a gap between influencing a purchase and making a living from content creation. For Creator Ads, closing that gap was central to its value proposition.\n\nI started with a hypothesis: making rewards clearer and participation easier could help more creators take advantage of campaigns. Before changing the screens, I needed to understand what was getting in the way."
+      },
+      {
+        "key": "3387bcc8-93e5-8070-ba12-d792b2149063.embed.title",
+        "source": "Ganhar dinheiro",
+        "target": "Earning money"
+      },
+      {
+        "key": "33a7bcc8-93e5-8064-80bd-dfe2f3fd50fa.embed.body",
+        "source": "De onde partimos?",
+        "target": "Where did we start?"
+      },
+      {
+        "key": "33a7bcc8-93e5-8064-80bd-dfe2f3fd50fa.embed.caption",
+        "source": "Através da pesquisa da Statista de 2019 / 2022, conseguimos entender que o número de creators no Brasil hoje é bastante alto, mas poucos desses creators conseguiam ter realmente renda vinda da criação de conteúdo.",
+        "target": "Through Statista's 2019 / 2022 research, we learned that while the number of creators in Brazil today is quite high, few of them were actually earning income from content creation."
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.title",
+        "source": "Dimensionamento",
+        "target": "Market sizing"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.0.label",
+        "source": "PAM - América Latina",
+        "target": "PAM - Latin America"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.0.figure",
+        "source": "668 milhões",
+        "target": "668 million"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.0.body",
+        "source": "Potential Available Market",
+        "target": "Potential Available Market"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.1.label",
+        "source": "TAM - Brasil",
+        "target": "TAM - Brazil"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.1.figure",
+        "source": "216 milhões",
+        "target": "216 million"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.1.body",
+        "source": "Total Addressable Market",
+        "target": "Total Addressable Market"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.2.label",
+        "source": "Número total de creators no Brasil",
+        "target": "Total number of creators in Brazil"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.2.figure",
+        "source": "110 milhões",
+        "target": "110 million"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.items.2.body",
+        "source": "Tamanho total da oportunidade",
+        "target": "Total opportunity size"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.0.source",
+        "source": "Statista - 2019 / 2022",
+        "target": "Statista - 2019 / 2022"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.title",
+        "source": "Distribuição dos creators por idade e potencial",
+        "target": "Distribution of creators by age and potential"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.0",
+        "source": "10–18",
+        "target": "10–18"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.1",
+        "source": "18–24",
+        "target": "18–24"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.2",
+        "source": "25–34",
+        "target": "25–34"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.3",
+        "source": "35–44",
+        "target": "35–44"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.4",
+        "source": "45-59",
+        "target": "45-59"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.categories.5",
+        "source": "60+",
+        "target": "60+"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.chart.series.0.label",
+        "source": "Pessoas",
+        "target": "People"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.1.source",
+        "source": "Statista - 2019 / 2022",
+        "target": "Statista - 2019 / 2022"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.title",
+        "source": "Monetização por creator",
+        "target": "Monetization per creator"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.0",
+        "source": "Sem renda",
+        "target": "No income"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.1",
+        "source": "US$ 1 - 100",
+        "target": "US$ 1 - 100"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.2",
+        "source": "US$ 100 - 200",
+        "target": "US$ 100 - 200"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.3",
+        "source": "US$ 200 - 500",
+        "target": "US$ 200 - 500"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.categories.4",
+        "source": "Acima de 500",
+        "target": "Over 500"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.chart.series.0.label",
+        "source": "Valor",
+        "target": "Amount"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.2.source",
+        "source": "Statista - 2019 / 2022",
+        "target": "Statista - 2019 / 2022"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.0.figure",
+        "source": "75%",
+        "target": "75%"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.0.body",
+        "source": "Sonham se tornar creators",
+        "target": "Dream of becoming creators"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.0.label",
+        "source": "Entre jovens até 24 anos",
+        "target": "Among young people up to age 24"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.1.label",
+        "source": "Globalmente",
+        "target": "Globally"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.1.figure",
+        "source": "1 bilhão de pessoas",
+        "target": "1 billion people"
+      },
+      {
+        "key": "d5e101b0-bdc8-4912-b56d-6d4dbc9a6c2e.embed.cards.3.items.1.body",
+        "source": "se identificarão como creators nos próximos 5 anos",
+        "target": "will identify as creators in the next 5 years"
+      },
+      {
+        "key": "6f074b7a-f7a0-4c48-81e8-91c189c0cc01.embed.body",
+        "source": "Ouvindo os creators",
+        "target": "Listening to creators"
+      },
+      {
+        "key": "6f074b7a-f7a0-4c48-81e8-91c189c0cc01.embed.caption",
+        "source": "Conversei e fiz testes com 10 creators, coletei as gravações de navegação e analisei dados do suporte. Essas informações ajudaram a comparar o que as pessoas contavam com o que acontecia quando tentavam usar o produto.",
+        "target": "I interviewed and ran tests with 10 creators, collected session recordings, and analyzed support data. This information helped compare what people said with what happened when they tried to use the product."
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.0.date",
+        "source": "Creators",
+        "target": "Creators"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.0.title",
+        "source": "10",
+        "target": "10"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.1.title",
+        "source": "5",
+        "target": "5"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.1.date",
+        "source": "Ativos",
+        "target": "Active"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.2.date",
+        "source": "Ex-Usuários",
+        "target": "Former users"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.2.title",
+        "source": "2",
+        "target": "2"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.3.date",
+        "source": "Potenciais",
+        "target": "Potential"
+      },
+      {
+        "key": "e1ecc949-498c-46dd-9274-e238ee399e64.embed.items.3.title",
+        "source": "3",
+        "target": "3"
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.0.title",
+        "source": "Gravação de sessão do usuário",
+        "target": "User session recording"
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.1.title",
+        "source": "Dados coletados no suporte",
+        "target": "Data collected from support"
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.2.body",
+        "source": "Até quem já usava o aplicativo tinha dificuldade para entender a mecânica de ganhos. Participar exigia passar por fluxos longos, enquanto as campanhas nem sempre traziam as informações necessárias para decidir se aquela oportunidade fazia sentido.\n\nAs dúvidas sobre saldo e as falhas nos cupons apareciam nas conversas com o suporte. Havia também problemas de instabilidade, que precisavam ser tratados com engenharia. Aos poucos, ficou mais claro onde concentrar o esforço do time: explicar a oportunidade, facilitar a participação e dar visibilidade ao dinheiro.",
+        "target": "Even people who already used the app struggled to understand how earnings worked. Participating meant going through long flows, while campaigns didn't always provide the information needed to decide whether an opportunity made sense.\n\nQuestions about balances and coupon failures came up in support conversations. There were also stability issues that needed to be addressed with engineering. Gradually, it became clearer where to focus the team's efforts: explaining the opportunity, making it easier to participate, and making earnings visible."
+      },
+      {
+        "key": "67cbaf87-3933-4cba-89c1-2e8425739392.embed.cards.2.bullets",
+        "source": "Cupons com falha\nSaldos que não apareciam\nRecompensas não recebidas\nInstabilidade",
+        "target": "Coupon failures\nBalances not showing up\nRewards not received\nStability issues"
+      },
+      {
+        "key": "43d7e389-5d7a-4869-b2df-f028b8766940.embed.body",
+        "source": "O que aprendi olhando para outros produtos",
+        "target": "What I learned from other products"
+      },
+      {
+        "key": "43d7e389-5d7a-4869-b2df-f028b8766940.embed.caption",
+        "source": "No Airbnb, me chamou a atenção a possibilidade de entender o potencial de ganho antes de começar o cadastro. No TikTok, olhei para a organização das oportunidades e a conexão com marcas. A SocialSoul também trouxe referências de linguagem e orientação nos primeiros passos.",
+        "target": "On Airbnb, the ability to understand potential earnings before starting sign-up caught my attention. On TikTok, I looked at how opportunities were organized and how creators connected with brands. SocialSoul also offered references for language and guidance through the first steps."
+      },
+      {
+        "key": "3387bcc8-93e5-80ce-8e4c-d08e84038d11.rich_text.0",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "23126e9b-842e-4c27-b6e8-d7343d4ac803.embed.body",
+        "source": "Direcionando a experiência",
+        "target": "Shaping the experience"
+      },
+      {
+        "key": "23126e9b-842e-4c27-b6e8-d7343d4ac803.embed.caption",
+        "source": "Com tudo que aprendi em mãos, organizei as prioridades, sempre com foco em construir a melhor experiência para os creators. Mostrar os ganhos e melhorar a descoberta de campanhas eram essenciais. ",
+        "target": "With everything I had learned, I organized the priorities, always focused on building the best experience for creators. Showing earnings and improving campaign discovery were essential. "
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.sectionLabel",
+        "source": "Por onde comecei",
+        "target": "Where I started"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.0.title",
+        "source": "Mostrar ganhos",
+        "target": "Show earnings"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.0.body",
+        "source": "A pessoa precisava encontrar o saldo e as recompensas sem ter de procurar ou perguntar para alguém.",
+        "target": "People needed to see their balance and rewards without having to search or ask someone."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.1.title",
+        "source": "Recomendar campanhas",
+        "target": "Recommend campaigns"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.1.body",
+        "source": "Organizar marcas, campanhas e filtros para aproximar o creator das oportunidades certas.",
+        "target": "Organize brands, campaigns, and filters to connect creators with the right opportunities."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.2.title",
+        "source": "Educar para participar",
+        "target": "Help creators understand how to participate"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.2.body",
+        "source": "Mostrar recompensa, condições e entregas esperadas para que a pessoa pudesse decidir.",
+        "target": "Show rewards, terms, and expected deliverables so people could decide."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.3.title",
+        "source": "Continuidade na experiência",
+        "target": "Continuity across the experience"
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.items.3.body",
+        "source": "Evoluir a retirada dos ganhos e os avisos sobre novas campanhas e marcos de ganho.",
+        "target": "Improve earnings withdrawals and notifications about new campaigns and earnings milestones."
+      },
+      {
+        "key": "3387bcc8-93e5-8046-8c57-fe0b9d0bfb47.embed.heading",
+        "source": "Os 4 pilares para o App de Creators",
+        "target": "The 4 pillars of the Creator App"
+      },
+      {
+        "key": "84d8d649-9517-463c-b41f-c42ae9a128eb.embed.body",
+        "source": "O novo App de Creators",
+        "target": "The new Creator App"
+      },
+      {
+        "key": "84d8d649-9517-463c-b41f-c42ae9a128eb.embed.caption",
+        "source": "A visão que construímos aproximava os primeiros passos, a descoberta de marcas, as campanhas e a carteira. Quatro ideias guiavam esse desenho: ajudar os creators a gerar renda, aproximá-los de marcas, facilitar o uso e oferecer boas oportunidades.",
+        "target": "The vision we built brought together onboarding, brand discovery, campaigns, and the wallet. Four ideas guided this design: helping creators earn income, connecting them with brands, making the app easy to use, and offering good opportunities."
+      },
+      {
+        "key": "3387bcc8-93e5-8084-bf55-fd5e56e91d18.rich_text.0",
+        "source": "Resultados",
+        "target": "Results"
+      },
+      {
+        "key": "f5d97bee-bf02-4251-a755-e5bf4b6cbbf0.embed.body",
+        "source": "Mais creators, monetizando",
+        "target": "More creators earning money"
+      },
+      {
+        "key": "f5d97bee-bf02-4251-a755-e5bf4b6cbbf0.embed.caption",
+        "source": "Acompanhamos as mudanças com os dados de uso e as gravações de navegação e observamos crescimento expressivo dos números nesse processo.\nSão resultados do trabalho conjunto de produto, design e engenharia. Minha contribuição esteve em conduzir o olhar para os problemas, organizar as escolhas e ajudar o time a construir uma experiência mais clara para quem estava do outro lado.",
+        "target": "We tracked the changes through usage data and session recordings and saw significant growth in the numbers along the way.\nThese results came from the combined work of product, design, and engineering. My contribution was to focus attention on the problems, structure the decisions, and help the team build a clearer experience for the people using the product."
+      },
+      {
+        "key": "f0883ca6-1024-4131-a67d-23b5586c3432.embed.label",
+        "source": "De creators ganhando dinheiro na plataforma",
+        "target": "More creators earning money on the platform"
+      },
+      {
+        "key": "e3e55d3b-174d-4871-b023-220463c3e4f2.embed.categories.0",
+        "source": "Aumento na conversão",
+        "target": "Increase in conversion"
+      },
+      {
+        "key": "e3e55d3b-174d-4871-b023-220463c3e4f2.embed.categories.1",
+        "source": "Aumento na ativação",
+        "target": "Increase in activation"
+      },
+      {
+        "key": "e3e55d3b-174d-4871-b023-220463c3e4f2.embed.series.0.label",
+        "source": "Série 1",
+        "target": "Series 1"
+      },
+      {
+        "key": "11d4abfd-fb01-47f6-a6a2-f6bf71a00bc4.embed.body",
+        "source": "Os creators por trás dos números",
+        "target": "The creators behind the numbers"
+      },
+      {
+        "key": "9dc9036c-cc0c-4b59-95d8-39e0785c4e43.rich_text.0",
+        "source": "*Números relacionados à comparação de Q323 com Q424",
+        "target": "*Numbers reflect a comparison of Q323 with Q424"
+      },
+      {
+        "key": "3387bcc8-93e5-80a8-8a08-db5259ff2816.rich_text.0",
+        "source": "Legado",
+        "target": "Legacy"
+      },
+      {
+        "key": "03a8f87f-4780-4ab5-9af2-0bf5d4604dd1.embed.body",
+        "source": "O legado do meu trabalho",
+        "target": "The legacy of my work"
+      },
+      {
+        "key": "03a8f87f-4780-4ab5-9af2-0bf5d4604dd1.embed.caption",
+        "source": "Experiência focada em creators e em sua monetização. Essa base aproximava design do negócio e ajudava a manter o norte enquanto o aplicativo continuava evoluindo.",
+        "target": "An experience focused on creators and their monetization. This foundation brought design closer to the business and helped maintain a clear direction as the app continued to evolve."
+      },
+      {
+        "key": "599508e2-56da-4a6e-bf46-86d93fe3c2d2.embed.tiles.1.title",
+        "source": "Deixei as bases prontas para",
+        "target": "I laid the groundwork for"
+      },
+      {
+        "key": "599508e2-56da-4a6e-bf46-86d93fe3c2d2.embed.tiles.1.label",
+        "source": "O Lovrs 1.0 surgiu deste trabalho, com foco total na melhor experiência de monetização para os creators dentro da plataforma",
+        "target": "Lovrs 1.0 grew out of this work, fully focused on the best monetization experience for creators on the platform"
+      },
+      {
+        "key": "aebfb581-3fbb-4349-92de-25b8883989fc.embed.before.label",
+        "source": "Antes",
+        "target": "Before"
+      },
+      {
+        "key": "aebfb581-3fbb-4349-92de-25b8883989fc.embed.after.label",
+        "source": "Depois",
+        "target": "After"
+      },
+      {
+        "key": "3387bcc8-93e5-80b6-8dbc-c67d8a07e6e8.embed.items.0.title",
+        "source": "Obrigado",
+        "target": "Thank you"
+      },
+      {
+        "key": "3387bcc8-93e5-80b6-8dbc-c67d8a07e6e8.embed.items.0.body",
+        "source": "Rapha, Marino, Bruno, Cabral, Carlos, Cauê, Rogério, Giovana",
+        "target": "Rapha, Marino, Bruno, Cabral, Carlos, Cauê, Rogério, Giovana"
+      }
+    ]
+  },
+  "reel": {
+    "sourceHash": "988f42738da2fd696df232f55473f298375d2b39aa4afb37417ddc10382b4d1c",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T13:24:55.075Z",
+    "units": [
+      {
+        "key": "reel.title",
+        "source": "+99% de creators ganhando dinheiro",
+        "target": "+99% creators making money"
+      },
+      {
+        "key": "reel.cta",
+        "source": "Ver serviços",
+        "target": "See services"
+      },
+      {
+        "key": "reel.title-1.chapter",
+        "source": "Resultado",
+        "target": "Result"
+      },
+      {
+        "key": "reel.title-1.lines.0",
+        "source": "*Mais* creators",
+        "target": "*More* creators"
+      },
+      {
+        "key": "reel.title-1.lines.1",
+        "source": "ganhando",
+        "target": "making"
+      },
+      {
+        "key": "reel.title-1.lines.2",
+        "source": "*mais* dinheiro",
+        "target": "*more* money"
+      },
+      {
+        "key": "reel.title-2.chapter",
+        "source": "Problema",
+        "target": "Problem"
+      },
+      {
+        "key": "reel.title-2.lines.0",
+        "source": "O Creator Ads",
+        "target": "Creator Ads"
+      },
+      {
+        "key": "reel.title-2.lines.1",
+        "source": "*não mostrava",
+        "target": "*didn't show"
+      },
+      {
+        "key": "reel.title-2.lines.2",
+        "source": "como monetizar.*",
+        "target": "how to monetize.*"
+      },
+      {
+        "key": "reel.image-1.chapter",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "reel.image-1.eyebrow",
+        "source": "a decisão que virou o jogo",
+        "target": "the game-changing decision"
+      },
+      {
+        "key": "reel.image-1.lines.0",
+        "source": "Então eu escolhi",
+        "target": "So I chose"
+      },
+      {
+        "key": "reel.image-1.lines.1",
+        "source": "*mostrar os ganhos*",
+        "target": "*to show earnings*"
+      },
+      {
+        "key": "reel.image-1.lines.2",
+        "source": "e recomendar campanhas.",
+        "target": "and recommend campaigns."
+      },
+      {
+        "key": "reel.image-1.body",
+        "source": "Foi a virada que o negócio precisava",
+        "target": "It was the shift the business needed"
+      },
+      {
+        "key": "reel.metrics-1.chapter",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "reel.metrics-1.value",
+        "source": "+99%",
+        "target": "+99%"
+      },
+      {
+        "key": "reel.metrics-1.label",
+        "source": "de creators ganhando dinheiro",
+        "target": "creators making money"
+      },
+      {
+        "key": "reel.metrics-1.note",
+        "source": "Q323 vs Q424",
+        "target": "Q323 vs Q424"
+      },
+      {
+        "key": "reel.metrics-1.gauges.0.prefix",
+        "source": "+",
+        "target": "+"
+      },
+      {
+        "key": "reel.metrics-1.gauges.0.suffix",
+        "source": "%",
+        "target": "%"
+      },
+      {
+        "key": "reel.metrics-1.gauges.0.label",
+        "source": "conversão",
+        "target": "conversion"
+      },
+      {
+        "key": "reel.metrics-1.gauges.1.prefix",
+        "source": "+",
+        "target": "+"
+      },
+      {
+        "key": "reel.metrics-1.gauges.1.suffix",
+        "source": "%",
+        "target": "%"
+      },
+      {
+        "key": "reel.metrics-1.gauges.1.label",
+        "source": "ativação",
+        "target": "activation"
+      },
+      {
+        "key": "reel.end-1.chapter",
+        "source": "Fechamento",
+        "target": "Closing"
+      },
+      {
+        "key": "reel.end-1.lines.0",
+        "source": "Eu ajudo creators",
+        "target": "I help creators"
+      },
+      {
+        "key": "reel.end-1.lines.1",
+        "source": "a *ganhar dinheiro*.",
+        "target": "*make money*."
+      },
+      {
+        "key": "reel.end-1.meta",
+        "source": "Creator Ads · Head of Design · 2023–2024",
+        "target": "Creator Ads · Head of Design · 2023–2024"
+      },
+      {
+        "key": "reel.end-1.signature",
+        "source": "Gutto Rocha",
+        "target": "Gutto Rocha"
+      }
+    ]
+  }
+}

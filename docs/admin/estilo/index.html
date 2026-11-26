@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin: proposta de estilo</title>
+<style>
+/* Tokens: docs/admin/conceito/admin-design-dna.json, os mesmos já aplicados no admin. Esta página é a proposta, não a implementação. */
+:root {
+  --bg: #0e0e0e; --field: #121212; --panel: #181818; --panel-hover: #1c1c1c; --raised: #222222; --raised-hover: #2c2c2c; --pressed: #1d1d1d;
+  --line: #313232; --control: #6b6b6b;
+  --ink: #fafafa; --soft: #d6d7d8; --muted: #999999; --faint: #858585;
+  --good: #5fd27d; --warn: #e7b450; --bad: #f2706b;
+  --ease: cubic-bezier(.2, 0, 0, 1);
+  --fast: 120ms; --screen: 160ms; --base: 200ms;
+  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #070707; color: var(--ink); font: 14px/1.55 var(--sans); letter-spacing: -.005em; -webkit-font-smoothing: antialiased; }
+.doc { max-width: 1320px; margin: 0 auto; padding: 40px 24px 96px; display: grid; gap: 40px; }
+.doc > header, .block { display: grid; gap: 12px; }
+h1 { margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -.02em; }
+h2 { margin: 0; font-size: 18px; font-weight: 500; letter-spacing: -.015em; }
+p { margin: 0; color: var(--muted); max-width: 76ch; }
+strong { color: var(--ink); font-weight: 500; }
+.flag { justify-self: start; padding: 2px 10px; border-radius: 999px; background: rgb(231 180 80 / 12%); color: var(--warn); font-size: 12px; }
+.thesis { padding: 20px; border-radius: 12px; background: var(--panel); display: grid; gap: 10px; }
+.thesis p { color: var(--soft); }
+.ask { color: var(--ink) !important; }
+code { font-family: var(--mono); font-size: 12px; color: var(--soft); }
+
+/* Motion demo */
+.lab { display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: center; padding: 20px; border-radius: 12px; background: var(--panel); }
+.curve { width: 200px; height: 140px; border-radius: 8px; background: var(--field); }
+.nums { display: grid; gap: 4px; font-family: var(--mono); font-size: 12px; color: var(--soft); }
+.nums span { color: var(--faint); }
+.labbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 8px; }
+.demo { display: grid; gap: 8px; max-width: 520px; margin-top: 12px; }
+.reduced * { transition: none !important; animation: none !important; }
+
+/* States grid */
+.states { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 8px; }
+.state { padding: 16px; border-radius: 12px; background: var(--panel); display: grid; gap: 10px; align-content: start; }
+.state h3 { margin: 0; font-size: 13px; font-weight: 500; color: var(--muted); }
+.row5 { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+.row5 figure { margin: 0; display: grid; gap: 6px; justify-items: start; }
+.row5 figcaption { font-size: 12px; color: var(--faint); }
+
+/* ===== The proposed admin pieces ===== */
+.btn { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: var(--raised); color: var(--ink); font: 500 13px var(--sans); white-space: nowrap; cursor: pointer; transition: background-color var(--fast) var(--ease), color var(--fast) var(--ease); }
+.btn:hover, .btn.is-hover { background: var(--raised-hover); }
+.btn:active, .btn.is-active { background: var(--pressed); }
+.btn.primary { background: var(--ink); color: var(--bg); }
+.btn.primary:hover, .btn.primary.is-hover { background: #e4e4e4; }
+.btn.primary:active, .btn.primary.is-active { background: #cfcfcf; }
+.btn.ghost { background: transparent; color: var(--muted); }
+.btn.ghost:hover, .btn.ghost.is-hover { background: var(--raised); color: var(--ink); }
+.btn:focus-visible, .btn.is-focus { outline: 2px solid var(--ink); outline-offset: 2px; }
+.btn:disabled { opacity: .4; cursor: default; }
+.btn .spin { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid rgb(14 14 14 / 25%); border-top-color: var(--bg); animation: spin .7s linear infinite; }
+@keyframes spin { to { transform: rotate(1turn); } }
+.btn svg, .row svg { width: 15px; height: 15px; flex: none; }
+.nav svg { width: 16px; height: 16px; flex: none; }
+.save { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; white-space: nowrap; }
+.save::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--good); }
+.save[data-state="dirty"]::before { background: var(--warn); }
+.save[data-state="saving"]::before { background: var(--warn); animation: breathe 1s var(--ease) infinite alternate; }
+@keyframes breathe { to { opacity: .35; } }
+
+.input { height: 34px; width: 100%; padding: 0 10px; border: 1px solid var(--control); border-radius: 8px; background: var(--field); color: var(--ink); font: 14px var(--sans); transition: border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease); }
+.input:focus, .input.is-focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgb(250 250 250 / 10%); }
+.input.is-error { border-color: var(--bad); }
+
+/* Rows: one link per row, the arrow answers the pointer */
+.row { position: relative; display: grid; align-items: center; gap: 14px; min-height: 60px; padding: 10px 20px; border-top: 1px solid var(--line); color: inherit; text-decoration: none; transition: background-color var(--fast) var(--ease); }
+.row:hover, .row.is-hover { background: var(--panel-hover); }
+.row:focus-visible, .row.is-focus { outline: 2px solid var(--ink); outline-offset: -2px; }
+.row:active, .row.is-active { background: var(--raised); }
+.row .go { color: var(--faint); transition: color var(--fast) var(--ease), transform var(--fast) var(--ease); }
+.row:hover .go, .row.is-hover .go, .row:focus-visible .go { color: var(--ink); transform: translateX(2px); }
+.row b { display: block; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row small { display: block; color: var(--muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row small code { color: var(--faint); font-size: 11.5px; }
+.row .tag { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.row .tag.warn { color: var(--warn); }
+.row .tag.bad { color: var(--bad); }
+.row .when { color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.thumb { width: 64px; height: 40px; border-radius: 6px; object-fit: cover; background: var(--raised); display: block; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); justify-self: center; }
+.dot.bad { background: var(--bad); }
+.skel { height: 60px; border-top: 1px solid var(--line); display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; padding: 0 20px; }
+.skel i { display: block; height: 10px; border-radius: 4px; background: var(--raised); }
+.skel i.box { height: 40px; border-radius: 6px; }
+.skel span { display: grid; gap: 8px; }
+.skel span i:last-child { width: 40%; background: #1f1f1f; }
+.empty { display: flex; align-items: center; gap: 8px; padding: 14px 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.empty .ok { color: var(--good); }
+/* New rows arrive: opacity and 4px, no JS (CSS @starting-style) */
+.arrive { transition: opacity var(--base) var(--ease), translate var(--base) var(--ease); }
+@starting-style { .arrive { opacity: 0; translate: 0 4px; } }
+
+/* ===== Frames: the admin at 1280×800 ===== */
+.pair { display: grid; gap: 12px; }
+.cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
+@media (max-width: 1100px) { .cmp { grid-template-columns: 1fr; } }
+.label { font-size: 12px; color: var(--faint); margin-bottom: 6px; }
+.before img { display: block; width: 100%; border-radius: 10px; }
+.changes { display: grid; gap: 6px; margin: 0; padding-left: 18px; color: var(--muted); }
+.changes li::marker { color: var(--faint); }
+.frame-wrap { width: 100%; aspect-ratio: 1280 / 800; overflow: hidden; border-radius: 10px; }
+.frame-wrap.full { width: 1280px; aspect-ratio: auto; height: 800px; border-radius: 0; }
+.frame { width: 1280px; height: 800px; transform-origin: 0 0; background: var(--bg); display: grid; grid-template-columns: 200px minmax(0, 1fr); grid-template-rows: 52px minmax(0, 1fr); font-size: 14px; }
+.rail { grid-row: 1 / -1; display: flex; flex-direction: column; gap: 2px; padding: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; height: 32px; margin: 0 0 18px 2px; font-weight: 500; }
+.logo { width: 28px; height: 28px; border-radius: 8px; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-size: 11px; font-weight: 700; }
+.nav { display: flex; align-items: center; gap: 10px; height: 34px; padding: 0 10px; border-radius: 8px; color: var(--muted); font-size: 13px; }
+.nav[aria-current] { background: var(--raised); color: var(--ink); }
+.nav .count { margin-left: auto; min-width: 20px; height: 20px; padding: 0 6px; border-radius: 999px; background: var(--warn); color: #1a1408; font-size: 11px; font-weight: 600; display: grid; place-items: center; }
+.spacer { flex: 1; }
+.top { display: flex; align-items: center; gap: 8px; padding: 0 16px 0 8px; }
+.crumbs { color: var(--muted); font-size: 14px; }
+.crumbs b { color: var(--ink); font-weight: 400; }
+.top .end { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.work { min-width: 0; min-height: 0; padding: 0 8px 8px 0; }
+.sheet { height: 100%; border-radius: 12px; background: var(--panel); overflow: hidden; display: grid; align-content: start; }
+.head { display: flex; align-items: end; justify-content: space-between; gap: 16px; padding: 24px 20px 0; }
+.head h3 { margin: 0; font-size: 24px; font-weight: 500; letter-spacing: -.02em; line-height: 1.2; }
+.head p { margin: 6px 0 0; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+.head p a { color: var(--warn); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgb(231 180 80 / 40%); }
+.search { height: 32px; width: 220px; display: flex; align-items: center; gap: 8px; padding: 0 10px; border: 1px solid var(--control); border-radius: 8px; background: var(--field); color: var(--faint); font-size: 13px; }
+.bar { display: flex; align-items: center; justify-content: space-between; padding: 20px 20px 12px; }
+.pills { display: inline-flex; gap: 2px; padding: 2px; border-radius: 999px; background: var(--field); }
+.pill { height: 28px; padding: 0 12px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; }
+.pill[aria-selected="true"] { background: var(--raised); color: var(--ink); }
+.pill small { color: var(--faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+.sec { display: flex; align-items: baseline; gap: 8px; padding: 32px 20px 10px; color: var(--muted); font-size: 13px; font-weight: 500; }
+.sec:first-of-type { padding-top: 24px; }
+.sec span { color: var(--faint); font-weight: 400; font-variant-numeric: tabular-nums; }
+.list-cases .row { grid-template-columns: 64px minmax(0, 1fr) 130px 90px 16px; }
+.list-site .row, .list-draft .row { grid-template-columns: minmax(0, 1fr) 16px; }
+.list-draft .row { grid-template-columns: 64px minmax(0, 1fr) 16px; }
+.list-notice .row { grid-template-columns: 8px minmax(0, 1fr) auto; align-items: start; }
+.list-notice .row .dot { margin-top: 7px; }
+.list-notice .row small { white-space: normal; max-width: 70ch; line-height: 1.5; margin-top: 2px; }
+.list-notice .act { color: var(--ink); font-size: 13px; font-weight: 500; text-decoration: none; padding-top: 1px; white-space: nowrap; }
+.list-notice .act.off { color: var(--faint); font-weight: 400; }
+
+/* Editor screen: an index of the page, the groups in one column */
+.ed { display: grid; grid-template-columns: 188px minmax(0, 1fr); height: 100%; }
+.sheet:has(.ed) { display: block; }
+.toc { padding: 24px 8px 24px 12px; display: grid; gap: 1px; align-content: start; border-right: 1px solid var(--line); }
+.toc span { padding: 6px 10px; border-radius: 6px; color: var(--muted); font-size: 13px; }
+.toc span[aria-current] { background: var(--raised); color: var(--ink); }
+.toc span.seo { margin-top: 10px; }
+.toc em { font-style: normal; color: var(--warn); }
+.edbody { overflow: hidden; }
+.grp { padding: 0 20px 28px; display: grid; gap: 14px; }
+.grp + .grp { border-top: 1px solid var(--line); padding-top: 24px; }
+.grp h4 { margin: 0; font-size: 15px; font-weight: 500; letter-spacing: -.01em; }
+.field { display: grid; gap: 6px; }
+.field > span { color: var(--muted); font-size: 12px; }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.lang { position: relative; }
+.lang i { position: absolute; left: 10px; top: 9px; font-style: normal; color: var(--faint); font-size: 11px; font-weight: 500; }
+.lang .input { padding-left: 34px; }
+.share { display: grid; grid-template-columns: 1fr 300px; gap: 16px; }
+.card { border-radius: 10px; overflow: hidden; background: var(--raised); }
+.card .img { height: 130px; background: linear-gradient(135deg, #2a2a2a, #161616); display: grid; place-items: end start; padding: 12px; color: var(--soft); font-size: 15px; font-weight: 500; }
+.card .cap { padding: 10px 12px; display: grid; gap: 2px; font-size: 12px; }
+.card .cap span { color: var(--faint); }
+.card .cap small { color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="doc">
+
+<header>
+  <span class="flag">Proposta não validada: esta página é a proposta, não a implementação</span>
+  <h1>Admin: proposta de estilo</h1>
+  <div class="thesis">
+    <p><strong>Tese visual:</strong> o admin vira uma bancada que responde. Cada linha e cada botão confirmam o toque em 120 ms: o fundo sobe um degrau e a seta anda 2 px. Cada tela chega em 160 ms, só com opacidade. O que está carregando mostra a forma do que vem, em vez de "Carregando…". A hierarquia vem de três tamanhos de letra e do espaço (24 px entre a cabeça e o trabalho, 32 px entre grupos), não de caixas: avisos, rascunhos e páginas viram linhas da mesma lista, e a cor só marca estado.</p>
+    <p><strong>Padrões permitidos:</strong></p>
+    <ul class="changes">
+      <li>divisória de 1 px entre as linhas de lista, porque a lista é uma tabela;</li>
+      <li>ponto de estado ao lado de "Salvo", que pulsa só enquanto salva;</li>
+      <li>número de Pendências no menu;</li>
+      <li>linhas-esqueleto paradas enquanto carrega;</li>
+      <li>mono só em endereços e variáveis;</li>
+      <li>separador "·" nos metadados.</li>
+    </ul>
+    <p>A paleta e a direção são as do DNA aprovado: nada muda de cor, só de ritmo, estado e movimento.</p>
+  </div>
+</header>
+
+<section class="block">
+  <h2>Movimento</h2>
+  <div class="lab" id="lab">
+    <svg class="curve" viewBox="0 0 200 140" aria-label="Curva cubic-bezier(.2, 0, 0, 1)">
+      <path d="M20 120 H180 M20 120 V20" stroke="#313232" />
+      <path d="M20 120 C52 120, 20 20, 180 20" stroke="#fafafa" stroke-width="2" fill="none" />
+      <circle cx="52" cy="120" r="3" fill="#858585" /><circle cx="20" cy="20" r="3" fill="#858585" />
+    </svg>
+    <div>
+      <div class="nums">
+        <div>cubic-bezier(.2, 0, 0, 1) <span>entrada e mudança de estado</span></div>
+        <div>120 ms <span>hover, foco, toque: fundo um degrau acima, seta 2 px</span></div>
+        <div>160 ms <span>troca de tela: só opacidade</span></div>
+        <div>200 ms <span>menu, diálogo, toast e linha nova: opacidade e 4 px (@starting-style, sem JS)</span></div>
+        <div>movimento reduzido <span>tudo instantâneo; o ponto de "Salvando" fica parado</span></div>
+      </div>
+      <div class="labbar">
+        <button class="btn" id="replay" type="button">Repetir</button>
+        <label class="save" style="gap:6px"><input type="checkbox" id="rm"> Movimento reduzido</label>
+      </div>
+      <div class="demo" id="demo"></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>Estados</h2>
+  <div class="states">
+    <div class="state">
+      <h3>Botões</h3>
+      <div class="row5">
+        <figure><button class="btn primary" type="button">Publicar o site</button><figcaption>padrão</figcaption></figure>
+        <figure><button class="btn primary is-hover" type="button">Publicar o site</button><figcaption>hover</figcaption></figure>
+        <figure><button class="btn primary is-focus" type="button">Publicar o site</button><figcaption>foco</figcaption></figure>
+        <figure><button class="btn primary is-active" type="button">Publicar o site</button><figcaption>toque</figcaption></figure>
+        <figure><button class="btn primary" type="button" aria-busy="true"><span class="spin"></span>Publicando…</button><figcaption>trabalhando</figcaption></figure>
+        <figure><button class="btn primary" type="button" disabled title="Nada mudou desde a última publicação">Salvar</button><figcaption>desabilitado, com o motivo</figcaption></figure>
+      </div>
+      <div class="row5">
+        <figure><button class="btn" type="button">Novo case</button><figcaption>secundário</figcaption></figure>
+        <figure><button class="btn is-hover" type="button">Novo case</button><figcaption>hover</figcaption></figure>
+        <figure><button class="btn ghost" type="button">Ver no site</button><figcaption>fantasma</figcaption></figure>
+        <figure><button class="btn ghost is-hover" type="button">Ver no site</button><figcaption>hover</figcaption></figure>
+      </div>
+    </div>
+    <div class="state">
+      <h3>Linhas de lista</h3>
+      <div class="list-site" style="border-radius:10px; overflow:hidden; background:var(--panel)">
+        <a class="row" href="#"><span><b>Sobre</b><small>padrão · <code>/sobre</code></small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="row is-hover" href="#"><span><b>Sobre</b><small>hover: fundo e seta</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="row is-focus" href="#"><span><b>Sobre</b><small>foco do teclado: contorno por dentro</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="row is-active" href="#"><span><b>Sobre</b><small>toque: um degrau acima</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="state">
+      <h3>Carregando, vazio e salvando</h3>
+      <div style="border-radius:10px; overflow:hidden; background:var(--panel)">
+        <div class="skel"><i class="box"></i><span><i></i><i></i></span></div>
+        <div class="skel"><i class="box"></i><span><i></i><i></i></span></div>
+        <div class="empty"><span class="ok">✓</span>Inglês em dia em todo o site.</div>
+      </div>
+      <div class="row5"><span class="save">Tudo salvo</span><span class="save" data-state="dirty">Alterações não salvas</span><span class="save" data-state="saving">Salvando…</span></div>
+    </div>
+    <div class="state">
+      <h3>Campos</h3>
+      <input class="input" value="O mundo muda." aria-label="padrão">
+      <input class="input is-focus" value="O mundo muda." aria-label="foco">
+      <input class="input is-error" value="" aria-label="erro">
+      <span style="color:var(--bad); font-size:12px">O título não pode ficar vazio.</span>
+    </div>
+  </div>
+</section>
+
+<section class="pair">
+  <h2>1. Pendências</h2>
+  <div class="cmp">
+    <div class="before"><div class="label">Antes (o admin hoje, 1280×800)</div><img src="antes-1-pendencias.jpg" alt="Pendências hoje"></div>
+    <div><div class="label">Depois</div>
+      <div class="frame-wrap"><div class="frame" id="f1">
+        <nav class="rail"><div class="brand"><span class="logo">GR</span>Admin</div>
+          <span class="nav" aria-current="page">Pendências<span class="count">1</span></span><span class="nav">Cases</span><span class="nav">Artigos</span><span class="nav">Site</span><span class="nav">Mídia</span>
+          <span class="spacer"></span><span class="nav">Chaves</span><span class="nav">Travar</span><span class="nav">Abrir o site</span></nav>
+        <header class="top"><span class="crumbs"><b>Pendências</b></span><span class="end"><button class="btn primary" type="button">Publicar o site</button></span></header>
+        <div class="work"><div class="sheet">
+          <div class="head"><div><h3>Pendências</h3><p>Inglês em dia · 1 rascunho · 1 aviso</p></div></div>
+          <div class="sec">Avisos <span>1</span></div>
+          <div class="list-notice">
+            <div class="row"><span class="dot"></span><span><b>O armazenamento Blob está suspenso</b><small>Leads e respostas da pesquisa salarial chegam por e-mail, mas não ficam guardados. Só se resolve na Vercel: vercel.com › Storage, geralmente é limite do plano.</small></span><span class="act off">Fora do admin</span></div>
+          </div>
+          <div class="sec">Rascunhos <span>1</span></div>
+          <div class="list-draft">
+            <a class="row is-hover" href="#"><span class="thumb"></span><span><b>SulAmérica Viagem</b><small>Case · SulAmérica · fora do site</small></span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+          <div class="sec">Inglês para revisar</div>
+          <div class="empty" style="border-top:0; padding-top:0"><span class="ok">✓</span>Em dia em todo o site.</div>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+  <ul class="changes">
+    <li>Aviso, rascunho e inglês viram linhas da mesma lista. As caixas âmbar saem, e o estado fica num ponto e na palavra.</li>
+    <li>O que pede ação vem primeiro: avisos, depois rascunhos. O que está em dia desce e vira uma linha com ✓.</li>
+    <li>Os títulos de grupo ficam em 13 px cinza, abaixo do título da tela (24 px): dois níveis em vez de três.</li>
+    <li>Enquanto confere o site, a tela mostra linhas-esqueleto paradas, não "Conferindo…".</li>
+  </ul>
+</section>
+
+<section class="pair">
+  <h2>2. Lista de cases</h2>
+  <div class="cmp">
+    <div class="before"><div class="label">Antes</div><img src="antes-2-cases.jpg" alt="Lista de cases hoje"></div>
+    <div><div class="label">Depois</div>
+      <div class="frame-wrap"><div class="frame">
+        <nav class="rail"><div class="brand"><span class="logo">GR</span>Admin</div>
+          <span class="nav">Pendências<span class="count">1</span></span><span class="nav" aria-current="page">Cases</span><span class="nav">Artigos</span><span class="nav">Site</span><span class="nav">Mídia</span>
+          <span class="spacer"></span><span class="nav">Chaves</span><span class="nav">Travar</span><span class="nav">Abrir o site</span></nav>
+        <header class="top"><span class="crumbs"><b>Cases</b></span><span class="end"><button class="btn" type="button">Novo case</button><button class="btn primary" type="button">Publicar o site</button></span></header>
+        <div class="work"><div class="sheet">
+          <div class="head"><div><h3>Cases</h3><p>7 cases · 6 na esteira da Home · 1 rascunho · inglês em dia</p></div><span class="search">Buscar case…</span></div>
+          <div class="bar"><span class="pills"><span class="pill" aria-selected="true">Ativos <small>7</small></span><span class="pill">Na esteira <small>6</small></span><span class="pill">Rascunhos <small>1</small></span><span class="pill">Arquivados <small>0</small></span></span></div>
+          <div class="list-cases">
+            <a class="row" href="#"><span class="thumb" style="background:#3b4a48"></span><span><b>Projetando para médicos e hospitais</b><small>Plenno – Healthtech · 2025 · Na esteira da Home</small></span><span class="tag">Inglês em dia</span><span class="when">há 3 dias</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="row is-hover" href="#"><span class="thumb" style="background:#2f3d31"></span><span><b>Construindo o time de design B2B no PicPay</b><small>PicPay · 2020–2022 · Na esteira da Home</small></span><span class="tag">Inglês em dia</span><span class="when">há 3 dias</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="row" href="#"><span class="thumb" style="background:#4a3a30"></span><span><b>Mais creators ganhando na plataforma</b><small>Creator Ads · 2023–2024 · Na esteira da Home</small></span><span class="tag">Inglês em dia</span><span class="when">anteontem</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="row" href="#"><span class="thumb" style="background:#5a3d2f"></span><span><b>Desenvolver pessoas para destravar o time</b><small>Loft · 2022–2023 · Na esteira da Home</small></span><span class="tag">Inglês em dia</span><span class="when">há 3 dias</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="row" href="#"><span class="thumb" style="background:#2b3f63"></span><span><b>O PAN não via, mas a loja sabia.</b><small>Banco PAN · 2019 · Na esteira da Home</small></span><span class="tag">Inglês em dia</span><span class="when">há 3 dias</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="row" href="#"><span class="thumb" style="background:#3a1c1e"></span><span><b>Catálogo 0km feito para SEO do zero</b><small>Webmotors · 2015–2018 · Na esteira da Home</small></span><span class="tag">Inglês em dia</span><span class="when">anteontem</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="row" href="#"><span class="thumb"></span><span><b>SulAmérica Viagem</b><small>SulAmérica · 2026 · Rascunho, fora do site</small></span><span class="tag bad">Sem inglês</span><span class="when">ontem</span><svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+  <ul class="changes">
+    <li>As abas viram um trilho em pílula sobre o fundo do campo, e a escolhida sobe um degrau. Lê-se como um controle só, não como quatro botões soltos.</li>
+    <li>As linhas têm 60 px, a miniatura 64×40 e uma seta que responde ao ponteiro. O "⋯" só aparece no hover e no foco: a linha descansa limpa.</li>
+    <li>"Editado" usa o cinza mais fraco e números tabulares. O status (Inglês) é a única coluna que pode ter cor.</li>
+  </ul>
+</section>
+
+<section class="pair">
+  <h2>3. Uma página em Site (Sobre)</h2>
+  <div class="cmp">
+    <div class="before"><div class="label">Antes</div><img src="antes-3-sobre.jpg" alt="Site › Sobre hoje"></div>
+    <div><div class="label">Depois</div>
+      <div class="frame-wrap"><div class="frame">
+        <nav class="rail"><div class="brand"><span class="logo">GR</span>Admin</div>
+          <span class="nav">Pendências<span class="count">1</span></span><span class="nav">Cases</span><span class="nav">Artigos</span><span class="nav" aria-current="page">Site</span><span class="nav">Mídia</span>
+          <span class="spacer"></span><span class="nav">Chaves</span><span class="nav">Travar</span><span class="nav">Abrir o site</span></nav>
+        <header class="top"><span class="crumbs">Site › <b>Sobre</b></span><span class="end"><span class="save" data-state="dirty">Alterações não salvas</span><button class="btn ghost" type="button">Ver no site</button><button class="btn primary" type="button">Salvar</button><button class="btn" type="button">Publicar o site</button></span></header>
+        <div class="work"><div class="sheet"><div class="ed">
+          <nav class="toc"><span aria-current="true">Abertura</span><span>Resumo (TL;DR)</span><span>Décadas</span><span>Anos 90</span><span>Anos 2000</span><span>Anos 2010</span><span>Anos 2020</span><span>Liderança</span><span>Reflexão</span><span>2030</span><span class="seo">Google e compartilhamento</span></nav>
+          <div class="edbody">
+            <div class="head" style="padding-bottom:24px"><div><h3>Sobre</h3><p>A história por décadas, a liderança e o futuro. Imagens e animações ficam no código.</p></div><button class="btn" type="button">Traduzir pendentes com IA</button></div>
+            <div class="grp"><h4>Abertura</h4>
+              <div class="field"><span>Título</span><div class="pairs"><label class="lang"><i>PT</i><input class="input is-focus" value="O mundo muda."></label><label class="lang"><i>EN</i><input class="input" value="The world changes."></label></div></div>
+              <div class="field"><span>Continuação do título (em cinza)</span><div class="pairs"><label class="lang"><i>PT</i><input class="input" value="Eu continuo curioso."></label><label class="lang"><i>EN</i><input class="input" value="I stay curious."></label></div></div>
+              <div class="field"><span>Frase</span><div class="pairs"><label class="lang"><i>PT</i><input class="input" value="Designer brasileiro com mais de 18 anos de experiência."></label><label class="lang"><i>EN</i><input class="input" value="Brazilian designer with over 18 years of experience."></label></div></div>
+            </div>
+            <div class="grp"><h4>Resumo (TL;DR)</h4>
+              <div class="field"><span>Título</span><div class="pairs"><label class="lang"><i>PT</i><input class="input" value="Um pouco de mim,"></label><label class="lang"><i>EN</i><input class="input" value="A little about me,"></label></div></div>
+            </div>
+          </div>
+        </div></div></div>
+      </div></div>
+    </div>
+  </div>
+  <ul class="changes">
+    <li>Um índice da página à esquerda, como o de Serviços, com "Google e compartilhamento" sempre por último. Em páginas longas como a Sobre (11 grupos), achar o grupo é um clique.</li>
+    <li>Os grupos deixam de ser cartões soltos sobre o fundo. Viram seções de um cartão só, separadas por espaço e uma divisória, como as listas.</li>
+    <li>"Traduzir pendentes com IA" sobe para a cabeça da página. "Ver no site" fica no topo como fantasma, ao lado de Salvar, a ação branca da tela.</li>
+  </ul>
+</section>
+
+<section class="block">
+  <h2>O que fica igual</h2>
+  <p>A paleta, as fontes, os raios, o menu de 5 áreas, a arquitetura, as páginas públicas e o editor de case: o editor é da sessão material-ui, e eu só levo para lá o que ela aceitar.</p>
+  <p class="ask"><strong>Pergunta:</strong> esta direção vale para o admin todo? Se sim, aplico no CSS compartilhado, nas listas, em Pendências, em Site e em Mídia, e combino o editor de case com a material-ui.</p>
+</section>
+
+</main>
+<script>
+// Motion demo: rows arriving and one answering the pointer, with a reduced-motion toggle.
+const demo = document.getElementById("demo");
+const lab = document.getElementById("lab");
+const arrow = '<svg class="go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+function play() {
+  demo.innerHTML = '<div class="list-site" style="border-radius:10px;overflow:hidden;background:#181818"></div>';
+  const box = demo.firstChild;
+  ["Home", "Sobre", "Contato"].forEach((name, i) => setTimeout(() => {
+    const row = document.createElement("a");
+    row.className = "row arrive"; row.href = "#";
+    row.innerHTML = `<span><b>${name}</b><small>linha nova: opacidade e 4 px, 200 ms</small></span>${arrow}`;
+    box.appendChild(row);
+  }, i * 60));
+}
+document.getElementById("replay").addEventListener("click", play);
+document.getElementById("rm").addEventListener("change", e => lab.classList.toggle("reduced", e.target.checked));
+play();
+// The rail's real icons (components/admin/icons.tsx).
+const ICONS = {
+  "Pendências": '<path d="M4 13.5 6.2 6a1.5 1.5 0 0 1 1.4-1h8.8a1.5 1.5 0 0 1 1.4 1L20 13.5V18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z" /><path d="M4 13.5h4.5l1.2 2h4.6l1.2-2H20" />',
+  "Cases": '<rect x="4" y="4" width="7" height="7" rx="1.5" /><rect x="13" y="4" width="7" height="7" rx="1.5" /><rect x="4" y="13" width="7" height="7" rx="1.5" /><rect x="13" y="13" width="7" height="7" rx="1.5" />',
+  "Artigos": '<path d="M5 6h14M12 6v13" />',
+  "Site": '<path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10A.5.5 0 0 1 7 20z" /><path d="M14 3.5V8h4M10 12h5M10 15.5h5" />',
+  "Mídia": '<rect x="4" y="5" width="16" height="14" rx="2" /><circle cx="9" cy="10" r="1.5" /><path d="m20 16-4.5-4.5L7 19" />',
+  "Chaves": '<circle cx="8" cy="15" r="3.5" /><path d="m10.5 12.5 8-8M15.5 7.5l2.5 2.5M17.5 5.5l2 2" />',
+  "Travar": '<rect x="5" y="11" width="14" height="9" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" />',
+  "Abrir o site": '<path d="M14 5h5v5M19 5l-8 8M17 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h4" />',
+};
+document.querySelectorAll(".nav").forEach(nav => {
+  const name = nav.firstChild.textContent.trim();
+  if (ICONS[name]) nav.insertAdjacentHTML("afterbegin", `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]}</svg>`);
+});
+// Each frame is drawn at 1280×800 and scaled to its column.
+const fit = () => document.querySelectorAll(".frame-wrap").forEach(wrap => { wrap.firstElementChild.style.transform = wrap.classList.contains("full") ? "none" : `scale(${wrap.clientWidth / 1280})`; });
+addEventListener("resize", fit); fit();
+// ?frame=N shows only that frame at full size, for the captures.
+const only = new URLSearchParams(location.search).get("frame");
+if (only) {
+  const wrap = document.querySelectorAll(".frame-wrap")[Number(only) - 1];
+  document.body.replaceChildren(wrap); wrap.classList.add("full"); document.body.style.background = "#0e0e0e"; document.body.style.margin = "0"; fit();
+}
+</script>
+</body>
+</html>

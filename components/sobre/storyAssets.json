@@ -1,0 +1,317 @@
+{
+  "childhood": {
+    "src": "/sobre2/figma/childhood.webp",
+    "width": 1280,
+    "height": 960
+  },
+  "internet": {
+    "src": "/sobre2/figma/internet.webp",
+    "width": 2560,
+    "height": 1429
+  },
+  "studio": {
+    "src": "/sobre2/figma/studio.webp",
+    "width": 2000,
+    "height": 1333
+  },
+  "workshop": {
+    "src": "/sobre2/figma/workshop.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "magazines": {
+    "src": "/sobre2/figma/magazines.webp",
+    "width": 960,
+    "height": 1280
+  },
+  "nickname": {
+    "src": "/sobre2/figma/nickname.webp",
+    "width": 1600,
+    "height": 535
+  },
+  "blog": {
+    "src": "/sobre2/figma/blog.webp",
+    "width": 984,
+    "height": 738
+  },
+  "tuning": {
+    "src": "/sobre2/figma/tuning.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "church": {
+    "src": "/sobre2/figma/church.webp",
+    "width": 652,
+    "height": 408
+  },
+  "imac": {
+    "src": "/sobre2/figma/imac.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "flipphone": {
+    "src": "/sobre2/figma/flipphone.webp",
+    "width": 1024,
+    "height": 1536
+  },
+  "smartphone": {
+    "src": "/sobre2/figma/smartphone.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "television": {
+    "src": "/sobre2/figma/television.png",
+    "width": 1672,
+    "height": 941
+  },
+  "regatta": {
+    "src": "/sobre2/figma/regatta.webp",
+    "width": 1051,
+    "height": 4096
+  },
+  "chevrolet": {
+    "src": "/sobre2/figma/chevrolet.webp",
+    "width": 670,
+    "height": 2950
+  },
+  "webmotors": {
+    "src": "/sobre2/figma/webmotors.webp",
+    "width": 1476,
+    "height": 2198
+  },
+  "carclick": {
+    "src": "/sobre2/figma/carclick.webp",
+    "width": 1478,
+    "height": 2136
+  },
+  "philco": {
+    "src": "/sobre2/figma/philco.webp",
+    "width": 1458,
+    "height": 2246
+  },
+  "museum": {
+    "src": "/sobre2/figma/museum.webp",
+    "width": 2560,
+    "height": 1425
+  },
+  "bike": {
+    "src": "/sobre2/figma/bike.webp",
+    "width": 1024,
+    "height": 1024
+  },
+  "youtube": {
+    "src": "/sobre2/figma/youtube.webp",
+    "width": 1000,
+    "height": 2250
+  },
+  "tvScreen": {
+    "src": "/sobre2/figma/tvScreen.png",
+    "width": 320,
+    "height": 180
+  },
+  "desktop": {
+    "src": "/sobre2/figma/desktop.webp",
+    "width": 500,
+    "height": 500
+  },
+  "tv": {
+    "src": "/sobre2/figma/tv.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "notebook": {
+    "src": "/sobre2/figma/notebook.png",
+    "width": 1536,
+    "height": 1024
+  },
+  "monitor": {
+    "src": "/sobre2/figma/monitor.webp",
+    "width": 1448,
+    "height": 1086
+  },
+  "desktopStill": {
+    "src": "/sobre2/figma/desktop-still.png",
+    "width": 500,
+    "height": 500
+  },
+  "flatMonitor": {
+    "src": "/sobre2/figma/flatMonitor.png",
+    "width": 1200,
+    "height": 675
+  },
+  "projector": {
+    "src": "/sobre2/figma/projector.webp",
+    "width": 1600,
+    "height": 533
+  },
+  "visionEnvironment": {
+    "src": "/sobre2/figma/vision-pro.webp",
+    "width": 1800,
+    "height": 1100
+  },
+  "visionDevice": {
+    "src": "/sobre2/figma/vision-device.jpg",
+    "width": 980,
+    "height": 551
+  },
+  "visionFront": {
+    "src": "/sobre2/figma/visionFront.webp",
+    "width": 1425,
+    "height": 1310
+  },
+  "visionCover": {
+    "src": "/sobre2/figma/visionCover.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "mountain": {
+    "src": "/sobre2/figma/mountain.webp",
+    "width": 2560,
+    "height": 1706
+  },
+  "key": {
+    "src": "/sobre2/figma/key.webp",
+    "width": 1600,
+    "height": 1600
+  },
+  "woodwork": {
+    "src": "/sobre2/figma/woodwork.webp",
+    "width": 1000,
+    "height": 750
+  },
+  "dance": {
+    "src": "/sobre2/figma/dance.webp",
+    "width": 1280,
+    "height": 720
+  },
+  "bread": {
+    "src": "/sobre2/figma/bread.webp",
+    "width": 1248,
+    "height": 832
+  },
+  "weights": {
+    "src": "/sobre2/figma/weights.webp",
+    "width": 980,
+    "height": 980
+  },
+  "alexa": {
+    "src": "/sobre2/figma/alexa.webp",
+    "width": 1000,
+    "height": 1000
+  },
+  "apartment": {
+    "src": "/sobre2/figma/apartment.webp",
+    "width": 848,
+    "height": 842
+  },
+  "meet": {
+    "src": "/sobre2/figma/meet.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "remoteWallpaper": {
+    "src": "/sobre2/figma/remoteWallpaper.webp",
+    "width": 720,
+    "height": 405
+  },
+  "webcam": {
+    "src": "/sobre2/figma/webcam.png",
+    "width": 1000,
+    "height": 1000
+  },
+  "carPoster": {
+    "src": "/sobre2/figma/carPoster.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "magazinesPoster": {
+    "src": "/sobre2/figma/magazinesPoster.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "bikePoster": {
+    "src": "/sobre2/figma/bikePoster.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "panicPoster": {
+    "src": "/sobre2/figma/panicPoster.png",
+    "width": 272,
+    "height": 150
+  },
+  "maskPoster": {
+    "src": "/sobre2/figma/maskPoster.png",
+    "width": 220,
+    "height": 220
+  },
+  "coronaPoster": {
+    "src": "/sobre2/figma/coronaPoster.png",
+    "width": 220,
+    "height": 220
+  },
+  "jetsonsPoster": {
+    "src": "/sobre2/figma/jetsonsPoster.png",
+    "width": 400,
+    "height": 225
+  },
+  "vaderPoster": {
+    "src": "/sobre2/figma/vaderPoster.png",
+    "width": 305,
+    "height": 275
+  },
+  "hanPoster": {
+    "src": "/sobre2/figma/hanPoster.png",
+    "width": 498,
+    "height": 498
+  },
+  "futurePoster": {
+    "src": "/sobre2/figma/futurePoster.webp",
+    "width": 480,
+    "height": 360
+  },
+  "project7": {
+    "src": "/sobre2/figma/project-7.webp",
+    "width": 1600,
+    "height": 1200
+  },
+  "bikeWheels": {
+    "src": "/sobre2/figma/bike-wheels.webp",
+    "width": 1536,
+    "height": 864
+  },
+  "webProject6": {
+    "src": "/sobre2/figma/web-project-6.webp",
+    "width": 800,
+    "height": 600
+  },
+  "bikeFrame": {
+    "src": "/sobre2/figma/bike-frame.webp",
+    "width": 1536,
+    "height": 864
+  },
+  "pizza": {
+    "src": "/sobre2/figma/pizza.webp",
+    "width": 1200,
+    "height": 1200
+  },
+  "project10": {
+    "src": "/sobre2/figma/project-10.webp",
+    "width": 1504,
+    "height": 1128
+  },
+  "project8": {
+    "src": "/sobre2/figma/project-8.webp",
+    "width": 800,
+    "height": 600
+  },
+  "project11": {
+    "src": "/sobre2/figma/project-11.png",
+    "width": 752,
+    "height": 564
+  },
+  "project9": {
+    "src": "/sobre2/figma/project-9.png",
+    "width": 800,
+    "height": 600
+  }
+}

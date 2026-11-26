@@ -1,0 +1,193 @@
+/* Video tab, simple editor: preview + scene panel on top, timeline of clips below. */
+.studio { display: grid; gap: 12px; }
+
+.toolbar { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+.toolField { display: grid; gap: 4px; min-width: 160px; color: var(--muted); font-size: 12px; }
+.toolField .input, .toolField select { height: 34px; padding-top: 0; padding-bottom: 0; }
+.publish { display: inline-flex; align-items: center; gap: 10px; height: 34px; color: var(--muted); font-size: 12px; white-space: nowrap; cursor: pointer; }
+.modeBar { display: flex; align-items: center; gap: 12px; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; align-items: stretch; gap: 12px; }
+/* the scene panel takes the preview's height and scrolls inside, so the timeline stays in view */
+.inspectorSlot { position: relative; min-height: 320px; }
+.stageCol { position: relative; padding-bottom: 30px; }
+.stage { position: relative; overflow: hidden; border-radius: 14px; background: #050505; box-shadow: 0 0 0 1px var(--line); cursor: pointer; }
+
+/* floating control bar, overlapping the bottom of the preview */
+.controls {
+  position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 6px; padding: 8px 10px 8px 18px;
+  border: 1px solid var(--line-strong); border-radius: 16px; background: rgb(24 24 27 / 92%);
+  box-shadow: 0 18px 40px -18px rgb(0 0 0 / 80%); backdrop-filter: blur(10px); white-space: nowrap;
+}
+.clock { margin-right: 10px; font-size: 15px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.clock span { color: var(--dim); }
+.ctrl { width: 38px; height: 38px; display: grid; place-items: center; border: 0; border-radius: 10px; background: transparent; color: var(--ink); cursor: pointer; }
+.ctrl svg { width: 20px; height: 20px; fill: currentColor; }
+.ctrl:hover { background: var(--raised); }
+.ctrl[data-on="true"] { background: var(--raised); color: #c6f36b; }
+.ctrl.play { width: 44px; height: 44px; background: var(--ink); color: var(--bg); border-radius: 12px; }
+.ctrl.play:hover { background: #fff; }
+.now { margin-left: 10px; color: var(--muted); font-size: 12px; }
+
+.inspector { position: absolute; inset: 0 0 30px; display: flex; flex-direction: column; overflow: auto; }
+.inspectorHead { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.inspectorHead strong { font-size: 14px; font-weight: 500; }
+.kindBadge { color: var(--dim); font-size: 12px; font-variant-numeric: tabular-nums; }
+.duration { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.stepper { display: flex; align-items: center; gap: 8px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.stepper span { min-width: 52px; text-align: center; }
+.notice { display: grid; gap: 8px; justify-items: start; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.fields { padding: 14px; }
+.fields > div { grid-template-columns: minmax(0, 1fr); }
+.inspectorActions { display: flex; gap: 6px; padding: 0 14px 14px; }
+
+/* timeline */
+.timeline { display: grid; grid-template-columns: 64px minmax(0, 1fr); padding: 10px 14px 12px 0; }
+.laneLabels { display: grid; grid-template-rows: 22px 72px 48px; gap: 6px; padding-left: 14px; color: var(--dim); font-size: 11px; }
+.laneLabels span { display: flex; align-items: center; }
+.lanesWrap { min-width: 0; }
+.lanes { position: relative; display: grid; grid-template-rows: 22px 72px 48px; gap: 6px; }
+
+.ruler { position: relative; border-bottom: 1px solid var(--line); cursor: ew-resize; user-select: none; touch-action: none; }
+.tick { position: absolute; top: 2px; padding-left: 4px; border-left: 1px solid var(--line-strong); color: var(--dim); font-size: 10px; font-variant-numeric: tabular-nums; }
+
+.clips { position: relative; }
+.clip {
+  position: absolute; top: 0; height: 100%; overflow: hidden;
+  border: 1px solid var(--line-strong); border-radius: 10px; background: var(--raised);
+  cursor: grab; user-select: none; transition: box-shadow .15s, border-color .15s, opacity .15s;
+}
+.clip:hover { border-color: rgb(255 255 255 / 28%); }
+.clip:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.clip[data-selected="true"] { border-color: #c6f36b; box-shadow: 0 0 0 1px #c6f36b, 0 0 22px -4px rgb(198 243 107 / 45%); }
+.clip[data-dragging="true"] { opacity: .4; }
+.clipImg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; pointer-events: none; }
+.clipText {
+  position: absolute; inset: auto 0 0 0; display: grid; gap: 1px; padding: 6px 14px 7px 8px;
+  background: linear-gradient(0deg, rgb(0 0 0 / 85%), rgb(0 0 0 / 0)); font-size: 11px; line-height: 1.25; pointer-events: none;
+}
+.clipText strong { font-weight: 500; }
+.clipText span { overflow: hidden; color: var(--muted); white-space: nowrap; text-overflow: ellipsis; }
+.clipChapter { position: absolute; left: 6px; top: 5px; padding: 1px 6px; border-radius: 999px; background: rgb(0 0 0 / 65%); color: var(--ink); font-size: 10px; pointer-events: none; }
+.handle { position: absolute; top: 0; right: 0; bottom: 0; width: 10px; cursor: ew-resize; touch-action: none; }
+.handle::after { content: ""; position: absolute; top: 30%; bottom: 30%; left: 3px; width: 3px; border-radius: 2px; background: rgb(255 255 255 / 30%); }
+.clip:hover .handle::after, .clip[data-selected="true"] .handle::after { background: var(--ink); }
+.dropMark { position: absolute; top: -4px; bottom: -4px; width: 4px; border-radius: 2px; background: #c6f36b; pointer-events: none; }
+
+.addWrap { position: absolute; top: 0; height: 100%; display: flex; align-items: center; z-index: 3; }
+.add { width: 30px; height: 30px; display: grid; place-items: center; border: 1px dashed var(--line-strong); border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; }
+.add:hover, .add[aria-expanded="true"] { border-style: solid; color: var(--ink); background: var(--raised); }
+.add svg { width: 16px; height: 16px; }
+.menu {
+  position: absolute; right: 0; bottom: calc(100% + 6px); display: grid; width: 300px; max-height: 360px; overflow: auto; padding: 6px;
+  border: 1px solid var(--line-strong); border-radius: 12px; background: var(--panel); box-shadow: 0 24px 50px -20px rgb(0 0 0 / 80%);
+}
+.menuItem { display: grid; gap: 2px; padding: 8px; border: 0; border-radius: 8px; background: transparent; color: var(--ink); text-align: left; cursor: pointer; }
+.menuItem:hover { background: var(--raised); }
+.menuItem strong { font-size: 13px; font-weight: 500; }
+.menuItem span { color: var(--muted); font-size: 12px; }
+
+.music { position: relative; overflow: hidden; border-radius: 10px; background: var(--field); }
+.section { position: absolute; top: 0; height: 100%; padding: 3px 6px; border-right: 1px solid var(--bg); color: var(--muted); font-size: 10px; letter-spacing: .04em; text-transform: uppercase; white-space: nowrap; overflow: hidden; }
+.section[data-tone="build"] { background: rgb(216 207 155 / 8%); color: #d8cf9b; }
+.section[data-tone="drop"] { background: rgb(198 243 107 / 9%); color: #c6f36b; }
+.section[data-tone="break"] { background: rgb(159 198 221 / 8%); color: #9fc6dd; }
+.wave { position: absolute; left: 0; top: 4px; pointer-events: none; }
+.noMusic { position: absolute; top: 0; right: 0; bottom: 0; padding: 3px 6px; background: repeating-linear-gradient(45deg, rgb(242 112 107 / 12%) 0 6px, transparent 6px 12px); color: var(--bad); font-size: 10px; }
+
+.playhead { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; background: var(--ink); pointer-events: none; z-index: 2; }
+.playhead::before { content: ""; position: absolute; top: 0; left: -5px; width: 12px; height: 12px; border-radius: 3px 3px 6px 6px; background: var(--ink); }
+
+.empty { display: grid; justify-items: start; gap: 12px; max-width: 640px; padding: 28px; }
+.empty h2 { margin: 0; font-size: 18px; font-weight: 500; }
+.empty p { margin: 0; line-height: 1.6; }
+.emptyIcon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; background: var(--raised); color: #c6f36b; }
+.emptyIcon svg { width: 20px; height: 20px; }
+.emptyActions { display: flex; gap: 8px; }
+
+@media (max-width: 1100px) {
+  .main { grid-template-columns: minmax(0, 1fr); }
+  .inspector { position: static; }
+  .inspectorSlot { min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clip { transition: none; }
+}
+
+/* generation dialog */
+.dialog {
+  position: fixed; inset: 0; margin: auto; height: fit-content; max-height: calc(100vh - 32px); overflow: auto;
+  width: min(640px, calc(100vw - 32px)); padding: 0; border: 1px solid var(--line-strong); border-radius: 16px;
+  background: var(--panel); color: var(--ink); box-shadow: 0 40px 90px -30px rgb(0 0 0 / 85%);
+}
+.dialog::backdrop { background: rgb(0 0 0 / 60%); backdrop-filter: blur(3px); }
+.dialog form { display: grid; gap: 14px; padding: 22px; }
+.dialog h2 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 17px; font-weight: 500; }
+.dialog h2 svg { width: 18px; height: 18px; color: #c6f36b; }
+.dialog p { margin: 0; }
+.dialogGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.dialogGrid .toolField { min-width: 0; }
+.dialogWide { grid-column: 1 / -1; }
+.dialogActions { display: flex; justify-content: flex-end; gap: 8px; }
+@media (max-width: 640px) { .dialogGrid { grid-template-columns: minmax(0, 1fr); } }
+
+/* transitions: a marker on each cut between two clips, and its picker */
+.transition {
+  /* on the top edge of the lane, so the clip's resize handle below stays reachable */
+  position: absolute; top: 0; z-index: 4; width: 24px; height: 24px; margin: -12px 0 0 -12px;
+  display: grid; place-items: center; padding: 0; border: 1px solid var(--line-strong); border-radius: 7px;
+  background: var(--panel); color: var(--muted); font-size: 12px; line-height: 1; cursor: pointer;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 60%);
+}
+.transition:hover, .transition[data-open="true"] { color: #0b0b0c; background: #c6f36b; border-color: #c6f36b; }
+.transition[data-kind="cut"] { width: 14px; color: var(--dim); }
+.picker {
+  position: absolute; bottom: calc(100% + 10px); z-index: 6; width: 320px; display: grid; gap: 10px; padding: 12px;
+  border: 1px solid var(--line-strong); border-radius: 12px; background: var(--panel); box-shadow: 0 24px 50px -20px rgb(0 0 0 / 85%);
+}
+.pickerHead { display: flex; align-items: center; justify-content: space-between; }
+.pickerHead strong { font-size: 13px; font-weight: 500; }
+.pickerGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.pickerItem {
+  display: grid; justify-items: center; gap: 4px; padding: 8px 4px; border: 1px solid var(--line); border-radius: 8px;
+  background: transparent; color: var(--muted); font-size: 11px; cursor: pointer;
+}
+.pickerItem span { font-size: 16px; color: var(--ink); }
+.pickerItem:hover { color: var(--ink); background: var(--raised); }
+.pickerItem[aria-checked="true"] { border-color: #c6f36b; color: var(--ink); background: rgb(198 243 107 / 8%); }
+.pickerRow { display: grid; gap: 6px; }
+.segmented { display: flex; gap: 4px; }
+.segmented button { flex: 1; height: 28px; border: 1px solid var(--line); border-radius: 7px; background: transparent; color: var(--muted); font-size: 11px; cursor: pointer; }
+.segmented button[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); background: var(--raised); }
+
+/* YouTube Audio Library */
+.libraryBody { display: grid; gap: 12px; padding: 22px; }
+.libraryBody h2 { margin: 0; font-size: 17px; font-weight: 500; }
+.libraryList { display: grid; gap: 2px; max-height: 340px; overflow: auto; margin: 0; padding: 0; list-style: none; }
+.libraryList li { display: flex; align-items: center; gap: 10px; padding: 4px 6px; border-radius: 8px; }
+.libraryList li:hover { background: var(--raised); }
+.libraryList li span { flex: 1; min-width: 0; overflow: hidden; font-size: 13px; white-space: nowrap; text-overflow: ellipsis; }
+.libraryList .ctrl { width: 32px; height: 32px; }
+.libraryList .ctrl svg { width: 16px; height: 16px; }
+.librarySources { display: flex; gap: 4px; padding: 3px; border-radius: 10px; background: var(--raised); width: fit-content; }
+.librarySources button { padding: 6px 12px; border: 0; border-radius: 8px; background: none; color: inherit; font: inherit; font-size: 13px; opacity: .65; cursor: pointer; }
+.librarySources button[aria-selected="true"] { background: var(--surface, rgb(255 255 255 / 8%)); opacity: 1; }
+.librarySearch { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
+.librarySearch select { max-width: 220px; }
+.libraryList .librarySong { display: grid; gap: 1px; }
+.libraryList .librarySong span, .libraryList .librarySong small { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.libraryList .librarySong em { font-style: normal; opacity: .6; }
+.libraryList .librarySong small { font-size: 11px; opacity: .55; }
+.libraryList .libraryMore { justify-content: center; padding: 8px; }
+.libraryNote { margin: 0; padding: 10px 12px; border: 1px solid rgb(231 180 80 / 30%); border-radius: 8px; color: var(--warn); font-size: 12px; line-height: 1.5; }
+
+/* A new video from the AI waits next to the current one (audit R5): view either, use it or ignore it. */
+.aiBar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 12px; padding: 10px 12px 10px 16px; font-size: 13px; }
+.aiTitle { display: inline-flex; flex: 1; align-items: center; gap: 8px; min-width: 220px; color: var(--ink); font-weight: 500; }
+.aiTitle svg { width: 15px; height: 15px; }
+.aiTitle span { color: var(--muted); font-weight: 400; }
+.aiView { display: inline-flex; padding: 2px; border: 1px solid var(--line); border-radius: 8px; }
+.aiView button { height: 28px; padding: 0 10px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: 12px; transition: color .15s, background-color .15s; }
+.aiView button:hover { color: var(--ink); }
+.aiView button[aria-pressed="true"] { background: var(--raised); color: var(--ink); }

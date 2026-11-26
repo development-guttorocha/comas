@@ -1,0 +1,87 @@
+{
+  "slug": "",
+  "seoTitle": "Recursos para designers: carreira, salário e consultoria de carreira | Gutto Rocha",
+  "seoDescription": "Quatro perguntas de carreira, uma ferramenta para cada: a trilha de carreira, a régua de salário, a pesquisa salarial anônima e uma consultoria com plano escrito.",
+  "navName": "Design Resources",
+  "accent": {
+    "color": "#8f7bff",
+    "on": "#0b0b0b"
+  },
+  "hero": {
+    "kicker": "Design Resources",
+    "title": "Quatro perguntas de carreira.",
+    "continuation": "Uma ferramenta para cada.",
+    "intro": "Materiais, ferramentas e uma consultoria para designers de produto. Escolha pela pergunta que você está fazendo agora.",
+    "hint": "Não sabe por onde começar? Comece pela régua de salário: leva um minuto.",
+    "boardTab": "◇ Arquivo / Design Resources"
+  },
+  "frames": [
+    {
+      "slug": "trilha-de-carreira",
+      "tab": "◇ Fluxo / Carreira em design",
+      "question": "Em que nível eu estou?",
+      "line": "Os 7 papéis, de júnior a Head, e o que cada um pede para o próximo passo.",
+      "meta": "Grátis · template para imprimir"
+    },
+    {
+      "slug": "salario-em-design",
+      "tab": "◇ Régua / Salário em design",
+      "question": "Ganho o que deveria?",
+      "line": "Coloque o seu salário na faixa do seu papel e veja o passo que vem depois.",
+      "meta": "Grátis · 1 minuto"
+    },
+    {
+      "slug": "pesquisa-salarial",
+      "tab": "◇ Ficha / Pesquisa salarial",
+      "question": "Quanto ganham os outros designers?",
+      "line": "Responda sem nome nem empresa e veja na hora onde você fica entre os outros.",
+      "meta": "Grátis · anônima · 2 minutos"
+    },
+    {
+      "slug": "consultoria-de-carreira",
+      "tab": "◇ Roteiro / Consultoria de carreira",
+      "question": "Tenho um problema e não sei por onde ir.",
+      "line": "Uma conversa de mapeamento gratuita, quatro conversas por vídeo e um plano escrito.",
+      "meta": "Mapeamento grátis · 5 semanas"
+    }
+  ],
+  "connect": {
+    "kicker": "Como se conectam",
+    "title": "Uma peça alimenta a outra,",
+    "continuation": "e os números melhoram.",
+    "items": [
+      {
+        "title": "A trilha define os papéis",
+        "body": "Júnior, Pleno, Sênior, Staff, Lead, Manager e Head: o que cada um faz e o que pede para subir."
+      },
+      {
+        "title": "A régua usa esses papéis",
+        "body": "As faixas salariais são por papel, não pelo nome do cargo. Você se encontra pelo que faz no dia a dia."
+      },
+      {
+        "title": "A pesquisa corrige a régua",
+        "body": "Cada resposta anônima ajusta as faixas. Quem responde ajuda o próximo designer a negociar."
+      }
+    ]
+  },
+  "who": {
+    "kicker": "Quem faz",
+    "title": "Feito por quem",
+    "continuation": "contrata e promove designers.",
+    "body": "Sou Gutto Rocha. Liderei times de design em startups e bancos e passei anos do outro lado da mesa: definindo níveis, montando faixas e decidindo promoções. Estes recursos são o que eu gostaria de ter recebido antes."
+  },
+  "articles": {
+    "kicker": "Para ler com calma",
+    "title": "Ensaios sobre carreira,",
+    "continuation": "design e liderança.",
+    "cta": "Ver todos os artigos"
+  },
+  "closing": {
+    "title": "Quer um material sobre outro tema?",
+    "body": "Os próximos saem das perguntas que chegam. Me conta o que está travando a sua carreira agora.",
+    "emailCta": "Sugerir um tema",
+    "whatsappCta": "Chamar no WhatsApp",
+    "emailSubject": "Recursos para designers",
+    "whatsappMessage": "Oi, Gutto! Vi os recursos para designers e queria conversar."
+  }
+}

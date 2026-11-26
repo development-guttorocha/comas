@@ -1,0 +1,79 @@
+/* Editor do fluxo: o desenho em si, com os cartões editáveis e os "+" nos lados. */
+.editor { display: grid; gap: 14px; }
+.models { display: grid; grid-template-columns: repeat(auto-fit, minmax(72px, 1fr)); gap: 6px; }
+.model { display: grid; justify-items: center; gap: 6px; padding: 10px 4px 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--field); color: var(--muted); font: inherit; font-size: 12px; cursor: pointer; }
+.model svg { width: 40px; height: 28px; }
+.model:hover { color: var(--ink); }
+.model[aria-checked="true"] { border-color: var(--control); background: var(--raised); color: var(--ink); }
+.hint { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+.scroller { overflow-x: auto; padding: 36px 44px; border: 1px dashed rgb(255 255 255 / 10%); border-radius: 12px; background: rgb(0 0 0 / 22%); }
+.canvas { position: relative; display: grid; grid-template-columns: repeat(var(--cols), minmax(170px, 1fr)); column-gap: 56px; row-gap: 48px; min-width: min-content; }
+.canvas[data-layout="vertical"], .canvas[data-layout="funnel"] { max-width: 420px; margin-inline: auto; }
+
+.node { position: relative; z-index: 1; display: grid; align-content: start; gap: 4px; padding: 8px 10px 10px; border: 1px solid var(--line); border-radius: 12px; background: #1f1f23; }
+.node[data-tone="soft"] { background: color-mix(in srgb, var(--case-brand, #8d8d93) 22%, #1f1f23); }
+.node[data-tone="brand"] { background: color-mix(in srgb, var(--case-brand, #8d8d93) 70%, #1f1f23); }
+.node[data-tone="light"] { background: #e9e9e4; color: #111; }
+.node[data-tone="light"] :is(input, textarea, select) { color: #111; }
+.node[data-dragging] { z-index: 5; box-shadow: 0 18px 40px rgb(0 0 0 / 50%); opacity: .9; }
+.canvas[data-linking] .node[data-link-target] { cursor: crosshair; outline: 1px dashed rgb(255 255 255 / 35%); outline-offset: 3px; }
+
+.nodeTools { display: flex; align-items: center; gap: 4px; min-height: 24px; }
+.handle { width: 20px; height: 22px; padding: 0; border: 0; background: transparent; color: var(--muted); font-size: 14px; cursor: grab; touch-action: none; }
+.handle:active { cursor: grabbing; }
+.tone { width: 14px; height: 14px; padding: 0; border: 1px solid rgb(255 255 255 / 40%); border-radius: 50%; background: #1f1f23; cursor: pointer; }
+.tone[data-tone="soft"] { background: color-mix(in srgb, var(--case-brand, #8d8d93) 35%, #1f1f23); }
+.tone[data-tone="brand"] { background: var(--case-brand, #8d8d93); }
+.tone[data-tone="light"] { background: #f6f6f3; }
+.badge { color: var(--muted); font-size: 12px; }
+.tool { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: 13px; cursor: pointer; }
+.tool:hover:not(:disabled), .tool[data-on] { background: var(--raised); color: var(--ink); }
+.tool:disabled { opacity: .3; }
+.tool svg { width: 14px; height: 14px; }
+
+.subtitle, .foot { width: 100%; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 12px; outline: none; }
+.foot { margin-top: 2px; padding-top: 4px; border-top: 1px dashed rgb(255 255 255 / 10%); }
+.bullets { padding-top: 4px; border-top: 1px solid var(--line); }
+.subtitle::placeholder, .foot::placeholder { color: var(--faint); }
+.node[data-tone="focus"] { border-color: color-mix(in srgb, var(--case-brand, #fff) 45%, transparent); background: color-mix(in srgb, var(--case-brand, #8d8d93) 14%, #1f1f23); }
+.tone[data-tone="focus"] { border-color: var(--case-brand, #8d8d93); background: color-mix(in srgb, var(--case-brand, #8d8d93) 25%, #1f1f23); }
+.value, .title, .body, .parent { width: 100%; border: 0; background: transparent; color: var(--ink); font: inherit; outline: none; resize: none; }
+.value { font-size: 18px; font-weight: 700; letter-spacing: -.03em; }
+.title { font-size: 15px; font-weight: 600; }
+.body { color: inherit; opacity: .75; font-size: 13px; line-height: 1.5; field-sizing: content; min-height: 2lh; }
+.value::placeholder, .body::placeholder { color: var(--faint); font-weight: 400; }
+.value:placeholder-shown { font-size: 12px; letter-spacing: 0; }
+.parent { margin-top: 4px; padding: 4px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; cursor: pointer; }
+
+/* The "+" on each side, half way into the gap; shown on hover or focus. */
+.plus { position: absolute; z-index: 3; display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 1px solid rgb(255 255 255 / 45%); border-radius: 50%; background: #0c0c0e; color: var(--ink); cursor: pointer; opacity: 0; transition: opacity .15s, transform .15s; }
+.plus svg { width: 13px; height: 13px; }
+.node:hover .plus, .node:focus-within .plus, .plus:focus-visible { opacity: 1; }
+.plus:hover { transform: scale(1.12); background: var(--ink); color: var(--bg); }
+.plus[data-side="right"] { top: calc(50% - 12px); right: -40px; }
+.plus[data-side="left"] { top: calc(50% - 12px); left: -40px; }
+.plus[data-side="top"] { top: -36px; left: calc(50% - 12px); }
+.plus[data-side="bottom"] { bottom: -36px; left: calc(50% - 12px); }
+
+.edges { position: absolute; inset: 0; z-index: 0; overflow: visible; color: color-mix(in srgb, var(--case-brand, #fff) 65%, #8d8d93); fill: none; stroke: currentColor; stroke-width: 1.3; pointer-events: none; }
+.edgeLabel { position: absolute; z-index: 2; padding: 2px 8px; border-radius: 999px; background: #0c0c0e; color: var(--muted); font-size: 11px; white-space: nowrap; transform: translate(-50%, -50%); pointer-events: none; }
+
+.links { display: grid; gap: 4px; }
+.linksTitle { color: var(--muted); font-size: 12px; }
+.link { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) 24px; align-items: center; gap: 8px; }
+.linkPath { overflow: hidden; color: var(--muted); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.linkLabel { height: 28px; padding: 0 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); font: inherit; font-size: 12px; outline: none; }
+.linkLabel:focus { border-color: rgb(255 255 255 / 30%); }
+
+@media (prefers-reduced-motion: reduce) { .plus { transition: none; } }
+
+/* Circles: the cards drawn round; the arrangement and the Venn text above. */
+.canvas[data-layout="circles"] { grid-template-columns: repeat(var(--cols), minmax(170px, 210px)); justify-content: center; }
+.canvas[data-layout="circles"] .node { aspect-ratio: 1; align-content: center; padding: 34px 28px; border-radius: 50%; text-align: center; }
+.canvas[data-layout="circles"] .node :is(input, textarea) { text-align: center; }
+.canvas[data-layout="circles"] .nodeTools { justify-content: center; }
+.circleOptions { display: flex; flex-wrap: wrap; gap: 14px; }
+.circleOptions label { display: grid; gap: 4px; color: var(--muted); font-size: 12px; }
+.circleOptions :is(select, input) { height: 30px; padding: 0 8px; border: 1px solid var(--line); border-radius: 7px; background: transparent; color: var(--ink); font: inherit; font-size: 13px; }
+.canvas[data-layout="circles"] .node :is(.subtitle, .bullets, .foot) { display: none; }

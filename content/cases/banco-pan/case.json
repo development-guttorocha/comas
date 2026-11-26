@@ -1,0 +1,32 @@
+{
+  "slug": "banco-pan",
+  "num": "03",
+  "title": "O PAN não via, mas a loja sabia.",
+  "company": "Banco PAN",
+  "productTag": "Research & Product Strategy",
+  "year": "2019",
+  "role": "Product Designer",
+  "tags": [
+    "Service",
+    "Research",
+    "UI"
+  ],
+  "accentTags": [
+    "Strategy"
+  ],
+  "featuredOnSite": true,
+  "placeholder": "#E4E1DA",
+  "brandColor": "#2563EB",
+  "heroImage": "/cases/banco-pan/ezgif-1e360a490441ff5e.webp",
+  "summary": "O Banco PAN queria se tornar referência digital no mercado de financiamento de veículos, e isso significava muito mais do que colocar um formulário na internet.",
+  "context": "",
+  "challenge": "",
+  "approach": [],
+  "stats": [],
+  "outcome": "",
+  "learning": "",
+  "heroVariant": "fullBleed",
+  "notionSourcePageId": "33a7bcc8-93e5-8068-8a99-e83f17d63768",
+  "order": 5,
+  "updatedAt": "2026-11-10"
+}

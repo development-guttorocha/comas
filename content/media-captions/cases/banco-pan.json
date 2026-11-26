@@ -1,0 +1,98 @@
+{
+  "ezgif-1e360a490441ff5e.webp": {
+    "description": "Fotografia publicitária de um homem e uma mulher sorrindo sobre fundo azul, com o homem segurando um celular antigo com antena. No canto superior direito aparece o logotipo do Banco Pan.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Casal sorrindo em fundo azul, homem segurando celular antigo, com logo do Banco Pan",
+    "width": 800,
+    "height": 450,
+    "hash": "2c16e3c15c411aca2d2584a9e4a829b44735722cfa879d58a38f4fd7414fd593",
+    "model": "deepseek-flash",
+    "tokens": 771,
+    "at": "2026-11-11T13:24:02.065Z"
+  },
+  "image-2.png": {
+    "description": "Fotografia de uma reunião em sala de escritório com pessoas sentadas ao redor de uma mesa comprida; um homem de camisa jeans está em pé apontando para um notebook, e há post-its amarelos na parede ao fundo.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Equipe reunida em sala de escritório ao redor de mesa com notebook e post-its na parede",
+    "width": 1152,
+    "height": 864,
+    "hash": "ebc0272018de827d59a1222f6320167f7b539fc17dfeafbbadcc8fecaf76c992",
+    "model": "deepseek-flash",
+    "tokens": 1138,
+    "at": "2026-11-11T13:24:02.635Z"
+  },
+  "image-3.png": {
+    "description": "Colagem em preto e branco com a tela de um painel web do Santander, fotos de carros usados em uma loja, uma mão desenhando wireframes e uma placa da revenda U.Viana Multimarcas anunciando compra de veículos.",
+    "kind": "varias-telas",
+    "shape": "larga",
+    "alt": "Colagem com painel do Santander, fotos de carros, desenho de wireframe e placa de revenda",
+    "width": 1192,
+    "height": 657,
+    "hash": "e65c164c1bdd6d85b946ae774199ff3127ed1fc92a76ce21f47ca58f3f1244b4",
+    "model": "deepseek-flash",
+    "tokens": 1021,
+    "at": "2026-11-11T13:24:04.551Z"
+  },
+  "image-4.png": {
+    "description": "Slide intitulado Consolidado de Volumes com o total de 155 participantes, mapa do Brasil com círculos sobrepostos e dados de survey online (130 respondentes, entre operadores e lojistas) e de entrevistas (25 entrevistados), com percentuais por estado e marca Banco Pan no canto.",
+    "kind": "diagrama",
+    "shape": "larga",
+    "alt": "Slide com consolidado de 155 participantes da pesquisa, dados de survey online e entrevistas por estado",
+    "width": 1192,
+    "height": 673,
+    "hash": "551dc06e3a6f9c0b3c6f55bbd81c104d6e03edc6f453f837d96503d19fbac2b1",
+    "model": "deepseek-flash",
+    "tokens": 1047,
+    "at": "2026-11-11T13:24:05.532Z"
+  },
+  "image-5.png": {
+    "description": "Slide intitulado 'Contextos Gerais' com dois quadros comparando dados de lojistas e operadores, incluindo percentuais por tipo de veículo, canal de contato, classe social e preferência de financiamento pelo Banco PAN, além de uma faixa inferior com conclusões.",
+    "kind": "diagrama",
+    "shape": "larga",
+    "alt": "Slide Contextos Gerais com dados comparativos de lojistas e operadores sobre financiamento de veículos",
+    "width": 1192,
+    "height": 673,
+    "hash": "38c2c217dbf1a4794be16115c22f357f4cf4574c86e7b2219cfebfa3a84f546b",
+    "model": "deepseek-flash",
+    "tokens": 1044,
+    "at": "2026-11-11T13:24:06.808Z"
+  },
+  "image.png": {
+    "description": "Grade com seis cartões azuis contendo citações curtas de usuários sobre os bancos Santander e PAN, com comentários sobre cadastro, taxas, aprovação de crédito e documentos exigidos.",
+    "kind": "diagrama",
+    "shape": "larga",
+    "alt": "Seis cartões com depoimentos de usuários comparando Santander e Banco PAN",
+    "width": 1086,
+    "height": 468,
+    "hash": "8a9fe62b102eb3f84fdca23aec78489edf22d06df1230a28ad29cf44d74366e7",
+    "model": "deepseek-flash",
+    "tokens": 837,
+    "at": "2026-11-11T13:24:07.805Z"
+  },
+  "infografico-de-volumes-e-contextos-gerais-mob.png": {
+    "description": "Infográfico vertical de um estudo com 155 participantes, dividido em três blocos: 'Consolidado de Volumes' com 150 respondentes de survey online e 25 de entrevistas separados por lojistas e operadores; 'Contextos Gerais' com percentuais sobre hábitos de compra, uso do celular e aprovação de crédito; e citações de entrevistados sobre a experiência com a Sandenter e o Banco PAN.",
+    "kind": "diagrama",
+    "shape": "vertical",
+    "alt": "Infográfico do estudo com 155 participantes sobre volumes, contextos e citações de lojistas e operadores",
+    "width": 412,
+    "height": 2048,
+    "hash": "68c127c564c593511481be0db58cbb2355f8aa3bb5b6aab9c5791cc7e34c1a30",
+    "model": "deepseek-flash",
+    "tokens": 834,
+    "at": "2026-11-11T13:24:09.893Z"
+  },
+  "infografico-de-volumes-e-contextos-gerais.png": {
+    "description": "Infográfico dividido em três painéis: um consolidado de volumes de uma pesquisa com lojistas e operadores, um painel de contextos gerais com dados e percentuais, e um painel com citações de entrevistados sobre banco e taxas.",
+    "kind": "diagrama",
+    "shape": "larga",
+    "alt": "Infográfico de pesquisa com dados de lojistas e operadores e citações de entrevistados",
+    "width": 1672,
+    "height": 941,
+    "hash": "339a9a89f417b8be5b714d43863b2341ff638be44fce960c81af52544fb6b941",
+    "model": "deepseek-flash",
+    "tokens": 1122,
+    "at": "2026-11-11T13:24:11.117Z"
+  }
+}

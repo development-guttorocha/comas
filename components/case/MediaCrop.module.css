@@ -1,0 +1,22 @@
+/*
+ * A cropped image or video: the frame takes the crop's proportion and the media, scaled up,
+ * slides so only the chosen area shows. Values in % of the original (see lib/mediaCrop.ts).
+ */
+.crop { position: relative; overflow: hidden; aspect-ratio: var(--crop-r); }
+.crop .media {
+  position: absolute;
+  top: calc(-100% * var(--crop-y) / var(--crop-h));
+  left: calc(-100% * var(--crop-x) / var(--crop-w));
+  width: calc(10000% / var(--crop-w));
+  max-width: none;
+  height: calc(10000% / var(--crop-h));
+  object-fit: fill;
+}
+
+@media (max-width: 767px) {
+  /* A phone version of its own, with its own crop… */
+  .crop[data-mobile="crop"] { --crop-r: var(--crop-mr); --crop-x: var(--crop-mx); --crop-y: var(--crop-my); --crop-w: var(--crop-mw); --crop-h: var(--crop-mh); }
+  /* …or whole, since the main image's crop was drawn for another file. */
+  .crop[data-mobile="whole"] { aspect-ratio: auto; }
+  .crop[data-mobile="whole"] .media { position: static; width: 100%; height: auto; }
+}

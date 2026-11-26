@@ -1,0 +1,28 @@
+.hero { position: relative; isolation: isolate; overflow: clip; background: #000; color: #f8f6f5; }
+.backdrop { position: absolute; inset: 0 0 auto; z-index: -2; height: 47.19vw; opacity: .25; }
+.backdrop :is(video,img) { display: block; width: 100%; height: 100%; object-fit: cover; }
+.shader { position: absolute; inset: 0; width: 100%; height: 100%; opacity: .2; }
+.shade { position: absolute; inset: 0 0 auto; z-index: -1; height: 47.19vw; background: radial-gradient(ellipse, #0006, #000d 67%), linear-gradient(transparent 34%, #000); }
+.inner { position: relative; width: 80%; min-height: max(53.75vw, 100svh); margin-inline: auto; padding-block: 48px 64px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 2.83vw; text-align: center; }
+.wordmark { position: relative; z-index: 1; margin: 0; font-size: min(19.646vw, 620px); font-weight: 900; line-height: .892; letter-spacing: -.1em; padding-right: .1em; background: linear-gradient(#fff, #f8f6f5); background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 16px 16px 84px #0004; font-variation-settings: 'opsz' 14; }
+.statement { position: relative; z-index: 1; display: grid; gap: 14px; margin: 0; }
+.statement strong { font-size: clamp(28px, 2.986vw, 90px); line-height: .8355; letter-spacing: -.0263em; font-weight: 700; }
+.statement > span { font-size: clamp(18px, 1.886vw, 56px); line-height: 1.323; font-weight: 400; color: #a3a19c; }
+.actions { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+.primary { display: inline-flex; justify-content: center; align-items: center; min-height: 44px; padding: 16px 32px; border: 1px solid #fffc; border-radius: 62px; font-size: clamp(16px, .786vw, 20px); line-height: 1.6; font-weight: 400; }
+.primary:hover { background: #ffffff12; }
+.secondary { min-height: 44px; padding: 16px; border-radius: 16px; font-size: 16px; line-height: 1.3; color: #f8f6f580; }
+.secondary:hover { color: #f8f6f5; }
+.reflection { position: absolute; left: 50%; top: 80.85%; transform: translate(-50%, -50%) rotate(180deg); font-size: min(19.646vw,620px); font-weight: 900; line-height: .532; letter-spacing: -.1em; padding-right: .1em; opacity: .02; pointer-events: none; }
+.primary:focus-visible,.secondary:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+@media (max-width: 767px) {
+  .inner { min-height: 100svh; width: calc(100% - 48px); padding-block: 128px 80px; gap: 40px; }
+  .backdrop,.shade { height: 100%; }
+  .wordmark { font-size: 30vw; }
+  .statement { gap: 18px; }
+  .statement strong { font-size: clamp(27px, 7vw, 44px); line-height: 1.08; letter-spacing: -.035em; text-wrap: balance; }
+  .statement > span { font-size: 18px; line-height: 1.5; text-wrap: balance; }
+  .primary { padding-inline: 24px; font-size: 15px; }
+  .secondary { font-size: 14px; }
+  .reflection { font-size: 30vw; top: 83%; }
+}

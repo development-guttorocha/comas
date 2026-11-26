@@ -1,0 +1,528 @@
+{
+  "children": [
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[-nav 2] Contexto · tensão"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseSectionSplit\",\"id\":\"case-contexto\",\"label\":\"// Contexto · tensão\",\"body\":\"A Loft crescia rápido e eu liderava designers em duas tribos de growth — onde fragilidade de time pesa direto em métrica. O produto avançava; a estrutura de design não acompanhava o mesmo ritmo.\\n\\nNão faltava talento. Faltava base: cerimônias sem dono, contexto errado para alguém do time e custo coletivo até isso ser endereçado com clareza.\",\"borderClass\":\"border-t border-ink/10 dark:border-white/10\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseMediaFullWidth\",\"src\":\"/cases/loft/pulse-feedback.png\",\"alt\":\"Pulse e feedback — estrutura percebida pelo time\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A estrutura já era observada pelo time — pulse e feedback davam visibilidade ao que estava em construção."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "O reposicionamento — a decisão mais difícil"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseEditorialParagraph\",\"body\":\"Movi o designer que não estava entregando para outro time, onde o contexto era mais adequado para o que ele entregava. No lugar dele, trouxe uma designer pleno.\\n\\nDecisão que gerou desconforto no curto prazo e que se provou certa depois. O designer reposicionado se encontrou no novo contexto. A designer que entrou deslanchou.\",\"variant\":\"body\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[-nav 3] Decisão"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseBeforeAfter\",\"id\":\"case-decisao\",\"sectionLabel\":\"\",\"borderClass\":\"border-0\",\"padClass\":\"py-0\",\"bgClass\":\"bg-transparent\",\"before\":{\"label\":\"Antes\",\"body\":\"Cerimônias sem dono. Cada líder conduzia diferente. Desenvolvimento dependia de sensibilidade, não de estrutura.\"},\"after\":{\"label\":\"Depois\",\"body\":\"Touchpoint, Critique, Retrospectiva, Planning Cross. Cada ritual com dono, frequência e output definidos.\"}}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[-nav 4] Construção"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Desenvolvimento com clareza"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Tornei explícito o que era desenvolvimento de carreira e o que era feedback de projeto. Com PDI e ritmo definidos, as conversas de evolução ganharam contorno — menos improviso, mais direção."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseMediaFullWidth\",\"src\":\"/cases/loft/touchpoints.png\",\"alt\":\"Touchpoints e rituais do time\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Ritmo e operação"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Construí o sistema que o time precisava. Não uma iniciativa isolada. Um conjunto de rituais com dono, frequência, pauta e output definidos."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Touchpoint quinzenal para conexão e estratégia. Critique semanal para elevar a barra das entregas. Retrospectiva mensal para ajustar o que não estava funcionando. Planning Cross trimestral para alinhar design ao roadmap de produto."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseMediaFullWidth\",\"src\":\"/cases/loft/teambuilding.png\",\"alt\":\"Team building com o time de design\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Reconhecimento com evidência"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Com o sistema funcionando, comecei a construir os casos de reconhecimento com base em evidência de produto, não só percepção."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Cada promoção precisava ter número, não só narrativa. Conversão, produtividade, impacto em funil. Essa disciplina mudou a qualidade das conversas de carreira e a confiança do time na liderança."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseMediaFullWidth\",\"src\":\"/cases/loft/recognition.png\",\"alt\":\"Reconhecimento e crescimento no time\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "[-nav 5] Impacto"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseStatBand\",\"sectionLabel\":\"// Impacto\",\"emphasizeIndices\":[0,4],\"attributionNote\":\"EPOD Demand · App B2C Loft · Outubro 2022\",\"stats\":[{\"value\":\"+1M\",\"label\":\"usuários\"},{\"value\":\"66,1K\",\"label\":\"MAU\"},{\"value\":\"4,8\",\"label\":\"App Store\"},{\"value\":\"4,5\",\"label\":\"Play Store\"},{\"value\":\"+452%\",\"label\":\"buscas\"},{\"value\":\"+26%\",\"label\":\"conversão lead para agendamento\"}]}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CaseMediaFullWidth\",\"src\":\"/cases/loft/hero.png\",\"alt\":\"Dashboard — EPOD Demand, app B2C Loft\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "EPOD Demand · App B2C Loft · Outubro 2022"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Do time à liderança"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Quatro designers do time chegaram a posições de liderança ou especialização. Nenhum era o candidato óbvio. Todos foram reconhecidos com evidência."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Designer de apps — Time onde design era gargalo. Organizou, entregou os números do app, foi reconhecido com evidência. Hoje é líder."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Designer de supply — 16% de conversão de leads, 328% em mobile. Reconhecida antes do ciclo formal. Hoje é especialista."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Designer de páginas — Avaliada como L2 pelo sistema. Operava como L3. Reconhecida com evidência antes da avaliação formal. Hoje é líder."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "numbered_list_item",
+      "numbered_list_item": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Designer de growth — 15,7% em conversão de pessoas logadas, 14,1% em agendamentos, 59% em produtividade operacional. Chegou à gestão."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "heading_3",
+      "heading_3": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Voz do time"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Designer · produto"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "quote",
+      "quote": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Antes eu saía de one-on-one sem saber o que era desenvolvimento de carreira e o que era feedback de projeto. Depois que o PDI e o ritmo ficaram claros, passei a enxergar meu caminho e a pedir ajuda no lugar certo."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "paragraph",
+      "paragraph": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "Designer · plataforma"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "quote",
+      "quote": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "A sensação era de que a tribo inteira falava a mesma língua sobre evolução e reconhecimento. Não era mais decisão escondida na cabeça de cada gestor. Tinha processo, e isso dava segurança para eu me planejar."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "object": "block",
+      "type": "code",
+      "code": {
+        "rich_text": [
+          {
+            "type": "text",
+            "text": {
+              "content": "{\"component\":\"CasePullQuote\",\"label\":\"// Learning\",\"centered\":false,\"body\":\"Reposicionar alguém é uma das decisões mais difíceis na liderança de design. A tentação é esperar mais um pouco, dar mais uma chance, evitar o desconforto. Mas ficar na posição errada prejudica todo mundo. O que aprendi na Loft é que cuidar do time não significa protegê-lo do incômodo. Significa criar as condições certas para cada pessoa crescer. Às vezes isso exige uma conversa difícil. Às vezes exige um sistema que não existia. Às vezes exige reconhecer alguém com evidência, não só com intenção. Quase sempre vale.\"}"
+            }
+          }
+        ],
+        "caption": [],
+        "language": "json"
+      }
+    }
+  ]
+}

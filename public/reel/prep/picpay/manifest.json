@@ -1,0 +1,16 @@
+{
+  "/cases/picpay/picpay-audiencia-compras.webp": {
+    "board": "/reel/prep/picpay/picpay-audiencia-compras-browser.webp",
+    "aura": "/reel/prep/picpay/picpay-audiencia-compras-aura.webp",
+    "w": 2400,
+    "h": 2020,
+    "mockup": "browser"
+  },
+  "/cases/picpay/picpay-audiencia-painel.webp": {
+    "board": "/reel/prep/picpay/picpay-audiencia-painel-browser.webp",
+    "aura": "/reel/prep/picpay/picpay-audiencia-painel-aura.webp",
+    "w": 2400,
+    "h": 1946,
+    "mockup": "browser"
+  }
+}

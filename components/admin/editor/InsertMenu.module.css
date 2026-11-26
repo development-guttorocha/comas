@@ -1,0 +1,62 @@
+/* O menu de inserir: abas, grade de cartões com desenho e um rodapé com a descrição. */
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: min(640px, calc(100vw - 32px));
+  max-height: min(480px, 70vh);
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px;
+  background: var(--panel, #181818);
+  box-shadow: var(--shadow, 0 16px 48px rgb(0 0 0 / 55%));
+  color: var(--ink, #fafafa);
+  font-family: var(--font-sans);
+}
+
+.tabs { display: flex; gap: 4px; padding: 8px; border-bottom: 1px solid var(--line, #313232); overflow-x: auto; scrollbar-width: none; }
+.tab { flex-shrink: 0; height: 30px; padding: 0 12px; border: 0; border-radius: 999px; background: transparent; color: var(--muted, #999999); font: inherit; font-size: 13px; cursor: pointer; transition: color var(--fast, 120ms), background-color var(--fast, 120ms); }
+.tab:hover { color: var(--ink, #fafafa); }
+.tab[aria-selected="true"] { background: var(--raised, #222222); color: var(--ink, #fafafa); }
+
+.scroll { flex: 1; min-height: 0; padding: 4px 12px 12px; overflow-y: auto; overscroll-behavior: contain; }
+.group + .group { margin-top: 4px; }
+.groupTitle { margin: 12px 2px 8px; color: var(--muted, #999999); font-size: 12px; font-weight: 500; }
+.scroll > .group:first-child .groupTitle { margin-top: 8px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  height: 104px;
+  padding: 12px 8px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--field, #121212);
+  color: var(--muted, #999999);
+  font: inherit;
+  cursor: pointer;
+  transition: background-color var(--fast, 120ms), box-shadow var(--fast, 120ms), color var(--fast, 120ms);
+}
+/* The touch (docs/admin/estilo): the pointer lifts the card one step; pressing lifts it one more. */
+.card:hover { background: var(--raised, #222222); color: var(--ink, #fafafa); }
+.card:active { background: var(--raised-hover, #2c2c2c); }
+.card[aria-selected="true"] { background: var(--raised, #222222); box-shadow: inset 0 0 0 1px var(--control, #6b6b6b); color: var(--ink, #fafafa); }
+.picture { display: grid; place-items: center; width: 56px; height: 42px; }
+.picture svg { width: 100%; height: 100%; overflow: visible; }
+.name { max-width: 100%; overflow: hidden; font-size: 12.5px; line-height: 1.25; text-align: center; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.badge { position: absolute; top: 6px; right: 8px; color: var(--muted, #999999); font-size: 12px; }
+
+.empty { margin: 24px 4px; color: var(--muted, #999999); font-size: 13px; }
+
+.footer { display: flex; align-items: baseline; gap: 8px; min-height: 40px; padding: 10px 14px; border-top: 1px solid var(--line, #313232); color: var(--muted, #999999); font-size: 12px; }
+.footer strong { flex-shrink: 0; color: var(--ink, #fafafa); font-weight: 500; }
+.footer > span:not(.keys) { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.keys { flex-shrink: 0; margin-left: auto; color: var(--faint, #858585); font-size: 12px; }
+
+@media (max-width: 720px) { .keys { display: none; } }
+@media (prefers-reduced-motion: reduce) { .card, .tab { transition: none; } }

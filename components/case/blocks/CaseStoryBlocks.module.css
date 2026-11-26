@@ -1,0 +1,107 @@
+/* Formatos de ritmo para os cases, na linha do Sobre e da Home. */
+.section { padding-block: clamp(64px, 7vw, 112px); }
+.header { margin-bottom: clamp(40px, 4.5vw, 64px); }
+.centered { text-align: center; }
+.label { display: block; margin: 0 0 24px; color: var(--color-muted); font-size: var(--type-label); font-weight: 600; line-height: 1.5; letter-spacing: var(--tracking-label); }
+.heading { max-width: 24ch; margin: 0; color: var(--color-ink); font-size: var(--type-section); font-weight: var(--weight-heading); line-height: var(--leading-heading); letter-spacing: var(--tracking-heading); text-wrap: pretty; }
+.intro { max-width: 60ch; margin: 24px 0 0; color: var(--color-muted); font-size: clamp(14px, 1.15vw, 18px); line-height: 1.8; }
+
+/* Tones shared by bento tiles and highlighted cards. */
+.tone_neutral { background: var(--color-card); color: var(--color-ink); }
+.tone_soft { background: color-mix(in srgb, var(--case-brand, #8d8d93) 18%, var(--color-card)); color: var(--color-ink); }
+.tone_brand { background: var(--case-brand, #8d8d93); color: #fff; }
+.tone_light { background: #f6f6f3; color: #111; }
+.tone_gray { background: linear-gradient(140deg, #ffffff0a, transparent 65%), #5f6669; color: var(--color-ink); }
+.tone_brand :is(p, span), .tone_light :is(p, span) { color: inherit; }
+
+/* Chapter opening: the Sobre's decade cover — a huge outlined number and the chapter name. */
+.chapter { position: relative; display: grid; place-items: center; min-height: 70svh; margin-block: clamp(40px, 6vw, 96px); overflow: hidden; text-align: center; }
+.chapterImage { min-height: 100svh; }
+.chapterBackdrop { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.chapterShade { position: absolute; inset: 0; background: rgb(0 0 0 / 60%); }
+.chapterShade::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 3px, rgb(0 0 0 / 12%) 3px 4px); }
+.chapterCopy { position: relative; display: grid; justify-items: center; padding: 24px; }
+.chapterNumber { font-size: clamp(100px, 23vw, 440px); font-weight: 700; line-height: .9; letter-spacing: -.065em; color: transparent; -webkit-text-stroke: 1px rgb(248 248 245 / 48%); }
+.chapterTitle { color: var(--color-ink); margin: clamp(-24px, -2vw, -8px) 0 0; font-size: clamp(30px, 4vw, 72px); font-weight: 700; line-height: 1.1; letter-spacing: -.05em; text-wrap: balance; }
+.chapterBody { max-width: 46ch; margin: 20px auto 0; color: #d0d0ca; font-size: clamp(13px, 1.45vw, 20px); }
+
+/* Statement: one loose, large sentence — the chapter's main idea. */
+.statement { padding-block: clamp(80px, 10vw, 180px); text-align: center; }
+.statementText { color: var(--color-ink); max-width: 22ch; margin: 0 auto; font-size: clamp(30px, 4vw, 72px); font-weight: 700; line-height: 1.12; letter-spacing: -.055em; text-wrap: balance; }
+.statementCaption { max-width: 60ch; margin: 32px auto 0; color: var(--color-muted); font-size: clamp(14px, 1.15vw, 17px); line-height: 1.8; }
+
+/* Title + box: the Sobre's "Um pouco de mim, em poucas linhas". */
+.titleBox { padding-block: clamp(72px, 8vw, 144px); }
+.titleBoxGrid { display: grid; grid-template-columns: 1.35fr 1fr; align-items: center; gap: clamp(32px, 6vw, 96px); }
+.titleBoxHeading { margin: 0; color: var(--color-ink); font-size: clamp(30px, 4.2vw, 76px); font-weight: 700; line-height: 1.23; letter-spacing: -.045em; }
+.titleBoxHeading span { color: var(--color-muted); }
+.box { padding: var(--card-padding); border-radius: var(--radius-note); background: var(--color-card); color: var(--color-subtle); font-size: clamp(14px, 1.15vw, 20px); line-height: var(--leading-body); }
+.box > * + * { margin-top: 24px; }
+
+/* Light panel: the Sobre's white panel, a visual break; light diagrams sit at home in it. */
+.lightSection { padding-block: clamp(48px, 6vw, 96px); }
+.lightPanel { width: min(90%, 1600px); margin-inline: auto; overflow: hidden; border-radius: clamp(24px, 1.75vw, 48px); background: #fff; color: #111; }
+.lightCopy { padding: clamp(48px, 6vw, 120px) clamp(28px, 6vw, 120px) clamp(32px, 4vw, 72px); text-align: center; }
+.lightCopy .label { color: #707070; }
+.lightHeading { max-width: 26ch; margin: 0 auto; font-size: clamp(30px, 3.2vw, 72px); font-weight: 700; line-height: 1.12; letter-spacing: -.055em; text-wrap: balance; }
+.lightBody { max-width: 70ch; margin: 32px auto 0; color: #707070; font-size: clamp(14px, 1.15vw, 18px); line-height: 1.8; }
+.lightBody > * + * { margin-top: 16px; }
+.lightFigure { margin: 0; padding: 0 clamp(16px, 4vw, 80px) clamp(28px, 4vw, 80px); }
+.lightFigure img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.lightFigure figcaption { margin-top: 16px; color: #707070; font-size: 14px; text-align: center; }
+
+/* Big number: the Home's wordmark treatment for the main result. */
+.bigNumber { padding-block: clamp(80px, 10vw, 180px); text-align: center; }
+.bigValue { margin: 0; font-size: min(19.6vw, 520px); font-weight: 900; line-height: .9; letter-spacing: -.08em; padding-right: .08em; background: linear-gradient(#fff, #f8f6f5 60%, color-mix(in srgb, var(--case-brand, #fff) 40%, #f8f6f5)); background-clip: text; -webkit-text-fill-color: transparent; }
+.bigLabel { margin: 16px 0 0; color: var(--color-ink); font-size: clamp(20px, 2.2vw, 40px); font-weight: 700; letter-spacing: -.03em; }
+.bigBody { max-width: 56ch; margin: 20px auto 0; color: var(--color-muted); font-size: clamp(14px, 1.15vw, 18px); line-height: 1.8; }
+
+/* Flow: steps in cards joined by arrows; one may stand out in the case colour. */
+.flow { display: grid; grid-template-columns: repeat(var(--steps), minmax(0, 1fr)); gap: clamp(40px, 5vw, 96px); margin: 0; padding: 0; list-style: none; }
+.flowStep { position: relative; display: flex; flex-direction: column; gap: 20px; min-height: clamp(200px, 18vw, 320px); padding: clamp(24px, 2.4vw, 44px); border-radius: var(--radius-card); background: var(--color-card); }
+.flowStep h3 { margin: 0; color: var(--color-ink); font-size: clamp(22px, 2vw, 36px); font-weight: 700; line-height: 1.15; letter-spacing: -.035em; }
+.flowStep p { margin: 0; color: var(--color-muted); font-size: clamp(14px, 1.15vw, 20px); line-height: 1.6; }
+.flowHighlight h3 { color: var(--case-brand, var(--color-ink)); }
+.flowIndex { color: var(--case-brand, var(--color-muted)); font-size: 14px; font-variant-numeric: tabular-nums; }
+.flowArrow { position: absolute; top: 50%; left: 100%; width: clamp(40px, 5vw, 96px); height: 1px; }
+.flowArrow::before { content: ""; position: absolute; inset: 0 22% ; background: color-mix(in srgb, var(--case-brand, #fff) 70%, transparent); }
+.flowArrow::after { content: ""; position: absolute; top: -4px; right: 22%; width: 8px; height: 8px; border-top: 1px solid color-mix(in srgb, var(--case-brand, #fff) 70%, transparent); border-right: 1px solid color-mix(in srgb, var(--case-brand, #fff) 70%, transparent); transform: rotate(45deg); }
+.flowConnector { position: relative; height: 72px; margin-inline: calc(50% / var(--steps, 3)); border: 1px solid rgb(255 255 255 / 22%); border-top: 0; border-radius: 0 0 16px 16px; }
+.flowConnector span { position: absolute; bottom: 0; left: 50%; padding: 0 20px; background: var(--color-surface, #000); color: var(--color-muted); font-size: clamp(13px, 1.1vw, 18px); white-space: nowrap; transform: translate(-50%, 50%); }
+.flowContext { margin-top: clamp(32px, 3vw, 56px); padding: var(--card-padding); border-radius: var(--radius-note); background: color-mix(in srgb, var(--case-brand, #8d8d93) 14%, var(--color-card)); }
+.flowContext p:last-child { margin: 0; color: var(--color-ink); font-size: clamp(16px, 1.5vw, 24px); }
+
+/* Bento: tiles of mixed sizes and kinds. */
+.bento { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: minmax(clamp(180px, 15vw, 280px), auto); grid-auto-flow: dense; gap: clamp(16px, 1.4vw, 24px); }
+.tile { display: flex; flex-direction: column; gap: 16px; min-width: 0; padding: clamp(24px, 2.2vw, 40px); overflow: hidden; border-radius: var(--radius-card); }
+.size_1_1 { grid-column: span 1; grid-row: span 1; }
+.size_2_1 { grid-column: span 2; grid-row: span 1; }
+.size_1_2 { grid-column: span 1; grid-row: span 2; }
+.size_2_2 { grid-column: span 2; grid-row: span 2; }
+.tileTitle { margin: 0; font-size: clamp(18px, 1.6vw, 28px); font-weight: 700; line-height: 1.2; letter-spacing: -.03em; }
+.tileBody { margin: auto 0 0; font-size: clamp(20px, 2vw, 36px); line-height: 1.25; letter-spacing: -.02em; }
+.tileValue { margin: auto 0 0; font-size: clamp(44px, 5vw, 96px); font-weight: 700; line-height: 1; letter-spacing: -.05em; }
+.tileLabel { margin: 0; font-size: clamp(14px, 1.2vw, 20px); }
+.tileCaption { margin: auto 0 0; color: inherit; opacity: .65; font-size: 13px; }
+.tileMedia { flex: 1; min-height: 120px; overflow: hidden; border-radius: 16px; }
+.tileMedia img { width: 100%; height: 100%; object-fit: cover; }
+.tileMedia > div { height: 100%; border-radius: 0; }
+.tileMedia video { height: 100%; object-fit: cover; }
+.tileQuote { margin: 0; font-size: clamp(18px, 1.7vw, 30px); font-style: italic; line-height: 1.35; }
+.kind_image { padding-bottom: clamp(20px, 2vw, 32px); }
+
+@media (max-width: 1023px) {
+  .titleBoxGrid { grid-template-columns: minmax(0, 1fr); }
+  .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .flow { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .flowArrow { top: 100%; left: 50%; width: 1px; height: 40px; }
+  .flowArrow::before { inset: 20% 0; }
+  .flowArrow::after { top: auto; right: -4px; bottom: 20%; transform: rotate(135deg); }
+  .flowConnector { display: none; }
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .size_2_1, .size_2_2 { grid-column: span 1; }
+  .size_1_2, .size_2_2 { grid-row: span 1; }
+  .lightPanel { width: calc(100% - 32px); }
+}

@@ -1,0 +1,17 @@
+/* Galeria de telas: colunas iguais; no celular, uma faixa com encaixe tela a tela. */
+.row { display: grid; grid-template-columns: repeat(var(--count), minmax(0, 1fr)); gap: clamp(12px, 1.6vw, 32px); margin: 0; padding: 0; list-style: none; }
+.item { min-width: 0; }
+.figure { display: grid; gap: clamp(16px, 2vw, 32px); margin: 0; }
+.screen { overflow: hidden; border-radius: clamp(10px, 1vw, 18px); background: var(--color-card); }
+.screen img { display: block; width: 100%; height: auto; }
+.row[data-frame="phone"] .screen { aspect-ratio: 390 / 844; border: 1px solid rgb(255 255 255 / 16%); border-radius: clamp(18px, 2.2vw, 40px); box-shadow: 0 0 0 clamp(3px, .35vw, 6px) rgb(255 255 255 / 4%); }
+.row[data-frame="phone"] .screen img { height: 100%; object-fit: cover; object-position: top center; }
+.caption { display: grid; gap: 6px; text-align: center; }
+.caption strong { color: var(--color-subtle, var(--color-ink)); font-size: clamp(15px, 1.5vw, 24px); font-weight: 400; letter-spacing: -.01em; }
+.caption span { color: var(--color-muted); font-size: clamp(13px, 1vw, 15px); line-height: 1.5; }
+
+@media (max-width: 767px) {
+  .row { display: flex; gap: 14px; margin-inline: calc(50% - 50vw); padding-inline: calc(50vw - 50%); scroll-padding-inline: calc(50vw - 50%); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .row::-webkit-scrollbar { display: none; }
+  .item { flex: 0 0 min(64vw, 260px); scroll-snap-align: center; }
+}

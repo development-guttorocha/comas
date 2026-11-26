@@ -1,0 +1,56 @@
+/*
+ * Imagens sobrepostas. A composição (.canvas) tem a proporção que lib/imageStack.ts calculou
+ * (--h, para a largura 100); cada quadro (.layer) fica em % dela (--x, --y, --w) e gira pela base.
+ * Raios, barra e sombra usam cqw, então tudo cresce e encolhe junto com a composição.
+ */
+.figure { display: grid; gap: 16px; margin: 0; }
+
+.stage { padding: clamp(20px, 5vw, 80px); border: 1px solid var(--color-line); border-radius: 24px; background: var(--color-card); overflow: hidden; }
+.stage[data-background="none"] { padding-inline: 0; border: 0; background: transparent; }
+.stage[data-background="brand"] { background: var(--case-brand, var(--color-card)); }
+.stage[data-background="custom"] { background: var(--stack-bg); }
+
+.canvas { --h: 56; --r: 1.6; position: relative; width: 100%; aspect-ratio: 100 / var(--h); container-type: inline-size; }
+
+.layer {
+  --d: 0s;
+  position: absolute;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) / var(--h) * 100%);
+  width: calc(var(--w) * 1%);
+  aspect-ratio: var(--r);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+  border-radius: clamp(5px, 1.3cqw, 20px);
+  background: var(--color-card);
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 9%), 0 .3cqw .8cqw rgb(0 0 0 / 14%), 0 3cqw 6cqw -1.6cqw rgb(0 0 0 / 46%);
+  rotate: calc(var(--rot) * 1deg);
+  transform-origin: 50% 100%;
+  /* entrada: cada quadro sobe do fundo, em sequência */
+  opacity: 0;
+  translate: 0 5%;
+  transition: opacity .7s ease var(--d), translate .8s cubic-bezier(.2, .7, .2, 1) var(--d), box-shadow .3s ease;
+}
+.canvas[data-in] .layer { opacity: 1; translate: 0 0; }
+.layer img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover; object-position: top center; pointer-events: none; -webkit-user-drag: none; }
+
+/* a barra de janela: três pontos, no lugar do que seria o topo da imagem */
+.layer .bar { display: flex; align-items: center; gap: .55cqw; height: clamp(10px, 2.3cqw, 26px); padding-inline: 1.1cqw; background: color-mix(in srgb, var(--color-card) 80%, #fff 20%); }
+.layer .bar i { width: clamp(4px, .75cqw, 9px); aspect-ratio: 1; border-radius: 50%; background: currentColor; color: rgb(255 255 255 / 28%); }
+.canvas[data-frame="browser"] .layer { grid-template-rows: auto minmax(0, 1fr); }
+
+/* sem moldura: a imagem como é, inteira, com a sombra seguindo o desenho dela (PNG com transparência) */
+.canvas[data-frame="none"] .layer { overflow: visible; border-radius: 0; background: transparent; box-shadow: none; filter: drop-shadow(0 2cqw 3cqw rgb(0 0 0 / 38%)); }
+.canvas[data-frame="none"] .layer img { object-fit: contain; object-position: center; }
+
+/* passar o mouse traz o quadro para a frente, para ver o que ficou por baixo */
+@media (hover: hover) {
+  .canvas[data-in] .layer:hover { z-index: 30 !important; translate: 0 -1.5%; transition-delay: 0s; }
+}
+
+.caption { color: var(--color-muted); font-size: 15px; line-height: 1.6; text-wrap: pretty; }
+
+@media (prefers-reduced-motion: reduce) {
+  .layer { opacity: 1; translate: 0 0; transition: none; }
+}

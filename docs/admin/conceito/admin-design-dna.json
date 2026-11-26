@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "name": "Admin do portfólio: bancada escura (Rams × Airbnb), v2",
+    "description": "DNA do admin local medido da referência visual e corrigido para WCAG AA. Três camadas de cinza neutro, uma tinta quase branca, cor só para estado. Uma ação primária por tela, ferramenta na tela inteira (editor + prévia lado a lado), leitura em coluna. Substitui o DNA de 11/11 (admin-design-dna.json da pasta de notas), que usava as superfícies antigas (#09090a/#111113) e o --dim de 2,8:1.",
+    "source_references": [
+      "docs/admin/design-reference.webp, recortado no painel (1640×1080), cores medidas com scripts/measure-colors.mjs (k=8)",
+      "docs/admin/auditoria-2026-11-12/01-cases-lista-1280.jpg e 02-case-editor-conteudo-1280.jpg (admin atual, medidos para comparação)",
+      "components/admin/admin.module.css (tokens atuais) e a seção 7 do relatório da auditoria (contraste)",
+      "Princípios: Dieter Rams (menos, porém melhor; honesto; nada decorativo) e a clareza do Airbnb (um caminho, uma ação principal, linguagem simples)"
+    ],
+    "created_at": "2026-11-12"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "monochromatic",
+      "primary": { "hex": "#fafafa", "role": "Tinta: texto principal e o fundo do único botão primário da tela (texto #0e0e0e, 18,5:1). Medida na referência (role text)." },
+      "secondary": { "hex": "#999999", "role": "Texto de apoio, rótulos, botões secundários. 5,6:1 a 6,8:1 em todas as superfícies. Clareado de #8e8e8e (medido) para passar AA também em --raised." },
+      "accent": { "hex": "#fafafa", "role": "Não há matiz de destaque: o destaque é contraste (tinta sobre cinza). O único tom quente medido (#71443a, 0,01%) é ruído de foto e não vira token. Nada de barra verde antes de texto." },
+      "neutral": {
+        "scale": ["#fafafa", "#d6d7d8", "#999999", "#858585", "#6b6b6b", "#313232", "#222222", "#181818", "#121212", "#0e0e0e"],
+        "usage": "Do mais claro ao mais escuro: ink #fafafa (texto, primário; medido), soft #d6d7d8 (texto forte secundário, valores; medido), muted #999999 (apoio), faint #858585 (metadado não essencial; só sobre bg, panel e field, ≥4,8:1), control #6b6b6b (borda de campo e de controle, 3,3:1 sobre panel, WCAG 1.4.11), line #313232 (divisória entre regiões; medido, decorativa, sem exigência de contraste), raised #222222 (hover, selecionado, balão do Gutto), panel #181818 (cartões e painéis; medido, 63% da referência), field #121212 (campos), bg #0e0e0e (fundo da página; medido, 19%)."
+      },
+      "semantic": { "success": "#5fd27d", "warning": "#e7b450", "error": "#f2706b", "info": "#999999" },
+      "surface": { "background": "#0e0e0e", "card": "#181818", "elevated": "#222222" },
+      "contrast_strategy": "Camadas de cinza com separação visível (panel/bg 1,09, o dobro do degrau atual) e texto em três níveis que passam AA em toda superfície onde são usados: ink 15–18,5:1, muted 4,9–6,8:1, faint ≥4,8:1 (proibido em --raised). Cor só para estado (ok, atenção, erro), sempre acompanhada de texto.",
+      "measurement": { "k": 8, "sampling": { "method": "deterministic_stratified", "max_pixels": 160000, "sampled_pixels": 160000 }, "note": "O script marcou #181818 como 'background' por cobertura (os cartões cobrem o painel). Semanticamente #0e0e0e é o fundo (frestas entre cartões) e #181818 é o cartão; o mapeamento segue o papel, não a cobertura." },
+      "measured_palette": [
+        { "hex": "#181818", "coverage": 0.6341, "role": "background" },
+        { "hex": "#0e0e0e", "coverage": 0.1935, "role": "unassigned" },
+        { "hex": "#313232", "coverage": 0.0953, "role": "unassigned" },
+        { "hex": "#5a5b5a", "coverage": 0.0281, "role": "unassigned" },
+        { "hex": "#d6d7d8", "coverage": 0.0221, "role": "unassigned" },
+        { "hex": "#fafafa", "coverage": 0.0134, "role": "text" },
+        { "hex": "#8e8e8e", "coverage": 0.0134, "role": "unassigned" },
+        { "hex": "#71443a", "coverage": 0.0001, "role": "unassigned" }
+      ],
+      "current_admin_measured": {
+        "case_editor": ["#0a0a0a 93%", "#2b2c2c 3%", "#4d4e4e 1,5%", "#717170", "#a3a3a2", "#e3e3e2"],
+        "cases_list": ["#0d0d0c 85%", "#1a191a 8%", "#3a3636", "#675e5c", "#978882", "#b9b6b5", "#ededec"],
+        "reading": "O admin de hoje é quase todo fundo (85–93%) e os painéis mal se separam dele; a referência é quase toda cartão (63%) com frestas escuras. A mudança principal do DNA é essa: as regiões de trabalho viram cartões visíveis sobre um fundo mais escuro."
+      }
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "24px", "weight": 500, "line_height": 1.2, "tracking": "-0.02em" },
+        "heading_1": { "size": "18px", "weight": 500, "line_height": 1.3, "tracking": "-0.015em" },
+        "heading_2": { "size": "15px", "weight": 500, "line_height": 1.35, "tracking": "-0.01em" },
+        "heading_3": { "size": "13px", "weight": 500, "line_height": 1.4, "tracking": "0" },
+        "body": { "size": "14px", "weight": 400, "line_height": 1.55, "tracking": "-0.005em" },
+        "body_small": { "size": "13px", "weight": 400, "line_height": 1.5, "tracking": "0" },
+        "caption": { "size": "12px", "weight": 400, "line_height": 1.4, "tracking": "0" },
+        "overline": { "size": "12px", "weight": 500, "line_height": 1.3, "tracking": "0" }
+      },
+      "font_families": { "heading": "var(--font-sans), a do site", "body": "var(--font-sans)", "mono": "ui-monospace, SF Mono, Menlo (só endereços, variáveis de ambiente e chaves)" },
+      "font_style_notes": "Grotesca neutra, duas espessuras (400 e 500), no máximo três tamanhos por tela. Sem caixa-alta (o rótulo de grupo em caixa-alta de 11px sai: era 2,8:1 e repetia o que o espaço já diz). Números tabulares em contagens e tempos. O título da tela é 24px, não 26px: a referência usa título pequeno e deixa os números e o conteúdo falarem."
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": [4, 8, 12, 16, 24, 32, 48],
+      "content_density": "comfortable",
+      "section_rhythm": "Espaço separa antes da borda: 8 entre itens do mesmo grupo, 16 entre grupos, 8 de fresta entre cartões (como a referência), 24 entre a cabeça da tela e o trabalho."
+    },
+    "layout": {
+      "grid_system": "Ferramenta usa a tela inteira; leitura usa coluna.",
+      "max_content_width": "Sem limite no editor (editor + prévia); 1120px para listas; 720px para conversa e leitura.",
+      "columns": "Menu 200px (56px ≤900px) · trabalho minmax(0,1fr) · prévia 44% no editor de case (sempre aberta ≥1200px; vira aba abaixo).",
+      "gutter": "8px entre cartões, 16px dentro deles",
+      "breakpoints": { "wide": "≥1200px editor e prévia lado a lado", "medium": "900–1199px prévia vira aba do editor", "narrow": "≤900px menu só com ícones e ações do topo no ⋯" },
+      "alignment_tendency": "strict grid"
+    },
+    "shape": {
+      "border_radius": { "small": "6px", "medium": "8px", "large": "12px", "pill": "999px" },
+      "border_usage": "Cartões sem borda (a superfície separa); borda de 1px #6b6b6b só em campos e controles; #313232 só entre regiões de função diferente.",
+      "divider_style": "1px #313232"
+    },
+    "elevation": {
+      "shadow_style": "none",
+      "levels": { "low": "none (panel #181818)", "medium": "none (raised #222222)", "high": "0 16px 48px rgb(0 0 0 / 55%) só para diálogos, gavetas e menus" },
+      "depth_cues": "color intensity"
+    },
+    "iconography": { "style": "linha, cantos arredondados", "stroke_weight": "1.7", "size_scale": "16px em botões e menu, 18px em vazios", "preferred_set": "components/admin/icons.tsx (um ícone próprio por área do menu)" },
+    "motion": {
+      "easing": "cubic-bezier(0.2, 0, 0, 1) para entrar e mudar de estado; ease-in só na saída",
+      "duration_scale": { "micro": "120ms (hover, foco, troca de aba)", "normal": "200ms (gaveta, menu, diálogo, prévia atualizando)", "macro": "300ms (troca de tela, só opacidade)" },
+      "entrance_pattern": "opacidade 0→1 com 4px de deslocamento, 200ms, ease-out",
+      "exit_pattern": "opacidade só, 150ms, ease-in",
+      "philosophy": "minimal functional: o movimento confirma (salvou, abriu, chegou a resposta da IA) e nunca decora. Nada em laço infinito sem estado real (o spinner de trabalho é o único). Tudo desligado com prefers-reduced-motion."
+    },
+    "components": {
+      "button_style": "Primário: fundo #fafafa, texto #0e0e0e, 34px, raio 8, um por tela. Secundário: fundo #222222, texto #fafafa, sem borda. Fantasma: sem fundo, texto #999999 → #fafafa no hover. Estados: hover clareia um degrau; foco = contorno 2px #fafafa com 2px de folga; ativo = fundo um degrau abaixo; desabilitado = 40% de opacidade e texto que diz por quê (title).",
+      "input_style": "Fundo #121212, borda 1px #6b6b6b (3,3:1), raio 8, 36px; foco: borda #fafafa + anel 3px rgb(250 250 250 / 10%); erro: borda #f2706b e mensagem logo abaixo.",
+      "card_style": "Fundo #181818, sem borda, raio 12, padding 16; o título do cartão em 13px/500 muted; números em 24px tabulares (como a referência).",
+      "navigation_pattern": "Menu lateral com 6 áreas (Cases, Artigos, Páginas, Serviços, Mídia, Configurações), ícone próprio em cada; área atual em #222222. Abas da tela em pílulas (#222222 na atual), como Overview/Metrics na referência.",
+      "modal_style": "<dialog> nativo com showModal, fundo #181818, raio 12, sombra high, backdrop rgb(0 0 0 / 60%) sem blur. Gavetas à direita para o que é consulta (pendências, o que a IA sabe).",
+      "list_style": "Linhas de 64px dentro de um cartão, divisória #313232 entre linhas (a lista é tabela: a vista cruza colunas), linha inteira clicável, ações aparecem no hover e no foco.",
+      "component_notes": "Estado de salvar é texto + ponto (o ponto reporta estado real: salvo, salvando, não salvo). Banner de aviso: fundo do tom semântico a 12%, texto ink, sem barra lateral. Vazio: uma frase do que fazer e o botão que faz."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["calmo", "preciso", "silencioso", "confiável"],
+      "visual_metaphor": "Uma bancada de trabalho escura: as ferramentas ficam em cartões ao alcance, o trabalho no centro, a prévia do resultado sempre à vista.",
+      "era_influence": "Painel de produto contemporâneo, monocromático, com a disciplina Braun dos anos 60 (função visível, nada sobrando).",
+      "genre": "ferramenta de autor local (CMS pessoal)",
+      "personality_traits": ["direto", "honesto sobre o que já está salvo e no ar", "discreto"],
+      "adjectives": ["escuro", "neutro", "denso sem aperto", "legível"]
+    },
+    "visual_language": {
+      "complexity": "minimal",
+      "ornamentation": "none",
+      "whitespace_usage": "Frestas de 8px entre cartões e 16px dentro; o espaço agrupa, a borda quase não aparece.",
+      "visual_weight_distribution": "O peso fica no conteúdo do case (prévia, imagens) e na única ação branca; cabeçalho e menu recuam para cinza.",
+      "focal_strategy": "single hero element (a tarefa da tela), com a ação primária branca como único ponto claro",
+      "contrast_level": "alto no texto, baixo entre superfícies",
+      "texture_usage": "nenhuma (as barras de 'código de barras' da referência só entram quando codificam uma série real; no admin, nenhuma tela tem série)"
+    },
+    "composition": {
+      "hierarchy_method": "typographic hierarchy + spatial isolation",
+      "balance_type": "asymmetric (trabalho à esquerda, prévia ou conferência à direita)",
+      "flow_direction": "esquerda para direita, de cima para baixo: escolher (menu/lista) → fazer (editor) → conferir (prévia)",
+      "grouping_strategy": "cartões por função; dentro deles, espaço",
+      "negative_space_role": "separar regiões sem bordas e dar respiro ao conteúdo do case"
+    },
+    "imagery": {
+      "photo_treatment": "as capas e telas dos cases como são, sem filtro; miniaturas com raio 8",
+      "illustration_style": "nenhuma no admin",
+      "graphic_elements": "ícones de linha 1,7; pontos de estado",
+      "pattern_usage": "nenhum",
+      "image_shape": "retângulo com raio 8 (miniaturas) e 12 (prévias)"
+    },
+    "interaction_feel": {
+      "feedback_style": "imediato e textual: 'Salvo há 3 s', 'A IA está lendo 2 arquivos…'",
+      "hover_behavior": "fundo um degrau mais claro em 120ms; ações da linha aparecem",
+      "transition_personality": "fade-subtle",
+      "loading_style": "texto do que está acontecendo + spinner pequeno; o resto da tela continua usável",
+      "microinteraction_density": "baixa"
+    },
+    "brand_voice_in_ui": {
+      "tone": "português simples, segunda pessoa implícita, verbo no imperativo curto nos botões",
+      "formality": "informal-profissional",
+      "cta_style": "direct imperative (Novo case, Publicar, Ver no site)",
+      "empty_state_approach": "uma frase do que fazer + o botão que faz",
+      "error_tone": "diz o que aconteceu e o próximo passo, sem culpa e sem jargão"
+    }
+  },
+  "visual_effects": {
+    "overview": { "effect_intensity": "none", "performance_tier": "lightweight", "fallback_strategy": "não se aplica: só transições CSS de opacidade e transform, desligadas com prefers-reduced-motion", "primary_technology": "CSS only" },
+    "background_effects": { "type": "none", "description": "Fundo liso #0e0e0e.", "technology": "CSS", "params": { "color_palette": ["#0e0e0e"], "speed": "n/a", "density": "n/a", "opacity": "1", "blend_mode": "normal" } },
+    "particle_systems": { "enabled": false, "type": "none", "description": "n/a", "technology": "n/a", "params": { "count": 0, "shape": "n/a", "size_range": "n/a", "movement_pattern": "n/a", "color_behavior": "n/a", "interaction": "none", "spawn_area": "n/a" } },
+    "3d_elements": { "enabled": false, "type": "none", "description": "n/a", "technology": "n/a", "params": { "renderer": "n/a", "lighting": "n/a", "camera": "n/a", "materials": "n/a", "geometry": "n/a", "post_processing": [], "interaction_model": "n/a" } },
+    "shader_effects": { "enabled": false, "type": "none", "description": "n/a", "technology": "n/a", "params": { "uniforms": "n/a", "vertex_manipulation": "n/a", "fragment_output": "n/a", "noise_type": "n/a", "distortion": "n/a" } },
+    "scroll_effects": {
+      "parallax": { "enabled": false, "layers": "0", "depth_range": "n/a", "speed_curve": "n/a" },
+      "scroll_triggered_animations": { "enabled": false, "trigger_points": "n/a", "animation_type": "none", "scrub_behavior": "n/a" },
+      "scroll_morphing": { "enabled": false, "description": "n/a" }
+    },
+    "text_effects": { "type": "none", "description": "n/a", "technology": "n/a", "params": { "split_strategy": "n/a", "animation_per_unit": "n/a", "stagger": "n/a", "effect_style": "n/a" } },
+    "cursor_effects": { "enabled": false, "type": "none", "description": "n/a", "params": { "shape": "n/a", "size": "n/a", "blend_mode": "n/a", "trail": "n/a", "interaction_zone": "n/a" } },
+    "image_effects": { "type": "none", "description": "n/a", "technology": "n/a", "params": { "filter_pipeline": "n/a", "hover_transform": "n/a", "reveal_animation": "n/a", "distortion_type": "n/a" } },
+    "glassmorphism_neumorphism": { "enabled": false, "style": "none", "params": { "blur_radius": "0", "transparency": "0", "border_treatment": "n/a", "shadow_type": "n/a", "light_source_angle": "n/a" } },
+    "canvas_drawings": { "enabled": false, "type": "none", "description": "n/a", "technology": "n/a", "params": { "draw_method": "n/a", "animation_loop": "n/a", "color_scheme": "n/a", "responsiveness": "n/a", "interaction": "n/a" } },
+    "svg_animations": { "enabled": false, "type": "none", "description": "n/a", "params": { "animation_method": "n/a", "path_morphing": "n/a", "stroke_animation": "n/a", "filter_effects": "n/a" } },
+    "composite_notes": "A referência tem gráficos densos (barras hachuradas, matriz de pontos) porque é um painel de custos. O admin não tem séries para mostrar; copiar esses padrões seria decoração. Ficam da referência: as superfícies, a tinta, os títulos pequenos, as pílulas de aba, o botão primário branco e as frestas entre cartões. O desfoque do bloqueio de privacidade é a única transparência e tem função (esconder a tela)."
+  }
+}

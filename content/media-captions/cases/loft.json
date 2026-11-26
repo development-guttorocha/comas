@@ -1,0 +1,74 @@
+{
+  "hero.png": {
+    "description": "Peça gráfica com o logotipo da Webmotors: um símbolo branco semelhante a um H dentro de um círculo vermelho, sobre o nome 'webmotors' em branco, com fundo escuro texturizado em padrão de faixas diagonais.",
+    "kind": "logo",
+    "shape": "larga",
+    "alt": "Logotipo da Webmotors com símbolo em círculo vermelho sobre fundo escuro texturizado",
+    "width": 1920,
+    "height": 1254,
+    "hash": "e127b491fa79a166fb5dbed624bf2406de78dd6758d3f0f1ed5f4e077497c733",
+    "model": "deepseek-flash",
+    "tokens": 1180,
+    "at": "2026-11-11T13:28:00.835Z"
+  },
+  "pdi.png": {
+    "description": "Diagrama de círculos concêntricos sobrepostos que mostra rituais de design em quatro níveis: Design leadership, Design Team, Alliance Design Team e Individual, cada um com uma lista de atividades.",
+    "kind": "diagrama",
+    "shape": "larga",
+    "alt": "Diagrama de círculos concêntricos com rituais de design em quatro níveis, do individual à liderança",
+    "width": 896,
+    "height": 468,
+    "hash": "c9704628fa52f37267c4e1d7ae34167e3f343d3e60273d9187c36efabfc719d1",
+    "model": "deepseek-flash",
+    "tokens": 791,
+    "at": "2026-11-11T13:28:01.778Z"
+  },
+  "pulse-feedback.png": {
+    "description": "Página de anúncio do Hyundai HB20 2026 no site da Webmotors, com foto do carro, seletor de ano e versão, preço a partir de R$ 130.590 e formulário lateral para enviar interesse com CEP e dados de contato.",
+    "kind": "tela-web",
+    "shape": "larga",
+    "alt": "Página do Hyundai HB20 2026 na Webmotors com foto, preço e formulário de contato",
+    "width": 1080,
+    "height": 521,
+    "hash": "6a09617be61ea8e9f8592f9ab83a34750663e0ea15a55b4436abb011ff6a7153",
+    "model": "deepseek-flash",
+    "tokens": 886,
+    "at": "2026-11-11T13:28:04.160Z"
+  },
+  "recognition.png": {
+    "description": "Composição com uma mulher de camisa branca e braços cruzados ao lado de quatro celulares exibindo veículos (carro, motos) sobre fundo de círculos vermelhos, mais um ícone vermelho com a letra H.",
+    "kind": "varias-telas",
+    "shape": "larga",
+    "alt": "Mulher ao lado de celulares com carro e motos e ícone vermelho da letra H",
+    "width": 1600,
+    "height": 1045,
+    "hash": "316b155d930fc307fb431a86b98483b6a2f39516b58edd14eeb96c67f7e74270",
+    "model": "deepseek-flash",
+    "tokens": 1167,
+    "at": "2026-11-11T13:28:06.320Z"
+  },
+  "teambuilding.png": {
+    "description": "Peça gráfica com o logotipo da Webmotors: um símbolo branco semelhante a um H dentro de um círculo vermelho, sobre o nome 'webmotors' em branco, com fundo escuro texturizado em padrão de faixas diagonais.",
+    "kind": "logo",
+    "shape": "larga",
+    "alt": "Logotipo da Webmotors com símbolo em círculo vermelho sobre fundo escuro texturizado",
+    "width": 1920,
+    "height": 1254,
+    "hash": "e127b491fa79a166fb5dbed624bf2406de78dd6758d3f0f1ed5f4e077497c733",
+    "model": "deepseek-flash",
+    "tokens": 1180,
+    "at": "2026-11-11T13:28:00.835Z"
+  },
+  "touchpoints.png": {
+    "description": "Página inicial do site da Webmotors com banner de carros 0KM e campo de busca aberto, exibindo sugestões de marcas e modelos da Chevrolet como Chevrolet Onix, 510, Spin e Tracker.",
+    "kind": "tela-web",
+    "shape": "larga",
+    "alt": "Site da Webmotors com busca de carros 0KM mostrando sugestões da Chevrolet",
+    "width": 1080,
+    "height": 521,
+    "hash": "9a95d76639dedd1d0d5bc628f22c26d7dee4955f741d88b62b795a2e52d6d258",
+    "model": "deepseek-flash",
+    "tokens": 868,
+    "at": "2026-11-11T13:28:08.901Z"
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "slug": "webmotors",
+  "revision": "e4a70b16-9540-407e-8bc7-9d9f19e177bf",
+  "draft": {
+    "sourceHash": "c9776a3d389f4fc8d41b0a1ec5b06eeeb521c397942a663e0ec712017d2cc799",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-09T20:53:20.463Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Catálogo 0km feito para SEO do zero",
+        "target": "The new Webmotors catalog designed for SEO"
+      },
+      {
+        "key": "case.productTag",
+        "source": "UI Design",
+        "target": "UI Design"
+      },
+      {
+        "key": "case.role",
+        "source": "Product Designer",
+        "target": "Product Designer"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "SEO",
+        "target": "SEO"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Growth",
+        "target": "Growth"
+      },
+      {
+        "key": "case.summary",
+        "source": "Há quase 10 anos atrás um time de três pessoas construiu um catálogo em três meses. Ele ainda está no ar. Praticamente sem refação estrutural.",
+        "target": "Nearly 10 years ago, a team of three built a catalog in three months. It's still live. With virtually no structural rework."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Discover"
+      },
+      {
+        "key": "3367bcc8-93e5-8088-b474-f41ad96642c2.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3367bcc8-93e5-80e7-8814-d4294739bff7.embed.label",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3367bcc8-93e5-80e7-8814-d4294739bff7.embed.body",
+        "source": " A Webmotors tinha um problema de capilaridade no orgânico. Buscas por 0km não chegavam até ela porque não havia produto pra receber esse tráfego. A hipótese era simples: um catálogo estruturado poderia resolver o SEO de 0km e abrir uma frente nova de crescimento. Três pessoas. Três meses pra provar.",
+        "target": " Webmotors had an organic reach problem. Searches for 0km cars weren't reaching it because there was no product to capture that traffic. The hypothesis was simple: a structured catalog could solve SEO for 0km cars and open up a new avenue for growth. Three people. Three months to prove it."
+      },
+      {
+        "key": "3367bcc8-93e5-8066-9a5e-e0fcaee9b126.rich_text.0",
+        "source": "Decisões",
+        "target": "Decisions"
+      },
+      {
+        "key": "3367bcc8-93e5-80fc-b238-d7579c655f02.embed.label",
+        "source": "Decisões",
+        "target": "Decisions"
+      },
+      {
+        "key": "3367bcc8-93e5-80fc-b238-d7579c655f02.embed.body",
+        "source": "A lógica de busca foi a mais contestada. Não era discussão de design. Era repensar como o backend de toda a companhia estava escrito, com certeza, era uma quebra de paradigma.\n\nArgumentei que sem mudar a estrutura, a experiência nunca funcionaria do jeito certo. O time foi convencido. A arquitetura mudou.\n\n\n\nCom a estrutura resolvida, defini a árvore de montadora, modelo e versão como espinha dorsal, incluí avaliação por veículo desde o lançamento e entrei com SEO e responsivo no kickoff.",
+        "target": "The search logic faced the most pushback. This wasn't a design discussion. It meant rethinking how the entire company's backend was written. It was definitely a paradigm shift.\n\nI argued that without changing the structure, the experience would never work the way it should. The team was convinced. The architecture changed.\n\n\n\nWith the structure settled, I defined the make, model, and trim hierarchy as the backbone, included vehicle ratings from launch, and brought SEO and responsive design into the kickoff."
+      },
+      {
+        "key": "3367bcc8-93e5-80bc-91a7-d1fe37b5f82d.rich_text.0",
+        "source": "Além do catálogo",
+        "target": "Beyond the catalog"
+      },
+      {
+        "key": "3367bcc8-93e5-80de-b8dd-f115561a34dc.embed.label",
+        "source": "Além do catálogo",
+        "target": "Beyond the catalog"
+      },
+      {
+        "key": "3367bcc8-93e5-80de-b8dd-f115561a34dc.embed.body",
+        "source": "Em 6 meses, outros times estavam construindo em cima do que foi entregue. Tabela Fipe, fluxos de venda, portal. Ninguém planejou isso. Foi consequência de construir certo.\n\nO produto que nasceu como resposta a um problema de SEO virou base para vários outros produtos da empresa.",
+        "target": "Within 6 months, other teams were building on what we'd delivered. Tabela Fipe, sales flows, the portal. Nobody planned that. It was the result of building it right.\n\nThe product that started as an answer to an SEO problem became the foundation for several other products at the company."
+      },
+      {
+        "key": "3367bcc8-93e5-80f6-815c-c2075c87edbe.rich_text.0",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "3367bcc8-93e5-804b-a367-cc46819585ac.embed.label",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "3367bcc8-93e5-804b-a367-cc46819585ac.embed.body",
+        "source": "Além de conseguirmos entregar o produto em tempo recorde, ele também mostrou um grande impacto para o negócio, garantindo resultados duradouros. Esses números não vieram de reinvestimento contínuo no produto. Vieram de uma base que aguentou o crescimento sem precisar ser refeita.",
+        "target": "Not only did we deliver the product in record time, it also had a major business impact, delivering lasting results. These numbers didn't come from continuous reinvestment in the product. They came from a foundation that handled growth without needing to be rebuilt."
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.0.label",
+        "source": "Sessões orgânicas",
+        "target": "Organic sessions"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.0.caption",
+        "source": "jan/2016 → jan/2025",
+        "target": "Jan/2016 → Jan/2025"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.1.label",
+        "source": "Palavras-chave indexadas",
+        "target": "Indexed keywords"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.2.label",
+        "source": "Posições no top 3",
+        "target": "Top 3 rankings"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.sectionLabel",
+        "source": "// Resultados",
+        "target": "// Results"
+      },
+      {
+        "key": "3367bcc8-93e5-80b6-9b80-cc01ded2a4d9.rich_text.0",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "3367bcc8-93e5-80f2-90cd-ff81cdfe21f1.embed.label",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "3367bcc8-93e5-80f2-90cd-ff81cdfe21f1.embed.body",
+        "source": "Produto que dura não nasce de processo. Nasce de decisões difíceis tomadas no momento certo. Às vezes isso significa reescrever o backend. Às vezes significa não cortar o que parece dispensável.",
+        "target": "A product that lasts doesn't come from process. It comes from tough decisions made at the right time. Sometimes that means rewriting the backend. Sometimes it means not cutting what seems expendable."
+      }
+    ]
+  },
+  "published": {
+    "sourceHash": "c9776a3d389f4fc8d41b0a1ec5b06eeeb521c397942a663e0ec712017d2cc799",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-10-09T20:53:20.463Z",
+    "units": [
+      {
+        "key": "case.title",
+        "source": "Catálogo 0km feito para SEO do zero",
+        "target": "The new Webmotors catalog designed for SEO"
+      },
+      {
+        "key": "case.productTag",
+        "source": "UI Design",
+        "target": "UI Design"
+      },
+      {
+        "key": "case.role",
+        "source": "Product Designer",
+        "target": "Product Designer"
+      },
+      {
+        "key": "case.tags.0",
+        "source": "Produto",
+        "target": "Product"
+      },
+      {
+        "key": "case.tags.1",
+        "source": "SEO",
+        "target": "SEO"
+      },
+      {
+        "key": "case.accentTags.0",
+        "source": "Growth",
+        "target": "Growth"
+      },
+      {
+        "key": "case.summary",
+        "source": "Há quase 10 anos atrás um time de três pessoas construiu um catálogo em três meses. Ele ainda está no ar. Praticamente sem refação estrutural.",
+        "target": "Nearly 10 years ago, a team of three built a catalog in three months. It's still live. With virtually no structural rework."
+      },
+      {
+        "key": "case.heroFullBleedContinueLabel",
+        "source": "Explorar case",
+        "target": "Discover"
+      },
+      {
+        "key": "3367bcc8-93e5-8088-b474-f41ad96642c2.rich_text.0",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3367bcc8-93e5-80e7-8814-d4294739bff7.embed.label",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "3367bcc8-93e5-80e7-8814-d4294739bff7.embed.body",
+        "source": " A Webmotors tinha um problema de capilaridade no orgânico. Buscas por 0km não chegavam até ela porque não havia produto pra receber esse tráfego. A hipótese era simples: um catálogo estruturado poderia resolver o SEO de 0km e abrir uma frente nova de crescimento. Três pessoas. Três meses pra provar.",
+        "target": " Webmotors had an organic reach problem. Searches for 0km cars weren't reaching it because there was no product to capture that traffic. The hypothesis was simple: a structured catalog could solve SEO for 0km cars and open up a new avenue for growth. Three people. Three months to prove it."
+      },
+      {
+        "key": "3367bcc8-93e5-8066-9a5e-e0fcaee9b126.rich_text.0",
+        "source": "Decisões",
+        "target": "Decisions"
+      },
+      {
+        "key": "3367bcc8-93e5-80fc-b238-d7579c655f02.embed.label",
+        "source": "Decisões",
+        "target": "Decisions"
+      },
+      {
+        "key": "3367bcc8-93e5-80fc-b238-d7579c655f02.embed.body",
+        "source": "A lógica de busca foi a mais contestada. Não era discussão de design. Era repensar como o backend de toda a companhia estava escrito, com certeza, era uma quebra de paradigma.\n\nArgumentei que sem mudar a estrutura, a experiência nunca funcionaria do jeito certo. O time foi convencido. A arquitetura mudou.\n\n\n\nCom a estrutura resolvida, defini a árvore de montadora, modelo e versão como espinha dorsal, incluí avaliação por veículo desde o lançamento e entrei com SEO e responsivo no kickoff.",
+        "target": "The search logic faced the most pushback. This wasn't a design discussion. It meant rethinking how the entire company's backend was written. It was definitely a paradigm shift.\n\nI argued that without changing the structure, the experience would never work the way it should. The team was convinced. The architecture changed.\n\n\n\nWith the structure settled, I defined the make, model, and trim hierarchy as the backbone, included vehicle ratings from launch, and brought SEO and responsive design into the kickoff."
+      },
+      {
+        "key": "3367bcc8-93e5-80bc-91a7-d1fe37b5f82d.rich_text.0",
+        "source": "Além do catálogo",
+        "target": "Beyond the catalog"
+      },
+      {
+        "key": "3367bcc8-93e5-80de-b8dd-f115561a34dc.embed.label",
+        "source": "Além do catálogo",
+        "target": "Beyond the catalog"
+      },
+      {
+        "key": "3367bcc8-93e5-80de-b8dd-f115561a34dc.embed.body",
+        "source": "Em 6 meses, outros times estavam construindo em cima do que foi entregue. Tabela Fipe, fluxos de venda, portal. Ninguém planejou isso. Foi consequência de construir certo.\n\nO produto que nasceu como resposta a um problema de SEO virou base para vários outros produtos da empresa.",
+        "target": "Within 6 months, other teams were building on what we'd delivered. Tabela Fipe, sales flows, the portal. Nobody planned that. It was the result of building it right.\n\nThe product that started as an answer to an SEO problem became the foundation for several other products at the company."
+      },
+      {
+        "key": "3367bcc8-93e5-80f6-815c-c2075c87edbe.rich_text.0",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "3367bcc8-93e5-804b-a367-cc46819585ac.embed.label",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "3367bcc8-93e5-804b-a367-cc46819585ac.embed.body",
+        "source": "Além de conseguirmos entregar o produto em tempo recorde, ele também mostrou um grande impacto para o negócio, garantindo resultados duradouros. Esses números não vieram de reinvestimento contínuo no produto. Vieram de uma base que aguentou o crescimento sem precisar ser refeita.",
+        "target": "Not only did we deliver the product in record time, it also had a major business impact, delivering lasting results. These numbers didn't come from continuous reinvestment in the product. They came from a foundation that handled growth without needing to be rebuilt."
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.0.label",
+        "source": "Sessões orgânicas",
+        "target": "Organic sessions"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.0.caption",
+        "source": "jan/2016 → jan/2025",
+        "target": "Jan/2016 → Jan/2025"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.1.label",
+        "source": "Palavras-chave indexadas",
+        "target": "Indexed keywords"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.stats.2.label",
+        "source": "Posições no top 3",
+        "target": "Top 3 rankings"
+      },
+      {
+        "key": "3377bcc8-93e5-8023-b590-ea1a55413eb8.embed.sectionLabel",
+        "source": "// Resultados",
+        "target": "// Results"
+      },
+      {
+        "key": "3367bcc8-93e5-80b6-9b80-cc01ded2a4d9.rich_text.0",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "3367bcc8-93e5-80f2-90cd-ff81cdfe21f1.embed.label",
+        "source": "Aprendizados",
+        "target": "Lessons learned"
+      },
+      {
+        "key": "3367bcc8-93e5-80f2-90cd-ff81cdfe21f1.embed.body",
+        "source": "Produto que dura não nasce de processo. Nasce de decisões difíceis tomadas no momento certo. Às vezes isso significa reescrever o backend. Às vezes significa não cortar o que parece dispensável.",
+        "target": "A product that lasts doesn't come from process. It comes from tough decisions made at the right time. Sometimes that means rewriting the backend. Sometimes it means not cutting what seems expendable."
+      }
+    ]
+  },
+  "reel": {
+    "sourceHash": "c51ff9d2e473a24ae8545896d4f5e7c562cd96310f22257cbb5423245bfc8cf6",
+    "model": "gpt-6.1-sol",
+    "generatedAt": "2026-11-10T19:09:45.707Z",
+    "units": [
+      {
+        "key": "reel.title",
+        "source": "Um catálogo que o Google entende",
+        "target": "A catalog Google understands"
+      },
+      {
+        "key": "reel.cta",
+        "source": "Ler o case completo",
+        "target": "Read the full case study"
+      },
+      {
+        "key": "reel.title-1.chapter",
+        "source": "Contexto",
+        "target": "Context"
+      },
+      {
+        "key": "reel.title-1.lines.0",
+        "source": "Um catálogo",
+        "target": "A catalog"
+      },
+      {
+        "key": "reel.title-1.lines.1",
+        "source": "que o Google",
+        "target": "Google"
+      },
+      {
+        "key": "reel.title-1.lines.2",
+        "source": "entende.",
+        "target": "understands."
+      },
+      {
+        "key": "reel.title-1.eyebrow",
+        "source": "Webmotors · Catálogo 0km",
+        "target": "Webmotors · 0km catalog"
+      },
+      {
+        "key": "reel.list-1.chapter",
+        "source": "Restrições",
+        "target": "Constraints"
+      },
+      {
+        "key": "reel.list-1.heading",
+        "source": "3 pessoas e 3 meses pra provar.",
+        "target": "3 people, 3 months to prove it."
+      },
+      {
+        "key": "reel.list-1.items.0",
+        "source": "Backend legado da companhia",
+        "target": "Company's legacy backend"
+      },
+      {
+        "key": "reel.list-1.items.1",
+        "source": "Sem produto para SEO de 0km",
+        "target": "No SEO product for new cars"
+      },
+      {
+        "key": "reel.list-1.items.2",
+        "source": "Prazo de 3 meses",
+        "target": "3-month deadline"
+      },
+      {
+        "key": "reel.list-1.items.3",
+        "source": "Time de 3 pessoas",
+        "target": "3-person team"
+      },
+      {
+        "key": "reel.image-1.chapter",
+        "source": "Decisão",
+        "target": "Decision"
+      },
+      {
+        "key": "reel.image-1.eyebrow",
+        "source": "Backend reescrito",
+        "target": "Backend rewritten"
+      },
+      {
+        "key": "reel.image-1.lines.0",
+        "source": "Convenci o time",
+        "target": "I got the team"
+      },
+      {
+        "key": "reel.image-1.lines.1",
+        "source": "a *reescrever o backend*",
+        "target": "to *rewrite the backend*"
+      },
+      {
+        "key": "reel.image-1.body",
+        "source": "Em vez de manter o backend como estava, convenci o time a reescrevê-lo. Sem essa mudança, a experiência nunca funcionaria.",
+        "target": "Rather than keep the backend as it was, I convinced the team to rewrite it. Without that change, the experience would never work."
+      },
+      {
+        "key": "reel.image-2.chapter",
+        "source": "Estrutura",
+        "target": "Structure"
+      },
+      {
+        "key": "reel.image-2.eyebrow",
+        "source": "Espinha dorsal",
+        "target": "Backbone"
+      },
+      {
+        "key": "reel.image-2.lines.0",
+        "source": "Árvore de montadora",
+        "target": "Make hierarchy"
+      },
+      {
+        "key": "reel.image-2.lines.1",
+        "source": "como *espinha dorsal*",
+        "target": "as the *backbone*"
+      },
+      {
+        "key": "reel.image-2.body",
+        "source": "Em vez de adicionar SEO depois, entrei com ele no kickoff. Árvore de montadora, modelo e versão como base, com avaliação desde o lançamento.",
+        "target": "Instead of adding SEO later, I brought it in at kickoff. A make, model and trim hierarchy as the foundation, with reviews from launch."
+      },
+      {
+        "key": "reel.delta-1.chapter",
+        "source": "Impacto",
+        "target": "Impact"
+      },
+      {
+        "key": "reel.delta-1.label",
+        "source": "Sessões orgânicas",
+        "target": "Organic sessions"
+      },
+      {
+        "key": "reel.delta-1.before.caption",
+        "source": "jan/2016",
+        "target": "Jan/2016"
+      },
+      {
+        "key": "reel.delta-1.after.caption",
+        "source": "jan/2025",
+        "target": "Jan/2025"
+      },
+      {
+        "key": "reel.delta-1.suffix",
+        "source": "M",
+        "target": "M"
+      },
+      {
+        "key": "reel.delta-1.note",
+        "source": "jan/2016 → jan/2025",
+        "target": "Jan/2016 → Jan/2025"
+      },
+      {
+        "key": "reel.end-1.chapter",
+        "source": "Aprendizado",
+        "target": "Takeaway"
+      },
+      {
+        "key": "reel.end-1.lines.0",
+        "source": "Estrutura antes",
+        "target": "Structure, then"
+      },
+      {
+        "key": "reel.end-1.lines.1",
+        "source": "de tela.",
+        "target": "screens."
+      },
+      {
+        "key": "reel.end-1.meta",
+        "source": "Webmotors · Product Designer · 2015–2018",
+        "target": "Webmotors · Product Designer · 2015–2018"
+      },
+      {
+        "key": "reel.end-1.signature",
+        "source": "Gutto Rocha",
+        "target": "Gutto Rocha"
+      }
+    ]
+  }
+}

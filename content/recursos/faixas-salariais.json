@@ -1,0 +1,76 @@
+{
+  "reviewed": true,
+  "updatedAt": "2026-11",
+  "note": "RASCUNHO: valores de referência para revisão do Gutto. Salário bruto mensal CLT, empresa de 501 a 5.000 pessoas no eixo Sul-Sudeste. Cruzamento de nov/2026: faixas de mercado de 2023 (Loft, PicPay, QuintoAndar, iFood, Mercado Livre) corrigidas pelo IPCA, Levels.fyi Brasil (product designer e design manager) e Mercado de TI (set/2026). Lead e Head sem dado público: leitura do Gutto. Enquanto reviewed for false, a ferramenta não aparece em produção.",
+  "source": "Faixas de referência que uso em consultoria, cruzadas em novembro de 2026 com dados públicos de mercado. Serão substituídas pelos resultados da pesquisa salarial.",
+  "roles": [
+    {
+      "id": "junior",
+      "label": "Júnior",
+      "p25": 4500,
+      "p50": 5500,
+      "p75": 6800
+    },
+    {
+      "id": "pleno",
+      "label": "Pleno",
+      "p25": 7000,
+      "p50": 8500,
+      "p75": 10500
+    },
+    {
+      "id": "senior",
+      "label": "Sênior",
+      "p25": 11000,
+      "p50": 13000,
+      "p75": 16000
+    },
+    {
+      "id": "staff",
+      "label": "Staff / Principal",
+      "p25": 16000,
+      "p50": 19500,
+      "p75": 24000
+    },
+    {
+      "id": "lead",
+      "label": "Design Lead",
+      "p25": 15000,
+      "p50": 18000,
+      "p75": 22000
+    },
+    {
+      "id": "manager",
+      "label": "Design Manager",
+      "p25": 18000,
+      "p50": 22000,
+      "p75": 28000
+    },
+    {
+      "id": "head",
+      "label": "Head de Design",
+      "p25": 27000,
+      "p50": 34000,
+      "p75": 45000
+    }
+  ],
+  "sizes": [
+    {
+      "label": "Até 50 pessoas",
+      "factor": 0.85
+    },
+    {
+      "label": "51 a 500",
+      "factor": 0.95
+    },
+    {
+      "label": "501 a 5.000",
+      "factor": 1
+    },
+    {
+      "label": "Mais de 5.000",
+      "factor": 1.1
+    }
+  ],
+  "pjFactor": 1.5
+}

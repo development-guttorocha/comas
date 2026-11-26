@@ -1,0 +1,45 @@
+{
+  "slug": "picpay",
+  "num": "01",
+  "title": "Construindo o time de design B2B no PicPay",
+  "company": "PicPay",
+  "productTag": "Liderança, Org Building & People",
+  "year": "2020–2022",
+  "role": "Design Manager",
+  "tags": [
+    "Liderança",
+    "Org",
+    "People"
+  ],
+  "accentTags": [
+    "Leadership"
+  ],
+  "placeholder": "#E4E1DA",
+  "brandColor": "#5DC153",
+  "heroImage": "/cases/picpay/picpay-cover.png",
+  "summary": "Entrei no PicPay com mais um designer. Antes de contratar, desenhamos a solução completa para o lojista e organizamos o time a partir dela, em três tribos: Seller Tools, Audiência e Ops. Saí liderando 15 pessoas e uma visão de Audiência que abriu um mercado novo para a empresa.",
+  "context": "",
+  "challenge": "",
+  "approach": [],
+  "stats": [],
+  "outcome": "",
+  "learning": "",
+  "heroMegaWord": "PICPAY",
+  "heroVariant": "fullBleed",
+  "heroFullBleedContinueLabel": "Explorar case",
+  "notionSourcePageId": "3cd7bcc8-93e5-80ee-8254-d05005f89614",
+  "order": 2,
+  "featuredOnSite": true,
+  "homeStats": [
+    {
+      "value": "2 → 15",
+      "label": "Pessoas"
+    },
+    {
+      "value": "1 → 3",
+      "label": "Tribos"
+    }
+  ],
+  "homeColor": "#368E2E",
+  "updatedAt": "2026-11-11"
+}

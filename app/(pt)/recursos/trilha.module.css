@@ -1,0 +1,119 @@
+/* Trilha de carreira: a career drawn as a user flow. Violet, a dark dotted board, notes. */
+
+/* ─── Hero: a full-screen dark board, like the design system page's canvas ─── */
+.hero { composes: hero from "./canvas.module.css"; }
+.canvas { composes: canvas from "./canvas.module.css"; grid-template-columns: minmax(380px, .88fr) minmax(0, 1.12fr); align-items: center; --canvas-glow: radial-gradient(ellipse 50% 60% at 72% 50%, color-mix(in srgb, var(--svc-accent) 14%, transparent), transparent 70%); }
+.boardTab { composes: boardTab from "./canvas.module.css"; }
+.heroCopy { position: relative; z-index: 1; min-width: 0; }
+.title { margin-top: 18px; font-size: var(--type-display-sm); }
+.intro { max-width: 40ch; margin: 18px 0 0; color: var(--color-muted); font-size: var(--type-body); line-height: var(--leading-body); }
+.heroFlow { min-width: 0; margin-right: clamp(-56px, -3vw, 0px); }
+
+/* ─── The form: floating over the canvas in the hero, then a pill in the corner ─── */
+.heroCard { margin-top: 22px; }
+.heroCard .floatingCard { width: 100%; max-width: 420px; animation: none; }
+.floating { position: fixed; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2vw, 28px); z-index: 80; transition: opacity .3s, transform .3s; scroll-margin-top: 120px; }
+.floating[data-hidden] { opacity: 0; transform: translateY(16px); pointer-events: none; }
+.floatingCard { width: min(380px, calc(100vw - 24px)); padding: 18px 18px 16px; border-radius: var(--radius-card); background: var(--color-card); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--svc-accent) 40%, transparent), 0 30px 60px -20px rgb(0 0 0 / 70%); animation: pop .4s cubic-bezier(.16, 1, .3, 1); }
+@keyframes pop { from { opacity: 0; transform: translateY(12px) scale(.98); } }
+.floatingHead { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+.floatingHead p { display: grid; gap: 2px; margin: 0; font-size: 18px; font-weight: 700; letter-spacing: var(--tracking-title); }
+.floatingHead p span { color: var(--color-muted); font-size: 14px; font-weight: 500; letter-spacing: 0; }
+.floatingHead button { flex: none; width: 32px; height: 32px; border-radius: 50%; background: rgb(255 255 255 / 8%); color: var(--color-ink); font-size: 18px; line-height: 1; cursor: pointer; }
+.floatingHead button:hover { background: rgb(255 255 255 / 14%); }
+.floatingCard form { gap: 12px; }
+.floatingCard :is(input, button[type="submit"]) { min-height: var(--control-height); }
+.floatingPill { display: inline-flex; align-items: center; gap: 10px; min-height: var(--control-height-lg); padding: 0 28px; border-radius: var(--radius-control); background: var(--svc-accent); color: var(--svc-on-accent); font: inherit; font-size: var(--type-button); font-weight: 700; cursor: pointer; box-shadow: 0 18px 40px -12px color-mix(in srgb, var(--svc-accent) 70%, transparent); animation: pop .4s cubic-bezier(.16, 1, .3, 1); }
+
+/* ─── Doubts: notes passing by ─── */
+.doubts { padding-block: 28px 36px; border-block: 1px solid var(--color-line); overflow: hidden; }
+.doubts > p { margin: 0 0 20px; color: var(--color-dim); font-size: var(--type-label); font-weight: 600; letter-spacing: var(--tracking-label); text-align: center; }
+.doubtsTrack { display: flex; gap: 18px; width: max-content; padding-block: 8px; animation: notes 70s linear infinite; }
+.doubts:hover .doubtsTrack { animation-play-state: paused; }
+.doubtsTrack span { flex: none; width: 210px; min-height: 120px; padding: 16px 16px 20px; background: #f4e58a; color: #2a2510; font-size: 17px; font-weight: 700; line-height: 1.3; letter-spacing: -.01em; transform: rotate(var(--tilt)); box-shadow: 0 14px 24px -12px rgb(0 0 0 / 60%); }
+.doubtsTrack span:nth-child(3n + 2) { background: #c8bdff; color: #1c1640; }
+.doubtsTrack span:nth-child(3n) { background: var(--color-ink); color: #151515; }
+@keyframes notes { to { transform: translateX(-50%); } }
+.srOnly { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ─── Explorer ─── */
+.explorerHead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 0 48px; }
+.explorerHead > p { max-width: 38ch; margin: 0 0 var(--space-section-heading); color: var(--color-muted); font-size: 16px; line-height: var(--leading-text); }
+.explorer { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+/* The three steps of the demonstration, lit as the visitor goes. */
+.steps3 { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 10px; margin: 0 0 4px; padding: 0; list-style: none; counter-reset: s; }
+.steps3 li { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 18px 0 8px; border-radius: 999px; background: var(--color-card); color: var(--color-subtle); font-size: 16px; font-weight: 700; transition: background-color .3s, color .3s; }
+.steps3 li + li::before { content: "→"; order: -1; margin: 0 4px 0 -2px; color: var(--color-dim); }
+.steps3 span { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: rgb(255 255 255 / 8%); color: var(--color-ink); font-size: 14px; }
+.steps3 li[data-state="now"] { background: var(--svc-accent); color: var(--svc-on-accent); }
+.steps3 li[data-state="now"] span { background: var(--svc-on-accent); color: var(--svc-accent); animation: nudge 1.6s ease-in-out infinite; }
+.steps3 li[data-state="done"] span { background: var(--svc-accent); color: var(--svc-on-accent); }
+.steps3 li[data-state="done"] { color: var(--color-ink); }
+@keyframes nudge { 50% { transform: scale(1.12); } }
+.board { padding: clamp(10px, 1.4vw, 20px); border-radius: var(--radius-canvas); background: #0a0f11; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 8%); }
+.panel { display: grid; gap: 12px; padding: clamp(20px, 2.2vw, 30px); border-radius: var(--radius-card); background: #fbfaf7; color: #151515; }
+.panelKind { margin: 0; color: #66645d; font-size: 14px; font-weight: 700; }
+.panel h3 { margin: 0; padding-bottom: 14px; border-bottom: 2px solid #151515; font-size: clamp(28px, 2.6vw, 40px); font-weight: 700; letter-spacing: var(--tracking-heading); line-height: 1; }
+.panelNote { margin: 0; color: #55544e; font-size: 15px; line-height: var(--leading-text); }
+.comps { display: grid; margin: 0; }
+.comps > div { display: grid; gap: 3px; padding: 9px 0; border-bottom: 1px solid #e6e2d8; }
+.comps dt { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
+.comps dt::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--svc-accent); }
+.comps dd { margin: 0; color: #3d3c37; font-size: 14px; line-height: 1.5; }
+.locked { position: relative; }
+.locked .comps dd { filter: blur(4.5px); user-select: none; }
+.lockCard { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 12px; text-align: center; background: linear-gradient(rgb(251 250 247 / 30%), rgb(251 250 247 / 92%) 40%); }
+.lockCard p { max-width: 20ch; margin: 0; font-size: 20px; font-weight: 700; letter-spacing: var(--tracking-title); line-height: 1.2; }
+.lockCard a { display: inline-flex; align-items: center; min-height: var(--control-height); padding: 0 24px; border-radius: var(--radius-control); background: #151515; color: #fbfaf7; font-size: var(--type-button-sm); font-weight: 700; transition: background-color .2s, color .2s; }
+.lockCard a:hover { background: var(--svc-accent); color: var(--svc-on-accent); }
+.paths > p:first-child { margin: 6px 0 8px; color: #151515; font-size: 14px; font-weight: 700; }
+.paths ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.paths li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; padding: 12px 14px; border-radius: var(--radius-note); background: color-mix(in srgb, var(--svc-accent) 16%, #fbfaf7); font-size: 15px; }
+.paths li span { color: #3d3c37; }
+
+/* ─── Manifesto ─── */
+.manifestoKicker { margin: 0 0 var(--space-section-heading); color: var(--color-muted); font-size: var(--type-label); font-weight: 600; line-height: 1.5; letter-spacing: var(--tracking-label); }
+.manifesto { display: grid; margin: 0; padding: 0; list-style: none; }
+.manifesto li > div { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 16px var(--layout-gap); align-items: baseline; padding-block: clamp(24px, 3vw, 40px); border-top: 1px solid var(--color-line); }
+.manifesto h2 { margin: 0; font-size: clamp(32px, 4vw, 68px); font-weight: 700; line-height: 1; letter-spacing: var(--tracking-heading); text-wrap: balance; }
+.manifesto li:nth-child(2) h2 { color: var(--svc-accent); }
+.manifesto p { margin: 0; color: var(--color-muted); font-size: var(--type-body); line-height: var(--leading-body); }
+
+/* ─── What you receive ─── */
+.receive { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: var(--layout-gap); align-items: center; }
+.steps { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.steps li { display: flex; gap: 16px; align-items: baseline; font-size: clamp(17px, 1.3vw, 21px); font-weight: 600; line-height: 1.4; }
+.steps span { display: grid; flex: none; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--svc-accent); color: var(--svc-on-accent); font-size: 15px; font-weight: 700; }
+.receiveNote { margin: 28px 0 0; color: var(--color-dim); font-size: 14px; font-weight: 600; }
+
+/* The printed page, real text, fading out right and down. */
+.paper { position: relative; aspect-ratio: 1.2; }
+.paperBack, .paperFront { position: absolute; padding: 4% 4.5%; border-radius: 6px; background: #fbfaf7; color: #151515; box-shadow: 0 40px 70px -30px rgb(0 0 0 / 80%); }
+.paperBack { inset: 0 0 14% 20%; transform: rotate(4deg); background: #efece4; }
+.paperBack ol { display: grid; gap: 8px; margin: 0; padding-left: 18px; color: #3d3c37; font-size: var(--type-label); line-height: 1.45; }
+.paperFront { inset: 8% 8% 0 0; overflow: hidden; transform: rotate(-2deg); }
+/* The table runs on past the edge; an opaque fade says so without showing the sheet behind. */
+.paperFront::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 58%, #fbfaf7 92%), linear-gradient(transparent 62%, #fbfaf7 94%); pointer-events: none; }
+.paperTop { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; font-size: var(--type-label); }
+.paperTop span { width: 14px; height: 14px; border-radius: 50%; background: var(--svc-accent); }
+.paperTop i { margin-left: auto; color: #8a887f; font-style: normal; }
+.paperH { margin: 0 0 12px; font-size: clamp(15px, 1.5vw, 22px); font-weight: 700; letter-spacing: var(--tracking-title); }
+.paperFront table { width: 170%; border-collapse: collapse; font-size: var(--type-label); line-height: 1.4; }
+.paperFront :is(th, td) { padding: 7px 8px; border-bottom: 1px solid #e3dfd5; border-left: 1px solid #e3dfd5; text-align: left; vertical-align: top; }
+.paperFront thead th { font-weight: 700; }
+.paperFront thead th small { display: block; color: #8a887f; font-weight: 500; }
+.paperFront tbody th { width: 70px; font-weight: 700; }
+.paperFront td i { display: block; width: 9px; height: 9px; margin-bottom: 5px; border: 1.3px solid #b9b5aa; border-radius: 2px; }
+
+@media (max-width: 1023px) {
+  .canvas, .explorer, .receive, .manifesto li > div { grid-template-columns: 1fr; }
+  .panel { position: static; }
+}
+/* On small screens the flow keeps a readable size and pans sideways inside its frame. */
+@media (max-width: 767px) {
+  .heroFlow, .board { overflow-x: auto; overscroll-behavior-x: contain; }
+  .heroFlow > svg, .board > svg { min-width: 760px; }
+  .heroFlow { margin-right: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .steps3 span { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { .doubtsTrack { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } }

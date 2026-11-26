@@ -1,0 +1,54 @@
+/* BlockNote's colours in the admin palette (docs/admin/conceito/admin-design-dna.json, as values:
+   these menus can render outside the admin frame, where its tokens are not defined). Global: its menus render outside the editor.
+   Only the admin uses BlockNote, so nothing here reaches the site. */
+.bn-container[data-color-scheme="dark"],
+.bn-root[data-color-scheme="dark"],
+[data-color-scheme="dark"] .bn-ak-popover {
+  --bn-colors-editor-background: transparent;
+  --bn-colors-editor-text: #fafafa;
+  --bn-colors-menu-background: #181818;
+  --bn-colors-menu-text: #fafafa;
+  --bn-colors-tooltip-background: #222222;
+  --bn-colors-tooltip-text: #fafafa;
+  --bn-colors-hovered-background: #222222;
+  --bn-colors-hovered-text: #fafafa;
+  --bn-colors-selected-background: #2c2c2c;
+  --bn-colors-selected-text: #fafafa;
+  --bn-colors-disabled-background: transparent;
+  --bn-colors-disabled-text: #858585;
+  --bn-colors-shadow: rgb(0 0 0 / 55%);
+  --bn-colors-border: #313232;
+  --bn-colors-side-menu: #858585;
+  --bn-font-family: var(--font-sans);
+  --bn-border-radius: 8px;
+}
+
+/* Ariakit paints menus and toolbars with a fixed blue; the admin is neutral. */
+.bn-ariakit .bn-ak-menu,
+.bn-ariakit .bn-ak-toolbar,
+.bn-ariakit .bn-ak-popover {
+  border-color: transparent !important;
+  border-radius: 12px !important;
+  background: #181818 !important;
+  box-shadow: 0 16px 48px rgb(0 0 0 / 55%) !important;
+  color: #fafafa;
+}
+.bn-ariakit .bn-ak-menu-item[aria-selected="true"],
+.bn-ariakit .bn-ak-menu-item[data-active-item],
+.bn-ariakit .bn-ak-menu-item:hover {
+  background: #222222 !important;
+  color: #fafafa !important;
+}
+.bn-ariakit .bn-ak-group-label {
+  color: #999999 !important;
+  font-size: 12px !important;
+  font-weight: 500;
+}
+.bn-ariakit .bn-ak-button[aria-pressed="true"],
+.bn-ariakit .bn-ak-button[data-selected="true"] {
+  background: #2c2c2c !important;
+  color: #fafafa !important;
+}
+.bn-ariakit :focus-visible {
+  outline-color: #fafafa !important;
+}

@@ -1,0 +1,201 @@
+/* O documento do case no admin: texto corrido, componentes como cartões discretos no meio dele. */
+.doc {
+  min-width: 0;
+  padding: 20px 8px 96px;
+}
+
+.doc :global(.bn-editor) {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-inline: 54px 24px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.doc :global(.bn-block-content[data-content-type="heading"]) { margin-top: 18px; font-weight: 600; letter-spacing: -.02em; }
+.doc :global(.bn-block-content[data-content-type="heading"][data-level="1"]) { font-size: 28px; }
+.doc :global(.bn-block-content[data-content-type="heading"][data-level="2"]) { font-size: 22px; }
+.doc :global(.bn-block-content[data-content-type="heading"][data-level="3"]) { font-size: 18px; }
+.doc :global(.bn-block-content[data-content-type="quote"]) { color: var(--soft); }
+/* Parágrafo: tamanho e cor escolhidos na barra (a cor personalizada é pintada pelo editor). */
+.doc :global(.bn-block-content[data-content-type="paragraph"][data-size="sm"]) { font-size: 14px; }
+.doc :global(.bn-block-content[data-content-type="paragraph"][data-size="lg"]) { font-size: 20px; line-height: 1.6; }
+.doc :global(.bn-block-content[data-content-type="paragraph"][data-size="xl"]) { font-size: 26px; line-height: 1.35; }
+.doc :global(.bn-block-content[data-content-type="paragraph"][data-size="xxl"]) { font-size: 34px; line-height: 1.2; letter-spacing: -.02em; }
+.doc :global(.bn-block-content[data-content-type="paragraph"][data-color="ink"]) { color: #fff; }
+.doc :global(.bn-block-content[data-content-type="paragraph"][data-color="brand"]) { color: var(--case-brand, var(--muted)); }
+.paragraphPicker { width: 28px; height: 28px; margin: 0 4px; padding: 0; border: 0; border-radius: 6px; background: none; cursor: pointer; }
+.doc :global(.bn-inline-content code) { padding: 1px 5px; border-radius: 4px; background: var(--raised); font-size: .9em; }
+.doc :global(.bn-inline-content a) { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.doc :global(.bn-block-content[data-content-type="image"] img) { border-radius: 10px; }
+
+/* Shared look of the case blocks */
+.caption {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  outline: none;
+}
+.caption::placeholder { color: var(--faint); }
+
+/* Section: a marker of the side index, set apart from the prose. */
+.section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: 26px;
+  padding: 10px 0 8px;
+  border-bottom: 1px solid var(--line);
+}
+.sectionNumber {
+  flex-shrink: 0;
+  width: 30px;
+  height: 26px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 12px;
+  text-align: center;
+  appearance: none;
+  cursor: pointer;
+}
+.sectionLabel {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+  outline: none;
+}
+.sectionToggle { display: flex; flex-shrink: 0; align-items: center; gap: 8px; color: var(--faint); font-size: 12px; cursor: pointer; }
+
+/* Text with a side title: the case's prose, edited in place. */
+.split {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 4px 24px;
+  width: 100%;
+  margin: 6px 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--field); /* a component in the text: a quiet card, like the others */
+}
+.split textarea {
+  width: 100%;
+  min-height: 1lh;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.7;
+  resize: none;
+  outline: none;
+  field-sizing: content;
+}
+.split textarea::placeholder { color: var(--faint); }
+.splitLabel { font-weight: 600; }
+.splitBody { color: var(--soft) !important; }
+.splitKind { grid-column: 2; color: var(--faint); font-size: 12px; opacity: 0; transition: opacity var(--fast) var(--ease); }
+.split:hover .splitKind, .split:focus-within .splitKind { opacity: 1; }
+
+/* Other components: a quiet card with a preview, opened to edit. */
+.card {
+  width: 100%;
+  margin: 6px 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 10px;
+  background: var(--field);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card[data-open="true"] { box-shadow: inset 0 0 0 1px var(--control); }
+.cardHead { display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 6px 8px 6px 12px; }
+.cardKind { display: flex; align-items: center; gap: 8px; color: var(--faint); font-size: 12px; white-space: nowrap; }
+.cardKind svg { width: 15px; height: 15px; }
+.cardTools { display: flex; gap: 4px; margin-left: auto; }
+.cardBody { display: grid; gap: 12px; padding: 12px; border-top: 1px solid var(--line); }
+.inlineSelect { width: auto; height: 28px; padding-block: 2px; font-size: 12px; }
+.previewButton { display: block; width: 100%; padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; }
+/* A component's preview opens it: the card answers the pointer one step up, then one more on the touch. */
+.card { transition: background-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease); }
+.card:has(> .previewButton:hover) { background: var(--panel-hover); }
+.card:has(> .previewButton:active) { background: var(--raised); }
+@media (prefers-reduced-motion: reduce) { .card, .splitKind, .rowTools, .dividerTools { transition: none; } }
+.preview { display: grid; gap: 6px; }
+.previewTitle { color: var(--muted); font-size: 12px; }
+.previewBody { display: -webkit-box; margin: 0; overflow: hidden; color: var(--soft); -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.previewItems { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; }
+.previewItem { display: grid; gap: 2px; padding: 8px 10px; border-radius: 7px; background: var(--panel); }
+.previewItem strong { overflow: hidden; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.previewItem span { display: -webkit-box; overflow: hidden; color: var(--muted); font-size: 12px; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+/* Images side by side */
+.imageRow { display: grid; gap: 10px; width: 100%; margin: 6px 0; }
+.rowImage { display: grid; gap: 6px; margin: 0; }
+.rowThumb { display: grid; place-items: center; aspect-ratio: 4 / 3; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--field); color: var(--faint); font-size: 12px; cursor: pointer; }
+.rowThumb img, .rowThumb video { width: 100%; height: 100%; object-fit: contain; }
+.rowTools { display: flex; gap: 2px; opacity: 0; transition: opacity var(--fast) var(--ease); }
+.rowImage:hover .rowTools, .rowImage:focus-within .rowTools { opacity: 1; }
+.rowAdd { position: absolute; right: -36px; top: 50%; display: grid; place-items: center; width: 26px; height: 26px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--muted); transform: translateY(-50%); cursor: pointer; }
+.imageRow { position: relative; }
+.rowAdd svg { width: 13px; height: 13px; }
+
+/* The document itself is the focus; no ring around the whole of it. */
+.doc :global(.bn-editor):focus,
+.doc :global(.bn-editor):focus-visible { outline: none; }
+
+/* The real component, scaled from desktop width; the site's own background behind it. */
+.livePreview { overflow: hidden; border-top: 1px solid var(--line); background: var(--color-surface, #000); pointer-events: none; }
+.cardBody .livePreview { border: 1px solid var(--line); border-radius: 8px; }
+.splitToggle { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; cursor: pointer; }
+.splitNoTitle { color: var(--faint); font-size: 13px; font-style: italic; }
+.videoPreview { width: 100%; max-height: 320px; border-radius: 8px; background: #000; object-fit: contain; }
+.splitLayout { margin-left: 12px; border: 0; background: transparent; color: inherit; font: inherit; font-size: 12px; cursor: pointer; }
+
+/* Space above / below a component: two quiet selects; one that is set reads brighter. */
+.spaceControls { display: inline-flex; align-items: center; gap: 2px; margin-right: 4px; vertical-align: middle; }
+.spaceSelect { display: inline-flex; align-items: center; gap: 3px; height: 28px; padding: 0 2px 0 7px; border-radius: 7px; color: var(--faint); font-size: 12px; cursor: pointer; }
+.spaceSelect:hover, .spaceSelect:focus-within { background: var(--raised); color: var(--muted); }
+.spaceSelect[data-set] { color: var(--ink); }
+.spaceSelect svg { flex-shrink: 0; width: 14px; height: 14px; }
+.spaceSelect select { field-sizing: content; border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; outline: none; }
+.splitKind .spaceControls { margin-left: 8px; }
+
+/* Divider: the line as it will read, with its colour and space; the controls show on hover. */
+.divider { display: flex; align-items: center; gap: 12px; width: 100%; }
+.dividerLine { flex: 1; min-width: 0; }
+.dividerLine span { display: block; width: 60%; height: 1px; margin-inline: auto; }
+/* The width and side, roughly: the editor has no screen to measure against. */
+.dividerLine span[data-size="content"], .dividerLine span[data-size="bleed"] { width: 100%; }
+.dividerLine span[data-size="w75"] { width: 75%; }
+.dividerLine span[data-size="w50"] { width: 50%; }
+.dividerLine span[data-size="w25"] { width: 25%; }
+.dividerLine span[data-size="w15"] { width: 15%; }
+.dividerLine span[data-size="w10"] { width: 10%; }
+.dividerLine span[data-size="w5"] { width: 5%; }
+.dividerLine span[data-align="left"] { margin-inline: 0 auto; }
+.dividerLine span[data-align="right"] { margin-inline: auto 0; }
+.dividerLine[data-none] span { height: 0; border-top: 1px dashed var(--control); background: transparent !important; }
+.dividerTools { display: inline-flex; align-items: center; gap: 2px; opacity: 0; transition: opacity var(--fast) var(--ease); }
+.divider:hover .dividerTools, .divider:focus-within .dividerTools, .dividerTools:has([data-set]) { opacity: 1; }
+.dividerSwatch { width: 10px; height: 10px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 20%); }
+.dividerSwatch[data-none] { background: transparent !important; box-shadow: inset 0 0 0 1px rgb(255 255 255 / 30%); background-image: linear-gradient(135deg, transparent 45%, var(--muted) 45% 55%, transparent 55%) !important; }
+.dividerPicker { width: 22px; height: 22px; padding: 0; border: 0; border-radius: 6px; background: transparent; cursor: pointer; }
+
+/* Video: the preview shows the crop as the page will. */
+.videoFrame { max-width: 100%; border-radius: 8px; background: #000; }
+.videoFrame:not([style]) .videoPreview { margin: 0 auto; }
+.videoFrame[style] { height: 320px; max-width: 100%; aspect-ratio: var(--crop-r); margin: 0 auto; }
+.videoFrame[style] .videoPreview { max-height: none; border-radius: 0; }
+.videoTools { display: flex; gap: 6px; }

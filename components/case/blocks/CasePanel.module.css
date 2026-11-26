@@ -1,0 +1,55 @@
+/* Painel: uma grade de cards; o pé de cada card (a fonte) assenta no fundo. */
+.grid { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); gap: clamp(16px, 1.6vw, 28px); align-items: stretch; }
+.card { display: flex; flex-direction: column; gap: clamp(32px, 3.2vw, 52px); min-width: 0; padding: clamp(28px, 2.8vw, 52px); border-radius: var(--radius-card); background: var(--color-card); }
+.head { display: grid; gap: 10px; }
+.title { margin: 0; color: var(--color-ink); font-size: clamp(22px, 2vw, 34px); font-weight: 700; line-height: 1.15; letter-spacing: -.03em; text-wrap: balance; }
+.subtitle { margin: 0; color: var(--color-muted); font-size: clamp(14px, 1.15vw, 18px); line-height: 1.5; }
+.content { display: grid; align-content: start; gap: clamp(20px, 2.4vw, 40px); flex: 1; min-width: 0; }
+.source { margin: 0; color: var(--color-muted); font-size: clamp(13px, 1vw, 16px); line-height: 1.5; }
+
+/* Image and phrase: the image fades into the card; the phrase closes the card in the case colour. */
+.media { overflow: hidden; border-radius: clamp(14px, 1.4vw, 24px); -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent); }
+.media img { display: block; width: 100%; height: auto; }
+.quote { align-self: end; max-width: 18ch; margin: auto 0 0; color: color-mix(in srgb, var(--case-brand, #fff) 28%, #fff); font-size: clamp(28px, 2.8vw, 48px); font-weight: 500; line-height: 1.15; letter-spacing: -.03em; text-wrap: balance; }
+.card[data-kind="quote"] .content { grid-template-rows: auto 1fr; }
+
+/* Stacked figures: tints of the case colour, the last one solid. */
+.stack { display: grid; gap: clamp(12px, 1.2vw, 20px); }
+.stackItem { display: grid; gap: clamp(10px, 1.2vw, 20px); padding: clamp(22px, 2.2vw, 40px); border-radius: clamp(16px, 1.6vw, 26px); background: color-mix(in srgb, var(--case-brand, #8d8d93) var(--tone), #fff); color: #1a1018; }
+.stackItem[data-strong] { color: #fff; }
+.stackItem :is(.stackLabel, .stackFigure, .stackBody) { color: inherit; }
+.stackLabel { font-size: clamp(15px, 1.25vw, 20px); line-height: 1.3; }
+.stackFigure { font-size: clamp(36px, 3.8vw, 68px); font-weight: 700; line-height: 1; letter-spacing: -.045em; }
+.stackBody { opacity: .8; font-size: 14px; line-height: 1.5; }
+/* No background: the figures divided by hairlines; the last one in the case colour. */
+.stack[data-look="plain"] { --stack-line: color-mix(in srgb, var(--color-line) 50%, transparent); gap: 0; }
+.stack[data-look="plain"] .stackItem { padding: clamp(20px, 2vw, 32px) 0; border-radius: 0; border-top: 1px solid var(--stack-line); background: none; color: var(--color-ink); }
+.stack[data-look="plain"] .stackItem:first-child { padding-top: 0; border-top: 0; }
+.stack[data-look="plain"] .stackItem:last-child { padding-bottom: 0; }
+.stack[data-look="plain"] .stackLabel { color: var(--color-muted); }
+.stack[data-look="plain"] .stackItem[data-strong] .stackFigure { color: var(--case-brand, var(--color-ink)); }
+/* Columns: the blocks side by side, while the card is wide enough for them. */
+.stackWrap { container-type: inline-size; }
+@container (min-width: 560px) {
+  .stack[data-layout="columns"] { grid-auto-columns: minmax(0, 1fr); grid-auto-flow: column; }
+  .stack[data-layout="columns"] .stackItem { align-content: start; }
+  .stack[data-layout="columns"] .stackBody { margin-top: auto; }
+  .stack[data-layout="columns"] .stackFigure { font-size: clamp(30px, 3vw, 56px); }
+  /* Without background the hairlines stand between the columns. */
+  .stack[data-layout="columns"][data-look="plain"] .stackItem { padding: 0 clamp(20px, 2vw, 32px); border-top: 0; border-left: 1px solid var(--stack-line); }
+  .stack[data-layout="columns"][data-look="plain"] .stackItem:first-child { padding-left: 0; border-left: 0; }
+  .stack[data-layout="columns"][data-look="plain"] .stackItem:last-child { padding-right: 0; }
+}
+
+.text { margin: 0; color: var(--color-subtle, var(--color-ink)); font-size: clamp(15px, 1.2vw, 19px); line-height: 1.65; }
+.bullets { display: grid; gap: clamp(14px, 1.4vw, 22px); margin: 0; padding: 0; list-style: none; color: var(--color-ink); font-size: clamp(16px, 1.4vw, 22px); line-height: 1.35; }
+
+/* Tablets: three columns become two; a card spanning three takes the row. */
+@media (max-width: 1023px) {
+  .grid[data-columns="3"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid[data-columns="3"] .card[data-span="3"] { grid-column: 1 / -1 !important; }
+}
+@media (max-width: 767px) {
+  .grid { grid-template-columns: minmax(0, 1fr) !important; }
+  .card { grid-column: auto !important; }
+}

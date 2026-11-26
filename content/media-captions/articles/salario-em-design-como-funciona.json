@@ -1,0 +1,14 @@
+{
+  "woman-holding-coffee-in-studio-54ed6f9a.jpg": {
+    "description": "Fotografia de uma mulher jovem segurando uma caneca, em pé diante de uma janela ampla em um estúdio, com plantas e um quadro de referências ao fundo. A imagem ilustra o artigo sobre salário em design.",
+    "kind": "foto",
+    "shape": "larga",
+    "alt": "Mulher segurando uma caneca diante da janela de um estúdio com plantas e quadro de referências",
+    "width": 1376,
+    "height": 768,
+    "hash": "016b04c86861f07e3fc0efa3d41d608e75834204aef486e808592cc152beb990",
+    "model": "deepseek-flash",
+    "tokens": 1094,
+    "at": "2026-11-11T13:22:54.223Z"
+  }
+}

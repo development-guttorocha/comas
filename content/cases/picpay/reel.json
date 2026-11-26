@@ -1,0 +1,205 @@
+{
+  "track": "bread-lukrembo",
+  "end": 148,
+  "fadeOut": [
+    140,
+    148
+  ],
+  "cover": 6,
+  "accent": "#5DC153",
+  "title": "Design B2B no PicPay: de 2 a 15",
+  "cta": {
+    "label": "Ver currículo",
+    "href": "/curriculo"
+  },
+  "motion": "premium",
+  "scenes": [
+    {
+      "id": "title-1",
+      "at": 0,
+      "kind": "title",
+      "lines": [
+        "Escalando design",
+        "no PicPay B2B",
+        "*de 2 pra 15 designers*"
+      ],
+      "eyebrow": "PicPay · 2020–2022",
+      "image": "/cases/picpay/picpay-cover-2.webp",
+      "imgEnter": "fade",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "cut",
+      "chapter": "Abertura"
+    },
+    {
+      "id": "role-1",
+      "at": 16,
+      "kind": "role",
+      "heading": "Montei o design B2B do *zero*.",
+      "facts": [
+        {
+          "label": "Função",
+          "value": "Design Manager"
+        },
+        {
+          "label": "Time",
+          "value": "2 → 15 designers"
+        },
+        {
+          "label": "Tempo",
+          "value": "2020–2022"
+        },
+        {
+          "label": "Com quem",
+          "value": "Produto e squads"
+        }
+      ],
+      "factsAt": 2,
+      "step": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "title-2",
+      "at": 32,
+      "kind": "title",
+      "lines": [
+        "Milhões pagavam,",
+        "não sabiam onde usar.",
+        "Lojistas sem clientes."
+      ],
+      "image": "/cases/picpay/picpay-cover.png",
+      "imgEnter": "fade",
+      "imgMotion": "still",
+      "wordsAt": 1,
+      "step": 1,
+      "enter": "wipe",
+      "enterDir": "up",
+      "enterBeats": 1
+    },
+    {
+      "id": "list-1",
+      "at": 44,
+      "chapter": "A decisão",
+      "kind": "list",
+      "heading": "Comecei pelo lojista não pelas vagas.",
+      "items": [
+        "Seller Tools — gerir o negócio",
+        "Audiência — trazer clientes",
+        "Ops — fazer tudo funcionar"
+      ],
+      "itemsAt": 6,
+      "step": 2,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "flow-1",
+      "at": 60,
+      "enter": "fade",
+      "kind": "flow",
+      "heading": "Pensando em:",
+      "nodes": [
+        {
+          "title": "Quem busca"
+        },
+        {
+          "title": "Quem compra"
+        },
+        {
+          "title": "Quem vende",
+          "accent": true
+        }
+      ]
+    },
+    {
+      "id": "screens-1",
+      "at": 76,
+      "kind": "screens",
+      "title": "Desenhamos para o B2B",
+      "titleOut": 3.75,
+      "boards": [
+        {
+          "src": "/cases/picpay/picpay-audiencia-compras.webp",
+          "focus": "center"
+        },
+        {
+          "src": "/cases/picpay/picpay-audiencia-painel.webp",
+          "focus": "left"
+        }
+      ],
+      "enter": "push",
+      "enterDir": "right",
+      "enterBeats": 1
+    },
+    {
+      "id": "cards-1",
+      "at": 92,
+      "kind": "cards",
+      "heading": "Montei times com mais contexto e alinhamento e *menos controle.",
+      "cards": [
+        {
+          "title": "Contratar",
+          "body": "Perfis, entrevistas e decisões para formar o time."
+        },
+        {
+          "title": "Acompanhar",
+          "body": "1:1 recorrentes e design review."
+        },
+        {
+          "title": "Avaliar",
+          "body": "Ciclos de avaliação com critérios claros."
+        },
+        {
+          "title": "Desenvolver",
+          "body": "Caminhos de gestão e de especialista."
+        }
+      ],
+      "cardsAt": 2,
+      "step": 2,
+      "enter": "flash",
+      "enterBeats": 1
+    },
+    {
+      "id": "metrics-1",
+      "at": 108,
+      "chapter": "Resultado",
+      "kind": "metrics",
+      "label": "Alinhados as necessidades dos nossos clientes",
+      "gaugesAt": 4,
+      "step": 2,
+      "note": "Visão levada à empresa com fórum de estratégia.",
+      "enter": "zoomThrough",
+      "enterBeats": 1,
+      "value": "Visão e time"
+    },
+    {
+      "id": "quote-1",
+      "at": 120,
+      "chapter": "Feedback do time",
+      "kind": "quote",
+      "quote": "Nas conversas 1:1, sempre traz seu ponto de vista sobre os temas de forma clara mas me dá espaço para discutir se é um bom caminho ou não.",
+      "author": "Designer do time",
+      "role": "Feedback sobre minha liderança",
+      "quoteAt": 1,
+      "enter": "fade",
+      "enterBeats": 1
+    },
+    {
+      "id": "end-1",
+      "at": 136,
+      "kind": "end",
+      "lines": [
+        "Design que *conecta*",
+        "produto as necessidades",
+        "do *negócio*"
+      ],
+      "meta": "PicPay · Design Manager · 2020–2022",
+      "signature": "Gutto Rocha",
+      "enter": "wipe",
+      "enterDir": "up",
+      "enterBeats": 1
+    }
+  ]
+}

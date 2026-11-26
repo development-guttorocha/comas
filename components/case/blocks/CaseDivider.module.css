@@ -1,0 +1,15 @@
+/* The divider spans the whole content; the line inside takes the chosen width and side. */
+/* `div.` outranks the document's rule that holds its children to the text column. */
+div.divider { grid-column: 1 / -1; width: 100%; }
+.line { width: min(760px, 100%); height: 1px; margin-inline: auto; }
+.line[data-align="left"] { margin-inline: 0 auto; }
+.line[data-align="right"] { margin-inline: auto 0; }
+.line[data-size="content"] { width: 100%; }
+.line[data-size="w75"] { width: min(75vw, 100%); }
+.line[data-size="w50"] { width: 50vw; }
+.line[data-size="w25"] { width: 25vw; }
+.line[data-size="w15"] { width: 15vw; }
+.line[data-size="w10"] { width: 10vw; }
+.line[data-size="w5"] { width: 5vw; }
+/* Edge to edge: the side no longer matters. */
+.line[data-size="bleed"] { width: 100vw; margin-inline: calc(50% - 50vw); }

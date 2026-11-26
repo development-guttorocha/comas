@@ -1,0 +1,3 @@
+/* Tradução: the state in one line instead of number cards (audit DEC-1). */
+.summary { margin: 0; color: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.warn { color: var(--warn); }
