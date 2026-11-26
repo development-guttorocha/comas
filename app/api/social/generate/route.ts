@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { generateSocialDraft, generateSocialReelDraft } from "@/lib/social/ai";
 import { hasValidWebhookToken, isSocialAuthenticated } from "@/lib/social/auth";
 import { saveSocialPost } from "@/lib/social/store";
-import type { TemplatePreset } from "@/lib/social/types";
+import { isValidTemplatePreset, type TemplatePreset } from "@/lib/social/types";
 
 export async function POST(request: NextRequest) {
   const authorized = hasValidWebhookToken(request) || (await isSocialAuthenticated());
@@ -44,8 +44,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const preset: TemplatePreset =
-      body?.preset === "before_after" || body?.preset === "quick_tip" ? body.preset : "cycle_steps";
+    const preset: TemplatePreset = isValidTemplatePreset(body?.preset) ? body.preset : "repertorio_banca";
     const post = await generateSocialDraft({
       idea,
       preset,

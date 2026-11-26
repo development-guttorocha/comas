@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { DEFAULT_SOCIAL_THEME, STARTER_POSTS } from "@/lib/social/presets";
+import { DEFAULT_SOCIAL_THEME, SOCIAL_PALETTE_PRESETS, STARTER_POSTS } from "@/lib/social/presets";
 import { SLIDE_HEIGHT, SLIDE_WIDTH, type SocialTheme } from "@/lib/social/types";
 import type { FieldDef, Values } from "@/lib/admin/fields";
 import SlideCanvas from "@/components/social/SlideCanvas";
@@ -103,7 +103,7 @@ export default function AdminSocialBrand() {
   };
 
   const scale = previewWidth / SLIDE_WIDTH;
-  const sampleSlide = STARTER_POSTS[0]!.slides[3]!; // Antes × Depois sample
+  const sampleSlide = STARTER_POSTS[0]!.slides[3]!; // Comparison slide sample
 
   return (
     <AdminShell
@@ -157,7 +157,60 @@ export default function AdminSocialBrand() {
               </div>
 
               <div className={c.group}>
-                <h2>Paleta (Brand Tokens)</h2>
+                <h2>Paletas reais do Instagram (@textoemciclo)</h2>
+                <div style={{ display: "grid", gap: 8 }}>
+                  {SOCIAL_PALETTE_PRESETS.map(p => {
+                    const active =
+                      theme.palette.background.toLowerCase() === p.palette.background.toLowerCase() &&
+                      theme.palette.accent.toLowerCase() === p.palette.accent.toLowerCase();
+                    return (
+                      <button
+                        key={p.id}
+                        type="button"
+                        onClick={() => {
+                          setTheme(t => ({ ...t, palette: { ...p.palette } }));
+                          setDirty(true);
+                        }}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "space-between",
+                          gap: 12,
+                          padding: "10px 12px",
+                          borderRadius: 8,
+                          border: active ? "1.5px solid var(--accent, #3E2A8D)" : "1px solid var(--line)",
+                          background: active ? "var(--raised)" : "transparent",
+                          textAlign: "left",
+                          cursor: "pointer",
+                          color: "inherit",
+                        }}
+                      >
+                        <span style={{ display: "grid", gap: 2 }}>
+                          <strong style={{ fontSize: 13 }}>{p.label}</strong>
+                          <span className={styles.hint} style={{ margin: 0 }}>{p.description}</span>
+                        </span>
+                        <span style={{ display: "inline-flex", gap: 4, flexShrink: 0 }} aria-hidden>
+                          {[p.palette.background, p.palette.primary, p.palette.accent, p.palette.accentSoft].map((hex, idx) => (
+                            <span
+                              key={idx}
+                              style={{
+                                width: 18,
+                                height: 18,
+                                borderRadius: 999,
+                                backgroundColor: hex,
+                                border: "1px solid rgba(0,0,0,0.14)",
+                              }}
+                            />
+                          ))}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <div className={c.group}>
+                <h2>Ajuste fino (Brand Tokens)</h2>
                 <Fields
                   defs={PALETTE_FIELDS}
                   values={theme.palette as unknown as Values}
