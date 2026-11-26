@@ -11,12 +11,16 @@ const POSTS_FILE = path.join(LOCAL_DIR, "posts.json");
 const THEME_FILE = path.join(LOCAL_DIR, "theme.json");
 const TIMEOUT_MS = 8_000;
 
+type StoredSlidesPayload =
+  | SocialPost["slides"]
+  | { slides: SocialPost["slides"]; reel?: SocialPost["reel"] };
+
 type SupabasePostRow = {
   id: string;
   title: string;
   format: SocialPost["format"];
   status: SocialPost["status"];
-  slides: SocialPost["slides"];
+  slides: StoredSlidesPayload;
   caption: string;
   source_idea?: string | null;
   created_at: string;
@@ -24,12 +28,15 @@ type SupabasePostRow = {
 };
 
 function fromRow(row: SupabasePostRow): SocialPost {
+  const payload = row.slides;
+  const isWrapped = payload && !Array.isArray(payload) && typeof payload === "object";
   return {
     id: row.id,
     title: row.title,
     format: row.format,
     status: row.status,
-    slides: Array.isArray(row.slides) ? row.slides : [],
+    slides: Array.isArray(payload) ? payload : Array.isArray(payload?.slides) ? payload.slides : [],
+    reel: isWrapped ? payload.reel ?? null : null,
     caption: row.caption ?? "",
     sourceIdea: row.source_idea ?? undefined,
     createdAt: row.created_at,
@@ -43,7 +50,7 @@ function toRow(post: SocialPost): SupabasePostRow {
     title: post.title,
     format: post.format,
     status: post.status,
-    slides: post.slides,
+    slides: post.reel ? { slides: post.slides, reel: post.reel } : post.slides,
     caption: post.caption,
     source_idea: post.sourceIdea ?? null,
     created_at: post.createdAt,

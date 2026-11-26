@@ -422,6 +422,7 @@ export default function ReelStudio({
   onProposal,
   undo,
   onUndo,
+  generateUrl,
 }: {
   slug: string;
   reel: ReelDoc | null;
@@ -436,6 +437,8 @@ export default function ReelStudio({
   /** The video as it was before the AI's went in, for "Desfazer IA". */
   undo: ReelDoc | null;
   onUndo: (reel: ReelDoc | null) => void;
+  /** Optional custom AI endpoint (e.g. /api/social/generate) when used outside local Cases. */
+  generateUrl?: string;
 }) {
   const [mode, setMode] = useState<"simple" | "advanced">("simple");
   const [generating, setGenerating] = useState(false);
@@ -497,7 +500,8 @@ export default function ReelStudio({
     try { localStorage.setItem(PARAMS_KEY, JSON.stringify({ ...params, notes: undefined })); } catch { /* fine */ }
     setGenerating(true);
     try {
-      const result = await api<{ reel: ReelDoc; tokens: number }>(`/api/admin/cases/${slug}/reel`, { method: "POST", body: params });
+      const endpoint = generateUrl ?? `/api/admin/cases/${slug}/reel`;
+      const result = await api<{ reel: ReelDoc; tokens: number }>(endpoint, { method: "POST", body: params });
       const motion = result.reel.motion ? ` · movimento ${PERSONALITY_LABEL[result.reel.motion].toLowerCase()}` : "";
       if (reel?.scenes.length) {
         // The case already has a video: the new one waits next to it, and the current one stays until Gutto picks.

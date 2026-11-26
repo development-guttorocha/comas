@@ -3,66 +3,60 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowIcon, BarChartIcon, ExternalIcon, GridIcon, ImageIcon, InboxIcon, KeyIcon, LogoMark, MailIcon, MoreIcon, PagesIcon, TextIcon } from "./icons";
-import PublishButton from "./PublishButton";
+import { ArrowIcon, CloseIcon, GearIcon, GridIcon, KeyIcon, LogoMark, MoreIcon, PlayIcon } from "./icons";
+import AdminAuthGate from "./AdminAuthGate";
 import AdminLock, { LockButton } from "./AdminLock";
-import { PendingCount } from "./usePending";
 import styles from "./admin.module.css";
 
 export type Crumb = { label: string; href?: string };
 
-/**
- * Seven areas that mirror the site: what is left to review, the two collections (Cases, Artigos),
- * every other page (Site), the contacts (Contatos), the salary survey (Pesquisa) and the files (Mídia).
- */
 const NAV: Array<{ href: string; label: string; icon: ReactNode; match: string[] }> = [
-  { href: "/admin/pendencias", label: "Pendências", icon: <InboxIcon />, match: ["/admin/pendencias"] },
-  { href: "/admin/cases", label: "Cases", icon: <GridIcon />, match: ["/admin/cases"] },
-  { href: "/admin/artigos", label: "Artigos", icon: <TextIcon />, match: ["/admin/artigos"] },
-  { href: "/admin/site", label: "Site", icon: <PagesIcon />, match: ["/admin/site"] },
-  { href: "/admin/leads", label: "Contatos", icon: <MailIcon />, match: ["/admin/leads"] },
-  { href: "/admin/pesquisa", label: "Pesquisa", icon: <BarChartIcon />, match: ["/admin/pesquisa"] },
-  { href: "/admin/midia", label: "Mídia", icon: <ImageIcon />, match: ["/admin/midia"] },
+  { href: "/admin/carrosseis", label: "Carrosséis", icon: <GridIcon />, match: ["/admin/carrosseis"] },
+  { href: "/admin/reels", label: "Reels", icon: <PlayIcon />, match: ["/admin/reels"] },
+  { href: "/admin/marca", label: "Marca", icon: <GearIcon />, match: ["/admin/marca"] },
 ];
 
 const within = (pathname: string, href: string) => pathname === href || pathname.startsWith(`${href}/`);
 const currentArea = (pathname: string) => NAV.find(item => item.match.some(href => within(pathname, href)))?.href;
 
-/** The admin frame: the areas on the left, breadcrumbs and the page's actions on top, "Publicar o site" always last. */
+/** The admin frame: the areas on the left, breadcrumbs and the page's actions on top. */
 export default function AdminShell({ crumbs, actions, children }: { crumbs: Crumb[]; actions?: ReactNode; children: ReactNode }) {
   const pathname = usePathname() ?? "";
   const current = currentArea(pathname);
+  const isLocalHost = typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/i.test(window.location.hostname);
   return (
-    <div className={styles.app}>
-      <a href="#admin-main" className={styles.skipLink}>Pular para o conteúdo</a>
-      <nav className={styles.rail} aria-label="Admin">
-        <Link href="/admin/pendencias" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Admin</span></Link>
-        {NAV.map(item => (
-          <Link key={item.href} href={item.href} className={styles.railButton} title={item.label} aria-current={current === item.href ? "page" : undefined}>
-            {item.icon}<span className={styles.navLabel}>{item.label}</span>{item.href === "/admin/pendencias" ? <PendingCount /> : null}
-          </Link>
-        ))}
-        <span className={styles.railSpacer} />
-        {/* The admin's own setup and tools: quiet, below the work. */}
-        <Link href="/admin/chaves" className={styles.railButton} title="Chaves" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Chaves</span></Link>
-        <LockButton />
-        <a href="/" target="_blank" rel="noreferrer" className={styles.railButton} title="Abrir o site"><ExternalIcon /><span className={styles.navLabel}>Abrir o site</span></a>
-      </nav>
-      <header className={styles.top}>
-        <nav className={styles.crumbs} aria-label="Você está em">
-          {crumbs.map((crumb, i) => (
-            // The index is the key: two crumbs may share a label (Design Services › Design Services).
-            <span key={i} className={styles.crumbs}>
-              {i > 0 ? <span className={styles.crumbSep} aria-hidden>›</span> : null}
-              {crumb.href && i < crumbs.length - 1 ? <Link href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
-            </span>
+    <AdminAuthGate>
+      <div className={styles.app}>
+        <a href="#admin-main" className={styles.skipLink}>Pular para o conteúdo</a>
+        <nav className={styles.rail} aria-label="Admin">
+          <Link href="/admin/carrosseis" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Texto em Ciclo</span></Link>
+          {NAV.map(item => (
+            <Link key={item.href} href={item.href} className={styles.railButton} title={item.label} aria-current={current === item.href ? "page" : undefined}>
+              {item.icon}<span className={styles.navLabel}>{item.label}</span>
+            </Link>
           ))}
+          <span className={styles.railSpacer} />
+          {isLocalHost ? (
+            <Link href="/admin/chaves" className={styles.railButton} title="Chaves locais" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Chaves</span></Link>
+          ) : null}
+          <LockButton />
+          <button type="button" className={styles.railButton} title="Sair da sessão" onClick={() => window.dispatchEvent(new Event("admin:logout"))}><CloseIcon /><span className={styles.navLabel}>Sair</span></button>
         </nav>
-        <TopActions>{actions}<span className={styles.publishSlot}><PublishButton /></span></TopActions>
-      </header>
-      <main id="admin-main" tabIndex={-1} className={styles.main}>{children}</main>
-      <AdminLock />
-    </div>
+        <header className={styles.top}>
+          <nav className={styles.crumbs} aria-label="Você está em">
+            {crumbs.map((crumb, i) => (
+              <span key={i} className={styles.crumbs}>
+                {i > 0 ? <span className={styles.crumbSep} aria-hidden>›</span> : null}
+                {crumb.href && i < crumbs.length - 1 ? <Link href={crumb.href}>{crumb.label}</Link> : <span aria-current="page">{crumb.label}</span>}
+              </span>
+            ))}
+          </nav>
+          <TopActions>{actions}</TopActions>
+        </header>
+        <main id="admin-main" tabIndex={-1} className={styles.main}>{children}</main>
+        <AdminLock />
+      </div>
+    </AdminAuthGate>
   );
 }
 

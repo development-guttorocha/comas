@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function AdminHomePage() {
-  redirect("/admin/social");
+export default function AdminIndexPage() {
+  redirect("/admin/carrosseis");
 }

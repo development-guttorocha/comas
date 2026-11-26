@@ -247,3 +247,107 @@ export async function generateSocialDraft(input: {
     updatedAt: now,
   };
 }
+
+export async function generateSocialReelDraft(input: {
+  idea: string;
+  trackId: string;
+  accent?: string;
+}): Promise<{ reel: NonNullable<SocialPost["reel"]>; tokens: number }> {
+  const provider = getConfiguredAiProvider();
+  if (!provider) {
+    throw new Error("Nenhuma chave de IA configurada (OPENAI_API_KEY, GEMINI_API_KEY ou ANTHROPIC_API_KEY).");
+  }
+
+  const prompt = `Crie um roteiro curto de vídeo tipográfico animado para o perfil @textoemciclo (professora Renata, dicas de escrita e redação).
+Retorne APENAS um JSON válido com esta estrutura exata:
+{
+  "title": "Título curto da capa (máx 45 caracteres)",
+  "openingLines": ["Linha 1 curta (use *asteriscos* em 1 palavra de destaque)", "Linha 2 curta"],
+  "eyebrow": "DICA DE ESCRITA",
+  "stepsHeading": "Como aplicar na prática",
+  "steps": [
+    { "title": "Passo 1 curto", "body": "Detalhe rápido", "accent": true },
+    { "title": "Passo 2 curto", "body": "Detalhe rápido", "accent": false },
+    { "title": "Passo 3 curto", "body": "Detalhe rápido", "accent": false }
+  ],
+  "quote": "Uma frase-resumo memorável sobre clareza na escrita.",
+  "endLine": "Salve para revisar seu próximo texto"
+}
+
+IDEIA / TEMA:
+"""
+${input.idea.trim() || "Como deixar qualquer parágrafo mais claro cortando excessos"}
+"""`;
+
+  const rawText =
+    provider === "openai"
+      ? await callOpenAI(prompt)
+      : provider === "gemini"
+        ? await callGemini(prompt)
+        : await callAnthropic(prompt);
+
+  const parsed = extractJson(rawText);
+  const openingLines = Array.isArray(parsed.openingLines)
+    ? parsed.openingLines.map(x => String(x)).slice(0, 3)
+    : ["Escreva com *clareza*", "sem perder sua voz"];
+  const steps = Array.isArray(parsed.steps)
+    ? parsed.steps.slice(0, 4).map(s => {
+        const rec = (s ?? {}) as Record<string, unknown>;
+        return {
+          title: clip(rec.title, 28) ?? "Passo",
+          body: clip(rec.body, 48),
+          accent: Boolean(rec.accent),
+        };
+      })
+    : [
+        { title: "Contexto", body: "Situe o leitor", accent: true },
+        { title: "Corte", body: "Tire excessos" },
+        { title: "Ritmo", body: "Leia em voz alta" },
+      ];
+
+  const reel: NonNullable<SocialPost["reel"]> = {
+    track: input.trackId || "chillax-jay-someday",
+    end: 64,
+    fadeOut: [56, 64],
+    accent: input.accent || "#C85A32",
+    title: clip(parsed.title, 48) ?? "Texto em Ciclo",
+    motion: "editorial" in ({} as Record<string, unknown>) ? "premium" : "premium",
+    scenes: [
+      {
+        id: "title-1",
+        kind: "title",
+        at: 0,
+        eyebrow: clip(parsed.eyebrow, 28) ?? "TEXTO EM CICLO",
+        lines: openingLines,
+      },
+      {
+        id: "flow-1",
+        kind: "flow",
+        at: 16,
+        enter: "fade",
+        eyebrow: "PASSO A PASSO",
+        heading: clip(parsed.stepsHeading, 48) ?? "Na prática",
+        nodes: steps,
+      },
+      {
+        id: "quote-1",
+        kind: "quote",
+        at: 36,
+        enter: "fade",
+        quote: clip(parsed.quote, 140) ?? "Clareza é gentileza com quem lê.",
+        author: "Renata · Texto em Ciclo",
+      },
+      {
+        id: "end-1",
+        kind: "end",
+        at: 52,
+        enter: "fade",
+        lines: [clip(parsed.endLine, 48) ?? "Salve esta dica"],
+        signature: "@textoemciclo",
+      },
+    ],
+  };
+
+  return { reel, tokens: 1200 };
+}
+

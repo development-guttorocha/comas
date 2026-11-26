@@ -1,3 +1,5 @@
+import type { ReelDoc } from "@/lib/reel/types";
+
 export type SlideKind = "cover" | "content" | "comparison" | "quote" | "cta";
 
 export type SocialSlide = {
@@ -18,7 +20,7 @@ export type SocialSlide = {
   stepNumber?: string;
 };
 
-export type SocialFormat = "carousel" | "single_card";
+export type SocialFormat = "carousel" | "single_card" | "reel";
 export type SocialStatus = "draft_ai" | "in_review" | "exported";
 export type TemplatePreset = "cycle_steps" | "before_after" | "quick_tip";
 
@@ -28,6 +30,7 @@ export type SocialPost = {
   format: SocialFormat;
   status: SocialStatus;
   slides: SocialSlide[];
+  reel?: ReelDoc | null;
   caption: string;
   sourceIdea?: string;
   createdAt: string;

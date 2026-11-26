@@ -42,6 +42,16 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  if (request.nextUrl.searchParams.get("session") === "1") {
+    return NextResponse.json({
+      authMode: session.authMode,
+      authRequired: session.authRequired,
+      authenticated: true,
+      email: session.email,
+      aiProvider: getConfiguredAiProvider(),
+    });
+  }
+
   const state = await listSocialState();
   return NextResponse.json({
     ...state,
