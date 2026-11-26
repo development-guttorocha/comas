@@ -50,9 +50,15 @@ export default function AdminSocialBrand() {
 
   useEffect(() => {
     fetch("/api/social/posts", { cache: "no-store" })
-      .then(r => r.json())
+      .then(async r => {
+        if (r.status === 401) {
+          window.location.replace("/admin/login?next=%2Fadmin%2Fmarca");
+          return null;
+        }
+        return r.json();
+      })
       .then(data => {
-        if (data.theme) setTheme(data.theme as SocialTheme);
+        if (data?.theme) setTheme(data.theme as SocialTheme);
       })
       .catch(err => show(err));
     // eslint-disable-next-line react-hooks/exhaustive-deps

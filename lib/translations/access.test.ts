@@ -53,8 +53,10 @@ test("production blocks every admin handler and method even with valid session, 
     for (const path of ["/api/admin/cases", "/api/translations", "/api/translations/session", "/api/translations/sync"]) {
       for (const method of ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]) assert.equal(proxy(request(path, method)).status, 404);
     }
-    const socialAdminResponse = proxy(request("/admin/social"));
-    assert.equal(socialAdminResponse.headers.get("x-middleware-next"), "1");
+    const unauthenticatedAdmin = proxy(request("/admin/carrosseis"));
+    assert.equal(unauthenticatedAdmin.status, 307);
+    assert.equal(new URL(unauthenticatedAdmin.headers.get("location")!).pathname, "/admin/login");
+    assert.equal(proxy(request("/admin/login")).headers.get("x-middleware-next"), "1");
   } finally {
     for (const [key, value] of Object.entries(previous)) {
       if (value === undefined) delete env[key]; else env[key] = value;

@@ -56,8 +56,15 @@ export default function AdminSocialPosts() {
 
   useEffect(() => {
     fetch("/api/social/posts", { cache: "no-store" })
-      .then(r => r.json())
+      .then(async r => {
+        if (r.status === 401) {
+          window.location.replace("/admin/login");
+          return null;
+        }
+        return r.json();
+      })
       .then(data => {
+        if (!data) return;
         setPosts(Array.isArray(data.posts) ? data.posts : []);
         if (data.storage) setStorage(data.storage);
         setAiProvider(data.aiProvider ?? null);

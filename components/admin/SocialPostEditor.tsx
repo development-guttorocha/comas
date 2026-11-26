@@ -92,8 +92,15 @@ export default function SocialPostEditor({ id }: { id: string }) {
 
   useEffect(() => {
     fetch("/api/social/posts", { cache: "no-store" })
-      .then(r => r.json())
+      .then(async r => {
+        if (r.status === 401) {
+          window.location.replace(`/admin/login?next=${encodeURIComponent(`/admin/carrosseis/${id}`)}`);
+          return null;
+        }
+        return r.json();
+      })
       .then(data => {
+        if (!data) return;
         const list = Array.isArray(data.posts) ? (data.posts as SocialPost[]) : [];
         const found = list.find(p => p.id === id);
         if (!found) {

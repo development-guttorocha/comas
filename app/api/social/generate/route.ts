@@ -1,22 +1,16 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { generateSocialDraft, generateSocialReelDraft } from "@/lib/social/ai";
-import { isSocialAuthenticated, verifyPin } from "@/lib/social/auth";
+import { hasValidWebhookToken, isSocialAuthenticated } from "@/lib/social/auth";
 import { saveSocialPost } from "@/lib/social/store";
 import type { TemplatePreset } from "@/lib/social/types";
-
-function hasValidWebhookToken(request: NextRequest): boolean {
-  const auth = request.headers.get("authorization") ?? "";
-  const bearer = auth.startsWith("Bearer ") ? auth.slice(7).trim() : "";
-  if (!bearer) return false;
-  const webhookSecret = (process.env.SOCIAL_WEBHOOK_SECRET ?? "").trim();
-  if (webhookSecret && bearer === webhookSecret) return true;
-  return verifyPin(bearer);
-}
 
 export async function POST(request: NextRequest) {
   const authorized = hasValidWebhookToken(request) || (await isSocialAuthenticated());
   if (!authorized) {
-    return NextResponse.json({ error: "Não autorizado." }, { status: 401 });
+    return NextResponse.json(
+      { error: "Não autorizado." },
+      { status: 401, headers: { "Cache-Control": "no-store" } },
+    );
   }
 
   const body = (await request.json().catch(() => null)) as {

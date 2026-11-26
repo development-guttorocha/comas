@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ArrowIcon, CloseIcon, GearIcon, GridIcon, KeyIcon, LogoMark, MoreIcon, PlayIcon } from "./icons";
-import AdminAuthGate from "./AdminAuthGate";
+import AdminAuthGate, { getCachedEmail, logoutAdminSession } from "./AdminAuthGate";
 import AdminLock, { LockButton } from "./AdminLock";
 import styles from "./admin.module.css";
 
@@ -23,7 +23,9 @@ const currentArea = (pathname: string) => NAV.find(item => item.match.some(href 
 export default function AdminShell({ crumbs, actions, children }: { crumbs: Crumb[]; actions?: ReactNode; children: ReactNode }) {
   const pathname = usePathname() ?? "";
   const current = currentArea(pathname);
+  const [signingOut, setSigningOut] = useState(false);
   const isLocalHost = typeof window !== "undefined" && /^(localhost|127\.0\.0\.1|\[::1\])$/i.test(window.location.hostname);
+  const email = getCachedEmail();
   return (
     <AdminAuthGate>
       <div className={styles.app}>
@@ -40,7 +42,19 @@ export default function AdminShell({ crumbs, actions, children }: { crumbs: Crum
             <Link href="/admin/chaves" className={styles.railButton} title="Chaves locais" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Chaves</span></Link>
           ) : null}
           <LockButton />
-          <button type="button" className={styles.railButton} title="Sair da sessão" onClick={() => window.dispatchEvent(new Event("admin:logout"))}><CloseIcon /><span className={styles.navLabel}>Sair</span></button>
+          <button
+            type="button"
+            className={styles.railButton}
+            title={email ? `Sair (${email})` : "Sair da sessão"}
+            disabled={signingOut}
+            aria-busy={signingOut || undefined}
+            onClick={() => {
+              setSigningOut(true);
+              void logoutAdminSession();
+            }}
+          >
+            <CloseIcon /><span className={styles.navLabel}>{signingOut ? "Saindo…" : "Sair"}</span>
+          </button>
         </nav>
         <header className={styles.top}>
           <nav className={styles.crumbs} aria-label="Você está em">

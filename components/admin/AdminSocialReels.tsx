@@ -36,8 +36,15 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
 
   useEffect(() => {
     fetch("/api/social/posts", { cache: "no-store" })
-      .then(r => r.json())
+      .then(async r => {
+        if (r.status === 401) {
+          window.location.replace("/admin/login?next=%2Fadmin%2Freels");
+          return null;
+        }
+        return r.json();
+      })
       .then(data => {
+        if (!data) return;
         const all = Array.isArray(data.posts) ? (data.posts as SocialPost[]) : [];
         const onlyReels = all.filter(p => p.format === "reel" || p.reel);
         if (data.theme) setTheme(data.theme as SocialTheme);

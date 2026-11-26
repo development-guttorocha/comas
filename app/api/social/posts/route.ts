@@ -1,25 +1,17 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getConfiguredAiProvider } from "@/lib/social/ai";
 import {
+  clearSessionCookie,
   getSocialSession,
-  isSocialAuthRequired,
-  makeSessionToken,
+  hasValidWebhookToken,
   sendLoginCode,
-  SOCIAL_COOKIE_NAME,
+  setSessionCookie,
   verifyLoginCode,
-  verifyPin,
 } from "@/lib/social/auth";
 import { deleteSocialPost, listSocialState, saveSocialPost, saveSocialTheme } from "@/lib/social/store";
 import type { SocialPost, SocialTheme } from "@/lib/social/types";
 
-function hasValidWebhookToken(request: NextRequest): boolean {
-  const auth = request.headers.get("authorization") ?? "";
-  const bearer = auth.startsWith("Bearer ") ? auth.slice(7).trim() : "";
-  if (!bearer) return false;
-  const webhookSecret = (process.env.SOCIAL_WEBHOOK_SECRET ?? "").trim();
-  if (webhookSecret && bearer === webhookSecret) return true;
-  return verifyPin(bearer);
-}
+const NO_STORE = { "Cache-Control": "no-store" };
 
 async function authorize(request: NextRequest): Promise<boolean> {
   if (hasValidWebhookToken(request)) return true;
@@ -34,49 +26,62 @@ export async function GET(request: NextRequest) {
   if (!session.authenticated && !webhookAuthorized) {
     return NextResponse.json(
       {
+        error: "Não autorizado.",
         authMode: session.authMode,
         authRequired: session.authRequired,
+        configured: session.configured,
+        missingEnv: session.missingEnv,
         authenticated: false,
       },
-      { status: 401 },
+      { status: 401, headers: NO_STORE },
     );
   }
 
   if (request.nextUrl.searchParams.get("session") === "1") {
-    return NextResponse.json({
-      authMode: session.authMode,
-      authRequired: session.authRequired,
-      authenticated: true,
-      email: session.email,
-      aiProvider: getConfiguredAiProvider(),
-    });
+    return NextResponse.json(
+      {
+        authMode: session.authMode,
+        authRequired: session.authRequired,
+        configured: session.configured,
+        missingEnv: session.missingEnv,
+        authenticated: true,
+        email: session.email,
+        aiProvider: getConfiguredAiProvider(),
+      },
+      { headers: NO_STORE },
+    );
   }
 
   const state = await listSocialState();
-  return NextResponse.json({
-    ...state,
-    aiProvider: getConfiguredAiProvider(),
-    authMode: session.authMode,
-    authRequired: session.authRequired,
-    authenticated: true,
-    email: session.email,
-  });
+  return NextResponse.json(
+    {
+      ...state,
+      aiProvider: getConfiguredAiProvider(),
+      authMode: session.authMode,
+      authRequired: session.authRequired,
+      configured: session.configured,
+      missingEnv: session.missingEnv,
+      authenticated: true,
+      email: session.email,
+    },
+    { headers: NO_STORE },
+  );
 }
 
 export async function POST(request: NextRequest) {
   const body = (await request.json().catch(() => null)) as Record<string, unknown> | null;
   if (!body) {
-    return NextResponse.json({ error: "Corpo JSON inválido." }, { status: 400 });
+    return NextResponse.json({ error: "Corpo JSON inválido." }, { status: 400, headers: NO_STORE });
   }
 
   if (body.action === "request_code") {
     const email = typeof body.email === "string" ? body.email : "";
     try {
       const { challengeToken } = await sendLoginCode(email);
-      return NextResponse.json({ challengeToken });
+      return NextResponse.json({ challengeToken }, { headers: NO_STORE });
     } catch (err) {
       const message = err instanceof Error ? err.message : "Erro ao enviar código.";
-      return NextResponse.json({ error: message }, { status: 400 });
+      return NextResponse.json({ error: message }, { status: 400, headers: NO_STORE });
     }
   }
 
@@ -85,83 +90,62 @@ export async function POST(request: NextRequest) {
     const code = typeof body.code === "string" ? body.code : "";
     try {
       const { email } = verifyLoginCode(challengeToken, code);
-      const res = NextResponse.json({ ok: true, email });
-      res.cookies.set(SOCIAL_COOKIE_NAME, makeSessionToken(email), {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
-        path: "/",
-        maxAge: 60 * 60 * 24 * 30,
-      });
+      const res = NextResponse.json({ ok: true, email }, { headers: NO_STORE });
+      setSessionCookie(res, email);
       return res;
     } catch (err) {
       const message = err instanceof Error ? err.message : "Código inválido.";
-      return NextResponse.json({ error: message }, { status: 401 });
+      return NextResponse.json({ error: message }, { status: 401, headers: NO_STORE });
     }
-  }
-
-  if (body.action === "auth") {
-    const pin = typeof body.pin === "string" ? body.pin : "";
-    if (!verifyPin(pin)) {
-      return NextResponse.json({ error: "PIN incorreto." }, { status: 401 });
-    }
-    const res = NextResponse.json({ ok: true });
-    if (isSocialAuthRequired()) {
-      res.cookies.set(SOCIAL_COOKIE_NAME, makeSessionToken("pin"), {
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
-        path: "/",
-        maxAge: 60 * 60 * 24 * 30,
-      });
-    }
-    return res;
   }
 
   if (body.action === "logout") {
-    const res = NextResponse.json({ ok: true });
-    res.cookies.delete(SOCIAL_COOKIE_NAME);
+    const res = NextResponse.json({ ok: true }, { headers: NO_STORE });
+    clearSessionCookie(res);
     return res;
   }
 
   if (!(await authorize(request))) {
-    return NextResponse.json({ error: "Não autorizado." }, { status: 401 });
+    return NextResponse.json({ error: "Não autorizado." }, { status: 401, headers: NO_STORE });
   }
 
   try {
     if (body.action === "save_theme" && body.theme) {
       const theme = await saveSocialTheme(body.theme as SocialTheme);
-      return NextResponse.json({ theme });
+      return NextResponse.json({ theme }, { headers: NO_STORE });
     }
 
     const post = (body.post ?? body) as SocialPost;
     if (!post?.id || !Array.isArray(post.slides)) {
-      return NextResponse.json({ error: "Post inválido: informe id e slides." }, { status: 400 });
+      return NextResponse.json(
+        { error: "Post inválido: informe id e slides." },
+        { status: 400, headers: NO_STORE },
+      );
     }
 
     const saved = await saveSocialPost(post);
-    return NextResponse.json(saved);
+    return NextResponse.json(saved, { headers: NO_STORE });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Erro ao salvar.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500, headers: NO_STORE });
   }
 }
 
 export async function DELETE(request: NextRequest) {
   if (!(await authorize(request))) {
-    return NextResponse.json({ error: "Não autorizado." }, { status: 401 });
+    return NextResponse.json({ error: "Não autorizado." }, { status: 401, headers: NO_STORE });
   }
 
   const id = request.nextUrl.searchParams.get("id")?.trim();
   if (!id) {
-    return NextResponse.json({ error: "Informe ?id=..." }, { status: 400 });
+    return NextResponse.json({ error: "Informe ?id=..." }, { status: 400, headers: NO_STORE });
   }
 
   try {
     await deleteSocialPost(id);
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true }, { headers: NO_STORE });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Erro ao excluir.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: 500, headers: NO_STORE });
   }
 }

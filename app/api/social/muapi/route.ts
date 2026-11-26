@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { put } from "@vercel/blob";
-import { isSocialAuthenticated, verifyPin } from "@/lib/social/auth";
+import { hasValidWebhookToken, isSocialAuthenticated } from "@/lib/social/auth";
 import {
   getMuapiBalance,
   getMuapiJobResult,
@@ -8,15 +8,6 @@ import {
   MUAPI_PRESETS,
   submitMuapiJob,
 } from "@/lib/social/muapi";
-
-function hasValidWebhookToken(request: NextRequest): boolean {
-  const auth = request.headers.get("authorization") ?? "";
-  const bearer = auth.startsWith("Bearer ") ? auth.slice(7).trim() : "";
-  if (!bearer) return false;
-  const webhookSecret = (process.env.SOCIAL_WEBHOOK_SECRET ?? "").trim();
-  if (webhookSecret && bearer === webhookSecret) return true;
-  return verifyPin(bearer);
-}
 
 async function authorize(request: NextRequest): Promise<boolean> {
   if (hasValidWebhookToken(request)) return true;
