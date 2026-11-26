@@ -66,7 +66,8 @@ export default function AdminSocialPosts() {
       })
       .then(data => {
         if (!data) return;
-        setPosts(Array.isArray(data.posts) ? data.posts : []);
+        const list = Array.isArray(data.posts) ? (data.posts as SocialPost[]) : [];
+        setPosts(list.filter(p => p.format !== "studio_doc" && p.format !== "reel"));
         if (data.storage) setStorage(data.storage);
         setAiProvider(data.aiProvider ?? null);
       })

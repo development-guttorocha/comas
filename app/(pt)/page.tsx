@@ -5,5 +5,5 @@ export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
   const authenticated = await isSocialAuthenticated();
-  redirect(authenticated ? "/admin/carrosseis" : "/admin/login");
+  redirect(authenticated ? "/admin/estudio" : "/admin/login");
 }

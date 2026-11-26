@@ -422,3 +422,137 @@ ${input.idea.trim() || "Por que dominar os eixos temáticos e a leitura de colet
 
   return { reel, tokens: 1200 };
 }
+export async function transcribeAudio(file: File): Promise<string> {
+  await hydrateRuntimeKeys();
+  const groqKey = process.env.GROQ_API_KEY?.trim();
+  const openaiKey = process.env.OPENAI_API_KEY?.trim();
+
+  if (!groqKey && !openaiKey) {
+    throw new Error("Configure OPENAI_API_KEY ou GROQ_API_KEY em /admin/chaves para transcrever áudios.");
+  }
+
+  const form = new FormData();
+  form.append("file", file, file.name || "audio.webm");
+  form.append("language", "pt");
+  form.append("model", groqKey ? "whisper-large-v3-turbo" : "whisper-1");
+
+  const endpoint = groqKey
+    ? "https://api.groq.com/openai/v1/audio/transcriptions"
+    : "https://api.openai.com/v1/audio/transcriptions";
+
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${groqKey || openaiKey}` },
+    body: form,
+    signal: AbortSignal.timeout(30_000),
+  });
+
+  if (!res.ok) {
+    const err = await res.text().catch(() => "");
+    throw new Error(`Erro na transcrição (${res.status}): ${err.slice(0, 180)}`);
+  }
+
+  const data = (await res.json()) as { text?: string };
+  const text = (data.text ?? "").trim();
+  if (!text) throw new Error("Não foi possível entender o áudio. Tente gravar novamente.");
+  return text;
+}
+
+export async function generateStudioDocument(input: {
+  idea: string;
+  artDirection?: "editorial" | "notebook" | "dark" | "book";
+}): Promise<SocialPost> {
+  await hydrateRuntimeKeys();
+  const provider = getConfiguredAiProvider();
+  if (!provider) {
+    throw new Error("Nenhuma chave de IA configurada em /admin/chaves (OpenAI, Gemini, Anthropic ou DeepSeek).");
+  }
+
+  const systemPrompt = buildSystemPrompt("repertorio_banca");
+  const prompt = `Transforme a ideia ou transcrição de áudio da professora Renata (@textoemciclo) em um documento editorial rico para o Estúdio BlockNote.
+Retorne APENAS um JSON válido com esta estrutura:
+{
+  "title": "Título interno curto (máx 60 caracteres)",
+  "artDirection": "editorial" | "notebook" | "dark" | "book",
+  "caption": "Legenda pronta com gancho na 1ª linha, desenvolvimento acolhedor, pergunta final e 4-6 hashtags",
+  "blocks": [
+    {
+      "type": "socialCover",
+      "props": { "eyebrow": "TEXTO EM CICLO", "title": "Título forte até 55 chars", "subtitle": "Subtítulo curto", "cta": "Arraste para ver →" }
+    },
+    {
+      "type": "socialStep",
+      "props": { "stepNumber": "01", "eyebrow": "PASSO 01", "title": "Título curto", "body": "Explicação clara em 2 frases", "tip": "Dica prática curta" }
+    },
+    {
+      "type": "socialBeforeAfter",
+      "props": { "eyebrow": "ANTES × DEPOIS", "title": "Na prática", "wrongLabel": "Antes", "wrongText": "Frase truncada ou com erro comum", "rightLabel": "Depois", "rightText": "Versão fluida e clara", "note": "Por que funciona melhor" }
+    },
+    {
+      "type": "socialChecklist",
+      "props": { "eyebrow": "CHECKLIST", "title": "Para revisar no seu texto", "items": ["Item 1 curto", "Item 2 curto", "Item 3 curto"], "footerNote": "Resumo curto" }
+    },
+    {
+      "type": "socialQuote",
+      "props": { "eyebrow": "NOTA DE CADERNO", "quote": "Frase memorável sobre escrita", "author": "Renata · @textoemciclo" }
+    },
+    {
+      "type": "socialCta",
+      "props": { "eyebrow": "SALVE PARA CONSULTAR", "title": "Chamada final", "body": "Convite para salvar e compartilhar", "buttonLabel": "Comente sua dúvida ↓" }
+    }
+  ]
+}
+
+Use entre 5 e 7 blocos variando entre socialCover, socialStep, socialBeforeAfter, socialChecklist, socialQuote e socialCta conforme o conteúdo pedir. Sempre comece com socialCover e termine com socialCta.
+
+IDEIA / TRANSCRIÇÃO DA RENATA:
+"""
+${input.idea.trim()}
+"""`;
+
+  const rawText = await runTextProvider(provider, systemPrompt, prompt);
+
+  const parsed = extractJson(rawText);
+  const rawBlocks = Array.isArray(parsed.blocks) ? parsed.blocks : [];
+  const blocks = rawBlocks
+    .filter((b): b is Record<string, unknown> => Boolean(b && typeof b === "object" && typeof (b as Record<string, unknown>).type === "string"))
+    .map(b => {
+      const props = (b.props && typeof b.props === "object" ? { ...(b.props as Record<string, unknown>) } : {}) as Record<string, unknown>;
+      if (b.type === "socialChecklist" && Array.isArray(props.items)) {
+        props.itemsJson = JSON.stringify(props.items.map(String));
+        delete props.items;
+      }
+      return {
+        type: String(b.type),
+        props,
+      };
+    });
+
+  if (!blocks.length) {
+    throw new Error("A IA não retornou blocos válidos para o documento.");
+  }
+
+  const art =
+    input.artDirection ??
+    (parsed.artDirection === "editorial" || parsed.artDirection === "notebook" || parsed.artDirection === "dark" || parsed.artDirection === "book"
+      ? parsed.artDirection
+      : "notebook");
+
+  const now = new Date().toISOString();
+  return {
+    id: `studio_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 6)}`,
+    title: clip(parsed.title, 72) ?? "Novo documento · Texto em Ciclo",
+    format: "studio_doc",
+    status: "draft_ai",
+    slides: [],
+    studioDoc: {
+      artDirection: art,
+      aspect: "carousel",
+      blocks,
+    },
+    caption: typeof parsed.caption === "string" ? parsed.caption.trim() : "",
+    sourceIdea: input.idea.trim(),
+    createdAt: now,
+    updatedAt: now,
+  };
+}

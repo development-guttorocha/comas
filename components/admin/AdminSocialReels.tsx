@@ -258,7 +258,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
                   at: doc.end,
                   enter: "fade" as const,
                   src: url,
-                  caption: theme.brandName,
+                  body: theme.brandName,
                 };
                 updateCurrentReel({
                   ...doc,

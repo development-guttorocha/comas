@@ -1,4 +1,5 @@
 import type { ReelDoc } from "@/lib/reel/types";
+import type { StudioDocumentData } from "./studioTypes";
 
 export type SlideKind = "cover" | "content" | "comparison" | "quote" | "cta";
 
@@ -24,7 +25,7 @@ export type SocialSlide = {
   imageOverlay?: number;
 };
 
-export type SocialFormat = "carousel" | "single_card" | "reel";
+export type SocialFormat = "carousel" | "single_card" | "reel" | "studio_doc";
 export type SocialStatus = "draft_ai" | "in_review" | "exported";
 export type TemplatePreset =
   | "repertorio_banca"
@@ -76,6 +77,7 @@ export type SocialPost = {
   status: SocialStatus;
   slides: SocialSlide[];
   reel?: ReelDoc | null;
+  studioDoc?: StudioDocumentData | null;
   caption: string;
   sourceIdea?: string;
   createdAt: string;

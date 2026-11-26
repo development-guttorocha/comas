@@ -1,0 +1,16 @@
+import type { Metadata } from "next";
+import AdminStudioEditor from "@/components/admin/studio/AdminStudioEditor";
+
+export const metadata: Metadata = {
+  title: "Documento · Estúdio · Texto em Ciclo",
+  robots: { index: false, follow: false },
+};
+
+export default async function AdminEstudioEditorPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  return <AdminStudioEditor id={id} />;
+}

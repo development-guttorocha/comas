@@ -13,7 +13,7 @@ const TIMEOUT_MS = 8_000;
 
 type StoredSlidesPayload =
   | SocialPost["slides"]
-  | { slides: SocialPost["slides"]; reel?: SocialPost["reel"] };
+  | { slides: SocialPost["slides"]; reel?: SocialPost["reel"]; studioDoc?: SocialPost["studioDoc"] };
 
 type SupabasePostRow = {
   id: string;
@@ -37,6 +37,7 @@ function fromRow(row: SupabasePostRow): SocialPost {
     status: row.status,
     slides: Array.isArray(payload) ? payload : Array.isArray(payload?.slides) ? payload.slides : [],
     reel: isWrapped ? payload.reel ?? null : null,
+    studioDoc: isWrapped ? payload.studioDoc ?? null : null,
     caption: row.caption ?? "",
     sourceIdea: row.source_idea ?? undefined,
     createdAt: row.created_at,
@@ -50,7 +51,10 @@ function toRow(post: SocialPost): SupabasePostRow {
     title: post.title,
     format: post.format,
     status: post.status,
-    slides: post.reel ? { slides: post.slides, reel: post.reel } : post.slides,
+    slides:
+      post.reel || post.studioDoc
+        ? { slides: post.slides, ...(post.reel ? { reel: post.reel } : {}), ...(post.studioDoc ? { studioDoc: post.studioDoc } : {}) }
+        : post.slides,
     caption: post.caption,
     source_idea: post.sourceIdea ?? null,
     created_at: post.createdAt,

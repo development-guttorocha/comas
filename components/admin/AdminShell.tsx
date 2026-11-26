@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowIcon, CloseIcon, GearIcon, GridIcon, KeyIcon, LogoMark, MoreIcon, PlayIcon } from "./icons";
+import { ArrowIcon, CloseIcon, GearIcon, GridIcon, KeyIcon, LogoMark, MoreIcon, PagesIcon, PlayIcon } from "./icons";
 import AdminAuthGate, { getCachedEmail, logoutAdminSession } from "./AdminAuthGate";
 import AdminLock, { LockButton } from "./AdminLock";
 import styles from "./admin.module.css";
@@ -11,6 +11,7 @@ import styles from "./admin.module.css";
 export type Crumb = { label: string; href?: string };
 
 const NAV: Array<{ href: string; label: string; icon: ReactNode; match: string[] }> = [
+  { href: "/admin/estudio", label: "Estúdio", icon: <PagesIcon />, match: ["/admin/estudio"] },
   { href: "/admin/carrosseis", label: "Carrosséis", icon: <GridIcon />, match: ["/admin/carrosseis"] },
   { href: "/admin/reels", label: "Reels", icon: <PlayIcon />, match: ["/admin/reels"] },
   { href: "/admin/marca", label: "Marca", icon: <GearIcon />, match: ["/admin/marca"] },
