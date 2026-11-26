@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   createEmptySlide,
+  TEMPLATE_PRESET_OPTIONS,
   type SocialPost,
   type SocialStatus,
   type TemplatePreset,
@@ -49,7 +50,7 @@ export default function AdminSocialPosts() {
   const [busyLabel, setBusyLabel] = useState("");
 
   const [idea, setIdea] = useState("");
-  const [preset, setPreset] = useState<TemplatePreset>("cycle_steps");
+  const [preset, setPreset] = useState<TemplatePreset>("repertorio_banca");
   const [slideCount, setSlideCount] = useState(6);
 
   const { toast, show } = useToast();
@@ -92,7 +93,7 @@ export default function AdminSocialPosts() {
         title: "Novo carrossel",
         format: "carousel",
         status: "in_review",
-        caption: "Escreva a legenda aqui…\n\n#textoemciclo #escrita #redacao",
+        caption: "Escreva a legenda aqui…\n\n#textoemciclo #redacao #vestibular #enem #vunesp",
         slides: [
           createEmptySlide("cover", 1),
           createEmptySlide("content", 1),
@@ -258,35 +259,38 @@ export default function AdminSocialPosts() {
               </p>
             ) : null}
             <label className={`${styles.field} ${styles.fieldWide}`}>
-              <span className={styles.label}>Ideia bruta, anotação de aula ou transcrição de áudio</span>
+              <span className={styles.label}>Ideia bruta, notícia, obra ou dúvida de aluno</span>
               <textarea
                 className={styles.textarea}
                 rows={5}
                 required
                 autoFocus
-                placeholder="Ex: Dúvida de aluno hoje sobre como parar de repetir a palavra 'que' na redação. Mostrar 3 formas práticas com Antes × Depois…"
+                placeholder="Ex: Como usar 'O Bem-Amado' de Dias Gomes e o conceito de 'homem cordial' de Sérgio Buarque de Holanda na redação da UERJ e do ENEM…"
                 value={idea}
                 onChange={e => setIdea(e.target.value)}
               />
             </label>
-            <label className={styles.field}>
-              <span className={styles.label}>Formato editorial</span>
+            <label className={`${styles.field} ${preset === "quick_tip" ? styles.fieldWide : ""}`}>
+              <span className={styles.label}>Formato editorial (@textoemciclo)</span>
               <select className={styles.select} value={preset} onChange={e => setPreset(e.target.value as TemplatePreset)}>
-                <option value="cycle_steps">Ciclo / Passo a passo</option>
-                <option value="before_after">Antes × Depois</option>
-                <option value="quick_tip">Card único (Citação / Dica)</option>
+                {TEMPLATE_PRESET_OPTIONS.map(opt => (
+                  <option key={opt.value} value={opt.value}>{opt.label}</option>
+                ))}
               </select>
             </label>
             {preset !== "quick_tip" ? (
               <label className={styles.field}>
                 <span className={styles.label}>Quantidade de slides</span>
                 <select className={styles.select} value={slideCount} onChange={e => setSlideCount(Number(e.target.value))}>
-                  {[4, 5, 6, 7, 8].map(n => (
+                  {[3, 4, 5, 6, 7, 8, 10].map(n => (
                     <option key={n} value={n}>{n} slides</option>
                   ))}
                 </select>
               </label>
             ) : null}
+            <p className={styles.hint} style={{ gridColumn: "1 / -1", margin: 0 }}>
+              {TEMPLATE_PRESET_OPTIONS.find(o => o.value === preset)?.hint}
+            </p>
           </div>
           <div className={styles.dialogFoot} style={{ display: "flex", justifyContent: "flex-end", gap: 8, padding: "12px 16px", borderTop: "1px solid var(--line)" }}>
             <button type="button" className={`${styles.button} ${styles.ghost}`} onClick={() => aiDialog.current?.close()}>

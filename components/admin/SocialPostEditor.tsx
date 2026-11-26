@@ -10,6 +10,7 @@ import {
   SLIDE_HEIGHT,
   SLIDE_LIMITS,
   SLIDE_WIDTH,
+  TEMPLATE_PRESET_OPTIONS,
   type SlideKind,
   type SocialPost,
   type SocialSlide,
@@ -82,7 +83,7 @@ export default function SocialPostEditor({ id }: { id: string }) {
   const [proposal, setProposal] = useState<SocialPost | null>(null);
   const [undoPost, setUndoPost] = useState<SocialPost | null>(null);
   const [ideaInput, setIdeaInput] = useState("");
-  const [preset, setPreset] = useState<TemplatePreset>("cycle_steps");
+  const [preset, setPreset] = useState<TemplatePreset>("repertorio_banca");
   const [slideCount, setSlideCount] = useState(6);
 
   const previewRef = useRef<HTMLDivElement>(null);
@@ -368,7 +369,7 @@ export default function SocialPostEditor({ id }: { id: string }) {
                   </p>
                 ) : null}
                 <label className={`${styles.field} ${styles.fieldWide}`}>
-                  <span className={styles.label}>Material bruto / Ideia</span>
+                  <span className={styles.label}>Material bruto / Ideia / Notícia / Obra</span>
                   <textarea
                     className={styles.textarea}
                     rows={6}
@@ -378,27 +379,30 @@ export default function SocialPostEditor({ id }: { id: string }) {
                       setIdeaInput(e.target.value);
                       patchPost(p => ({ ...p, sourceIdea: e.target.value }));
                     }}
-                    placeholder="Ex: Explicar a diferença entre 'onde' e 'aonde' com frases do cotidiano e um macete rápido no final…"
+                    placeholder="Ex: Notícia sobre queda vacinal em SP — articular com 'infodemia' (OMS), separar Causa e Consequência e citar como caiu no Insper e na Vunesp…"
                   />
                 </label>
-                <label className={styles.field}>
-                  <span className={styles.label}>Formato</span>
+                <label className={`${styles.field} ${preset === "quick_tip" ? styles.fieldWide : ""}`}>
+                  <span className={styles.label}>Formato editorial (@textoemciclo)</span>
                   <select className={styles.select} value={preset} onChange={e => setPreset(e.target.value as TemplatePreset)}>
-                    <option value="cycle_steps">Ciclo / Passo a passo</option>
-                    <option value="before_after">Antes × Depois</option>
-                    <option value="quick_tip">Card único (Citação / Dica)</option>
+                    {TEMPLATE_PRESET_OPTIONS.map(opt => (
+                      <option key={opt.value} value={opt.value}>{opt.label}</option>
+                    ))}
                   </select>
                 </label>
                 {preset !== "quick_tip" ? (
                   <label className={styles.field}>
                     <span className={styles.label}>Slides</span>
                     <select className={styles.select} value={slideCount} onChange={e => setSlideCount(Number(e.target.value))}>
-                      {[4, 5, 6, 7, 8].map(n => (
+                      {[3, 4, 5, 6, 7, 8, 10].map(n => (
                         <option key={n} value={n}>{n} slides</option>
                       ))}
                     </select>
                   </label>
                 ) : null}
+                <p className={styles.hint} style={{ gridColumn: "1 / -1", margin: 0 }}>
+                  {TEMPLATE_PRESET_OPTIONS.find(o => o.value === preset)?.hint}
+                </p>
                 <div className={styles.fieldWide}>
                   <button type="submit" className={`${styles.button} ${styles.primary}`} disabled={!aiProvider}>
                     <SparkIcon />Propor slides e legenda com IA

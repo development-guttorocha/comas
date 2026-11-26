@@ -26,7 +26,48 @@ export type SocialSlide = {
 
 export type SocialFormat = "carousel" | "single_card" | "reel";
 export type SocialStatus = "draft_ai" | "in_review" | "exported";
-export type TemplatePreset = "cycle_steps" | "before_after" | "quick_tip";
+export type TemplatePreset =
+  | "repertorio_banca"
+  | "cycle_steps"
+  | "before_after"
+  | "radar_temas"
+  | "quick_tip";
+
+export const TEMPLATE_PRESET_OPTIONS: ReadonlyArray<{
+  value: TemplatePreset;
+  label: string;
+  hint: string;
+}> = [
+  {
+    value: "repertorio_banca",
+    label: "Atualidades / Obra → Repertório & Bancas",
+    hint: "Fato ou obra cultural → conceito/autor → Causa & Consequência → como já caiu em provas",
+  },
+  {
+    value: "cycle_steps",
+    label: "Estratégia de Redação / Passo a passo",
+    hint: "Comandos práticos de escrita, leitura de coletânea e preparação sem surtar",
+  },
+  {
+    value: "before_after",
+    label: "Norma-padrão (Erros reais × Forma certa)",
+    hint: "Palavras e construções que os vestibulandos juram que sabem usar + dica da Prô",
+  },
+  {
+    value: "radar_temas",
+    label: "Radar de Temas de Vestibular",
+    hint: "Compilado de propostas recentes (recorte 'entre X e Y' ou pergunta) para salvar e treinar",
+  },
+  {
+    value: "quick_tip",
+    label: "Card único (Posicionamento / Citação)",
+    hint: "Pílula de método, acolhimento pré-prova ou citação comentada",
+  },
+];
+
+export function isValidTemplatePreset(value: unknown): value is TemplatePreset {
+  return TEMPLATE_PRESET_OPTIONS.some(opt => opt.value === value);
+}
 
 export type SocialPost = {
   id: string;
@@ -92,39 +133,39 @@ export function createEmptySlide(kind: SlideKind, index = 1): SocialSlide {
       return {
         id: makeSlideId(),
         kind: "cover",
-        eyebrow: "TEXTO EM CICLO",
-        title: "Título que desperta curiosidade",
-        body: "Uma linha curta explicando o que a pessoa vai aprender neste carrossel.",
-        highlight: "Arraste para ver →",
+        eyebrow: "REPERTÓRIO DE REDAÇÃO",
+        title: "Como transformar esse tema em argumento",
+        body: "Da leitura da coletânea ao projeto de texto sem modelos engessados.",
+        highlight: "deslize →",
       };
     case "comparison":
       return {
         id: makeSlideId(),
         kind: "comparison",
-        eyebrow: "ANTES × DEPOIS",
-        title: "Como deixar a frase mais direta",
-        wrongLabel: "Evite assim",
-        wrongText: "Vamos estar realizando a entrega do material no decorrer da semana.",
-        rightLabel: "Prefira assim",
-        rightText: "Entregaremos o material nesta semana.",
-        body: "Corte verbos auxiliares desnecessários para dar ritmo e clareza.",
+        eyebrow: "NORMA-PADRÃO NA REDAÇÃO",
+        title: "corroborar [verbo transitivo direto]",
+        wrongLabel: "Evite na redação",
+        wrongText: "“As ONGs corroboram com o governo na criação de políticas públicas.”",
+        rightLabel: "Na norma-padrão",
+        rightText: "“Os dados do IBGE corroboram a tese apresentada.”",
+        body: "Parece chique, mas não é sinônimo de “colaborar”: pede complemento sem preposição.",
       };
     case "quote":
       return {
         id: makeSlideId(),
         kind: "quote",
-        eyebrow: "NOTA DE REDAÇÃO",
-        title: "Escrever bem não é usar palavras difíceis; é fazer o leitor entender na primeira leitura.",
-        author: "Texto em Ciclo",
+        eyebrow: "ESCRITA É PROCESSO",
+        title: "Tanto faz o tema da redação se você domina a estrutura, a leitura de coletânea e os eixos temáticos.",
+        author: "Renata · @textoemciclo",
       };
     case "cta":
       return {
         id: makeSlideId(),
         kind: "cta",
-        eyebrow: "SALVE PARA CONSULTAR",
-        title: "Este conteúdo te ajudou?",
-        body: "Salve este post para revisar antes de escrever seu próximo texto e envie para alguém que precisa desta dica.",
-        highlight: "Comente sua dúvida aqui embaixo ↓",
+        eyebrow: "@TEXTOEMCICLO",
+        title: "Salve para consultar antes de escrever :)",
+        body: "Envie este carrossel para quem está treinando redação com você neste semestre.",
+        highlight: "Vamos juntos? Me conta sua dúvida nos comentários ↓",
       };
     case "content":
     default:
@@ -132,10 +173,10 @@ export function createEmptySlide(kind: SlideKind, index = 1): SocialSlide {
         id: makeSlideId(),
         kind: "content",
         stepNumber,
-        eyebrow: `PASSO ${stepNumber}`,
-        title: "Ideia principal deste slide",
-        body: "Explique em 2 ou 3 frases curtas. Textos objetivos aumentam o salvamento e a leitura até o final.",
-        highlight: "Dica prática: leia em voz alta para testar o ritmo.",
+        eyebrow: "ARGUMENTO POSSÍVEL",
+        title: "Causa (quem tem responsabilidade?)",
+        body: "Articule o repertório diretamente ao problema do tema, mostrando por que o impasse persiste e quem é afetado.",
+        highlight: "Dica da Prô: o recorte específico do tema você amarra depois da coletânea.",
       };
   }
 }

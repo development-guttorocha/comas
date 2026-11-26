@@ -10,6 +10,16 @@ type SlideCanvasProps = {
   theme: SocialTheme;
 };
 
+function contrastOn(hex: string): string {
+  const clean = hex.trim().replace(/^#/, "");
+  if (clean.length !== 6) return "#FFFFFF";
+  const r = parseInt(clean.slice(0, 2), 16) / 255;
+  const g = parseInt(clean.slice(2, 4), 16) / 255;
+  const b = parseInt(clean.slice(4, 6), 16) / 255;
+  const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+  return lum > 0.58 ? "#1E163B" : "#FFFFFF";
+}
+
 export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasProps) {
   const { palette } = theme;
   const displayFamily =
@@ -36,6 +46,8 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
 
   const slideNum = `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
   const overlayAlpha = typeof slide.imageOverlay === "number" ? slide.imageOverlay : 0.78;
+  const onAccent = contrastOn(palette.accent);
+  const onPrimary = contrastOn(palette.primary);
 
   return (
     <div style={rootStyle}>
@@ -101,7 +113,7 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
               padding: "10px 20px",
               borderRadius: "999px",
               backgroundColor: slide.kind === "cover" ? palette.accent : palette.accentSoft,
-              color: slide.kind === "cover" ? "#FFFFFF" : palette.accent,
+              color: slide.kind === "cover" ? onAccent : palette.accent,
               fontSize: "22px",
               fontWeight: 700,
               letterSpacing: "0.08em",
@@ -176,10 +188,10 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
                     alignItems: "center",
                     padding: "18px 30px",
                     borderRadius: "16px",
-                    backgroundColor: palette.primary,
-                    color: "#FFFFFF",
+                    backgroundColor: palette.accent,
+                    color: onAccent,
                     fontSize: "26px",
-                    fontWeight: 600,
+                    fontWeight: 700,
                   }}
                 >
                   {slide.highlight}
@@ -420,7 +432,7 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
           <div
             style={{
               backgroundColor: palette.primary,
-              color: "#FFFFFF",
+              color: onPrimary,
               borderRadius: "32px",
               padding: "64px 56px",
               display: "flex",
@@ -435,7 +447,7 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
                 fontSize: "62px",
                 lineHeight: 1.15,
                 fontWeight: 700,
-                color: "#FFFFFF",
+                color: onPrimary,
               }}
             >
               {slide.title}
@@ -446,7 +458,8 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
                   margin: 0,
                   fontSize: "33px",
                   lineHeight: 1.45,
-                  color: "rgba(255, 255, 255, 0.85)",
+                  color: onPrimary,
+                  opacity: 0.86,
                 }}
               >
                 {slide.body}
@@ -461,7 +474,7 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
                     padding: "18px 28px",
                     borderRadius: "16px",
                     backgroundColor: palette.accent,
-                    color: "#FFFFFF",
+                    color: onAccent,
                     fontSize: "27px",
                     fontWeight: 700,
                   }}

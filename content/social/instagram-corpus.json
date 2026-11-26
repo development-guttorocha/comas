@@ -1,0 +1,862 @@
+{
+  "profile": {
+    "handle": "@textoemciclo",
+    "name": "Texto em Ciclo · Renata Romero",
+    "url": "https://www.instagram.com/textoemciclo/",
+    "bioCredentials": [
+      "Bacharela em Estudos Literários (UNICAMP, 2014)",
+      "Licenciada em Letras Português (UNICAMP, 2017)",
+      "Mestra em História e Historiografia Literária (UNICAMP, 2018)",
+      "Especialista em Estudos Brasileiros: Sociedade e Cultura (FESPSP, 2022)",
+      "Graduanda em Psicologia",
+      "Prô de redação há 10 anos"
+    ],
+    "targetExams": [
+      "ENEM",
+      "FUVEST",
+      "VUNESP (UNESP, FAMEMA, FAMERP, Einstein, Santa Casa, Unifesp, USCS, UEA)",
+      "UNICAMP",
+      "UERJ",
+      "FGV",
+      "INSPER",
+      "UFPR"
+    ],
+    "manifesto": {
+      "corePrinciple": "ESCRITA É PROCESSO!",
+      "hater": [
+        "Modelos prontos e engessados",
+        "Período único com mil gerúndios",
+        "Repertório genérico",
+        "Fórmulas mágicas que comprometem o entendimento de texto",
+        "Chute de tema de véspera",
+        "Escrever sem coletânea (inclusive de IA)"
+      ],
+      "fan": [
+        "Projeto de texto",
+        "Redação autoral",
+        "Repertório genuíno",
+        "Boa leitura de coletânea",
+        "Acompanhamento real e saúde mental"
+      ]
+    },
+    "totalImagesAnalyzed": 100,
+    "totalPublications": 22
+  },
+  "publications": [
+    {
+      "index": 1,
+      "shortcode": "DFn44Wtysfn",
+      "url": "https://www.instagram.com/p/DFn44Wtysfn/",
+      "slideCount": 4,
+      "dimensions": "1080x1350",
+      "category": "apresentacao_manifesto",
+      "preset": "cycle_steps",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP", "UERJ"],
+      "palette": ["#E9E9E9", "#F06292", "#4A0E26"],
+      "slides": [
+        {
+          "slide": 1,
+          "eyebrow": "@TEXTOEMCICLO",
+          "title": "QUEM SOU EU?",
+          "highlights": ["café & memes & fofocas", "ciência, democracia, direitos humanos", "Prô de redação há 10 anos"]
+        },
+        {
+          "slide": 2,
+          "eyebrow": "@TEXTOEMCICLO",
+          "title": "ESTUDANTE",
+          "body": "UNICAMP: 2014 - Bacharela em Estudos Literários; 2017 - Licenciada em Letras Português; 2018 - Mestra em História Historiografia literária. FESPSP: 2022 - Especialista em Estudos Brasileiros: Sociedade e Cultura (Pós-Graduação).",
+          "highlights": ["comecei a estudar aos 2 anos", "nunca mais parei: estou no 2° ano de Psico"]
+        },
+        {
+          "slide": 3,
+          "eyebrow": "@TEXTOEMCICLO",
+          "title": "PROFESSORA · ESPECIALISTA EM VESTIBULAR",
+          "body": "ENEM, FUVEST, VUNESP, UNICAMP, UERJ. HATER: Modelos prontos e engessados; Período único com mil gerúndios; Repertório genérico; Fórmulas mágicas que comprometem o entendimento de texto. FÃ: Projeto de texto; Redação autoral; Repertório genuíno; Boa leitura de coletânea.",
+          "highlights": ["ESCRITA É PROCESSO!"]
+        },
+        {
+          "slide": 4,
+          "title": "VAMOS ESCREVER SUA HISTÓRIA JUNTOS?",
+          "eyebrow": "@TEXTOEMCICLO"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "shortcode": "DVzS3xjDxbC",
+      "url": "https://www.instagram.com/p/DVzS3xjDxbC/",
+      "slideCount": 4,
+      "dimensions": "1080x1350",
+      "category": "oferta_tutoria",
+      "preset": "cycle_steps",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP", "INSPER", "FGV"],
+      "palette": ["#3E2A8D", "#F7BE16", "#E5582E", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Quer melhorar sua redação?",
+          "highlights": ["Tutorias individuais", "Vagas limitadas"]
+        },
+        {
+          "slide": 2,
+          "eyebrow": "VESTIBULARES",
+          "title": "Como funciona?",
+          "body": "ENEM, FUVEST, VUNESP, UNICAMP, INSPER, FGV. Encontro semanal de 30 minutos; Correção estratégica da redação; Ajustes na estrutura e na argumentação; Indicação de repertórios; Banco de temas e propostas; Planilha de evolução.",
+          "highlights": ["ACOMPANHAMENTO PERSONALIZADO"]
+        },
+        {
+          "slide": 3,
+          "eyebrow": "TUTORIAS",
+          "title": "Quem deve fazer?",
+          "body": "Quem busca Medicina ou cursos concorridos; Quem precisa elevar a nota da redação; Quem sente que escreve, mas não evolui; Quem quer aprimorar argumentação e repertório; Quem busca acompanhamento individual na preparação.",
+          "highlights": ["ESTRATÉGIA DE PROVA E SEGURANÇA"]
+        },
+        {
+          "slide": 4,
+          "eyebrow": "DE REDAÇÃO",
+          "title": "Tutorias individuais — Vamos juntos em busca da sua aprovação?",
+          "highlights": ["POUCAS VAGAS", "Envie \"TUTORIA\" no direct"]
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "shortcode": "DgNRkkikUDA",
+      "url": "https://www.instagram.com/p/DgNRkkikUDA/",
+      "slideCount": 4,
+      "dimensions": "1080x1432",
+      "category": "repertorio_literario_sociologico",
+      "preset": "repertorio_banca",
+      "exams": ["UERJ"],
+      "palette": ["#5D28A5", "#23123E", "#F7BF2A", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "eyebrow": "UERJ · @textoemciclo",
+          "title": "REPERTÓRIO DE REDAÇÃO",
+          "body": "Como usar O Bem-Amado e o pensamento de Sérgio Buarque de Holanda na UERJ",
+          "highlights": ["deslize →"]
+        },
+        {
+          "slide": 2,
+          "eyebrow": "O QUE É?",
+          "title": "A confusão entre o PÚBLICO e o PRIVADO.",
+          "body": "No Brasil, o Estado é gerido como se fosse uma extensão da casa e da família do governante, sem distinção clara entre o que é de todos e o que é particular."
+        },
+        {
+          "slide": 3,
+          "title": "O “HOMEM CORDIAL”",
+          "body": "Cuidado! Não é ser “bonzinho”. A “cordialidade” vem de cor (coração). O brasileiro age pelo afeto e pelas relações pessoais, rejeitando as leis e a impessoalidade. Isso facilita o favoritismo e o “jeitinho” na política."
+        },
+        {
+          "slide": 4,
+          "title": "NA LITERATURA: O BEM-AMADO",
+          "body": "Dias Gomes retrata em O Bem-Amado o prefeito Odorico Paraguaçu, que usa dinheiro público para construir um cemitério em Sucupira apenas para cumprir uma promessa pessoal e garantir sua glória política. É a materialização perfeita do patrimonialismo e do homem cordial na ficção!"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "shortcode": "DfpqvcbRQBK",
+      "url": "https://www.instagram.com/p/DfpqvcbRQBK/",
+      "slideCount": 1,
+      "dimensions": "1088x1344",
+      "category": "oferta_segunda_fase",
+      "preset": "quick_tip",
+      "exams": ["FUVEST", "UNICAMP", "VUNESP", "UNESP", "FAMEMA", "FAMERP"],
+      "palette": ["#D4CED2", "#2B2259", "#F5E27A"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Aulas individuais de redação · 2ª fase",
+          "body": "FUVEST | UNICAMP | VUNESP (UNESP, FAMEMA, FAMERP) — 50 min online: conversa sobre a sua prova, teoria, indicação de repertório, dicas específicas.",
+          "highlights": ["Vamos juntos? :)"]
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "shortcode": "DfgFbtdEcdl",
+      "url": "https://www.instagram.com/p/DfgFbtdEcdl/",
+      "slideCount": 3,
+      "dimensions": "1080x1350",
+      "category": "posicionamento_prova_social",
+      "preset": "quick_tip",
+      "exams": ["ENEM"],
+      "palette": ["#705796", "#EAEBEB", "#2A211E"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Errei o tema da redação do Enem",
+          "body": "Que bom! Eu nem chutei!"
+        },
+        {
+          "slide": 2,
+          "title": "Indo dormir tranquila sabendo que preparei meus alunos para qualquer tema"
+        },
+        {
+          "slide": 3,
+          "title": "Depoimentos reais dos alunos pós-ENEM",
+          "body": "“prof juro eu dei um sorriso DESSE TAMANHO quando eu li o tema” / “vc preparou a gente muito bem, não tinha como não estar confiante!!!” / “Quase chorei de alegria quando vi” / “Aprendi com a melhor”"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "shortcode": "Dfeqk97xWMq",
+      "url": "https://www.instagram.com/p/Dfeqk97xWMq/",
+      "slideCount": 1,
+      "dimensions": "1136x1408",
+      "category": "citacao_acolhimento",
+      "preset": "quick_tip",
+      "exams": ["ENEM"],
+      "palette": ["#3E044E", "#E8C52A", "#C57AE6", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "É preciso ter esperança, mas ter esperança do verbo esperançar; porque tem gente que tem esperança do verbo esperar. E esperança do verbo esperar não é esperança, é espera. Esperançar é se levantar, esperançar é ir atrás, esperançar é construir, esperançar é não desistir! Esperançar é levar adiante, esperançar é juntar-se com outros para fazer de outro modo...",
+          "body": "Paulo Freire",
+          "highlights": ["Boa prova!!!"]
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "shortcode": "DfcM0KXRyLy",
+      "url": "https://www.instagram.com/p/DfcM0KXRyLy/",
+      "slideCount": 1,
+      "dimensions": "1856x2304",
+      "category": "posicionamento_metodo",
+      "preset": "quick_tip",
+      "exams": ["ENEM"],
+      "palette": ["#B9BDE3", "#F4E3E1", "#2F194D"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Tanto faz o tema de redação do Enem",
+          "body": "SE VOCÊ DOMINA ESTRUTURA E OS EIXOS TEMÁTICOS"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "shortcode": "DdWfFgpkUM2",
+      "url": "https://www.instagram.com/p/DdWfFgpkUM2/",
+      "slideCount": 7,
+      "dimensions": "1080x1350",
+      "category": "estrategia_reta_final",
+      "preset": "cycle_steps",
+      "exams": ["ENEM"],
+      "palette": ["#EDEDEB", "#7F1C21", "#F6D2D2", "#FAF3E8"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "A reta final começou",
+          "body": "DICAS PARA NÃO SURTAR (AINDA MAIS) COM A REDAÇÃO ENEM"
+        },
+        {
+          "slide": 2,
+          "title": "TEMAS PROVÁVEIS?",
+          "body": "DOMINE OS EIXOS TEMÁTICOS. O RECORTE DO TEMA VOCÊ AMARRA DEPOIS"
+        },
+        {
+          "slide": 3,
+          "title": "Não escreva sem coletânea (nem se for de IA)",
+          "body": "ISSO VAI DEIXAR SEU ARGUMENTO CONFUSO. MELHOR FAZER PROPOSTAS DE QUEM VOCÊ CONFIA"
+        },
+        {
+          "slide": 4,
+          "title": "ESTUDE ESTRUTURA DE TEXTO",
+          "body": "ELA VAI ORGANIZAR SEUS DIVERTIDAMENTES E CUMPRIR AS EXIGÊNCIAS DA BANCA"
+        },
+        {
+          "slide": 5,
+          "title": "CORRIJA",
+          "body": "E ANOTE OS ERROS QUE SE REPETEM"
+        },
+        {
+          "slide": 6,
+          "title": "ESCREVA",
+          "body": "UMA REDAÇÃO POR SEMANA ATÉ O ENEM"
+        },
+        {
+          "slide": 7,
+          "title": "VOCÊ ESTÁ INDO BEM · CONTINUE!!",
+          "body": "SALVE ESSE POST PARA TER ESTRATÉGIA NESSA RETA FINAL"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "shortcode": "DbsvN4BEffe",
+      "url": "https://www.instagram.com/p/DbsvN4BEffe/",
+      "slideCount": 7,
+      "dimensions": "1080x1350",
+      "category": "atualidades_argumentacao",
+      "preset": "repertorio_banca",
+      "exams": ["VUNESP", "INSPER", "UEA", "USCS"],
+      "palette": ["#3E2A8B", "#EBE9F4", "#E5B314", "#4A4A4A"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "ATENÇÃO!",
+          "body": "Esse tema cai na VUNESP desde 2015. Em 2026 caiu de novo. E pode cair mais uma vez."
+        },
+        {
+          "slide": 2,
+          "title": "VOCÊ DEVE TER VISTO ISSO",
+          "body": "Notícia UOL Saúde: São Paulo confirma 16 casos de sarampo; maioria foi registrada na capital."
+        },
+        {
+          "slide": 3,
+          "title": "POR QUE VOCÊ DEVERIA TREINAR ESSE TEMA?",
+          "body": "Vacinação, negacionismo científico e saúde pública é tema recorrente na VUNESP desde 2015. Com o surto ativo de 2026, a chance de cair de novo é alta..."
+        },
+        {
+          "slide": 4,
+          "eyebrow": "ARGUMENTO POSSÍVEL",
+          "title": "CAUSA - DESINFORMAÇÃO (FUNCIONAMENTO DAS REDES SOCIAIS/ EDUCAÇÃO INSUFICIENTE)",
+          "body": "A queda na cobertura vacinal não é sobre falta de acesso — é sobre desinformação, principalmente que circulam nas redes sociais. A OMS batizou esse fenômeno pós-pandemia de \"infodemia\": informação falsa se espalhando mais rápido que o vírus.",
+          "highlights": ["INSPER 2026 - Infodemia na era da internet: entre o excesso de informação e a construção do conhecimento."]
+        },
+        {
+          "slide": 5,
+          "eyebrow": "ARGUMENTO POSSÍVEL",
+          "title": "CAUSA - MEDO",
+          "body": "Medo, quando mal administrado, é motor de negacionismo. Casos ravos de eventos adversos, divulgados sem contexto estatístico, pesam mais que o risco real da doença. O problema é que a imunidade de rebanho exige cobertura vacinal acima de 95%: abaixo disso, o vírus reencontra brechas para circular.",
+          "highlights": ["UEA 2025 - Queda nos índices de vacinação: entre o medo e a desinformação."]
+        },
+        {
+          "slide": 6,
+          "eyebrow": "ARGUMENTO POSSÍVEL",
+          "title": "CONSEQUÊNCIA - RISCO À SAÚDE PÚBLICA",
+          "body": "Cada surto de doença evitável por vacina significa leitos, testes, equipes de vigilância epidemiológica e vacinação de bloqueio mobilizados para conter algo que já tinha solução. Recurso público sendo redirecionado para resolver um problema resolvido décadas atrás.",
+          "highlights": ["USCS 2022 - Movimento antivacina: entre o livre debate de ideias e a ameaça à saúde pública"]
+        },
+        {
+          "slide": 7,
+          "title": "BORA ESCREVER E SE VACINAR?",
+          "highlights": ["Quer alguma dessas propostas integrais da banca VUNESP? Me manda uma DM :)"]
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "shortcode": "DbV-IibkW8A",
+      "url": "https://www.instagram.com/p/DbV-IibkW8A/",
+      "slideCount": 4,
+      "dimensions": "1080x1350",
+      "category": "oferta_agenda_aberta",
+      "preset": "cycle_steps",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP", "FGV", "INSPER"],
+      "palette": ["#673BAA", "#432C9B", "#E5D4F7", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Chegou o momento de priorizar redação",
+          "body": "HORÁRIOS DISPONÍVEIS · TUTORIAS DE REDAÇÃO · 2º SEMESTRE"
+        },
+        {
+          "slide": 2,
+          "title": "AGENDA ABERTA · 2º SEMESTRE",
+          "body": "Últimos horários da semana disponíveis: terça - 18h e 18h30; quarta - 19h; quinta - 18h e 18h30. *Vou reservar por ordem de chegada, verifique a disponibilidade"
+        },
+        {
+          "slide": 3,
+          "title": "COMO FUNCIONA? TUTORIA",
+          "body": "ENEM • FUVEST • VUNESP • UNICAMP • FGV/INSPER — encontro individual via Google meet de 30 min; plano personalizado; metas semanais; banco de temas; material de apoio: estrutura e repertório; correção para consulta; acompanhamento real"
+        },
+        {
+          "slide": 4,
+          "title": "Vamos reservar o seu horário?",
+          "body": "Manda uma DM ou whats (link na bio)"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "shortcode": "DaiVauglMBs",
+      "url": "https://www.instagram.com/p/DaiVauglMBs/",
+      "slideCount": 10,
+      "dimensions": "1080x1350",
+      "category": "agenda_cultural_repertorio",
+      "preset": "cycle_steps",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP"],
+      "palette": ["#F1F1F3", "#2F1E7E", "#B28B5A", "#768652"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Minhas férias no MUSEU em São Paulo",
+          "highlights": ["AGENDA", "GRATUITA"]
+        },
+        {
+          "slide": 2,
+          "title": "Organizei por dia da semana pra facilitar seu rolê",
+          "body": "São Paulo tem uma cena cultural gigante e boa parte dela dá pra curtir sem gastar nada. Bora consumir repertórios para usar na redação! Antes de ir: confirme sempre no site oficial do museu no dia da visita."
+        },
+        {
+          "slide": 3,
+          "eyebrow": "SEGUNDA",
+          "title": "Centro Cultural São Paulo & Unidades do Sesc",
+          "body": "A maioria dos grandes museus de SP fecha às segundas. Mas sobram ótimas opções sempre gratuitas: CCSP (9h às 22h) e Sesc."
+        },
+        {
+          "slide": 4,
+          "eyebrow": "TERÇA",
+          "title": "O melhor dia da semana pra museu de graça em SP",
+          "body": "MASP (10h às 20h), Museu da Língua Portuguesa (o dia todo) e Museu Catavento."
+        },
+        {
+          "slide": 5,
+          "eyebrow": "QUARTA",
+          "title": "Museu Afro Brasil (Parque Ibirapuera)",
+          "body": "Alguns períodos oferecem gratuidade às quartas; vale checar a programação do mês."
+        },
+        {
+          "slide": 6,
+          "eyebrow": "QUINTA",
+          "title": "Pinacoteca de São Paulo & Museu do Futebol",
+          "body": "Pinacoteca gratuita a partir das 17h; Museu do Futebol costuma ter gratuidade às quintas."
+        },
+        {
+          "slide": 7,
+          "eyebrow": "SEXTA",
+          "title": "MASP noturno",
+          "body": "MASP: gratuito das 18h às 21h, mas precisa reservar ingresso online com antecedência."
+        },
+        {
+          "slide": 8,
+          "eyebrow": "SÁBADO",
+          "title": "Pinacoteca, Museu do Futebol, Arte Sacra, Judaico e Imigração",
+          "body": "Pinacoteca gratuita o dia inteiro; Museu do Futebol, Arte Sacra, Museu Judaico e Museu da Imigração também costumam abrir de graça aos sábados."
+        },
+        {
+          "slide": 9,
+          "eyebrow": "DOMINGO",
+          "title": "Museu da Língua Portuguesa & MAM",
+          "body": "Museu da Língua Portuguesa gratuito o dia todo; MAM costuma ter gratuidade aos domingos."
+        },
+        {
+          "slide": 10,
+          "eyebrow": "GOSTOU?",
+          "title": "Repertório também se constrói fora da sala de aula. Marca quem vai viver isso com você!"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "shortcode": "DZ-ogQ0Edtd",
+      "url": "https://www.instagram.com/p/DZ-ogQ0Edtd/",
+      "slideCount": 5,
+      "dimensions": "1080x1350",
+      "category": "radar_temas_coletaneas",
+      "preset": "radar_temas",
+      "exams": ["VUNESP", "UNESP", "Einstein", "Moinhos de Vento"],
+      "palette": ["#3E2A8D", "#E2A1FF", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Temas de redação dissertativa 2026.2 (até agora)",
+          "body": "EINSTEIN - ENFERMAGEM: Falta de creches públicas no Brasil: entre os impactos na educação infantil e a exclusão das mulheres do mercado de trabalho. FACULDADE MOINHOS DE VENTO: É realmente possível reduzir a desigualdade social no Brasil? UNESP: O mundo vive hoje um declínio moral?"
+        },
+        {
+          "slide": 2,
+          "title": "Coletânea oficial — Einstein Enfermagem",
+          "body": "FALTA DE CRECHES PÚBLICAS NO BRASIL: ENTRE OS IMPACTOS NA EDUCAÇÃO INFANTIL E A EXCLUSÃO DAS MULHERES DO MERCADO DE TRABALHO (IBGE, Todos Pela Educação, Ibase)."
+        },
+        {
+          "slide": 3,
+          "title": "Coletânea oficial — UNESP",
+          "body": "O MUNDO VIVE HOJE UM DECLÍNIO MORAL? (Tirinha André Dahmer, Horácio Laudator temporis acti, Shakespeare, Gaudêncio Torquato vs. estudo da revista Nature sobre a ilusão do declínio moral)."
+        },
+        {
+          "slide": 4,
+          "title": "Coletânea oficial — Faculdade Moinhos de Vento",
+          "body": "É REALMENTE POSSÍVEL REDUZIR A DESIGUALDADE SOCIAL NO BRASIL? (Michel Alcoforado/UERJ, Gilberto Gil 'Punk da Periferia', foto Vila Andrade/Panamby, estudo Índice de Gini Insper)."
+        },
+        {
+          "slide": 5,
+          "title": "Os temas de meio de ano podem aparecer novamente, então salve para não esquecer e treinar :)"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "shortcode": "DZ5K2mYkSMH",
+      "url": "https://www.instagram.com/p/DZ5K2mYkSMH/",
+      "slideCount": 7,
+      "dimensions": "1080x1350",
+      "category": "mentalidade_preparacao",
+      "preset": "cycle_steps",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP"],
+      "palette": ["#4B3B96", "#F2E6D8", "#2C4C5E"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Rebeca Andrade e o vestibular: qual é a relação?",
+          "body": "O que um atleta de alto rendimento pode ensinar sobre a aprovação?"
+        },
+        {
+          "slide": 2,
+          "title": "Muito além do ouro no Pan-Americano de ginástica",
+          "body": "Sua trajetória mostra que a alta performance não depende apenas de talento ou força de vontade. Ela persistiu, se recuperou e contou com pessoas que sustentaram esse caminho."
+        },
+        {
+          "slide": 3,
+          "title": "Acompanhamento psicológico",
+          "body": "Um atleta de alto rendimento não treina apenas o corpo. Ele também aprende a lidar com ansiedade, pressão, medo e expectativas. No vestibular acontece a mesma coisa: estudar é importante, mas cuidar da saúde mental também faz parte da preparação."
+        },
+        {
+          "slide": 4,
+          "title": "Os amigos importam",
+          "body": "A competição existe, mas ela não elimina os vínculos. No vestibular também é assim: estudar ao lado de pessoas que incentivam você faz diferença."
+        },
+        {
+          "slide": 5,
+          "title": "Todo atleta tem um treinador",
+          "body": "O treinador enxerga o que o atleta, muitas vezes, não consegue enxergar sozinho. No vestibular, esse papel pode ser exercido por um professor, um mentor ou um treinador de estudos, alguém que organiza o caminho e ajuda o aluno a render sem se perder."
+        },
+        {
+          "slide": 6,
+          "title": "A maior lição",
+          "body": "Nenhum vestibulando precisa caminhar sozinho até a aprovação. A alta performance não é construída apenas pelo esforço individual. Ela é sustentada por uma equipe, por estratégia e por uma rede de apoio que torna possível chegar mais longe."
+        },
+        {
+          "slide": 7,
+          "title": "Vamos juntos em busca da sua alta performance?",
+          "body": "Lista de espera para as tutorias individuais de redação (2o. semestre) na bio"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "shortcode": "DZp0Pi8ESc1",
+      "url": "https://www.instagram.com/p/DZp0Pi8ESc1/",
+      "slideCount": 5,
+      "dimensions": "1080x1350",
+      "category": "radar_temas_coletaneas",
+      "preset": "radar_temas",
+      "exams": ["UNISA", "UNIFIMES", "Santa Casa", "VUNESP"],
+      "palette": ["#3B2B8C", "#DF99FF", "#D8B4FF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Temas de redação dissertativa 2026.2 (até agora)",
+          "body": "UNISA: Saúde mental na internet: entre a facilidade de acesso e a falta de cuidado especializado. UNIFIMES - MINEIROS: O uso de canetas emagrecedoras: entre a pressão estética e a preocupação com a saúde. UNIFIMES - TRINDADE: Tipografia étnica: entre a valorização de culturas e a reprodução de estereótipos. SANTA CASA: Os desafios de ser jovem em uma sociedade marcada pela velocidade, pela exposição digital e pela cobrança por desempenho."
+        },
+        {
+          "slide": 2,
+          "title": "Coletânea oficial — UNIFIMES Trindade",
+          "body": "TIPOGRAFIA ÉTNICA: ENTRE A VALORIZAÇÃO DE CULTURAS E A REPRODUÇÃO DE ESTEREÓTIPOS"
+        },
+        {
+          "slide": 3,
+          "title": "Coletânea oficial — UNIFIMES Mineiros",
+          "body": "O USO DE CANETAS EMAGRECEDORAS: ENTRE A PRESSÃO ESTÉTICA E A PREOCUPAÇÃO COM A SAÚDE"
+        },
+        {
+          "slide": 4,
+          "title": "Coletânea oficial — UNISA",
+          "body": "SAÚDE MENTAL NA INTERNET: ENTRE A FACILIDADE DE ACESSO E A FALTA DE CUIDADO ESPECIALIZADO"
+        },
+        {
+          "slide": 5,
+          "title": "Os temas de meio de ano podem aparecer novamente, então salve para não esquecer e treinar :)"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "shortcode": "DZnG9CREf3X",
+      "url": "https://www.instagram.com/p/DZnG9CREf3X/",
+      "slideCount": 7,
+      "dimensions": "1080x1350",
+      "category": "atualidades_repertorio_aplicado",
+      "preset": "repertorio_banca",
+      "exams": ["ENEM", "UNIFESP", "UNICAMP", "FUVEST"],
+      "palette": ["#3B288F", "#EFEBE2", "#E8C52A", "#111111"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "COPA DO MUNDO COMO REPERTÓRIO DE REDAÇÃO",
+          "body": "O caso do árbitro barrado nos EUA e o choque entre as fronteiras e os Direitos Humanos."
+        },
+        {
+          "slide": 2,
+          "title": "VOCÊ DEVE TER VISTO ISSO",
+          "body": "Manchete g1: Fifa retira árbitro somali da Copa após governo Trump barrar sua entrada nos EUA. Como transformar esse absurdo em nota máxima na redação? Passe para o lado"
+        },
+        {
+          "slide": 3,
+          "title": "A GLOBALIZAÇÃO COMO \"FÁBULA\"",
+          "body": "A FIFA nos vende a Copa como a fábula de um mundo globalizado, unido e sem barreiras através do esporte. Porém, o veto a Artan escancara a realidade: a globalização como perversidade, conceito central do geógrafo Milton Santos (Por uma outra globalização, 2004)."
+        },
+        {
+          "slide": 4,
+          "title": "O \"ESTADO DE EXCEÇÃO\" NO AEROPORTO",
+          "body": "Como um profissional de prestígio vira um suspeito automático? O filósofo Giorgio Agamben (Estado de exceção, 2004) explica que os Estados modernos criam \"zonas de exclusão\" onde os direitos civis e humanos podem ser suspensos em nome de uma suposta \"segurança\"."
+        },
+        {
+          "slide": 5,
+          "title": "QUAL FOI A \"INTERVENÇÃO\" DA FIFA?",
+          "body": "Ou seja: A FIFA resolve com dinheiro o que devia confrontar com posicionamento: paga o salário, mas aceita a exclusão do árbitro."
+        },
+        {
+          "slide": 6,
+          "title": "COMO O TEMA \"IMIGRAÇÃO\" JÁ CAIU NAS REDAÇÕES?",
+          "body": "ENEM 2012: O movimento imigratório para o Brasil no Século XXI; UNIFESP 2025: Ser imigrante: entre desafios e oportunidades; UNICAMP 2024: Discurso em defesa do acolhimento aos refugiados; FUVEST 2009: Fronteiras."
+        },
+        {
+          "slide": 7,
+          "title": "SALVE ESSE POST",
+          "body": "ELE PODE TE AJUDAR NA HORA DE ESCREVER SOBRE IMIGRAÇÃO OU GLOBALIZAÇÃO (E AINDA VEM COM CITAÇÃO PRONTA PRA USAR)"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "shortcode": "DZVv73fj7t8",
+      "url": "https://www.instagram.com/p/DZVv73fj7t8/",
+      "slideCount": 3,
+      "dimensions": "1080x1350",
+      "category": "radar_temas",
+      "preset": "radar_temas",
+      "exams": ["Santa Marcelina", "UniCEUB", "INSPER", "Uniube", "USCS", "FEMA", "UniCerrado", "FGV"],
+      "palette": ["#3B2B8C", "#C970EB", "#D8B4FF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Temas de redação dissertativa 2026.2 (até agora)",
+          "body": "SANTA MARCELINA: Discurso jornalístico: entre os interesses particulares e o compromisso social; UNICEUB: Violência contra crianças e adolescentes brasileiros: entre direitos assegurados e desigualdades; INSPER: Infodemia na era da internet: entre o excesso de informação e a construção do conhecimento; UNIUBE: É possível conter o avanço da hesitação vacinal no Brasil?"
+        },
+        {
+          "slide": 2,
+          "title": "Temas de redação dissertativa 2026.2 (até agora)",
+          "body": "USCS: O carnaval deve ser financiado com dinheiro público?; FEMA: Abandono de animais domésticos no Brasil: entre a responsabilidade individual e a omissão do Poder Público; UNICERRADO: Uso de canetas emagrecedoras sem indicação médica: entre o ideal estético e os riscos à saúde; FGV: É correto abolir a escala de trabalho de seis por um (seis dias de trabalho, por um de descanso) no Brasil?"
+        },
+        {
+          "slide": 3,
+          "title": "Os temas de meio de ano podem aparecer novamente, então salve para não esquecer e treinar :)",
+          "highlights": ["Quer alguma coletânea? Me pede por DM"]
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "shortcode": "DZK-7mqESgi",
+      "url": "https://www.instagram.com/p/DZK-7mqESgi/",
+      "slideCount": 5,
+      "dimensions": "1080x1350",
+      "category": "repertorio_autoral_cultural",
+      "preset": "repertorio_banca",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP"],
+      "palette": ["#A0B6C6", "#EDCAB9", "#33268E", "#EAE6F8"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Marjane Satrapi",
+          "body": "como repertório de redação"
+        },
+        {
+          "slide": 2,
+          "title": "Marjane Satrapi · A voz do exílio",
+          "body": "Nascida no Irã em 1969, Satrapi viveu na pele as transformações provocadas pela Revolução Islâmica de 1979. Romancista gráfica, roteirista e cineasta radicada na França, funde arte visual e narrativa autobiográfica para denunciar o autoritarismo. Repertório para tratar de direitos humanos, liberdade individual e resgate histórico."
+        },
+        {
+          "slide": 3,
+          "title": "Persépolis · livro hq (2003) | filme (2008)",
+          "body": "Temas de redação: 1) opressão de gênero (perda de liberdades individuais e imposição do véu sob controle estatal); 2) censura e resistência (impactos do extremismo religioso no ensino e apagamento da criticidade juvenil); 3) imigração e identidade (dores do deslocamento, preconceito na Europa e busca por pertencer)."
+        },
+        {
+          "slide": 4,
+          "title": "Frango com ameixas · livro hq (2004) | filme (2011)",
+          "body": "Temas de redação: 1) saúde mental (falta de informação gera negligência familiar e social na depressão); 2) importância da arte (papel terapêutico e humanizador da arte frente ao descaso público); 3) pressão social / carreira (abandono da arte compromete a expressão das emoções e o bem-estar)."
+        },
+        {
+          "slide": 5,
+          "title": "Conhecia essas obras?",
+          "body": "Que tal tentar usar em alguma redação?"
+        }
+      ]
+    },
+    {
+      "index": 18,
+      "shortcode": "DYwmH2ER7yG",
+      "url": "https://www.instagram.com/p/DYwmH2ER7yG/",
+      "slideCount": 1,
+      "dimensions": "1350x1688",
+      "category": "humor_rotina_vestibulando",
+      "preset": "quick_tip",
+      "exams": ["Geral"],
+      "palette": ["#33221D", "#8B5F42", "#000000", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "AINDA É MAIO / JÁ É MAIO",
+          "eyebrow": "@TEXTOEMCICLO"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "shortcode": "DYqNch4EdQU",
+      "url": "https://www.instagram.com/p/DYqNch4EdQU/",
+      "slideCount": 4,
+      "dimensions": "1080x1350",
+      "category": "calendario_organizacao",
+      "preset": "cycle_steps",
+      "exams": ["FUVEST", "UFPR", "ENEM", "UNESP", "UNICAMP"],
+      "palette": ["#F7F7F5", "#3E2A8B", "#240D3B", "#222222"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "VESTIBULARES 2027 — Calendário atualizado!!! (que acontecerão em 2026)",
+          "highlights": ["ORGANIZE SEUS ESTUDOS"]
+        },
+        {
+          "slide": 2,
+          "title": "NOVEMBRO 2026",
+          "body": "01/11 FUVEST & UFPR (1ª fase); 08/11 ENEM dia 1; 15/11 ENEM dia 2; 22/11 UNESP (1ª fase); 29 e 30/11 UNICAMP (2ª fase)."
+        },
+        {
+          "slide": 3,
+          "title": "DEZEMBRO 2026",
+          "body": "02-04/12 Habilidades Específicas UNICAMP; 06-07/12 FUVEST (2ª fase); 13-14/12 UNESP (2ª fase)."
+        },
+        {
+          "slide": 4,
+          "title": "ISSO TE AJUDOU?",
+          "body": "Dê um like · Comente · Compartilhe com os amigos · Salve para não esquecer"
+        }
+      ]
+    },
+    {
+      "index": 20,
+      "shortcode": "DYZoiPujtQS",
+      "url": "https://www.instagram.com/p/DYZoiPujtQS/",
+      "slideCount": 3,
+      "dimensions": "1080x1313",
+      "category": "humor_rotina_vestibulando",
+      "preset": "quick_tip",
+      "exams": ["Geral"],
+      "palette": ["#56441E", "#7AA881", "#829E9F", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "PELO MENOS NÃO DIRÃO QUE EU ENDOIDEI DO NADA,",
+          "body": "PORQUE VENHO DANDO SINAIS FORTÍSSIMOS DESDE O PRIMEIRO DIA QUE DECIDI PRESTAR VESTIBULAR"
+        },
+        {
+          "slide": 2,
+          "title": "começo a fazer redação, 5 minutos depois percebo que estou há meia hora assim"
+        },
+        {
+          "slide": 3,
+          "title": "\"VESTIBULANDA? ENTÃO, VOCÊ SÓ ESTUDA?\""
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "shortcode": "DX2bYQ1j0CY",
+      "url": "https://www.instagram.com/p/DX2bYQ1j0CY/",
+      "slideCount": 10,
+      "dimensions": "1080x1350",
+      "category": "eixo_interdisciplinar_coletanea",
+      "preset": "repertorio_banca",
+      "exams": ["UNICAMP", "VUNESP"],
+      "palette": ["#C93B17", "#C2B080", "#1A0502"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "Você sabia que dá para conhecer a CLT e direitos trabalhistas pelo vestibular?",
+          "body": "estude com provas anteriores e professoras atualizadas"
+        },
+        {
+          "slide": 2,
+          "title": "Por que esse tema cai no vestibular?",
+          "body": "História → Atualidade → crítica social = favorito das bancas"
+        },
+        {
+          "slide": 3,
+          "title": "História: como aparece no vestibular",
+          "body": "Era Vargas (1930-1945): discursos oficiais, legislação, cartazes do DIP. Ditadura Militar (1964-1985): charges (Henfil, Ziraldo), discursos, imprensa. Desindustrialização e precarização (1990-...): globalização, terceirização, informalidade, \"flexibilização\" das leis trabalhistas, Reforma Trabalhista."
+        },
+        {
+          "slide": 4,
+          "title": "Redação: Causa, Consequência e Repertório Legitimado",
+          "body": "Causa (quem tem responsabilidade?): Estado, Empresas, Modelo Neoliberal. Consequência (quem sofre? o que acontece?): precarização, adoecimento físico e mental, desigualdade, exclusão do mercado formal. Repertório Legitimado: Leis (CLT), História (Ditadura Militar), Autores (Karl Marx), Personalidades (Getúlio Vargas)."
+        },
+        {
+          "slide": 5,
+          "eyebrow": "Redação unicamp 2026",
+          "title": "texto 1 — Definição e direitos assegurados pela CLT"
+        },
+        {
+          "slide": 6,
+          "eyebrow": "Redação unicamp 2026",
+          "title": "texto 2 — Jornada de 8 horas e legislação da Era Vargas (Dieese / Senado)"
+        },
+        {
+          "slide": 7,
+          "eyebrow": "Redação unicamp 2026",
+          "title": "texto 3 — Criação do FGTS (1967) e impacto social em habitação e saneamento"
+        },
+        {
+          "slide": 8,
+          "eyebrow": "Redação unicamp 2026",
+          "title": "texto 4 — Direitos trabalhistas vs. mito do custo empresarial e criação do 13º salário"
+        },
+        {
+          "slide": 9,
+          "eyebrow": "Redação unicamp 2026",
+          "title": "texto 5 — Impacto econômico do 13º salário no PIB brasileiro (DIEESE)"
+        },
+        {
+          "slide": 10,
+          "title": "Perdeu a live? Comenta \"Quero\"",
+          "body": "Vamos mandar um pdf completo sobre o assunto + proposta de redação modelo VUNESP :)"
+        }
+      ]
+    },
+    {
+      "index": 22,
+      "shortcode": "DXxSQzSDwO6",
+      "url": "https://www.instagram.com/p/DXxSQzSDwO6/",
+      "slideCount": 4,
+      "dimensions": "1080x1350",
+      "category": "norma_padrao_correcao",
+      "preset": "before_after",
+      "exams": ["ENEM", "FUVEST", "VUNESP", "UNICAMP", "UERJ"],
+      "palette": ["#357989", "#DBCB8D", "#412C71", "#FFFFFF"],
+      "slides": [
+        {
+          "slide": 1,
+          "title": "\"Se eu ganhasse R$0,10 por cada erro desses na redação…\" seria milionária",
+          "body": "Palavras que os vestibulandos juram que sabem usar (versão norma-padrão)"
+        },
+        {
+          "slide": 2,
+          "title": "corroborar [verbo transitivo direto] — confirmar, comprovar, dar suporte a uma ideia",
+          "wrongText": "“As ONGs corroboram com o governo”",
+          "rightText": "“Os dados corroboram a tese apresentada”",
+          "body": "Parece chique, mas não é sinônimo de “ajudar”, nem \"colaborar\". Se liga, ein???"
+        },
+        {
+          "slide": 3,
+          "title": "têm [verbo] — forma plural do presente (eles/elas)",
+          "wrongText": "“Os brasileiros tem problemas financeiros”",
+          "rightText": "“Os brasileiros têm problemas financeiros”",
+          "body": "Esse acento parece detalhe, mas ele não é só esquecimento, é problema de concordância! Sim, seu texto tem sujeito e predicado, JU-RO"
+        },
+        {
+          "slide": 4,
+          "title": "estereótipo [substantivo masculino] — ideia simplificada e generalizante sobre um grupo",
+          "wrongText": "“Esteriótipo”, “esteriotipo”",
+          "rightText": "“Estereótipo”",
+          "body": "Aqui não é repertório, é ortografia. Erros assim são evitáveis - famoso tem que decorar - ou seja leitura frequente ajuda a não errar mais. Anota no post-it do lado da cama!"
+        }
+      ]
+    }
+  ]
+}
