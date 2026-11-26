@@ -70,9 +70,14 @@ function CharCounter({ value, max }: { value: string; max: number }) {
 export default function SocialStudio({ initialPostId }: { initialPostId?: string }) {
   const [loading, setLoading] = useState(true);
   const [authRequired, setAuthRequired] = useState(false);
+  const [authMode, setAuthMode] = useState<"email" | "pin" | "none">("none");
   const [authenticated, setAuthenticated] = useState(true);
+  const [emailInput, setEmailInput] = useState("");
+  const [codeInput, setCodeInput] = useState("");
+  const [challengeToken, setChallengeToken] = useState("");
   const [pinInput, setPinInput] = useState("");
-  const [pinError, setPinError] = useState("");
+  const [authError, setAuthError] = useState("");
+  const [authLoading, setAuthLoading] = useState(false);
 
   const [posts, setPosts] = useState<SocialPost[]>([]);
   const [theme, setTheme] = useState<SocialTheme>(DEFAULT_SOCIAL_THEME);
@@ -109,12 +114,15 @@ export default function SocialStudio({ initialPostId }: { initialPostId?: string
     try {
       const res = await fetch("/api/social/posts", { cache: "no-store" });
       if (res.status === 401) {
+        const errData = (await res.json().catch(() => ({}))) as { authMode?: "email" | "pin" | "none" };
+        setAuthMode(errData.authMode ?? "pin");
         setAuthRequired(true);
         setAuthenticated(false);
         setLoading(false);
         return;
       }
       const data = await res.json();
+      setAuthMode(data.authMode ?? "none");
       setAuthRequired(Boolean(data.authRequired));
       setAuthenticated(true);
       const list = Array.isArray(data.posts) ? (data.posts as SocialPost[]) : [];
@@ -175,19 +183,78 @@ export default function SocialStudio({ initialPostId }: { initialPostId?: string
     }));
   };
 
-  const handleUnlock = async (e: React.FormEvent) => {
+  const handleRequestCode = async (e: React.FormEvent) => {
     e.preventDefault();
-    setPinError("");
-    const res = await fetch("/api/social/posts", {
+    setAuthError("");
+    setAuthLoading(true);
+    try {
+      const res = await fetch("/api/social/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "request_code", email: emailInput }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Não foi possível enviar o código.");
+      setChallengeToken(data.challengeToken);
+      setCodeInput("");
+      notify("Código enviado para o seu e-mail!");
+    } catch (err) {
+      setAuthError(err instanceof Error ? err.message : "Erro ao enviar código.");
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleVerifyCode = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAuthError("");
+    setAuthLoading(true);
+    try {
+      const res = await fetch("/api/social/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "verify_code", challengeToken, code: codeInput }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Código inválido.");
+      setChallengeToken("");
+      setCodeInput("");
+      await loadState();
+    } catch (err) {
+      setAuthError(err instanceof Error ? err.message : "Código inválido.");
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handlePinUnlock = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setAuthError("");
+    setAuthLoading(true);
+    try {
+      const res = await fetch("/api/social/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action: "auth", pin: pinInput }),
+      });
+      if (!res.ok) {
+        setAuthError("PIN incorreto. Tente novamente.");
+        return;
+      }
+      setPinInput("");
+      await loadState();
+    } finally {
+      setAuthLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    await fetch("/api/social/posts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "auth", pin: pinInput }),
+      body: JSON.stringify({ action: "logout" }),
     });
-    if (!res.ok) {
-      setPinError("PIN incorreto. Tente novamente.");
-      return;
-    }
-    setPinInput("");
+    setChallengeToken("");
     await loadState();
   };
 
@@ -401,7 +468,7 @@ export default function SocialStudio({ initialPostId }: { initialPostId?: string
   if (authRequired && !authenticated) {
     return (
       <div className={s.shell}>
-        <form className={s.pinCard} onSubmit={handleUnlock}>
+        <div className={s.pinCard}>
           <div className={s.brandGroup}>
             <div className={s.brandDot}>TC</div>
             <div>
@@ -409,23 +476,80 @@ export default function SocialStudio({ initialPostId }: { initialPostId?: string
               <div className={s.brandSub}>Social Studio</div>
             </div>
           </div>
-          <p style={{ margin: 0, fontSize: "14px", color: "#5c6468" }}>
-            Digite o PIN de acesso para entrar no estúdio de carrosséis.
-          </p>
-          <input
-            type="password"
-            inputMode="numeric"
-            className={s.input}
-            placeholder="PIN de acesso"
-            value={pinInput}
-            onChange={e => setPinInput(e.target.value)}
-            autoFocus
-          />
-          {pinError ? <span style={{ color: "#b9382c", fontSize: "13px" }}>{pinError}</span> : null}
-          <button type="submit" className={`${s.btn} ${s.btnPrimary}`}>
-            Entrar
-          </button>
-        </form>
+
+          {authMode === "email" ? (
+            !challengeToken ? (
+              <form onSubmit={handleRequestCode} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                <p style={{ margin: 0, fontSize: "14px", color: "#5c6468" }}>
+                  Digite seu e-mail autorizado para receber um código de acesso de 6 dígitos.
+                </p>
+                <input
+                  type="email"
+                  className={s.input}
+                  placeholder="seu@email.com"
+                  value={emailInput}
+                  onChange={e => setEmailInput(e.target.value)}
+                  required
+                  autoFocus
+                />
+                {authError ? <span style={{ color: "#b9382c", fontSize: "13px" }}>{authError}</span> : null}
+                <button type="submit" className={`${s.btn} ${s.btnPrimary}`} disabled={authLoading}>
+                  {authLoading ? "Enviando código…" : "Enviar código por e-mail"}
+                </button>
+              </form>
+            ) : (
+              <form onSubmit={handleVerifyCode} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                <p style={{ margin: 0, fontSize: "14px", color: "#5c6468" }}>
+                  Enviamos um código para <strong>{emailInput}</strong>. Digite abaixo para entrar:
+                </p>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  maxLength={6}
+                  className={s.input}
+                  placeholder="Código de 6 dígitos"
+                  value={codeInput}
+                  onChange={e => setCodeInput(e.target.value)}
+                  required
+                  autoFocus
+                />
+                {authError ? <span style={{ color: "#b9382c", fontSize: "13px" }}>{authError}</span> : null}
+                <button type="submit" className={`${s.btn} ${s.btnPrimary}`} disabled={authLoading}>
+                  {authLoading ? "Verificando…" : "Entrar"}
+                </button>
+                <button
+                  type="button"
+                  className={`${s.btn} ${s.btnSmall}`}
+                  onClick={() => {
+                    setChallengeToken("");
+                    setAuthError("");
+                  }}
+                >
+                  Trocar e-mail / reenviar
+                </button>
+              </form>
+            )
+          ) : (
+            <form onSubmit={handlePinUnlock} style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+              <p style={{ margin: 0, fontSize: "14px", color: "#5c6468" }}>
+                Digite o PIN de acesso para entrar no estúdio de carrosséis.
+              </p>
+              <input
+                type="password"
+                inputMode="numeric"
+                className={s.input}
+                placeholder="PIN de acesso"
+                value={pinInput}
+                onChange={e => setPinInput(e.target.value)}
+                autoFocus
+              />
+              {authError ? <span style={{ color: "#b9382c", fontSize: "13px" }}>{authError}</span> : null}
+              <button type="submit" className={`${s.btn} ${s.btnPrimary}`} disabled={authLoading}>
+                {authLoading ? "Entrando…" : "Entrar"}
+              </button>
+            </form>
+          )}
+        </div>
       </div>
     );
   }
@@ -472,6 +596,11 @@ export default function SocialStudio({ initialPostId }: { initialPostId?: string
               disabled={saving}
             >
               {saving ? "Salvando…" : dirty ? "Salvar*" : "Salvo"}
+            </button>
+          ) : null}
+          {authRequired ? (
+            <button type="button" className={s.btn} onClick={handleLogout}>
+              Sair
             </button>
           ) : null}
         </div>

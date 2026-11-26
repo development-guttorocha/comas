@@ -1,10 +1,12 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getConfiguredAiProvider } from "@/lib/social/ai";
 import {
+  getSocialSession,
   isSocialAuthRequired,
-  isSocialAuthenticated,
   makeSessionToken,
+  sendLoginCode,
   SOCIAL_COOKIE_NAME,
+  verifyLoginCode,
   verifyPin,
 } from "@/lib/social/auth";
 import { deleteSocialPost, listSocialState, saveSocialPost, saveSocialTheme } from "@/lib/social/store";
@@ -21,22 +23,33 @@ function hasValidWebhookToken(request: NextRequest): boolean {
 
 async function authorize(request: NextRequest): Promise<boolean> {
   if (hasValidWebhookToken(request)) return true;
-  return isSocialAuthenticated();
+  const session = await getSocialSession();
+  return session.authenticated;
 }
 
 export async function GET(request: NextRequest) {
-  const authRequired = isSocialAuthRequired();
-  const authenticated = await authorize(request);
-  if (!authenticated) {
-    return NextResponse.json({ authRequired, authenticated: false }, { status: 401 });
+  const session = await getSocialSession();
+  const webhookAuthorized = hasValidWebhookToken(request);
+
+  if (!session.authenticated && !webhookAuthorized) {
+    return NextResponse.json(
+      {
+        authMode: session.authMode,
+        authRequired: session.authRequired,
+        authenticated: false,
+      },
+      { status: 401 },
+    );
   }
 
   const state = await listSocialState();
   return NextResponse.json({
     ...state,
     aiProvider: getConfiguredAiProvider(),
-    authRequired,
+    authMode: session.authMode,
+    authRequired: session.authRequired,
     authenticated: true,
+    email: session.email,
   });
 }
 
@@ -46,6 +59,37 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Corpo JSON inválido." }, { status: 400 });
   }
 
+  if (body.action === "request_code") {
+    const email = typeof body.email === "string" ? body.email : "";
+    try {
+      const { challengeToken } = await sendLoginCode(email);
+      return NextResponse.json({ challengeToken });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Erro ao enviar código.";
+      return NextResponse.json({ error: message }, { status: 400 });
+    }
+  }
+
+  if (body.action === "verify_code") {
+    const challengeToken = typeof body.challengeToken === "string" ? body.challengeToken : "";
+    const code = typeof body.code === "string" ? body.code : "";
+    try {
+      const { email } = verifyLoginCode(challengeToken, code);
+      const res = NextResponse.json({ ok: true, email });
+      res.cookies.set(SOCIAL_COOKIE_NAME, makeSessionToken(email), {
+        httpOnly: true,
+        sameSite: "lax",
+        secure: process.env.NODE_ENV === "production",
+        path: "/",
+        maxAge: 60 * 60 * 24 * 30,
+      });
+      return res;
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Código inválido.";
+      return NextResponse.json({ error: message }, { status: 401 });
+    }
+  }
+
   if (body.action === "auth") {
     const pin = typeof body.pin === "string" ? body.pin : "";
     if (!verifyPin(pin)) {
@@ -53,7 +97,7 @@ export async function POST(request: NextRequest) {
     }
     const res = NextResponse.json({ ok: true });
     if (isSocialAuthRequired()) {
-      res.cookies.set(SOCIAL_COOKIE_NAME, makeSessionToken(), {
+      res.cookies.set(SOCIAL_COOKIE_NAME, makeSessionToken("pin"), {
         httpOnly: true,
         sameSite: "lax",
         secure: process.env.NODE_ENV === "production",
