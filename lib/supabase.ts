@@ -60,13 +60,18 @@ const TIMEOUT_MS = 8_000;
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 export function getSupabaseConfig(override?: Partial<SupabaseConfig>): SupabaseConfig | null {
-  const rawUrl = (override?.url ?? process.env.SUPABASE_URL ?? "").trim().replace(/\/+$/, "");
-  const rawKey = (
-    override?.key ??
-    process.env.SUPABASE_SERVICE_ROLE_KEY ??
-    process.env.SUPABASE_SECRET_KEY ??
+  const rawUrl = (
+    override?.url?.trim() ||
+    process.env.SUPABASE_URL?.trim() ||
+    process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() ||
     ""
-  ).trim();
+  ).replace(/\/+$/, "");
+  const rawKey = (
+    override?.key?.trim() ||
+    process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() ||
+    process.env.SUPABASE_SECRET_KEY?.trim() ||
+    ""
+  );
   if (!/^https?:\/\/[^/\s]+/i.test(rawUrl) || !rawKey) return null;
   return { url: rawUrl, key: rawKey };
 }
@@ -124,31 +129,31 @@ export async function probeSupabaseSchema(override?: Partial<SupabaseConfig>): P
   }
 
   try {
-    const tableRes = await fetch(`${config.url}/rest/v1/salary_survey_responses?select=id&limit=1`, {
+    const postsRes = await fetch(`${config.url}/rest/v1/social_posts?select=id&limit=1`, {
       method: "GET",
       headers: supabaseHeaders(config.key),
       cache: "no-store",
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
 
-    if (!tableRes.ok) {
-      const err = await readErrorBody(tableRes);
-      if (isAuthFailure(tableRes.status, err.code)) {
+    if (!postsRes.ok) {
+      const err = await readErrorBody(postsRes);
+      if (isAuthFailure(postsRes.status, err.code)) {
         return {
           configured: true,
           connected: false,
           schemaReady: false,
           status: "auth_error",
-          message: "Chave do Supabase recusada. Confira a Secret Key / service_role key.",
+          message: "Chave do Supabase recusada. Use a Secret Key / service_role key (não a anon/publishable).",
         };
       }
-      if (isSchemaMissing(tableRes.status, err.code, err.message)) {
+      if (isSchemaMissing(postsRes.status, err.code, err.message)) {
         return {
           configured: true,
           connected: true,
           schemaReady: false,
           status: "schema_missing",
-          message: "Conexão OK, mas as tabelas ainda não existem. Rode o SQL no Supabase.",
+          message: "Conexão OK, mas faltam as tabelas social_posts / social_settings. Rode supabase/social_studio.sql no SQL Editor do Supabase.",
         };
       }
       return {
@@ -156,45 +161,34 @@ export async function probeSupabaseSchema(override?: Partial<SupabaseConfig>): P
         connected: false,
         schemaReady: false,
         status: "network_error",
-        message: `Supabase respondeu ${tableRes.status}: ${err.message}`,
+        message: `Supabase respondeu ${postsRes.status}: ${err.message}`,
       };
     }
 
-    const emailRes = await fetch(`${config.url}/rest/v1/salary_survey_emails?select=id&limit=1`, {
+    const settingsRes = await fetch(`${config.url}/rest/v1/social_settings?select=id&limit=1`, {
       method: "GET",
       headers: supabaseHeaders(config.key),
       cache: "no-store",
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
-    if (!emailRes.ok) {
-      const err = await readErrorBody(emailRes);
-      if (isSchemaMissing(emailRes.status, err.code, err.message)) {
+    if (!settingsRes.ok) {
+      const err = await readErrorBody(settingsRes);
+      if (isAuthFailure(settingsRes.status, err.code)) {
         return {
           configured: true,
-          connected: true,
+          connected: false,
           schemaReady: false,
-          status: "schema_missing",
-          message: "Falta a tabela de e-mails no Supabase. Rode o SQL completo no SQL Editor.",
+          status: "auth_error",
+          message: "Sem permissão na tabela social_settings. Rode supabase/social_studio.sql completo (incluindo grant all ... to service_role).",
         };
       }
-    }
-
-    const rpcRes = await fetch(`${config.url}/rest/v1/rpc/get_salary_band_stats`, {
-      method: "POST",
-      headers: supabaseHeaders(config.key),
-      body: JSON.stringify({ p_edition: "2027" }),
-      cache: "no-store",
-      signal: AbortSignal.timeout(TIMEOUT_MS),
-    });
-    if (!rpcRes.ok) {
-      const err = await readErrorBody(rpcRes);
-      if (isSchemaMissing(rpcRes.status, err.code, err.message)) {
+      if (isSchemaMissing(settingsRes.status, err.code, err.message)) {
         return {
           configured: true,
           connected: true,
           schemaReady: false,
           status: "schema_missing",
-          message: "Tabelas criadas, mas falta a função get_salary_band_stats. Rode o SQL completo.",
+          message: "Falta a tabela social_settings no Supabase. Rode supabase/social_studio.sql no SQL Editor.",
         };
       }
       return {
@@ -202,7 +196,7 @@ export async function probeSupabaseSchema(override?: Partial<SupabaseConfig>): P
         connected: true,
         schemaReady: false,
         status: "network_error",
-        message: `RPC falhou (${rpcRes.status}): ${err.message}`,
+        message: `social_settings falhou (${settingsRes.status}): ${err.message}`,
       };
     }
 
@@ -211,7 +205,7 @@ export async function probeSupabaseSchema(override?: Partial<SupabaseConfig>): P
       connected: true,
       schemaReady: true,
       status: "ready",
-      message: "Supabase conectado e estrutura pronta.",
+      message: "Supabase conectado e tabelas social_posts + social_settings prontas.",
     };
   } catch {
     return {

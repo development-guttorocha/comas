@@ -149,22 +149,45 @@ async function readSupabaseStore(): Promise<Store | null> {
   }
 }
 
-async function writeSupabaseStore(store: Store): Promise<boolean> {
+async function writeSupabaseStore(store: Store): Promise<{ ok: boolean; error?: string }> {
   const sb = getSupabaseConfig();
-  if (!sb) return false;
+  if (!sb) return { ok: false };
   const payload: CloudPayload = {
     version: 1,
     custom: store.custom,
     meta: store.meta,
     encryptedValues: encryptValues(store.values ?? {}),
   };
-  const res = await fetch(`${sb.url}/rest/v1/social_settings`, {
-    method: "POST",
-    headers: supabaseHeaders(sb.key, { Prefer: "resolution=merge-duplicates,return=minimal" }),
-    body: JSON.stringify({ id: "api_keys", theme: payload, updated_at: new Date().toISOString() }),
-    signal: AbortSignal.timeout(TIMEOUT_MS),
-  });
-  return res.ok;
+  try {
+    const res = await fetch(`${sb.url}/rest/v1/social_settings`, {
+      method: "POST",
+      headers: supabaseHeaders(sb.key, { Prefer: "resolution=merge-duplicates,return=minimal" }),
+      body: JSON.stringify({ id: "api_keys", theme: payload, updated_at: new Date().toISOString() }),
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+    });
+    if (res.ok) return { ok: true };
+    const text = await res.text().catch(() => "");
+    if (res.status === 404 || /PGRST205|does not exist|could not find the table/i.test(text)) {
+      return {
+        ok: false,
+        error:
+          "Supabase conectado, mas a tabela social_settings ainda não existe. Rode o SQL de supabase/social_studio.sql no SQL Editor do Supabase.",
+      };
+    }
+    if (res.status === 401 || res.status === 403 || /42501|PGRST301/i.test(text)) {
+      return {
+        ok: false,
+        error:
+          "Supabase recusou a gravação (401/403). Confira se SUPABASE_SERVICE_ROLE_KEY usa a chave service_role / Secret Key (não a anon/publishable) e rode o SQL completo de supabase/social_studio.sql.",
+      };
+    }
+    return { ok: false, error: `Erro ao gravar no Supabase (${res.status}): ${text.slice(0, 180)}` };
+  } catch (err) {
+    return {
+      ok: false,
+      error: err instanceof Error ? `Falha de conexão com o Supabase: ${err.message}` : "Falha de conexão com o Supabase.",
+    };
+  }
 }
 
 async function readBlobStore(): Promise<Store | null> {
@@ -306,14 +329,15 @@ async function persistCombinedStore(store: Store, envUpdates: Array<[string, str
     savedLocal = savedLocal || storeOk;
   }
 
-  const savedSupabase = await writeSupabaseStore(store);
-  const savedBlob = savedSupabase ? false : await writeBlobStore(store);
+  const sbResult = await writeSupabaseStore(store);
+  const savedBlob = sbResult.ok ? false : await writeBlobStore(store);
 
   lastHydratedAt = Date.now();
 
-  if (!savedLocal && !savedSupabase && !savedBlob) {
+  if (!savedLocal && !sbResult.ok && !savedBlob) {
     throw new Error(
-      "Para salvar chaves no ambiente publicado (Vercel), configure SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (com a tabela social_settings) ou BLOB_READ_WRITE_TOKEN nas variáveis da Vercel.",
+      sbResult.error ||
+        "Para salvar chaves no ambiente publicado (Vercel), configure SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY (com a tabela social_settings) ou BLOB_READ_WRITE_TOKEN nas variáveis da Vercel.",
     );
   }
 }
@@ -340,6 +364,11 @@ export async function hydrateRuntimeKeys(force = false): Promise<void> {
 
 const mask = (v: string) => (v.length <= 8 ? "••••" : `${v.slice(0, 4)}…${v.slice(-4)}`);
 
+const ENV_FALLBACKS: Record<string, string[]> = {
+  SUPABASE_URL: ["NEXT_PUBLIC_SUPABASE_URL"],
+  SUPABASE_SERVICE_ROLE_KEY: ["SUPABASE_SECRET_KEY"],
+};
+
 function resolveKeyValue(
   envName: string,
   storeValues: Record<string, string | null>,
@@ -350,7 +379,13 @@ function resolveKeyValue(
     if (v === null) return (PLATFORM_ENV[envName] ?? "").trim();
     if (typeof v === "string" && v.trim()) return v.trim();
   }
-  return (localEnv[envName] ?? process.env[envName] ?? PLATFORM_ENV[envName] ?? "").trim();
+  const direct = (localEnv[envName] || process.env[envName] || PLATFORM_ENV[envName] || "").trim();
+  if (direct) return direct;
+  for (const alt of ENV_FALLBACKS[envName] ?? []) {
+    const altVal = (localEnv[alt] || process.env[alt] || PLATFORM_ENV[alt] || "").trim();
+    if (altVal) return altVal;
+  }
+  return "";
 }
 
 export async function listKeys(): Promise<KeyRow[]> {
