@@ -22,7 +22,8 @@ import AdminShell from "./AdminShell";
 import BusyOverlay from "./BusyOverlay";
 import { Toast, useToast } from "./client";
 import { move } from "./Fields";
-import { CopyIcon, DownIcon, PlusIcon, SparkIcon, TrashIcon, UpIcon } from "./icons";
+import { CopyIcon, DownIcon, ImageIcon, PlusIcon, SparkIcon, TrashIcon, UpIcon } from "./icons";
+import MuapiGeneratorDialog from "./MuapiGeneratorDialog";
 import Skeleton from "./Skeleton";
 import styles from "./admin.module.css";
 import c from "./caseEditor.module.css";
@@ -75,6 +76,7 @@ export default function SocialPostEditor({ id }: { id: string }) {
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [busyLabel, setBusyLabel] = useState("");
+  const [muapiOpen, setMuapiOpen] = useState(false);
 
   // AI Proposal & Undo (same pattern as CaseEditor)
   const [proposal, setProposal] = useState<SocialPost | null>(null);
@@ -592,6 +594,48 @@ export default function SocialPostEditor({ id }: { id: string }) {
                       />
                     </label>
                   ) : null}
+
+                  <div className={`${styles.field} ${styles.fieldWide}`} style={{ paddingTop: 10, borderTop: "1px solid var(--line)" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+                      <span className={styles.label}>Imagem de fundo editorial (MuAPI)</span>
+                      <div style={{ display: "flex", gap: 6 }}>
+                        <button
+                          type="button"
+                          className={`${styles.button} ${styles.small}`}
+                          onClick={() => setMuapiOpen(true)}
+                        >
+                          <ImageIcon />Gerar imagem com MuAPI
+                        </button>
+                        {activeSlide.imageUrl ? (
+                          <button
+                            type="button"
+                            className={`${styles.button} ${styles.ghost} ${styles.small}`}
+                            onClick={() => patchSlide({ imageUrl: undefined })}
+                          >
+                            Remover imagem
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+                    {activeSlide.imageUrl ? (
+                      <div style={{ display: "grid", gap: 8, marginTop: 6 }}>
+                        <label className={styles.rangeField}>
+                          <span className={styles.rangeHead}>
+                            <span>Véu de leitura sobre a imagem</span>
+                            <strong>{Math.round((activeSlide.imageOverlay ?? 0.78) * 100)}%</strong>
+                          </span>
+                          <input
+                            type="range"
+                            min={0.25}
+                            max={0.92}
+                            step={0.03}
+                            value={activeSlide.imageOverlay ?? 0.78}
+                            onChange={e => patchSlide({ imageOverlay: Number(e.target.value) })}
+                          />
+                        </label>
+                      </div>
+                    ) : null}
+                  </div>
                 </div>
               </div>
             ) : null}
@@ -733,6 +777,21 @@ export default function SocialPostEditor({ id }: { id: string }) {
           </div>
         ))}
       </div>
+
+      <MuapiGeneratorDialog
+        open={muapiOpen}
+        kindFilter="image"
+        inlineDataUrl
+        defaultPrompt={`Fotografia editorial minimalista e acolhedora sobre escrita e leitura, papel creme texturizado, luz suave da manhã, estética ${theme.brandName}, sem palavras escritas`}
+        onResult={(url, meta) => {
+          patchSlide({ imageUrl: url });
+          show(
+            meta.costUsd ? `Imagem gerada na MuAPI ($${meta.costUsd.toFixed(4)}).` : "Imagem gerada na MuAPI!",
+            "good",
+          );
+        }}
+        onClose={() => setMuapiOpen(false)}
+      />
 
       <BusyOverlay label={busyLabel} />
       <Toast toast={toast} />

@@ -18,6 +18,10 @@ export type SocialSlide = {
   author?: string;
   /** Optional step badge (e.g. "01") */
   stepNumber?: string;
+  /** Optional AI-generated or uploaded background image (e.g. via MuAPI) */
+  imageUrl?: string;
+  /** Overlay darkness over imageUrl (0.15 to 0.9, default 0.72) */
+  imageOverlay?: number;
 };
 
 export type SocialFormat = "carousel" | "single_card" | "reel";

@@ -35,23 +35,52 @@ export default function SlideCanvas({ slide, index, total, theme }: SlideCanvasP
   };
 
   const slideNum = `${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
+  const overlayAlpha = typeof slide.imageOverlay === "number" ? slide.imageOverlay : 0.78;
 
   return (
     <div style={rootStyle}>
-      {/* Subtle decorative corner accent */}
-      <div
-        style={{
-          position: "absolute",
-          top: "-180px",
-          right: "-180px",
-          width: "460px",
-          height: "460px",
-          borderRadius: "999px",
-          backgroundColor: palette.accentSoft,
-          opacity: slide.kind === "cover" || slide.kind === "cta" ? 0.65 : 0.3,
-          pointerEvents: "none",
-        }}
-      />
+      {slide.imageUrl ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={slide.imageUrl}
+            alt=""
+            crossOrigin="anonymous"
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundColor: palette.background,
+              opacity: overlayAlpha,
+              pointerEvents: "none",
+            }}
+          />
+        </>
+      ) : (
+        /* Subtle decorative corner accent */
+        <div
+          style={{
+            position: "absolute",
+            top: "-180px",
+            right: "-180px",
+            width: "460px",
+            height: "460px",
+            borderRadius: "999px",
+            backgroundColor: palette.accentSoft,
+            opacity: slide.kind === "cover" || slide.kind === "cta" ? 0.65 : 0.3,
+            pointerEvents: "none",
+          }}
+        />
+      )}
 
       {/* Top header */}
       <div

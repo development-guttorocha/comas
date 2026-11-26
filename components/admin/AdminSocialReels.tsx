@@ -12,8 +12,9 @@ import { Toast, useToast } from "./client";
 import { CropProvider } from "./CropDialog";
 import { MediaProvider } from "./MediaPicker";
 import type { ReelProposal } from "./ReelStudio";
+import MuapiGeneratorDialog from "./MuapiGeneratorDialog";
 import Skeleton from "./Skeleton";
-import { PlusIcon, TrashIcon } from "./icons";
+import { ImageIcon, PlayIcon, PlusIcon, TrashIcon } from "./icons";
 import styles from "./admin.module.css";
 
 const ReelStudio = dynamic(() => import("./ReelStudio"), {
@@ -29,6 +30,8 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
   const [saving, setSaving] = useState(false);
   const [proposal, setProposal] = useState<ReelProposal | null>(null);
   const [undo, setUndo] = useState<ReelDoc | null>(null);
+  const [muapiKind, setMuapiKind] = useState<"image" | "video" | null>(null);
+  const [lastMuapiVideo, setLastMuapiVideo] = useState<string>("");
   const { toast, show } = useToast();
 
   useEffect(() => {
@@ -142,6 +145,12 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
               {saving ? "Salvando…" : dirty ? "Alterações não salvas" : "Salvo"}
             </span>
           ) : null}
+          <button type="button" className={styles.button} onClick={() => setMuapiKind("image")}>
+            <ImageIcon />Cena IA (MuAPI)
+          </button>
+          <button type="button" className={styles.button} onClick={() => setMuapiKind("video")}>
+            <PlayIcon />Clipe IA (MuAPI)
+          </button>
           <button type="button" className={styles.button} onClick={createNewReel}>
             <PlusIcon />Novo vídeo
           </button>
@@ -162,6 +171,22 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
         <MediaProvider folder="cases" slug="texto-em-ciclo">
           <div className={styles.sheet}>
             <div className={styles.page} data-wide>
+              {lastMuapiVideo ? (
+                <div className={styles.panel} style={{ padding: 12, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, background: "var(--raised)" }}>
+                  <span style={{ fontSize: 13 }}>
+                    <strong>Clipe 9:16 gerado na MuAPI:</strong> pronto para baixar ou usar como B-roll.
+                  </span>
+                  <div style={{ display: "flex", gap: 8 }}>
+                    <a href={lastMuapiVideo} target="_blank" rel="noreferrer" download className={`${styles.button} ${styles.primary} ${styles.small}`}>
+                      Abrir / Baixar MP4
+                    </a>
+                    <button type="button" className={`${styles.button} ${styles.ghost} ${styles.small}`} onClick={() => setLastMuapiVideo("")}>
+                      Fechar
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+
               {reels && reels.length > 0 ? (
                 <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
                   <div className={styles.tabs} role="tablist" aria-label="Vídeos salvos">
@@ -210,6 +235,35 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
               ) : null}
             </div>
           </div>
+
+          <MuapiGeneratorDialog
+            open={muapiKind !== null}
+            kindFilter={muapiKind ?? "image"}
+            onResult={(url, meta) => {
+              if (muapiKind === "video") {
+                setLastMuapiVideo(url);
+                show(meta.costUsd ? `Clipe gerado na MuAPI ($${meta.costUsd.toFixed(4)})!` : "Clipe gerado na MuAPI!", "good");
+              } else if (current?.reel) {
+                const doc = current.reel;
+                const nextScene = {
+                  id: `muapi-${Date.now().toString(36)}`,
+                  kind: "image" as const,
+                  at: doc.end,
+                  enter: "fade" as const,
+                  src: url,
+                  caption: theme.brandName,
+                };
+                updateCurrentReel({
+                  ...doc,
+                  end: doc.end + 12,
+                  scenes: [...doc.scenes, nextScene],
+                });
+                show(meta.costUsd ? `Cena adicionada na timeline ($${meta.costUsd.toFixed(4)})!` : "Cena adicionada na timeline!", "good");
+              }
+            }}
+            onClose={() => setMuapiKind(null)}
+          />
+
           <Toast toast={toast} />
         </MediaProvider>
       </CropProvider>

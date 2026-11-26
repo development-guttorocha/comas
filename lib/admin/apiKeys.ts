@@ -17,7 +17,7 @@ export type KeyProvider = {
   /** Where to create or renew the key. */
   console?: string;
   /** How the admin checks that the key still works; absent when the provider has no simple check. */
-  test?: "openai" | "anthropic" | "deepseek" | "gemini" | "supabase";
+  test?: "openai" | "anthropic" | "deepseek" | "gemini" | "muapi" | "supabase";
   kind?: "ai" | "service" | "url";
   preset?: boolean;
 };
@@ -27,6 +27,7 @@ export const PRESET_PROVIDERS: KeyProvider[] = [
   { id: "anthropic", label: "Claude (Anthropic)", env: "ANTHROPIC_API_KEY", console: "https://console.anthropic.com/settings/keys", test: "anthropic", preset: true },
   { id: "deepseek", label: "DeepSeek", env: "DEEPSEEK_API_KEY", console: "https://platform.deepseek.com/api_keys", test: "deepseek", preset: true },
   { id: "antigravity", label: "Antigravity (Gemini)", env: "GEMINI_API_KEY", console: "https://aistudio.google.com/apikey", test: "gemini", preset: true },
+  { id: "muapi", label: "MuAPI (Imagens, Vídeos e Áudio)", env: "MUAPI_API_KEY", console: "https://muapi.ai/dashboard", test: "muapi", preset: true },
   { id: "higgsfield", label: "Higgsfield", env: "HIGGSFIELD_API_KEY", console: "https://cloud.higgsfield.ai/api-keys", preset: true },
   { id: "supabase-url", label: "Supabase (URL do projeto)", env: "SUPABASE_URL", console: "https://supabase.com/dashboard/projects", preset: true, kind: "url" },
   { id: "supabase-key", label: "Supabase (Secret / Service Role Key)", env: "SUPABASE_SERVICE_ROLE_KEY", console: "https://supabase.com/dashboard/projects", test: "supabase", preset: true, kind: "service" },
@@ -141,7 +142,10 @@ export async function saveKey(input: { id?: string; label?: string; env?: string
       await writeEnvVar(modelEnvFor(provider.env), meta.model ?? null);
     }
     if (input.reasoning !== undefined) {
-      const allowed = provider.test && provider.test !== "supabase" ? REASONING_LEVELS[provider.test] ?? [] : [];
+      const allowed =
+        provider.test && provider.test !== "supabase" && provider.test !== "muapi"
+          ? REASONING_LEVELS[provider.test] ?? []
+          : [];
       meta.reasoning = allowed.some(l => l.value === input.reasoning) ? input.reasoning : undefined;
       await writeEnvVar(reasoningEnvFor(provider.env), meta.reasoning ?? null);
     }
@@ -166,6 +170,20 @@ export async function removeKey(id: string) {
 /** One cheap read on the provider's API (the model list), with the key on this machine. */
 type AiProviderTest = Exclude<NonNullable<KeyProvider["test"]>, "supabase">;
 function parseModels(kind: AiProviderTest, data: unknown): string[] {
+  if (kind === "muapi") {
+    const arr = Array.isArray(data)
+      ? data
+      : Array.isArray((data as { models?: unknown[] })?.models)
+        ? (data as { models: unknown[] }).models
+        : Array.isArray((data as { data?: unknown[] })?.data)
+          ? (data as { data: unknown[] }).data
+          : [];
+    const ids = arr.map(m => {
+      const r = (m ?? {}) as Record<string, unknown>;
+      return String(r.slug ?? r.endpoint ?? r.id ?? r.name ?? "");
+    });
+    return [...new Set(ids.filter(Boolean))].sort();
+  }
   const d = data as { data?: Array<{ id?: string }>; models?: Array<{ name?: string; supportedGenerationMethods?: string[] }> };
   const ids = kind === "gemini"
     ? (d.models ?? []).filter(m => m.supportedGenerationMethods?.includes("generateContent")).map(m => (m.name ?? "").replace(/^models\//, ""))
@@ -192,11 +210,25 @@ export async function testKey(id: string): Promise<{ ok: boolean; message: strin
     deepseek: ["https://api.deepseek.com/models", { Authorization: `Bearer ${key}` }],
     anthropic: ["https://api.anthropic.com/v1/models", { "x-api-key": key, "anthropic-version": "2023-06-01" }],
     gemini: ["https://generativelanguage.googleapis.com/v1beta/models", { "x-goog-api-key": key }],
+    muapi: ["https://api.muapi.ai/api/v1/account/balance", { "x-api-key": key }],
   };
   const [url, headers] = request[provider.test];
   try {
     const response = await fetch(url, { headers, signal: AbortSignal.timeout(10_000) });
-    if (response.ok) return { ok: true, message: "Chave funcionando.", models: parseModels(provider.test, await response.json().catch(() => ({}))) };
+    if (response.ok) {
+      const json = await response.json().catch(() => ({}));
+      if (provider.test === "muapi") {
+        const bal = (json as Record<string, unknown>)?.balance ?? (json as Record<string, unknown>)?.credits;
+        const modelsRes = await fetch("https://api.muapi.ai/api/v1/models", { headers, signal: AbortSignal.timeout(8_000) }).catch(() => null);
+        const modelsJson = modelsRes?.ok ? await modelsRes.json().catch(() => ({})) : {};
+        return {
+          ok: true,
+          message: bal !== undefined ? `Chave funcionando · Saldo: ${bal}` : "Chave MuAPI funcionando.",
+          models: parseModels("muapi", modelsJson),
+        };
+      }
+      return { ok: true, message: "Chave funcionando.", models: parseModels(provider.test, json) };
+    }
     return { ok: false, message: response.status === 401 || response.status === 403 ? "Chave recusada (inválida ou revogada)." : `O provedor respondeu ${response.status}.` };
   } catch {
     return { ok: false, message: "Não foi possível falar com o provedor." };

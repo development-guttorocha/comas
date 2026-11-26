@@ -3,6 +3,13 @@
     "shadcn": {
       "command": "npx",
       "args": ["shadcn@latest", "mcp"]
+    },
+    "muapi": {
+      "command": "npx",
+      "args": ["-y", "muapi-cli", "mcp", "serve"],
+      "env": {
+        "MUAPI_API_KEY": "${MUAPI_API_KEY}"
+      }
     }
   }
 }
