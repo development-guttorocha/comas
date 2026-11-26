@@ -1,17 +1,5 @@
-import type { Metadata } from "next";
-import SocialStudio from "@/components/social/SocialStudio";
+import { redirect } from "next/navigation";
 
-export const metadata: Metadata = {
-  title: "Social Studio · Texto em Ciclo",
-  description: "Gerador de carrosséis e conteúdo editorial para Texto em Ciclo.",
-  robots: { index: false, follow: false },
-};
-
-export default async function SocialStudioPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ id?: string }>;
-}) {
-  const params = await searchParams;
-  return <SocialStudio initialPostId={params.id} />;
+export default function SocialRedirectPage() {
+  redirect("/admin/social");
 }

@@ -49,7 +49,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({
       post,
-      editUrl: `/social?id=${encodeURIComponent(post.id)}`,
+      editUrl: `/admin/social?id=${encodeURIComponent(post.id)}`,
     });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Erro ao gerar conteúdo com IA.";

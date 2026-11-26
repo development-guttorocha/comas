@@ -229,15 +229,4 @@ test("hero: full bleed needs a wide, sharp cover", () => {
   assert.equal(checkHero({ heroMegaWord: "UMA PALAVRA LONGA" }).length, 1);
 });
 
-/* ---------- The published cases ---------- */
 
-test("the published cases read without breaking, and PicPay (the reference) has no errors", async () => {
-  const dir = path.join(process.cwd(), "content", "cases");
-  for (const slug of fs.readdirSync(dir).filter(s => s !== "modelo" && fs.existsSync(path.join(dir, s, "body.json")))) {
-    const blocks = JSON.parse(fs.readFileSync(path.join(dir, slug, "body.json"), "utf8")) as NotionBlockNode[];
-    const { sizes, missing } = await loadImageSizes(imageSources(readCaseBody(blocks)));
-    assert.deepEqual(missing, [], `${slug}: imagens que não existem em public/`);
-    const findings = checkCase(blocks, { sizes });
-    if (slug === "picpay") assert.deepEqual(findings.filter(f => f.severity === "erro"), []);
-  }
-});

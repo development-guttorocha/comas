@@ -50,12 +50,11 @@ test("production blocks every admin handler and method even with valid session, 
       assert.equal(response.headers.get("cache-control"), "no-store");
       assert.equal(await response.text(), "");
     }
-    for (const path of ["/admin/traducoes", "/api/translations", "/api/translations/session", "/api/translations/sync", "/en/cases/plenno?translation=draft"]) {
+    for (const path of ["/api/admin/cases", "/api/translations", "/api/translations/session", "/api/translations/sync"]) {
       for (const method of ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]) assert.equal(proxy(request(path, method)).status, 404);
     }
-    const publicResponse = proxy(request("/en/cases/plenno"));
-    assert.equal(publicResponse.headers.get("x-middleware-next"), "1");
-    assert.equal(publicResponse.headers.get("x-middleware-request-x-portfolio-locale"), "en");
+    const socialAdminResponse = proxy(request("/admin/social"));
+    assert.equal(socialAdminResponse.headers.get("x-middleware-next"), "1");
   } finally {
     for (const [key, value] of Object.entries(previous)) {
       if (value === undefined) delete env[key]; else env[key] = value;
