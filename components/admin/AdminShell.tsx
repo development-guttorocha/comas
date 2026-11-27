@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowIcon, CloseIcon, GearIcon, GridIcon, ImageIcon, KeyIcon, LogoMark, MoreIcon, PagesIcon, PlayIcon } from "./icons";
+import { ArrowIcon, CloseIcon, GearIcon, GridIcon, ImageIcon, KeyIcon, LogoMark, MessageIcon, MoreIcon, PagesIcon, PlayIcon } from "./icons";
 import AdminAuthGate, { getCachedEmail, logoutAdminSession } from "./AdminAuthGate";
 import AdminLock, { LockButton } from "./AdminLock";
+import CreatorFeedbackDialog from "./CreatorFeedbackDialog";
 import styles from "./admin.module.css";
 
 export type Crumb = { label: string; href?: string };
@@ -35,6 +36,7 @@ export default function AdminShell({
   const pathname = usePathname() ?? "";
   const current = currentArea(pathname);
   const [signingOut, setSigningOut] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
   const email = getCachedEmail();
 
   if (immersive) {
@@ -62,6 +64,14 @@ export default function AdminShell({
             </Link>
           ))}
           <span className={styles.railSpacer} />
+          <button
+            type="button"
+            className={styles.railButton}
+            title="Falar com o criador · Feedback ou ajuda"
+            onClick={() => setFeedbackOpen(true)}
+          >
+            <MessageIcon /><span className={styles.navLabel}>Feedback</span>
+          </button>
           <Link href="/admin/carrosseis" className={styles.railButton} title="Modo formulário (clássico)" aria-current={within(pathname, "/admin/carrosseis") ? "page" : undefined}>
             <GridIcon /><span className={styles.navLabel}>Modo formulário</span>
           </Link>
@@ -94,6 +104,7 @@ export default function AdminShell({
         </header>
         <main id="admin-main" tabIndex={-1} className={styles.main}>{children}</main>
         <AdminLock />
+        <CreatorFeedbackDialog open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
       </div>
     </AdminAuthGate>
   );

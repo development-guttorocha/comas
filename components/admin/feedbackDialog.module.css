@@ -1,0 +1,254 @@
+/* Creator Feedback / Help Dialog */
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(540px, calc(100vw - 28px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  padding: 0;
+  border: 1px solid #e2e4f0;
+  border-radius: 18px;
+  background: #ffffff;
+  color: #181926;
+  box-shadow: 0 32px 72px -24px rgb(18 19 36 / 34%);
+}
+
+.dialog::backdrop {
+  background: rgb(18 19 30 / 48%);
+  backdrop-filter: blur(4px);
+}
+
+.body {
+  display: grid;
+  gap: 16px;
+  padding: 22px 24px 20px;
+}
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #181926;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #636884;
+}
+
+.closeBtn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e6e8f2;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #5b6078;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.closeBtn:hover {
+  background: #f4f5fa;
+  color: #181926;
+}
+
+.section {
+  display: grid;
+  gap: 8px;
+}
+
+.label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #34384f;
+}
+
+.starsRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.starBtn {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid #e6e8f2;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #c2c6d8;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform .12s, border-color .12s, color .12s, background-color .12s;
+}
+.starBtn:hover {
+  transform: scale(1.06);
+  border-color: #f0b429;
+  color: #e5a000;
+}
+.starBtn[data-active="true"] {
+  border-color: #f0b429;
+  background: #fffbeb;
+  color: #e5a000;
+}
+
+.starCaption {
+  margin-left: 6px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #636884;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border: 1.5px solid #e4e6f0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #464b65;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .15s, background-color .15s, color .15s;
+}
+.chip:hover {
+  background: #f6f7fc;
+  color: #181926;
+}
+.chip[aria-pressed="true"] {
+  border-color: #d9266f;
+  background: #fff5f9;
+  color: #b81d5c;
+  font-weight: 600;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 112px;
+  padding: 12px 14px;
+  border: 1.5px solid #dfe2ee;
+  border-radius: 12px;
+  background: #f8f9fd;
+  color: #181926;
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+.textarea:focus {
+  outline: none;
+  border-color: #5b46e5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgb(91 70 229 / 12%);
+}
+
+.error {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.successBox {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+}
+.successBox strong {
+  font-size: 15px;
+}
+.successBox p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.historyToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e8eaf3;
+  border-radius: 10px;
+  background: #fafafd;
+  color: #4d526c;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.historyToggle:hover {
+  background: #f2f4fa;
+}
+
+.historyList {
+  display: grid;
+  gap: 8px;
+  max-height: 210px;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.historyItem {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid #eceef6;
+  border-radius: 10px;
+  background: #ffffff;
+  font-size: 12.5px;
+}
+
+.historyMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: #6b708b;
+  font-size: 11.5px;
+}
+
+.historyMsg {
+  margin: 0;
+  color: #181926;
+  line-height: 1.45;
+  white-space: pre-wrap;
+}

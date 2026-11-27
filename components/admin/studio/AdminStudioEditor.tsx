@@ -53,9 +53,10 @@ import CanvasSlideView, { type TextSelectionRange } from "@/components/social/Ca
 import AdminShell from "../AdminShell";
 import BusyOverlay from "../BusyOverlay";
 import { api, Toast, useToast } from "../client";
+import CreatorFeedbackDialog from "../CreatorFeedbackDialog";
 import { CropProvider } from "../CropDialog";
 import { move } from "../Fields";
-import { CopyIcon, PlusIcon, SparkIcon, TrashIcon, UploadIcon } from "../icons";
+import { CopyIcon, MessageIcon, PlusIcon, SparkIcon, TrashIcon, UploadIcon } from "../icons";
 import { MediaProvider, useMediaPicker } from "../MediaPicker";
 import MuapiGeneratorDialog from "../MuapiGeneratorDialog";
 import Skeleton from "../Skeleton";
@@ -294,6 +295,7 @@ function StudioInner({
   const [roteiroRevision, setRoteiroRevision] = useState(0);
   const [pendingBlocks, setPendingBlocks] = useState<StudioBlockJson[] | null>(null);
   const [downloadOpen, setDownloadOpen] = useState(false);
+  const [feedbackOpen, setFeedbackOpen] = useState(false);
 
   // Canvas selection & zoom
   const [selectedSlideIdx, setSelectedSlideIdx] = useState(0);
@@ -930,6 +932,15 @@ function StudioInner({
               onClick={handleRedo}
             >
               ↷
+            </button>
+            <button
+              type="button"
+              className={st.iconAction}
+              title="Falar com o criador · Feedback ou ajuda"
+              aria-label="Falar com o criador"
+              onClick={() => setFeedbackOpen(true)}
+            >
+              <MessageIcon />
             </button>
             <button
               type="button"
@@ -2044,6 +2055,7 @@ function StudioInner({
 
       {leaveGuard.dialog}
       <BusyOverlay label={busyLabel} />
+      <CreatorFeedbackDialog open={feedbackOpen} onClose={() => setFeedbackOpen(false)} />
       <Toast toast={toast} onClose={clear} />
     </>
   );

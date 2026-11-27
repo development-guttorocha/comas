@@ -66,3 +66,4 @@ export const MoreIcon = () => <Icon><path d="M6 12h.01M12 12h.01M18 12h.01" stro
 export const ArchiveIcon = () => <Icon><rect x="4" y="5" width="16" height="4" rx="1" /><path d="M5.5 9v9a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1V9M10 13h4" /></Icon>;
 export const BarChartIcon = () => <Icon><path d="M4 20h16M7 16v-5M12 16V6M17 16v-8" /></Icon>;
 export const MailIcon = () => <Icon><rect x="3.5" y="5.5" width="17" height="13" rx="2" /><path d="m4.5 7 7.5 5.5L19.5 7" /></Icon>;
+export const MessageIcon = () => <Icon><path d="M5 6.5A2.5 2.5 0 0 1 7.5 4h9A2.5 2.5 0 0 1 19 6.5v6A2.5 2.5 0 0 1 16.5 15H10l-4.2 3.4A.5.5 0 0 1 5 18v-11.5Z" /><path d="M8.5 8.5h7M8.5 11.5h4.5" /></Icon>;
