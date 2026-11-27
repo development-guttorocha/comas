@@ -3,7 +3,7 @@ import SocialPostEditor from "@/components/admin/SocialPostEditor";
 import { requireSocialSession } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Editor de Carrossel · Admin · Texto em Ciclo",
+  title: "Editor de Carrossel · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

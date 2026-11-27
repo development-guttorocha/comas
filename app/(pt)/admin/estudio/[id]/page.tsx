@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AdminStudioEditor from "@/components/admin/studio/AdminStudioEditor";
 
 export const metadata: Metadata = {
-  title: "Documento · Estúdio · Texto em Ciclo",
+  title: "Documento · Estúdio · Comas",
   robots: { index: false, follow: false },
 };
 

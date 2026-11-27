@@ -3,7 +3,7 @@ import AdminSocialBrand from "@/components/admin/AdminSocialBrand";
 import { requireSocialSession } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Marca · Admin · Texto em Ciclo",
+  title: "Marca · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

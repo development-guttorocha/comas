@@ -5,7 +5,7 @@ import AdminSocialReels from "@/components/admin/AdminSocialReels";
 import { requireSocialSession } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Reels · Admin · Texto em Ciclo",
+  title: "Reels · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

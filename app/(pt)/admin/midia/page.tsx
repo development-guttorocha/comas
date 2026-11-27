@@ -3,7 +3,7 @@ import AdminSocialMedia from "@/components/admin/AdminSocialMedia";
 import { requireSocialSession } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Mídia · Admin · Texto em Ciclo",
+  title: "Mídia · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

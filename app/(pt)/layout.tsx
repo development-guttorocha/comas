@@ -30,8 +30,8 @@ const studioHand = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Texto em Ciclo · Admin",
-  description: "Estúdio de automação editorial e redes sociais para Texto em Ciclo.",
+  title: "Comas · Admin",
+  description: "Estúdio de automação editorial e redes sociais Comas.",
   robots: { index: false, follow: false },
 };
 

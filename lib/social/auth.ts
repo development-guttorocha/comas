@@ -7,8 +7,8 @@ export const SOCIAL_COOKIE_NAME = "texto_em_ciclo_session";
 const SESSION_TTL_MS = 1000 * 60 * 60 * 24 * 30; // 30 days
 const SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 30;
 const CODE_TTL_MS = 1000 * 60 * 10; // 10 minutes
-const DEFAULT_AUTH_FROM = "Texto em Ciclo <oi@guttorocha.com.br>";
-const FALLBACK_RESEND_FROM = "Texto em Ciclo <onboarding@resend.dev>";
+const DEFAULT_AUTH_FROM = "Comas <oi@guttorocha.com.br>";
+const FALLBACK_RESEND_FROM = "Comas <onboarding@resend.dev>";
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export type AuthMode = "email" | "unconfigured";
@@ -332,10 +332,10 @@ async function postResendOtpEmail({
     body: JSON.stringify({
       from,
       to: [to],
-      subject: `Seu código de acesso: ${code} · Texto em Ciclo`,
+      subject: `Seu código de acesso: ${code} · Comas`,
       html: `
         <div style="font-family:sans-serif;max-width:460px;margin:0 auto;padding:24px;color:#1e2a2f">
-          <h2 style="margin:0 0 12px">Texto em Ciclo · Admin</h2>
+          <h2 style="margin:0 0 12px">Comas · Admin</h2>
           <p style="margin:0 0 18px;font-size:15px;line-height:1.5">
             Use o código abaixo para entrar no painel. Ele expira em 10 minutos.
           </p>
@@ -344,7 +344,7 @@ async function postResendOtpEmail({
           </div>
         </div>
       `,
-      text: `Texto em Ciclo · Admin\n\nSeu código de acesso (válido por 10 minutos): ${code}`,
+      text: `Comas · Admin\n\nSeu código de acesso (válido por 10 minutos): ${code}`,
     }),
     cache: "no-store",
     signal: AbortSignal.timeout(10_000),
