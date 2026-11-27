@@ -322,12 +322,12 @@ export function newScene(kind: SceneKind, at: number, id: string): ReelScene {
     case "quote": return { ...base, kind, quote: "O que alguém disse sobre *o trabalho*.", author: "Nome", role: "Cargo, empresa" };
     case "role": return { ...base, kind, heading: "O que eu *liderei*", facts: [{ label: "Função", value: "Head de Design" }, { label: "Time", value: "8 designers" }, { label: "Tempo", value: "18 meses" }] };
     case "delta": return { ...base, kind, label: "Tempo para *publicar*", before: { value: 14, caption: "antes" }, after: { value: 2, caption: "depois" }, suffix: "dias" };
-    case "end": return { ...base, kind, lines: ["Uma frase", "*para fechar*"], signature: "Gutto Rocha" };
+    case "end": return { ...base, kind, lines: ["Salve este vídeo", "*para revisar*"], signature: "@textoemciclo" };
   }
 }
 
 /** A new video starts as a draft: it reaches the site only when published. */
-export const newReel = (accent: string, title: string, track: string): ReelDoc => ({
+export const newReel = (accent: string, title: string, track: string, signature = "@textoemciclo"): ReelDoc => ({
   draft: true,
   track,
   end: 64,
@@ -335,5 +335,8 @@ export const newReel = (accent: string, title: string, track: string): ReelDoc =
   cover: 4,
   accent,
   title,
-  scenes: [newScene("title", 0, "abertura"), newScene("end", 32, "fim")].map((s, i) => (i === 0 ? { ...s, chapter: "Abertura" } : s)),
+  scenes: [
+    { ...newScene("title", 0, "abertura"), chapter: "Abertura" },
+    { id: "fim", kind: "end", at: 32, enter: "fade", lines: ["Salve este vídeo", "*para revisar*"], signature },
+  ],
 });

@@ -154,7 +154,7 @@ export default function AdminReelsGallery({ tracks }: { tracks: ReelTrack[] }) {
       const now = new Date().toISOString();
       const title = idea.trim() ? idea.trim().slice(0, 64) : "Novo vídeo · Texto em Ciclo";
       const doc: ReelDoc = {
-        ...newReel(theme.palette.accent || "#3E2A8D", title, tracks[0]?.id ?? "bull"),
+        ...newReel(theme.palette.accent || "#3E2A8D", title, tracks[0]?.id ?? "bull", theme.handle || "@textoemciclo"),
         aspect: "9:16",
       };
       const post: SocialPost = {

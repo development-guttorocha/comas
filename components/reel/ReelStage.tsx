@@ -65,6 +65,7 @@ export default function ReelStage({
   scale,
   reducedMotion,
   onReady,
+  hideDefaultCta,
 }: {
   doc: ReelDoc;
   track: ReelTrack;
@@ -73,6 +74,8 @@ export default function ReelStage({
   reducedMotion: boolean;
   /** called once, with the frame function, when fonts and images are ready */
   onReady: (frame: (t: number) => void) => void;
+  /** When true, omits the portfolio fallback CTA ("Ver serviços"). */
+  hideDefaultCta?: boolean;
 }) {
   const rootRef = useRef<HTMLDivElement>(null);
   const frameRef = useRef<(t: number) => void>(() => {});
@@ -209,11 +212,12 @@ export default function ReelStage({
   }, []);
 
   const aspect = doc.aspect ?? "16:9";
+  const stageCta = hideDefaultCta || aspect === "9:16" ? doc.cta?.label : (doc.cta ?? DEFAULT_CTA).label;
 
   return (
     <div ref={rootRef} className={s.stage} data-aspect={aspect} style={{ transform: `scale(${scale})` }} aria-hidden>
       {doc.scenes.map((scene) => (
-        <SceneMarkup key={scene.id} scene={scene} accent={doc.accent} cta={(doc.cta ?? DEFAULT_CTA).label} lang={doc.lang ?? "pt"} prepared={doc.prepared} aspect={aspect} />
+        <SceneMarkup key={scene.id} scene={scene} accent={doc.accent} cta={stageCta} lang={doc.lang ?? "pt"} prepared={doc.prepared} aspect={aspect} />
       ))}
       <div data-k="flash" className={s.flash} style={{ background: doc.accent }} />
       <div data-k="ambient" className={s.ambient} style={{ ["--accent" as string]: doc.accent }} />

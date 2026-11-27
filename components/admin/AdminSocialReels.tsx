@@ -47,12 +47,26 @@ export default function AdminSocialReels({ id, tracks }: { id: string; tracks: R
       .then(data => {
         if (!data) return;
         const all = Array.isArray(data.posts) ? (data.posts as SocialPost[]) : [];
-        if (data.theme) setTheme(data.theme as SocialTheme);
+        const loadedTheme = (data.theme as SocialTheme | undefined) ?? DEFAULT_SOCIAL_THEME;
+        if (data.theme) setTheme(loadedTheme);
         const found = all.find(p => p.id === id) ?? null;
         if (found && found.reel) {
+          const handle = loadedTheme.handle || "@textoemciclo";
+          const cleanedScenes = found.reel.scenes.map(sc =>
+            sc.kind === "end" && sc.signature?.toLowerCase().includes("gutto")
+              ? { ...sc, signature: handle }
+              : sc,
+          );
+          const cleanedCta =
+            found.reel.cta?.label?.toLowerCase() === "ver serviços" ? undefined : found.reel.cta;
           setCurrent({
             ...found,
-            reel: { ...found.reel, aspect: found.reel.aspect ?? "9:16" },
+            reel: {
+              ...found.reel,
+              aspect: found.reel.aspect ?? "9:16",
+              cta: cleanedCta,
+              scenes: cleanedScenes,
+            },
           });
         } else {
           setCurrent(found);

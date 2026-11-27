@@ -1006,7 +1006,7 @@ function Studio({ reel, tracks, socialMode, onChange, onGenerate, onAdvanced, on
       <div className={s.main} data-aspect={aspect}>
         <div className={s.stageCol}>
           <div ref={stageRef} className={s.stage} style={{ height: scale ? Math.round(stageH * scale) : undefined }} onClick={togglePlay}>
-            {scale > 0 ? <ReelStage doc={sorted} track={track} scale={scale} reducedMotion={false} onReady={onReady} /> : null}
+            {scale > 0 ? <ReelStage doc={sorted} track={track} scale={scale} reducedMotion={false} onReady={onReady} hideDefaultCta={socialMode} /> : null}
           </div>
           <div className={s.controls}>
             <span className={s.clock}>
