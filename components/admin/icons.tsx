@@ -1,8 +1,24 @@
 import type { SVGProps } from "react";
 
 /** Line icons for the admin, 24px grid, drawn with the current colour. */
-function Icon({ children, ...props }: SVGProps<SVGSVGElement>) {
-  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.7} strokeLinecap="round" strokeLinejoin="round" aria-hidden {...props}>{children}</svg>;
+function Icon({ children, style, ...props }: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+      style={{ flexShrink: 0, ...style }}
+      {...props}
+    >
+      {children}
+    </svg>
+  );
 }
 
 export const GridIcon = () => <Icon><rect x="4" y="4" width="7" height="7" rx="1.5" /><rect x="13" y="4" width="7" height="7" rx="1.5" /><rect x="4" y="13" width="7" height="7" rx="1.5" /><rect x="13" y="13" width="7" height="7" rx="1.5" /></Icon>;

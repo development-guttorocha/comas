@@ -849,7 +849,7 @@ function StudioInner({
     }));
   }, [activeSlide, aspect, candidateLayouts]);
 
-  const modelThumbW = 124;
+  const modelThumbW = 116;
   const modelThumbScale = modelThumbW / W;
   const stripThumbW = aspect === "story" ? 44 : 58;
   const stripThumbScale = stripThumbW / W;
@@ -857,7 +857,7 @@ function StudioInner({
   const toolTitle = DOCK_ITEMS.find(d => d.id === activeTool)?.title ?? "Ferramentas";
 
   return (
-    <AdminShell crumbs={[]} immersive>
+    <>
       <div className={st.veedShell}>
         {/* ==================== ZONA A: TOPO MINIMALISTA ==================== */}
         <header className={st.veedTop}>
@@ -1221,8 +1221,7 @@ function StudioInner({
                       {modelFamily !== "all" && slides.length > 1 ? (
                         <button
                           type="button"
-                          className={`${styles.button} ${styles.primary}`}
-                          style={{ width: "100%" }}
+                          className={`${styles.button} ${styles.primary} ${st.wrapBtn}`}
                           onClick={() => {
                             commitCanvas(applyFamilyToCanvas(canvas, modelFamily, aspect));
                             show(
@@ -1237,8 +1236,7 @@ function StudioInner({
 
                       <button
                         type="button"
-                        className={styles.button}
-                        style={{ width: "100%" }}
+                        className={`${styles.button} ${st.wrapBtn}`}
                         onClick={() =>
                           updateSlideAt(safeIdx, s => applyLayout(s, remixLayoutId(s, Math.random, [], modelFamily), aspect))
                         }
@@ -1455,9 +1453,9 @@ function StudioInner({
                 {activeTool === "fotos" ? (
                   <>
                     <div style={{ display: "grid", gap: 8 }}>
-                      <label className={`${styles.button} ${styles.primary}`} style={{ width: "100%", cursor: "pointer" }}>
+                      <label className={`${styles.button} ${styles.primary} ${st.wrapBtn}`} style={{ cursor: "pointer" }}>
                         <UploadIcon />
-                        {uploadingPhoto ? "Enviando foto…" : "Enviar foto do celular / computador"}
+                        {uploadingPhoto ? "Enviando foto…" : "Enviar foto"}
                         <input
                           type="file"
                           accept="image/*"
@@ -1473,11 +1471,24 @@ function StudioInner({
 
                       <button
                         type="button"
-                        className={styles.button}
-                        style={{ width: "100%" }}
+                        className={`${styles.button} ${st.wrapBtn}`}
+                        onClick={async () => {
+                          const picked = await pickMedia("");
+                          if (picked) {
+                            insertImageOnSlide(picked);
+                            loadPhotos();
+                          }
+                        }}
+                      >
+                        Abrir biblioteca de mídia
+                      </button>
+
+                      <button
+                        type="button"
+                        className={`${styles.button} ${st.wrapBtn}`}
                         onClick={() => setMuapiTarget({ mode: "new" })}
                       >
-                        <SparkIcon />Criar ilustração com IA
+                        <SparkIcon />Criar imagem com IA
                       </button>
                     </div>
 
@@ -1733,7 +1744,7 @@ function StudioInner({
                       </button>
                     ))}
 
-                    <button type="button" className={styles.button} onClick={toggleVoiceForSlide}>
+                    <button type="button" className={`${styles.button} ${st.wrapBtn}`} onClick={toggleVoiceForSlide}>
                       {recording ? (
                         <>
                           <span className={st.recDot} /> Parar gravação ({recSeconds}s)
@@ -1759,7 +1770,7 @@ function StudioInner({
                       />
                       <button
                         type="submit"
-                        className={`${styles.button} ${styles.primary}`}
+                        className={`${styles.button} ${styles.primary} ${st.wrapBtn}`}
                         disabled={!customAiPrompt.trim()}
                       >
                         <SparkIcon />Pedir para a IA
@@ -2014,7 +2025,7 @@ function StudioInner({
       {leaveGuard.dialog}
       <BusyOverlay label={busyLabel} />
       <Toast toast={toast} onClose={clear} />
-    </AdminShell>
+    </>
   );
 }
 
@@ -2061,16 +2072,18 @@ export default function AdminStudioEditor({ id }: { id: string }) {
   }
 
   return (
-    <CropProvider>
-      <MediaProvider folder="estudio" slug={post.id} source="social">
-        <StudioInner
-          post={post}
-          setPost={setPost}
-          savedRevision={savedRevision}
-          setSavedRevision={setSavedRevision}
-          theme={theme}
-        />
-      </MediaProvider>
-    </CropProvider>
+    <AdminShell crumbs={[]} immersive>
+      <CropProvider>
+        <MediaProvider folder="estudio" slug={post.id} source="social">
+          <StudioInner
+            post={post}
+            setPost={setPost}
+            savedRevision={savedRevision}
+            setSavedRevision={setSavedRevision}
+            theme={theme}
+          />
+        </MediaProvider>
+      </CropProvider>
+    </AdminShell>
   );
 }

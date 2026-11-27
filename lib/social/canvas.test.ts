@@ -358,3 +358,63 @@ test("applyFamilyToCanvas switches whole deck graphic family while preserving in
   assert.equal(popDeck.slides[0]!.content.title, "Título editado pela Renata");
   assert.equal(popDeck.slides[0]!.elements.filter(e => e.role === "free").length, 1);
 });
+
+test("no layout overflows canvas bounds, card containers, or footer chrome even with long texts", () => {
+  const longContent = {
+    eyebrow: "REPERTÓRIO SOCIOCULTURAL · VUNESP & FUVEST 2026",
+    step: "03",
+    title: "Como articular infodemia, saúde pública e desinformação digital sem cair em clichês na redação",
+    subtitle:
+      "Veja na prática como transformar uma notícia da semana em argumento analítico consistente com repertório legitimado pela banca.",
+    body:
+      "Mais importante do que decorar frases prontas na véspera da prova é compreender a engrenagem do problema: identificar causas estruturais, agentes envolvidos e consequências concretas para a coletividade.",
+    wrongLabel: "Senso comum vago",
+    wrong:
+      "“As pessoas hoje em dia não tomam mais vacina porque acreditam em absolutamente tudo o que veem circulando nas redes sociais.”",
+    rightLabel: "Articulação na dissertação",
+    right:
+      "“Impulsionada pela infodemia descrita pela OMS, a hesitação vacinal enfraquece a barreira sanitária coletiva e amplia riscos evitáveis.”",
+    note:
+      "Comentário da Prô: nomear o fenômeno com precisão e apontar sua consequência pública eleva imediatamente a competência argumentativa!",
+    items:
+      "Retomar o recorte exato da frase temática já na introdução\nGarantir que cada parágrafo defenda uma ideia central clara\nRevisar regência verbal, concordância e uso da crase antes de passar a limpo",
+    quote:
+      "Palavra difícil mal encaixada tira nota na correção; clareza, leitura frequente e projeto de texto bem amarrado constroem autoria verdadeira.",
+    author: "Renata Romero · @textoemciclo",
+    cta: "Salve este carrossel para revisar :)",
+    image: "/social-media/exemplo.webp",
+  };
+
+  for (const layout of LAYOUTS) {
+    for (const aspect of ["carousel", "story"] as const) {
+      const { width: W, height: H } = CANVAS_SIZE[aspect];
+      const slide = buildSlide({ kind: layout.kinds[0] ?? "free", ...longContent }, layout.id, aspect);
+      const chromeEls = slide.elements.filter(e => e.role === "chrome");
+      const chromeTop = chromeEls.length ? Math.min(...chromeEls.map(e => e.y)) : H;
+
+      for (const el of slide.elements) {
+        if (el.role === "decor" || el.type === "image") continue;
+        assert.ok(el.x >= 0 && el.x + el.w <= W, `${layout.id} (${aspect}) ${el.role} overflows horizontally`);
+        assert.ok(el.y >= 0 && el.y + el.h <= H, `${layout.id} (${aspect}) ${el.role} overflows vertically`);
+        if (el.role !== "chrome") {
+          assert.ok(
+            el.y + el.h <= chromeTop - 8,
+            `${layout.id} (${aspect}) ${el.role} (bottom ${el.y + el.h}) overlaps chrome (top ${chromeTop})`,
+          );
+        }
+      }
+
+      if (layout.id === "verbete" || layout.id === "neobrutal") {
+        const card = slide.elements.find(e => e.type === "shape" && e.shape === "rect" && e.role === "decor");
+        assert.ok(card, `${layout.id} should have a main card shape`);
+        for (const el of slide.elements) {
+          if (el.type !== "text" || el.role === "chrome" || el.role === "decor") continue;
+          assert.ok(
+            el.y >= card.y + 12 && el.y + el.h <= card.y + card.h - 12,
+            `${layout.id} (${aspect}) ${el.role} (${el.y}..${el.y + el.h}) spills outside card (${card.y}..${card.y + card.h})`,
+          );
+        }
+      }
+    }
+  }
+});

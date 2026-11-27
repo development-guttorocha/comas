@@ -73,25 +73,25 @@ function shadowCss(shadow: CanvasShadow | undefined, fallback?: string): string 
   return fallback;
 }
 
-/** Gently shrinks font size when text grows longer than its box, avoiding clipping. */
+/** Gently shrinks font size when text grows longer than its box, avoiding clipping or overlap. */
 function autoFitFontSize(el: CanvasTextEl, rawText: string): number {
   const plain = stripMarks(rawText).trim();
   if (!plain) return el.size;
   const padX =
-    el.variant === "note" ? 76 : el.variant === "card" ? 68 : el.variant === "tarja" || el.variant === "marker" ? 56 : el.variant === "pill" ? 52 : 8;
+    el.variant === "note" ? 80 : el.variant === "card" ? 72 : el.variant === "tarja" || el.variant === "marker" ? 60 : el.variant === "pill" ? 56 : 8;
   const padY =
-    el.variant === "note" ? 72 : el.variant === "card" ? 52 : el.variant === "tarja" ? 36 : el.variant === "marker" ? 40 : el.variant === "pill" ? 24 : 6;
-  const baseFactor = el.font === "display" ? 0.62 : el.font === "hand" ? 0.44 : el.font === "serif" ? 0.5 : 0.51;
+    el.variant === "note" ? 76 : el.variant === "card" ? 56 : el.variant === "tarja" ? 38 : el.variant === "marker" ? 42 : el.variant === "pill" ? 24 : 6;
+  const baseFactor = el.font === "display" ? 0.68 : el.font === "hand" ? 0.48 : el.font === "serif" ? 0.56 : 0.55;
   const charFactor = el.upper ? baseFactor + 0.06 : baseFactor;
-  const listIndent = el.list ? el.size * 1.1 : 0;
-  const availW = Math.max(110, el.w - padX - listIndent);
-  const availH = Math.max(36, el.h - padY);
+  const listIndent = el.list ? el.size * 1.15 : 0;
+  const availW = Math.max(100, el.w - padX - listIndent);
+  const availH = Math.max(32, el.h - padY);
   const lh = el.lineHeight ?? 1.2;
 
   let size = el.size;
-  const minSize = Math.max(20, Math.round(el.size * 0.54));
+  const minSize = Math.max(16, Math.round(el.size * 0.38));
   while (size > minSize) {
-    const maxChars = Math.max(5, Math.floor(availW / (size * charFactor)));
+    const maxChars = Math.max(4, Math.floor(availW / (size * charFactor)));
     const paragraphs = plain.split("\n").filter(Boolean);
     let totalLines = 0;
     for (const para of paragraphs) {
@@ -99,6 +99,16 @@ function autoFitFontSize(el: CanvasTextEl, rawText: string): number {
       let lines = 1;
       let cur = 0;
       for (const word of words) {
+        if (word.length > maxChars) {
+          if (cur > 0) {
+            lines++;
+            cur = 0;
+          }
+          const spans = Math.ceil(word.length / maxChars);
+          lines += spans - 1;
+          cur = word.length % maxChars || maxChars;
+          continue;
+        }
         const next = cur === 0 ? word.length : cur + 1 + word.length;
         if (cur > 0 && next > maxChars) {
           lines++;
@@ -110,7 +120,7 @@ function autoFitFontSize(el: CanvasTextEl, rawText: string): number {
       totalLines += lines;
     }
     const listGaps = el.list && paragraphs.length > 1 ? (paragraphs.length - 1) * Math.round(size * 0.34) : 0;
-    if (totalLines * size * lh + listGaps <= availH * 1.08) break;
+    if (totalLines * size * lh + listGaps <= availH * 0.96) break;
     size -= 2;
   }
   return size;
@@ -609,6 +619,8 @@ export default function CanvasSlideView({
               boxSizing: "border-box",
               width: "fit-content",
               maxWidth: "100%",
+              maxHeight: "100%",
+              overflow: "hidden",
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
@@ -628,6 +640,7 @@ export default function CanvasSlideView({
     const boxStyle: CSSProperties = {
       width: "100%",
       height: "100%",
+      overflow: "hidden",
       boxSizing: "border-box",
       display: "flex",
       flexDirection: "column",
