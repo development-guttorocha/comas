@@ -1,8 +1,9 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { newReel } from "@/lib/reel/sceneFields";
 import type { ReelTrack } from "@/lib/reel/tracks";
 import type { ReelDoc } from "@/lib/reel/types";
 import { DEFAULT_SOCIAL_THEME } from "@/lib/social/presets";
@@ -14,7 +15,7 @@ import { MediaProvider } from "./MediaPicker";
 import type { ReelProposal } from "./ReelStudio";
 import MuapiGeneratorDialog from "./MuapiGeneratorDialog";
 import Skeleton from "./Skeleton";
-import { ImageIcon, PlayIcon, PlusIcon, TrashIcon } from "./icons";
+import { ImageIcon, PlayIcon, TrashIcon } from "./icons";
 import styles from "./admin.module.css";
 
 const ReelStudio = dynamic(() => import("./ReelStudio"), {
@@ -22,23 +23,23 @@ const ReelStudio = dynamic(() => import("./ReelStudio"), {
   loading: () => <Skeleton kind="text" label="Abrindo o estúdio de vídeo" />,
 });
 
-export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
-  const [reels, setReels] = useState<SocialPost[] | null>(null);
+export default function AdminSocialReels({ id, tracks }: { id: string; tracks: ReelTrack[] }) {
+  const router = useRouter();
+  const [current, setCurrent] = useState<SocialPost | null | undefined>(undefined);
   const [theme, setTheme] = useState<SocialTheme>(DEFAULT_SOCIAL_THEME);
-  const [selectedId, setSelectedId] = useState<string>("");
   const [dirty, setDirty] = useState(false);
   const [saving, setSaving] = useState(false);
   const [proposal, setProposal] = useState<ReelProposal | null>(null);
   const [undo, setUndo] = useState<ReelDoc | null>(null);
   const [muapiKind, setMuapiKind] = useState<"image" | "video" | null>(null);
   const [lastMuapiVideo, setLastMuapiVideo] = useState<string>("");
-  const { toast, show } = useToast();
+  const { toast, show, clear } = useToast();
 
   useEffect(() => {
     fetch("/api/social/posts", { cache: "no-store" })
       .then(async r => {
         if (r.status === 401) {
-          window.location.replace("/admin/login?next=%2Fadmin%2Freels");
+          window.location.replace(`/admin/login?next=${encodeURIComponent(`/admin/reels/${id}`)}`);
           return null;
         }
         return r.json();
@@ -46,45 +47,33 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
       .then(data => {
         if (!data) return;
         const all = Array.isArray(data.posts) ? (data.posts as SocialPost[]) : [];
-        const onlyReels = all.filter(p => p.format === "reel" || p.reel);
         if (data.theme) setTheme(data.theme as SocialTheme);
-        if (onlyReels.length === 0) {
-          const now = new Date().toISOString();
-          const starter: SocialPost = {
-            id: "reel_demo_clareza",
-            title: "Dica rápida: Clareza na escrita",
-            format: "reel",
-            status: "in_review",
-            slides: [],
-            reel: { ...newReel(data.theme?.palette?.accent ?? "#3E2A8D", "Clareza na escrita", tracks[0]?.id ?? "bull"), aspect: "9:16" },
-            caption: "Escrever bem é facilitar o caminho de quem lê.\n\n#textoemciclo #escrita #reels",
-            createdAt: now,
-            updatedAt: now,
-          };
-          setReels([starter]);
-          setSelectedId(starter.id);
+        const found = all.find(p => p.id === id) ?? null;
+        if (found && found.reel) {
+          setCurrent({
+            ...found,
+            reel: { ...found.reel, aspect: found.reel.aspect ?? "9:16" },
+          });
         } else {
-          const normalized = onlyReels.map(p => (p.reel ? { ...p, reel: { ...p.reel, aspect: p.reel.aspect ?? "9:16" as const } } : p));
-          setReels(normalized);
-          setSelectedId(normalized[0]!.id);
+          setCurrent(found);
         }
       })
       .catch(err => {
         show(err);
-        setReels([]);
+        setCurrent(null);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const current = reels?.find(r => r.id === selectedId) ?? reels?.[0] ?? null;
+  }, [id]);
 
   function updateCurrentReel(nextReel: ReelDoc | null) {
-    if (!current) return;
-    setReels(list =>
-      (list ?? []).map(item =>
-        item.id === current.id ? { ...item, title: nextReel?.title || item.title, reel: nextReel } : item,
-      ),
-    );
+    setCurrent(prev => {
+      if (!prev) return prev;
+      return {
+        ...prev,
+        title: nextReel?.title || prev.title,
+        reel: nextReel,
+      };
+    });
     setDirty(true);
   }
 
@@ -108,39 +97,12 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
     }
   }
 
-  async function createNewReel() {
-    const now = new Date().toISOString();
-    const doc: ReelDoc = {
-      ...newReel(theme.palette.accent, "Novo vídeo · Texto em Ciclo", tracks[0]?.id ?? "bull"),
-      aspect: "9:16",
-    };
-    const post: SocialPost = {
-      id: `reel_${Date.now().toString(36)}`,
-      title: "Novo vídeo · Texto em Ciclo",
-      format: "reel",
-      status: "in_review",
-      slides: [],
-      reel: doc,
-      caption: "",
-      createdAt: now,
-      updatedAt: now,
-    };
-    setReels(list => [post, ...(list ?? [])]);
-    setSelectedId(post.id);
-    setProposal(null);
-    setUndo(null);
-    await save(post);
-  }
-
   async function removeReel() {
     if (!current || !confirm(`Excluir "${current.title}"?`)) return;
     try {
-      await fetch(`/api/social/posts?id=${encodeURIComponent(current.id)}`, { method: "DELETE" });
-      const rest = (reels ?? []).filter(r => r.id !== current.id);
-      setReels(rest);
-      setSelectedId(rest[0]?.id ?? "");
-      setDirty(false);
-      show("Vídeo excluído.");
+      const res = await fetch(`/api/social/posts?id=${encodeURIComponent(current.id)}`, { method: "DELETE" });
+      if (!res.ok) throw new Error("Erro ao excluir vídeo");
+      router.push("/admin/reels");
     } catch (err) {
       show(err);
     }
@@ -148,24 +110,25 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
 
   return (
     <AdminShell
-      crumbs={[{ label: "Vídeos (Reels 9:16)" }]}
+      crumbs={[
+        { label: "Vídeos", href: "/admin/reels" },
+        { label: current?.title || "Editor de vídeo" },
+      ]}
       actions={
-        <>
-          {current ? (
+        current ? (
+          <>
             <span className={styles.saveState} data-dirty={dirty ? "true" : undefined} data-saving={saving || undefined}>
               {saving ? "Salvando…" : dirty ? "Alterações não salvas" : "Salvo"}
             </span>
-          ) : null}
-          <button type="button" className={styles.button} onClick={() => setMuapiKind("image")}>
-            <ImageIcon />Imagem IA
-          </button>
-          <button type="button" className={styles.button} onClick={() => setMuapiKind("video")}>
-            <PlayIcon />Clipe IA
-          </button>
-          <button type="button" className={styles.button} onClick={createNewReel}>
-            <PlusIcon />Novo vídeo
-          </button>
-          {current ? (
+            <button type="button" className={styles.button} onClick={() => setMuapiKind("image")}>
+              <ImageIcon />Imagem IA
+            </button>
+            <button type="button" className={styles.button} onClick={() => setMuapiKind("video")}>
+              <PlayIcon />Clipe IA
+            </button>
+            <button type="button" className={`${styles.button} ${styles.ghost} ${styles.danger}`} onClick={() => void removeReel()}>
+              <TrashIcon />Excluir
+            </button>
             <button
               type="button"
               className={`${styles.button} ${styles.primary}`}
@@ -174,8 +137,8 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
             >
               Salvar
             </button>
-          ) : null}
-        </>
+          </>
+        ) : null
       }
     >
       <CropProvider>
@@ -198,37 +161,16 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
                 </div>
               ) : null}
 
-              {reels && reels.length > 0 ? (
-                <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 10 }}>
-                  <div className={styles.tabs} role="tablist" aria-label="Vídeos salvos">
-                    {reels.map(r => (
-                      <button
-                        key={r.id}
-                        type="button"
-                        role="tab"
-                        className={styles.tab}
-                        aria-selected={r.id === current?.id}
-                        onClick={() => {
-                          setSelectedId(r.id);
-                          setProposal(null);
-                          setUndo(null);
-                        }}
-                      >
-                        {r.title}
-                      </button>
-                    ))}
-                  </div>
-                  {current && reels.length > 1 ? (
-                    <button type="button" className={`${styles.button} ${styles.ghost} ${styles.small} ${styles.danger}`} onClick={removeReel}>
-                      <TrashIcon />Excluir vídeo
-                    </button>
-                  ) : null}
+              {current === undefined ? (
+                <Skeleton kind="text" label="Carregando vídeo" />
+              ) : current === null ? (
+                <div className={styles.emptyBody}>
+                  <p style={{ margin: 0 }}>Vídeo não encontrado.</p>
+                  <Link href="/admin/reels" className={`${styles.button} ${styles.primary}`}>
+                    Voltar para a galeria de vídeos
+                  </Link>
                 </div>
-              ) : null}
-
-              {!reels ? (
-                <Skeleton kind="text" label="Carregando vídeos" />
-              ) : current ? (
+              ) : (
                 <ReelStudio
                   slug={current.id}
                   reel={current.reel ?? null}
@@ -244,7 +186,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
                   generateUrl="/api/social/generate"
                   socialMode
                 />
-              ) : null}
+              )}
             </div>
           </div>
 
@@ -254,7 +196,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
             onResult={(url, meta) => {
               if (muapiKind === "video") {
                 setLastMuapiVideo(url);
-                show(meta.costUsd ? `Clipe gerado na MuAPI ($${meta.costUsd.toFixed(4)})!` : "Clipe gerado na MuAPI!", "good");
+                show(meta.costUsd ? `Clipe gerado com IA ($${meta.costUsd.toFixed(4)})!` : "Clipe gerado com IA!", "good");
               } else if (current?.reel) {
                 const doc = current.reel;
                 const nextScene = {
@@ -276,7 +218,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
             onClose={() => setMuapiKind(null)}
           />
 
-          <Toast toast={toast} />
+          <Toast toast={toast} onClose={clear} />
         </MediaProvider>
       </CropProvider>
     </AdminShell>

@@ -1,0 +1,244 @@
+/* Video Gallery (/admin/reels): clean light grid matching the Studio gallery aesthetic. */
+
+.heroCard {
+  display: grid;
+  gap: 14px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel, #ffffff);
+  box-shadow: 0 4px 20px -10px rgb(24 25 38 / 8%);
+}
+
+.heroHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.heroSub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.heroInput {
+  width: 100%;
+  min-height: 76px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--field, #f5f6fa);
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color .15s, background-color .15s, box-shadow .15s;
+}
+.heroInput:focus {
+  outline: none;
+  border-color: #5b46e5;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgb(91 70 229 / 12%);
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.reelsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.reelCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 10px -6px rgb(24 25 38 / 8%);
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+
+.reelCard:hover {
+  transform: translateY(-2px);
+  border-color: #c8cde0;
+  box-shadow: 0 14px 32px -14px rgb(24 25 38 / 18%);
+}
+
+.reelPreviewLink {
+  display: grid;
+  place-items: center;
+  padding: 18px 16px;
+  background: linear-gradient(180deg, #f4f5fa 0%, #eaedf5 100%);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Vertical 9:16 phone preview inside the card */
+.phoneThumb {
+  position: relative;
+  width: 122px;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #10111a;
+  box-shadow: 0 14px 28px -12px rgb(16 17 26 / 45%), 0 0 0 3px #ffffff, 0 0 0 4px rgb(24 25 38 / 10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px 10px;
+}
+
+/* Horizontal 16:9 preview when a video uses landscape format */
+.phoneThumb[data-aspect="16:9"] {
+  width: 196px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+}
+
+.thumbImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.thumbGlow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.thumbTop {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.aspectBadge {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 16%);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.thumbHeadline {
+  position: relative;
+  z-index: 1;
+  margin: auto 0;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 45%);
+}
+
+.thumbBottom {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thumbAccentDot {
+  width: 16px;
+  height: 4px;
+  border-radius: 999px;
+}
+
+.thumbPlay {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 92%);
+  color: #181926;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 28%);
+}
+
+.thumbPlay svg {
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
+  margin-left: 1px;
+}
+
+.reelBody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px 14px;
+  flex: 1;
+}
+
+.reelTitleLink {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.reelTitleLink:hover {
+  color: #d9266f;
+}
+
+.reelMeta {
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.reelActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.reelActions a {
+  flex: 1;
+  justify-content: center;
+}

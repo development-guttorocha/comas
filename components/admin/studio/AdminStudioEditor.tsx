@@ -776,7 +776,7 @@ function StudioInner({
         body: JSON.stringify({ post: reelPost }),
       });
       if (!res.ok) throw new Error("Erro ao criar vídeo");
-      router.push("/admin/reels");
+      router.push(`/admin/reels/${encodeURIComponent(reelPost.id)}`);
     } catch (err) {
       show(err);
       setBusyLabel("");
