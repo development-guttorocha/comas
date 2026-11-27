@@ -1,11 +1,19 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { readForm, UploadError } from "@/lib/admin/form";
 import {
+  extractSeedFromImage,
+  extractSeedFromUrl,
   generateSocialDraft,
   generateSocialReelDraft,
   generateStudioDocument,
+  generateStudioVariations,
+  rewriteSlideContent,
   transcribeAudio,
+  type StudioOutputKind,
 } from "@/lib/social/ai";
 import { hasValidWebhookToken, isSocialAuthenticated } from "@/lib/social/auth";
+import type { SlideContent } from "@/lib/social/canvas";
+import { uploadSocialMedia } from "@/lib/social/media";
 import { saveSocialPost } from "@/lib/social/store";
 import type { ArtDirection } from "@/lib/social/studioTypes";
 import { isValidTemplatePreset, type TemplatePreset } from "@/lib/social/types";
@@ -21,13 +29,22 @@ export async function POST(request: NextRequest) {
 
   const contentType = request.headers.get("content-type") ?? "";
 
-  // Voice capture: multipart/form-data with audio file -> Whisper transcription (+ optional Studio generation)
+  // Multipart: Voice capture (audio -> Whisper) OR Essay/page photo (image -> Vision seed + media library)
   if (contentType.includes("multipart/form-data")) {
     try {
-      const form = await request.formData();
+      const form = await readForm(request, { maxMb: 35 });
+      const image = form.get("image");
+      if (image instanceof File) {
+        const [seed, savedMedia] = await Promise.all([
+          extractSeedFromImage(image),
+          uploadSocialMedia(image, "redacoes").catch(() => null),
+        ]);
+        return NextResponse.json({ seed, mediaUrl: savedMedia?.url ?? null });
+      }
+
       const audio = form.get("audio");
       if (!(audio instanceof File)) {
-        return NextResponse.json({ error: "Envie um arquivo de áudio no campo 'audio'." }, { status: 400 });
+        return NextResponse.json({ error: "Envie um arquivo de áudio ou imagem." }, { status: 400 });
       }
       const transcript = await transcribeAudio(audio);
       const autoGenerate = form.get("generate") === "1";
@@ -42,24 +59,65 @@ export async function POST(request: NextRequest) {
         editUrl: `/admin/estudio/${encodeURIComponent(post.id)}`,
       });
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Erro ao transcrever áudio.";
-      return NextResponse.json({ error: message }, { status: 500 });
+      const status = err instanceof UploadError ? err.status : 500;
+      const message = err instanceof Error ? err.message : "Erro ao processar o envio.";
+      return NextResponse.json({ error: message }, { status });
     }
   }
 
   const body = (await request.json().catch(() => null)) as {
-    kind?: "reel" | "carousel" | "studio_doc";
+    kind?: "reel" | "carousel" | "studio_doc" | "studio_variations" | "slide_rewrite" | "seed_url";
     idea?: string;
+    url?: string;
     notes?: string;
     track?: string;
     accent?: string;
     artDirection?: ArtDirection;
     preset?: TemplatePreset;
+    output?: StudioOutputKind;
+    outputs?: StudioOutputKind[];
+    paletteId?: string;
+    content?: SlideContent;
+    instruction?: string;
     slideCount?: number;
     save?: boolean;
   } | null;
 
   try {
+    if (body?.kind === "seed_url") {
+      const seed = await extractSeedFromUrl(body.url ?? "");
+      return NextResponse.json({ seed });
+    }
+
+    if (body?.kind === "slide_rewrite") {
+      if (!body.content || typeof body.content.kind !== "string") {
+        return NextResponse.json({ error: "Conteúdo do slide ausente." }, { status: 400 });
+      }
+      const instruction = (body.instruction ?? "").trim();
+      if (instruction.length < 3) {
+        return NextResponse.json({ error: "Informe o que deseja ajustar no slide." }, { status: 400 });
+      }
+      const preset: TemplatePreset = isValidTemplatePreset(body.preset) ? body.preset : "repertorio_banca";
+      const content = await rewriteSlideContent({ content: body.content, instruction, preset });
+      return NextResponse.json({ content });
+    }
+
+    if (body?.kind === "studio_variations") {
+      const idea = (body.idea ?? "").trim();
+      if (idea.length < 8) {
+        return NextResponse.json(
+          { error: "Descreva a pauta com pelo menos 8 caracteres para gerar variações." },
+          { status: 400 },
+        );
+      }
+      const preset: TemplatePreset = isValidTemplatePreset(body.preset) ? body.preset : "repertorio_banca";
+      const validOutputs = Array.isArray(body.outputs)
+        ? body.outputs.filter((o): o is StudioOutputKind => o === "carousel" || o === "single" || o === "story")
+        : undefined;
+      const posts = await generateStudioVariations({ idea, preset, outputs: validOutputs });
+      return NextResponse.json({ posts });
+    }
+
     if (body?.kind === "studio_doc") {
       const idea = (body.idea ?? "").trim();
       if (idea.length < 8) {
@@ -68,7 +126,14 @@ export async function POST(request: NextRequest) {
           { status: 400 },
         );
       }
-      const post = await generateStudioDocument({ idea, artDirection: body.artDirection });
+      const preset: TemplatePreset = isValidTemplatePreset(body.preset) ? body.preset : "repertorio_banca";
+      const post = await generateStudioDocument({
+        idea,
+        artDirection: body.artDirection,
+        preset,
+        output: body.output,
+        paletteId: body.paletteId,
+      });
       if (body.save) await saveSocialPost(post);
       return NextResponse.json({
         post,

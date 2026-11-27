@@ -55,3 +55,6 @@ next-env.d.ts
 
 # Imagem → layout do admin: arquivos de trabalho locais.
 /.screen-design/
+# Arquivos locais de trabalho e uploads do Estúdio Social.
+/.social-studio/
+/public/social-media/

@@ -2,8 +2,9 @@
 
 import { createReactBlockSpec } from "@blocknote/react";
 import { useState } from "react";
+import { useMediaPicker } from "../MediaPicker";
 import MuapiGeneratorDialog from "../MuapiGeneratorDialog";
-import { CloseIcon, ImageIcon, PlusIcon } from "../icons";
+import { CloseIcon, ImageIcon, PlusIcon, SparkIcon } from "../icons";
 import admin from "../admin.module.css";
 import st from "./studioEditor.module.css";
 
@@ -18,6 +19,107 @@ function parseItems(raw: string): string[] {
 }
 
 /* ---------- 1. Capa (/capa) ---------- */
+function SocialCoverView({
+  props,
+  set,
+}: {
+  props: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+    imageUrl: string;
+    imageOverlay: number;
+  };
+  set: (patch: Partial<{ eyebrow: string; title: string; subtitle: string; cta: string; imageUrl: string; imageOverlay: number }>) => void;
+}) {
+  const [muapiOpen, setMuapiOpen] = useState(false);
+  const pick = useMediaPicker();
+  return (
+    <div className={st.card} contentEditable={false}>
+      <div className={st.cardHead}>
+        <span className={`${st.badge} ${st.badgeAccent}`}>Slide · Capa</span>
+        <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+          <button
+            type="button"
+            className={`${admin.button} ${admin.small}`}
+            onClick={async () => {
+              const url = await pick(props.imageUrl);
+              if (url !== null) set({ imageUrl: url });
+            }}
+          >
+            <ImageIcon />{props.imageUrl ? "Trocar foto" : "Mídia"}
+          </button>
+          <button type="button" className={`${admin.button} ${admin.small}`} onClick={() => setMuapiOpen(true)}>
+            <SparkIcon />Fundo IA
+          </button>
+          {props.imageUrl ? (
+            <button type="button" className={`${admin.button} ${admin.ghost} ${admin.small}`} onClick={() => set({ imageUrl: "" })}>
+              Remover
+            </button>
+          ) : null}
+        </div>
+      </div>
+      <div className={st.cardBody}>
+        <input
+          className={st.inlineSmall}
+          value={props.eyebrow}
+          onChange={e => set({ eyebrow: e.target.value })}
+          placeholder="Etiqueta superior (ex: MÉTODO DE ESCRITA)"
+        />
+        <textarea
+          className={st.inlineTitle}
+          rows={2}
+          value={props.title}
+          onChange={e => set({ title: e.target.value })}
+          placeholder="Título da capa (use *asteriscos* para destacar)"
+        />
+        <textarea
+          className={st.inlineText}
+          rows={2}
+          value={props.subtitle}
+          onChange={e => set({ subtitle: e.target.value })}
+          placeholder="Subtítulo curto…"
+        />
+        <input
+          className={st.inlineSmall}
+          value={props.cta}
+          onChange={e => set({ cta: e.target.value })}
+          placeholder="Chamada (ex: Arraste para ver →)"
+        />
+        {props.imageUrl ? (
+          <div className={st.thumbBar}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={props.imageUrl} alt="" className={st.thumbImg} />
+            <label className={admin.rangeField} style={{ flex: 1 }}>
+              <span className={admin.rangeHead}>
+                <span>Véu de leitura</span>
+                <strong>{Math.round(props.imageOverlay * 100)}%</strong>
+              </span>
+              <input
+                type="range"
+                min={0.25}
+                max={0.92}
+                step={0.03}
+                value={props.imageOverlay}
+                onChange={e => set({ imageOverlay: Number(e.target.value) })}
+              />
+            </label>
+          </div>
+        ) : null}
+      </div>
+      <MuapiGeneratorDialog
+        open={muapiOpen}
+        kindFilter="image"
+        inlineDataUrl
+        defaultPrompt={`Fotografia editorial minimalista sobre escrita, caderno de papel creme e luz natural, sem texto, inspirado em: ${props.title}`}
+        onResult={url => set({ imageUrl: url })}
+        onClose={() => setMuapiOpen(false)}
+      />
+    </div>
+  );
+}
+
 export const SocialCoverBlock = createReactBlockSpec(
   {
     type: "socialCover",
@@ -32,83 +134,9 @@ export const SocialCoverBlock = createReactBlockSpec(
     content: "none",
   },
   {
-    render: ({ block, editor }) => {
-      const [muapiOpen, setMuapiOpen] = useState(false);
-      const set = (props: Partial<typeof block.props>) => editor.updateBlock(block, { props });
-      return (
-        <div className={st.card} contentEditable={false}>
-          <div className={st.cardHead}>
-            <span className={`${st.badge} ${st.badgeAccent}`}>Slide · Capa</span>
-            <div style={{ display: "flex", gap: 6 }}>
-              <button type="button" className={`${admin.button} ${admin.small}`} onClick={() => setMuapiOpen(true)}>
-                <ImageIcon />{block.props.imageUrl ? "Trocar fundo IA" : "Fundo IA (MuAPI)"}
-              </button>
-              {block.props.imageUrl ? (
-                <button type="button" className={`${admin.button} ${admin.ghost} ${admin.small}`} onClick={() => set({ imageUrl: "" })}>
-                  Remover fundo
-                </button>
-              ) : null}
-            </div>
-          </div>
-          <div className={st.cardBody}>
-            <input
-              className={st.inlineSmall}
-              value={block.props.eyebrow}
-              onChange={e => set({ eyebrow: e.target.value })}
-              placeholder="Etiqueta superior (ex: MÉTODO DE ESCRITA)"
-            />
-            <textarea
-              className={st.inlineTitle}
-              rows={2}
-              value={block.props.title}
-              onChange={e => set({ title: e.target.value })}
-              placeholder="Título da capa (use *asteriscos* para destacar)"
-            />
-            <textarea
-              className={st.inlineText}
-              rows={2}
-              value={block.props.subtitle}
-              onChange={e => set({ subtitle: e.target.value })}
-              placeholder="Subtítulo curto…"
-            />
-            <input
-              className={st.inlineSmall}
-              value={block.props.cta}
-              onChange={e => set({ cta: e.target.value })}
-              placeholder="Chamada (ex: Arraste para ver →)"
-            />
-            {block.props.imageUrl ? (
-              <div className={st.thumbBar}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={block.props.imageUrl} alt="" className={st.thumbImg} />
-                <label className={admin.rangeField} style={{ flex: 1 }}>
-                  <span className={admin.rangeHead}>
-                    <span>Véu de leitura</span>
-                    <strong>{Math.round(block.props.imageOverlay * 100)}%</strong>
-                  </span>
-                  <input
-                    type="range"
-                    min={0.25}
-                    max={0.92}
-                    step={0.03}
-                    value={block.props.imageOverlay}
-                    onChange={e => set({ imageOverlay: Number(e.target.value) })}
-                  />
-                </label>
-              </div>
-            ) : null}
-          </div>
-          <MuapiGeneratorDialog
-            open={muapiOpen}
-            kindFilter="image"
-            inlineDataUrl
-            defaultPrompt={`Fotografia editorial minimalista sobre escrita, caderno de papel creme e luz natural, sem texto, inspirado em: ${block.props.title}`}
-            onResult={url => set({ imageUrl: url })}
-            onClose={() => setMuapiOpen(false)}
-          />
-        </div>
-      );
-    },
+    render: ({ block, editor }) => (
+      <SocialCoverView props={block.props} set={patch => editor.updateBlock(block, { props: patch })} />
+    ),
   },
 );
 
@@ -358,6 +386,79 @@ export const SocialQuoteBlock = createReactBlockSpec(
 );
 
 /* ---------- 6. Imagem Editorial IA (/imagem-ia) ---------- */
+function SocialImageView({
+  props,
+  set,
+}: {
+  props: {
+    eyebrow: string;
+    title: string;
+    caption: string;
+    imageUrl: string;
+    imageOverlay: number;
+  };
+  set: (patch: Partial<{ eyebrow: string; title: string; caption: string; imageUrl: string; imageOverlay: number }>) => void;
+}) {
+  const [muapiOpen, setMuapiOpen] = useState(false);
+  const pick = useMediaPicker();
+  return (
+    <div className={st.card} contentEditable={false}>
+      <div className={st.cardHead}>
+        <span className={`${st.badge} ${st.badgeAccent}`}>Slide · Imagem</span>
+        <div style={{ display: "flex", gap: 6 }}>
+          <button
+            type="button"
+            className={`${admin.button} ${admin.small}`}
+            onClick={async () => {
+              const url = await pick(props.imageUrl);
+              if (url !== null) set({ imageUrl: url });
+            }}
+          >
+            <ImageIcon />{props.imageUrl ? "Trocar da Mídia" : "Mídia"}
+          </button>
+          <button type="button" className={`${admin.button} ${admin.small}`} onClick={() => setMuapiOpen(true)}>
+            <SparkIcon />{props.imageUrl ? "Outra IA" : "Gerar IA"}
+          </button>
+        </div>
+      </div>
+      <div className={st.cardBody}>
+        {props.imageUrl ? (
+          <div className={st.thumbBar}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={props.imageUrl} alt="" className={st.thumbImg} />
+            <span className={admin.hint} style={{ flex: 1 }}>Imagem pronta no slide</span>
+            <button type="button" className={`${admin.button} ${admin.ghost} ${admin.small}`} onClick={() => set({ imageUrl: "" })}>
+              Limpar
+            </button>
+          </div>
+        ) : (
+          <p className={admin.hint} style={{ margin: 0 }}>Escolha uma foto da Mídia ou gere uma ilustração editorial com IA.</p>
+        )}
+        <input
+          className={st.inlineTitle}
+          value={props.title}
+          onChange={e => set({ title: e.target.value })}
+          placeholder="Título sobre a imagem (opcional)"
+        />
+        <input
+          className={st.inlineText}
+          value={props.caption}
+          onChange={e => set({ caption: e.target.value })}
+          placeholder="Legenda curta…"
+        />
+      </div>
+      <MuapiGeneratorDialog
+        open={muapiOpen}
+        kindFilter="image"
+        inlineDataUrl
+        defaultPrompt={props.title || props.caption || "Fotografia editorial minimalista de caderno, café e livros"}
+        onResult={url => set({ imageUrl: url })}
+        onClose={() => setMuapiOpen(false)}
+      />
+    </div>
+  );
+}
+
 export const SocialImageBlock = createReactBlockSpec(
   {
     type: "socialImage",
@@ -371,54 +472,9 @@ export const SocialImageBlock = createReactBlockSpec(
     content: "none",
   },
   {
-    render: ({ block, editor }) => {
-      const [muapiOpen, setMuapiOpen] = useState(false);
-      const set = (props: Partial<typeof block.props>) => editor.updateBlock(block, { props });
-      return (
-        <div className={st.card} contentEditable={false}>
-          <div className={st.cardHead}>
-            <span className={`${st.badge} ${st.badgeAccent}`}>Slide · Imagem IA (MuAPI)</span>
-            <button type="button" className={`${admin.button} ${admin.small}`} onClick={() => setMuapiOpen(true)}>
-              <ImageIcon />{block.props.imageUrl ? "Gerar outra" : "Gerar com MuAPI"}
-            </button>
-          </div>
-          <div className={st.cardBody}>
-            {block.props.imageUrl ? (
-              <div className={st.thumbBar}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={block.props.imageUrl} alt="" className={st.thumbImg} />
-                <span className={admin.hint} style={{ flex: 1 }}>Imagem pronta no slide</span>
-                <button type="button" className={`${admin.button} ${admin.ghost} ${admin.small}`} onClick={() => set({ imageUrl: "" })}>
-                  Limpar
-                </button>
-              </div>
-            ) : (
-              <p className={admin.hint} style={{ margin: 0 }}>Clique em “Gerar com MuAPI” para criar uma fotografia ou ilustração editorial.</p>
-            )}
-            <input
-              className={st.inlineTitle}
-              value={block.props.title}
-              onChange={e => set({ title: e.target.value })}
-              placeholder="Título sobre a imagem (opcional)"
-            />
-            <input
-              className={st.inlineText}
-              value={block.props.caption}
-              onChange={e => set({ caption: e.target.value })}
-              placeholder="Legenda curta…"
-            />
-          </div>
-          <MuapiGeneratorDialog
-            open={muapiOpen}
-            kindFilter="image"
-            inlineDataUrl
-            defaultPrompt={block.props.title || block.props.caption || "Fotografia editorial minimalista de caderno, café e livros"}
-            onResult={url => set({ imageUrl: url })}
-            onClose={() => setMuapiOpen(false)}
-          />
-        </div>
-      );
-    },
+    render: ({ block, editor }) => (
+      <SocialImageView props={block.props} set={patch => editor.updateBlock(block, { props: patch })} />
+    ),
   },
 );
 

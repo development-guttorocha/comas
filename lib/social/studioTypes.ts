@@ -28,10 +28,13 @@ export type StudioBlockJson = {
   children?: StudioBlockJson[];
 };
 
+import type { StudioCanvas } from "./canvas";
+
 export type StudioDocumentData = {
   artDirection: ArtDirection;
   aspect: StudioAspect;
   blocks: StudioBlockJson[];
+  canvas?: StudioCanvas | null;
 };
 
 /** Compiled slide produced from a Studio BlockNote document for preview and PNG/ZIP export. */

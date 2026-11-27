@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { ArrowIcon, CloseIcon, GearIcon, GridIcon, KeyIcon, LogoMark, MoreIcon, PagesIcon, PlayIcon } from "./icons";
+import { ArrowIcon, CloseIcon, GearIcon, GridIcon, ImageIcon, KeyIcon, LogoMark, MoreIcon, PagesIcon, PlayIcon } from "./icons";
 import AdminAuthGate, { getCachedEmail, logoutAdminSession } from "./AdminAuthGate";
 import AdminLock, { LockButton } from "./AdminLock";
 import styles from "./admin.module.css";
@@ -14,6 +14,7 @@ const NAV: Array<{ href: string; label: string; icon: ReactNode; match: string[]
   { href: "/admin/estudio", label: "Estúdio", icon: <PagesIcon />, match: ["/admin/estudio"] },
   { href: "/admin/carrosseis", label: "Carrosséis", icon: <GridIcon />, match: ["/admin/carrosseis"] },
   { href: "/admin/reels", label: "Reels", icon: <PlayIcon />, match: ["/admin/reels"] },
+  { href: "/admin/midia", label: "Mídia", icon: <ImageIcon />, match: ["/admin/midia", "/admin/galeria"] },
   { href: "/admin/marca", label: "Marca", icon: <GearIcon />, match: ["/admin/marca"] },
 ];
 
@@ -31,7 +32,7 @@ export default function AdminShell({ crumbs, actions, children }: { crumbs: Crum
       <div className={styles.app}>
         <a href="#admin-main" className={styles.skipLink}>Pular para o conteúdo</a>
         <nav className={styles.rail} aria-label="Admin">
-          <Link href="/admin/carrosseis" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Texto em Ciclo</span></Link>
+          <Link href="/admin/estudio" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Texto em Ciclo</span></Link>
           {NAV.map(item => (
             <Link key={item.href} href={item.href} className={styles.railButton} title={item.label} aria-current={current === item.href ? "page" : undefined}>
               {item.icon}<span className={styles.navLabel}>{item.label}</span>

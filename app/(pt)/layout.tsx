@@ -1,11 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans } from "next/font/google";
+import { Archivo_Black, Caveat, DM_Sans, Fraunces } from "next/font/google";
 import "@/app/globals.css";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
   style: ["normal", "italic"],
+  display: "swap",
+});
+
+const studioSerif = Fraunces({
+  variable: "--font-studio-serif",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const studioDisplay = Archivo_Black({
+  variable: "--font-studio-display",
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const studioHand = Caveat({
+  variable: "--font-studio-hand",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -23,7 +43,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={dmSans.variable} suppressHydrationWarning>
+    <html
+      lang="pt-BR"
+      className={`${dmSans.variable} ${studioSerif.variable} ${studioDisplay.variable} ${studioHand.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans">{children}</body>
     </html>
   );

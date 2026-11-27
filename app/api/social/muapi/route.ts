@@ -2,6 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { put } from "@vercel/blob";
 import { hydrateRuntimeKeys } from "@/lib/admin/apiKeys";
 import { hasValidWebhookToken, isSocialAuthenticated } from "@/lib/social/auth";
+import { registerGeneratedMedia } from "@/lib/social/media";
 import {
   getMuapiBalance,
   getMuapiJobResult,
@@ -22,6 +23,7 @@ async function authorize(request: NextRequest): Promise<boolean> {
 async function persistAsset(url: string, inlineDataUrl: boolean): Promise<string> {
   try {
     if (!process.env.BLOB_READ_WRITE_TOKEN && !inlineDataUrl) {
+      await registerGeneratedMedia(url, "muapi-arte.webp", "ia-muapi").catch(() => {});
       return url;
     }
     const res = await fetch(url, { signal: AbortSignal.timeout(20_000) });
@@ -45,9 +47,12 @@ async function persistAsset(url: string, inlineDataUrl: boolean): Promise<string
     }
 
     if (inlineDataUrl && contentType.startsWith("image/") && buf.byteLength <= 4 * 1024 * 1024) {
-      return `data:${contentType};base64,${buf.toString("base64")}`;
+      const dataUrl = `data:${contentType};base64,${buf.toString("base64")}`;
+      await registerGeneratedMedia(dataUrl, `muapi-${Date.now().toString(36)}.webp`, "ia-muapi").catch(() => {});
+      return dataUrl;
     }
 
+    await registerGeneratedMedia(url, "muapi-arte.webp", "ia-muapi").catch(() => {});
     return url;
   } catch {
     return url;

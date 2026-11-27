@@ -1,5 +1,9 @@
+import sharp from "sharp";
 import { hydrateRuntimeKeys } from "@/lib/admin/apiKeys";
+import { CANVAS_PALETTES, canvasFromCompiled, PRESET_PALETTE, type SlideContent } from "./canvas";
+import { compileDocToSlides } from "./compileDoc";
 import { getSocialKnowledgeBase, socialKnowledgePrompt } from "./knowledgeBase";
+import type { StudioAspect } from "./studioTypes";
 import { makeSlideId, SLIDE_LIMITS, type SlideKind, type SocialPost, type SocialSlide, type TemplatePreset } from "./types";
 
 function buildSystemPrompt(preset: TemplatePreset): string {
@@ -458,9 +462,15 @@ export async function transcribeAudio(file: File): Promise<string> {
   return text;
 }
 
+export type StudioOutputKind = "carousel" | "single" | "story";
+
 export async function generateStudioDocument(input: {
   idea: string;
   artDirection?: "editorial" | "notebook" | "dark" | "book";
+  preset?: TemplatePreset;
+  output?: StudioOutputKind;
+  paletteId?: string;
+  seed?: number;
 }): Promise<SocialPost> {
   await hydrateRuntimeKeys();
   const provider = getConfiguredAiProvider();
@@ -468,8 +478,20 @@ export async function generateStudioDocument(input: {
     throw new Error("Nenhuma chave de IA configurada em /admin/chaves (OpenAI, Gemini, Anthropic ou DeepSeek).");
   }
 
-  const systemPrompt = buildSystemPrompt("repertorio_banca");
-  const prompt = `Transforme a ideia ou transcrição de áudio da professora Renata (@textoemciclo) em um documento editorial rico para o Estúdio BlockNote.
+  const preset: TemplatePreset = input.preset ?? "repertorio_banca";
+  const output: StudioOutputKind = input.output ?? (preset === "quick_tip" ? "single" : "carousel");
+  const aspect: StudioAspect = output === "story" ? "story" : "carousel";
+  const systemPrompt = buildSystemPrompt(preset);
+
+  const countGuide =
+    output === "single"
+      ? "Crie EXATAMENTE 1 bloco (socialQuote ou socialBeforeAfter) que funcione sozinho como card único memorável e compartilhável."
+      : output === "story"
+        ? "Crie EXATAMENTE 4 blocos curtos e diretos pensados para sequência vertical de Stories (9:16), começando com socialCover e fechando com socialCta convidativo."
+        : "Crie entre 5 e 7 blocos variando entre socialCover, socialStep, socialBeforeAfter, socialChecklist, socialQuote e socialCta conforme o conteúdo pedir. Sempre comece com socialCover e termine com socialCta.";
+
+  const prompt = `Transforme a pauta da professora Renata (@textoemciclo) em um post visual para o Estúdio (${output === "single" ? "Card Único" : output === "story" ? "Stories 9:16" : "Carrossel 4:5"}).
+Você pode destacar 1 ou 2 palavras-chave fortes cercando-as com ==duplo igual== (ex.: "agir pelo ==coração==").
 Retorne APENAS um JSON válido com esta estrutura:
 {
   "title": "Título interno curto (máx 60 caracteres)",
@@ -478,15 +500,15 @@ Retorne APENAS um JSON válido com esta estrutura:
   "blocks": [
     {
       "type": "socialCover",
-      "props": { "eyebrow": "TEXTO EM CICLO", "title": "Título forte até 55 chars", "subtitle": "Subtítulo curto", "cta": "Arraste para ver →" }
+      "props": { "eyebrow": "REPERTÓRIO DE REDAÇÃO", "title": "Título forte até 55 chars", "subtitle": "Subtítulo curto", "cta": "deslize →" }
     },
     {
       "type": "socialStep",
-      "props": { "stepNumber": "01", "eyebrow": "PASSO 01", "title": "Título curto", "body": "Explicação clara em 2 frases", "tip": "Dica prática curta" }
+      "props": { "stepNumber": "01", "eyebrow": "EIXO CENTRAL", "title": "Título curto", "body": "Explicação clara em 2 frases", "tip": "Dica prática curta da Prô" }
     },
     {
       "type": "socialBeforeAfter",
-      "props": { "eyebrow": "ANTES × DEPOIS", "title": "Na prática", "wrongLabel": "Antes", "wrongText": "Frase truncada ou com erro comum", "rightLabel": "Depois", "rightText": "Versão fluida e clara", "note": "Por que funciona melhor" }
+      "props": { "eyebrow": "[regência verbal]", "title": "CORROBORAR", "wrongLabel": "Erro comum", "wrongText": "As ONGs corroboram com o governo.", "rightLabel": "Na dissertação", "rightText": "Os dados corroboram a tese apresentada.", "note": "Comentário sincerão da Prô sobre o critério da banca" }
     },
     {
       "type": "socialChecklist",
@@ -494,18 +516,20 @@ Retorne APENAS um JSON válido com esta estrutura:
     },
     {
       "type": "socialQuote",
-      "props": { "eyebrow": "NOTA DE CADERNO", "quote": "Frase memorável sobre escrita", "author": "Renata · @textoemciclo" }
+      "props": { "eyebrow": "PÍLULA", "quote": "Frase memorável sobre escrita ou repertório", "author": "Renata · @textoemciclo" }
     },
     {
       "type": "socialCta",
-      "props": { "eyebrow": "SALVE PARA CONSULTAR", "title": "Chamada final", "body": "Convite para salvar e compartilhar", "buttonLabel": "Comente sua dúvida ↓" }
+      "props": { "eyebrow": "SALVE ESSE POST", "title": "Chamada final", "body": "Convite parceiro para salvar e treinar", "buttonLabel": "Vamos juntos? :)" }
     }
   ]
 }
 
-Use entre 5 e 7 blocos variando entre socialCover, socialStep, socialBeforeAfter, socialChecklist, socialQuote e socialCta conforme o conteúdo pedir. Sempre comece com socialCover e termine com socialCta.
+${countGuide}
+Diretriz editorial do formato (${preset}):
+${presetInstruction(preset, output === "single" ? 1 : output === "story" ? 4 : 6)}
 
-IDEIA / TRANSCRIÇÃO DA RENATA:
+PAUTA / SEMENTE DA RENATA:
 """
 ${input.idea.trim()}
 """`;
@@ -538,17 +562,22 @@ ${input.idea.trim()}
       ? parsed.artDirection
       : "notebook");
 
+  const paletteId = input.paletteId ?? PRESET_PALETTE[preset] ?? CANVAS_PALETTES[0]!.id;
+  const compiled = compileDocToSlides(blocks);
+  const canvas = canvasFromCompiled(compiled, aspect, paletteId, input.seed ?? 0);
+
   const now = new Date().toISOString();
   return {
     id: `studio_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 6)}`,
-    title: clip(parsed.title, 72) ?? "Novo documento · Texto em Ciclo",
+    title: clip(parsed.title, 72) ?? "Novo post · Texto em Ciclo",
     format: "studio_doc",
     status: "draft_ai",
     slides: [],
     studioDoc: {
       artDirection: art,
-      aspect: "carousel",
+      aspect,
       blocks,
+      canvas,
     },
     caption: typeof parsed.caption === "string" ? parsed.caption.trim() : "",
     sourceIdea: input.idea.trim(),
@@ -556,3 +585,221 @@ ${input.idea.trim()}
     updatedAt: now,
   };
 }
+
+/** Generates multiple distinct Studio formats & palettes from a single seed idea. */
+export async function generateStudioVariations(input: {
+  idea: string;
+  preset?: TemplatePreset;
+  outputs?: StudioOutputKind[];
+}): Promise<SocialPost[]> {
+  const preset: TemplatePreset = input.preset ?? "repertorio_banca";
+  const outputs: StudioOutputKind[] =
+    input.outputs && input.outputs.length > 0 ? input.outputs.slice(0, 3) : ["carousel", "single", "story"];
+
+  const primaryPalette = PRESET_PALETTE[preset] ?? CANVAS_PALETTES[0]!.id;
+  const otherPalettes = CANVAS_PALETTES.map(p => p.id).filter(id => id !== primaryPalette);
+  const paletteOrder = [primaryPalette, ...otherPalettes];
+
+  const tasks = outputs.map((out, idx) =>
+    generateStudioDocument({
+      idea: input.idea,
+      preset: out === "single" ? "quick_tip" : preset,
+      output: out,
+      paletteId: paletteOrder[idx % paletteOrder.length],
+      seed: idx * 3 + 1,
+    }),
+  );
+
+  return Promise.all(tasks);
+}
+
+/** Rewrites a single slide's semantic content slots according to an inline AI instruction. */
+export async function rewriteSlideContent(input: {
+  content: SlideContent;
+  instruction: string;
+  preset?: TemplatePreset;
+}): Promise<SlideContent> {
+  await hydrateRuntimeKeys();
+  const provider = getConfiguredAiProvider();
+  if (!provider) {
+    throw new Error("Configure uma chave de IA em /admin/chaves para usar IA no slide.");
+  }
+
+  const systemPrompt = buildSystemPrompt(input.preset ?? "repertorio_banca");
+  const prompt = `Reescreva APENAS os campos de texto deste slide do @textoemciclo seguindo o pedido da professora Renata.
+Mantenha o mesmo "kind" ("${input.content.kind}") e devolva SOMENTE um JSON válido com as chaves pertinentes entre:
+"kind", "eyebrow", "title", "subtitle", "body", "wrongLabel", "wrong", "rightLabel", "right", "note", "quote", "author", "step", "items", "cta".
+Para grifar 1 ou 2 palavras-chave em mostarda/destaque, envolva-as em ==duplo igual== (ex.: ==coração==).
+Para listas em "items", separe cada item com quebra de linha "\\n".
+
+CONTEÚDO ATUAL DO SLIDE:
+${JSON.stringify(input.content, null, 2)}
+
+PEDIDO DA RENATA:
+"${input.instruction.trim()}"`;
+
+  const rawText = await runTextProvider(provider, systemPrompt, prompt);
+  const parsed = extractJson(rawText);
+  const next: SlideContent = { kind: input.content.kind };
+  const keys = [
+    "eyebrow", "title", "subtitle", "body", "wrongLabel", "wrong", "rightLabel", "right",
+    "note", "quote", "author", "step", "items", "cta",
+  ] as const;
+  for (const key of keys) {
+    const v = parsed[key];
+    if (typeof v === "string" && v.trim()) next[key] = v.trim();
+    else if (Array.isArray(v)) next[key] = v.map(String).join("\n");
+  }
+  if (input.content.image) next.image = input.content.image;
+  return next;
+}
+
+/** Reads a photo of a student essay, book page, or screenshot using multimodal vision and extracts a pedagogical seed. */
+export async function extractSeedFromImage(file: File): Promise<string> {
+  await hydrateRuntimeKeys();
+  const raw = Buffer.from(await file.arrayBuffer());
+  const jpeg = await sharp(raw)
+    .rotate()
+    .resize({ width: 1280, height: 1600, fit: "inside", withoutEnlargement: true })
+    .jpeg({ quality: 82 })
+    .toBuffer();
+  const b64 = jpeg.toString("base64");
+  const instruction =
+    "Você auxilia a professora de redação Renata Romero (@textoemciclo). Leia esta imagem (pode ser foto de redação manuscrita, proposta de banca, página de livro ou print de notícia) e extraia em 3 a 5 frases objetivas: o tema/assunto central, eventuais desvios ou acertos de escrita observáveis (com trechos literais se houver) e um ângulo pedagógico rico para virar post de redação.";
+
+  if (process.env.OPENAI_API_KEY?.trim()) {
+    const model = process.env.OPENAI_MODEL?.trim() || "gpt-4o-mini";
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY.trim()}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        messages: [
+          {
+            role: "user",
+            content: [
+              { type: "text", text: instruction },
+              { type: "image_url", image_url: { url: `data:image/jpeg;base64,${b64}` } },
+            ],
+          },
+        ],
+      }),
+      signal: AbortSignal.timeout(35_000),
+    });
+    if (res.ok) {
+      const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
+      const text = data.choices?.[0]?.message?.content?.trim();
+      if (text) return text;
+    }
+  }
+
+  if (process.env.GEMINI_API_KEY?.trim()) {
+    const model = process.env.GEMINI_MODEL?.trim() || "gemini-2.5-flash";
+    const res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent?key=${encodeURIComponent(process.env.GEMINI_API_KEY.trim())}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                { text: instruction },
+                { inlineData: { mimeType: "image/jpeg", data: b64 } },
+              ],
+            },
+          ],
+        }),
+        signal: AbortSignal.timeout(35_000),
+      },
+    );
+    if (res.ok) {
+      const data = (await res.json()) as { candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }> };
+      const text = data.candidates?.[0]?.content?.parts?.map(p => p.text ?? "").join("").trim();
+      if (text) return text;
+    }
+  }
+
+  if (process.env.ANTHROPIC_API_KEY?.trim()) {
+    const model = process.env.ANTHROPIC_MODEL?.trim() || "claude-sonnet-4-20250514";
+    const res = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "x-api-key": process.env.ANTHROPIC_API_KEY.trim(),
+        "anthropic-version": "2023-06-01",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model,
+        max_tokens: 600,
+        messages: [
+          {
+            role: "user",
+            content: [
+              { type: "image", source: { type: "base64", media_type: "image/jpeg", data: b64 } },
+              { type: "text", text: instruction },
+            ],
+          },
+        ],
+      }),
+      signal: AbortSignal.timeout(35_000),
+    });
+    if (res.ok) {
+      const data = (await res.json()) as { content?: Array<{ text?: string }> };
+      const text = data.content?.map(c => c.text ?? "").join("").trim();
+      if (text) return text;
+    }
+  }
+
+  throw new Error("Configure OpenAI, Gemini ou Anthropic em /admin/chaves para ler fotos de redação.");
+}
+
+/** Fetches a public news/article URL and summarizes its headline and key facts into a seed string. */
+export async function extractSeedFromUrl(rawUrl: string): Promise<string> {
+  let parsed: URL;
+  try {
+    parsed = new URL(rawUrl.trim());
+  } catch {
+    throw new Error("Informe um endereço http:// ou https:// válido.");
+  }
+  if (!/^https?:$/i.test(parsed.protocol)) {
+    throw new Error("Use um endereço http:// ou https://.");
+  }
+
+  const res = await fetch(parsed.toString(), {
+    headers: { "User-Agent": "Mozilla/5.0 (compatible; TextoEmCicloStudio/1.0)" },
+    signal: AbortSignal.timeout(12_000),
+  });
+  if (!res.ok) throw new Error(`Não foi possível ler a notícia (HTTP ${res.status}).`);
+  const html = (await res.text()).slice(0, 180_000);
+
+  const clean = (s: string) =>
+    s
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&nbsp;/gi, " ")
+      .replace(/&quot;/gi, '"')
+      .replace(/&amp;/gi, "&")
+      .replace(/&#39;/gi, "'")
+      .replace(/\s+/g, " ")
+      .trim();
+
+  const title =
+    clean(html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)?.[1] ?? "") ||
+    clean(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? "");
+  const desc = clean(
+    html.match(/<meta[^>]+(?:property=["']og:description["']|name=["']description["'])[^>]+content=["']([^"']+)["']/i)?.[1] ?? "",
+  );
+  const paragraphs = [...html.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map(m => clean(m[1] ?? ""))
+    .filter(p => p.length > 60)
+    .slice(0, 5)
+    .join(" ");
+
+  const summary = [title ? `Notícia: ${title}` : "", desc, paragraphs.slice(0, 900)].filter(Boolean).join(" — ");
+  if (!summary) throw new Error("Não foi possível extrair o texto desta página. Cole um trecho manualmente.");
+  return summary;
+}
+

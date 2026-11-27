@@ -85,6 +85,14 @@ const PICTURES: Record<string, ReactNode> = {
   CaseMediaFullWidth: <Pic><Photo x={2} y={8} w={44} h={20} /></Pic>,
   CaseSectionMedia: <Pic><path d="M8 7h16" strokeWidth={2.4} /><path d="M8 12h24" opacity={.5} /><Photo x={8} y={16} w={32} h={15} /></Pic>,
   CaseMediaEmbed: <Pic><path d="M14 5h20" strokeWidth={2.2} /><Browser y={10} h={21} /></Pic>,
+  socialCover: <Pic><rect x={11} y={4} width={26} height={28} rx={3} fill="currentColor" fillOpacity={.14} /><rect x={15} y={8} width={10} height={3} rx={1.5} fill="currentColor" /><path d="M15 16h18M15 21h14" strokeWidth={2.4} /><path d="M25 27h8" opacity={.6} /></Pic>,
+  socialBeforeAfter: <Pic><rect x={5} y={7} width={17} height={22} rx={2.5} /><rect x={26} y={7} width={17} height={22} rx={2.5} fill="currentColor" fillOpacity={.16} /><path d="M10 13l4 4M14 13l-4 4M31 15l2 2 4-4" /><path d="M9 22h9M30 22h9" /></Pic>,
+  socialStep: <Pic><Label size={18} x={14} y={24} outline>01</Label><path d="M25 13h15" strokeWidth={2.2} /><path d="M25 19h15M25 25h10" /></Pic>,
+  socialChecklist: <Pic><path d="m9 11 2 2 3.5-3.5M9 19l2 2 3.5-3.5M9 27l2 2 3.5-3.5" /><path d="M18 11h21M18 19h21M18 27h14" /></Pic>,
+  socialQuote: <Pic><Label size={22} x={13} y={21}>“</Label><path d="M20 13h20M20 19h18M20 26h10" /></Pic>,
+  socialImage: <Pic><Photo x={9} y={5} w={30} h={26} /><circle cx={17} cy={12} r={2} /><path d="M33 8v4M31 10h4" /></Pic>,
+  socialCta: <Pic><path d="M12 12h24M15 18h18" strokeWidth={2.2} /><rect x={13} y={23} width={22} height={7} rx={3.5} fill="currentColor" fillOpacity={.22} /></Pic>,
+  slideBreak: <Pic><path d="M6 18h36" strokeDasharray="3 3" /><path d="M14 10h20M14 26h20" opacity={.45} /></Pic>,
 };
 const Fallback = <Pic><rect x={8} y={7} width={32} height={22} rx={3} /><path d="M18 7v22" /></Pic>;
 

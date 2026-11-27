@@ -175,7 +175,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
       }
     >
       <CropProvider>
-        <MediaProvider folder="cases" slug="texto-em-ciclo">
+        <MediaProvider folder="reels" slug="texto-em-ciclo" source="social">
           <div className={styles.sheet}>
             <div className={styles.page} data-wide>
               {lastMuapiVideo ? (

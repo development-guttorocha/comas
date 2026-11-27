@@ -22,8 +22,9 @@ import SlideCanvas from "@/components/social/SlideCanvas";
 import AdminShell from "./AdminShell";
 import BusyOverlay from "./BusyOverlay";
 import { Toast, useToast } from "./client";
-import { move } from "./Fields";
+import { ImageInput, move } from "./Fields";
 import { CopyIcon, DownIcon, ImageIcon, PlusIcon, SparkIcon, TrashIcon, UpIcon } from "./icons";
+import { MediaProvider } from "./MediaPicker";
 import MuapiGeneratorDialog from "./MuapiGeneratorDialog";
 import Skeleton from "./Skeleton";
 import styles from "./admin.module.css";
@@ -293,6 +294,7 @@ export default function SocialPostEditor({ id }: { id: string }) {
         </>
       }
     >
+      <MediaProvider folder="carrosseis" slug={post.id} source="social">
       <div className={c.tool} data-side="preview">
         {/* Left card: tabs + editor (same frame as CaseEditor) */}
         <section className={c.card} aria-label="Editor do carrossel">
@@ -608,26 +610,22 @@ export default function SocialPostEditor({ id }: { id: string }) {
 
                   <div className={`${styles.field} ${styles.fieldWide}`} style={{ paddingTop: 10, borderTop: "1px solid var(--line)" }}>
                     <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
-                      <span className={styles.label}>Imagem de fundo editorial (MuAPI)</span>
+                      <span className={styles.label}>Imagem de fundo (Mídia ou IA)</span>
                       <div style={{ display: "flex", gap: 6 }}>
                         <button
                           type="button"
                           className={`${styles.button} ${styles.small}`}
                           onClick={() => setMuapiOpen(true)}
                         >
-                          <ImageIcon />Gerar imagem com MuAPI
+                          <ImageIcon />Gerar com MuAPI
                         </button>
-                        {activeSlide.imageUrl ? (
-                          <button
-                            type="button"
-                            className={`${styles.button} ${styles.ghost} ${styles.small}`}
-                            onClick={() => patchSlide({ imageUrl: undefined })}
-                          >
-                            Remover imagem
-                          </button>
-                        ) : null}
                       </div>
                     </div>
+                    <ImageInput
+                      value={activeSlide.imageUrl ?? ""}
+                      onChange={val => patchSlide({ imageUrl: val || undefined })}
+                      label="Imagem de fundo do slide"
+                    />
                     {activeSlide.imageUrl ? (
                       <div style={{ display: "grid", gap: 8, marginTop: 6 }}>
                         <label className={styles.rangeField}>
@@ -806,6 +804,7 @@ export default function SocialPostEditor({ id }: { id: string }) {
 
       <BusyOverlay label={busyLabel} />
       <Toast toast={toast} />
+      </MediaProvider>
     </AdminShell>
   );
 }

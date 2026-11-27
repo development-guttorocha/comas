@@ -78,8 +78,122 @@ export function compileDocToSlides(blocks: StudioBlockJson[]): CompiledSlide[] {
 
     switch (block.type) {
       case "slideBreak":
+      case "divider":
         flushFree();
         return;
+
+      case "image": {
+        flushFree();
+        const url = str(props.url);
+        if (!url && !str(props.caption)) return;
+        slides.push({
+          id,
+          kind: "image",
+          caption: str(props.caption) || undefined,
+          imageUrl: url || undefined,
+          imageOverlay: 0.35,
+        });
+        return;
+      }
+
+      case "imageRow": {
+        flushFree();
+        let items: Array<{ src?: string; caption?: string }> = [];
+        try {
+          const parsed = JSON.parse(str(props.items, "[]"));
+          if (Array.isArray(parsed)) items = parsed as Array<{ src?: string; caption?: string }>;
+        } catch { /* ignore */ }
+        const valid = items.filter(i => i?.src);
+        if (!valid.length) return;
+        for (const [subIdx, item] of valid.entries()) {
+          slides.push({
+            id: `${id}_${subIdx}`,
+            kind: "image",
+            caption: str(item.caption) || str(props.caption) || undefined,
+            imageUrl: item.src,
+            imageOverlay: 0.35,
+          });
+        }
+        return;
+      }
+
+      case "caseComponent": {
+        flushFree();
+        const name = str(props.name);
+        let data: Record<string, unknown> = {};
+        try {
+          data = JSON.parse(str(props.data, "{}")) as Record<string, unknown>;
+        } catch { /* ignore */ }
+
+        if (name === "CaseBeforeAfter") {
+          const before = (data.before ?? {}) as Record<string, unknown>;
+          const after = (data.after ?? {}) as Record<string, unknown>;
+          slides.push({
+            id,
+            kind: "before_after",
+            eyebrow: str(data.sectionLabel, "ANTES × DEPOIS"),
+            title: str(data.heading || data.banner, "Na prática"),
+            wrongLabel: str(before.label, "Antes"),
+            wrongText: str(before.body || before.lead),
+            rightLabel: str(after.label, "Depois"),
+            rightText: str(after.body || after.lead),
+            note: str(after.foot || before.foot) || undefined,
+          });
+          return;
+        }
+
+        if (name === "CasePullQuote" || name === "CaseResultsQuote" || name === "CaseStatement" || name === "CaseLightPanel") {
+          slides.push({
+            id,
+            kind: "quote",
+            eyebrow: str(data.label || data.sectionLabel) || undefined,
+            quote: str(data.body || data.heading || data.statement, "Destaque"),
+            author: str(data.attribution || data.subtext) || undefined,
+          });
+          return;
+        }
+
+        if (name === "CaseBigNumber") {
+          slides.push({
+            id,
+            kind: "step",
+            stepNumber: str(data.value || data.number, "01"),
+            eyebrow: str(data.sectionLabel || data.label) || undefined,
+            title: str(data.heading || data.label, "Indicador"),
+            body: str(data.caption || data.body),
+          });
+          return;
+        }
+
+        const listItems: string[] = [];
+        for (const key of ["items", "stats", "steps", "rows", "nodes"]) {
+          const arr = data[key];
+          if (Array.isArray(arr)) {
+            for (const entry of arr) {
+              if (entry && typeof entry === "object") {
+                const rec = entry as Record<string, unknown>;
+                const line = [str(rec.value), str(rec.title || rec.label), str(rec.body || rec.caption)]
+                  .filter(Boolean)
+                  .join(" — ");
+                if (line) listItems.push(line);
+              } else if (typeof entry === "string" && entry.trim()) {
+                listItems.push(entry.trim());
+              }
+            }
+          }
+        }
+
+        slides.push({
+          id,
+          kind: listItems.length ? "checklist" : "step",
+          stepNumber: "01",
+          eyebrow: str(data.sectionLabel) || undefined,
+          title: str(data.heading || data.title, name.replace(/^Case/, "")),
+          body: str(data.intro || data.body),
+          items: listItems,
+        } as CompiledSlide);
+        return;
+      }
 
       case "socialCover":
         flushFree();
