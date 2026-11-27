@@ -6,6 +6,7 @@ import {
   CANVAS_MARGIN,
   CANVAS_SIZE,
   clampToMargin,
+  contrastRatio,
   fillPlaceholders,
   FONT_STACK,
   parseMarks,
@@ -13,6 +14,7 @@ import {
   stripMarks,
   type CanvasElement,
   type CanvasImageEl,
+  type CanvasShadow,
   type CanvasShapeEl,
   type CanvasSlide,
   type CanvasTextEl,
@@ -35,57 +37,110 @@ const HANDLES: Array<{ id: Exclude<HandleKind, "move" | "rotate">; left: string;
 
 function textureCss(texture: CanvasSlide["texture"], ink: string): CSSProperties {
   const faint = `${ink}14`;
-  const soft = `${ink}10`;
+  const soft = `${ink}0E`;
+  const ultraSoft = `${ink}08`;
   switch (texture) {
     case "paper":
       return {
-        backgroundImage: `radial-gradient(${soft} 1px, transparent 0), radial-gradient(${faint} 1px, transparent 0)`,
-        backgroundSize: "28px 28px",
-        backgroundPosition: "0 0, 14px 14px",
+        backgroundImage: `radial-gradient(circle at 20% 15%, rgba(255,255,255,0.28) 0%, transparent 55%), radial-gradient(${soft} 1px, transparent 0), radial-gradient(${ultraSoft} 1px, transparent 0)`,
+        backgroundSize: "100% 100%, 26px 26px, 26px 26px",
+        backgroundPosition: "0 0, 0 0, 13px 13px",
       };
     case "grid":
       return {
         backgroundImage: `linear-gradient(to right, ${soft} 1px, transparent 1px), linear-gradient(to bottom, ${soft} 1px, transparent 1px)`,
-        backgroundSize: "48px 48px",
+        backgroundSize: "52px 52px",
       };
     case "lines":
       return {
-        backgroundImage: `repeating-linear-gradient(to bottom, transparent 0px, transparent 51px, ${faint} 52px)`,
+        backgroundImage: `repeating-linear-gradient(to bottom, transparent 0px, transparent 53px, ${faint} 54px)`,
       };
     case "dots":
       return {
         backgroundImage: `radial-gradient(${faint} 2px, transparent 2px)`,
-        backgroundSize: "36px 36px",
+        backgroundSize: "34px 34px",
       };
     default:
       return {};
   }
 }
 
+function shadowCss(shadow: CanvasShadow | undefined, fallback?: string): string | undefined {
+  if (shadow === "none") return undefined;
+  if (shadow === "hard") return "8px 8px 0px #120E1A";
+  if (shadow === "soft") return "0 22px 48px rgba(18, 14, 26, 0.13), 0 4px 12px rgba(18, 14, 26, 0.06)";
+  if (shadow === "note") return "0 20px 38px rgba(18, 14, 26, 0.22), 0 3px 8px rgba(18, 14, 26, 0.1)";
+  return fallback;
+}
+
 /** Gently shrinks font size when text grows longer than its box, avoiding clipping. */
 function autoFitFontSize(el: CanvasTextEl, rawText: string): number {
-  const plain = stripMarks(rawText);
+  const plain = stripMarks(rawText).trim();
   if (!plain) return el.size;
-  const padX = el.variant === "note" ? 72 : el.variant === "card" || el.variant === "tarja" || el.variant === "pill" ? 52 : 8;
-  const padY = el.variant === "note" ? 68 : el.variant === "card" || el.variant === "tarja" ? 34 : el.variant === "pill" ? 20 : 4;
-  const availW = Math.max(120, el.w - padX);
+  const padX =
+    el.variant === "note" ? 76 : el.variant === "card" ? 68 : el.variant === "tarja" || el.variant === "marker" ? 56 : el.variant === "pill" ? 52 : 8;
+  const padY =
+    el.variant === "note" ? 72 : el.variant === "card" ? 52 : el.variant === "tarja" ? 36 : el.variant === "marker" ? 40 : el.variant === "pill" ? 24 : 6;
+  const baseFactor = el.font === "display" ? 0.62 : el.font === "hand" ? 0.44 : el.font === "serif" ? 0.5 : 0.51;
+  const charFactor = el.upper ? baseFactor + 0.06 : baseFactor;
+  const listIndent = el.list ? el.size * 1.1 : 0;
+  const availW = Math.max(110, el.w - padX - listIndent);
   const availH = Math.max(36, el.h - padY);
   const lh = el.lineHeight ?? 1.2;
 
   let size = el.size;
-  const minSize = Math.max(20, Math.round(el.size * 0.52));
+  const minSize = Math.max(20, Math.round(el.size * 0.54));
   while (size > minSize) {
-    const charsPerLine = Math.max(4, Math.floor(availW / (size * 0.54)));
-    const lines = plain
-      .split("\n")
-      .reduce((sum, line) => sum + Math.max(1, Math.ceil(Math.max(1, line.length) / charsPerLine)), 0);
-    if (lines * size * lh <= availH * 1.08) break;
+    const maxChars = Math.max(5, Math.floor(availW / (size * charFactor)));
+    const paragraphs = plain.split("\n").filter(Boolean);
+    let totalLines = 0;
+    for (const para of paragraphs) {
+      const words = para.split(/\s+/).filter(Boolean);
+      let lines = 1;
+      let cur = 0;
+      for (const word of words) {
+        const next = cur === 0 ? word.length : cur + 1 + word.length;
+        if (cur > 0 && next > maxChars) {
+          lines++;
+          cur = word.length;
+        } else {
+          cur = next;
+        }
+      }
+      totalLines += lines;
+    }
+    const listGaps = el.list && paragraphs.length > 1 ? (paragraphs.length - 1) * Math.round(size * 0.34) : 0;
+    if (totalLines * size * lh + listGaps <= availH * 1.08) break;
     size -= 2;
   }
   return size;
 }
 
-function RichRuns({ text, markBg, markInk }: { text: string; markBg: string; markInk: string }) {
+function resolveParentSurface(
+  elements: CanvasElement[],
+  zIdx: number,
+  el: CanvasElement,
+  palette: SocialPalette,
+  slideBg: string,
+): string {
+  const cx = el.x + el.w / 2;
+  const cy = el.y + el.h / 2;
+  let bg = slideBg;
+  for (let k = 0; k < zIdx; k++) {
+    const under = elements[k]!;
+    const encloses = cx >= under.x && cx <= under.x + under.w && cy >= under.y && cy <= under.y + under.h;
+    if (!encloses) continue;
+    if (under.type === "shape" && (under.shape === "rect" || under.shape === "circle") && (under.opacity ?? 1) >= 0.85) {
+      const hex = resolveColor(under.fill, palette, bg);
+      if (hex !== "transparent") bg = hex;
+    } else if (under.type === "image" && under.src && (under.overlay ?? 0) >= 0.25) {
+      bg = "#120E1A";
+    }
+  }
+  return bg;
+}
+
+function RichRuns({ text, markBg, markInk, isDisplay }: { text: string; markBg: string; markInk: string; isDisplay: boolean }) {
   const runs = parseMarks(text);
   return (
     <>
@@ -97,11 +152,11 @@ function RichRuns({ text, markBg, markInk }: { text: string; markBg: string; mar
               style={{
                 background: markBg,
                 color: markInk,
-                padding: "0.04em 0.22em",
-                borderRadius: "0.2em",
+                padding: "0.03em 0.2em",
+                borderRadius: "0.18em",
                 boxDecorationBreak: "clone",
                 WebkitBoxDecorationBreak: "clone",
-                fontWeight: 800,
+                fontWeight: isDisplay ? 400 : 800,
               }}
             >
               {run.text}
@@ -110,7 +165,7 @@ function RichRuns({ text, markBg, markInk }: { text: string; markBg: string; mar
         }
         if (run.bold) {
           return (
-            <strong key={idx} style={{ fontWeight: 800 }}>
+            <strong key={idx} style={{ fontWeight: isDisplay ? 400 : 800 }}>
               {run.text}
             </strong>
           );
@@ -121,11 +176,28 @@ function RichRuns({ text, markBg, markInk }: { text: string; markBg: string; mar
   );
 }
 
+const STARBURST_PATH = (() => {
+  const pts: string[] = [];
+  const spikes = 12;
+  const cx = 60;
+  const cy = 60;
+  for (let i = 0; i < spikes * 2; i++) {
+    const r = i % 2 === 0 ? 55 : 39;
+    const angle = (i * Math.PI) / spikes - Math.PI / 2;
+    const x = (cx + Math.cos(angle) * r).toFixed(1);
+    const y = (cy + Math.sin(angle) * r).toFixed(1);
+    pts.push(`${i === 0 ? "M" : "L"}${x},${y}`);
+  }
+  return `${pts.join(" ")} Z`;
+})();
+
 function ShapeArtwork({ el, palette, slideBg }: { el: CanvasShapeEl; palette: SocialPalette; slideBg: string }) {
   const color = resolveColor(el.fill, palette, slideBg);
+  const borderHex = el.borderWidth ? resolveColor(el.borderColor ?? "primary", palette, slideBg) : undefined;
+
   if (el.shape === "arrow") {
     return (
-      <svg viewBox="0 0 220 80" width="100%" height="100%" fill="none" stroke={color} strokeWidth={10} strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 220 80" width="100%" height="100%" fill="none" stroke={color} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round">
         <path d="M14 54 C 72 18, 138 18, 198 42" />
         <path d="M168 18 L 202 43 L 166 64" />
       </svg>
@@ -133,9 +205,63 @@ function ShapeArtwork({ el, palette, slideBg }: { el: CanvasShapeEl; palette: So
   }
   if (el.shape === "underline") {
     return (
-      <svg viewBox="0 0 320 26" width="100%" height="100%" fill="none" stroke={color} strokeWidth={10} strokeLinecap="round">
-        <path d="M8 16 Q 160 4 312 15" />
+      <svg viewBox="0 0 320 26" width="100%" height="100%" fill="none" stroke={color} strokeWidth={9} strokeLinecap="round">
+        <path d="M8 17 Q 162 4 312 15" />
       </svg>
+    );
+  }
+  if (el.shape === "quote-mark") {
+    return (
+      <svg viewBox="0 0 120 88" width="100%" height="100%" fill={color} style={{ opacity: el.opacity ?? 1 }}>
+        <path d="M31 84C14 84 4 71 4 53C4 30 20 12 48 4L53 16C34 23 26 34 25 46C27 45 31 44 35 44C47 44 55 52 55 64C55 76 45 84 31 84ZM93 84C76 84 66 71 66 53C66 30 82 12 110 4L115 16C96 23 88 34 87 46C89 45 93 44 97 44C109 44 117 52 117 64C117 76 107 84 93 84Z" />
+      </svg>
+    );
+  }
+  if (el.shape === "badge-star") {
+    return (
+      <svg viewBox="0 0 120 120" width="100%" height="100%" style={{ filter: "drop-shadow(5px 5px 0px #120E1A)" }}>
+        <path d={STARBURST_PATH} fill={color} stroke="#120E1A" strokeWidth={3.5} strokeLinejoin="round" />
+      </svg>
+    );
+  }
+  if (el.shape === "frame") {
+    const r = el.radius ?? 22;
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          boxSizing: "border-box",
+          border: `2px solid ${color}`,
+          borderRadius: `${r}px`,
+          opacity: el.opacity ?? 0.16,
+          pointerEvents: "none",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 10,
+            border: `1px solid ${color}`,
+            borderRadius: `${Math.max(8, r - 8)}px`,
+          }}
+        />
+      </div>
+    );
+  }
+  if (el.shape === "notebook-margin") {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          boxSizing: "border-box",
+          borderLeft: `2.5px solid ${color}`,
+          borderRight: `1px solid ${color}`,
+          opacity: el.opacity ?? 0.32,
+        }}
+      />
     );
   }
   if (el.shape === "line") {
@@ -143,7 +269,8 @@ function ShapeArtwork({ el, palette, slideBg }: { el: CanvasShapeEl; palette: So
       <div
         style={{
           width: "100%",
-          height: Math.max(3, el.h),
+          height: "100%",
+          minHeight: Math.min(el.h, 2),
           background: color,
           opacity: el.opacity ?? 1,
           borderRadius: 99,
@@ -158,9 +285,11 @@ function ShapeArtwork({ el, palette, slideBg }: { el: CanvasShapeEl; palette: So
           width: "100%",
           height: "100%",
           background: color,
-          opacity: el.opacity ?? 0.78,
-          borderRadius: 4,
-          boxShadow: "0 4px 12px rgba(0,0,0,0.12)",
+          opacity: el.opacity ?? 0.8,
+          borderRadius: 3,
+          borderLeft: "2px dashed rgba(18,14,26,0.16)",
+          borderRight: "2px dashed rgba(18,14,26,0.16)",
+          boxShadow: "0 4px 12px rgba(18,14,26,0.12)",
         }}
       />
     );
@@ -170,9 +299,12 @@ function ShapeArtwork({ el, palette, slideBg }: { el: CanvasShapeEl; palette: So
       style={{
         width: "100%",
         height: "100%",
+        boxSizing: "border-box",
         background: color,
         opacity: el.opacity ?? 1,
         borderRadius: el.shape === "circle" ? "9999px" : `${el.radius ?? 24}px`,
+        border: el.borderWidth && borderHex ? `${el.borderWidth}px solid ${borderHex}` : undefined,
+        boxShadow: shadowCss(el.shadow),
       }}
     />
   );
@@ -316,7 +448,9 @@ export default function CanvasSlideView({
     setDragging(false);
     try {
       (e.currentTarget as HTMLElement).releasePointerCapture(e.pointerId);
-    } catch { /* ignore */ }
+    } catch {
+      /* ignore */
+    }
 
     if (!moved && el.type === "text" && el.role !== "chrome" && wasSelected) {
       onStartEditing?.(el.id);
@@ -326,74 +460,102 @@ export default function CanvasSlideView({
     }
   }
 
-  function renderTextElement(el: CanvasTextEl) {
+  function renderTextElement(el: CanvasTextEl, zIdx: number) {
     const resolved = fillPlaceholders(el.text, { handle, index, total });
     if (!interactive && el.role === "chrome" && !resolved.trim()) return null;
 
-    const fillHex = el.fill ? resolveColor(el.fill, palette, slideBg) : "transparent";
-    const behind = fillHex !== "transparent" ? fillHex : slideBg;
+    const parentBg = resolveParentSurface(slide.elements, zIdx, el, palette, slideBg);
+    const fillHex = el.fill ? resolveColor(el.fill, palette, parentBg) : "transparent";
+    const behind = fillHex !== "transparent" ? fillHex : parentBg;
     const textHex = resolveColor(el.color, palette, behind);
+    const borderHex = el.borderWidth ? resolveColor(el.borderColor ?? "black", palette, parentBg) : undefined;
 
-    // Highlight color: mustard gold on dark or soft/mustard on light
-    const markBg = behind.toLowerCase() === "#e5b314" || behind.toLowerCase() === "#f8e07a" ? palette.primary : "#F5BD1F";
-    const markInk = markBg === "#F5BD1F" ? "#16121F" : "#FFFFFF";
+    // Highlight color: warm mustard marker on light and dark surfaces; invert only on yellow/mustard fills
+    const onYellow = ["#e5b314", "#f8e07a", "#f5bd1f"].includes(behind.toLowerCase());
+    const markBg = onYellow ? "#120E1A" : "#F5C836";
+    const markInk = onYellow ? "#FFFFFF" : "#120E1A";
 
     const fontSize = autoFitFontSize(el, resolved || el.text);
     const isEditing = interactive && editingElementId === el.id;
+    const isDisplay = el.font === "display";
+    // Archivo Black only ships weight 400; never apply synthetic bold smearing.
+    const fontWeight = isDisplay ? 400 : el.weight;
 
-    const boxStyle: CSSProperties = {
-      width: "100%",
-      height: "100%",
-      boxSizing: "border-box",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: el.variant === "pill" || el.variant === "tarja" ? "center" : "flex-start",
-      alignItems: el.align === "center" ? "center" : el.align === "right" ? "flex-end" : "stretch",
-      textAlign: el.align,
-      fontFamily: FONT_STACK[el.font],
-      fontSize: `${fontSize}px`,
-      fontWeight: el.weight,
-      fontStyle: el.italic ? "italic" : "normal",
-      textTransform: el.upper ? "uppercase" : "none",
-      lineHeight: el.lineHeight ?? 1.2,
-      letterSpacing: el.upper ? "0.04em" : el.font === "serif" ? "-0.02em" : "-0.01em",
-      color: textHex,
-      wordBreak: "break-word",
-      whiteSpace: "pre-wrap",
-      ...(el.variant === "pill"
+    const tracking =
+      el.role === "chrome"
+        ? "0.02em"
+        : el.upper && el.variant === "pill"
+          ? "0.07em"
+          : el.upper && isDisplay
+            ? "-0.015em"
+            : el.upper
+              ? "0.05em"
+              : el.font === "serif"
+                ? "-0.024em"
+                : isDisplay
+                  ? "-0.02em"
+                  : "-0.012em";
+
+    const hugActive = Boolean(el.hug && (el.variant === "pill" || el.variant === "tarja") && !isEditing);
+
+    const surfaceDecoration: CSSProperties =
+      el.variant === "pill"
         ? {
             background: fillHex,
             borderRadius: 999,
-            padding: "12px 28px",
+            padding: "11px 26px",
+            border: el.borderWidth && borderHex ? `${el.borderWidth}px solid ${borderHex}` : undefined,
+            boxShadow: shadowCss(el.shadow),
           }
         : el.variant === "tarja"
           ? {
               background: fillHex,
               borderRadius: 14,
-              padding: "18px 28px",
-              boxShadow: "0 10px 28px rgba(0,0,0,0.14)",
+              padding: "16px 28px",
+              border: el.borderWidth && borderHex ? `${el.borderWidth}px solid ${borderHex}` : undefined,
+              boxShadow: shadowCss(el.shadow, "0 10px 26px rgba(18,14,26,0.14)"),
             }
           : el.variant === "note"
             ? {
+                position: "relative",
                 background: fillHex || "#F8E07A",
-                borderRadius: "6px 6px 22px 6px",
-                padding: "36px 38px",
-                boxShadow: "0 18px 40px rgba(0,0,0,0.2)",
+                borderRadius: "6px 6px 28px 6px",
+                padding: "38px 40px",
+                border: el.borderWidth && borderHex ? `${el.borderWidth}px solid ${borderHex}` : undefined,
+                boxShadow: shadowCss(el.shadow, "0 20px 38px rgba(18,14,26,0.22)"),
               }
             : el.variant === "card"
               ? {
                   background: fillHex,
                   borderRadius: 24,
                   padding: "26px 32px",
+                  border: el.borderWidth && borderHex ? `${el.borderWidth}px solid ${borderHex}` : undefined,
+                  boxShadow: shadowCss(el.shadow),
                 }
               : el.variant === "marker"
                 ? {
                     background: fillHex,
-                    borderLeft: `8px solid ${resolveColor("accent", palette, slideBg)}`,
+                    borderLeft: `8px solid ${resolveColor("accent", palette, parentBg)}`,
                     borderRadius: "0 18px 18px 0",
                     padding: "20px 26px",
+                    boxShadow: shadowCss(el.shadow),
                   }
-                : {}),
+                : {};
+
+    const typographyStyle: CSSProperties = {
+      fontFamily: FONT_STACK[el.font],
+      fontSize: `${fontSize}px`,
+      fontWeight,
+      fontStyle: el.italic ? "italic" : "normal",
+      textTransform: el.upper ? "uppercase" : "none",
+      lineHeight: el.lineHeight ?? 1.2,
+      letterSpacing: tracking,
+      color: textHex,
+      textAlign: el.align,
+      wordBreak: "break-word",
+      whiteSpace: "pre-wrap",
+      textWrap: fontSize >= 48 && !el.list ? "balance" : undefined,
+      fontVariantNumeric: el.role === "chrome" || el.role === "step" ? "tabular-nums" : undefined,
     };
 
     if (isEditing) {
@@ -414,7 +576,11 @@ export default function CanvasSlideView({
             }
           }}
           style={{
-            ...boxStyle,
+            width: "100%",
+            height: "100%",
+            boxSizing: "border-box",
+            ...typographyStyle,
+            ...surfaceDecoration,
             border: "none",
             outline: "none",
             resize: "none",
@@ -426,26 +592,78 @@ export default function CanvasSlideView({
       );
     }
 
+    if (hugActive) {
+      return (
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: el.align === "center" ? "center" : el.align === "right" ? "flex-end" : "flex-start",
+          }}
+        >
+          <div
+            style={{
+              boxSizing: "border-box",
+              width: "fit-content",
+              maxWidth: "100%",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              ...typographyStyle,
+              ...surfaceDecoration,
+            }}
+          >
+            <span>
+              {el.prefix ? <span style={{ marginRight: 6 }}>{el.prefix}</span> : null}
+              <RichRuns text={resolved} markBg={markBg} markInk={markInk} isDisplay={isDisplay} />
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    const boxStyle: CSSProperties = {
+      width: "100%",
+      height: "100%",
+      boxSizing: "border-box",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent:
+        el.variant === "pill" || el.variant === "tarja" || el.variant === "card" || el.variant === "note" || el.variant === "marker"
+          ? "center"
+          : "flex-start",
+      alignItems: el.align === "center" ? "center" : el.align === "right" ? "flex-end" : "stretch",
+      ...typographyStyle,
+      ...surfaceDecoration,
+    };
+
     if (el.list) {
       const lines = resolved
         .split("\n")
         .map(l => l.replace(/^[•\-–✓✔️]\s*/, "").trim())
         .filter(Boolean);
+      const bulletHex =
+        contrastRatio(resolveColor("accent", palette, behind), behind) >= 3.2
+          ? resolveColor("accent", palette, behind)
+          : textHex;
       return (
-        <div style={{ ...boxStyle, gap: `${Math.round(fontSize * 0.34)}px` }}>
+        <div style={{ ...boxStyle, justifyContent: "center", gap: `${Math.round(fontSize * 0.34)}px` }}>
           {lines.map((line, li) => (
             <div key={li} style={{ display: "flex", alignItems: "flex-start", gap: "16px", textAlign: "left" }}>
               <span
                 style={{
                   flexShrink: 0,
                   fontWeight: 800,
-                  color: resolveColor("accent", palette, behind),
+                  color: bulletHex,
                 }}
               >
                 {el.list === "check" ? "✓" : el.list === "number" ? `${li + 1}.` : "•"}
               </span>
               <span style={{ flex: 1 }}>
-                <RichRuns text={line} markBg={markBg} markInk={markInk} />
+                <RichRuns text={line} markBg={markBg} markInk={markInk} isDisplay={isDisplay} />
               </span>
             </div>
           ))}
@@ -457,15 +675,42 @@ export default function CanvasSlideView({
       <div style={boxStyle}>
         <span>
           {el.prefix ? <span style={{ marginRight: 4 }}>{el.prefix}</span> : null}
-          <RichRuns text={resolved} markBg={markBg} markInk={markInk} />
+          <RichRuns text={resolved} markBg={markBg} markInk={markInk} isDisplay={isDisplay} />
         </span>
+        {el.variant === "note" ? (
+          <span
+            aria-hidden
+            style={{
+              position: "absolute",
+              right: 0,
+              bottom: 0,
+              width: 30,
+              height: 30,
+              background: "linear-gradient(135deg, rgba(18,14,26,0.14) 0%, rgba(18,14,26,0.04) 50%, transparent 51%)",
+              borderTopLeftRadius: 8,
+              pointerEvents: "none",
+            }}
+          />
+        ) : null}
       </div>
     );
   }
 
   function renderImageElement(el: CanvasImageEl) {
     if (!el.src) {
-      if (!interactive) return null;
+      if (!interactive) {
+        return (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              borderRadius: el.radius ?? 0,
+              background: `linear-gradient(135deg, ${palette.primary} 0%, ${palette.accent} 100%)`,
+              boxShadow: shadowCss(el.shadow),
+            }}
+          />
+        );
+      }
       return (
         <div
           style={{
@@ -500,6 +745,7 @@ export default function CanvasSlideView({
           position: "relative",
           overflow: "hidden",
           borderRadius: el.radius ?? 0,
+          boxShadow: shadowCss(el.shadow),
         }}
       >
         <img
@@ -513,7 +759,7 @@ export default function CanvasSlideView({
             style={{
               position: "absolute",
               inset: 0,
-              background: `rgba(14, 12, 24, ${el.overlay})`,
+              background: `linear-gradient(180deg, rgba(14,12,24,${(el.overlay * 0.65).toFixed(2)}) 0%, rgba(14,12,24,${Math.min(0.75, el.overlay * 1.45).toFixed(2)}) 100%)`,
               pointerEvents: "none",
             }}
           />
@@ -548,15 +794,16 @@ export default function CanvasSlideView({
         const isSelected = interactive && selectedElementId === el.id;
         const isEditing = interactive && editingElementId === el.id;
         const isFullBleedImg = el.type === "image" && el.x === 0 && el.y === 0 && el.w === W && el.h === H;
+        const isPassiveDecor = el.type === "shape" && (el.shape === "frame" || el.shape === "notebook-margin");
 
         return (
           <div
             key={el.id}
-            onPointerDown={e => beginDrag(e, el, "move")}
-            onPointerMove={moveDrag}
-            onPointerUp={e => endDrag(e, el)}
+            onPointerDown={isPassiveDecor ? undefined : e => beginDrag(e, el, "move")}
+            onPointerMove={isPassiveDecor ? undefined : moveDrag}
+            onPointerUp={isPassiveDecor ? undefined : e => endDrag(e, el)}
             onDoubleClick={e => {
-              if (!interactive) return;
+              if (!interactive || isPassiveDecor) return;
               e.stopPropagation();
               if (el.type === "text" && el.role !== "chrome") onStartEditing?.(el.id);
               if (el.type === "image") onPickImage?.(el.id, el.src);
@@ -570,6 +817,7 @@ export default function CanvasSlideView({
               transform: el.rotation ? `rotate(${el.rotation}deg)` : undefined,
               transformOrigin: "center center",
               zIndex: isFullBleedImg ? 0 : zIdx + 1,
+              pointerEvents: isPassiveDecor ? "none" : undefined,
               cursor: !interactive ? "default" : isEditing ? "text" : isFullBleedImg ? "pointer" : "grab",
               touchAction: interactive && !isEditing ? "none" : undefined,
               outline: isSelected ? "3px dashed #FFFFFF" : undefined,
@@ -582,12 +830,11 @@ export default function CanvasSlideView({
             ) : el.type === "image" ? (
               renderImageElement(el)
             ) : (
-              renderTextElement(el)
+              renderTextElement(el, zIdx)
             )}
 
             {isSelected && !isEditing && !isFullBleedImg ? (
               <>
-                {/* Rotation handle */}
                 <div
                   onPointerDown={e => beginDrag(e, el, "rotate")}
                   onPointerMove={moveDrag}
@@ -616,7 +863,6 @@ export default function CanvasSlideView({
                   ↻
                 </div>
 
-                {/* Round berry-pink resize dots (matching image_2.png) */}
                 {HANDLES.map(h => (
                   <div
                     key={h.id}
@@ -645,7 +891,6 @@ export default function CanvasSlideView({
         );
       })}
 
-      {/* Safe breathing margin guide (never rendered on PNG export because interactive=false) */}
       {guidesVisible ? (
         <div
           aria-hidden

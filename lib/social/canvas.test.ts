@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  applyFamilyToCanvas,
   applyLayout,
   blocksFromCanvas,
   buildSlide,
@@ -9,7 +10,9 @@ import {
   CANVAS_SIZE,
   canvasFromCompiled,
   clampToMargin,
+  contrastRatio,
   ELEMENT_PRESETS,
+  layoutById,
   LAYOUTS,
   paletteById,
   parseMarks,
@@ -17,7 +20,9 @@ import {
   remixLayoutId,
   resolveColor,
   slidesFromCompiled,
+  STYLE_FAMILIES,
   syncContent,
+  type StyleFamily,
 } from "./canvas";
 import { compileDocToSlides } from "./compileDoc";
 import { STARTER_STUDIO_DOC, type StudioBlockJson } from "./studioTypes";
@@ -191,4 +196,165 @@ test("parseMarks and resolveColor handle highlights and all @textoemciclo palett
   const slide = buildSlide({ kind: "cover", title: "Teste" }, "manchete", "carousel");
   const remixed = remixLayoutId(slide);
   assert.notEqual(remixed, "manchete");
+});
+
+test("LAYOUTS covers all 3 graphic style families (editorial, minimal, pop) with at least 5 layouts each", () => {
+  const families: StyleFamily[] = ["editorial", "minimal", "pop"];
+  assert.ok(LAYOUTS.length >= 15);
+  assert.deepEqual(
+    STYLE_FAMILIES.map(f => f.id),
+    families,
+  );
+  for (const fam of families) {
+    const inFamily = LAYOUTS.filter(l => l.family === fam);
+    assert.ok(inFamily.length >= 5, `expected >= 5 layouts in family "${fam}", got ${inFamily.length}`);
+  }
+});
+
+test("every non-decorative text element across all 15 layouts and 5 palettes meets WCAG AA contrast (>= 4.5:1)", () => {
+  for (const layout of LAYOUTS) {
+    const slide = buildSlide(
+      {
+        kind: layout.kinds[0] ?? "free",
+        eyebrow: "REPERTÓRIO · VUNESP",
+        step: "01",
+        title: "Infodemia e hesitação vacinal na redação",
+        subtitle: "Como articular dados da OMS sem cair no senso comum.",
+        body: "Nomear o fenômeno e apontar sua consequência coletiva sustenta o argumento.",
+        wrongLabel: "Antes",
+        wrong: "As pessoas não tomam vacina porque veem fake news.",
+        rightLabel: "Depois",
+        right: "A infodemia compromete a barreira sanitária coletiva.",
+        note: "Dica da Prô: cite o conceito com função argumentativa!",
+        items: "Ler toda a coletânea\nDefinir causa e consequência\nRevisar regência verbal",
+        quote: "Escrita é processo, não modelo engessado.",
+        author: "Renata · @textoemciclo",
+        cta: "Salve para revisar :)",
+        image: "/social-media/exemplo.webp",
+      },
+      layout.id,
+      "carousel",
+    );
+
+    for (const preset of CANVAS_PALETTES) {
+      const pal = paletteById(preset.id);
+      const slideBg = resolveColor(slide.background, pal);
+
+      slide.elements.forEach((el, idx) => {
+        if (el.type !== "text" || el.role === "decor") return;
+        const cx = el.x + el.w / 2;
+        const cy = el.y + el.h / 2;
+
+        let parentBg = slideBg;
+        for (let k = 0; k < idx; k++) {
+          const under = slide.elements[k]!;
+          const encloses = cx >= under.x && cx <= under.x + under.w && cy >= under.y && cy <= under.y + under.h;
+          if (!encloses) continue;
+          if (under.type === "shape" && (under.shape === "rect" || under.shape === "circle") && (under.opacity ?? 1) >= 0.85) {
+            const shapeHex = resolveColor(under.fill, pal, parentBg);
+            if (shapeHex !== "transparent") parentBg = shapeHex;
+          } else if (under.type === "image" && under.src && (under.overlay ?? 0) >= 0.25) {
+            parentBg = "#16121F";
+          }
+        }
+
+        const fillHex = el.fill ? resolveColor(el.fill, pal, parentBg) : "transparent";
+        const effectiveBg = fillHex !== "transparent" ? fillHex : parentBg;
+        const textHex = resolveColor(el.color, pal, effectiveBg);
+        const ratio = contrastRatio(textHex, effectiveBg);
+
+        assert.ok(
+          ratio >= 4.5,
+          `WCAG fail (${ratio.toFixed(2)}:1) in layout "${layout.id}" palette "${preset.id}" role "${el.role}" (${textHex} on ${effectiveBg})`,
+        );
+      });
+    }
+  }
+});
+
+test("optical vertical flow locks elements tightly on short titles and expands cleanly on long titles", () => {
+  const shortSlide = buildSlide(
+    { kind: "cover", eyebrow: "ENEM", title: "Escreva bem", subtitle: "Clareza constrói autoria." },
+    "manchete",
+    "carousel",
+  );
+  const longSlide = buildSlide(
+    {
+      kind: "cover",
+      eyebrow: "ENEM",
+      title: "Como articular repertório sociocultural na redação da Fuvest sem decorar fórmulas prontas",
+      subtitle: "Clareza constrói autoria.",
+    },
+    "manchete",
+    "carousel",
+  );
+
+  const shortTitle = shortSlide.elements.find(e => e.role === "title")!;
+  const shortSub = shortSlide.elements.find(e => e.role === "subtitle")!;
+  const longTitle = longSlide.elements.find(e => e.role === "title")!;
+  const longSub = longSlide.elements.find(e => e.role === "subtitle")!;
+
+  assert.ok(shortSub.y - (shortTitle.y + shortTitle.h) <= 96, "short title should not leave a huge void above subtitle");
+  assert.ok(longTitle.h > shortTitle.h, "long title box should expand vertically compared to short title");
+  assert.ok(longTitle.y + longTitle.h <= longSub.y + 8, "long title must not overlap subtitle");
+});
+
+test("short capsule pills and manifesto tarjas enable hug-to-text sizing", () => {
+  const cover = buildSlide({ kind: "cover", eyebrow: "ENEM", title: "Tema da semana" }, "manchete", "carousel");
+  const eyebrow = cover.elements.find(e => e.role === "eyebrow" && e.type === "text");
+  assert.equal(eyebrow?.type === "text" && eyebrow.hug, true);
+
+  const compare = buildSlide(
+    { kind: "before_after", title: "Regência", wrongLabel: "Antes", wrong: "A", rightLabel: "Depois", right: "B" },
+    "antes-depois",
+    "carousel",
+  );
+  const wrongLabel = compare.elements.find(e => e.role === "wrongLabel" && e.type === "text");
+  const rightLabel = compare.elements.find(e => e.role === "rightLabel" && e.type === "text");
+  assert.equal(wrongLabel?.type === "text" && wrongLabel.hug, true);
+  assert.equal(rightLabel?.type === "text" && rightLabel.hug, true);
+
+  const poster = buildSlide({ kind: "quote", quote: "Escrita é processo vivo" }, "manifesto", "carousel");
+  const tarjas = poster.elements.filter(e => e.type === "text" && e.variant === "tarja");
+  assert.ok(tarjas.length >= 2);
+  for (const t of tarjas) {
+    assert.equal(t.type === "text" && t.hug, true);
+  }
+});
+
+test("slidesFromCompiled and remixLayoutId respect graphic style family filter without consecutive repeats", () => {
+  const compiled = compileDocToSlides(STARTER_STUDIO_DOC.blocks);
+  for (const family of ["editorial", "minimal", "pop"] as const) {
+    const slides = slidesFromCompiled(compiled, "carousel", 0, family);
+    assert.equal(slides.length, compiled.length);
+    for (let i = 0; i < slides.length; i++) {
+      const def = layoutById(slides[i]!.layoutId);
+      assert.equal(def.family, family, `slide ${i} layout "${def.id}" should belong to family "${family}"`);
+      if (i > 0) {
+        assert.notEqual(slides[i]!.layoutId, slides[i - 1]!.layoutId);
+      }
+    }
+    const remixed = remixLayoutId(slides[0]!, Math.random, [], family);
+    assert.notEqual(remixed, slides[0]!.layoutId);
+    assert.equal(layoutById(remixed).family, family);
+  }
+});
+
+test("applyFamilyToCanvas switches whole deck graphic family while preserving inline edits and free stickers", () => {
+  const compiled = compileDocToSlides(STARTER_STUDIO_DOC.blocks);
+  const initial = canvasFromCompiled(compiled, "carousel", "indigo_lavanda", 0, "editorial");
+  const sticker = ELEMENT_PRESETS.find(p => p.id === "estrela")!.make("carousel");
+  initial.slides[0]!.elements = [
+    ...initial.slides[0]!.elements.map(el => (el.role === "title" && el.type === "text" ? { ...el, text: "Título editado pela Renata" } : el)),
+    { ...sticker, x: 740, y: 180 },
+  ];
+
+  const popDeck = applyFamilyToCanvas(initial, "pop", "carousel", 2);
+  assert.equal(popDeck.slides.length, initial.slides.length);
+  for (let i = 0; i < popDeck.slides.length; i++) {
+    assert.equal(layoutById(popDeck.slides[i]!.layoutId).family, "pop");
+    if (i > 0) assert.notEqual(popDeck.slides[i]!.layoutId, popDeck.slides[i - 1]!.layoutId);
+  }
+  assert.equal(popDeck.slides[0]!.content.title, "Título editado pela Renata");
+  assert.equal(popDeck.slides[0]!.elements.filter(e => e.role === "free").length, 1);
 });

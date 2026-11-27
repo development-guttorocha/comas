@@ -9,6 +9,7 @@ import { domToPng } from "modern-screenshot";
 import JSZip from "jszip";
 import type { MediaFile } from "@/lib/admin/caseStore";
 import {
+  applyFamilyToCanvas,
   applyLayout,
   blankSlide,
   blocksFromCanvas,
@@ -19,12 +20,14 @@ import {
   cloneSlide,
   DEFAULT_PALETTE_ID,
   ELEMENT_PRESETS,
+  layoutById,
   layoutsFor,
   paletteById,
   readCanvas,
   reflowCanvas,
   remixLayoutId,
   stripMarks,
+  STYLE_FAMILIES,
   syncContent,
   textEl,
   type CanvasColor,
@@ -34,6 +37,7 @@ import {
   type CanvasTextEl,
   type CanvasTexture,
   type StudioCanvas,
+  type StyleFamily,
   type TextVariant,
 } from "@/lib/social/canvas";
 import { compileDocToSlides, compileSlidesToReel } from "@/lib/social/compileDoc";
@@ -284,6 +288,7 @@ function StudioInner({
 
   // Active tool & panels
   const [activeTool, setActiveTool] = useState<DockTool>("modelos");
+  const [modelFamily, setModelFamily] = useState<StyleFamily | "all">("all");
   const [panelOpen, setPanelOpen] = useState(true);
   const [roteiroTab, setRoteiroTab] = useState<RoteiroSubTab>("paginas");
   const [roteiroRevision, setRoteiroRevision] = useState(0);
@@ -831,7 +836,10 @@ function StudioInner({
     router.push("/admin/estudio");
   }
 
-  const candidateLayouts = useMemo(() => layoutsFor(activeSlide.content.kind), [activeSlide.content.kind]);
+  const candidateLayouts = useMemo(
+    () => layoutsFor(activeSlide.content.kind, modelFamily),
+    [activeSlide.content.kind, modelFamily],
+  );
   const previewAlternatives = useMemo(() => {
     const synced = syncContent(activeSlide);
     const freeEls = activeSlide.elements.filter(e => e.role === "free");
@@ -1179,12 +1187,61 @@ function StudioInner({
                 {/* 1. ABA MODELOS */}
                 {activeTool === "modelos" ? (
                   <>
-                    <div style={{ display: "flex", gap: 8 }}>
+                    <div>
+                      <span className={st.sectionLabel}>Estilo visual</span>
+                      <div className={st.pillGrid} role="tablist" aria-label="Filtrar por estilo gráfico">
+                        <button
+                          type="button"
+                          className={st.softChip}
+                          aria-pressed={modelFamily === "all"}
+                          onClick={() => setModelFamily("all")}
+                        >
+                          Todos
+                        </button>
+                        {STYLE_FAMILIES.map(fam => (
+                          <button
+                            key={fam.id}
+                            type="button"
+                            className={st.softChip}
+                            aria-pressed={modelFamily === fam.id}
+                            onClick={() => setModelFamily(fam.id)}
+                          >
+                            {fam.shortLabel}
+                          </button>
+                        ))}
+                      </div>
+                      {modelFamily !== "all" ? (
+                        <p className={styles.hint} style={{ margin: "8px 0 0" }}>
+                          {STYLE_FAMILIES.find(f => f.id === modelFamily)?.description}
+                        </p>
+                      ) : null}
+                    </div>
+
+                    <div style={{ display: "grid", gap: 8 }}>
+                      {modelFamily !== "all" && slides.length > 1 ? (
+                        <button
+                          type="button"
+                          className={`${styles.button} ${styles.primary}`}
+                          style={{ width: "100%" }}
+                          onClick={() => {
+                            commitCanvas(applyFamilyToCanvas(canvas, modelFamily, aspect));
+                            show(
+                              `Estilo ${STYLE_FAMILIES.find(f => f.id === modelFamily)?.shortLabel} aplicado nas ${slides.length} páginas!`,
+                              "good",
+                            );
+                          }}
+                        >
+                          ✦ Usar este estilo no post inteiro
+                        </button>
+                      ) : null}
+
                       <button
                         type="button"
                         className={styles.button}
-                        style={{ flex: 1 }}
-                        onClick={() => updateSlideAt(safeIdx, s => applyLayout(s, remixLayoutId(s), aspect))}
+                        style={{ width: "100%" }}
+                        onClick={() =>
+                          updateSlideAt(safeIdx, s => applyLayout(s, remixLayoutId(s, Math.random, [], modelFamily), aspect))
+                        }
                       >
                         ⟳ Surpreender nesta página
                       </button>
@@ -1192,7 +1249,7 @@ function StudioInner({
 
                     <div>
                       <span className={st.sectionLabel}>
-                        Toque em um modelo para reorganizar a Página {safeIdx + 1} sem perder o texto
+                        Página {safeIdx + 1} · atual: {layoutById(activeSlide.layoutId).label}
                       </span>
                       <div className={st.layoutGrid}>
                         {previewAlternatives.map(({ layout, slide: previewSlide }) => (
@@ -1224,6 +1281,11 @@ function StudioInner({
                               </div>
                             </div>
                             <span className={st.layoutCardName}>{layout.label}</span>
+                            {modelFamily === "all" ? (
+                              <span style={{ fontSize: 10.5, color: "#787d99", marginTop: -3 }}>
+                                {STYLE_FAMILIES.find(f => f.id === layout.family)?.shortLabel}
+                              </span>
+                            ) : null}
                           </button>
                         ))}
                       </div>
@@ -1364,8 +1426,9 @@ function StudioInner({
                       <div
                         style={{
                           display: "flex",
-                          justifyContent: "space-around",
-                          alignItems: "center",
+                          flexWrap: "wrap",
+                          justifyContent: "center",
+                          gap: 8,
                           padding: 14,
                           borderRadius: 14,
                           background: "#dcfce7",
@@ -1373,6 +1436,9 @@ function StudioInner({
                       >
                         <button type="button" className={st.softChip} onClick={() => addPresetElement("fita")}>
                           🩹 Fita
+                        </button>
+                        <button type="button" className={st.softChip} onClick={() => addPresetElement("estrela")}>
+                          ✦ Selo Pop
                         </button>
                         <button type="button" className={st.softChip} onClick={() => addPresetElement("circulo")}>
                           ⚪ Círculo

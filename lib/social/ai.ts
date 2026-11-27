@@ -1,6 +1,6 @@
 import sharp from "sharp";
 import { hydrateRuntimeKeys } from "@/lib/admin/apiKeys";
-import { CANVAS_PALETTES, canvasFromCompiled, PRESET_PALETTE, type SlideContent } from "./canvas";
+import { CANVAS_PALETTES, canvasFromCompiled, PRESET_PALETTE, type SlideContent, type StyleFamily } from "./canvas";
 import { compileDocToSlides } from "./compileDoc";
 import { getSocialKnowledgeBase, socialKnowledgePrompt } from "./knowledgeBase";
 import type { StudioAspect } from "./studioTypes";
@@ -471,6 +471,7 @@ export async function generateStudioDocument(input: {
   output?: StudioOutputKind;
   paletteId?: string;
   seed?: number;
+  styleFamily?: StyleFamily;
 }): Promise<SocialPost> {
   await hydrateRuntimeKeys();
   const provider = getConfiguredAiProvider();
@@ -564,7 +565,7 @@ ${input.idea.trim()}
 
   const paletteId = input.paletteId ?? PRESET_PALETTE[preset] ?? CANVAS_PALETTES[0]!.id;
   const compiled = compileDocToSlides(blocks);
-  const canvas = canvasFromCompiled(compiled, aspect, paletteId, input.seed ?? 0);
+  const canvas = canvasFromCompiled(compiled, aspect, paletteId, input.seed ?? 0, input.styleFamily ?? "all");
 
   const now = new Date().toISOString();
   return {
@@ -586,7 +587,7 @@ ${input.idea.trim()}
   };
 }
 
-/** Generates multiple distinct Studio formats & palettes from a single seed idea. */
+/** Generates multiple distinct Studio formats, graphic families & palettes from a single seed idea. */
 export async function generateStudioVariations(input: {
   idea: string;
   preset?: TemplatePreset;
@@ -600,12 +601,18 @@ export async function generateStudioVariations(input: {
   const otherPalettes = CANVAS_PALETTES.map(p => p.id).filter(id => id !== primaryPalette);
   const paletteOrder = [primaryPalette, ...otherPalettes];
 
+  const primaryFamily: StyleFamily =
+    preset === "quick_tip" ? "pop" : preset === "cycle_steps" || preset === "radar_temas" ? "minimal" : "editorial";
+  const allFamilies: StyleFamily[] = ["editorial", "minimal", "pop"];
+  const familyOrder: StyleFamily[] = [primaryFamily, ...allFamilies.filter(f => f !== primaryFamily)];
+
   const tasks = outputs.map((out, idx) =>
     generateStudioDocument({
       idea: input.idea,
       preset: out === "single" ? "quick_tip" : preset,
       output: out,
       paletteId: paletteOrder[idx % paletteOrder.length],
+      styleFamily: familyOrder[idx % familyOrder.length],
       seed: idx * 3 + 1,
     }),
   );
