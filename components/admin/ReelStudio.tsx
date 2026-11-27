@@ -3,7 +3,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type DragEvent, type PointerEvent as ReactPointerEvent } from "react";
 import ReelStage from "@/components/reel/ReelStage";
-import { W } from "@/components/reel/motion";
+import { STAGE_SIZE } from "@/components/reel/motion";
 import { defaultBeats, insertScene, moveScene, removeScene, resizeScene, sceneLengths, trackBeats, BAR, MAX_BEATS, MIN_BEATS } from "@/lib/reel/layout";
 import { FOCUS_X } from "@/lib/reel/screens";
 import { SCENE_KINDS, fromForm, kindLabel, newReel, newScene, simpleFields, toForm, trackLabel, type SceneKind } from "@/lib/reel/sceneFields";
@@ -11,7 +11,7 @@ import { beatLength, beatTime, type ReelTrack } from "@/lib/reel/tracks";
 import { PERSONALITY_LABEL, type Personality } from "@/components/reel/motion";
 import { DIRECTIONS, TRANSITIONS, transitionLabel } from "@/components/reel/transitions";
 import { AUDIENCE_OPTIONS, DEFAULT_PARAMS, FOCUS_OPTIONS, PERSONALITY_OPTIONS, SECONDS_OPTIONS, type ReelParams } from "@/lib/reel/params";
-import { REEL_DISPLAYS, type ReelDisplay, type ReelDoc, type ReelScene, type ScreensScene } from "@/lib/reel/types";
+import { REEL_DISPLAYS, type ReelAspect, type ReelDisplay, type ReelDoc, type ReelScene, type ScreensScene } from "@/lib/reel/types";
 import BusyOverlay from "./BusyOverlay";
 import { api } from "./client";
 import { Fields } from "./Fields";
@@ -20,6 +20,14 @@ import ReelEditor from "./ReelEditor";
 import { useReelPlayback } from "./useReelPlayback";
 import styles from "./admin.module.css";
 import s from "./studio.module.css";
+
+const ACCENT_SWATCHES = [
+  { name: "Roxo", hex: "#3E2A8D" },
+  { name: "Mostarda", hex: "#E5B314" },
+  { name: "Bordô", hex: "#7F1C21" },
+  { name: "Rosa", hex: "#D94B82" },
+  { name: "Terracota", hex: "#C93B17" },
+] as const;
 
 // The video tab's simple editor: a big preview with its controls, the open scene's texts and
 // images on the side, and a timeline where scenes are clips (drag to reorder, pull the edge to
@@ -195,7 +203,7 @@ function LibraryDialog({ onAdd, onClose }: { onAdd: (source: LibrarySource, id: 
 }
 
 /** Music picker with "Enviar nova música…": the upload comes back measured and gets picked. */
-function TrackSelect({ tracks, value, onChange, onUpload, onLibrary, label = "Música" }: { tracks: ReelTrack[]; value?: string; onChange: (id: string) => void; onUpload: (file: File) => Promise<ReelTrack | null>; onLibrary: () => Promise<ReelTrack | null>; label?: string }) {
+function TrackSelect({ tracks, value, onChange, onUpload, onLibrary, label = "Música", socialMode }: { tracks: ReelTrack[]; value?: string; onChange: (id: string) => void; onUpload: (file: File) => Promise<ReelTrack | null>; onLibrary: () => Promise<ReelTrack | null>; label?: string; socialMode?: boolean }) {
   const input = useRef<HTMLInputElement>(null);
   return (
     <label className={s.toolField}>
@@ -212,28 +220,34 @@ function TrackSelect({ tracks, value, onChange, onUpload, onLibrary, label = "M�
         {tracks.map((x) => (
           <option key={x.id} value={x.id}>{trackLabel(x)}</option>
         ))}
-        <option value={UPLOAD_VALUE}>＋ Enviar nova música…</option>
-        <option value={LIBRARY_VALUE}>♫ Buscar música (Free To Use, YouTube)…</option>
+        {!socialMode ? (
+          <>
+            <option value={UPLOAD_VALUE}>＋ Enviar nova música…</option>
+            <option value={LIBRARY_VALUE}>♫ Buscar música (Free To Use, YouTube)…</option>
+          </>
+        ) : null}
       </select>
-      <input
-        ref={input}
-        type="file"
-        accept="audio/*,.mp3,.m4a,.wav,.aif,.aiff"
-        hidden
-        onChange={async (e) => {
-          const file = e.target.files?.[0];
-          e.target.value = "";
-          if (!file) return;
-          const added = await onUpload(file);
-          if (added) onChange(added.id);
-        }}
-      />
+      {!socialMode ? (
+        <input
+          ref={input}
+          type="file"
+          accept="audio/*,.mp3,.m4a,.wav,.aif,.aiff"
+          hidden
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            e.target.value = "";
+            if (!file) return;
+            const added = await onUpload(file);
+            if (added) onChange(added.id);
+          }}
+        />
+      ) : null}
     </label>
   );
 }
 
 /** What to ask of the AI: every field has a default, so Gerar works untouched. */
-function GenerateDialog({ tracks, current, replacing, onUpload, onLibrary, onCancel, onGenerate }: { tracks: ReelTrack[]; current?: string; replacing: boolean; onUpload: (file: File) => Promise<ReelTrack | null>; onLibrary: () => Promise<ReelTrack | null>; onCancel: () => void; onGenerate: (p: ReelParams) => void }) {
+function GenerateDialog({ tracks, current, replacing, socialMode, onUpload, onLibrary, onCancel, onGenerate }: { tracks: ReelTrack[]; current?: string; replacing: boolean; socialMode?: boolean; onUpload: (file: File) => Promise<ReelTrack | null>; onLibrary: () => Promise<ReelTrack | null>; onCancel: () => void; onGenerate: (p: ReelParams) => void }) {
   const ref = useRef<HTMLDialogElement>(null);
   const [p, setP] = useState<ReelParams>(() => {
     let saved: Partial<ReelParams> = {};
@@ -249,8 +263,12 @@ function GenerateDialog({ tracks, current, replacing, onUpload, onLibrary, onCan
   return (
     <dialog ref={ref} className={s.dialog} onCancel={(e) => { e.preventDefault(); onCancel(); }} aria-labelledby="gen-title">
       <form method="dialog" onSubmit={(e) => { e.preventDefault(); onGenerate(p); }}>
-        <h2 id="gen-title"><SparkIcon />Gerar vídeo com IA</h2>
-        <p className={styles.hint}>A IA lê o case e monta o roteiro com estas escolhas. Tudo continua editável depois, sem gastar IA.</p>
+        <h2 id="gen-title"><SparkIcon />{socialMode ? "Criar roteiro de Reel com IA" : "Gerar vídeo com IA"}</h2>
+        <p className={styles.hint}>
+          {socialMode
+            ? "Conte o tema do vídeo e a IA monta as cenas verticais (9:16) sincronizadas na música. Você pode editar cada texto e imagem depois."
+            : "A IA lê o case e monta o roteiro com estas escolhas. Tudo continua editável depois, sem gastar IA."}
+        </p>
         <div className={s.dialogGrid}>
           <label className={s.toolField}>
             <span>Duração</span>
@@ -260,7 +278,7 @@ function GenerateDialog({ tracks, current, replacing, onUpload, onLibrary, onCan
               ))}
             </select>
           </label>
-          <TrackSelect tracks={tracks} value={p.track} onChange={(id) => set("track", id)} onUpload={onUpload} onLibrary={onLibrary} />
+          <TrackSelect tracks={tracks} value={p.track} onChange={(id) => set("track", id)} onUpload={onUpload} onLibrary={onLibrary} socialMode={socialMode} />
           <label className={s.toolField}>
             <span>Movimento</span>
             <select className={styles.select} value={p.personality} onChange={(e) => set("personality", e.target.value as ReelParams["personality"])}>
@@ -269,34 +287,48 @@ function GenerateDialog({ tracks, current, replacing, onUpload, onLibrary, onCan
               ))}
             </select>
           </label>
-          <label className={s.toolField}>
-            <span>Foco da história</span>
-            <select className={styles.select} value={p.focus} onChange={(e) => set("focus", e.target.value as ReelParams["focus"])}>
-              {FOCUS_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>{o.label}</option>
-              ))}
-            </select>
-          </label>
-          <label className={s.toolField}>
-            <span>Para quem</span>
-            <select className={styles.select} value={p.audience} onChange={(e) => set("audience", e.target.value as ReelParams["audience"])}>
-              {AUDIENCE_OPTIONS.map((o) => (
-                <option key={o.value} value={o.value}>{o.label}</option>
-              ))}
-            </select>
-          </label>
+          {!socialMode ? (
+            <>
+              <label className={s.toolField}>
+                <span>Foco da história</span>
+                <select className={styles.select} value={p.focus} onChange={(e) => set("focus", e.target.value as ReelParams["focus"])}>
+                  {FOCUS_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </label>
+              <label className={s.toolField}>
+                <span>Para quem</span>
+                <select className={styles.select} value={p.audience} onChange={(e) => set("audience", e.target.value as ReelParams["audience"])}>
+                  {AUDIENCE_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </label>
+            </>
+          ) : null}
           <label className={`${s.toolField} ${s.dialogWide}`}>
-            <span>Pedidos para a IA (opcional)</span>
+            <span>{socialMode ? "Tema ou ideia do Reel" : "Pedidos para a IA (opcional)"}</span>
             <textarea
               className={styles.textarea}
               rows={3}
               value={p.notes ?? ""}
               onChange={(e) => set("notes", e.target.value)}
-              placeholder="Ex.: abrir com o resultado; não usar a foto da equipe; destacar a pesquisa com os creators."
+              placeholder={
+                socialMode
+                  ? "Ex.: 3 erros que derrubam a nota na introdução do ENEM; tom acolhedor e prático."
+                  : "Ex.: abrir com o resultado; não usar a foto da equipe; destacar a pesquisa com os creators."
+              }
             />
           </label>
         </div>
-        {replacing ? <p className={styles.hint} style={{ margin: 0 }}>O rascunho novo substitui o vídeo atual na tela e é salvo sozinho. O vídeo de antes fica em Versões.</p> : null}
+        {replacing ? (
+          <p className={styles.hint} style={{ margin: 0 }}>
+            {socialMode
+              ? "A proposta nova aparece ao lado do vídeo atual para você comparar antes de aplicar."
+              : "O rascunho novo substitui o vídeo atual na tela e é salvo sozinho. O vídeo de antes fica em Versões."}
+          </p>
+        ) : null}
         <div className={s.dialogActions}>
           <button type="button" className={`${styles.button} ${styles.ghost}`} onClick={onCancel}>Cancelar</button>
           <button type="submit" className={`${styles.button} ${styles.primary}`}><SparkIcon />Gerar</button>
@@ -392,7 +424,7 @@ function Waveform({ track, end, width }: { track: ReelTrack; end: number; width:
     if (!g) return;
     g.scale(dpr, dpr);
     g.clearRect(0, 0, width, h);
-    g.fillStyle = "rgba(242,242,239,.42)";
+    g.fillStyle = "rgba(91, 70, 229, 0.38)";
     const seconds = beatTime(track, end);
     const bars = Math.floor(width / 3);
     for (let i = 0; i < bars; i++) {
@@ -423,6 +455,7 @@ export default function ReelStudio({
   undo,
   onUndo,
   generateUrl,
+  socialMode,
 }: {
   slug: string;
   reel: ReelDoc | null;
@@ -439,6 +472,8 @@ export default function ReelStudio({
   onUndo: (reel: ReelDoc | null) => void;
   /** Optional custom AI endpoint (e.g. /api/social/generate) when used outside local Cases. */
   generateUrl?: string;
+  /** Hides portfolio-only controls and defaults to 9:16 vertical Reels. */
+  socialMode?: boolean;
 }) {
   const [mode, setMode] = useState<"simple" | "advanced">("simple");
   const [generating, setGenerating] = useState(false);
@@ -486,10 +521,11 @@ export default function ReelStudio({
     }
   };
   useEffect(() => {
+    if (socialMode) return;
     try {
       if (localStorage.getItem(MODE_KEY) === "advanced") setMode("advanced");
     } catch { /* storage off: simple */ }
-  }, []);
+  }, [socialMode]);
   const switchMode = (next: "simple" | "advanced") => {
     setMode(next);
     try { localStorage.setItem(MODE_KEY, next); } catch { /* fine */ }
@@ -502,15 +538,16 @@ export default function ReelStudio({
     try {
       const endpoint = generateUrl ?? `/api/admin/cases/${slug}/reel`;
       const result = await api<{ reel: ReelDoc; tokens: number }>(endpoint, { method: "POST", body: params });
-      const motion = result.reel.motion ? ` · movimento ${PERSONALITY_LABEL[result.reel.motion].toLowerCase()}` : "";
+      const generatedReel: ReelDoc = socialMode ? { ...result.reel, aspect: result.reel.aspect ?? "9:16" } : result.reel;
+      const motion = generatedReel.motion ? ` · movimento ${PERSONALITY_LABEL[generatedReel.motion].toLowerCase()}` : "";
       if (reel?.scenes.length) {
         // The case already has a video: the new one waits next to it, and the current one stays until Gutto picks.
-        onProposal({ at: new Date().toISOString(), reel: result.reel, tokens: result.tokens });
+        onProposal({ at: new Date().toISOString(), reel: generatedReel, tokens: result.tokens });
         setViewing("proposal");
-        notify(`A IA propôs um vídeo novo: ${result.reel.scenes.length} cenas${motion}. O atual continua até você escolher.`);
+        notify(`A IA propôs um vídeo novo: ${generatedReel.scenes.length} cenas${motion}. O atual continua até você escolher.`);
       } else {
-        onChange(result.reel);
-        notify(`Rascunho pronto: ${result.reel.scenes.length} cenas${motion} (${Math.round(result.tokens / 1000)} mil tokens). Ele já está salvo no case.`);
+        onChange(generatedReel);
+        notify(`Rascunho pronto: ${generatedReel.scenes.length} cenas${motion}.`);
       }
     } catch (error) {
       notify(error);
@@ -552,8 +589,8 @@ export default function ReelStudio({
 
   const busy = (
     <>
-      <BusyOverlay label={generating ? "A IA está escrevendo e revisando o roteiro a partir do case. Leva de dois a três minutos…" : uploading ? "Analisando a música: andamento, batidas e partes…" : ""} />
-      {asking ? <GenerateDialog tracks={tracks} current={reel?.track} replacing={Boolean(reel?.scenes.length)} onUpload={uploadTrack} onLibrary={openLibrary} onCancel={() => setAsking(false)} onGenerate={(p) => void generate(p)} /> : null}
+      <BusyOverlay label={generating ? (socialMode ? "A IA está montando as cenas verticais (9:16) do seu Reel…" : "A IA está escrevendo e revisando o roteiro a partir do case. Leva de dois a três minutos…") : uploading ? "Analisando a música: andamento, batidas e partes…" : ""} />
+      {asking ? <GenerateDialog tracks={tracks} current={reel?.track} replacing={Boolean(reel?.scenes.length)} socialMode={socialMode} onUpload={uploadTrack} onLibrary={openLibrary} onCancel={() => setAsking(false)} onGenerate={(p) => void generate(p)} /> : null}
       {library ? (
         <LibraryDialog
           onAdd={addFromLibrary}
@@ -570,17 +607,22 @@ export default function ReelStudio({
     return (
       <section className={`${styles.panel} ${s.empty}`}>
         <span className={s.emptyIcon}><SparkIcon /></span>
-        <h2>Crie o vídeo deste case</h2>
+        <h2>{socialMode ? "Crie seu primeiro Reel vertical (9:16)" : "Crie o vídeo deste case"}</h2>
         <p className={styles.hint}>
-          A IA lê o texto e as imagens do case e monta um vídeo de cerca de um minuto, com cenas encaixadas na música. Depois você ajusta os textos, as imagens e a ordem aqui mesmo, sem
-          precisar da IA. O vídeo começa como rascunho e só vai para o site quando você quiser.
+          {socialMode
+            ? "A IA cria um roteiro em formato vertical para Instagram Reels já sincronizado na música. Depois você edita cada cena, cor, texto e imagem aqui mesmo."
+            : "A IA lê o texto e as imagens do case e monta um vídeo de cerca de um minuto, com cenas encaixadas na música. Depois você ajusta os textos, as imagens e a ordem aqui mesmo, sem precisar da IA. O vídeo começa como rascunho e só vai para o site quando você quiser."}
         </p>
         <div className={s.emptyActions}>
-          <button type="button" className={styles.button} onClick={() => setAsking(true)}>
+          <button type="button" className={`${styles.button} ${styles.primary}`} onClick={() => setAsking(true)}>
             <SparkIcon />
             Gerar com IA
           </button>
-          <button type="button" className={styles.button} onClick={() => onChange(newReel(accent, `${company} em 1 minuto`, tracks[0]?.id ?? ""))}>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={() => onChange({ ...newReel(accent, socialMode ? `Reel · ${company}` : `${company} em 1 minuto`, tracks[0]?.id ?? ""), aspect: socialMode ? "9:16" : "16:9" })}
+          >
             Começar do zero
           </button>
         </div>
@@ -589,7 +631,7 @@ export default function ReelStudio({
     );
   }
 
-  if (mode === "advanced") {
+  if (!socialMode && mode === "advanced") {
     return (
       <div className={styles.page} style={{ gap: 12 }}>
         {aiBar}
@@ -605,7 +647,7 @@ export default function ReelStudio({
   return (
     <>
       {aiBar}
-      <Studio key={proposal && viewing === "proposal" ? proposal.at : "current"} reel={showing!} tracks={tracks} onChange={edit} onGenerate={() => setAsking(true)} onAdvanced={() => switchMode("advanced")} onUpload={uploadTrack} onLibrary={openLibrary} />
+      <Studio key={proposal && viewing === "proposal" ? proposal.at : "current"} reel={showing!} tracks={tracks} socialMode={socialMode} onChange={edit} onGenerate={() => setAsking(true)} onAdvanced={() => switchMode("advanced")} onUpload={uploadTrack} onLibrary={openLibrary} />
       {busy}
     </>
   );
@@ -670,9 +712,11 @@ function TransitionPicker({ scene, left, onChange, onPlay, onClose }: { scene: R
   );
 }
 
-function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLibrary }: { reel: ReelDoc; tracks: ReelTrack[]; onChange: (reel: ReelDoc | null) => void; onGenerate: () => void; onAdvanced: () => void; onUpload: (file: File) => Promise<ReelTrack | null>; onLibrary: () => Promise<ReelTrack | null> }) {
+function Studio({ reel, tracks, socialMode, onChange, onGenerate, onAdvanced, onUpload, onLibrary }: { reel: ReelDoc; tracks: ReelTrack[]; socialMode?: boolean; onChange: (reel: ReelDoc | null) => void; onGenerate: () => void; onAdvanced: () => void; onUpload: (file: File) => Promise<ReelTrack | null>; onLibrary: () => Promise<ReelTrack | null> }) {
   const track = tracks.find((t) => t.id === reel.track) ?? tracks[0];
-  const sorted = useMemo(() => ({ ...reel, scenes: [...reel.scenes].sort((a, b) => a.at - b.at) }), [reel]);
+  const aspect: ReelAspect = reel.aspect ?? (socialMode ? "9:16" : "16:9");
+  const { w: stageW, h: stageH } = STAGE_SIZE[aspect];
+  const sorted = useMemo(() => ({ ...reel, aspect, scenes: [...reel.scenes].sort((a, b) => a.at - b.at) }), [reel, aspect]);
   const scenes = sorted.scenes;
   const lengths = useMemo(() => sceneLengths(sorted), [sorted]);
   const [selectedId, setSelectedId] = useState<string | null>(scenes[0]?.id ?? null);
@@ -696,16 +740,20 @@ function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLi
   }, [seek]);
   const [loop, setLoop] = useState(false);
 
-  // stage size
+  // stage size (updates automatically when switching 9:16 <-> 16:9)
   const stageRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0);
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return;
-    const ro = new ResizeObserver(([entry]) => setScale(entry.contentRect.width / W));
+    const sync = (width: number) => {
+      if (width > 0) setScale(width / stageW);
+    };
+    sync(el.getBoundingClientRect().width);
+    const ro = new ResizeObserver(([entry]) => sync(entry.contentRect.width));
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [stageW]);
 
   // timeline size
   const lanesRef = useRef<HTMLDivElement>(null);
@@ -863,9 +911,33 @@ function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLi
       <div className={s.toolbar}>
         <button type="button" className={`${styles.button} ${styles.small}`} onClick={onGenerate}>
           <SparkIcon />
-          Gerar de novo com IA
+          {socialMode ? "Gerar roteiro IA" : "Gerar de novo com IA"}
         </button>
-        <TrackSelect tracks={tracks} value={reel.track} onChange={(id) => onChange({ ...reel, track: id })} onUpload={onUpload} onLibrary={onLibrary} />
+
+        <div className={s.toolField} style={{ minWidth: "auto" }}>
+          <span>Formato</span>
+          <div className={s.aspectToggle} role="group" aria-label="Formato do vídeo">
+            <button
+              type="button"
+              aria-pressed={aspect === "9:16"}
+              onClick={() => onChange({ ...reel, aspect: "9:16" })}
+            >
+              <span className={s.aspectIconV} aria-hidden />
+              9:16 Vertical
+            </button>
+            <button
+              type="button"
+              aria-pressed={aspect === "16:9"}
+              onClick={() => onChange({ ...reel, aspect: "16:9" })}
+            >
+              <span className={s.aspectIconH} aria-hidden />
+              16:9 Horizontal
+            </button>
+          </div>
+        </div>
+
+        <TrackSelect tracks={tracks} value={reel.track} onChange={(id) => onChange({ ...reel, track: id })} onUpload={onUpload} onLibrary={onLibrary} socialMode={socialMode} />
+
         <label className={s.toolField}>
           <span>Movimento</span>
           <select className={styles.select} value={reel.motion ?? "energetic"} onChange={(e) => onChange({ ...reel, motion: e.target.value === "energetic" ? undefined : (e.target.value as Personality) })}>
@@ -874,37 +946,66 @@ function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLi
             ))}
           </select>
         </label>
-        <label className={s.toolField} title={REEL_DISPLAYS.find((d) => d.id === (reel.display ?? "destaque"))?.hint}>
-          <span>Na página do case</span>
-          <select className={styles.select} value={reel.display ?? "destaque"} onChange={(e) => onChange({ ...reel, display: e.target.value === "destaque" ? undefined : (e.target.value as ReelDisplay) })}>
-            {REEL_DISPLAYS.map((d) => <option key={d.id} value={d.id}>{d.label}</option>)}
-          </select>
-        </label>
+
+        {socialMode ? (
+          <div className={s.toolField} style={{ minWidth: "auto" }}>
+            <span>Cor destaque</span>
+            <div className={s.swatches} role="group" aria-label="Cor de destaque do vídeo">
+              {ACCENT_SWATCHES.map((sw) => (
+                <button
+                  key={sw.hex}
+                  type="button"
+                  className={s.swatch}
+                  style={{ background: sw.hex }}
+                  title={sw.name}
+                  aria-label={`Cor ${sw.name}`}
+                  aria-pressed={reel.accent.toLowerCase() === sw.hex.toLowerCase()}
+                  onClick={() => onChange({ ...reel, accent: sw.hex })}
+                />
+              ))}
+            </div>
+          </div>
+        ) : null}
+
+        {!socialMode ? (
+          <label className={s.toolField} title={REEL_DISPLAYS.find((d) => d.id === (reel.display ?? "destaque"))?.hint}>
+            <span>Na página do case</span>
+            <select className={styles.select} value={reel.display ?? "destaque"} onChange={(e) => onChange({ ...reel, display: e.target.value === "destaque" ? undefined : (e.target.value as ReelDisplay) })}>
+              {REEL_DISPLAYS.map((d) => <option key={d.id} value={d.id}>{d.label}</option>)}
+            </select>
+          </label>
+        ) : null}
+
         <label className={s.toolField} style={{ flex: 1 }}>
-          <span>Linha da capa</span>
+          <span>{socialMode ? "Título do vídeo" : "Linha da capa"}</span>
           <input className={styles.input} value={reel.title} onChange={(e) => onChange({ ...reel, title: e.target.value })} />
         </label>
-        <label className={s.publish}>
-          {reel.draft ? <span className={styles.chip} data-tone="warn">Rascunho</span> : <span className={styles.chip} data-tone="good">No site</span>}
-          <span>Mostrar no site</span>
-          <input
-            type="checkbox"
-            className={styles.switch}
-            checked={!reel.draft}
-            onChange={(e) => {
-              const next = { ...reel };
-              if (e.target.checked) delete next.draft;
-              else next.draft = true;
-              onChange(next);
-            }}
-          />
-        </label>
-        <button type="button" className={`${styles.button} ${styles.ghost} ${styles.small}`} onClick={onAdvanced}>Modo avançado</button>
+
+        {!socialMode ? (
+          <>
+            <label className={s.publish}>
+              {reel.draft ? <span className={styles.chip} data-tone="warn">Rascunho</span> : <span className={styles.chip} data-tone="good">No site</span>}
+              <span>Mostrar no site</span>
+              <input
+                type="checkbox"
+                className={styles.switch}
+                checked={!reel.draft}
+                onChange={(e) => {
+                  const next = { ...reel };
+                  if (e.target.checked) delete next.draft;
+                  else next.draft = true;
+                  onChange(next);
+                }}
+              />
+            </label>
+            <button type="button" className={`${styles.button} ${styles.ghost} ${styles.small}`} onClick={onAdvanced}>Modo avançado</button>
+          </>
+        ) : null}
       </div>
 
-      <div className={s.main}>
+      <div className={s.main} data-aspect={aspect}>
         <div className={s.stageCol}>
-          <div ref={stageRef} className={s.stage} style={{ height: scale ? 1080 * scale : undefined }} onClick={togglePlay}>
+          <div ref={stageRef} className={s.stage} style={{ height: scale ? Math.round(stageH * scale) : undefined }} onClick={togglePlay}>
             {scale > 0 ? <ReelStage doc={sorted} track={track} scale={scale} reducedMotion={false} onReady={onReady} /> : null}
           </div>
           <div className={s.controls}>
@@ -924,7 +1025,7 @@ function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLi
             <button type="button" className={s.ctrl} data-on={loop} aria-pressed={loop} onClick={() => setLoop((v) => !v)} title="Repetir a cena aberta" aria-label="Repetir a cena aberta">
               <svg viewBox="0 0 24 24" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M17 3l3 3-3 3M4 12V9a3 3 0 0 1 3-3h13M7 21l-3-3 3-3M20 12v3a3 3 0 0 1-3 3H4" /></svg>
             </button>
-            <span className={s.now}>{sceneNow >= 0 ? `Cena ${sceneNow + 1} de ${scenes.length} · ${kindLabel(scenes[sceneNow].kind)}` : ""}</span>
+            <span className={s.now}>{sceneNow >= 0 ? `Cena ${sceneNow + 1}/${scenes.length} · ${kindLabel(scenes[sceneNow].kind)}` : ""}</span>
           </div>
         </div>
 
@@ -955,6 +1056,7 @@ function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLi
                 <Fields defs={simpleFields(selected.kind).filter((f) => !(screensManual && f.key === "boards"))} values={toForm(selected)} onChange={(v) => update(index, { ...fromForm(v), id: selected.id })} />
               </div>
               <div className={s.inspectorActions}>
+                <button type="button" className={`${styles.button} ${styles.small}`} onClick={() => setAdding((v) => !v)}><PlusIcon />Nova cena</button>
                 <button type="button" className={`${styles.button} ${styles.small}`} onClick={() => duplicate(index)}><CopyIcon />Duplicar</button>
                 <button type="button" className={`${styles.button} ${styles.ghost} ${styles.small} ${styles.danger}`} disabled={scenes.length <= 1} onClick={() => remove(index)}><TrashIcon />Remover</button>
               </div>
@@ -998,6 +1100,7 @@ function Studio({ reel, tracks, onChange, onGenerate, onAdvanced, onUpload, onLi
                     className={s.clip}
                     data-selected={scene.id === selectedId}
                     data-dragging={dragFrom === i}
+                    data-has-img={img ? "true" : undefined}
                     style={{ left: xOf(scene.at), width: Math.max(8, xOf(lengths[i]) - 3) }}
                     draggable
                     onDragStart={(e) => {

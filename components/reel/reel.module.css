@@ -241,3 +241,274 @@
 .boardFrame.boardBrowser { background: transparent; border-radius: 14px; box-shadow: 0 70px 140px -40px rgba(0,0,0,.85); }
 .boardFrame.boardPhone { background: transparent; border-radius: 60px; box-shadow: 0 70px 140px -40px rgba(0,0,0,.85); }
 .boardFrame.boardBrowser img, .boardFrame.boardPhone img { object-fit: contain; }
+
+/* ==========================================================================
+   FORMATO VERTICAL 9:16 (1080 × 1920 — Instagram Reels & Stories)
+   ========================================================================== */
+.flowLineV { position: absolute; width: 3px; background: #3a3a36; transform-origin: 50% 0; }
+.flowNodeV { position: absolute; width: 904px; display: flex; align-items: center; gap: 36px; will-change: transform; }
+.flowTextV { display: grid; gap: 8px; min-width: 0; text-align: left; }
+.flowBodyV { font-size: 34px; line-height: 1.3; color: #b5b5ae; }
+
+.stage[data-aspect="9:16"] {
+  width: 1080px;
+  height: 1920px;
+}
+
+.stage[data-aspect="9:16"] .grain {
+  width: 540px;
+  height: 960px;
+}
+
+.stage[data-aspect="9:16"] .line,
+.stage[data-aspect="9:16"] .gInner {
+  white-space: normal;
+}
+
+.stage[data-aspect="9:16"] .titleBlock {
+  left: 88px;
+  right: 88px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.stage[data-aspect="9:16"] .display {
+  font-size: 104px;
+  line-height: 1.04;
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.stage[data-aspect="9:16"] .head {
+  left: 88px;
+  right: 88px;
+  top: 220px;
+}
+
+.stage[data-aspect="9:16"] .heading {
+  max-width: 904px;
+  font-size: 72px;
+  line-height: 1.08;
+}
+
+.stage[data-aspect="9:16"] .eyebrow {
+  font-size: 28px;
+  margin-bottom: 28px !important;
+}
+
+.stage[data-aspect="9:16"] .caption {
+  left: 88px;
+  right: 88px;
+  bottom: 240px;
+  width: auto;
+  font-size: 38px;
+  line-height: 1.35;
+}
+
+.stage[data-aspect="9:16"] .bodyText {
+  font-size: 40px;
+  line-height: 1.35;
+}
+
+.stage[data-aspect="9:16"] .flowCircle {
+  width: 140px;
+  height: 140px;
+  flex: none;
+  font-size: 44px;
+}
+
+.stage[data-aspect="9:16"] .flowNodeV .flowTitle {
+  margin-top: 0 !important;
+  font-size: 48px;
+  line-height: 1.1;
+}
+
+.stage[data-aspect="9:16"] .numberCol {
+  left: 88px;
+  top: 260px;
+  width: 904px;
+}
+
+.stage[data-aspect="9:16"] .bigNumber {
+  font-size: 196px;
+}
+
+.stage[data-aspect="9:16"] .bars {
+  left: 88px;
+  top: 860px;
+  width: 904px;
+}
+
+.stage[data-aspect="9:16"] .source {
+  left: 88px;
+  bottom: 200px;
+}
+
+.stage[data-aspect="9:16"] .listCol,
+.stage[data-aspect="9:16"] .listWide {
+  left: 88px;
+  top: 240px;
+  width: 904px;
+  transform: none;
+}
+
+.stage[data-aspect="9:16"] .listHeading,
+.stage[data-aspect="9:16"] .listWide .listHeading {
+  font-size: 72px;
+  line-height: 1.08;
+}
+
+.stage[data-aspect="9:16"] .list {
+  margin-top: 52px !important;
+  gap: 30px;
+}
+
+.stage[data-aspect="9:16"] .listItem,
+.stage[data-aspect="9:16"] .listWide .listItem {
+  font-size: 50px;
+  line-height: 1.18;
+}
+
+.stage[data-aspect="9:16"] .listBox,
+.stage[data-aspect="9:16"] .listFrame {
+  left: 88px;
+  top: 1080px;
+  width: 904px;
+  height: 580px;
+}
+
+.stage[data-aspect="9:16"] .cards {
+  left: 88px;
+  top: 540px;
+  width: 904px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.stage[data-aspect="9:16"] .card {
+  padding: 40px 44px;
+}
+
+.stage[data-aspect="9:16"] .cardTitle {
+  font-size: 54px;
+  margin-top: 14px !important;
+}
+
+.stage[data-aspect="9:16"] .cardBody {
+  display: block;
+  font-size: 32px;
+  margin-top: 12px !important;
+}
+
+.stage[data-aspect="9:16"] .metricsCol {
+  left: 88px;
+  top: 320px;
+  width: 904px;
+  transform: none;
+}
+
+.stage[data-aspect="9:16"] .metricValue {
+  font-size: 210px;
+}
+
+.stage[data-aspect="9:16"] .gauges {
+  left: 88px;
+  top: 980px;
+  transform: none;
+  gap: 44px;
+}
+
+.stage[data-aspect="9:16"] .splitImage {
+  left: 88px;
+  top: 220px;
+  width: 904px;
+  height: 820px;
+}
+
+.stage[data-aspect="9:16"] .splitText {
+  left: 88px;
+  top: 1100px;
+  width: 904px;
+  transform: none;
+}
+
+.stage[data-aspect="9:16"] .imageText {
+  left: 88px;
+  right: 88px;
+  bottom: 240px;
+  width: auto;
+}
+
+.stage[data-aspect="9:16"] .quoteBlock {
+  left: 88px;
+  right: 88px;
+  width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.stage[data-aspect="9:16"] .quoteMark {
+  height: 120px;
+  font-size: 240px;
+}
+
+.stage[data-aspect="9:16"] .quoteText {
+  font-size: 66px;
+  line-height: 1.18;
+}
+
+.stage[data-aspect="9:16"] .roleHead {
+  left: 88px;
+  top: 260px;
+  width: 904px;
+  transform: none;
+}
+
+.stage[data-aspect="9:16"] .facts {
+  left: 88px;
+  top: 700px;
+  width: 904px;
+  transform: none;
+}
+
+.stage[data-aspect="9:16"] .deltaSide {
+  width: 904px;
+}
+
+.stage[data-aspect="9:16"] .deltaBefore {
+  left: 88px;
+  top: 520px;
+}
+
+.stage[data-aspect="9:16"] .deltaArrow {
+  left: 88px;
+  top: 910px;
+  transform: rotate(90deg);
+}
+
+.stage[data-aspect="9:16"] .deltaAfter {
+  left: 88px;
+  top: 1060px;
+}
+
+.stage[data-aspect="9:16"] .deltaValue {
+  font-size: 160px;
+}
+
+.stage[data-aspect="9:16"] .signature {
+  left: 88px;
+  bottom: 180px;
+  font-size: 32px;
+}
+
+.stage[data-aspect="9:16"] .board {
+  width: 1080px;
+}
+
+.stage[data-aspect="9:16"] .screensTitle {
+  left: 88px;
+  right: 88px;
+  top: 160px;
+  max-width: none;
+  font-size: 64px;
+}

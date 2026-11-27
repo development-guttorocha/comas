@@ -253,7 +253,12 @@ const flow: TimelineBuilder = (el, raw, c, dur) => {
   scene.nodes.forEach((node, i) => {
     const at = start + i * step;
     const line = key(el, `${id}-ln-${i}`);
-    if (line) tl.fromTo(line, { scaleX: 0 }, { scaleX: 1, duration: Math.min(step * 0.7, 0.8), ease: "power2.inOut" }, at - Math.min(step * 0.7, 0.8));
+    if (line) {
+      const vertical = line.classList.contains(s.flowLineV);
+      const from = vertical ? { scaleY: 0 } : { scaleX: 0 };
+      const to = vertical ? { scaleY: 1 } : { scaleX: 1 };
+      tl.fromTo(line, from, { ...to, duration: Math.min(step * 0.7, 0.8), ease: "power2.inOut" }, at - Math.min(step * 0.7, 0.8));
+    }
     const n = key(el, `${id}-n-${i}`);
     if (!n) return;
     if (c.rm) {
@@ -472,7 +477,7 @@ const compare: TimelineBuilder = (el, raw, c, dur) => {
     else tl.fromTo(after, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: len, ease: "power4.inOut" }, wipe);
   }
   if (edge && !c.rm) {
-    tl.fromTo(edge, { x: 0, opacity: 1 }, { x: W, duration: len, ease: "power4.inOut" }, wipe);
+    tl.fromTo(edge, { x: 0, opacity: 1 }, { x: el.offsetWidth || W, duration: len, ease: "power4.inOut" }, wipe);
     tl.set(edge, { opacity: 0 }, wipe + len);
   }
   const sheet = key(el, `${id}-sheet`);

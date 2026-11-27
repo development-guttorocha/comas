@@ -208,10 +208,12 @@ export default function ReelStage({
     };
   }, []);
 
+  const aspect = doc.aspect ?? "16:9";
+
   return (
-    <div ref={rootRef} className={s.stage} style={{ transform: `scale(${scale})` }} aria-hidden>
+    <div ref={rootRef} className={s.stage} data-aspect={aspect} style={{ transform: `scale(${scale})` }} aria-hidden>
       {doc.scenes.map((scene) => (
-        <SceneMarkup key={scene.id} scene={scene} accent={doc.accent} cta={(doc.cta ?? DEFAULT_CTA).label} lang={doc.lang ?? "pt"} prepared={doc.prepared} />
+        <SceneMarkup key={scene.id} scene={scene} accent={doc.accent} cta={(doc.cta ?? DEFAULT_CTA).label} lang={doc.lang ?? "pt"} prepared={doc.prepared} aspect={aspect} />
       ))}
       <div data-k="flash" className={s.flash} style={{ background: doc.accent }} />
       <div data-k="ambient" className={s.ambient} style={{ ["--accent" as string]: doc.accent }} />

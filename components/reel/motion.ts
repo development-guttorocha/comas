@@ -5,6 +5,10 @@
 
 export const W = 1920;
 export const H = 1080;
+export const STAGE_SIZE = {
+  "16:9": { w: 1920, h: 1080 },
+  "9:16": { w: 1080, h: 1920 },
+} as const;
 
 // ── easing ───────────────────────────────────────────────────────────────────
 export const clamp01 = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v);

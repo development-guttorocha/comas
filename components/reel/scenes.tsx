@@ -168,13 +168,13 @@ export function complete(scene: ReelScene): ReelScene {
 
 // ── markup ───────────────────────────────────────────────────────────────────
 
-export function SceneMarkup({ scene: raw, accent, cta, lang = "pt", prepared }: { scene: ReelScene; accent: string; cta?: string; lang?: "pt" | "en"; prepared?: ReelPrepared }) {
+export function SceneMarkup({ scene: raw, accent, cta, lang = "pt", prepared, aspect = "16:9" }: { scene: ReelScene; accent: string; cta?: string; lang?: "pt" | "en"; prepared?: ReelPrepared; aspect?: "9:16" | "16:9" }) {
   const scene = complete(raw);
   const id = scene.id;
-  return <SceneFrame id={id} bg={DARK} backdrop={hasPicture(scene) ? undefined : scene.backdrop} focus={scene.backdropFocus}>{scene.kind === "end" ? <EndMarkup scene={scene} accent={accent} cta={cta} /> : body(scene, accent, lang, prepared)}</SceneFrame>;
+  return <SceneFrame id={id} bg={DARK} backdrop={hasPicture(scene) ? undefined : scene.backdrop} focus={scene.backdropFocus}>{scene.kind === "end" ? <EndMarkup scene={scene} accent={accent} cta={cta} /> : body(scene, accent, lang, prepared, aspect)}</SceneFrame>;
 }
 
-function body(scene: ReelScene, accent: string, lang: "pt" | "en", prepared?: ReelPrepared): ReactNode {
+function body(scene: ReelScene, accent: string, lang: "pt" | "en", prepared?: ReelPrepared, aspect: "9:16" | "16:9" = "16:9"): ReactNode {
   const id = scene.id;
   switch (scene.kind) {
     case "title":
@@ -194,7 +194,7 @@ function body(scene: ReelScene, accent: string, lang: "pt" | "en", prepared?: Re
         </>
       );
     case "flow":
-      return <FlowMarkup scene={scene} accent={accent} />;
+      return <FlowMarkup scene={scene} accent={accent} aspect={aspect} />;
     case "number":
       return <NumberMarkup scene={scene} accent={accent} />;
     case "list":
@@ -226,9 +226,13 @@ const FLOW_Y = 590;
 const FLOW_R = 104;
 const flowX = (n: number, i: number) => FLOW_X0 + (FLOW_W / n) * (i + 0.5);
 
-function FlowMarkup({ scene, accent }: { scene: FlowScene; accent: string }) {
+function FlowMarkup({ scene, accent, aspect }: { scene: FlowScene; accent: string; aspect: "9:16" | "16:9" }) {
   const id = scene.id;
-  const n = scene.nodes.length;
+  const n = Math.max(1, scene.nodes.length);
+  const vertical = aspect === "9:16";
+  const vStep = n <= 3 ? 256 : 212;
+  const vStartY = 620;
+
   return (
     <>
       <div className={s.head}>
@@ -237,23 +241,52 @@ function FlowMarkup({ scene, accent }: { scene: FlowScene; accent: string }) {
           <Words k={`${id}-h`} lines={lines(scene.heading)} accent={accent} />
         </h2>
       </div>
-      {scene.nodes.slice(1).map((_, i) => {
-        const x0 = flowX(n, i) + FLOW_R + 18;
-        const x1 = flowX(n, i + 1) - FLOW_R - 18;
-        return <div key={i} data-k={`${id}-ln-${i + 1}`} className={s.flowLine} style={{ left: x0, top: FLOW_Y - 1, width: x1 - x0, transform: "scaleX(0)" }} />;
-      })}
-      {scene.nodes.map((node, i) => (
-        <div key={i} data-k={`${id}-n-${i}`} className={s.flowNode} style={{ left: flowX(n, i) - 160, top: FLOW_Y - FLOW_R, opacity: 0 }}>
-          <div
-            className={s.flowCircle}
-            style={node.accent ? { background: accent, borderColor: accent, color: "#fff" } : undefined}
-          >
-            {scene.marks ? "●" : String(i + 1).padStart(2, "0")}
-          </div>
-          <p className={s.flowTitle} style={node.accent ? { color: accent } : undefined}>{node.title}</p>
-          {node.body ? <p className={s.flowBody}>{node.body}</p> : null}
-        </div>
-      ))}
+      {vertical ? (
+        <>
+          {scene.nodes.slice(1).map((_, i) => (
+            <div
+              key={i}
+              data-k={`${id}-ln-${i + 1}`}
+              className={s.flowLineV}
+              style={{ left: 158, top: vStartY + i * vStep + 144, height: Math.max(24, vStep - 144), transform: "scaleY(0)" }}
+            />
+          ))}
+          {scene.nodes.map((node, i) => (
+            <div key={i} data-k={`${id}-n-${i}`} className={s.flowNodeV} style={{ left: 88, top: vStartY + i * vStep, opacity: 0 }}>
+              <div
+                className={s.flowCircle}
+                style={node.accent ? { background: accent, borderColor: accent, color: "#fff" } : undefined}
+              >
+                {scene.marks ? "●" : String(i + 1).padStart(2, "0")}
+              </div>
+              <div className={s.flowTextV}>
+                <p className={s.flowTitle} style={node.accent ? { color: accent } : undefined}>{node.title}</p>
+                {node.body ? <p className={s.flowBodyV}>{node.body}</p> : null}
+              </div>
+            </div>
+          ))}
+        </>
+      ) : (
+        <>
+          {scene.nodes.slice(1).map((_, i) => {
+            const x0 = flowX(n, i) + FLOW_R + 18;
+            const x1 = flowX(n, i + 1) - FLOW_R - 18;
+            return <div key={i} data-k={`${id}-ln-${i + 1}`} className={s.flowLine} style={{ left: x0, top: FLOW_Y - 1, width: x1 - x0, transform: "scaleX(0)" }} />;
+          })}
+          {scene.nodes.map((node, i) => (
+            <div key={i} data-k={`${id}-n-${i}`} className={s.flowNode} style={{ left: flowX(n, i) - 160, top: FLOW_Y - FLOW_R, opacity: 0 }}>
+              <div
+                className={s.flowCircle}
+                style={node.accent ? { background: accent, borderColor: accent, color: "#fff" } : undefined}
+              >
+                {scene.marks ? "●" : String(i + 1).padStart(2, "0")}
+              </div>
+              <p className={s.flowTitle} style={node.accent ? { color: accent } : undefined}>{node.title}</p>
+              {node.body ? <p className={s.flowBody}>{node.body}</p> : null}
+            </div>
+          ))}
+        </>
+      )}
       {scene.caption ? (
         <p data-k={`${id}-cap`} className={s.caption} style={{ opacity: 0 }}>
           {scene.caption}

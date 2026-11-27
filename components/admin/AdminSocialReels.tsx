@@ -56,7 +56,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
             format: "reel",
             status: "in_review",
             slides: [],
-            reel: newReel(data.theme?.palette?.accent ?? "#C85A32", "Clareza na escrita", tracks[0]?.id ?? "bull"),
+            reel: { ...newReel(data.theme?.palette?.accent ?? "#3E2A8D", "Clareza na escrita", tracks[0]?.id ?? "bull"), aspect: "9:16" },
             caption: "Escrever bem é facilitar o caminho de quem lê.\n\n#textoemciclo #escrita #reels",
             createdAt: now,
             updatedAt: now,
@@ -64,8 +64,9 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
           setReels([starter]);
           setSelectedId(starter.id);
         } else {
-          setReels(onlyReels);
-          setSelectedId(onlyReels[0]!.id);
+          const normalized = onlyReels.map(p => (p.reel ? { ...p, reel: { ...p.reel, aspect: p.reel.aspect ?? "9:16" as const } } : p));
+          setReels(normalized);
+          setSelectedId(normalized[0]!.id);
         }
       })
       .catch(err => {
@@ -109,7 +110,10 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
 
   async function createNewReel() {
     const now = new Date().toISOString();
-    const doc = newReel(theme.palette.accent, "Novo vídeo · Texto em Ciclo", tracks[0]?.id ?? "bull");
+    const doc: ReelDoc = {
+      ...newReel(theme.palette.accent, "Novo vídeo · Texto em Ciclo", tracks[0]?.id ?? "bull"),
+      aspect: "9:16",
+    };
     const post: SocialPost = {
       id: `reel_${Date.now().toString(36)}`,
       title: "Novo vídeo · Texto em Ciclo",
@@ -144,7 +148,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
 
   return (
     <AdminShell
-      crumbs={[{ label: "Reels (Motor de Vídeo)" }]}
+      crumbs={[{ label: "Vídeos (Reels 9:16)" }]}
       actions={
         <>
           {current ? (
@@ -153,10 +157,10 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
             </span>
           ) : null}
           <button type="button" className={styles.button} onClick={() => setMuapiKind("image")}>
-            <ImageIcon />Cena IA (MuAPI)
+            <ImageIcon />Imagem IA
           </button>
           <button type="button" className={styles.button} onClick={() => setMuapiKind("video")}>
-            <PlayIcon />Clipe IA (MuAPI)
+            <PlayIcon />Clipe IA
           </button>
           <button type="button" className={styles.button} onClick={createNewReel}>
             <PlusIcon />Novo vídeo
@@ -181,7 +185,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
               {lastMuapiVideo ? (
                 <div className={styles.panel} style={{ padding: 12, display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: 12, background: "var(--raised)" }}>
                   <span style={{ fontSize: 13 }}>
-                    <strong>Clipe 9:16 gerado na MuAPI:</strong> pronto para baixar ou usar como B-roll.
+                    <strong>Clipe 9:16 gerado com IA:</strong> pronto para baixar ou usar como B-roll.
                   </span>
                   <div style={{ display: "flex", gap: 8 }}>
                     <a href={lastMuapiVideo} target="_blank" rel="noreferrer" download className={`${styles.button} ${styles.primary} ${styles.small}`}>
@@ -238,6 +242,7 @@ export default function AdminSocialReels({ tracks }: { tracks: ReelTrack[] }) {
                   undo={undo}
                   onUndo={setUndo}
                   generateUrl="/api/social/generate"
+                  socialMode
                 />
               ) : null}
             </div>

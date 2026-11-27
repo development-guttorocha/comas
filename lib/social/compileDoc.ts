@@ -455,6 +455,7 @@ export function compileSlidesToReel(
   }
 
   return {
+    aspect: "9:16",
     track: options.trackId || "chillax-jay-someday",
     end: Math.max(32, beat),
     fadeOut: [Math.max(24, beat - 8), Math.max(32, beat)],

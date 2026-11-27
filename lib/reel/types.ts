@@ -224,9 +224,13 @@ const DISPLAY_IDS = new Set<string>(REEL_DISPLAYS.map((d) => d.id));
 /** Images prepared for the video (PhotoCraft, lib/reel/imagePrep.ts): margins trimmed, the blurred surround. */
 export type ReelPrepared = Record<string, { board?: string; aura?: string; w?: number; h?: number; mockup?: "phone" | "browser" }>;
 
+export type ReelAspect = "9:16" | "16:9";
+
 export interface ReelDoc {
   /** set when the reel is loaded, never stored: prepared copies of its screen images */
   prepared?: ReelPrepared;
+  /** canvas format: "9:16" (1080×1920 vertical Reels/Stories) or "16:9" (1920×1080 landscape) */
+  aspect?: ReelAspect;
   /** id in lib/reel/tracks.ts */
   track: string;
   /** the reel ends on this beat and holds its last frame */
@@ -265,6 +269,7 @@ export function parseReel(raw: unknown): ReelDoc | null {
     last = s.at;
   }
   return {
+    ...(r.aspect === "9:16" || r.aspect === "16:9" ? { aspect: r.aspect } : {}),
     track: r.track,
     end: r.end,
     fadeOut: r.fadeOut,

@@ -382,6 +382,7 @@ ${input.idea.trim() || "Por que dominar os eixos temáticos e a leitura de colet
       ];
 
   const reel: NonNullable<SocialPost["reel"]> = {
+    aspect: "9:16",
     track: input.trackId || "chillax-jay-someday",
     end: 64,
     fadeOut: [56, 64],
