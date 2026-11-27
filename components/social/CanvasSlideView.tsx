@@ -487,7 +487,7 @@ export default function CanvasSlideView({
           }}
         >
           <span style={{ fontSize: 54, lineHeight: 1 }}>🖼️</span>
-          <strong style={{ fontSize: 28 }}>Clique para escolher foto da Mídia ou gerar com IA</strong>
+          <strong style={{ fontSize: 28 }}>Clique para escolher uma foto</strong>
         </div>
       );
     }
@@ -522,7 +522,7 @@ export default function CanvasSlideView({
     );
   }
 
-  const guidesVisible = interactive && (showSafeGuides || dragging || Boolean(selectedElementId));
+  const guidesVisible = interactive && (showSafeGuides || dragging);
 
   return (
     <div
@@ -572,8 +572,9 @@ export default function CanvasSlideView({
               zIndex: isFullBleedImg ? 0 : zIdx + 1,
               cursor: !interactive ? "default" : isEditing ? "text" : isFullBleedImg ? "pointer" : "grab",
               touchAction: interactive && !isEditing ? "none" : undefined,
-              outline: isSelected ? "4px solid #4C8DFF" : undefined,
-              outlineOffset: isSelected ? "4px" : undefined,
+              outline: isSelected ? "3px dashed #FFFFFF" : undefined,
+              boxShadow: isSelected ? "0 0 0 3px #D9266F" : undefined,
+              borderRadius: isSelected ? 6 : undefined,
             }}
           >
             {el.type === "shape" ? (
@@ -591,7 +592,7 @@ export default function CanvasSlideView({
                   onPointerDown={e => beginDrag(e, el, "rotate")}
                   onPointerMove={moveDrag}
                   onPointerUp={e => endDrag(e, el)}
-                  title="Girar elemento"
+                  title="Girar"
                   style={{
                     position: "absolute",
                     left: "50%",
@@ -600,21 +601,22 @@ export default function CanvasSlideView({
                     width: 36,
                     height: 36,
                     borderRadius: 999,
-                    background: "#16161A",
-                    border: "3px solid #4C8DFF",
-                    color: "#FFFFFF",
+                    background: "#FFFFFF",
+                    border: "3px solid #D9266F",
+                    color: "#D9266F",
                     display: "grid",
                     placeItems: "center",
                     fontSize: 20,
+                    fontWeight: 700,
                     cursor: "grab",
                     touchAction: "none",
-                    boxShadow: "0 4px 12px rgba(0,0,0,0.35)",
+                    boxShadow: "0 4px 14px rgba(0,0,0,0.22)",
                   }}
                 >
                   ↻
                 </div>
 
-                {/* 8 Resize handles */}
+                {/* Round berry-pink resize dots (matching image_2.png) */}
                 {HANDLES.map(h => (
                   <div
                     key={h.id}
@@ -628,12 +630,12 @@ export default function CanvasSlideView({
                       transform: "translate(-50%, -50%)",
                       width: 22,
                       height: 22,
-                      borderRadius: 5,
-                      background: "#FFFFFF",
-                      border: "3px solid #4C8DFF",
+                      borderRadius: 999,
+                      background: "#D9266F",
+                      border: "3px solid #FFFFFF",
                       cursor: h.cursor,
                       touchAction: "none",
-                      boxShadow: "0 2px 6px rgba(0,0,0,0.28)",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
                     }}
                   />
                 ))}

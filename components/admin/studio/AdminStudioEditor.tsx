@@ -1,10 +1,13 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- media thumbnails come from blob, supabase, data URLs or local public. */
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { domToPng } from "modern-screenshot";
 import JSZip from "jszip";
+import type { MediaFile } from "@/lib/admin/caseStore";
 import {
   applyLayout,
   blankSlide,
@@ -16,13 +19,14 @@ import {
   cloneSlide,
   DEFAULT_PALETTE_ID,
   ELEMENT_PRESETS,
-  layoutById,
   layoutsFor,
   paletteById,
   readCanvas,
   reflowCanvas,
   remixLayoutId,
+  stripMarks,
   syncContent,
+  textEl,
   type CanvasColor,
   type CanvasElement,
   type CanvasFont,
@@ -35,7 +39,6 @@ import {
 import { compileDocToSlides, compileSlidesToReel } from "@/lib/social/compileDoc";
 import { DEFAULT_SOCIAL_THEME } from "@/lib/social/presets";
 import {
-  ASPECT_DIMENSIONS,
   STARTER_STUDIO_DOC,
   type StudioAspect,
   type StudioBlockJson,
@@ -45,10 +48,10 @@ import type { SocialPost, SocialStatus, SocialTheme } from "@/lib/social/types";
 import CanvasSlideView, { type TextSelectionRange } from "@/components/social/CanvasSlideView";
 import AdminShell from "../AdminShell";
 import BusyOverlay from "../BusyOverlay";
-import { Toast, useToast } from "../client";
+import { api, Toast, useToast } from "../client";
 import { CropProvider } from "../CropDialog";
 import { move } from "../Fields";
-import { CopyIcon, ImageIcon, PlayIcon, PlusIcon, SparkIcon, TrashIcon } from "../icons";
+import { CopyIcon, PlusIcon, SparkIcon, TrashIcon, UploadIcon } from "../icons";
 import { MediaProvider, useMediaPicker } from "../MediaPicker";
 import MuapiGeneratorDialog from "../MuapiGeneratorDialog";
 import Skeleton from "../Skeleton";
@@ -58,42 +61,152 @@ import st from "./studioEditor.module.css";
 
 const SocialDocEditor = dynamic(() => import("./SocialDocEditor"), {
   ssr: false,
-  loading: () => <Skeleton kind="text" label="Abrindo roteiro em blocos" />,
+  loading: () => <Skeleton kind="text" label="Abrindo texto completo" />,
 });
 
-type ToolPanel = null | "palette" | "elements" | "ai";
-type SideTab = "roteiro" | "legenda";
+type DockTool = "modelos" | "texto" | "elementos" | "fotos" | "cores" | "roteiro" | "ia";
+type RoteiroSubTab = "paginas" | "completo" | "legenda";
 
-const AI_CHIPS = [
-  { label: "Encurtar", prompt: "Deixe o texto mais curto, direto e escaneável, sem perder a precisão pedagógica." },
-  { label: "Mais tom de Prô", prompt: "Reescreva com mais oralidade calorosa de sala de aula da Prô Renata (parênteses cúmplices, acolhimento e rigor)." },
-  { label: "Virar exemplo real", prompt: "Traga um exemplo concreto de frase de redação dissertativa de vestibulando (evitando qualquer exemplo corporativo)." },
-  { label: "Grifar palavra-chave", prompt: "Mantenha o texto quase idêntico, mas envolva 1 ou 2 expressões mais fortes com ==duplo igual== para grifar em mostarda." },
+const STICKER_EMOJIS = ["✍️", "💡", "📌", "🎯", "📚", "❤️", "⭐", "🤔"];
+
+const AI_ACTIONS = [
+  {
+    title: "Deixar mais curto",
+    desc: "Enxuga as frases para caber melhor e ler rápido",
+    prompt: "Deixe o texto mais curto, direto e escaneável, sem perder a precisão pedagógica.",
+  },
+  {
+    title: "Mais jeito da Prô",
+    desc: "Traz tom acolhedor e bem-humorado de sala de aula",
+    prompt: "Reescreva com mais oralidade calorosa de sala de aula da Prô Renata (parênteses cúmplices, acolhimento e rigor).",
+  },
+  {
+    title: "Criar exemplo de redação",
+    desc: "Mostra como aparece de verdade na folha do vestibular",
+    prompt: "Traga um exemplo concreto de frase de redação dissertativa de vestibulando (evitando qualquer exemplo corporativo).",
+  },
+  {
+    title: "Destacar palavra importante",
+    desc: "Marca o termo principal em amarelo-mostarda",
+    prompt: "Mantenha o texto quase idêntico, mas envolva 1 ou 2 expressões mais fortes com ==duplo igual== para grifar em mostarda.",
+  },
 ];
 
 const TEXTURES: Array<{ id: CanvasTexture; label: string }> = [
-  { id: "paper", label: "Papel" },
+  { id: "paper", label: "Papel suave" },
+  { id: "lines", label: "Folha de caderno" },
   { id: "grid", label: "Quadriculado" },
-  { id: "lines", label: "Pauta" },
   { id: "dots", label: "Pontilhado" },
   { id: "none", label: "Liso" },
 ];
 
-const BG_TOKENS: Array<{ id: CanvasColor; label: string }> = [
-  { id: "background", label: "Fundo claro/base" },
-  { id: "surface", label: "Cartão" },
-  { id: "accent", label: "Destaque" },
-  { id: "primary", label: "Profundo" },
-  { id: "accentSoft", label: "Lavanda/Suave" },
+const BG_SWATCHES: Array<{ id: CanvasColor; label: string }> = [
+  { id: "background", label: "Fundo claro" },
+  { id: "surface", label: "Branco" },
+  { id: "accent", label: "Cor forte" },
+  { id: "primary", label: "Escuro" },
+  { id: "accentSoft", label: "Suave" },
 ];
 
-const COLOR_TOKENS: Array<{ id: CanvasColor; label: string }> = [
-  { id: "contrast", label: "Auto" },
-  { id: "primary", label: "Primária" },
+const TEXT_COLORS: Array<{ id: CanvasColor; label: string }> = [
+  { id: "contrast", label: "Automático" },
+  { id: "primary", label: "Principal" },
   { id: "accent", label: "Destaque" },
   { id: "note", label: "Mostarda" },
   { id: "white", label: "Branco" },
-  { id: "black", label: "Escuro" },
+  { id: "black", label: "Preto" },
+];
+
+/* ---------- Ícones simples e amigáveis da barra esquerda ---------- */
+const DockIcon = ({ children }: { children: ReactNode }) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    {children}
+  </svg>
+);
+
+const DOCK_ITEMS: Array<{ id: DockTool; label: string; title: string; icon: ReactNode }> = [
+  {
+    id: "modelos",
+    label: "Modelos",
+    title: "Modelos da página",
+    icon: (
+      <DockIcon>
+        <rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2" />
+        <rect x="13" y="3.5" width="7.5" height="7.5" rx="2" />
+        <rect x="3.5" y="13" width="7.5" height="7.5" rx="2" />
+        <rect x="13" y="13" width="7.5" height="7.5" rx="2" />
+      </DockIcon>
+    ),
+  },
+  {
+    id: "texto",
+    label: "Texto",
+    title: "Adicionar e ajustar texto",
+    icon: (
+      <DockIcon>
+        <path d="M5 6h14M12 6v13M9 19h6" />
+      </DockIcon>
+    ),
+  },
+  {
+    id: "elementos",
+    label: "Elementos",
+    title: "Elementos visuais",
+    icon: (
+      <DockIcon>
+        <circle cx="8" cy="8.5" r="4" />
+        <rect x="13" y="13" width="7.5" height="7.5" rx="2" />
+        <path d="m16.5 4.5 3.5 6h-7z" />
+      </DockIcon>
+    ),
+  },
+  {
+    id: "fotos",
+    label: "Fotos",
+    title: "Suas fotos e ilustrações",
+    icon: (
+      <DockIcon>
+        <rect x="3.5" y="5" width="17" height="14" rx="2.5" />
+        <circle cx="8.5" cy="10" r="1.6" />
+        <path d="m20.5 16-5-5-8 8" />
+      </DockIcon>
+    ),
+  },
+  {
+    id: "cores",
+    label: "Cores",
+    title: "Cores e fundo",
+    icon: (
+      <DockIcon>
+        <circle cx="12" cy="12" r="8.5" />
+        <circle cx="9" cy="10" r="1.3" fill="currentColor" />
+        <circle cx="13" cy="8.5" r="1.3" fill="currentColor" />
+        <circle cx="15.5" cy="12" r="1.3" fill="currentColor" />
+      </DockIcon>
+    ),
+  },
+  {
+    id: "roteiro",
+    label: "Roteiro",
+    title: "Roteiro e legenda",
+    icon: (
+      <DockIcon>
+        <rect x="4" y="4" width="16" height="16" rx="2.5" />
+        <path d="M8 9h8M8 13h8M8 17h5" />
+      </DockIcon>
+    ),
+  },
+  {
+    id: "ia",
+    label: "Ajuda IA",
+    title: "Pedir ajuda para a IA",
+    icon: (
+      <DockIcon>
+        <path d="m12 3 1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z" />
+        <path d="M18 16v4M16 18h4" />
+      </DockIcon>
+    ),
+  },
 ];
 
 function slugify(text: string): string {
@@ -130,6 +243,17 @@ function ensureCanvas(doc: StudioDocumentData): StudioCanvas {
   );
 }
 
+function slideSummary(slide: CanvasSlide): { heading: string; detail: string } {
+  const c = syncContent(slide).content;
+  const heading = stripMarks(c.title || c.quote || c.eyebrow || "Página sem título");
+  const detail = stripMarks(
+    [c.subtitle, c.body, c.wrong ? `❌ ${c.wrong}` : "", c.right ? `✔️ ${c.right}` : "", c.items, c.cta]
+      .filter(Boolean)
+      .join(" · "),
+  );
+  return { heading, detail };
+}
+
 function StudioInner({
   post,
   setPost,
@@ -147,8 +271,9 @@ function StudioInner({
   const pickMedia = useMediaPicker();
   const { toast, show, clear } = useToast();
 
+  const stageRef = useRef<HTMLDivElement>(null);
   const exportRefs = useRef<Array<HTMLDivElement | null>>([]);
-  const layoutStripRef = useRef<HTMLDivElement>(null);
+  const downloadBoxRef = useRef<HTMLDivElement>(null);
   const recorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
 
@@ -157,43 +282,40 @@ function StudioInner({
   const [busyLabel, setBusyLabel] = useState("");
   const [savedSnapshot, setSavedSnapshot] = useState<SocialPost>(post);
 
+  // Active tool & panels
+  const [activeTool, setActiveTool] = useState<DockTool>("modelos");
+  const [panelOpen, setPanelOpen] = useState(true);
+  const [roteiroTab, setRoteiroTab] = useState<RoteiroSubTab>("paginas");
+  const [roteiroRevision, setRoteiroRevision] = useState(0);
+  const [pendingBlocks, setPendingBlocks] = useState<StudioBlockJson[] | null>(null);
+  const [downloadOpen, setDownloadOpen] = useState(false);
+
+  // Canvas selection & zoom
   const [selectedSlideIdx, setSelectedSlideIdx] = useState(0);
   const [selectedElementId, setSelectedElementId] = useState<string | null>(null);
   const [editingElementId, setEditingElementId] = useState<string | null>(null);
   const [selectionRange, setSelectionRange] = useState<TextSelectionRange | null>(null);
+  const [stageFitWidth, setStageFitWidth] = useState(400);
+  const [zoom, setZoom] = useState(1);
 
-  const [toolPanel, setToolPanel] = useState<ToolPanel>(null);
-  const [showRoteiro, setShowRoteiro] = useState(false);
-  const [sideTab, setSideTab] = useState<SideTab>("roteiro");
-  const [roteiroRevision, setRoteiroRevision] = useState(0);
-  const [pendingBlocks, setPendingBlocks] = useState<StudioBlockJson[] | null>(null);
+  // Undo / Redo stacks
+  const [past, setPast] = useState<StudioCanvas[]>([]);
+  const [future, setFuture] = useState<StudioCanvas[]>([]);
 
-  const [customAiPrompt, setCustomAiPrompt] = useState("");
-  const [undoCanvas, setUndoCanvas] = useState<StudioCanvas | null>(null);
+  // Media library inside "Fotos" tab + AI state
+  const [mediaFiles, setMediaFiles] = useState<MediaFile[]>([]);
+  const [uploadingPhoto, setUploadingPhoto] = useState(false);
   const [muapiTarget, setMuapiTarget] = useState<{ mode: "element"; elementId: string } | { mode: "new" } | null>(null);
+  const [customAiPrompt, setCustomAiPrompt] = useState("");
   const [recording, setRecording] = useState(false);
   const [recSeconds, setRecSeconds] = useState(0);
 
-  const [artboardWidth, setArtboardWidth] = useState(330);
-
+  // On narrow screens, start with the side card closed so Renata sees the artboard first
   useEffect(() => {
-    const updateWidth = () => {
-      if (typeof window === "undefined") return;
-      const vw = window.innerWidth;
-      if (vw < 640) setArtboardWidth(Math.min(340, vw - 52));
-      else if (vw < 1100) setArtboardWidth(300);
-      else setArtboardWidth(showRoteiro ? 310 : 350);
-    };
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, [showRoteiro]);
-
-  useEffect(() => {
-    if (!recording) return;
-    const t = window.setInterval(() => setRecSeconds(s => s + 1), 1000);
-    return () => window.clearInterval(t);
-  }, [recording]);
+    if (typeof window !== "undefined" && window.innerWidth <= 900) {
+      setPanelOpen(false);
+    }
+  }, []);
 
   const studioDoc: StudioDocumentData = useMemo(
     () => post.studioDoc ?? STARTER_STUDIO_DOC,
@@ -208,12 +330,60 @@ function StudioInner({
   const selectedElement = activeSlide?.elements.find(e => e.id === selectedElementId) ?? null;
 
   const { width: W, height: H } = CANVAS_SIZE[aspect];
-  const scale = artboardWidth / W;
-  const thumbWidth = 80;
-  const thumbScale = thumbWidth / W;
+
+  // Fit the single centered slide cleanly inside `.stageArea`
+  useEffect(() => {
+    const el = stageRef.current;
+    if (!el) return;
+    const measure = () => {
+      const availW = Math.max(220, el.clientWidth - 36);
+      const availH = Math.max(240, el.clientHeight - 32);
+      const byH = availH * (W / H);
+      setStageFitWidth(Math.round(Math.min(availW, byH, 540)));
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [W, H, panelOpen]);
+
+  // Load saved photos when opening the "Fotos" tool
+  const loadPhotos = useCallback(() => {
+    if (activeTool !== "fotos") return;
+    api<{ items?: MediaFile[] }>("/api/social/media")
+      .then(d => setMediaFiles(d.items ?? []))
+      .catch(() => {});
+  }, [activeTool]);
+
+  useEffect(() => {
+    loadPhotos();
+  }, [loadPhotos]);
+
+  // Close Download menu on outside click
+  useEffect(() => {
+    if (!downloadOpen) return;
+    const onPointer = (e: PointerEvent) => {
+      if (!downloadBoxRef.current?.contains(e.target as Node)) setDownloadOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointer);
+    return () => document.removeEventListener("pointerdown", onPointer);
+  }, [downloadOpen]);
+
+  useEffect(() => {
+    if (!recording) return;
+    const t = window.setInterval(() => setRecSeconds(s => s + 1), 1000);
+    return () => window.clearInterval(t);
+  }, [recording]);
+
+  const artWidth = Math.round(stageFitWidth * zoom);
+  const scale = artWidth / W;
 
   const commitCanvas = useCallback(
-    (nextCanvas: StudioCanvas, syncBlocks = true) => {
+    (nextCanvas: StudioCanvas, { recordHistory = true, syncBlocks = true } = {}) => {
+      if (recordHistory) {
+        setPast(prev => [...prev.slice(-24), canvas]);
+        setFuture([]);
+      }
       setPost(prev => {
         if (!prev) return prev;
         const baseDoc = prev.studioDoc ?? STARTER_STUDIO_DOC;
@@ -228,18 +398,34 @@ function StudioInner({
       });
       setDirty(true);
     },
-    [setPost],
+    [canvas, setPost],
   );
 
   const updateSlideAt = useCallback(
-    (idx: number, updater: (slide: CanvasSlide) => CanvasSlide) => {
+    (idx: number, updater: (slide: CanvasSlide) => CanvasSlide, recordHistory = true) => {
       const nextSlides = slides.map((s, i) => (i === idx ? syncContent(updater(s)) : s));
-      commitCanvas({ ...canvas, slides: nextSlides });
+      commitCanvas({ ...canvas, slides: nextSlides }, { recordHistory });
     },
     [canvas, commitCanvas, slides],
   );
 
-  // Delete selected free/decor element on Backspace/Delete when not editing text
+  function handleUndo() {
+    const prev = past.at(-1);
+    if (!prev) return;
+    setPast(p => p.slice(0, -1));
+    setFuture(f => [canvas, ...f.slice(0, 24)]);
+    commitCanvas(prev, { recordHistory: false });
+  }
+
+  function handleRedo() {
+    const next = future[0];
+    if (!next) return;
+    setFuture(f => f.slice(1));
+    setPast(p => [...p, canvas]);
+    commitCanvas(next, { recordHistory: false });
+  }
+
+  // Delete selected element on Backspace/Delete when not typing
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (editingElementId) return;
@@ -260,44 +446,57 @@ function StudioInner({
     return () => window.removeEventListener("keydown", onKey);
   }, [editingElementId, safeIdx, selectedElementId, updateSlideAt]);
 
-  async function save(override?: SocialPost): Promise<boolean> {
-    const target = override ?? post;
-    const syncedCanvas: StudioCanvas = {
-      ...ensureCanvas(target.studioDoc ?? STARTER_STUDIO_DOC),
-      slides: ensureCanvas(target.studioDoc ?? STARTER_STUDIO_DOC).slides.map(syncContent),
-    };
-    const payload: SocialPost = {
-      ...target,
-      format: "studio_doc",
-      studioDoc: {
-        ...(target.studioDoc ?? STARTER_STUDIO_DOC),
-        canvas: syncedCanvas,
-        blocks: pendingBlocks ?? blocksFromCanvas(syncedCanvas),
-      },
-    };
-    setSaving(true);
-    try {
-      const res = await fetch("/api/social/posts", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ post: payload }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Erro ao salvar");
-      const saved = (data.post as SocialPost) ?? payload;
-      setPost(saved);
-      setSavedSnapshot(saved);
-      setSavedRevision(saved.updatedAt);
-      setDirty(false);
-      show("Salvo no Estúdio!", "good");
-      return true;
-    } catch (err) {
-      show(err);
-      return false;
-    } finally {
-      setSaving(false);
-    }
-  }
+  const save = useCallback(
+    async (override?: SocialPost, silent = false): Promise<boolean> => {
+      const target = override ?? post;
+      const currentCanvas = ensureCanvas(target.studioDoc ?? STARTER_STUDIO_DOC);
+      const syncedCanvas: StudioCanvas = {
+        ...currentCanvas,
+        slides: currentCanvas.slides.map(syncContent),
+      };
+      const payload: SocialPost = {
+        ...target,
+        format: "studio_doc",
+        studioDoc: {
+          ...(target.studioDoc ?? STARTER_STUDIO_DOC),
+          canvas: syncedCanvas,
+          blocks: pendingBlocks ?? blocksFromCanvas(syncedCanvas),
+        },
+      };
+      setSaving(true);
+      try {
+        const res = await fetch("/api/social/posts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ post: payload }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Erro ao salvar");
+        const saved = (data.post as SocialPost) ?? payload;
+        setPost(saved);
+        setSavedSnapshot(saved);
+        setSavedRevision(saved.updatedAt);
+        setDirty(false);
+        if (!silent) show("Alterações salvas!", "good");
+        return true;
+      } catch (err) {
+        if (!silent) show(err);
+        return false;
+      } finally {
+        setSaving(false);
+      }
+    },
+    [pendingBlocks, post, setPost, setSavedRevision, show],
+  );
+
+  // Quiet auto-save after 1.6s of inactivity so Renata never worries about clicking Save
+  useEffect(() => {
+    if (!dirty || saving || editingElementId) return;
+    const timer = window.setTimeout(() => {
+      void save(undefined, true);
+    }, 1600);
+    return () => window.clearTimeout(timer);
+  }, [dirty, editingElementId, post, save, saving]);
 
   const leaveGuard = useLeaveGuard<SocialPost>({
     id: `studio:${post.id}`,
@@ -318,8 +517,33 @@ function StudioInner({
     onSave: () => save(),
   });
 
+  function selectTool(tool: DockTool) {
+    if (activeTool === tool && panelOpen) {
+      setPanelOpen(false);
+      return;
+    }
+    if (tool === "roteiro") {
+      setPost(prev =>
+        prev
+          ? {
+              ...prev,
+              studioDoc: {
+                ...(prev.studioDoc ?? STARTER_STUDIO_DOC),
+                canvas,
+                blocks: blocksFromCanvas(canvas),
+              },
+            }
+          : prev,
+      );
+      setRoteiroRevision(r => r + 1);
+    }
+    setActiveTool(tool);
+    setPanelOpen(true);
+  }
+
   function handleAspectChange(nextAspect: StudioAspect) {
     if (nextAspect === aspect) return;
+    setPast(p => [...p.slice(-24), canvas]);
     const reflowed = reflowCanvas(canvas, aspect, nextAspect);
     setPost(prev =>
       prev
@@ -336,33 +560,13 @@ function StudioInner({
     setDirty(true);
   }
 
-  function handlePaletteChange(paletteId: string) {
-    commitCanvas({ ...canvas, paletteId }, false);
-  }
-
-  function handleRemixSlide(idx = safeIdx) {
-    updateSlideAt(idx, s => applyLayout(s, remixLayoutId(s), aspect));
-  }
-
-  function handleRemixAll() {
-    setUndoCanvas(canvas);
-    let prev = "";
-    const remixed = slides.map(s => {
-      const nextLayout = remixLayoutId(s, Math.random, prev ? [prev] : []);
-      prev = nextLayout;
-      return applyLayout(s, nextLayout, aspect);
-    });
-    commitCanvas({ ...canvas, slides: remixed }, false);
-    show("Composições remixadas mantendo todo o seu texto!", "good");
-  }
-
   function handleHighlight() {
     const target =
       selectedElement?.type === "text"
         ? selectedElement
         : (activeSlide.elements.find(e => e.type === "text" && e.role !== "chrome" && e.role !== "decor") as CanvasTextEl | undefined);
     if (!target) {
-      show("Selecione um texto na arte para grifar.");
+      show("Clique em um texto na página para destacar uma palavra.");
       return;
     }
 
@@ -384,18 +588,69 @@ function StudioInner({
     }));
   }
 
-  async function handleAddElement(presetId: string) {
+  function addPresetElement(presetId: string) {
     const preset = ELEMENT_PRESETS.find(p => p.id === presetId);
     if (!preset) return;
     const made = preset.make(aspect);
-    if (made.type === "image") {
-      const url = await pickMedia("");
-      if (!url) return;
-      made.src = url;
-    }
     updateSlideAt(safeIdx, s => ({ ...s, elements: [...s.elements, made] }));
     setSelectedElementId(made.id);
-    setToolPanel(null);
+    if (typeof window !== "undefined" && window.innerWidth <= 900) setPanelOpen(false);
+  }
+
+  function addEmojiSticker(emoji: string) {
+    const { width, height } = CANVAS_SIZE[aspect];
+    const made = {
+      ...textEl("free", emoji, { x: width / 2 - 80, y: height / 2 - 80, w: 160, h: 160 }, { size: 112, align: "center", lineHeight: 1 }),
+      rotation: -6,
+    };
+    updateSlideAt(safeIdx, s => ({ ...s, elements: [...s.elements, made] }));
+    setSelectedElementId(made.id);
+    if (typeof window !== "undefined" && window.innerWidth <= 900) setPanelOpen(false);
+  }
+
+  function insertImageOnSlide(url: string) {
+    const existingImg = activeSlide.elements.find(e => e.type === "image");
+    if (selectedElement?.type === "image") {
+      updateSlideAt(safeIdx, s => ({
+        ...s,
+        elements: s.elements.map(el => (el.id === selectedElement.id && el.type === "image" ? { ...el, src: url } : el)),
+      }));
+    } else if (existingImg && !existingImg.src) {
+      updateSlideAt(safeIdx, s => ({
+        ...s,
+        elements: s.elements.map(el => (el.id === existingImg.id && el.type === "image" ? { ...el, src: url } : el)),
+      }));
+    } else {
+      const imgPreset = ELEMENT_PRESETS.find(p => p.id === "imagem")!;
+      const made = imgPreset.make(aspect);
+      if (made.type === "image") made.src = url;
+      updateSlideAt(safeIdx, s => ({ ...s, elements: [...s.elements, made] }));
+      setSelectedElementId(made.id);
+    }
+    if (typeof window !== "undefined" && window.innerWidth <= 900) setPanelOpen(false);
+  }
+
+  async function handleDirectPhotoUpload(files: FileList | null) {
+    if (!files?.length) return;
+    setUploadingPhoto(true);
+    try {
+      let lastUrl = "";
+      for (const file of Array.from(files)) {
+        const form = new FormData();
+        form.set("slug", post.id);
+        form.set("folder", "estudio");
+        form.set("file", file);
+        const saved = (await api<{ file: MediaFile }>("/api/social/media", { method: "POST", body: form })).file;
+        lastUrl = saved.url;
+      }
+      loadPhotos();
+      if (lastUrl) insertImageOnSlide(lastUrl);
+      show("Foto adicionada na página!", "good");
+    } catch (err) {
+      show(err);
+    } finally {
+      setUploadingPhoto(false);
+    }
   }
 
   async function handlePickElementImage(elementId: string, currentSrc: string) {
@@ -409,7 +664,7 @@ function StudioInner({
 
   async function handleSlideAi(instruction: string) {
     if (!activeSlide || !instruction.trim()) return;
-    setBusyLabel("Ajustando o slide com a voz da Prô…");
+    setBusyLabel("Reescrevendo esta página com o jeito da Prô…");
     try {
       const synced = syncContent(activeSlide);
       const res = await fetch("/api/social/generate", {
@@ -422,14 +677,13 @@ function StudioInner({
         }),
       });
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Erro ao ajustar slide");
-      setUndoCanvas(canvas);
+      if (!res.ok) throw new Error(data.error || "Erro ao ajustar página");
       const freeEls = activeSlide.elements.filter(e => e.role === "free");
       const rebuilt = buildSlide(data.content, activeSlide.layoutId, aspect, freeEls, activeSlide.id);
       const nextSlides = slides.map((s, i) => (i === safeIdx ? rebuilt : s));
       commitCanvas({ ...canvas, slides: nextSlides });
       setCustomAiPrompt("");
-      show("Slide atualizado pela IA!", "good");
+      show("Pronto! Se quiser voltar atrás, clique na seta Desfazer no topo.", "good");
     } catch (err) {
       show(err);
     } finally {
@@ -453,13 +707,13 @@ function StudioInner({
       rec.onstop = async () => {
         stream.getTracks().forEach(t => t.stop());
         const blob = new Blob(chunksRef.current, { type: rec.mimeType || "audio/webm" });
-        setBusyLabel("Ouvindo instrução com Whisper…");
+        setBusyLabel("Ouvindo seu pedido…");
         try {
           const form = new FormData();
-          form.append("audio", blob, "instrucao.webm");
+          form.append("audio", blob, "pedido.webm");
           const res = await fetch("/api/social/generate", { method: "POST", body: form });
           const data = await res.json();
-          if (!res.ok) throw new Error(data.error || "Erro na transcrição");
+          if (!res.ok) throw new Error(data.error || "Erro ao ouvir áudio");
           await handleSlideAi(String(data.transcript ?? ""));
         } catch (err) {
           show(err);
@@ -471,7 +725,7 @@ function StudioInner({
       setRecording(true);
       rec.start();
     } catch {
-      show("Permita o microfone no navegador para gravar.");
+      show("Permita o uso do microfone no navegador.");
     }
   }
 
@@ -479,33 +733,20 @@ function StudioInner({
     const blocks = pendingBlocks ?? studioDoc.blocks;
     const compiled = compileDocToSlides(blocks);
     if (!compiled.length) {
-      show("Escreva pelo menos um bloco no roteiro antes de montar os slides.");
+      show("Escreva algum conteúdo antes de atualizar as páginas.");
       return;
     }
-    setUndoCanvas(canvas);
     const rebuilt = canvasFromCompiled(compiled, aspect, canvas.paletteId);
-    setPost(prev =>
-      prev
-        ? {
-            ...prev,
-            studioDoc: {
-              ...(prev.studioDoc ?? STARTER_STUDIO_DOC),
-              blocks,
-              canvas: rebuilt,
-            },
-          }
-        : prev,
-    );
+    commitCanvas(rebuilt, { syncBlocks: false });
     setPendingBlocks(null);
-    setDirty(true);
-    show(`${rebuilt.slides.length} slides atualizados a partir do roteiro!`, "good");
+    show(`${rebuilt.slides.length} páginas atualizadas!`, "good");
   }
 
   async function convertToReel() {
-    const blocks = blocksFromCanvas(canvas);
-    const compiled = compileDocToSlides(blocks);
+    setDownloadOpen(false);
+    const compiled = compileDocToSlides(blocksFromCanvas(canvas));
     if (!compiled.length) return;
-    setBusyLabel("Convertendo os slides em cenas de Reel…");
+    setBusyLabel("Transformando seu post em vídeo (Reel)…");
     try {
       const reelDoc = compileSlidesToReel(compiled, {
         title: post.title,
@@ -515,7 +756,7 @@ function StudioInner({
       const now = new Date().toISOString();
       const reelPost: SocialPost = {
         id: `reel_from_${post.id}`,
-        title: `${post.title} (Reel)`,
+        title: `${post.title} (Vídeo)`,
         format: "reel",
         status: "in_review",
         slides: [],
@@ -529,7 +770,7 @@ function StudioInner({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ post: reelPost }),
       });
-      if (!res.ok) throw new Error("Erro ao salvar Reel");
+      if (!res.ok) throw new Error("Erro ao criar vídeo");
       router.push("/admin/reels");
     } catch (err) {
       show(err);
@@ -538,15 +779,16 @@ function StudioInner({
   }
 
   async function exportSingle(idx = safeIdx) {
+    setDownloadOpen(false);
     const node = exportRefs.current[idx];
     if (!node) return;
     setEditingElementId(null);
-    setBusyLabel(`Exportando PNG ${W}×${H}…`);
+    setBusyLabel("Preparando sua imagem em alta qualidade…");
     try {
       const dataUrl = await domToPng(node, { width: W, height: H, scale: 1 });
       const blob = await (await fetch(dataUrl)).blob();
-      downloadBlob(blob, `${slugify(post.title)}-slide-${String(idx + 1).padStart(2, "0")}.png`);
-      show(`Slide ${idx + 1} exportado em PNG!`, "good");
+      downloadBlob(blob, `${slugify(post.title)}-pagina-${String(idx + 1).padStart(2, "0")}.png`);
+      show(`Página ${idx + 1} baixada!`, "good");
     } catch (err) {
       show(err);
     } finally {
@@ -555,9 +797,10 @@ function StudioInner({
   }
 
   async function exportZip() {
+    setDownloadOpen(false);
     if (!slides.length) return;
     setEditingElementId(null);
-    setBusyLabel(`Exportando ${slides.length} slides em ${W}×${H} (.zip)…`);
+    setBusyLabel(`Preparando suas ${slides.length} páginas para baixar…`);
     try {
       const zip = new JSZip();
       const slug = slugify(post.title);
@@ -565,15 +808,15 @@ function StudioInner({
         const node = exportRefs.current[i];
         if (!node) continue;
         const dataUrl = await domToPng(node, { width: W, height: H, scale: 1 });
-        zip.file(`${String(i + 1).padStart(2, "0")}-${slug}-${aspect}.png`, dataUrl.split(",")[1] ?? "", {
+        zip.file(`${String(i + 1).padStart(2, "0")}-${slug}.png`, dataUrl.split(",")[1] ?? "", {
           base64: true,
         });
       }
-      if (post.caption.trim()) zip.file("legenda.txt", post.caption);
+      if (post.caption.trim()) zip.file("legenda-instagram.txt", post.caption);
       const blob = await zip.generateAsync({ type: "blob" });
-      downloadBlob(blob, `${slug}-${aspect}.zip`);
-      await save({ ...post, status: "exported" as SocialStatus });
-      show("Pacote .zip exportado!", "good");
+      downloadBlob(blob, `${slug}.zip`);
+      await save({ ...post, status: "exported" as SocialStatus }, true);
+      show("Todas as páginas e a legenda foram baixadas!", "good");
     } catch (err) {
       show(err);
     } finally {
@@ -582,16 +825,13 @@ function StudioInner({
   }
 
   async function removeDoc() {
-    if (!confirm(`Excluir "${post.title}"?`)) return;
+    setDownloadOpen(false);
+    if (!confirm(`Apagar "${post.title}"?`)) return;
     await fetch(`/api/social/posts?id=${encodeURIComponent(post.id)}`, { method: "DELETE" });
     router.push("/admin/estudio");
   }
 
-  const candidateLayouts = useMemo(
-    () => layoutsFor(activeSlide.content.kind),
-    [activeSlide.content.kind],
-  );
-
+  const candidateLayouts = useMemo(() => layoutsFor(activeSlide.content.kind), [activeSlide.content.kind]);
   const previewAlternatives = useMemo(() => {
     const synced = syncContent(activeSlide);
     const freeEls = activeSlide.elements.filter(e => e.role === "free");
@@ -601,677 +841,1069 @@ function StudioInner({
     }));
   }, [activeSlide, aspect, candidateLayouts]);
 
-  return (
-    <AdminShell
-      crumbs={[{ label: "Estúdio", href: "/admin/estudio" }, { label: post.title }]}
-      actions={
-        <>
-          <span className={styles.saveState} data-dirty={dirty ? "true" : undefined} data-saving={saving || undefined}>
-            {saving ? "Salvando…" : dirty ? "Não salvo" : "Salvo"}
-          </span>
-          <button type="button" className={styles.button} onClick={convertToReel}>
-            <PlayIcon />Virar Reel
-          </button>
-          <button type="button" className={styles.button} onClick={() => void exportSingle(safeIdx)}>
-            Exportar PNG
-          </button>
-          <button type="button" className={styles.button} onClick={exportZip}>
-            Baixar .zip ({slides.length})
-          </button>
-          <button
-            type="button"
-            className={`${styles.button} ${styles.primary}`}
-            disabled={saving}
-            onClick={() => void save()}
-          >
-            Salvar
-          </button>
-        </>
-      }
-    >
-      {leaveGuard.note}
+  const modelThumbW = 124;
+  const modelThumbScale = modelThumbW / W;
+  const stripThumbW = aspect === "story" ? 44 : 58;
+  const stripThumbScale = stripThumbW / W;
 
-      <div className={st.studioWorkspace} data-roteiro={showRoteiro ? "true" : undefined}>
-        {/* MAIN STUDIO CANVAS */}
-        <section className={st.canvasBoard} aria-label="Mesa de criação do Estúdio">
-          <div className={st.canvasTopBar}>
+  const toolTitle = DOCK_ITEMS.find(d => d.id === activeTool)?.title ?? "Ferramentas";
+
+  return (
+    <AdminShell crumbs={[]} immersive>
+      <div className={st.veedShell}>
+        {/* ==================== ZONA A: TOPO MINIMALISTA ==================== */}
+        <header className={st.veedTop}>
+          <div className={st.veedTopLeft}>
+            <Link href="/admin/estudio" className={st.backBtn}>
+              ← Meus posts
+            </Link>
             <input
-              className={st.titleInput}
+              className={st.projectTitle}
               value={post.title}
               onChange={e => {
                 const val = e.target.value;
                 setPost(p => (p ? { ...p, title: val } : p));
                 setDirty(true);
               }}
-              aria-label="Título do post"
+              placeholder="Nome do seu post"
+              aria-label="Nome do post"
             />
-
-            <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8 }}>
-              <div className={styles.tabs} role="tablist" aria-label="Formato">
-                {(["carousel", "story"] as const).map(a => (
-                  <button
-                    key={a}
-                    type="button"
-                    role="tab"
-                    className={styles.tab}
-                    aria-selected={aspect === a}
-                    onClick={() => handleAspectChange(a)}
-                  >
-                    {ASPECT_DIMENSIONS[a].label}
-                  </button>
-                ))}
-              </div>
-
-              <select
-                className={styles.select}
-                style={{ width: "auto" }}
-                value={canvas.paletteId}
-                onChange={e => handlePaletteChange(e.target.value)}
-                aria-label="Paleta editorial"
-              >
-                {CANVAS_PALETTES.map(p => (
-                  <option key={p.id} value={p.id}>
-                    {p.label}
-                  </option>
-                ))}
-              </select>
-
-              <button type="button" className={`${styles.button} ${styles.small}`} onClick={handleRemixAll}>
-                Remixar tudo
-              </button>
-
-              {undoCanvas ? (
-                <button
-                  type="button"
-                  className={`${styles.button} ${styles.ghost} ${styles.small}`}
-                  onClick={() => {
-                    commitCanvas(undoCanvas);
-                    setUndoCanvas(null);
-                  }}
-                >
-                  Desfazer
-                </button>
-              ) : null}
-
-              <label style={{ display: "inline-flex", alignItems: "center", gap: 6, fontSize: 12.5, color: "var(--soft)", cursor: "pointer" }}>
-                Roteiro (BlockNote)
-                <input
-                  type="checkbox"
-                  className={styles.switch}
-                  checked={showRoteiro}
-                  onChange={e => {
-                    const open = e.target.checked;
-                    if (open) {
-                      setPost(prev =>
-                        prev
-                          ? {
-                              ...prev,
-                              studioDoc: {
-                                ...(prev.studioDoc ?? STARTER_STUDIO_DOC),
-                                canvas,
-                                blocks: blocksFromCanvas(canvas),
-                              },
-                            }
-                          : prev,
-                      );
-                      setRoteiroRevision(r => r + 1);
-                    }
-                    setShowRoteiro(open);
-                  }}
-                />
-              </label>
-            </div>
+            <span className={st.savePill}>
+              {saving ? "Salvando…" : dirty ? "Salvando já…" : "✓ Salvo"}
+            </span>
           </div>
 
-          {/* FLOATING CONTEXTUAL TOOLBAR FOR SELECTED SLIDE */}
-          <div className={st.floatingBarWrap}>
-            <div className={st.floatingBar} role="toolbar" aria-label="Ferramentas do slide selecionado">
+          <div className={st.veedTopRight}>
+            <div className={st.aspectPill} role="group" aria-label="Formato do post">
               <button
                 type="button"
-                className={st.toolBtn}
-                onClick={() => layoutStripRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" })}
+                className={st.aspectBtn}
+                aria-pressed={aspect === "carousel"}
+                onClick={() => handleAspectChange("carousel")}
               >
-                ⊞ Layout
-              </button>
-              <button
-                type="button"
-                className={st.toolBtn}
-                aria-expanded={toolPanel === "palette"}
-                onClick={() => setToolPanel(p => (p === "palette" ? null : "palette"))}
-              >
-                🎨 Paleta & Fundo
+                Post 4:5
               </button>
               <button
                 type="button"
-                className={st.toolBtn}
-                aria-expanded={toolPanel === "elements"}
-                onClick={() => setToolPanel(p => (p === "elements" ? null : "elements"))}
+                className={st.aspectBtn}
+                aria-pressed={aspect === "story"}
+                onClick={() => handleAspectChange("story")}
               >
-                <PlusIcon />Elemento
-              </button>
-              <button type="button" className={st.toolBtn} onClick={handleHighlight} title="Selecione uma palavra no texto ou clique para grifar em mostarda">
-                🖍 Grifar
-              </button>
-              <button
-                type="button"
-                className={st.toolBtn}
-                aria-expanded={toolPanel === "ai"}
-                onClick={() => setToolPanel(p => (p === "ai" ? null : "ai"))}
-              >
-                <SparkIcon />IA
-              </button>
-              <button type="button" className={st.toolBtn} onClick={() => handleRemixSlide(safeIdx)}>
-                ⟳ Remixar
+                Stories
               </button>
             </div>
-          </div>
-
-          {/* EXPANDED SUB-TOOLBARS */}
-          {toolPanel === "palette" ? (
-            <div className={st.popoverRow}>
-              {BG_TOKENS.map(bg => (
-                <button
-                  key={bg.id}
-                  type="button"
-                  className={st.chipBtn}
-                  aria-pressed={activeSlide.background === bg.id}
-                  onClick={() => updateSlideAt(safeIdx, s => ({ ...s, background: bg.id }))}
-                >
-                  {bg.label}
-                </button>
-              ))}
-              <span style={{ color: "var(--line)" }}>|</span>
-              {TEXTURES.map(tex => (
-                <button
-                  key={tex.id}
-                  type="button"
-                  className={st.chipBtn}
-                  aria-pressed={activeSlide.texture === tex.id}
-                  onClick={() => updateSlideAt(safeIdx, s => ({ ...s, texture: tex.id }))}
-                >
-                  {tex.label}
-                </button>
-              ))}
-            </div>
-          ) : null}
-
-          {toolPanel === "elements" ? (
-            <div className={st.popoverRow}>
-              {ELEMENT_PRESETS.map(el => (
-                <button
-                  key={el.id}
-                  type="button"
-                  className={st.chipBtn}
-                  onClick={() => void handleAddElement(el.id)}
-                >
-                  + {el.label}
-                </button>
-              ))}
-              <button
-                type="button"
-                className={st.chipBtn}
-                onClick={() => setMuapiTarget({ mode: "new" })}
-              >
-                <SparkIcon />Arte IA (MuAPI)
-              </button>
-            </div>
-          ) : null}
-
-          {toolPanel === "ai" ? (
-            <div className={st.popoverRow}>
-              {AI_CHIPS.map(chip => (
-                <button
-                  key={chip.label}
-                  type="button"
-                  className={st.chipBtn}
-                  onClick={() => void handleSlideAi(chip.prompt)}
-                >
-                  ✦ {chip.label}
-                </button>
-              ))}
-              <button type="button" className={st.chipBtn} onClick={toggleVoiceForSlide}>
-                {recording ? `⏹ Parar (${recSeconds}s)` : "🎙 Pedir por voz"}
-              </button>
-              <form
-                style={{ display: "inline-flex", gap: 6 }}
-                onSubmit={e => {
-                  e.preventDefault();
-                  void handleSlideAi(customAiPrompt);
-                }}
-              >
-                <input
-                  className={styles.input}
-                  style={{ height: 29, width: 220, fontSize: 12 }}
-                  value={customAiPrompt}
-                  onChange={e => setCustomAiPrompt(e.target.value)}
-                  placeholder="Pedir ajuste neste slide…"
-                />
-                <button type="submit" className={`${styles.button} ${styles.small}`} disabled={!customAiPrompt.trim()}>
-                  Aplicar
-                </button>
-              </form>
-            </div>
-          ) : null}
-
-          {/* SELECTED ELEMENT INSPECTOR BAR */}
-          {selectedElement ? (
-            <div className={st.popoverRow} style={{ borderBottom: "1px solid var(--line)" }}>
-              {selectedElement.type === "text" ? (
-                <>
-                  {(["serif", "sans", "display", "hand"] as CanvasFont[]).map(f => (
-                    <button
-                      key={f}
-                      type="button"
-                      className={st.chipBtn}
-                      aria-pressed={selectedElement.font === f}
-                      onClick={() =>
-                        updateSlideAt(safeIdx, s => ({
-                          ...s,
-                          elements: s.elements.map(el => (el.id === selectedElement.id && el.type === "text" ? { ...el, font: f } : el)),
-                        }))
-                      }
-                    >
-                      {f === "serif" ? "Serif" : f === "sans" ? "Sans" : f === "display" ? "Impacto" : "Mão"}
-                    </button>
-                  ))}
-                  <button
-                    type="button"
-                    className={st.chipBtn}
-                    onClick={() =>
-                      updateSlideAt(safeIdx, s => ({
-                        ...s,
-                        elements: s.elements.map(el =>
-                          el.id === selectedElement.id && el.type === "text" ? { ...el, size: Math.max(20, el.size - 6) } : el,
-                        ),
-                      }))
-                    }
-                  >
-                    A−
-                  </button>
-                  <button
-                    type="button"
-                    className={st.chipBtn}
-                    onClick={() =>
-                      updateSlideAt(safeIdx, s => ({
-                        ...s,
-                        elements: s.elements.map(el =>
-                          el.id === selectedElement.id && el.type === "text" ? { ...el, size: Math.min(240, el.size + 6) } : el,
-                        ),
-                      }))
-                    }
-                  >
-                    A+
-                  </button>
-                  {(["plain", "pill", "tarja", "note", "card"] as TextVariant[]).map(v => (
-                    <button
-                      key={v}
-                      type="button"
-                      className={st.chipBtn}
-                      aria-pressed={selectedElement.variant === v}
-                      onClick={() =>
-                        updateSlideAt(safeIdx, s => ({
-                          ...s,
-                          elements: s.elements.map(el =>
-                            el.id === selectedElement.id && el.type === "text"
-                              ? {
-                                  ...el,
-                                  variant: v,
-                                  fill: v === "note" ? "note" : v === "plain" ? undefined : el.fill ?? "accent",
-                                  color: v === "note" ? "black" : "contrast",
-                                }
-                              : el,
-                          ),
-                        }))
-                      }
-                    >
-                      {v === "plain" ? "Solto" : v === "pill" ? "Pílula" : v === "tarja" ? "Tarja" : v === "note" ? "Post-it" : "Cartão"}
-                    </button>
-                  ))}
-                  {COLOR_TOKENS.map(c => (
-                    <button
-                      key={c.id}
-                      type="button"
-                      className={st.chipBtn}
-                      aria-pressed={selectedElement.color === c.id}
-                      onClick={() =>
-                        updateSlideAt(safeIdx, s => ({
-                          ...s,
-                          elements: s.elements.map(el => (el.id === selectedElement.id && el.type === "text" ? { ...el, color: c.id } : el)),
-                        }))
-                      }
-                    >
-                      {c.label}
-                    </button>
-                  ))}
-                </>
-              ) : null}
-
-              {selectedElement.type === "image" ? (
-                <>
-                  <button
-                    type="button"
-                    className={st.chipBtn}
-                    onClick={() => void handlePickElementImage(selectedElement.id, selectedElement.src)}
-                  >
-                    <ImageIcon />Escolher da Mídia
-                  </button>
-                  <button
-                    type="button"
-                    className={st.chipBtn}
-                    onClick={() => setMuapiTarget({ mode: "element", elementId: selectedElement.id })}
-                  >
-                    <SparkIcon />Gerar com IA
-                  </button>
-                </>
-              ) : null}
-
-              {selectedElement.rotation !== 0 ? (
-                <button
-                  type="button"
-                  className={st.chipBtn}
-                  onClick={() =>
-                    updateSlideAt(safeIdx, s => ({
-                      ...s,
-                      elements: s.elements.map(el => (el.id === selectedElement.id ? { ...el, rotation: 0 } : el)),
-                    }))
-                  }
-                >
-                  Endireitar (0°)
-                </button>
-              ) : null}
-
-              <button
-                type="button"
-                className={st.chipBtn}
-                onClick={() => {
-                  updateSlideAt(safeIdx, s => ({
-                    ...s,
-                    elements: s.elements.filter(el => el.id !== selectedElement.id),
-                  }));
-                  setSelectedElementId(null);
-                }}
-              >
-                <TrashIcon />Remover elemento
-              </button>
-            </div>
-          ) : null}
-
-          {/* FILMSTRIP OF ARTBOARDS */}
-          <div className={st.filmstrip}>
-            {slides.map((slide, idx) => {
-              const isActive = idx === safeIdx;
-              const layoutInfo = layoutById(slide.layoutId);
-              return (
-                <div key={slide.id} className={st.artboardCol} style={{ width: artboardWidth }}>
-                  <div className={st.artboardHead}>
-                    <span>
-                      <strong>Slide {idx + 1}</strong> · {layoutInfo.label}
-                    </span>
-                    <div style={{ display: "flex", gap: 4 }}>
-                      {idx > 0 ? (
-                        <button
-                          type="button"
-                          className={`${styles.button} ${styles.ghost} ${styles.small}`}
-                          style={{ padding: "0 6px", height: 22 }}
-                          title="Mover para trás"
-                          onClick={() => {
-                            commitCanvas({ ...canvas, slides: move(slides, idx, idx - 1) });
-                            setSelectedSlideIdx(idx - 1);
-                          }}
-                        >
-                          ←
-                        </button>
-                      ) : null}
-                      {idx < slides.length - 1 ? (
-                        <button
-                          type="button"
-                          className={`${styles.button} ${styles.ghost} ${styles.small}`}
-                          style={{ padding: "0 6px", height: 22 }}
-                          title="Mover para frente"
-                          onClick={() => {
-                            commitCanvas({ ...canvas, slides: move(slides, idx, idx + 1) });
-                            setSelectedSlideIdx(idx + 1);
-                          }}
-                        >
-                          →
-                        </button>
-                      ) : null}
-                      <button
-                        type="button"
-                        className={`${styles.button} ${styles.ghost} ${styles.small}`}
-                        style={{ padding: "0 6px", height: 22 }}
-                        title="Duplicar slide"
-                        onClick={() => {
-                          const copy = cloneSlide(slide);
-                          const next = [...slides.slice(0, idx + 1), copy, ...slides.slice(idx + 1)];
-                          commitCanvas({ ...canvas, slides: next });
-                          setSelectedSlideIdx(idx + 1);
-                        }}
-                      >
-                        ⧉
-                      </button>
-                      {slides.length > 1 ? (
-                        <button
-                          type="button"
-                          className={`${styles.button} ${styles.ghost} ${styles.small}`}
-                          style={{ padding: "0 6px", height: 22 }}
-                          title="Excluir slide"
-                          onClick={() => {
-                            const next = slides.filter((_, i) => i !== idx);
-                            commitCanvas({ ...canvas, slides: next });
-                            setSelectedSlideIdx(Math.max(0, idx - 1));
-                          }}
-                        >
-                          ×
-                        </button>
-                      ) : null}
-                    </div>
-                  </div>
-
-                  <div
-                    className={st.artboardFrame}
-                    data-selected={isActive || undefined}
-                    style={{ width: artboardWidth, height: Math.round(H * scale) }}
-                    onPointerDown={() => {
-                      if (!isActive) {
-                        setSelectedSlideIdx(idx);
-                        setSelectedElementId(null);
-                        setEditingElementId(null);
-                      }
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: W,
-                        height: H,
-                        transformOrigin: "top left",
-                        transform: `scale(${scale})`,
-                      }}
-                    >
-                      <CanvasSlideView
-                        slide={slide}
-                        index={idx}
-                        total={slides.length}
-                        handle={theme.handle}
-                        palette={palette}
-                        aspect={aspect}
-                        scale={scale}
-                        interactive={isActive}
-                        selectedElementId={isActive ? selectedElementId : null}
-                        editingElementId={isActive ? editingElementId : null}
-                        showSafeGuides={isActive && Boolean(selectedElementId)}
-                        onSelectElement={elId => {
-                          setSelectedSlideIdx(idx);
-                          setSelectedElementId(elId);
-                          if (elId !== editingElementId) setEditingElementId(null);
-                        }}
-                        onStartEditing={elId => {
-                          setSelectedSlideIdx(idx);
-                          setSelectedElementId(elId);
-                          setEditingElementId(elId);
-                        }}
-                        onStopEditing={() => setEditingElementId(null)}
-                        onSelectionRange={setSelectionRange}
-                        onPickImage={(elId, src) => void handlePickElementImage(elId, src)}
-                        onChangeElement={(elId, patch) => {
-                          updateSlideAt(idx, s => ({
-                            ...s,
-                            elements: s.elements.map(el => (el.id === elId ? ({ ...el, ...patch } as CanvasElement) : el)),
-                          }));
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
 
             <button
               type="button"
-              className={styles.button}
-              style={{ flexShrink: 0, height: 120, padding: "0 18px", borderStyle: "dashed" }}
-              onClick={() => {
-                const added = blankSlide(aspect, remixLayoutId(activeSlide));
-                commitCanvas({ ...canvas, slides: [...slides, added] });
-                setSelectedSlideIdx(slides.length);
-              }}
+              className={st.iconAction}
+              title="Desfazer"
+              aria-label="Desfazer"
+              disabled={!past.length}
+              onClick={handleUndo}
             >
-              <PlusIcon />Novo slide
+              ↶
             </button>
-          </div>
+            <button
+              type="button"
+              className={st.iconAction}
+              title="Refazer"
+              aria-label="Refazer"
+              disabled={!future.length}
+              onClick={handleRedo}
+            >
+              ↷
+            </button>
 
-          {/* BOTTOM LIVE LAYOUT COMPOSITIONS STRIP */}
-          <div ref={layoutStripRef} className={st.layoutStrip}>
-            <div className={st.layoutStripHead}>
-              <span>
-                <strong>Trocar layout do Slide {safeIdx + 1}</strong> — clique para mudar a composição mantendo o texto e os elementos soltos
-              </span>
-              <span style={{ fontSize: 11.5 }}>
-                Dica: clique duas vezes em qualquer texto na arte para editar, ou arraste dentro da margem de respiro
-              </span>
-            </div>
-            <div className={st.layoutThumbs}>
-              {previewAlternatives.map(({ layout, slide: previewSlide }) => (
-                <button
-                  key={layout.id}
-                  type="button"
-                  className={st.layoutThumbBtn}
-                  aria-pressed={activeSlide.layoutId === layout.id}
-                  title={layout.hint}
-                  onClick={() => updateSlideAt(safeIdx, s => applyLayout(s, layout.id, aspect))}
-                >
-                  <div style={{ width: thumbWidth, height: Math.round(H * thumbScale), overflow: "hidden", pointerEvents: "none" }}>
-                    <div style={{ width: W, height: H, transformOrigin: "top left", transform: `scale(${thumbScale})` }}>
-                      <CanvasSlideView
-                        slide={previewSlide}
-                        index={safeIdx}
-                        total={slides.length}
-                        handle={theme.handle}
-                        palette={palette}
-                        aspect={aspect}
-                      />
-                    </div>
-                  </div>
-                  <span className={st.layoutThumbLabel}>{layout.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
+            <div ref={downloadBoxRef} className={st.downloadWrap}>
+              <button
+                type="button"
+                className={st.downloadBtn}
+                aria-expanded={downloadOpen}
+                onClick={() => setDownloadOpen(o => !o)}
+              >
+                Baixar
+              </button>
 
-        {/* RIGHT DRAWER: ROTEIRO (BLOCKNOTE) + LEGENDA */}
-        {showRoteiro ? (
-          <aside className={st.roteiroDrawer} aria-label="Roteiro e legenda">
-            <div className={st.canvasTopBar}>
-              <div className={styles.tabs} role="tablist">
-                <button
-                  type="button"
-                  role="tab"
-                  className={styles.tab}
-                  aria-selected={sideTab === "roteiro"}
-                  onClick={() => setSideTab("roteiro")}
-                >
-                  Roteiro (BlockNote)
-                </button>
-                <button
-                  type="button"
-                  role="tab"
-                  className={styles.tab}
-                  aria-selected={sideTab === "legenda"}
-                  onClick={() => setSideTab("legenda")}
-                >
-                  Legenda & Dados
-                </button>
-              </div>
-              {sideTab === "roteiro" ? (
-                <button
-                  type="button"
-                  className={`${styles.button} ${styles.primary} ${styles.small}`}
-                  onClick={applyRoteiroToCanvas}
-                >
-                  Montar slides ✦
-                </button>
+              {downloadOpen ? (
+                <div className={st.downloadMenu} role="menu">
+                  <button type="button" className={st.downloadItem} onClick={exportZip}>
+                    <strong>Baixar post completo ({slides.length} {slides.length === 1 ? "página" : "páginas"})</strong>
+                    <span>Pacote .zip com todas as imagens + legenda</span>
+                  </button>
+                  <button type="button" className={st.downloadItem} onClick={() => void exportSingle(safeIdx)}>
+                    <strong>Baixar só a página {safeIdx + 1}</strong>
+                    <span>Imagem PNG pronta para publicar</span>
+                  </button>
+                  <button
+                    type="button"
+                    className={st.downloadItem}
+                    onClick={() => {
+                      setDownloadOpen(false);
+                      void navigator.clipboard.writeText(post.caption || "");
+                      show("Legenda copiada!", "good");
+                    }}
+                  >
+                    <strong>Copiar legenda</strong>
+                    <span>Copia o texto do Instagram para colar</span>
+                  </button>
+                  <button type="button" className={st.downloadItem} onClick={convertToReel}>
+                    <strong>Transformar em vídeo (Reel)</strong>
+                    <span>Cria cenas animadas a partir deste post</span>
+                  </button>
+                  <hr style={{ border: 0, borderTop: "1px solid #eceef6", margin: "4px 0" }} />
+                  <button type="button" className={st.downloadItem} onClick={removeDoc}>
+                    <strong style={{ color: "#d9383a" }}>Apagar este post</strong>
+                  </button>
+                </div>
               ) : null}
             </div>
+          </div>
+        </header>
 
-            <div className={st.roteiroBody}>
-              {sideTab === "roteiro" ? (
-                <div style={{ display: "grid", gap: 10 }}>
-                  <p className={styles.hint} style={{ margin: 0, fontSize: 12 }}>
-                    Escreva livremente, cole imagens ou digite <code>/</code> para inserir blocos, imagens da Mídia, comparativos e gráficos. Clique em <strong>Montar slides</strong> para aplicar no canvas.
-                  </p>
-                  <SocialDocEditor
-                    key={`${post.id}-${roteiroRevision}`}
-                    slug={post.id}
-                    brandColor={palette.accent}
-                    initialBlocks={studioDoc.blocks}
-                    onChange={blocks => {
-                      setPendingBlocks(blocks);
-                      setDirty(true);
-                    }}
-                  />
-                </div>
-              ) : (
-                <div style={{ display: "grid", gap: 16 }}>
-                  <label className={styles.field}>
+        {leaveGuard.note}
+
+        {/* ==================== CORPO CENTRAL (DOCK + CARTÃO + PALCO) ==================== */}
+        <div className={st.veedBody} data-panel={panelOpen ? "open" : "closed"}>
+          {/* ZONA B: COLUNA DE FERRAMENTAS */}
+          <nav className={st.toolDock} aria-label="Ferramentas de criação">
+            {DOCK_ITEMS.map(item => (
+              <button
+                key={item.id}
+                type="button"
+                className={st.dockTile}
+                aria-selected={panelOpen && activeTool === item.id}
+                onClick={() => selectTool(item.id)}
+              >
+                {item.icon}
+                <span>{item.label}</span>
+              </button>
+            ))}
+          </nav>
+
+          {/* ZONA C: ÚNICO CARTÃO BRANCO FLUTUANTE */}
+          {panelOpen ? (
+            <aside className={st.sideCard} aria-label={toolTitle}>
+              <div className={st.sideCardHead}>
+                <h2 className={st.sideCardTitle}>{toolTitle}</h2>
+                <button
+                  type="button"
+                  className={st.sideCardClose}
+                  aria-label="Fechar painel lateral"
+                  onClick={() => setPanelOpen(false)}
+                >
+                  ×
+                </button>
+              </div>
+
+              <div className={st.sideCardScroll}>
+                {/* Se houver elemento selecionado, mostra controles simples e diretos no topo */}
+                {selectedElement ? (
+                  <div className={st.inspectorBox}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                      <span className={styles.label}>Legenda pronta para o Instagram</span>
+                      <strong style={{ fontSize: 12.5 }}>
+                        {selectedElement.type === "text"
+                          ? "Texto selecionado"
+                          : selectedElement.type === "image"
+                            ? "Foto selecionada"
+                            : "Elemento selecionado"}
+                      </strong>
                       <button
                         type="button"
-                        className={`${styles.button} ${styles.small}`}
+                        className={`${styles.button} ${styles.ghost} ${styles.small}`}
+                        style={{ color: "#d9383a" }}
                         onClick={() => {
-                          void navigator.clipboard.writeText(post.caption);
-                          show("Legenda copiada!", "good");
+                          updateSlideAt(safeIdx, s => ({
+                            ...s,
+                            elements: s.elements.filter(el => el.id !== selectedElement.id),
+                          }));
+                          setSelectedElementId(null);
                         }}
                       >
-                        <CopyIcon />Copiar
+                        <TrashIcon />Apagar
                       </button>
                     </div>
-                    <textarea
-                      className={styles.textarea}
-                      rows={11}
-                      value={post.caption}
-                      onChange={e => {
-                        const val = e.target.value;
-                        setPost(p => (p ? { ...p, caption: val } : p));
-                        setDirty(true);
-                      }}
-                    />
-                  </label>
 
-                  <div>
-                    <button type="button" className={`${styles.button} ${styles.ghost} ${styles.danger}`} onClick={removeDoc}>
-                      <TrashIcon />Excluir este post
+                    {selectedElement.type === "text" ? (
+                      <>
+                        <div className={st.pillGrid}>
+                          <button type="button" className={st.softChip} onClick={handleHighlight}>
+                            🖍 Grifar palavra
+                          </button>
+                          <button
+                            type="button"
+                            className={st.softChip}
+                            onClick={() =>
+                              updateSlideAt(safeIdx, s => ({
+                                ...s,
+                                elements: s.elements.map(el =>
+                                  el.id === selectedElement.id && el.type === "text" ? { ...el, size: Math.max(20, el.size - 6) } : el,
+                                ),
+                              }))
+                            }
+                          >
+                            A−
+                          </button>
+                          <button
+                            type="button"
+                            className={st.softChip}
+                            onClick={() =>
+                              updateSlideAt(safeIdx, s => ({
+                                ...s,
+                                elements: s.elements.map(el =>
+                                  el.id === selectedElement.id && el.type === "text" ? { ...el, size: Math.min(240, el.size + 6) } : el,
+                                ),
+                              }))
+                            }
+                          >
+                            A+
+                          </button>
+                        </div>
+
+                        <div>
+                          <span className={st.sectionLabel}>Tipo de letra</span>
+                          <div className={st.pillGrid}>
+                            {(
+                              [
+                                { id: "serif", label: "Livro" },
+                                { id: "sans", label: "Limpa" },
+                                { id: "display", label: "Forte" },
+                                { id: "hand", label: "Manuscrita" },
+                              ] as Array<{ id: CanvasFont; label: string }>
+                            ).map(f => (
+                              <button
+                                key={f.id}
+                                type="button"
+                                className={st.softChip}
+                                aria-pressed={selectedElement.font === f.id}
+                                onClick={() =>
+                                  updateSlideAt(safeIdx, s => ({
+                                    ...s,
+                                    elements: s.elements.map(el =>
+                                      el.id === selectedElement.id && el.type === "text" ? { ...el, font: f.id } : el,
+                                    ),
+                                  }))
+                                }
+                              >
+                                {f.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <span className={st.sectionLabel}>Formato da caixa</span>
+                          <div className={st.pillGrid}>
+                            {(
+                              [
+                                { id: "plain", label: "Livre" },
+                                { id: "pill", label: "Pílula" },
+                                { id: "tarja", label: "Tarja" },
+                                { id: "note", label: "Post-it" },
+                                { id: "card", label: "Cartão" },
+                              ] as Array<{ id: TextVariant; label: string }>
+                            ).map(v => (
+                              <button
+                                key={v.id}
+                                type="button"
+                                className={st.softChip}
+                                aria-pressed={selectedElement.variant === v.id}
+                                onClick={() =>
+                                  updateSlideAt(safeIdx, s => ({
+                                    ...s,
+                                    elements: s.elements.map(el =>
+                                      el.id === selectedElement.id && el.type === "text"
+                                        ? {
+                                            ...el,
+                                            variant: v.id,
+                                            fill: v.id === "note" ? "note" : v.id === "plain" ? undefined : el.fill ?? "accent",
+                                            color: v.id === "note" ? "black" : "contrast",
+                                          }
+                                        : el,
+                                    ),
+                                  }))
+                                }
+                              >
+                                {v.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div>
+                          <span className={st.sectionLabel}>Cor do texto</span>
+                          <div className={st.pillGrid}>
+                            {TEXT_COLORS.map(c => (
+                              <button
+                                key={c.id}
+                                type="button"
+                                className={st.softChip}
+                                aria-pressed={selectedElement.color === c.id}
+                                onClick={() =>
+                                  updateSlideAt(safeIdx, s => ({
+                                    ...s,
+                                    elements: s.elements.map(el =>
+                                      el.id === selectedElement.id && el.type === "text" ? { ...el, color: c.id } : el,
+                                    ),
+                                  }))
+                                }
+                              >
+                                {c.label}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : null}
+
+                    {selectedElement.type === "image" ? (
+                      <div className={st.pillGrid}>
+                        <button
+                          type="button"
+                          className={st.softChip}
+                          onClick={() => void handlePickElementImage(selectedElement.id, selectedElement.src)}
+                        >
+                          Trocar foto
+                        </button>
+                        <button
+                          type="button"
+                          className={st.softChip}
+                          onClick={() => setMuapiTarget({ mode: "element", elementId: selectedElement.id })}
+                        >
+                          <SparkIcon />Criar com IA
+                        </button>
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {/* 1. ABA MODELOS */}
+                {activeTool === "modelos" ? (
+                  <>
+                    <div style={{ display: "flex", gap: 8 }}>
+                      <button
+                        type="button"
+                        className={styles.button}
+                        style={{ flex: 1 }}
+                        onClick={() => updateSlideAt(safeIdx, s => applyLayout(s, remixLayoutId(s), aspect))}
+                      >
+                        ⟳ Surpreender nesta página
+                      </button>
+                    </div>
+
+                    <div>
+                      <span className={st.sectionLabel}>
+                        Toque em um modelo para reorganizar a Página {safeIdx + 1} sem perder o texto
+                      </span>
+                      <div className={st.layoutGrid}>
+                        {previewAlternatives.map(({ layout, slide: previewSlide }) => (
+                          <button
+                            key={layout.id}
+                            type="button"
+                            className={st.layoutCard}
+                            aria-pressed={activeSlide.layoutId === layout.id}
+                            onClick={() => updateSlideAt(safeIdx, s => applyLayout(s, layout.id, aspect))}
+                          >
+                            <div
+                              style={{
+                                width: modelThumbW,
+                                height: Math.round(H * modelThumbScale),
+                                borderRadius: 8,
+                                overflow: "hidden",
+                                pointerEvents: "none",
+                              }}
+                            >
+                              <div style={{ width: W, height: H, transformOrigin: "top left", transform: `scale(${modelThumbScale})` }}>
+                                <CanvasSlideView
+                                  slide={previewSlide}
+                                  index={safeIdx}
+                                  total={slides.length}
+                                  handle={theme.handle}
+                                  palette={palette}
+                                  aspect={aspect}
+                                />
+                              </div>
+                            </div>
+                            <span className={st.layoutCardName}>{layout.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : null}
+
+                {/* 2. ABA TEXTO */}
+                {activeTool === "texto" ? (
+                  <div style={{ display: "grid", gap: 10 }}>
+                    <span className={st.sectionLabel}>Clique para colocar na página</span>
+                    <button type="button" className={st.actionCard} onClick={() => addPresetElement("titulo")}>
+                      <div>
+                        <strong style={{ fontSize: 17, fontFamily: "var(--font-studio-serif), Georgia, serif" }}>Adicionar título grande</strong>
+                        <span>Ótimo para aberturas e chamadas</span>
+                      </div>
+                      <span>+</span>
+                    </button>
+                    <button type="button" className={st.actionCard} onClick={() => addPresetElement("texto")}>
+                      <div>
+                        <strong>Adicionar parágrafo curto</strong>
+                        <span>Explicação ou complemento</span>
+                      </div>
+                      <span>+</span>
+                    </button>
+                    <button type="button" className={st.actionCard} onClick={() => addPresetElement("mao")}>
+                      <div>
+                        <strong style={{ fontFamily: "var(--font-studio-hand), cursive", fontSize: 20 }}>Recado escrito à mão</strong>
+                        <span>Observação carinhosa da Prô</span>
+                      </div>
+                      <span>+</span>
+                    </button>
+                    <button type="button" className={st.actionCard} onClick={() => addPresetElement("erro")}>
+                      <div>
+                        <strong style={{ color: "#b9382c" }}>❌ Exemplo com desvio</strong>
+                        <span>Frase como costuma aparecer na prova</span>
+                      </div>
+                      <span>+</span>
+                    </button>
+                    <button type="button" className={st.actionCard} onClick={() => addPresetElement("acerto")}>
+                      <div>
+                        <strong style={{ color: "#15805c" }}>✔️ Forma adequada</strong>
+                        <span>Reescrita clara na dissertação</span>
+                      </div>
+                      <span>+</span>
                     </button>
                   </div>
-                </div>
-              )}
+                ) : null}
+
+                {/* 3. ABA ELEMENTOS (cartões ilustrados como em image_2.png) */}
+                {activeTool === "elementos" ? (
+                  <>
+                    <div className={st.elementBanner}>
+                      <span className={st.sectionLabel}>Post-it de caderno</span>
+                      <button
+                        type="button"
+                        className={st.elementShowcase}
+                        style={{ background: "#fef3c7", color: "#181926" }}
+                        onClick={() => addPresetElement("post-it")}
+                      >
+                        <span
+                          style={{
+                            padding: "8px 16px",
+                            background: "#f8e07a",
+                            borderRadius: 6,
+                            transform: "rotate(-3deg)",
+                            boxShadow: "0 6px 14px rgba(0,0,0,0.12)",
+                            fontFamily: "var(--font-studio-hand), cursive",
+                            fontSize: 21,
+                          }}
+                        >
+                          Anota no post-it!
+                        </span>
+                      </button>
+                    </div>
+
+                    <div className={st.elementBanner}>
+                      <span className={st.sectionLabel}>Tarjas e etiquetas</span>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                        <button
+                          type="button"
+                          className={st.elementShowcase}
+                          style={{ background: "#ede9fe", color: "#3e2a8d", minHeight: 62 }}
+                          onClick={() => addPresetElement("pilula")}
+                        >
+                          <span style={{ background: "#3e2a8d", color: "#fff", padding: "5px 14px", borderRadius: 999, fontSize: 12 }}>
+                            DESTAQUE
+                          </span>
+                        </button>
+                        <button
+                          type="button"
+                          className={st.elementShowcase}
+                          style={{ background: "#181926", color: "#ffffff", minHeight: 62 }}
+                          onClick={() => addPresetElement("tarja")}
+                        >
+                          <span style={{ background: "#e5b314", color: "#181926", padding: "5px 10px", borderRadius: 6, fontSize: 12, fontWeight: 800 }}>
+                            TARJA
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className={st.elementBanner}>
+                      <span className={st.sectionLabel}>Setas e grifos desenhados</span>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                        <button
+                          type="button"
+                          className={st.elementShowcase}
+                          style={{ background: "#ffe4e6", color: "#be123c", minHeight: 62 }}
+                          onClick={() => addPresetElement("seta")}
+                        >
+                          <span style={{ fontSize: 26 }}>↷</span> Seta
+                        </button>
+                        <button
+                          type="button"
+                          className={st.elementShowcase}
+                          style={{ background: "#fef9c3", color: "#854d0e", minHeight: 62 }}
+                          onClick={() => addPresetElement("sublinhado")}
+                        >
+                          <span style={{ textDecoration: "underline wavy #d97706" }}>Grifo</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className={st.elementBanner}>
+                      <span className={st.sectionLabel}>Figurinhas rápidas</span>
+                      <div className={st.emojiRow}>
+                        {STICKER_EMOJIS.map(em => (
+                          <button key={em} type="button" className={st.emojiBtn} onClick={() => addEmojiSticker(em)}>
+                            {em}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className={st.elementBanner}>
+                      <span className={st.sectionLabel}>Formas e colagem</span>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-around",
+                          alignItems: "center",
+                          padding: 14,
+                          borderRadius: 14,
+                          background: "#dcfce7",
+                        }}
+                      >
+                        <button type="button" className={st.softChip} onClick={() => addPresetElement("fita")}>
+                          🩹 Fita
+                        </button>
+                        <button type="button" className={st.softChip} onClick={() => addPresetElement("circulo")}>
+                          ⚪ Círculo
+                        </button>
+                        <button type="button" className={st.softChip} onClick={() => addPresetElement("cartao")}>
+                          ▭ Cartão
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                ) : null}
+
+                {/* 4. ABA FOTOS */}
+                {activeTool === "fotos" ? (
+                  <>
+                    <div style={{ display: "grid", gap: 8 }}>
+                      <label className={`${styles.button} ${styles.primary}`} style={{ width: "100%", cursor: "pointer" }}>
+                        <UploadIcon />
+                        {uploadingPhoto ? "Enviando foto…" : "Enviar foto do celular / computador"}
+                        <input
+                          type="file"
+                          accept="image/*"
+                          multiple
+                          hidden
+                          disabled={uploadingPhoto}
+                          onChange={e => {
+                            void handleDirectPhotoUpload(e.target.files);
+                            e.target.value = "";
+                          }}
+                        />
+                      </label>
+
+                      <button
+                        type="button"
+                        className={styles.button}
+                        style={{ width: "100%" }}
+                        onClick={() => setMuapiTarget({ mode: "new" })}
+                      >
+                        <SparkIcon />Criar ilustração com IA
+                      </button>
+                    </div>
+
+                    <div>
+                      <span className={st.sectionLabel}>Suas fotos salvas (clique para usar)</span>
+                      {mediaFiles.length === 0 ? (
+                        <p className={styles.hint} style={{ margin: 0 }}>
+                          Suas fotos enviadas e imagens criadas aparecem aqui para reutilizar quando quiser.
+                        </p>
+                      ) : (
+                        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, minmax(0, 1fr))", gap: 8 }}>
+                          {mediaFiles.slice(0, 24).map(file => (
+                            <button
+                              key={file.url}
+                              type="button"
+                              onClick={() => insertImageOnSlide(file.url)}
+                              style={{
+                                padding: 0,
+                                border: "1px solid #e6e8f1",
+                                borderRadius: 12,
+                                overflow: "hidden",
+                                aspectRatio: "1 / 1",
+                                background: "#f3f4fa",
+                              }}
+                              title={`Usar ${file.name}`}
+                            >
+                              <img src={file.url} alt={file.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            </button>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </>
+                ) : null}
+
+                {/* 5. ABA CORES */}
+                {activeTool === "cores" ? (
+                  <>
+                    <div>
+                      <span className={st.sectionLabel}>Combinação de cores do post inteiro</span>
+                      <div className={st.paletteList}>
+                        {CANVAS_PALETTES.map(p => (
+                          <button
+                            key={p.id}
+                            type="button"
+                            className={st.paletteCard}
+                            aria-pressed={canvas.paletteId === p.id}
+                            onClick={() => commitCanvas({ ...canvas, paletteId: p.id }, { syncBlocks: false })}
+                          >
+                            <span style={{ fontSize: 13, fontWeight: 600, color: "#181926" }}>{p.label}</span>
+                            <span className={st.swatches}>
+                              <i className={st.swatchDot} style={{ background: p.palette.background }} />
+                              <i className={st.swatchDot} style={{ background: p.palette.primary }} />
+                              <i className={st.swatchDot} style={{ background: p.palette.accent }} />
+                            </span>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <span className={st.sectionLabel}>Fundo só desta página</span>
+                      <div className={st.pillGrid}>
+                        {BG_SWATCHES.map(bg => (
+                          <button
+                            key={bg.id}
+                            type="button"
+                            className={st.softChip}
+                            aria-pressed={activeSlide.background === bg.id}
+                            onClick={() => updateSlideAt(safeIdx, s => ({ ...s, background: bg.id }))}
+                          >
+                            {bg.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <span className={st.sectionLabel}>Textura de papel</span>
+                      <div className={st.pillGrid}>
+                        {TEXTURES.map(tex => (
+                          <button
+                            key={tex.id}
+                            type="button"
+                            className={st.softChip}
+                            aria-pressed={activeSlide.texture === tex.id}
+                            onClick={() => updateSlideAt(safeIdx, s => ({ ...s, texture: tex.id }))}
+                          >
+                            {tex.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </>
+                ) : null}
+
+                {/* 6. ABA ROTEIRO (estilo Subtitle Video da image.png + Legenda) */}
+                {activeTool === "roteiro" ? (
+                  <>
+                    <div className={styles.tabs} role="tablist">
+                      <button
+                        type="button"
+                        role="tab"
+                        className={styles.tab}
+                        aria-selected={roteiroTab === "paginas"}
+                        onClick={() => setRoteiroTab("paginas")}
+                      >
+                        Páginas
+                      </button>
+                      <button
+                        type="button"
+                        role="tab"
+                        className={styles.tab}
+                        aria-selected={roteiroTab === "legenda"}
+                        onClick={() => setRoteiroTab("legenda")}
+                      >
+                        Legenda
+                      </button>
+                      <button
+                        type="button"
+                        role="tab"
+                        className={styles.tab}
+                        aria-selected={roteiroTab === "completo"}
+                        onClick={() => setRoteiroTab("completo")}
+                      >
+                        Texto corrido
+                      </button>
+                    </div>
+
+                    {roteiroTab === "paginas" ? (
+                      <div className={st.scriptList}>
+                        {slides.map((sl, idx) => {
+                          const sum = slideSummary(sl);
+                          const active = idx === safeIdx;
+                          return (
+                            <div
+                              key={sl.id}
+                              className={st.scriptBlock}
+                              data-active={active || undefined}
+                              onClick={() => {
+                                setSelectedSlideIdx(idx);
+                                setSelectedElementId(null);
+                              }}
+                            >
+                              <span className={st.scriptNum}>{String(idx + 1).padStart(2, "0")}</span>
+                              <div className={st.scriptText}>
+                                <strong>{sum.heading}</strong>
+                                {sum.detail ? <span>{sum.detail}</span> : null}
+                              </div>
+                              <div style={{ display: "grid", gap: 4 }}>
+                                {slides.length > 1 ? (
+                                  <button
+                                    type="button"
+                                    className={st.slideMiniBtn}
+                                    title="Remover página"
+                                    onClick={e => {
+                                      e.stopPropagation();
+                                      commitCanvas({ ...canvas, slides: slides.filter((_, i) => i !== idx) });
+                                      setSelectedSlideIdx(Math.max(0, idx - 1));
+                                    }}
+                                  >
+                                    ×
+                                  </button>
+                                ) : null}
+                                <button
+                                  type="button"
+                                  className={st.slideMiniBtn}
+                                  title="Duplicar página abaixo"
+                                  onClick={e => {
+                                    e.stopPropagation();
+                                    const copy = cloneSlide(sl);
+                                    const next = [...slides.slice(0, idx + 1), copy, ...slides.slice(idx + 1)];
+                                    commitCanvas({ ...canvas, slides: next });
+                                    setSelectedSlideIdx(idx + 1);
+                                  }}
+                                >
+                                  +
+                                </button>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    ) : roteiroTab === "legenda" ? (
+                      <div style={{ display: "grid", gap: 10 }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                          <span className={st.sectionLabel} style={{ margin: 0 }}>Legenda do Instagram</span>
+                          <button
+                            type="button"
+                            className={`${styles.button} ${styles.small}`}
+                            onClick={() => {
+                              void navigator.clipboard.writeText(post.caption);
+                              show("Legenda copiada!", "good");
+                            }}
+                          >
+                            <CopyIcon />Copiar
+                          </button>
+                        </div>
+                        <textarea
+                          className={styles.textarea}
+                          rows={12}
+                          value={post.caption}
+                          placeholder="Escreva a legenda que vai acompanhar o post…"
+                          onChange={e => {
+                            const val = e.target.value;
+                            setPost(p => (p ? { ...p, caption: val } : p));
+                            setDirty(true);
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div style={{ display: "grid", gap: 10 }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
+                          <span className={styles.hint}>Escreva tudo seguido e clique em Atualizar</span>
+                          <button
+                            type="button"
+                            className={`${styles.button} ${styles.primary} ${styles.small}`}
+                            onClick={applyRoteiroToCanvas}
+                          >
+                            Atualizar páginas
+                          </button>
+                        </div>
+                        <SocialDocEditor
+                          key={`${post.id}-${roteiroRevision}`}
+                          slug={post.id}
+                          brandColor={palette.accent}
+                          initialBlocks={studioDoc.blocks}
+                          onChange={blocks => {
+                            setPendingBlocks(blocks);
+                            setDirty(true);
+                          }}
+                        />
+                      </div>
+                    )}
+                  </>
+                ) : null}
+
+                {/* 7. ABA AJUDA IA */}
+                {activeTool === "ia" ? (
+                  <div style={{ display: "grid", gap: 10 }}>
+                    <span className={st.sectionLabel}>O que você quer melhorar na Página {safeIdx + 1}?</span>
+                    {AI_ACTIONS.map(act => (
+                      <button
+                        key={act.title}
+                        type="button"
+                        className={st.actionCard}
+                        onClick={() => void handleSlideAi(act.prompt)}
+                      >
+                        <div>
+                          <strong>✦ {act.title}</strong>
+                          <span>{act.desc}</span>
+                        </div>
+                      </button>
+                    ))}
+
+                    <button type="button" className={styles.button} onClick={toggleVoiceForSlide}>
+                      {recording ? (
+                        <>
+                          <span className={st.recDot} /> Parar gravação ({recSeconds}s)
+                        </>
+                      ) : (
+                        "🎙 Falar com a voz o que quer mudar"
+                      )}
+                    </button>
+
+                    <form
+                      style={{ display: "grid", gap: 8, marginTop: 4 }}
+                      onSubmit={e => {
+                        e.preventDefault();
+                        void handleSlideAi(customAiPrompt);
+                      }}
+                    >
+                      <textarea
+                        className={styles.textarea}
+                        rows={3}
+                        value={customAiPrompt}
+                        onChange={e => setCustomAiPrompt(e.target.value)}
+                        placeholder="Ou escreva seu pedido (ex.: cite Sérgio Buarque de Holanda)…"
+                      />
+                      <button
+                        type="submit"
+                        className={`${styles.button} ${styles.primary}`}
+                        disabled={!customAiPrompt.trim()}
+                      >
+                        <SparkIcon />Pedir para a IA
+                      </button>
+                    </form>
+                  </div>
+                ) : null}
+              </div>
+            </aside>
+          ) : null}
+
+          {/* ZONA D1: PALCO CENTRAL COM UMA ÚNICA ARTE GRANDE */}
+          <div
+            ref={stageRef}
+            className={st.stageArea}
+            onPointerDown={e => {
+              if (e.target === stageRef.current) {
+                setEditingElementId(null);
+                setSelectedElementId(null);
+              }
+            }}
+          >
+            <div
+              className={st.stageArtFrame}
+              style={{ width: artWidth, height: Math.round(H * scale) }}
+            >
+              <div
+                style={{
+                  width: W,
+                  height: H,
+                  transformOrigin: "top left",
+                  transform: `scale(${scale})`,
+                }}
+              >
+                <CanvasSlideView
+                  slide={activeSlide}
+                  index={safeIdx}
+                  total={slides.length}
+                  handle={theme.handle}
+                  palette={palette}
+                  aspect={aspect}
+                  scale={scale}
+                  interactive
+                  selectedElementId={selectedElementId}
+                  editingElementId={editingElementId}
+                  showSafeGuides={Boolean(selectedElementId)}
+                  onSelectElement={elId => {
+                    setSelectedElementId(elId);
+                    if (elId !== editingElementId) setEditingElementId(null);
+                  }}
+                  onStartEditing={elId => {
+                    setSelectedElementId(elId);
+                    setEditingElementId(elId);
+                  }}
+                  onStopEditing={() => setEditingElementId(null)}
+                  onSelectionRange={setSelectionRange}
+                  onPickImage={(elId, src) => void handlePickElementImage(elId, src)}
+                  onChangeElement={(elId, patch) => {
+                    updateSlideAt(
+                      safeIdx,
+                      s => ({
+                        ...s,
+                        elements: s.elements.map(el => (el.id === elId ? ({ ...el, ...patch } as CanvasElement) : el)),
+                      }),
+                      false,
+                    );
+                  }}
+                />
+              </div>
             </div>
-          </aside>
-        ) : null}
+          </div>
+        </div>
+
+        {/* ==================== ZONA D2: FITA DE PÁGINAS NO RODAPÉ ==================== */}
+        <footer className={st.veedTimeline} aria-label="Páginas do post">
+          <div className={st.timelineMeta}>
+            <span>
+              <strong>Página {safeIdx + 1}</strong> de {slides.length} · Clique em qualquer texto na imagem para editar
+            </span>
+            <label className={st.zoomControl}>
+              <span>Zoom</span>
+              <input
+                type="range"
+                min={0.75}
+                max={1.35}
+                step={0.05}
+                value={zoom}
+                onChange={e => setZoom(Number(e.target.value))}
+                aria-label="Zoom da página"
+              />
+            </label>
+          </div>
+
+          <div className={st.timelineTrack}>
+            <button
+              type="button"
+              className={st.navCircle}
+              title="Página anterior"
+              aria-label="Página anterior"
+              disabled={safeIdx === 0}
+              onClick={() => {
+                setSelectedSlideIdx(i => Math.max(0, i - 1));
+                setSelectedElementId(null);
+                setEditingElementId(null);
+              }}
+            >
+              ‹
+            </button>
+
+            <div className={st.slidesStrip}>
+              {slides.map((sl, idx) => {
+                const active = idx === safeIdx;
+                return (
+                  <div key={sl.id} className={st.slideThumbWrap}>
+                    <button
+                      type="button"
+                      className={st.slideThumbBtn}
+                      data-active={active || undefined}
+                      style={{ width: stripThumbW, height: Math.round(H * stripThumbScale) }}
+                      aria-label={`Ir para página ${idx + 1}`}
+                      onClick={() => {
+                        setSelectedSlideIdx(idx);
+                        setSelectedElementId(null);
+                        setEditingElementId(null);
+                      }}
+                    >
+                      <span className={st.slideThumbNum}>{idx + 1}</span>
+                      <div style={{ width: W, height: H, transformOrigin: "top left", transform: `scale(${stripThumbScale})`, pointerEvents: "none" }}>
+                        <CanvasSlideView
+                          slide={sl}
+                          index={idx}
+                          total={slides.length}
+                          handle={theme.handle}
+                          palette={palette}
+                          aspect={aspect}
+                        />
+                      </div>
+
+                      {active ? (
+                        <span className={st.slideMiniActions} onClick={e => e.stopPropagation()}>
+                          {idx > 0 ? (
+                            <span
+                              role="button"
+                              tabIndex={0}
+                              className={st.slideMiniBtn}
+                              title="Mover para trás"
+                              onClick={() => {
+                                commitCanvas({ ...canvas, slides: move(slides, idx, idx - 1) });
+                                setSelectedSlideIdx(idx - 1);
+                              }}
+                            >
+                              ←
+                            </span>
+                          ) : null}
+                          {idx < slides.length - 1 ? (
+                            <span
+                              role="button"
+                              tabIndex={0}
+                              className={st.slideMiniBtn}
+                              title="Mover para frente"
+                              onClick={() => {
+                                commitCanvas({ ...canvas, slides: move(slides, idx, idx + 1) });
+                                setSelectedSlideIdx(idx + 1);
+                              }}
+                            >
+                              →
+                            </span>
+                          ) : null}
+                        </span>
+                      ) : null}
+                    </button>
+                  </div>
+                );
+              })}
+
+              <button
+                type="button"
+                className={st.addSlideFab}
+                title="Adicionar nova página"
+                aria-label="Adicionar nova página"
+                onClick={() => {
+                  const added = blankSlide(aspect, remixLayoutId(activeSlide));
+                  commitCanvas({ ...canvas, slides: [...slides, added] });
+                  setSelectedSlideIdx(slides.length);
+                  setSelectedElementId(null);
+                }}
+              >
+                <PlusIcon />
+              </button>
+            </div>
+
+            <button
+              type="button"
+              className={st.navCircle}
+              title="Próxima página"
+              aria-label="Próxima página"
+              disabled={safeIdx >= slides.length - 1}
+              onClick={() => {
+                setSelectedSlideIdx(i => Math.min(slides.length - 1, i + 1));
+                setSelectedElementId(null);
+                setEditingElementId(null);
+              }}
+            >
+              ›
+            </button>
+          </div>
+        </footer>
       </div>
 
-      {/* Offscreen native-res stage for crisp 1080×1350 / 1080×1920 PNG export */}
+      {/* Palco invisível em resolução real (1080×1350 / 1080×1920) para exportar PNG / ZIP */}
       <div style={{ position: "fixed", left: -99999, top: 0, pointerEvents: "none" }} aria-hidden>
         {slides.map((sl, i) => (
           <div
@@ -1296,7 +1928,7 @@ function StudioInner({
         open={muapiTarget !== null}
         kindFilter="image"
         inlineDataUrl
-        defaultPrompt={`Fotografia ou colagem editorial minimalista sobre escrita, literatura e estudos, paleta ${palette.background} e ${palette.accent}, sem palavras escritas`}
+        defaultPrompt={`Ilustração ou fotografia editorial delicada sobre escrita, literatura e caderno de estudos, paleta ${palette.background} e ${palette.accent}, sem palavras escritas`}
         onClose={() => setMuapiTarget(null)}
         onResult={url => {
           if (muapiTarget?.mode === "element") {
@@ -1305,14 +1937,11 @@ function StudioInner({
               elements: s.elements.map(el => (el.id === muapiTarget.elementId && el.type === "image" ? { ...el, src: url } : el)),
             }));
           } else {
-            const imgPreset = ELEMENT_PRESETS.find(p => p.id === "imagem")!;
-            const made = imgPreset.make(aspect);
-            if (made.type === "image") made.src = url;
-            updateSlideAt(safeIdx, s => ({ ...s, elements: [...s.elements, made] }));
-            setSelectedElementId(made.id);
+            insertImageOnSlide(url);
           }
+          loadPhotos();
           setMuapiTarget(null);
-          show("Arte adicionada ao slide!", "good");
+          show("Imagem criada e colocada na página!", "good");
         }}
       />
 
@@ -1357,9 +1986,9 @@ export default function AdminStudioEditor({ id }: { id: string }) {
 
   if (!post) {
     return (
-      <AdminShell crumbs={[{ label: "Estúdio", href: "/admin/estudio" }, { label: "Carregando…" }]}>
-        <div className={styles.sheet}>
-          <Skeleton kind="text" label="Abrindo a mesa do Estúdio" />
+      <AdminShell crumbs={[]} immersive>
+        <div style={{ display: "grid", placeItems: "center", height: "100dvh", background: "#f5f6fa" }}>
+          <Skeleton kind="text" label="Abrindo seu post…" />
         </div>
       </AdminShell>
     );

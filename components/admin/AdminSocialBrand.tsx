@@ -107,7 +107,7 @@ export default function AdminSocialBrand() {
 
   return (
     <AdminShell
-      crumbs={[{ label: "Marca" }]}
+      crumbs={[{ label: "Identidade" }]}
       actions={
         <>
           <span className={styles.saveState} data-dirty={dirty ? "true" : undefined} data-saving={saving || undefined}>

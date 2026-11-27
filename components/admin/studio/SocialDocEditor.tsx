@@ -321,7 +321,7 @@ export default function SocialDocEditor({
       ...pt,
       placeholders: {
         ...pt.placeholders,
-        default: 'Escreva o roteiro ou digite "/" para inserir blocos, imagens da Mídia, gráficos e comparativos…',
+        default: 'Escreva seu texto aqui ou digite "/" para inserir capa, comparativo, foto ou lista…',
       },
     },
     uploadFile: async (file: File) => {
@@ -337,7 +337,7 @@ export default function SocialDocEditor({
     <div className={editorStyles.doc} style={brandColor ? { ["--case-brand" as string]: brandColor } : undefined}>
       <BlockNoteView
         editor={editor}
-        theme="dark"
+        theme="light"
         slashMenu={false}
         formattingToolbar={false}
         filePanel={false}

@@ -124,14 +124,14 @@ export default function AdminSocialMedia() {
 
   return (
     <AdminShell
-      crumbs={[{ label: "Mídia" }]}
+      crumbs={[{ label: "Fotos" }]}
       actions={
         <>
           <button type="button" className={styles.button} onClick={() => setMuapiOpen(true)}>
-            <SparkIcon />Gerar imagem IA
+            <SparkIcon />Criar imagem com IA
           </button>
           <label className={`${styles.button} ${styles.primary}`} aria-disabled={!!busy}>
-            <UploadIcon />Enviar arquivo
+            <UploadIcon />Enviar foto
             <input
               type="file"
               accept="image/*,video/mp4,video/webm"
@@ -148,18 +148,19 @@ export default function AdminSocialMedia() {
       }
     >
       <div
-        className={styles.page}
+        className={styles.sheet}
         onDragOver={e => e.preventDefault()}
         onDrop={e => {
           e.preventDefault();
           void upload(e.dataTransfer.files);
         }}
       >
+      <div className={styles.page}>
         <div className={styles.headerRow}>
           <div>
-            <h1 className={styles.title}>Mídia</h1>
+            <h1 className={styles.title}>Suas fotos e ilustrações</h1>
             <p className={styles.subtitle}>
-              Fotos de redação, referências visuais, stickers, vídeos e artes geradas com IA disponíveis no Estúdio, Carrosséis e Reels. Arraste arquivos para qualquer lugar desta tela para enviar.
+              Todas as fotos que você envia ou cria com IA ficam guardadas aqui para reutilizar em qualquer post.
             </p>
           </div>
         </div>
@@ -454,6 +455,7 @@ export default function AdminSocialMedia() {
           </div>
         ) : null}
       </div>
+      </div>
 
       <MuapiGeneratorDialog
         open={muapiOpen}
@@ -463,7 +465,7 @@ export default function AdminSocialMedia() {
         onResult={() => {
           setMuapiOpen(false);
           void load();
-          show("Arte gerada e salva na Mídia!", "good");
+          show("Imagem criada e salva em Fotos!", "good");
         }}
       />
       <BusyOverlay label={busy} />

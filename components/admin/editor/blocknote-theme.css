@@ -1,6 +1,26 @@
-/* BlockNote's colours in the admin palette (docs/admin/conceito/admin-design-dna.json, as values:
-   these menus can render outside the admin frame, where its tokens are not defined). Global: its menus render outside the editor.
-   Only the admin uses BlockNote, so nothing here reaches the site. */
+/* BlockNote light & dark themes aligned with the Studio palette. */
+.bn-container[data-color-scheme="light"],
+.bn-root[data-color-scheme="light"],
+[data-color-scheme="light"] .bn-ak-popover {
+  --bn-colors-editor-background: transparent;
+  --bn-colors-editor-text: #181926;
+  --bn-colors-menu-background: #ffffff;
+  --bn-colors-menu-text: #181926;
+  --bn-colors-tooltip-background: #181926;
+  --bn-colors-tooltip-text: #ffffff;
+  --bn-colors-hovered-background: #f1f2f7;
+  --bn-colors-hovered-text: #181926;
+  --bn-colors-selected-background: #ebe7ff;
+  --bn-colors-selected-text: #3c28a8;
+  --bn-colors-disabled-background: transparent;
+  --bn-colors-disabled-text: #8b90a7;
+  --bn-colors-shadow: rgb(20 22 46 / 12%);
+  --bn-colors-border: #e6e8f1;
+  --bn-colors-side-menu: #8b90a7;
+  --bn-font-family: var(--font-sans);
+  --bn-border-radius: 10px;
+}
+
 .bn-container[data-color-scheme="dark"],
 .bn-root[data-color-scheme="dark"],
 [data-color-scheme="dark"] .bn-ak-popover {
@@ -23,32 +43,18 @@
   --bn-border-radius: 8px;
 }
 
-/* Ariakit paints menus and toolbars with a fixed blue; the admin is neutral. */
-.bn-ariakit .bn-ak-menu,
-.bn-ariakit .bn-ak-toolbar,
-.bn-ariakit .bn-ak-popover {
-  border-color: transparent !important;
-  border-radius: 12px !important;
-  background: #181818 !important;
-  box-shadow: 0 16px 48px rgb(0 0 0 / 55%) !important;
-  color: #fafafa;
+.bn-ariakit[data-color-scheme="light"] .bn-ak-menu,
+.bn-ariakit[data-color-scheme="light"] .bn-ak-toolbar,
+.bn-ariakit[data-color-scheme="light"] .bn-ak-popover {
+  border: 1px solid #e6e8f1 !important;
+  border-radius: 14px !important;
+  background: #ffffff !important;
+  box-shadow: 0 12px 36px rgb(20 22 46 / 12%) !important;
+  color: #181926;
 }
-.bn-ariakit .bn-ak-menu-item[aria-selected="true"],
-.bn-ariakit .bn-ak-menu-item[data-active-item],
-.bn-ariakit .bn-ak-menu-item:hover {
-  background: #222222 !important;
-  color: #fafafa !important;
-}
-.bn-ariakit .bn-ak-group-label {
-  color: #999999 !important;
-  font-size: 12px !important;
-  font-weight: 500;
-}
-.bn-ariakit .bn-ak-button[aria-pressed="true"],
-.bn-ariakit .bn-ak-button[data-selected="true"] {
-  background: #2c2c2c !important;
-  color: #fafafa !important;
-}
-.bn-ariakit :focus-visible {
-  outline-color: #fafafa !important;
+.bn-ariakit[data-color-scheme="light"] .bn-ak-menu-item[aria-selected="true"],
+.bn-ariakit[data-color-scheme="light"] .bn-ak-menu-item[data-active-item],
+.bn-ariakit[data-color-scheme="light"] .bn-ak-menu-item:hover {
+  background: #f1f2f7 !important;
+  color: #181926 !important;
 }

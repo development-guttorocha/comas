@@ -123,51 +123,24 @@ export default function MuapiGeneratorDialog({
     >
       <form onSubmit={submit}>
         <div className={styles.dialogHead} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
-          <h2>Gerar {kindFilter === "video" ? "vídeo" : "imagem"} · MuAPI</h2>
+          <h2>Criar {kindFilter === "video" ? "vídeo" : "imagem"} com IA</h2>
           {balance !== null && balance !== undefined ? (
-            <span className={styles.chip} data-tone="good">Saldo: {String(balance)}</span>
+            <span className={styles.chip} data-tone="good">Crédito: {String(balance)}</span>
           ) : null}
         </div>
 
-        <div className={styles.form} style={{ padding: 16 }}>
+        <div className={styles.form} style={{ padding: 20 }}>
           {configured === false ? (
             <p className={styles.hint} style={{ gridColumn: "1 / -1", color: "var(--warn)", margin: 0 }}>
-              <code>MUAPI_API_KEY</code> não configurada. Gere uma chave (ou Sandbox Key gratuita para testes) em{" "}
+              Ative o gerador de imagens em <strong>Conexões</strong> adicionando sua chave da{" "}
               <a href="https://muapi.ai/dashboard" target="_blank" rel="noreferrer" style={{ color: "var(--ink)" }}>
-                muapi.ai/dashboard
-              </a>{" "}
-              e salve em <strong>Chaves</strong> ou na Vercel.
+                MuAPI
+              </a>.
             </p>
           ) : null}
 
           <label className={`${styles.field} ${styles.fieldWide}`}>
-            <span className={styles.label}>Modelo</span>
-            <select
-              className={styles.select}
-              value={model}
-              onChange={e => setModel(e.target.value)}
-              disabled={busy}
-            >
-              {presets.map(p => (
-                <option key={p.slug} value={p.slug}>{p.label}</option>
-              ))}
-            </select>
-            {activePreset ? <span className={styles.hint}>{activePreset.hint}</span> : null}
-          </label>
-
-          <label className={`${styles.field} ${styles.fieldWide}`}>
-            <span className={styles.label}>Ou slug exato do catálogo MuAPI (opcional)</span>
-            <input
-              className={`${styles.input} ${styles.mono}`}
-              placeholder="Ex: midjourney-v7, nano-banana-2, veo3.1-text-to-video…"
-              value={customModel}
-              onChange={e => setCustomModel(e.target.value)}
-              disabled={busy}
-            />
-          </label>
-
-          <label className={`${styles.field} ${styles.fieldWide}`}>
-            <span className={styles.label}>Descrição visual (Prompt)</span>
+            <span className={styles.label}>Descreva o que você quer na imagem</span>
             <textarea
               className={styles.textarea}
               rows={4}
@@ -177,22 +150,53 @@ export default function MuapiGeneratorDialog({
               onChange={e => setPrompt(e.target.value)}
               placeholder={
                 kindFilter === "video"
-                  ? "Ex: Close-up suave de uma caneta-tinteiro escrevendo em papel creme texturizado, luz natural da manhã, estética editorial minimalista…"
-                  : "Ex: Fotografia editorial minimalista vista de cima de um caderno aberto, xícara de café e livro em tons creme e terracota suave, sem texto escrito…"
+                  ? "Ex.: Close suave de uma caneta escrevendo em caderno creme na luz da manhã…"
+                  : "Ex.: Mesa de estudos vista de cima com caderno aberto, café e livro, luz natural suave, sem palavras escritas…"
               }
             />
           </label>
+
+          <details className={`${styles.advanced} ${styles.fieldWide}`}>
+            <summary>Opções avançadas de estilo/modelo</summary>
+            <div className={styles.form}>
+              <label className={styles.field}>
+                <span className={styles.label}>Estilo de geração</span>
+                <select
+                  className={styles.select}
+                  value={model}
+                  onChange={e => setModel(e.target.value)}
+                  disabled={busy}
+                >
+                  {presets.map(p => (
+                    <option key={p.slug} value={p.slug}>{p.label}</option>
+                  ))}
+                </select>
+                {activePreset ? <span className={styles.hint}>{activePreset.hint}</span> : null}
+              </label>
+
+              <label className={styles.field}>
+                <span className={styles.label}>Modelo específico (opcional)</span>
+                <input
+                  className={`${styles.input} ${styles.mono}`}
+                  placeholder="Ex.: midjourney-v7, flux-schnell…"
+                  value={customModel}
+                  onChange={e => setCustomModel(e.target.value)}
+                  disabled={busy}
+                />
+              </label>
+            </div>
+          </details>
 
           {statusText ? <span className={styles.hint} style={{ gridColumn: "1 / -1" }}>{statusText}</span> : null}
           {error ? <span className={styles.chip} data-tone="bad" style={{ gridColumn: "1 / -1" }}>{error}</span> : null}
         </div>
 
-        <div style={{ display: "flex", justifyContent: "flex-end", gap: 8, padding: "12px 16px", borderTop: "1px solid var(--line)" }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", gap: 8, padding: "14px 20px", borderTop: "1px solid var(--line)" }}>
           <button type="button" className={`${styles.button} ${styles.ghost}`} disabled={busy} onClick={onClose}>
             Cancelar
           </button>
           <button type="submit" className={`${styles.button} ${styles.primary}`} aria-busy={busy} disabled={busy || configured === false}>
-            <SparkIcon />{busy ? "Gerando…" : "Gerar com MuAPI"}
+            <SparkIcon />{busy ? "Criando…" : `Criar ${kindFilter === "video" ? "vídeo" : "imagem"}`}
           </button>
         </div>
       </form>

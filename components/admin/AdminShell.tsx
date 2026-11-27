@@ -11,27 +11,50 @@ import styles from "./admin.module.css";
 export type Crumb = { label: string; href?: string };
 
 const NAV: Array<{ href: string; label: string; icon: ReactNode; match: string[] }> = [
-  { href: "/admin/estudio", label: "Estúdio", icon: <PagesIcon />, match: ["/admin/estudio"] },
-  { href: "/admin/carrosseis", label: "Carrosséis", icon: <GridIcon />, match: ["/admin/carrosseis"] },
-  { href: "/admin/reels", label: "Reels", icon: <PlayIcon />, match: ["/admin/reels"] },
-  { href: "/admin/midia", label: "Mídia", icon: <ImageIcon />, match: ["/admin/midia", "/admin/galeria"] },
-  { href: "/admin/marca", label: "Marca", icon: <GearIcon />, match: ["/admin/marca"] },
+  { href: "/admin/estudio", label: "Meus posts", icon: <PagesIcon />, match: ["/admin/estudio"] },
+  { href: "/admin/reels", label: "Vídeos", icon: <PlayIcon />, match: ["/admin/reels"] },
+  { href: "/admin/midia", label: "Fotos", icon: <ImageIcon />, match: ["/admin/midia", "/admin/galeria"] },
+  { href: "/admin/marca", label: "Identidade", icon: <GearIcon />, match: ["/admin/marca"] },
 ];
 
 const within = (pathname: string, href: string) => pathname === href || pathname.startsWith(`${href}/`);
 const currentArea = (pathname: string) => NAV.find(item => item.match.some(href => within(pathname, href)))?.href;
 
-/** The admin frame: the areas on the left, breadcrumbs and the page's actions on top. */
-export default function AdminShell({ crumbs, actions, children }: { crumbs: Crumb[]; actions?: ReactNode; children: ReactNode }) {
+/** The admin frame: simple navigation on the left, or full-bleed immersive mode inside the Studio editor. */
+export default function AdminShell({
+  crumbs,
+  actions,
+  immersive = false,
+  children,
+}: {
+  crumbs: Crumb[];
+  actions?: ReactNode;
+  immersive?: boolean;
+  children: ReactNode;
+}) {
   const pathname = usePathname() ?? "";
   const current = currentArea(pathname);
   const [signingOut, setSigningOut] = useState(false);
   const email = getCachedEmail();
+
+  if (immersive) {
+    return (
+      <AdminAuthGate>
+        <div className={`${styles.app} ${styles.immersiveApp}`}>
+          <main id="admin-main" tabIndex={-1} className={`${styles.main} ${styles.immersiveMain}`}>
+            {children}
+          </main>
+          <AdminLock />
+        </div>
+      </AdminAuthGate>
+    );
+  }
+
   return (
     <AdminAuthGate>
       <div className={styles.app}>
         <a href="#admin-main" className={styles.skipLink}>Pular para o conteúdo</a>
-        <nav className={styles.rail} aria-label="Admin">
+        <nav className={styles.rail} aria-label="Menu principal">
           <Link href="/admin/estudio" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Texto em Ciclo</span></Link>
           {NAV.map(item => (
             <Link key={item.href} href={item.href} className={styles.railButton} title={item.label} aria-current={current === item.href ? "page" : undefined}>
@@ -39,7 +62,10 @@ export default function AdminShell({ crumbs, actions, children }: { crumbs: Crum
             </Link>
           ))}
           <span className={styles.railSpacer} />
-          <Link href="/admin/chaves" className={styles.railButton} title="Chaves de API" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Chaves</span></Link>
+          <Link href="/admin/carrosseis" className={styles.railButton} title="Modo formulário (clássico)" aria-current={within(pathname, "/admin/carrosseis") ? "page" : undefined}>
+            <GridIcon /><span className={styles.navLabel}>Modo formulário</span>
+          </Link>
+          <Link href="/admin/chaves" className={styles.railButton} title="Conexões de IA" aria-current={within(pathname, "/admin/chaves") ? "page" : undefined}><KeyIcon /><span className={styles.navLabel}>Conexões</span></Link>
           <LockButton />
           <button
             type="button"
