@@ -174,11 +174,52 @@ test("proxy redirects unauthenticated /admin requests to /admin/login and allows
   );
 });
 
-test("sanitizeNextPath blocks open redirects and loops", () => {
-  assert.equal(sanitizeNextPath("//evil.com"), "/admin/carrosseis");
-  assert.equal(sanitizeNextPath("https://evil.com/admin"), "/admin/carrosseis");
-  assert.equal(sanitizeNextPath("/\\evil.com"), "/admin/carrosseis");
-  assert.equal(sanitizeNextPath("/admin/login"), "/admin/carrosseis");
-  assert.equal(sanitizeNextPath("/admin/login?next=/admin/marca"), "/admin/carrosseis");
+test("sanitizeNextPath defaults to /admin/estudio and blocks open redirects and loops", () => {
+  assert.equal(sanitizeNextPath(""), "/admin/estudio");
+  assert.equal(sanitizeNextPath("/admin"), "/admin/estudio");
+  assert.equal(sanitizeNextPath("//evil.com"), "/admin/estudio");
+  assert.equal(sanitizeNextPath("https://evil.com/admin"), "/admin/estudio");
+  assert.equal(sanitizeNextPath("/\\evil.com"), "/admin/estudio");
+  assert.equal(sanitizeNextPath("/admin/login"), "/admin/estudio");
+  assert.equal(sanitizeNextPath("/admin/login?next=/admin/marca"), "/admin/estudio");
   assert.equal(sanitizeNextPath("/admin/carrosseis/post_1"), "/admin/carrosseis/post_1");
+});
+
+test("invited emails in EXTRA_ADMIN_EMAILS authenticate, pass cold-start proxy, and revoke cleanly without redirect loops", async () => {
+  await withEnv(
+    {
+      AUTH_SECRET: "invited-test-secret",
+      RESEND_API_KEY: "re_invited_test",
+      ALLOWED_ADMIN_EMAILS: "owner@guttorocha.com.br",
+      EXTRA_ADMIN_EMAILS: "renata@textoemciclo.com.br",
+    },
+    async () => {
+      assert.equal(isAllowedEmail("owner@guttorocha.com.br"), true);
+      assert.equal(isAllowedEmail("renata@textoemciclo.com.br"), true);
+
+      const renataToken = makeSessionToken("renata@textoemciclo.com.br");
+      assert.equal(verifySessionToken(renataToken).valid, true);
+
+      // Cold-start proxy (before EXTRA_ADMIN_EMAILS is hydrated in memory) lets signed invited cookie reach server route
+      await withEnv({ EXTRA_ADMIN_EMAILS: undefined }, () => {
+        const estudioReq = new NextRequest("https://textoemciclo.vercel.app/admin/estudio", {
+          headers: { cookie: `${SOCIAL_COOKIE_NAME}=${renataToken}` },
+        });
+        assert.equal(proxy(estudioReq).headers.get("x-middleware-next"), "1");
+
+        // When server route detects revocation and redirects to /admin/login?revoked=1, proxy clears cookie and renders login
+        const revokedLoginReq = new NextRequest("https://textoemciclo.vercel.app/admin/login?revoked=1", {
+          headers: { cookie: `${SOCIAL_COOKIE_NAME}=${renataToken}` },
+        });
+        const revokedRes = proxy(revokedLoginReq);
+        assert.equal(revokedRes.headers.get("x-middleware-next"), "1");
+        assert.match(revokedRes.headers.get("set-cookie") ?? "", /Max-Age=0/i);
+      });
+
+      // Once EXTRA_ADMIN_EMAILS is hydrated as empty (revoked), verifySessionToken strictly rejects the token
+      await withEnv({ EXTRA_ADMIN_EMAILS: "" }, () => {
+        assert.equal(verifySessionToken(renataToken).valid, false);
+      });
+    },
+  );
 });

@@ -581,3 +581,104 @@ export async function expiringKeys(warnDays = 21) {
     return { ...k, days };
   }).filter(k => k.days <= warnDays);
 }
+
+/* ---------------------------------------------------------------- e-mails autorizados no painel */
+
+export type AccessEmailRow = {
+  email: string;
+  fixed: boolean;
+};
+
+const ACCESS_EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const EXTRA_EMAILS_ENV = "EXTRA_ADMIN_EMAILS";
+let lastExtraEmailsHydratedAt = 0;
+
+function parseEmailList(raw: string | undefined | null): string[] {
+  if (!raw) return [];
+  return [
+    ...new Set(
+      raw
+        .split(/[,;\n]+/)
+        .map(e => e.trim().toLowerCase().slice(0, 200))
+        .filter(e => ACCESS_EMAIL_RE.test(e)),
+    ),
+  ];
+}
+
+/** Hydrates only `EXTRA_ADMIN_EMAILS` from cloud/local store without touching other `process.env` keys. */
+export async function hydrateExtraAdminEmails(force = false): Promise<void> {
+  if (!force && process.env[EXTRA_EMAILS_ENV] !== undefined && Date.now() - lastExtraEmailsHydratedAt < HYDRATE_TTL_MS) {
+    return;
+  }
+  const { store, localEnv } = await readCombinedState();
+  const storeValues = store.values ?? {};
+  const val = resolveKeyValue(EXTRA_EMAILS_ENV, storeValues, localEnv);
+  process.env[EXTRA_EMAILS_ENV] = val;
+  lastExtraEmailsHydratedAt = Date.now();
+}
+
+export async function listAccessEmails(): Promise<AccessEmailRow[]> {
+  const { store, localEnv } = await readCombinedState();
+  const fixedRaw = localEnv.ALLOWED_ADMIN_EMAILS || process.env.ALLOWED_ADMIN_EMAILS || PLATFORM_ENV.ALLOWED_ADMIN_EMAILS || "";
+  const fixedList = parseEmailList(fixedRaw);
+  const fixedSet = new Set(fixedList);
+  const extraRaw = resolveKeyValue(EXTRA_EMAILS_ENV, store.values ?? {}, localEnv);
+  const extras = parseEmailList(extraRaw).filter(e => !fixedSet.has(e));
+  process.env[EXTRA_EMAILS_ENV] = extras.join(", ");
+  lastExtraEmailsHydratedAt = Date.now();
+  return [
+    ...fixedList.map(email => ({ email, fixed: true })),
+    ...extras.map(email => ({ email, fixed: false })),
+  ];
+}
+
+export async function addAccessEmail(rawEmail: string): Promise<AccessEmailRow[]> {
+  const email = rawEmail.trim().toLowerCase().slice(0, 200);
+  if (!ACCESS_EMAIL_RE.test(email)) {
+    throw new Error("Informe um endereço de e-mail válido (ex.: renata@dominio.com).");
+  }
+  const { store: current, localEnv } = await readCombinedState();
+  const fixedSet = new Set(
+    parseEmailList(localEnv.ALLOWED_ADMIN_EMAILS || process.env.ALLOWED_ADMIN_EMAILS || PLATFORM_ENV.ALLOWED_ADMIN_EMAILS || ""),
+  );
+  if (fixedSet.has(email)) {
+    return listAccessEmails();
+  }
+  const store: Store = {
+    custom: [...current.custom],
+    meta: { ...current.meta },
+    values: { ...(current.values ?? {}) },
+  };
+  const currentExtras = parseEmailList(resolveKeyValue(EXTRA_EMAILS_ENV, store.values ?? {}, localEnv)).filter(e => !fixedSet.has(e));
+  const nextExtras = [...new Set([...currentExtras, email])];
+  const joined = nextExtras.join(", ");
+  store.values![EXTRA_EMAILS_ENV] = joined;
+  await persistCombinedStore(store, [[EXTRA_EMAILS_ENV, joined]]);
+  process.env[EXTRA_EMAILS_ENV] = joined;
+  lastExtraEmailsHydratedAt = Date.now();
+  return listAccessEmails();
+}
+
+export async function removeAccessEmail(rawEmail: string): Promise<AccessEmailRow[]> {
+  const email = rawEmail.trim().toLowerCase().slice(0, 200);
+  const { store: current, localEnv } = await readCombinedState();
+  const fixedSet = new Set(
+    parseEmailList(localEnv.ALLOWED_ADMIN_EMAILS || process.env.ALLOWED_ADMIN_EMAILS || PLATFORM_ENV.ALLOWED_ADMIN_EMAILS || ""),
+  );
+  const store: Store = {
+    custom: [...current.custom],
+    meta: { ...current.meta },
+    values: { ...(current.values ?? {}) },
+  };
+  const currentExtras = parseEmailList(resolveKeyValue(EXTRA_EMAILS_ENV, store.values ?? {}, localEnv)).filter(e => !fixedSet.has(e));
+  if (fixedSet.has(email) && !currentExtras.includes(email)) {
+    throw new Error("Este e-mail é o acesso principal configurado no servidor e não pode ser removido por aqui.");
+  }
+  const nextExtras = currentExtras.filter(e => e !== email);
+  const joined = nextExtras.length ? nextExtras.join(", ") : null;
+  store.values![EXTRA_EMAILS_ENV] = joined;
+  await persistCombinedStore(store, [[EXTRA_EMAILS_ENV, joined]]);
+  process.env[EXTRA_EMAILS_ENV] = nextExtras.join(", ");
+  lastExtraEmailsHydratedAt = Date.now();
+  return listAccessEmails();
+}

@@ -1,4 +1,12 @@
-import { listKeys, removeKey, saveKey, testKey } from "@/lib/admin/apiKeys";
+import {
+  addAccessEmail,
+  listAccessEmails,
+  listKeys,
+  removeAccessEmail,
+  removeKey,
+  saveKey,
+  testKey,
+} from "@/lib/admin/apiKeys";
 import { isSocialAuthenticated } from "@/lib/social/auth";
 import { sameOrigin } from "@/lib/translations/auth";
 
@@ -24,7 +32,8 @@ async function guard(request: Request, write = false): Promise<Response | null> 
 export async function GET(request: Request) {
   const denied = await guard(request);
   if (denied) return denied;
-  return json({ keys: await listKeys() });
+  const [keys, accessEmails] = await Promise.all([listKeys(), listAccessEmails()]);
+  return json({ keys, accessEmails });
 }
 
 export async function PUT(request: Request) {
@@ -42,8 +51,14 @@ export async function POST(request: Request) {
   const denied = await guard(request, true);
   if (denied) return denied;
   try {
-    const { id } = (await request.json()) as { id: string };
-    return json(await testKey(id));
+    const body = (await request.json()) as { action?: string; email?: string; id?: string };
+    if (body.action === "add_email") {
+      return json({ accessEmails: await addAccessEmail(String(body.email ?? "")) });
+    }
+    if (body.action === "remove_email") {
+      return json({ accessEmails: await removeAccessEmail(String(body.email ?? "")) });
+    }
+    return json(await testKey(String(body.id ?? "")));
   } catch (error) {
     return fail(error);
   }

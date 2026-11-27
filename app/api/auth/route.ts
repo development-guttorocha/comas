@@ -38,6 +38,8 @@ export async function POST(request: NextRequest) {
     const challengeToken = typeof body.challengeToken === "string" ? body.challengeToken : "";
     const code = typeof body.code === "string" ? body.code : "";
     try {
+      const { hydrateExtraAdminEmails } = await import("@/lib/admin/apiKeys");
+      await hydrateExtraAdminEmails(false);
       const { email } = verifyLoginCode(challengeToken, code);
       const res = NextResponse.json({ ok: true, email }, { headers: NO_STORE });
       setSessionCookie(res, email);

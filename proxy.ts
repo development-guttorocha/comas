@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { isRequestSocialAuthenticated, sanitizeNextPath } from "@/lib/social/auth";
+import { clearSessionCookie, isRequestSocialAuthenticated, sanitizeNextPath } from "@/lib/social/auth";
 import { adminNotFound, translationAdminRequestAvailable } from "@/lib/translations/access";
 
 export function proxy(request: NextRequest) {
@@ -17,6 +17,11 @@ export function proxy(request: NextRequest) {
   }
 
   if (pathname === "/admin/login") {
+    if (request.nextUrl.searchParams.get("revoked") === "1") {
+      const res = NextResponse.next();
+      clearSessionCookie(res);
+      return res;
+    }
     if (isRequestSocialAuthenticated(request)) {
       const destination = sanitizeNextPath(request.nextUrl.searchParams.get("next"));
       return NextResponse.redirect(new URL(destination, request.url));
@@ -28,7 +33,7 @@ export function proxy(request: NextRequest) {
     if (!isRequestSocialAuthenticated(request)) {
       const loginUrl = new URL("/admin/login", request.url);
       const target = `${pathname}${request.nextUrl.search}`;
-      if (target !== "/admin" && target !== "/admin/carrosseis") {
+      if (target !== "/admin" && target !== "/admin/estudio") {
         loginUrl.searchParams.set("next", target);
       }
       return NextResponse.redirect(loginUrl);

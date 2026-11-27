@@ -37,10 +37,11 @@ function safeClientNextPath(raw: string | undefined): string {
     !candidate.startsWith("/") ||
     candidate.startsWith("//") ||
     candidate.startsWith("/\\") ||
+    candidate === "/admin" ||
     candidate === "/admin/login" ||
     candidate.startsWith("/admin/login?")
   ) {
-    return "/admin/carrosseis";
+    return "/admin/estudio";
   }
   return candidate;
 }
@@ -52,7 +53,7 @@ const ENV_HINTS: Record<string, string> = {
 
 export function AdminLoginScreen({
   initialSession,
-  nextPath = "/admin/carrosseis",
+  nextPath = "/admin/estudio",
   onAuthenticated,
 }: {
   initialSession?: SocialSession;
@@ -402,7 +403,7 @@ export default function AdminAuthGate({ children }: { children: ReactNode }) {
     const currentPath =
       typeof window !== "undefined"
         ? `${window.location.pathname}${window.location.search}`
-        : "/admin/carrosseis";
+        : "/admin/estudio";
     return (
       <AdminLoginScreen
         initialSession={session}

@@ -47,11 +47,28 @@ export function normalizeOtpCode(raw: string): string {
   return digits.length === 6 ? digits : "";
 }
 
-export function getAllowedEmails(): string[] {
+export function getEnvAllowedEmails(): string[] {
   return (process.env.ALLOWED_ADMIN_EMAILS ?? "")
     .split(/[,;\n]+/)
     .map(e => normalizeAuthEmail(e))
     .filter(e => EMAIL_RE.test(e));
+}
+
+export function getExtraAllowedEmails(): string[] {
+  return (process.env.EXTRA_ADMIN_EMAILS ?? "")
+    .split(/[,;\n]+/)
+    .map(e => normalizeAuthEmail(e))
+    .filter(e => EMAIL_RE.test(e));
+}
+
+export function getAllowedEmails(): string[] {
+  return [...new Set([...getEnvAllowedEmails(), ...getExtraAllowedEmails()])];
+}
+
+export function isEnvAllowedEmail(email: string): boolean {
+  const normalized = normalizeAuthEmail(email);
+  if (!EMAIL_RE.test(normalized)) return false;
+  return getEnvAllowedEmails().includes(normalized);
 }
 
 export function getMissingAuthEnv(): string[] {
@@ -111,17 +128,22 @@ export function makeSessionToken(rawEmail: string): string {
   if (!isAllowedEmail(email)) {
     throw new Error("E-mail não autorizado para iniciar sessão.");
   }
+  const invited = !isEnvAllowedEmail(email);
   const payloadB64 = Buffer.from(
     JSON.stringify({
       purpose: "session",
       email,
       exp: Date.now() + SESSION_TTL_MS,
+      ...(invited ? { invited: true } : {}),
     }),
   ).toString("base64url");
   return `${payloadB64}.${signPayload(payloadB64, secret)}`;
 }
 
-export function verifySessionToken(token: string | undefined | null): { valid: boolean; email?: string } {
+export function verifySessionToken(
+  token: string | undefined | null,
+  opts?: { allowColdInvited?: boolean },
+): { valid: boolean; email?: string } {
   if (!token) return { valid: false };
   const secret = getSigningSecret();
   if (!secret) return { valid: false };
@@ -136,17 +158,35 @@ export function verifySessionToken(token: string | undefined | null): { valid: b
       purpose?: string;
       email?: string;
       exp?: number;
+      invited?: boolean;
     };
     if (parsed.purpose !== "session") return { valid: false };
     if (typeof parsed.exp !== "number" || !Number.isFinite(parsed.exp) || Date.now() > parsed.exp) {
       return { valid: false };
     }
-    if (typeof parsed.email !== "string" || !isAllowedEmail(parsed.email)) {
+    if (typeof parsed.email !== "string" || !EMAIL_RE.test(normalizeAuthEmail(parsed.email))) {
       return { valid: false };
     }
-    return { valid: true, email: normalizeAuthEmail(parsed.email) };
+    if (isAllowedEmail(parsed.email)) {
+      return { valid: true, email: normalizeAuthEmail(parsed.email) };
+    }
+    if (opts?.allowColdInvited && parsed.invited === true && process.env.EXTRA_ADMIN_EMAILS === undefined) {
+      return { valid: true, email: normalizeAuthEmail(parsed.email) };
+    }
+    return { valid: false };
   } catch {
     return { valid: false };
+  }
+}
+
+function peekTokenInvited(token: string): boolean {
+  const payloadB64 = token.split(".")[0];
+  if (!payloadB64) return false;
+  try {
+    const parsed = JSON.parse(Buffer.from(payloadB64, "base64url").toString("utf8")) as { invited?: boolean };
+    return parsed?.invited === true;
+  } catch {
+    return false;
   }
 }
 
@@ -167,7 +207,10 @@ function readCookieFromHeader(cookieHeader: string | null, name: string): string
   return "";
 }
 
-export function buildSocialSessionFromToken(token: string | undefined | null): SocialSession {
+export function buildSocialSessionFromToken(
+  token: string | undefined | null,
+  opts?: { allowColdInvited?: boolean },
+): SocialSession {
   const missingEnv = getMissingAuthEnv();
   const configured = missingEnv.length === 0;
   const authMode: AuthMode = configured ? "email" : "unconfigured";
@@ -182,7 +225,7 @@ export function buildSocialSessionFromToken(token: string | undefined | null): S
     };
   }
 
-  const verified = verifySessionToken(token);
+  const verified = verifySessionToken(token, opts);
   return {
     authMode,
     authRequired: true,
@@ -195,7 +238,7 @@ export function buildSocialSessionFromToken(token: string | undefined | null): S
 
 export function getRequestSocialSession(request: Request): SocialSession {
   const token = readCookieFromHeader(request.headers.get("cookie"), SOCIAL_COOKIE_NAME);
-  return buildSocialSessionFromToken(token);
+  return buildSocialSessionFromToken(token, { allowColdInvited: true });
 }
 
 export function isRequestSocialAuthenticated(request: Request): boolean {
@@ -205,6 +248,10 @@ export function isRequestSocialAuthenticated(request: Request): boolean {
 export async function getSocialSession(): Promise<SocialSession> {
   const store = await cookies();
   const token = store.get(SOCIAL_COOKIE_NAME)?.value ?? "";
+  if (token && peekTokenInvited(token)) {
+    const { hydrateExtraAdminEmails } = await import("@/lib/admin/apiKeys");
+    await hydrateExtraAdminEmails(false);
+  }
   return buildSocialSessionFromToken(token);
 }
 
@@ -219,23 +266,26 @@ export function sanitizeNextPath(raw: string | null | undefined): string {
     !candidate.startsWith("/") ||
     candidate.startsWith("//") ||
     candidate.startsWith("/\\") ||
+    candidate === "/admin" ||
     candidate === "/admin/login" ||
     candidate.startsWith("/admin/login?")
   ) {
-    return "/admin/carrosseis";
+    return "/admin/estudio";
   }
   return candidate;
 }
 
-export async function requireSocialSession(currentPath = "/admin/carrosseis"): Promise<SocialSession> {
+export async function requireSocialSession(currentPath = "/admin/estudio"): Promise<SocialSession> {
+  const store = await cookies();
+  const hadCookie = Boolean(store.get(SOCIAL_COOKIE_NAME)?.value);
   const session = await getSocialSession();
   if (!session.authenticated) {
     const safeNext = sanitizeNextPath(currentPath);
-    const target =
-      safeNext === "/admin/carrosseis"
-        ? "/admin/login"
-        : `/admin/login?next=${encodeURIComponent(safeNext)}`;
-    redirect(target);
+    const params = new URLSearchParams();
+    if (safeNext !== "/admin/estudio") params.set("next", safeNext);
+    if (hadCookie) params.set("revoked", "1");
+    const qs = params.toString();
+    redirect(qs ? `/admin/login?${qs}` : "/admin/login");
   }
   return session;
 }
@@ -302,6 +352,16 @@ async function postResendOtpEmail({
 }
 
 export async function sendLoginCode(rawEmail: string): Promise<{ challengeToken: string }> {
+  const email = normalizeAuthEmail(rawEmail);
+  if (!EMAIL_RE.test(email)) {
+    throw new Error("Informe um endereço de e-mail válido.");
+  }
+
+  if (!isAllowedEmail(email)) {
+    const { hydrateExtraAdminEmails } = await import("@/lib/admin/apiKeys");
+    await hydrateExtraAdminEmails(true);
+  }
+
   const missingEnv = getMissingAuthEnv();
   if (missingEnv.length > 0) {
     throw new Error(
@@ -309,10 +369,6 @@ export async function sendLoginCode(rawEmail: string): Promise<{ challengeToken:
     );
   }
 
-  const email = normalizeAuthEmail(rawEmail);
-  if (!EMAIL_RE.test(email)) {
-    throw new Error("Informe um endereço de e-mail válido.");
-  }
   if (!isAllowedEmail(email)) {
     throw new Error("E-mail não autorizado para este painel.");
   }
