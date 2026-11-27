@@ -831,9 +831,19 @@ function StudioInner({
 
   async function removeDoc() {
     setDownloadOpen(false);
-    if (!confirm(`Apagar "${post.title}"?`)) return;
-    await fetch(`/api/social/posts?id=${encodeURIComponent(post.id)}`, { method: "DELETE" });
-    router.push("/admin/estudio");
+    if (!confirm(`Excluir o post "${post.title}"?`)) return;
+    setBusyLabel("Excluindo post…");
+    try {
+      const res = await fetch(`/api/social/posts?id=${encodeURIComponent(post.id)}`, { method: "DELETE" });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error((data as { error?: string } | null)?.error || "Não foi possível excluir o post.");
+      }
+      router.push("/admin/estudio");
+    } catch (err) {
+      show(err);
+      setBusyLabel("");
+    }
   }
 
   const candidateLayouts = useMemo(
@@ -920,6 +930,16 @@ function StudioInner({
               onClick={handleRedo}
             >
               ↷
+            </button>
+            <button
+              type="button"
+              className={st.iconAction}
+              title="Excluir este post"
+              aria-label="Excluir este post"
+              style={{ color: "#d9383a" }}
+              onClick={() => void removeDoc()}
+            >
+              <TrashIcon />
             </button>
 
             <div ref={downloadBoxRef} className={st.downloadWrap}>

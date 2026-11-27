@@ -27,7 +27,7 @@ import CanvasSlideView from "@/components/social/CanvasSlideView";
 import AdminShell from "../AdminShell";
 import BusyOverlay from "../BusyOverlay";
 import { Toast, useToast } from "../client";
-import { PlusIcon, SearchIcon, SparkIcon } from "../icons";
+import { CopyIcon, PlusIcon, SearchIcon, SparkIcon, TrashIcon } from "../icons";
 import Skeleton from "../Skeleton";
 import styles from "../admin.module.css";
 import st from "./studioEditor.module.css";
@@ -96,7 +96,7 @@ export default function AdminStudioList() {
         const studioDocs = all.filter(p => p.format === "studio_doc" || p.studioDoc);
         if (data.theme) setTheme(data.theme as SocialTheme);
         setAiProvider(data.aiProvider ?? null);
-        if (studioDocs.length === 0) {
+        if (all.length === 0) {
           const now = new Date().toISOString();
           const compiled = compileDocToSlides(STARTER_STUDIO_DOC.blocks);
           const starter: SocialPost = {
@@ -396,6 +396,47 @@ export default function AdminStudioList() {
     }
   }
 
+  async function duplicatePost(doc: SocialPost) {
+    setBusyLabel("Duplicando post…");
+    try {
+      const now = new Date().toISOString();
+      const copy: SocialPost = {
+        ...structuredClone(doc),
+        id: `studio_${Date.now().toString(36)}`,
+        title: `${doc.title} (cópia)`,
+        createdAt: now,
+        updatedAt: now,
+      };
+      const res = await fetch("/api/social/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ post: copy }),
+      });
+      if (!res.ok) throw new Error("Erro ao duplicar post");
+      setDocs(list => [copy, ...(list ?? [])]);
+      show("Cópia criada na galeria!", "good");
+    } catch (err) {
+      show(err);
+    } finally {
+      setBusyLabel("");
+    }
+  }
+
+  async function deletePost(doc: SocialPost) {
+    if (!confirm(`Excluir o post "${doc.title}"?`)) return;
+    try {
+      const res = await fetch(`/api/social/posts?id=${encodeURIComponent(doc.id)}`, { method: "DELETE" });
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error((data as { error?: string } | null)?.error || "Não foi possível excluir o post.");
+      }
+      setDocs(list => (list ?? []).filter(item => item.id !== doc.id));
+      show("Post excluído.");
+    } catch (err) {
+      show(err);
+    }
+  }
+
   return (
     <AdminShell
       crumbs={[{ label: "Meus posts" }]}
@@ -642,9 +683,11 @@ export default function AdminStudioList() {
                   const cardW = aspect === "story" ? 116 : 156;
                   const cardScale = cardW / W;
 
+                  const href = `/admin/estudio/${encodeURIComponent(doc.id)}`;
+
                   return (
-                    <Link key={doc.id} href={`/admin/estudio/${encodeURIComponent(doc.id)}`} className={st.postCard}>
-                      <div className={st.postCardPreview}>
+                    <article key={doc.id} className={st.postCard}>
+                      <Link href={href} className={st.postCardPreview} aria-label={`Abrir editor de ${doc.title}`}>
                         {cover ? (
                           <div
                             style={{
@@ -668,15 +711,38 @@ export default function AdminStudioList() {
                             </div>
                           </div>
                         ) : null}
-                      </div>
+                      </Link>
                       <div className={st.postCardBody}>
-                        <span className={st.postCardTitle}>{doc.title}</span>
+                        <Link href={href} className={st.postCardTitle}>{doc.title}</Link>
                         <span className={st.postCardMeta}>
                           {canvas.slides.length} {canvas.slides.length === 1 ? "página" : "páginas"} ·{" "}
                           {aspect === "story" ? "Stories" : "Post 4:5"} · {dayLabel(doc.updatedAt)}
                         </span>
+                        <div className={st.postCardActions}>
+                          <Link href={href} className={`${styles.button} ${styles.small}`}>
+                            Abrir
+                          </Link>
+                          <button
+                            type="button"
+                            className={`${styles.button} ${styles.ghost} ${styles.small} ${styles.iconButton}`}
+                            title="Duplicar post"
+                            aria-label={`Duplicar ${doc.title}`}
+                            onClick={() => void duplicatePost(doc)}
+                          >
+                            <CopyIcon />
+                          </button>
+                          <button
+                            type="button"
+                            className={`${styles.button} ${styles.ghost} ${styles.small} ${styles.iconButton} ${styles.danger}`}
+                            title="Excluir post"
+                            aria-label={`Excluir ${doc.title}`}
+                            onClick={() => void deletePost(doc)}
+                          >
+                            <TrashIcon />
+                          </button>
+                        </div>
                       </div>
-                    </Link>
+                    </article>
                   );
                 })}
               </div>
