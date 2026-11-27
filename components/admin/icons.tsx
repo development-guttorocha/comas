@@ -40,8 +40,8 @@ export const CheckIcon =() => <Icon><path d="m5 12 5 5 9-10" /></Icon>;
 
 export function LogoMark() {
   return (
-    <svg viewBox="0 0 3199 3199" fill="none" aria-hidden>
-      <path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M0 1599.5C0 716.121 716.121 0 1599.5 0C2482.88 0 3199 716.121 3199 1599.5C3199 2482.88 2482.88 3199 1599.5 3199C716.121 3199 0 2482.88 0 1599.5ZM1728 1584.36H2430V1301.36H1733V1016.36H2713V1300.36V1301.36V1584.36V1867.36H2430H2429V2151.36H2145V1867.36H1728V1584.36ZM1432 1017.36H729.996V1016.36H446.996V2150.36H447.996V2151.36H1432V2150.36H1434V1584.36H1150V1868.36H729.996V1302.36H1432V1017.36Z" />
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M12.5 4.5a4 4 0 1 0 0 8c.4 0 .7-.05.9-.1-.3 2.1-1.7 3.8-4 5l1.2 2.2c3.6-1.8 5.9-5.2 5.9-10V8.5a4 4 0 0 0-4-4Z" />
     </svg>
   );
 }

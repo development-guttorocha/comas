@@ -4,7 +4,7 @@ import { AdminLoginScreen } from "@/components/admin/AdminAuthGate";
 import { getSocialSession, sanitizeNextPath } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Entrar · Admin · Texto em Ciclo",
+  title: "Entrar · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

@@ -55,7 +55,7 @@ export default function AdminShell({
       <div className={styles.app}>
         <a href="#admin-main" className={styles.skipLink}>Pular para o conteúdo</a>
         <nav className={styles.rail} aria-label="Menu principal">
-          <Link href="/admin/estudio" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Texto em Ciclo</span></Link>
+          <Link href="/admin/estudio" className={styles.brand}><span className={styles.logo}><LogoMark /></span><span className={styles.navLabel}>Comas</span></Link>
           {NAV.map(item => (
             <Link key={item.href} href={item.href} className={styles.railButton} title={item.label} aria-current={current === item.href ? "page" : undefined}>
               {item.icon}<span className={styles.navLabel}>{item.label}</span>

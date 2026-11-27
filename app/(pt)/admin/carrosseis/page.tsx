@@ -3,7 +3,7 @@ import AdminSocialPosts from "@/components/admin/AdminSocialPosts";
 import { requireSocialSession } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Carrosséis · Admin · Texto em Ciclo",
+  title: "Carrosséis · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

@@ -4,7 +4,7 @@ import { listAccessEmails, listKeys } from "@/lib/admin/apiKeys";
 import { requireSocialSession } from "@/lib/social/auth";
 
 export const metadata: Metadata = {
-  title: "Conexões e Acesso · Admin · Texto em Ciclo",
+  title: "Conexões e Acesso · Admin · Comas",
   robots: { index: false, follow: false },
 };
 

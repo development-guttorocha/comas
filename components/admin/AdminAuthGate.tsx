@@ -196,7 +196,7 @@ export function AdminLoginScreen({
               <span className={styles.logo}><LogoMark /></span>
               <div>
                 <strong style={{ display: "block", fontSize: 15, fontWeight: 500 }}>
-                  Texto em Ciclo · Admin
+                  Comas · Admin
                 </strong>
                 <span className={styles.hint}>Acesso protegido por código de 6 dígitos</span>
               </div>
